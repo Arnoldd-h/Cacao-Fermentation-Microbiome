@@ -43,9 +43,9 @@ El primer hito se concentra en metadata y no descarga FASTQ de forma masiva.
 
 La consulta sistemática documentada recupera 34 BioProjects. Once están
 configurados y cribados en detalle; el inventario contiene 1.573 corridas, con
-154 incluidas, 101 pendientes y 1.318 excluidas. `PRJNA492720` continúa como
-candidato de piloto y `PRJNA627078` es el segundo estudio primario. Otros 13
-proyectos permanecen en revisión manual.
+154 incluidas, 101 pendientes y 1.318 excluidas. La comparación reproducible
+selecciona `PRJNA492720` como piloto y `PRJNA627078` es el segundo estudio
+primario. Otros 13 proyectos permanecen en revisión manual.
 
 El informe y los vacíos de metadata están en
 `reports/dataset_inventory.md`.
@@ -58,6 +58,8 @@ Con Python 3.11 o posterior:
 python scripts/metadata/discover_candidates.py
 python scripts/metadata/build_inventory.py
 python scripts/metadata/validate_metadata.py
+python scripts/metadata/select_pilot_dataset.py
+python scripts/metadata/build_pilot_manifest.py
 python -m unittest discover -s tests -v
 ```
 

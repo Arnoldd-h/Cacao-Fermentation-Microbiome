@@ -139,6 +139,49 @@ DISCOVERY_COLUMNS = [
     "retrieved_at_utc",
 ]
 
+PILOT_SELECTION_COLUMNS = [
+    "selection_rank",
+    "selected_as_pilot",
+    "eligible_primary",
+    "study_id",
+    "bioproject",
+    "study_include",
+    "metadata_quality",
+    "publication_linked",
+    "primers_known",
+    "paired_end",
+    "raw_data_available",
+    "candidate_runs",
+    "fermentation_batches",
+    "unique_timepoints",
+    "timepoints_hours",
+    "temporal_stages",
+    "selected_fastq_bytes",
+    "selected_fastq_mib",
+    "eligibility_reason",
+]
+
+PILOT_MANIFEST_COLUMNS = [
+    "pilot_order",
+    "study_id",
+    "bioproject",
+    "sample_id",
+    "run_accession",
+    "fermentation_stage",
+    "fermentation_hours",
+    "relative_time",
+    "fermentation_batch",
+    "sampling_stratum",
+    "library_layout",
+    "sequencing_platform",
+    "sequencing_instrument",
+    "fastq_ftp",
+    "fastq_md5",
+    "fastq_bytes",
+    "estimated_bytes_total",
+    "selection_reason",
+]
+
 TABLE_SCHEMAS = {
     "studies": STUDY_COLUMNS,
     "runs": RUN_COLUMNS,

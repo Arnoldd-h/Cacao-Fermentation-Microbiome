@@ -4,7 +4,9 @@ configfile: "config/config.yaml"
 rule all:
     input:
         "metadata/.inventory.ok",
-        "metadata/discovery_candidates.tsv"
+        "metadata/discovery_candidates.tsv",
+        "results/tables/pilot_dataset_selection.tsv",
+        "metadata/pilot_manifest.tsv"
 
 
 rule discover_candidates:
@@ -41,3 +43,27 @@ rule validate_inventory:
         "metadata/.inventory.ok"
     shell:
         "python scripts/metadata/validate_metadata.py --stamp {output}"
+
+
+rule select_pilot_dataset:
+    input:
+        config="config/config.yaml",
+        studies="metadata/studies.tsv",
+        runs="metadata/runs.tsv",
+        samples="metadata/samples.tsv",
+    output:
+        "results/tables/pilot_dataset_selection.tsv"
+    shell:
+        "python scripts/metadata/select_pilot_dataset.py --output {output}"
+
+
+rule build_pilot_manifest:
+    input:
+        config="config/config.yaml",
+        selection="results/tables/pilot_dataset_selection.tsv",
+        runs="metadata/runs.tsv",
+        samples="metadata/samples.tsv",
+    output:
+        "metadata/pilot_manifest.tsv"
+    shell:
+        "python scripts/metadata/build_pilot_manifest.py --selection {input.selection} --output {output}"

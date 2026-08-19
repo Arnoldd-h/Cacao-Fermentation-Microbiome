@@ -1,0 +1,12 @@
+selection_rank	selected_as_pilot	eligible_primary	study_id	bioproject	study_include	metadata_quality	publication_linked	primers_known	paired_end	raw_data_available	candidate_runs	fermentation_batches	unique_timepoints	timepoints_hours	temporal_stages	selected_fastq_bytes	selected_fastq_mib	eligibility_reason
+1	true	true	pacheco_montealegre_2020_colombia	PRJNA492720	true	high	true	true	true	true	94	4	13	0;12;24;36;48;60;72;84;96;108;120;132;144	early;mid;late	395387959	377.07	eligible
+2	false	true	mota_gutierrez_2021_mexico	PRJNA627078	true	high	true	true	true	true	60	4	5	0;24;48;72;120	early;mid;late	1384294332	1320.17	eligible
+	false	false	colombia_routes_wgs_2025	PRJNA1264670	false	medium-low	false	false	true	true	0	0	0			0	0.00	study decision is false; bacterial 16S marker is not verified; fewer than 3 timepoints; missing temporal stages: early,late,mid
+	false	false	colombia_santander_mixed_metagenome_2023	PRJNA962540	false	low	false	false	true	true	0	0	0			0	0.00	study decision is false; bacterial 16S marker is not verified; fewer than 3 timepoints; missing temporal stages: early,late,mid
+	false	false	diaz_munoz_2023_costa_rica_cr2018	PRJEB53853	pending	medium	true	false	true	true	0	0	0			0	0.00	study decision is pending; fewer than 3 timepoints; missing temporal stages: early,late,mid
+	false	false	ecuador_cacao_wgs_2025	PRJNA1257864	false	medium	false	false	false	true	0	0	0			0	0.00	study decision is false; bacterial 16S marker is not verified; fewer than 3 timepoints; missing temporal stages: early,late,mid
+	false	false	ecuador_ccn51_starter_comparison_2026	PRJEB82871	pending	medium-high	false	false	mixed	true	16	2	8	0;12;24;36;48;72;84;96	early;mid;late	398004557	379.57	study decision is pending
+	false	false	ecuador_nacional_starter_comparison_2026	PRJEB82327	pending	medium-high	false	false	mixed	true	48	2	8	0;12;24;36;48;72;84;96	early;mid;late	747766294	713.13	study decision is pending
+	false	false	gopaulchan_2025_defined_community	PRJNA1104253	pending	medium	true	false	mixed	true	16	1	3	0;48;96	early;mid;late	91120789	86.90	study decision is pending
+	false	false	hawaii_phyllosphere_ferment_2022	PRJNA865318	pending	medium-low	false	false	true	true	21	1	1	24		276702890	263.88	study decision is pending; fewer than 3 timepoints; missing temporal stages: early,late,mid
+	false	false	procad_biocau_2019_shotgun	PRJNA552479	false	medium	false	false	true	true	0	0	0			0	0.00	study decision is false; bacterial 16S marker is not verified; fewer than 3 timepoints; missing temporal stages: early,late,mid

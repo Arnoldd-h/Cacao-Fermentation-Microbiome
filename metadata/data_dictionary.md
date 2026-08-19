@@ -45,3 +45,19 @@ con agregados técnicos derivados de ENA. `preliminary_screen` es sólo triage
 automático: `manual_review_*` nunca equivale a inclusión científica. Un proyecto
 debe pasar a `config/datasets.yaml` y recibir revisión de paper, marker, tiempo y
 diseño antes de incorporarse a `studies.tsv`.
+
+## `results/tables/pilot_dataset_selection.tsv`
+
+Compara todos los estudios configurados y marca un único piloto entre los
+estudios primarios elegibles. Registra elegibilidad, ranking, disponibilidad de
+publicación y primers, layout, número de corridas candidatas, fermentaciones,
+tiempos, etapas y volumen FASTQ. Los criterios y su orden están declarados en
+`config/config.yaml`; un estudio `pending` se describe, pero no recibe ranking.
+
+## `pilot_manifest.tsv`
+
+Define la rebanada vertical previa a la descarga: dos muestras de lotes de
+fermentación distintos por etapa `early`, `mid` y `late`. Cada fila conserva los
+dos enlaces FASTQ paired-end, los MD5 declarados, bytes estimados y la razón de selección.
+El archivo es un manifest de entrada; su existencia no implica que los datos ya
+hayan sido descargados ni validados por checksum local.

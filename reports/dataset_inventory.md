@@ -56,7 +56,20 @@ El inventario detallado contiene 1.573 corridas: 154 incluidas, 101 pendientes y
 colombiano, cuatro eventos de fermentación y aproximadamente 395 MB de FASTQ
 comprimido según la metadata pública.
 
-## Piloto seleccionado
+## Selección del piloto
+
+La tabla `results/tables/pilot_dataset_selection.tsv` compara los 11 estudios
+mediante criterios declarados en `config/config.yaml`. Los dos estudios primarios
+son elegibles, pero `PRJNA492720` ocupa el primer lugar por su serie de 13 tiempos
+y menor volumen estimado (377,07 MiB), frente a cinco tiempos y 1.320,17 MiB en
+`PRJNA627078`. La decisión no depende de un accession codificado en el script.
+
+`metadata/pilot_manifest.tsv` prepara seis runs paired-end de `PRJNA492720`: dos
+por etapa temporal y de fermentaciones distintas dentro de cada etapa. Sus 12
+FASTQ suman 25.154.687 bytes estimados. No se han descargado; los MD5 del manifest
+son los declarados por ENA y todavía deben verificarse sobre archivos locales.
+
+### Diseño temporal del piloto
 
 `PRJNA492720` es la vertical slice inicial. El subconjunto publicado y
 compatible comprende Antioquia y Santander:
@@ -96,6 +109,8 @@ se calculan desde configuración; no están codificadas manualmente.
 - `metadata/runs.tsv`: 1.573 corridas con decisión individual.
 - `metadata/samples.tsv`: 255 muestras candidatas armonizadas.
 - `metadata/exclusion_log.tsv`: 1.327 exclusiones trazables.
+- `results/tables/pilot_dataset_selection.tsv`: comparación y ranking del piloto.
+- `metadata/pilot_manifest.tsv`: seis muestras preparadas para la vertical slice.
 
 Todos los artefactos se regeneran con los scripts en `scripts/metadata/` y se
 comprueban con el validador independiente y los tests unitarios.
