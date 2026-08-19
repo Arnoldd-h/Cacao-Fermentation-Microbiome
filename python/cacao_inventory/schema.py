@@ -182,6 +182,44 @@ PILOT_MANIFEST_COLUMNS = [
     "selection_reason",
 ]
 
+DOWNLOAD_VALIDATION_COLUMNS = [
+    "study_id",
+    "bioproject",
+    "sample_id",
+    "run_accession",
+    "read_file",
+    "source_url",
+    "local_path",
+    "expected_bytes",
+    "observed_bytes",
+    "expected_md5",
+    "observed_md5",
+    "status",
+    "validated_at_utc",
+    "git_commit",
+    "python_version",
+]
+
+FASTQ_VALIDATION_COLUMNS = [
+    "study_id",
+    "bioproject",
+    "sample_id",
+    "run_accession",
+    "read_file",
+    "local_path",
+    "compressed_bytes",
+    "read_count",
+    "base_count",
+    "minimum_read_length",
+    "maximum_read_length",
+    "gzip_valid",
+    "fastq_valid",
+    "status",
+    "validated_at_utc",
+    "git_commit",
+    "python_version",
+]
+
 TABLE_SCHEMAS = {
     "studies": STUDY_COLUMNS,
     "runs": RUN_COLUMNS,

@@ -67,3 +67,22 @@ rule build_pilot_manifest:
         "metadata/pilot_manifest.tsv"
     shell:
         "python scripts/metadata/build_pilot_manifest.py --selection {input.selection} --output {output}"
+
+
+rule download_pilot_fastq:
+    input:
+        config="config/config.yaml",
+        manifest="metadata/pilot_manifest.tsv",
+    output:
+        "results/qc/pilot_download_validation.tsv"
+    shell:
+        "python scripts/metadata/download_pilot_fastq.py --manifest {input.manifest} --report {output}"
+
+
+rule validate_pilot_fastq:
+    input:
+        "results/qc/pilot_download_validation.tsv"
+    output:
+        "results/qc/pilot_fastq_validation.tsv"
+    shell:
+        "python scripts/metadata/validate_pilot_fastq.py --download-report {input} --output {output}"

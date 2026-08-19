@@ -35,6 +35,10 @@
     "required_layout": "PAIRED",
     "required_fastq_files": 2
   },
+  "pilot_download": {
+    "chunk_size_bytes": 1048576,
+    "minimum_free_space_factor": 2.0
+  },
   "inventory": {
     "ncbi_esearch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
     "ncbi_esummary_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
