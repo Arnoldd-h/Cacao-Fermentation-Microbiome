@@ -1,0 +1,73 @@
+# Credenciales y configuración local
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+.Renviron
+
+# Datos de secuenciación y alineamientos
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.sra
+*.bam
+*.bai
+*.sam
+*.cram
+*.crai
+
+# Datos, bases de referencia y resultados regenerables pesados
+data/raw/
+data/interim/
+databases/
+references/databases/
+results/intermediate/
+results/tmp/
+results/cache/
+
+# Entornos y dependencias locales
+.venv/
+venv/
+env/
+.conda/
+conda-env/
+renv/library/
+renv/staging/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Caché, temporales y logs
+.cache/
+cache/
+tmp/
+temp/
+*.tmp
+*.temp
+*.log
+
+# Editores y sistema operativo
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
