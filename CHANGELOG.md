@@ -14,7 +14,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Skill local `sra-metadata-inventory` y workflow Snakemake inicial.
 - Búsqueda sistemática de BioProjects y triaje conservadora de candidatos.
 - Inventarios versionados de estudios, muestras, corridas y exclusiones.
-- Validador independiente y 17 tests unitarios.
+- Validador independiente y 30 tests unitarios.
+- Comparación reproducible del piloto y manifest equilibrado de seis runs.
+- Descarga reanudable con comprobación de espacio, bytes y MD5, seguida de
+  validación completa de gzip y estructura FASTQ.
 
 ### Changed
 
@@ -25,3 +28,5 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - `PRJNA627078` incorporado como segundo estudio primario con 60 corridas 16S
   V3-V4 longitudinales; tres proyectos prioritarios quedan pendientes y
   `PRJNA962540` se excluye por ausencia de una serie temporal 16S.
+- `PRJNA492720` confirmado objetivamente como piloto; su vertical slice de 12
+  FASTQ pasó checksum e integridad estructural sin versionar los datos crudos.

@@ -61,3 +61,17 @@ fermentación distintos por etapa `early`, `mid` y `late`. Cada fila conserva lo
 dos enlaces FASTQ paired-end, los MD5 declarados, bytes estimados y la razón de selección.
 El archivo es un manifest de entrada; su existencia no implica que los datos ya
 hayan sido descargados ni validados por checksum local.
+
+## `results/qc/pilot_download_validation.tsv`
+
+Registra una fila por FASTQ con URL y ruta local, bytes y MD5 esperados y
+observados, estado de descarga, fecha UTC, commit Git y versión de Python. Los
+estados válidos distinguen descarga nueva, reanudada o reutilizada; todos exigen
+coincidencia exacta antes de aceptar el archivo.
+
+## `results/qc/pilot_fastq_validation.tsv`
+
+Registra lectura completa de cada stream gzip y valida la estructura FASTQ. Sus
+métricas son número de reads, bases y longitudes mínima/máxima; `gzip_valid` y
+`fastq_valid` solo son verdaderos si el archivo completo pudo leerse sin errores
+de CRC, truncamiento, encabezado, separador o longitud de calidad.

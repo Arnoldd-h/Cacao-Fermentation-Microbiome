@@ -66,8 +66,10 @@ y menor volumen estimado (377,07 MiB), frente a cinco tiempos y 1.320,17 MiB en
 
 `metadata/pilot_manifest.tsv` prepara seis runs paired-end de `PRJNA492720`: dos
 por etapa temporal y de fermentaciones distintas dentro de cada etapa. Sus 12
-FASTQ suman 25.154.687 bytes estimados. No se han descargado; los MD5 del manifest
-son los declarados por ENA y todavía deben verificarse sobre archivos locales.
+FASTQ suman 25.154.687 bytes. Los 12 archivos fueron descargados localmente y
+coinciden con bytes y MD5 de ENA; también pasaron lectura gzip completa y
+validación estructural FASTQ. En conjunto contienen 353.596 reads y 78.651.325
+bases, con longitudes entre 214 y 223 nt. Los FASTQ permanecen fuera de Git.
 
 ### Diseño temporal del piloto
 
@@ -111,6 +113,8 @@ se calculan desde configuración; no están codificadas manualmente.
 - `metadata/exclusion_log.tsv`: 1.327 exclusiones trazables.
 - `results/tables/pilot_dataset_selection.tsv`: comparación y ranking del piloto.
 - `metadata/pilot_manifest.tsv`: seis muestras preparadas para la vertical slice.
+- `results/qc/pilot_download_validation.tsv`: bytes y MD5 de 12 FASTQ validados.
+- `results/qc/pilot_fastq_validation.tsv`: integridad gzip/FASTQ y conteos básicos.
 
 Todos los artefactos se regeneran con los scripts en `scripts/metadata/` y se
 comprueban con el validador independiente y los tests unitarios.

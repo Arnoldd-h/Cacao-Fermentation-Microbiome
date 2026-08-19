@@ -37,7 +37,8 @@ BioProject/SRA/ENA metadata
         -> heterogeneidad y sensibilidad
 ```
 
-El primer hito se concentra en metadata y no descarga FASTQ de forma masiva.
+El primer hito se concentra en metadata y no descarga FASTQ de forma masiva. La
+vertical slice local contiene únicamente seis runs del piloto.
 
 ## Inventario actual
 
@@ -60,6 +61,8 @@ python scripts/metadata/build_inventory.py
 python scripts/metadata/validate_metadata.py
 python scripts/metadata/select_pilot_dataset.py
 python scripts/metadata/build_pilot_manifest.py
+python scripts/metadata/download_pilot_fastq.py
+python scripts/metadata/validate_pilot_fastq.py
 python -m unittest discover -s tests -v
 ```
 
