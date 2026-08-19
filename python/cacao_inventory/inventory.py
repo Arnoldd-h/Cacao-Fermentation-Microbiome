@@ -41,7 +41,10 @@ def _parse_time(
     context = dict(base_context)
     context.update({key: value for key, value in match.groupdict().items() if value is not None})
     try:
-        if parser.get("unit") == "days":
+        zero_group = str(parser.get("zero_group", ""))
+        if zero_group and context.get(zero_group):
+            hours = 0.0
+        elif parser.get("unit") == "days":
             hours = float(context["days"]) * 24.0
         else:
             hours = float(context["hours"])
@@ -141,6 +144,9 @@ def build_samples(
         if any(group_values):
             fermentation_batch += "::" + "::".join(group_values)
 
+        sample_variety = _mapped_value(candidate, "variety", context) or str(
+            candidate.get("cacao_variety", "")
+        )
         sample = _blank(SAMPLE_COLUMNS)
         sample.update(
             {
@@ -158,7 +164,7 @@ def build_samples(
                 "relative_time": _format_number(relative_time),
                 "fermentation_stage": assign_temporal_stage(relative_time, stages),
                 "season": season,
-                "cacao_variety": str(candidate.get("cacao_variety", "")),
+                "cacao_variety": sample_variety,
                 "replicate": context.get("replicate", ""),
                 "sampling_stratum": context.get("sampling_stratum", ""),
                 "sequencing_platform": row.get("instrument_platform", ""),

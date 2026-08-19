@@ -87,6 +87,51 @@ class InventoryTransformTests(unittest.TestCase):
         self.assertEqual(samples[0]["replicate"], "3")
         self.assertEqual(samples[0]["analysis_include"], "pending")
 
+    def test_raw_label_maps_to_zero_and_preserves_sample_variety(self) -> None:
+        candidate = {
+            "bioproject": "PRJNA999999",
+            "study_id": "fixture_mexico",
+            "screening_status": "include",
+            "country": "Mexico",
+            "region": "Tabasco",
+            "cacao_variety": "multiple",
+            "region_16s": "V3-V4",
+            "season": "",
+            "candidate_rules": [
+                {"field": "sample_alias", "pattern": "^16S_"},
+                {
+                    "field": "sample_title",
+                    "pattern": "(?P<variety>Criollo|Forastero).*Batch_(?P<batch>\\d+).*replicate_(?P<replicate>\\d+)",
+                },
+            ],
+            "time_parser": {
+                "field": "sample_title",
+                "pattern": "(?:(?P<time_zero>raw)|after (?P<hours>\\d+)h of fermentation)",
+                "unit": "hours",
+                "zero_group": "time_zero",
+            },
+            "duration_mode": "fixed",
+            "duration_hours": 120,
+            "duration_group_fields": ["variety", "batch"],
+            "value_maps": {},
+        }
+        rows = [
+            run_row(
+                "SRR4000001",
+                "16S_fixture_1",
+                sample_title=(
+                    "bacterial 16S under traditional conditions of raw Criollo cocoa beans "
+                    "from Mexico Batch_1_ replicate_2"
+                ),
+            )
+        ]
+        samples, _ = build_samples(candidate, rows, self.config["temporal_stages"])
+        self.assertEqual(samples[0]["fermentation_hours"], "0")
+        self.assertEqual(samples[0]["relative_time"], "0")
+        self.assertEqual(samples[0]["fermentation_stage"], "early")
+        self.assertEqual(samples[0]["cacao_variety"], "Criollo")
+        self.assertEqual(samples[0]["replicate"], "2")
+
 
 if __name__ == "__main__":
     unittest.main()
