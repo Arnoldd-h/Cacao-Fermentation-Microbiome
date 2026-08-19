@@ -9,8 +9,16 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Política persistente de control de versiones y trazabilidad científica.
 - Estado inicial del proyecto y registro de decisiones metodológicas.
 - Reglas de exclusión para datos ómicos pesados, credenciales y artefactos locales.
+- Protocolo científico, criterios de inclusión y registro de decisiones.
+- Arquitectura reproducible para metadata NCBI/SRA/ENA con configuración externa.
+- Skill local `sra-metadata-inventory` y workflow Snakemake inicial.
+- Búsqueda sistemática de BioProjects y triaje conservadora de candidatos.
+- Inventarios versionados de estudios, muestras, corridas y exclusiones.
+- Validador independiente y 14 tests unitarios.
 
 ### Changed
 
 - Nombre y descripción inicial del proyecto actualizados a
   **Cacao Fermentation Microbiome**.
+- `PRJNA492720` adoptado como piloto con 94 corridas 16S V4 compatibles con la
+  publicación; dos estudios permanecen pendientes y tres WGS se excluyen.

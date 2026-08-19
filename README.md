@@ -39,6 +39,31 @@ BioProject/SRA/ENA metadata
 
 El primer hito se concentra en metadata y no descarga FASTQ de forma masiva.
 
+## Inventario actual
+
+La consulta sistemática documentada recupera 34 BioProjects. Seis están
+configurados y cribados en detalle; el inventario contiene 861 corridas, con 94
+incluidas para el piloto `PRJNA492720`, 37 pendientes y 730 excluidas. Otros 18
+proyectos permanecen en revisión manual, cinco de ellos con prioridad alta.
+
+El informe y los vacíos de metadata están en
+`reports/dataset_inventory.md`.
+
+## Ejecución
+
+Con Python 3.11 o posterior:
+
+```powershell
+python scripts/metadata/discover_candidates.py
+python scripts/metadata/build_inventory.py
+python scripts/metadata/validate_metadata.py
+python -m unittest discover -s tests -v
+```
+
+La búsqueda y el inventario consultan únicamente metadata pública de NCBI y
+ENA. Los resultados tabulares se escriben de forma atómica; una falla de red o
+un cambio de esquema no debe sobrescribir un inventario válido.
+
 ## Reproducibilidad
 
 - Configuración externa en `config/`.

@@ -8,6 +8,8 @@
 | 2026-08-19 | Usar PRJNA492720 como candidato piloto tras verificar su subconjunto publicado de 94 runs 16S. | Tiene diseño longitudinal espontáneo, V4, paired-end y metadata temporal recuperable. | Empezar con todos los proyectos o con WGS. | Permite una vertical slice contenida antes de descargas masivas. | Adoptada |
 | 2026-08-19 | Mantener PRJNA865318 y PRJNA1104253 como pendientes. | El primero tiene tiempo incompleto/ambiguo; el segundo mezcla diseños y su subconjunto 16S verificable es controlado in vitro. | Incluirlos automáticamente por contener `AMPLICON`. | Evita ampliar el análisis primario sin evidencia suficiente. | Adoptada |
 | 2026-08-19 | Excluir PRJNA552479, PRJNA1257864 y PRJNA1264670 de Fase I. | ENA reporta WGS, no amplicones bacterianos 16S. | Procesarlos como si fueran 16S o ampliar ahora a shotgun. | Mantiene el alcance y deja trazabilidad para fases futuras. | Adoptada |
+| 2026-08-19 | Usar una consulta NCBI BioProject documentada y ENA para descubrir candidatos. | Una lista manual de accessions no demuestra cobertura sistemática ni es fácilmente actualizable. | Mantener solo seis estudios semilla. | Produce un universo reproducible de 34 proyectos y una cola auditable de revisión. | Adoptada |
+| 2026-08-19 | Impedir que la triaje automática promueva estudios a inclusión. | Las señales textuales no verifican primers, temporalidad, espontaneidad ni coherencia con la publicación. | Incluir automáticamente todo proyecto `AMPLICON`. | Reduce falsos positivos; conserva 18 candidatos como revisión manual. | Adoptada |
 
 ## Pendiente
 
