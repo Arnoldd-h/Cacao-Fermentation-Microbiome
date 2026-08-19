@@ -1,7 +1,73 @@
 # Cacao Fermentation Microbiome
 
-Repositorio para desarrollar de forma reproducible el inventario y el análisis
-del microbioma asociado a la fermentación de cacao.
+Proyecto reproducible para evaluar si existe una sucesión bacteriana conservada
+durante la fermentación espontánea del cacao entre estudios, regiones y
+condiciones tecnológicas diferentes.
 
-El estado actual, las decisiones metodológicas y los cambios relevantes se
-registran en `PROJECT_STATE.md`, `analysis_decisions.md` y `CHANGELOG.md`.
+## Pregunta científica
+
+¿Existe una trayectoria de sucesión bacteriana conservada durante la
+fermentación espontánea del cacao después de considerar la heterogeneidad entre
+estudios?
+
+Las hipótesis iniciales proponen una sucesión parcialmente conservada, un
+`core temporal microbiome`, un efecto reproducible del tiempo de fermentación y
+heterogeneidad geográfica o tecnológica adicional. Los análisis se diseñarán
+para intentar falsar estas hipótesis, no para confirmarlas por construcción.
+
+## Alcance
+
+La primera fase incluye exclusivamente amplicones bacterianos del gen 16S rRNA.
+Los estudios se procesarán de forma independiente a nivel ASV y se integrarán
+posteriormente mediante taxonomía armonizada y meta-análisis de efectos dentro
+de estudio. No se combinarán directamente ASVs generadas con primers o regiones
+incompatibles.
+
+## Flujo previsto
+
+```text
+BioProject/SRA/ENA metadata
+        -> inventario y selección auditable
+        -> FASTQ por estudio
+        -> FastQC / MultiQC / Cutadapt
+        -> DADA2 independiente por estudio
+        -> taxonomía y armonización
+        -> diversidad y modelos temporales dentro de estudio
+        -> meta-análisis de efectos aleatorios
+        -> heterogeneidad y sensibilidad
+```
+
+El primer hito se concentra en metadata y no descarga FASTQ de forma masiva.
+
+## Reproducibilidad
+
+- Configuración externa en `config/`.
+- Inventarios tabulares en `metadata/` con fuentes y decisiones explícitas.
+- Workflow principal en Snakemake.
+- Tests pequeños sin descargas de FASTQ.
+- Datos crudos reconstruibles desde accessions, manifests y checksums.
+- Decisiones científicas registradas en `protocol/analysis_decisions.md`.
+
+## Estructura
+
+```text
+config/       parámetros y candidatos
+metadata/     estudios, muestras, runs y exclusiones
+protocol/     protocolo, criterios y decisiones científicas
+python/       librería testeable del inventario
+scripts/      entradas ejecutables del workflow
+workflow/     reglas de Snakemake
+tests/        pruebas unitarias y de humo
+data/         datos raw/interim/processed no versionados cuando son pesados
+results/      tablas, modelos y figuras regenerables
+manuscript/   notas y texto científico en desarrollo
+environment/  dependencias reproducibles
+```
+
+## Estado
+
+El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
+`CHANGELOG.md`. No existen todavía resultados biológicos ni un meta-análisis.
+
+La selección de licencia y los metadatos completos de citación están pendientes
+para no atribuir autores ni términos legales sin confirmación.

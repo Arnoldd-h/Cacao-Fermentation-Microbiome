@@ -1,0 +1,4 @@
+interface:
+  display_name: "SRA Metadata Inventory"
+  short_description: "Inventory and validate public SRA and ENA metadata"
+  default_prompt: "Use $sra-metadata-inventory to rebuild and validate the cacao BioProject inventory."

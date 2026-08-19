@@ -26,6 +26,8 @@ references/databases/
 results/intermediate/
 results/tmp/
 results/cache/
+metadata/cache/
+metadata/.inventory.ok
 
 # Entornos y dependencias locales
 .venv/
