@@ -17,6 +17,7 @@
     "study_prevalence": [0.5, 0.75, 1.0]
   },
   "inventory": {
+    "ncbi_esearch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
     "ncbi_esummary_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
     "ena_filereport_url": "https://www.ebi.ac.uk/ena/portal/api/filereport",
     "http_timeout_seconds": 60,
