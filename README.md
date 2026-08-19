@@ -41,10 +41,11 @@ El primer hito se concentra en metadata y no descarga FASTQ de forma masiva.
 
 ## Inventario actual
 
-La consulta sistemática documentada recupera 34 BioProjects. Seis están
-configurados y cribados en detalle; el inventario contiene 861 corridas, con 94
-incluidas para el piloto `PRJNA492720`, 37 pendientes y 730 excluidas. Otros 18
-proyectos permanecen en revisión manual, cinco de ellos con prioridad alta.
+La consulta sistemática documentada recupera 34 BioProjects. Once están
+configurados y cribados en detalle; el inventario contiene 1.573 corridas, con
+154 incluidas, 101 pendientes y 1.318 excluidas. `PRJNA492720` continúa como
+candidato de piloto y `PRJNA627078` es el segundo estudio primario. Otros 13
+proyectos permanecen en revisión manual.
 
 El informe y los vacíos de metadata están en
 `reports/dataset_inventory.md`.

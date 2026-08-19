@@ -24,16 +24,16 @@ Se recuperaron 34 BioProjects:
 
 | Clasificación preliminar | Proyectos | Interpretación |
 |---|---:|---|
-| Configurado y revisado | 6 | Decisión detallada en `config/datasets.yaml` |
+| Configurado y revisado | 11 | Decisión detallada en `config/datasets.yaml` |
 | Exclusión Fase I: WGS | 7 | Solo shotgun/WGS en las corridas públicas |
 | Exclusión Fase I: otra tecnología/objeto | 3 | RNA-seq, transcriptómica u objeto no pertinente |
-| Revisión prioritaria | 5 | Amplicón + señal bacteriana/16S + señal temporal |
 | Revisión 16S | 6 | Señal 16S, temporalidad aún no verificada |
 | Revisión de marcador | 7 | Amplicón, pero marcador bacteriano no verificado |
 
-La cola prioritaria está formada por `PRJEB53853`, `PRJEB82327`,
-`PRJEB82871`, `PRJNA627078` y `PRJNA962540`. Esta clasificación es una ayuda
-para el cribado, no un resultado de elegibilidad.
+Los cinco candidatos que inicialmente formaban la cola prioritaria ya fueron
+configurados. La cola sistemática restante contiene 13 proyectos: seis con
+señal 16S y siete que requieren comprobar el marcador. Esta clasificación es
+una ayuda para el cribado, no un resultado de elegibilidad.
 
 ## Estudios configurados
 
@@ -45,9 +45,14 @@ para el cribado, no un resultado de elegibilidad.
 | PRJNA552479 | excluir | 14 | 0 | WGS |
 | PRJNA1257864 | excluir | 10 | 0 | WGS |
 | PRJNA1264670 | excluir | 9 | 0 | WGS |
+| PRJNA627078 | incluir | 132 | 60 | Serie espontánea V3-V4; se excluyen 26S y controles de cosecha limpia |
+| PRJEB53853 | pendiente | 60 | 0 | Falta mapear inequívocamente marcador y tratamiento por corrida |
+| PRJEB82327 | pendiente | 369 | 48 | Controles espontáneos full-length 16S identificados; paper/primers pendientes |
+| PRJEB82871 | pendiente | 140 | 16 | Controles espontáneos full-length 16S identificados; paper/primers pendientes |
+| PRJNA962540 | excluir | 11 | 0 | Amplicones sin tiempo y solo dos tiempos WGS |
 
-El inventario detallado contiene 861 corridas: 94 incluidas, 37 pendientes y
-730 excluidas. Las 94 corridas del piloto representan 94 muestras del estudio
+El inventario detallado contiene 1.573 corridas: 154 incluidas, 101 pendientes y
+1.318 excluidas. Las 94 corridas del piloto representan 94 muestras del estudio
 colombiano, cuatro eventos de fermentación y aproximadamente 395 MB de FASTQ
 comprimido según la metadata pública.
 
@@ -78,6 +83,8 @@ se calculan desde configuración; no están codificadas manualmente.
 - `PRJNA492720` contiene más corridas que el subconjunto 16S descrito en el
   artículo; el inventario conserva las exclusiones para evitar selección
   silenciosa.
+- En `PRJNA627078`, las tres extracciones por caja y tiempo no deben tratarse
+  como réplicas biológicas independientes; la caja es la unidad longitudinal.
 - La consulta es reproducible, pero no garantiza sensibilidad bibliográfica
   absoluta. La próxima iteración debe complementarla con búsqueda por artículos
   y referencias cruzadas de accessions.
@@ -85,10 +92,10 @@ se calculan desde configuración; no están codificadas manualmente.
 ## Artefactos reproducibles
 
 - `metadata/discovery_candidates.tsv`: universo y triaje de 34 BioProjects.
-- `metadata/studies.tsv`: decisiones y atributos de los seis estudios revisados.
-- `metadata/runs.tsv`: 861 corridas con decisión individual.
-- `metadata/samples.tsv`: 131 muestras candidatas armonizadas.
-- `metadata/exclusion_log.tsv`: 735 exclusiones trazables.
+- `metadata/studies.tsv`: decisiones y atributos de los 11 estudios revisados.
+- `metadata/runs.tsv`: 1.573 corridas con decisión individual.
+- `metadata/samples.tsv`: 255 muestras candidatas armonizadas.
+- `metadata/exclusion_log.tsv`: 1.327 exclusiones trazables.
 
 Todos los artefactos se regeneran con los scripts en `scripts/metadata/` y se
 comprueban con el validador independiente y los tests unitarios.
