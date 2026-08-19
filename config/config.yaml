@@ -23,5 +23,12 @@
     "http_timeout_seconds": 60,
     "http_retries": 3,
     "user_agent": "cacao-microbiome-inventory/0.1 (public metadata only)"
-  }
+  },
+  "discovery_queries": [
+    {
+      "search_id": "ncbi_cacao_fermentation_sra_v1",
+      "term": "(cacao[All Fields] OR cocoa[All Fields] OR \"Theobroma cacao\"[Organism]) AND ferment*[All Fields] AND \"bioproject sra\"[Filter]",
+      "retmax": 200
+    }
+  ]
 }

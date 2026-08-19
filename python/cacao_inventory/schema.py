@@ -115,6 +115,30 @@ EXCLUSION_COLUMNS = [
     "source",
 ]
 
+DISCOVERY_COLUMNS = [
+    "search_id",
+    "query",
+    "bioproject",
+    "project_title",
+    "project_description",
+    "registration_date",
+    "project_data_type",
+    "total_runs",
+    "library_strategies",
+    "library_selections",
+    "library_layouts",
+    "sequencing_instruments",
+    "countries",
+    "estimated_fastq_bytes",
+    "bacterial_16s_signal",
+    "temporal_signal",
+    "preliminary_screen",
+    "screening_reason",
+    "already_configured",
+    "source",
+    "retrieved_at_utc",
+]
+
 TABLE_SCHEMAS = {
     "studies": STUDY_COLUMNS,
     "runs": RUN_COLUMNS,

@@ -76,16 +76,14 @@ class MetadataClient:
                     time.sleep(0.5 * attempt)
         raise MetadataSourceError(f"Metadata request failed after {self.retries} attempts: {url}") from last_error
 
-    def fetch_bioproject_summaries(self, accessions: list[str]) -> dict[str, dict[str, Any]]:
-        """Return NCBI BioProject summaries keyed by accession."""
-
+    def _search_uids(self, term: str, retmax: int) -> list[str]:
         search_text = self._get_text(
             self.ncbi_search_url,
             {
                 "db": "bioproject",
-                "term": " OR ".join(accessions),
+                "term": term,
                 "retmode": "json",
-                "retmax": str(len(accessions)),
+                "retmax": str(retmax),
             },
         )
         try:
@@ -95,7 +93,9 @@ class MetadataClient:
             raise MetadataSourceError("NCBI BioProject response is not valid ESearch JSON") from exc
         if not uids:
             raise MetadataSourceError("NCBI ESearch returned no BioProject UIDs")
+        return [str(uid) for uid in uids]
 
+    def _fetch_summaries_by_uid(self, uids: list[str]) -> dict[str, dict[str, Any]]:
         text = self._get_text(
             self.ncbi_url,
             {"db": "bioproject", "id": ",".join(str(uid) for uid in uids), "retmode": "json"},
@@ -112,9 +112,27 @@ class MetadataClient:
             accession = str(record.get("project_acc", ""))
             if accession:
                 summaries[accession] = record
+        return summaries
+
+    def fetch_bioproject_summaries(self, accessions: list[str]) -> dict[str, dict[str, Any]]:
+        """Return NCBI BioProject summaries keyed by accession."""
+
+        uids = self._search_uids(" OR ".join(accessions), len(accessions))
+        summaries = self._fetch_summaries_by_uid(uids)
         missing = sorted(set(accessions) - set(summaries))
         if missing:
             raise MetadataSourceError(f"NCBI returned no valid BioProject summary for: {', '.join(missing)}")
+        return summaries
+
+    def search_bioproject_summaries(self, term: str, retmax: int = 200) -> dict[str, dict[str, Any]]:
+        """Search NCBI BioProject and return all summaries found for a documented term."""
+
+        uids = self._search_uids(term, retmax)
+        summaries = self._fetch_summaries_by_uid(uids)
+        if len(summaries) != len(uids):
+            raise MetadataSourceError(
+                f"NCBI returned {len(summaries)} summaries for {len(uids)} discovered UIDs"
+            )
         return summaries
 
     def fetch_ena_runs(self, accession: str) -> list[dict[str, str]]:

@@ -37,3 +37,11 @@ son: early `<= 0.33`, mid `> 0.33` y `<= 0.66`, late `> 0.66` y `<= 1.0`.
 Registra decisiones a nivel estudio o run con: `entity_type`, `entity_id`,
 `study_id`, `bioproject`, `reason`, `metric`, `threshold`, `decision` y `source`.
 `pending` representa revisión incompleta, no una exclusión definitiva.
+
+## `discovery_candidates.tsv`
+
+Registra el resultado completo de la búsqueda sistemática configurada en NCBI,
+con agregados técnicos derivados de ENA. `preliminary_screen` es sólo triage
+automático: `manual_review_*` nunca equivale a inclusión científica. Un proyecto
+debe pasar a `config/datasets.yaml` y recibir revisión de paper, marker, tiempo y
+diseño antes de incorporarse a `studies.tsv`.

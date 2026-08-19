@@ -28,6 +28,7 @@ ni inferir campos ausentes.
 5. Ejecutar desde la raíz:
 
    ```bash
+   python scripts/metadata/discover_candidates.py
    python scripts/metadata/build_inventory.py
    python scripts/metadata/validate_metadata.py
    python -m unittest discover -s tests -v
@@ -43,6 +44,8 @@ ni inferir campos ausentes.
 - `metadata/runs.tsv`: todos los runs recuperados, incluso excluidos.
 - `metadata/samples.tsv`: subconjuntos 16S incluidos o pendientes.
 - `metadata/exclusion_log.tsv`: decisiones explícitas a nivel estudio/run.
+- `metadata/discovery_candidates.tsv`: universo reproducible de búsqueda y triage;
+  sus prioridades no son inclusiones automáticas.
 
 ## Verificaciones obligatorias
 

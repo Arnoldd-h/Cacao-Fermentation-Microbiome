@@ -3,7 +3,18 @@ configfile: "config/config.yaml"
 
 rule all:
     input:
-        "metadata/.inventory.ok"
+        "metadata/.inventory.ok",
+        "metadata/discovery_candidates.tsv"
+
+
+rule discover_candidates:
+    input:
+        project_config="config/config.yaml",
+        datasets="config/datasets.yaml",
+    output:
+        "metadata/discovery_candidates.tsv"
+    shell:
+        "python scripts/metadata/discover_candidates.py"
 
 
 rule build_inventory:
