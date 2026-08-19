@@ -202,11 +202,14 @@ def _non_candidate_reason(row: dict[str, str], candidate: dict[str, Any]) -> tup
     ).lower()
     if row.get("library_strategy", "").upper() == "WGS":
         return "whole_metagenome_shotgun", "WGS is outside Phase I bacterial 16S amplicon scope"
-    if "mock" in text or "negative control" in text:
+    biological_control = bool(re.search(r"fermentation\s+\d+.*negative control", text))
+    if "mock" in text or ("negative control" in text and not biological_control):
         return "control", "Mock or negative-control run is not a biological fermentation sample"
     if "phyllosphere" in text:
         return "non_fermentation_matrix", "Phyllosphere run is outside the fermentation-mass population"
-    if "its" in text or "fung" in text or "yeast" in text:
+    non_bacterial_signal = any(value in text for value in ("its", "fung", "yeast"))
+    bacterial_signal = "16s" in text or "bacter" in text
+    if non_bacterial_signal and not bacterial_signal:
         return "non_bacterial_marker", "ITS/fungal run is outside bacterial 16S scope"
     if candidate.get("screening_status") == "exclude":
         return "study_excluded", str(candidate.get("screening_reason", "Study excluded"))

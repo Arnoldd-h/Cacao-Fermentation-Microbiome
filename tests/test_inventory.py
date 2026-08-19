@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "python"))
 
 from cacao_inventory.config import load_project_configuration  # noqa: E402
-from cacao_inventory.inventory import build_samples  # noqa: E402
+from cacao_inventory.inventory import build_runs, build_samples  # noqa: E402
 
 
 def run_row(accession: str, alias: str, **overrides: str) -> dict[str, str]:
@@ -131,6 +131,37 @@ class InventoryTransformTests(unittest.TestCase):
         self.assertEqual(samples[0]["fermentation_stage"], "early")
         self.assertEqual(samples[0]["cacao_variety"], "Criollo")
         self.assertEqual(samples[0]["replicate"], "2")
+
+    def test_spontaneous_comparator_is_not_labeled_as_technical_control(self) -> None:
+        candidate = {
+            "bioproject": "PRJEB99999",
+            "study_id": "fixture_ecuador",
+            "screening_status": "pending",
+            "screening_reason": "Primer verification pending",
+        }
+        row = run_row(
+            "ERR4000001",
+            "F1T0",
+            sample_description="Fermentation 1, 0 h, negative control",
+        )
+        runs, exclusions = build_runs(candidate, [row], set())
+        self.assertEqual(runs[0]["marker_classification"], "not_verified_16s_subset")
+        self.assertEqual(exclusions[0]["metric"], "not_verified_16s_subset")
+
+    def test_mixed_16s_its_description_stays_unresolved(self) -> None:
+        candidate = {
+            "bioproject": "PRJEB99998",
+            "study_id": "fixture_mixed_marker",
+            "screening_status": "pending",
+            "screening_reason": "Run-level marker mapping pending",
+        }
+        row = run_row(
+            "ERR4000002",
+            "mixed_marker",
+            sample_description="V4 region of bacterial 16S rRNA gene and fungal ITS1 region",
+        )
+        runs, _ = build_runs(candidate, [row], set())
+        self.assertEqual(runs[0]["marker_classification"], "not_verified_16s_subset")
 
 
 if __name__ == "__main__":
