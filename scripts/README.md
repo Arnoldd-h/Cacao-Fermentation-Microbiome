@@ -9,3 +9,6 @@ cuando exista implementación real, evitando directorios vacíos y placeholders.
 `metadata/download_pilot_fastq.py` es reanudable mediante archivos `.part`, no
 sobrescribe un FASTQ final que falle validación y exige coincidencia de bytes y
 MD5 antes de promover una descarga a archivo final.
+
+`environment/verify_environment.py` comprueba las herramientas de consola,
+carga los paquetes R científicos y registra sus versiones resueltas.

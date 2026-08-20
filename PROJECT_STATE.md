@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Última actualización: 2026-08-19
+Última actualización: 2026-08-20
 
 ## Fase actual
 
@@ -32,7 +32,12 @@ vertical slice técnica del piloto.
   con 25.154.687 bytes estimados.
 - Doce FASTQ descargados localmente: 12/12 bytes, MD5, gzip y estructura FASTQ
   válidos; 353.596 reads y 78.651.325 bases en total.
-- Validador independiente y 30 tests unitarios aprobados.
+- Validador independiente y 32 tests unitarios aprobados.
+- Micromamba 2.9.0 instalado para Ubuntu/WSL2 y entorno `cacao-microbiome`
+  creado con canales Bioconda/conda-forge de prioridad estricta.
+- FastQC 0.12.1, MultiQC 1.25.1, Cutadapt 5.0, Snakemake 8.30.0, R 4.4.3 y
+  DADA2 1.34.0 instalados y verificados mediante pruebas reales de ejecución y
+  carga; el reporte registra 18 componentes y el lock exacto de 463 líneas.
 
 ## Datasets incluidos
 
@@ -53,13 +58,11 @@ vertical slice técnica del piloto.
   consulta sistemática que todavía no están configurados.
 - Verificación de primers, región 16S, diseño temporal y condición espontánea
   donde la metadata pública es insuficiente.
-- Preparación del entorno bioinformático para FastQC, MultiQC y Cutadapt.
+- Preparación del primer QC FastQC/MultiQC sobre la vertical slice descargada.
 
 ## Bloqueado
 
-- El QC con FastQC/MultiQC y el procesamiento posterior requieren instalar el
-  entorno declarado; no hay Conda, micromamba, R ni las herramientas del pipeline
-  disponibles en esta máquina.
+- No hay bloqueos técnicos para iniciar el QC del piloto.
 
 ## Decisiones importantes
 
@@ -75,19 +78,18 @@ vertical slice técnica del piloto.
   seleccionan por reglas explícitas y auditables.
 - La vertical slice limita la descarga a dos muestras por etapa y valida cada
   archivo antes de cualquier QC o recorte.
+- El stack Bioconda se ejecuta en Linux mediante WSL2; las versiones con ABI
+  sensible se fijan y se someten a pruebas de carga antes de aceptarse.
 
 ## Próximas tareas
 
 1. Resolver los 13 candidatos de revisión manual y congelar el inventario de Fase I.
-2. Instalar y verificar el entorno bioinformático reproducible.
-3. Ejecutar FastQC/MultiQC y detección de primers sobre los seis runs.
-4. Definir Cutadapt desde primers verificados y perfiles de calidad reales.
-5. Probar DADA2 por estudio y derivar parámetros antes de escalar a 94 runs.
+2. Ejecutar FastQC/MultiQC y detección de primers sobre los seis runs.
+3. Definir Cutadapt desde primers verificados y perfiles de calidad reales.
+4. Probar DADA2 por estudio y derivar parámetros antes de escalar a 94 runs.
 
 ## Limitaciones conocidas
 
-- No se instaló el entorno bioinformático completo: están ausentes R, Snakemake,
-  FastQC, MultiQC y Cutadapt.
 - Solo se descargó la vertical slice de 12 FASTQ; no se descargó el estudio completo.
 - No se ejecutaron FastQC, recorte, DADA2, taxonomía ni resultados biológicos.
 - La revisión paper-level de 13 candidatos todavía no está cerrada.
@@ -95,5 +97,5 @@ vertical slice técnica del piloto.
 
 ## Último commit relevante
 
-`c1ecf57 feat: add resumable pilot FASTQ validation`, usado para generar los
-reportes QC de descarga e integridad.
+`1a39efc data: record validated pilot FASTQ slice`, usado para registrar los
+reportes QC de descarga e integridad previos a este hito de entorno.

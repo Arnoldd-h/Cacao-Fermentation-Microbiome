@@ -53,7 +53,11 @@ El informe y los vacíos de metadata están en
 
 ## Ejecución
 
-Con Python 3.11 o posterior:
+El stack bioinformático se ejecuta en Ubuntu/WSL2 mediante el entorno
+`cacao-microbiome`. Las instrucciones de creación, actualización y verificación
+están en [`environment/README.md`](environment/README.md).
+
+Con Python 3.11 o posterior para las tareas de inventario:
 
 ```powershell
 python scripts/metadata/discover_candidates.py

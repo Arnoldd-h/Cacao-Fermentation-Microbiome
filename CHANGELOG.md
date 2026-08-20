@@ -18,6 +18,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Comparación reproducible del piloto y manifest equilibrado de seis runs.
 - Descarga reanudable con comprobación de espacio, bytes y MD5, seguida de
   validación completa de gzip y estructura FASTQ.
+- Entorno bioinformático `cacao-microbiome` en Ubuntu/WSL2 y verificador que
+  ejecuta las herramientas de consola, carga los paquetes R y registra 18
+  versiones resueltas en una tabla trazable y un lock explícito `linux-64`.
 
 ### Changed
 
@@ -30,3 +33,5 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   `PRJNA962540` se excluye por ausencia de una serie temporal 16S.
 - `PRJNA492720` confirmado objetivamente como piloto; su vertical slice de 12
   FASTQ pasó checksum e integridad estructural sin versionar los datos crudos.
+- Canales del entorno restringidos a conda-forge/Bioconda con prioridad estricta
+  y restricciones de ABI explícitas para DADA2, ANCOMBC, Matrix y lme4.
