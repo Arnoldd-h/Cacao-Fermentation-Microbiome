@@ -12,3 +12,6 @@ MD5 antes de promover una descarga a archivo final.
 
 `environment/verify_environment.py` comprueba las herramientas de consola,
 carga los paquetes R científicos y registra sus versiones resueltas.
+
+`qc/summarize_fastqc.py` cruza el reporte tabular de MultiQC con la validación
+integral de los FASTQ y falla ante muestras, nombres o conteos inconsistentes.

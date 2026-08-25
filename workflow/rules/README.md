@@ -1,5 +1,6 @@
 # Reglas modulares
 
-Las reglas de descarga, QC, DADA2, taxonomía y análisis se moverán aquí cuando
-se implemente el estudio piloto. El inventario permanece en `workflow/Snakefile`
-durante el primer hito para mantener visible la vertical slice mínima.
+`pilot_qc.smk` implementa FastQC y MultiQC crudos para cada FASTQ declarado en
+el manifest piloto, más el resumen machine-readable validado. El inventario
+permanece en `workflow/Snakefile`; las etapas posteriores se incorporarán como
+reglas pequeñas por estudio.

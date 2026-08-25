@@ -220,6 +220,34 @@ FASTQ_VALIDATION_COLUMNS = [
     "python_version",
 ]
 
+RAW_READ_QUALITY_COLUMNS = [
+    "study_id",
+    "bioproject",
+    "sample_id",
+    "run_accession",
+    "read_direction",
+    "read_file",
+    "total_sequences",
+    "total_bases",
+    "minimum_read_length",
+    "maximum_read_length",
+    "sequence_length",
+    "average_sequence_length",
+    "median_sequence_length",
+    "gc_percent",
+    "poor_quality_sequences",
+    "basic_statistics_status",
+    "per_base_quality_status",
+    "per_sequence_quality_status",
+    "per_base_content_status",
+    "per_sequence_gc_status",
+    "per_base_n_content_status",
+    "sequence_length_distribution_status",
+    "sequence_duplication_status",
+    "overrepresented_sequences_status",
+    "adapter_content_status",
+]
+
 TABLE_SCHEMAS = {
     "studies": STUDY_COLUMNS,
     "runs": RUN_COLUMNS,

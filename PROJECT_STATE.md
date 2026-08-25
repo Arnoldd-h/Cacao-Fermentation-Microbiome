@@ -32,12 +32,15 @@ vertical slice técnica del piloto.
   con 25.154.687 bytes estimados.
 - Doce FASTQ descargados localmente: 12/12 bytes, MD5, gzip y estructura FASTQ
   válidos; 353.596 reads y 78.651.325 bases en total.
-- Validador independiente y 32 tests unitarios aprobados.
+- Validador independiente y 36 tests unitarios aprobados.
 - Micromamba 2.9.0 instalado para Ubuntu/WSL2 y entorno `cacao-microbiome`
   creado con canales Bioconda/conda-forge de prioridad estricta.
 - FastQC 0.12.1, MultiQC 1.25.1, Cutadapt 5.0, Snakemake 8.30.0, R 4.4.3 y
   DADA2 1.34.0 instalados y verificados mediante pruebas reales de ejecución y
   carga; el reporte registra 18 componentes y el lock exacto de 463 líneas.
+- FastQC y MultiQC crudos ejecutados por Snakemake sobre los 12 FASTQ del piloto;
+  todos pasan calidad por base y adaptadores, con longitudes de 214-223 nt, GC
+  de 53-56 % y conteos pareados concordantes.
 
 ## Datasets incluidos
 
@@ -58,7 +61,7 @@ vertical slice técnica del piloto.
   consulta sistemática que todavía no están configurados.
 - Verificación de primers, región 16S, diseño temporal y condición espontánea
   donde la metadata pública es insuficiente.
-- Preparación del primer QC FastQC/MultiQC sobre la vertical slice descargada.
+- Verificación documental y empírica de primers para `PRJNA492720`.
 
 ## Bloqueado
 
@@ -80,22 +83,24 @@ vertical slice técnica del piloto.
   archivo antes de cualquier QC o recorte.
 - El stack Bioconda se ejecuta en Linux mediante WSL2; las versiones con ABI
   sensible se fijan y se someten a pruebas de carga antes de aceptarse.
+- Los fallos FastQC de composición, duplicación y secuencias sobrerrepresentadas
+  se interpretan en contexto de amplicones y no justifican exclusión automática.
 
 ## Próximas tareas
 
 1. Resolver los 13 candidatos de revisión manual y congelar el inventario de Fase I.
-2. Ejecutar FastQC/MultiQC y detección de primers sobre los seis runs.
+2. Confirmar primers de `PRJNA492720` en fuentes primarias y medir su presencia.
 3. Definir Cutadapt desde primers verificados y perfiles de calidad reales.
 4. Probar DADA2 por estudio y derivar parámetros antes de escalar a 94 runs.
 
 ## Limitaciones conocidas
 
 - Solo se descargó la vertical slice de 12 FASTQ; no se descargó el estudio completo.
-- No se ejecutaron FastQC, recorte, DADA2, taxonomía ni resultados biológicos.
+- No se ejecutaron todavía recorte, DADA2, taxonomía ni resultados biológicos.
 - La revisión paper-level de 13 candidatos todavía no está cerrada.
 - Los metadatos de primers y diseño temporal son incompletos en varios depósitos.
 
 ## Último commit relevante
 
-`1a39efc data: record validated pilot FASTQ slice`, usado para registrar los
-reportes QC de descarga e integridad previos a este hito de entorno.
+`375cda6 build: provision reproducible bioinformatics environment`, que habilita
+la ejecución reproducible de este hito de QC crudo.

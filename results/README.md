@@ -12,3 +12,8 @@ permanecen en `data/raw/` y no se versionan.
 `qc/pilot_fastq_validation.tsv` confirma lectura completa del stream gzip y la
 estructura FASTQ de cuatro líneas, con conteos de reads, bases y longitudes. No
 sustituye los perfiles de calidad que generarán FastQC y MultiQC.
+
+Los HTML y archivos de trabajo de FastQC/MultiQC bajo `qc/pilot/` son
+regenerables y permanecen fuera de Git. `qc/pilot/raw_read_quality.tsv` conserva
+las métricas crudas esenciales y comprueba que los conteos coincidan con la
+validación estructural previa.

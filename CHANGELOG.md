@@ -21,6 +21,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Entorno bioinformático `cacao-microbiome` en Ubuntu/WSL2 y verificador que
   ejecuta las herramientas de consola, carga los paquetes R y registra 18
   versiones resueltas en una tabla trazable y un lock explícito `linux-64`.
+- Target Snakemake de QC crudo con 12 trabajos FastQC, agregación MultiQC y tabla
+  validada que cruza métricas con la integridad y los conteos FASTQ previos.
 
 ### Changed
 
