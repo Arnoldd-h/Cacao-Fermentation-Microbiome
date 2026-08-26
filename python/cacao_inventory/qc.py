@@ -4,6 +4,14 @@ from __future__ import annotations
 
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
+from typing import Any
+
+
+IUPAC_DNA = frozenset("ACGTRYSWKMBDHVN")
+IUPAC_COMPLEMENT = str.maketrans(
+    "ACGTRYSWKMBDHVN",
+    "TGCAYRSWMKVHDBN",
+)
 
 
 MULTIQC_FASTQC_COLUMNS = [
@@ -59,6 +67,51 @@ def fastqc_sample_id(read_file: str) -> str:
     if not name.endswith(suffix):
         raise ValueError(f"Expected a .fastq.gz filename: {read_file}")
     return name[: -len(suffix)]
+
+
+def validate_iupac_sequence(sequence: str, field: str = "sequence") -> str:
+    """Return an uppercase IUPAC DNA sequence or fail with a useful message."""
+
+    normalized = sequence.upper()
+    if not normalized:
+        raise ValueError(f"{field} cannot be empty")
+    invalid = sorted(set(normalized) - IUPAC_DNA)
+    if invalid:
+        raise ValueError(f"{field} contains invalid IUPAC symbols: {''.join(invalid)}")
+    return normalized
+
+
+def reverse_complement_iupac(sequence: str) -> str:
+    """Reverse-complement an IUPAC DNA sequence, preserving ambiguity codes."""
+
+    normalized = validate_iupac_sequence(sequence)
+    return normalized.translate(IUPAC_COMPLEMENT)[::-1]
+
+
+def cutadapt_detection_counts(report: dict[str, Any]) -> tuple[int, int]:
+    """Extract and cross-check the examined and adapter-matched read counts."""
+
+    try:
+        read_counts = report["read_counts"]
+        examined = int(read_counts["input"])
+        matched = int(read_counts["read1_with_adapter"])
+        adapters = report["adapters_read1"]
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("Cutadapt JSON lacks primer-detection counts") from exc
+    if not isinstance(adapters, list) or len(adapters) != 1:
+        raise ValueError("Primer detection requires exactly one Cutadapt adapter")
+    try:
+        adapter_matches = int(adapters[0]["total_matches"])
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("Cutadapt JSON lacks adapter total_matches") from exc
+    if examined < 0 or matched < 0 or matched > examined:
+        raise ValueError("Cutadapt primer-detection read counts are inconsistent")
+    if adapter_matches != matched:
+        raise ValueError(
+            "Cutadapt adapter/read match counts disagree: "
+            f"{adapter_matches} != {matched}"
+        )
+    return examined, matched
 
 
 def build_raw_quality_rows(

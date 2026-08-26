@@ -13,6 +13,7 @@ from cacao_inventory.config import (  # noqa: E402
     load_project_configuration,
     validate_temporal_stages,
 )
+from cacao_inventory.qc import reverse_complement_iupac, validate_iupac_sequence  # noqa: E402
 
 
 class TemporalStageTests(unittest.TestCase):
@@ -47,6 +48,26 @@ class TemporalStageTests(unittest.TestCase):
     def test_candidate_accessions_are_unique(self) -> None:
         accessions = [candidate["bioproject"] for candidate in self.candidates]
         self.assertEqual(len(accessions), len(set(accessions)))
+
+    def test_pilot_primer_configuration_is_exact_and_valid(self) -> None:
+        pilot = self.config["amplicon_processing"]["PRJNA492720"]
+        self.assertEqual(pilot["marker"], "16S rRNA")
+        self.assertEqual(pilot["region"], "V4")
+        expected = {
+            "forward": "GTGCCAGCMGCCGCGGTAA",
+            "reverse": "GGACTACHVGGGTWTCTAAT",
+        }
+        for role, sequence in expected.items():
+            primer = pilot["primers"][role]
+            self.assertEqual(primer["gene_specific_sequence"], sequence)
+            self.assertEqual(validate_iupac_sequence(sequence), sequence)
+            self.assertTrue(primer["full_construct_sequence"].endswith(sequence))
+
+    def test_iupac_reverse_complements_are_stable(self) -> None:
+        sequence = "GGACTACHVGGGTWTCTAAT"
+        reverse = reverse_complement_iupac(sequence)
+        self.assertEqual(reverse, "ATTAGAWACCCBDGTAGTCC")
+        self.assertEqual(reverse_complement_iupac(reverse), sequence)
 
 
 if __name__ == "__main__":

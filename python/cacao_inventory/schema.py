@@ -248,6 +248,27 @@ RAW_READ_QUALITY_COLUMNS = [
     "adapter_content_status",
 ]
 
+PRIMER_DETECTION_COLUMNS = [
+    "study_id",
+    "bioproject",
+    "sample_id",
+    "run_accession",
+    "read_direction",
+    "read_file",
+    "primer",
+    "sequence_type",
+    "primer_sequence",
+    "search_sequence",
+    "reads_examined",
+    "primer_matches",
+    "match_percent",
+    "orientation",
+    "search_scope",
+    "error_rate",
+    "minimum_overlap",
+    "expected_case",
+]
+
 TABLE_SCHEMAS = {
     "studies": STUDY_COLUMNS,
     "runs": RUN_COLUMNS,

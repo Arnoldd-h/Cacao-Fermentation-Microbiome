@@ -24,6 +24,23 @@ rule pilot_raw_qc:
         metrics="results/qc/pilot/raw_read_quality.tsv",
 
 
+rule pilot_primer_detection:
+    input:
+        "results/qc/pilot/primer_detection.tsv",
+
+
+rule detect_pilot_primers:
+    input:
+        config="config/config.yaml",
+        manifest="metadata/pilot_manifest.tsv",
+        fastq=list(PILOT_FASTQ_BY_READ.values()),
+    output:
+        "results/qc/pilot/primer_detection.tsv"
+    shell:
+        "python scripts/qc/detect_primers.py "
+        "--config {input.config:q} --manifest {input.manifest:q} --output {output:q}"
+
+
 rule fastqc_raw:
     input:
         lambda wildcards: PILOT_FASTQ_BY_READ[wildcards.read_id]

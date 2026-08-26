@@ -20,8 +20,8 @@
       "amplicon_type": "16S rRNA and ITS; bacterial subset selected",
       "marker": "16S rRNA",
       "region_16s": "V4",
-      "forward_primer": "modified 515F",
-      "reverse_primer": "modified 806R",
+      "forward_primer": "GTGCCAGCMGCCGCGGTAA",
+      "reverse_primer": "GGACTACHVGGGTWTCTAAT",
       "screening_status": "include",
       "screening_reason": "Published spontaneous longitudinal 16S study with 94 paper-consistent runs, public paired-end FASTQ and 12-hour sampling.",
       "metadata_quality": "high",
@@ -40,7 +40,8 @@
       "sources": [
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA492720",
         "https://www.ebi.ac.uk/ena/browser/view/PRJNA492720",
-        "https://doi.org/10.3389/fmicb.2020.00650"
+        "https://doi.org/10.3389/fmicb.2020.00650",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7174660/supplementaryFiles?includeInlineImage=false"
       ]
     },
     {

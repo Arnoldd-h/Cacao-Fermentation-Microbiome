@@ -23,6 +23,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   versiones resueltas en una tabla trazable y un lock explícito `linux-64`.
 - Target Snakemake de QC crudo con 12 trabajos FastQC, agregación MultiQC y tabla
   validada que cruza métricas con la integridad y los conteos FASTQ previos.
+- Configuración exacta y trazable de los primers 515F/806R y sus constructos
+  L1/L2 para `PRJNA492720`, verificados en el suplemento primario Table S2.
+- Target Snakemake y tabla machine-readable con 96 pruebas Cutadapt de presencia,
+  orientación y constructo completo sobre los 12 FASTQ del piloto.
 
 ### Changed
 

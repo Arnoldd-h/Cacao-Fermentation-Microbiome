@@ -39,6 +39,38 @@
     "chunk_size_bytes": 1048576,
     "minimum_free_space_factor": 2.0
   },
+  "amplicon_processing": {
+    "PRJNA492720": {
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "marker": "16S rRNA",
+      "region": "V4",
+      "primers": {
+        "forward": {
+          "name": "515F_L1",
+          "gene_specific_sequence": "GTGCCAGCMGCCGCGGTAA",
+          "linker_sequence": "ACACTCTTTCCCTACACGACGCTCTTCCGATCT",
+          "full_construct_sequence": "ACACTCTTTCCCTACACGACGCTCTTCCGATCTGTGCCAGCMGCCGCGGTAA"
+        },
+        "reverse": {
+          "name": "806R_L2",
+          "gene_specific_sequence": "GGACTACHVGGGTWTCTAAT",
+          "linker_sequence": "GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT",
+          "full_construct_sequence": "GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCTGGACTACHVGGGTWTCTAAT"
+        }
+      },
+      "primer_detection": {
+        "error_rate": 0.1,
+        "allow_indels": false,
+        "minimum_overlap_fraction": 1.0
+      },
+      "sources": {
+        "article": "https://doi.org/10.3389/fmicb.2020.00650",
+        "supplementary_archive": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7174660/supplementaryFiles?includeInlineImage=false",
+        "supplementary_file": "Data_Sheet_2.PDF",
+        "evidence_location": "Table S2"
+      }
+    }
+  },
   "inventory": {
     "ncbi_esearch_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi",
     "ncbi_esummary_url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi",
