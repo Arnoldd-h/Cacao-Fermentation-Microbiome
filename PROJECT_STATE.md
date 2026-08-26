@@ -47,6 +47,9 @@ vertical slice técnica del piloto.
 - Barrido Cutadapt de 96 casos completado sobre 12 FASTQ: no hay 515F en R1,
   solo 7/176.798 coincidencias 806R en R2 y ningún constructo completo en la
   orientación esperada; el depósito se considera previamente recortado.
+- Cutadapt 5.0 ejecutado sobre los seis pares con coincidencia completa, sin
+  indels, quality trimming ni descarte de untrimmed: se conservaron
+  176.798/176.798 pares, se recortaron 7 R2 y 238 bases en total.
 
 ## Datasets incluidos
 
@@ -67,7 +70,7 @@ vertical slice técnica del piloto.
   consulta sistemática que todavía no están configurados.
 - Verificación de primers, región 16S, diseño temporal y condición espontánea
   donde la metadata pública es insuficiente.
-- Implementación de Cutadapt no destructivo y QC post-recorte para el piloto.
+- FastQC/MultiQC post-Cutadapt y comparación machine-readable con el QC crudo.
 
 ## Bloqueado
 
@@ -100,14 +103,13 @@ vertical slice técnica del piloto.
 ## Próximas tareas
 
 1. Resolver los 13 candidatos de revisión manual y congelar el inventario de Fase I.
-2. Ejecutar Cutadapt con los primers verificados, sin descartar lecturas no
-   recortadas, y comparar FastQC/MultiQC post-recorte.
+2. Comparar FastQC/MultiQC post-Cutadapt con el QC crudo.
 3. Probar DADA2 por estudio y derivar parámetros antes de escalar a 94 runs.
 
 ## Limitaciones conocidas
 
 - Solo se descargó la vertical slice de 12 FASTQ; no se descargó el estudio completo.
-- No se ejecutaron todavía recorte, DADA2, taxonomía ni resultados biológicos.
+- No se ejecutaron todavía DADA2, taxonomía ni resultados biológicos.
 - Existen residuos raros de primers/constructos en orientación inversa,
   concentrados sobre todo en `SRR7899884`; se vigilarán en QC post-Cutadapt y
   merging sin convertirlos en evidencia de primers sistemáticamente presentes.
@@ -116,5 +118,5 @@ vertical slice técnica del piloto.
 
 ## Último commit relevante
 
-`7b480a7 feat: add raw pilot sequencing QC`, que integra y valida FastQC/MultiQC
-crudos antes de la verificación de primers.
+`cc6bcdf feat: validate and configure PRJNA492720 primers`, que registra la
+evidencia primaria y cuantifica su presencia y orientación en los 12 FASTQ.

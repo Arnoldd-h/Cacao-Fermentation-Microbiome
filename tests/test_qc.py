@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT / "python"))
 
 from cacao_inventory.qc import (  # noqa: E402
     build_raw_quality_rows,
+    build_cutadapt_summary_rows,
     cutadapt_detection_counts,
     read_direction,
     validate_iupac_sequence,
@@ -134,6 +135,88 @@ class PilotPrimerDetectionOutputTests(unittest.TestCase):
         ]
         self.assertEqual(len(expected_constructs), 12)
         self.assertEqual(sum(int(row["primer_matches"]) for row in expected_constructs), 0)
+
+
+class CutadaptSummaryTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self.report = {
+            "cutadapt_version": "5.0",
+            "input": {"path1": "raw/SRR1_1.fastq.gz", "path2": "raw/SRR1_2.fastq.gz", "paired": True},
+            "read_counts": {
+                "input": 10,
+                "output": 10,
+                "read1_with_adapter": 0,
+                "read2_with_adapter": 1,
+            },
+            "basepair_counts": {
+                "input_read1": 1000,
+                "input_read2": 1000,
+                "output_read1": 1000,
+                "output_read2": 980,
+            },
+        }
+        self.manifest = {
+            "study_id": "study",
+            "bioproject": "PRJNA1",
+            "sample_id": "sample",
+            "run_accession": "SRR1",
+        }
+        self.outputs = {"R1": "interim/SRR1_1.fastq.gz", "R2": "interim/SRR1_2.fastq.gz"}
+        self.primers = {
+            "forward": {"name": "515F", "gene_specific_sequence": "ACGT"},
+            "reverse": {"name": "806R", "gene_specific_sequence": "ACGTA"},
+        }
+        self.parameters = {
+            "error_rate": 0.1,
+            "allow_indels": False,
+            "discard_untrimmed": False,
+            "quality_trimming": False,
+            "forward_minimum_overlap": 4,
+            "reverse_minimum_overlap": 5,
+        }
+
+    def test_paired_report_builds_one_row_per_direction(self) -> None:
+        rows = build_cutadapt_summary_rows(
+            self.report, self.manifest, self.outputs, self.primers, self.parameters
+        )
+        self.assertEqual([row["read_direction"] for row in rows], ["R1", "R2"])
+        self.assertEqual(rows[0]["reads_with_adapter"], "0")
+        self.assertEqual(rows[1]["reads_with_adapter"], "1")
+        self.assertEqual(rows[1]["output_bases"], "980")
+        self.assertEqual(rows[1]["percent_retained"], "100.000000")
+
+    def test_unexpected_pair_loss_fails(self) -> None:
+        self.report["read_counts"]["output"] = 9
+        with self.assertRaisesRegex(ValueError, "unexpectedly removed"):
+            build_cutadapt_summary_rows(
+                self.report, self.manifest, self.outputs, self.primers, self.parameters
+            )
+
+
+class PilotCutadaptOutputTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        with (ROOT / "results" / "qc" / "pilot" / "cutadapt_summary.tsv").open(
+            encoding="utf-8", newline=""
+        ) as handle:
+            cls.rows = list(csv.DictReader(handle, delimiter="\t"))
+
+    def test_all_pilot_pairs_are_summarized(self) -> None:
+        self.assertEqual(len(self.rows), 12)
+        runs = {row["run_accession"] for row in self.rows}
+        self.assertEqual(len(runs), 6)
+        for run_accession in runs:
+            run_rows = [row for row in self.rows if row["run_accession"] == run_accession]
+            self.assertEqual({row["read_direction"] for row in run_rows}, {"R1", "R2"})
+            self.assertEqual(len({row["input_reads"] for row in run_rows}), 1)
+            self.assertEqual(len({row["reads_written"] for row in run_rows}), 1)
+
+    def test_non_discarding_trim_retains_every_pair(self) -> None:
+        self.assertTrue(all(row["percent_retained"] == "100.000000" for row in self.rows))
+        self.assertTrue(
+            all(row["input_reads"] == row["reads_written"] for row in self.rows)
+        )
+        self.assertEqual(sum(int(row["reads_with_adapter"]) for row in self.rows), 7)
 
 
 if __name__ == "__main__":

@@ -114,6 +114,111 @@ def cutadapt_detection_counts(report: dict[str, Any]) -> tuple[int, int]:
     return examined, matched
 
 
+def build_cutadapt_summary_rows(
+    report: dict[str, Any],
+    manifest_row: dict[str, str],
+    output_files: dict[str, str],
+    primers: dict[str, dict[str, Any]],
+    parameters: dict[str, Any],
+) -> list[dict[str, str]]:
+    """Validate a paired Cutadapt JSON report and return one row per direction."""
+
+    try:
+        input_report = report["input"]
+        read_counts = report["read_counts"]
+        base_counts = report["basepair_counts"]
+        version = str(report["cutadapt_version"])
+        input_pairs = int(read_counts["input"])
+        output_pairs = int(read_counts["output"])
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("Cutadapt JSON lacks paired trimming metrics") from exc
+    if input_report.get("paired") is not True:
+        raise ValueError("Cutadapt pilot trimming report is not paired-end")
+    if input_pairs <= 0 or output_pairs < 0 or output_pairs > input_pairs:
+        raise ValueError("Cutadapt paired read counts are inconsistent")
+    if parameters.get("discard_untrimmed") is not False:
+        raise ValueError("Pilot trimming must retain reads without verified primers")
+    if parameters.get("allow_indels") is not False:
+        raise ValueError("Pilot primer trimming must disable indels")
+    if parameters.get("quality_trimming") is not False:
+        raise ValueError("Quality trimming is not part of the Cutadapt primer step")
+    if output_pairs != input_pairs:
+        raise ValueError(
+            "Cutadapt unexpectedly removed paired reads despite non-discarding configuration"
+        )
+
+    try:
+        error_rate = float(parameters["error_rate"])
+    except (KeyError, TypeError, ValueError) as exc:
+        raise ValueError("Invalid Cutadapt error rate in configuration") from exc
+
+    rows: list[dict[str, str]] = []
+    direction_fields = {
+        "R1": (
+            "path1",
+            "input_read1",
+            "read1_with_adapter",
+            "output_read1",
+            "forward",
+            "forward_minimum_overlap",
+        ),
+        "R2": (
+            "path2",
+            "input_read2",
+            "read2_with_adapter",
+            "output_read2",
+            "reverse",
+            "reverse_minimum_overlap",
+        ),
+    }
+    for direction, fields in direction_fields.items():
+        path_field, input_bases_field, matches_field, output_bases_field, role, overlap_field = (
+            fields
+        )
+        try:
+            input_file = str(input_report[path_field])
+            input_bases = int(base_counts[input_bases_field])
+            matches = int(read_counts[matches_field])
+            output_bases = int(base_counts[output_bases_field])
+            primer = primers[role]
+            primer_sequence = validate_iupac_sequence(
+                str(primer["gene_specific_sequence"]), f"{role} primer"
+            )
+            minimum_overlap = int(parameters[overlap_field])
+        except (KeyError, TypeError, ValueError) as exc:
+            raise ValueError(f"Cutadapt JSON/config lacks {direction} metrics") from exc
+        if not 0 <= matches <= input_pairs:
+            raise ValueError(f"Cutadapt adapter matches are inconsistent for {direction}")
+        if input_bases <= 0 or not 0 <= output_bases <= input_bases:
+            raise ValueError(f"Cutadapt base counts are inconsistent for {direction}")
+        if minimum_overlap != len(primer_sequence):
+            raise ValueError(f"Cutadapt must require the full {direction} primer sequence")
+        rows.append(
+            {
+                "study_id": manifest_row["study_id"],
+                "bioproject": manifest_row["bioproject"],
+                "sample_id": manifest_row["sample_id"],
+                "run_accession": manifest_row["run_accession"],
+                "read_direction": direction,
+                "input_file": input_file,
+                "output_file": output_files[direction],
+                "input_reads": str(input_pairs),
+                "input_bases": str(input_bases),
+                "reads_with_adapter": str(matches),
+                "reads_written": str(output_pairs),
+                "output_bases": str(output_bases),
+                "percent_retained": f"{output_pairs / input_pairs * 100:.6f}",
+                "primer": str(primer["name"]),
+                "primer_sequence": primer_sequence,
+                "error_rate": str(error_rate),
+                "minimum_overlap": str(minimum_overlap),
+                "discard_untrimmed": "false",
+                "cutadapt_version": version,
+            }
+        )
+    return rows
+
+
 def build_raw_quality_rows(
     multiqc_rows: list[dict[str, str]],
     validation_rows: list[dict[str, str]],

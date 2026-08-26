@@ -27,6 +27,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   L1/L2 para `PRJNA492720`, verificados en el suplemento primario Table S2.
 - Target Snakemake y tabla machine-readable con 96 pruebas Cutadapt de presencia,
   orientación y constructo completo sobre los 12 FASTQ del piloto.
+- Recorte pareado y configurable de primers del piloto con Cutadapt, sin
+  descarte de lecturas sin primer, y resumen validado por dirección.
 
 ### Changed
 

@@ -63,6 +63,14 @@
         "allow_indels": false,
         "minimum_overlap_fraction": 1.0
       },
+      "cutadapt": {
+        "error_rate": 0.1,
+        "allow_indels": false,
+        "discard_untrimmed": false,
+        "quality_trimming": false,
+        "forward_minimum_overlap": 19,
+        "reverse_minimum_overlap": 20
+      },
       "sources": {
         "article": "https://doi.org/10.3389/fmicb.2020.00650",
         "supplementary_archive": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7174660/supplementaryFiles?includeInlineImage=false",

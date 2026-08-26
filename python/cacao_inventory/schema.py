@@ -269,6 +269,28 @@ PRIMER_DETECTION_COLUMNS = [
     "expected_case",
 ]
 
+CUTADAPT_SUMMARY_COLUMNS = [
+    "study_id",
+    "bioproject",
+    "sample_id",
+    "run_accession",
+    "read_direction",
+    "input_file",
+    "output_file",
+    "input_reads",
+    "input_bases",
+    "reads_with_adapter",
+    "reads_written",
+    "output_bases",
+    "percent_retained",
+    "primer",
+    "primer_sequence",
+    "error_rate",
+    "minimum_overlap",
+    "discard_untrimmed",
+    "cutadapt_version",
+]
+
 TABLE_SCHEMAS = {
     "studies": STUDY_COLUMNS,
     "runs": RUN_COLUMNS,
