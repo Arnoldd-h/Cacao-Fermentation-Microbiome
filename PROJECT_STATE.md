@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Última actualización: 2026-08-25
+Última actualización: 2026-09-26
 
 ## Fase actual
 
@@ -50,6 +50,14 @@ vertical slice técnica del piloto.
 - Cutadapt 5.0 ejecutado sobre los seis pares con coincidencia completa, sin
   indels, quality trimming ni descarte de untrimmed: se conservaron
   176.798/176.798 pares, se recortaron 7 R2 y 238 bases en total.
+- QC post-Cutadapt ejecutado por Snakemake en los 12 FASTQ intermedios: 12/12
+  pasan FastQC por calidad de base y contenido de adaptadores; la retención es
+  100 % por dirección y las longitudes quedan entre 185-223 nt.
+- Comparación machine-readable raw/post-Cutadapt generada en
+  `results/qc/pilot/read_quality_comparison.tsv`; los conteos de reads son
+  idénticos en las 12 direcciones y no se detecta pérdida por el paso de primers.
+- Detección de primers repetida después de Cutadapt: 96 casos registrados y
+  cero coincidencias de constructos completos en los 12 casos esperados.
 
 ## Datasets incluidos
 
@@ -70,7 +78,8 @@ vertical slice técnica del piloto.
   consulta sistemática que todavía no están configurados.
 - Verificación de primers, región 16S, diseño temporal y condición espontánea
   donde la metadata pública es insuficiente.
-- FastQC/MultiQC post-Cutadapt y comparación machine-readable con el QC crudo.
+- Revisión de los resultados post-Cutadapt y preparación de parámetros iniciales
+  de DADA2 por estudio.
 
 ## Bloqueado
 
@@ -103,20 +112,21 @@ vertical slice técnica del piloto.
 ## Próximas tareas
 
 1. Resolver los 13 candidatos de revisión manual y congelar el inventario de Fase I.
-2. Comparar FastQC/MultiQC post-Cutadapt con el QC crudo.
-3. Probar DADA2 por estudio y derivar parámetros antes de escalar a 94 runs.
+2. Probar DADA2 por estudio y derivar parámetros antes de escalar a 94 runs.
+3. Documentar la versión de SILVA y el método de clasificación taxonómica.
 
 ## Limitaciones conocidas
 
 - Solo se descargó la vertical slice de 12 FASTQ; no se descargó el estudio completo.
 - No se ejecutaron todavía DADA2, taxonomía ni resultados biológicos.
 - Existen residuos raros de primers/constructos en orientación inversa,
-  concentrados sobre todo en `SRR7899884`; se vigilarán en QC post-Cutadapt y
-  merging sin convertirlos en evidencia de primers sistemáticamente presentes.
+  concentrados sobre todo en `SRR7899884`; se vigilarán durante merging sin
+  convertirlos en evidencia de primers sistemáticamente presentes.
 - La revisión paper-level de 13 candidatos todavía no está cerrada.
 - Los metadatos de primers y diseño temporal son incompletos en varios depósitos.
 
 ## Último commit relevante
 
-`cc6bcdf feat: validate and configure PRJNA492720 primers`, que registra la
-evidencia primaria y cuantifica su presencia y orientación en los 12 FASTQ.
+`3d7ba2f feat: add post-trimming pilot quality control`, que integra el QC
+post-Cutadapt, la comparación raw/interim y la detección de primers en el
+workflow del piloto.

@@ -29,6 +29,11 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   orientación y constructo completo sobre los 12 FASTQ del piloto.
 - Recorte pareado y configurable de primers del piloto con Cutadapt, sin
   descarte de lecturas sin primer, y resumen validado por dirección.
+- QC post-Cutadapt reproducible con 12 FastQC, MultiQC y comparación tabular
+  contra el QC crudo; se registran retención, longitudes, estados FastQC y
+  procedencia de cada dirección.
+- Detección de primers post-Cutadapt integrada en el workflow y objetivo final
+  de Snakemake actualizado para exigir todos los artefactos del QC del piloto.
 
 ### Changed
 

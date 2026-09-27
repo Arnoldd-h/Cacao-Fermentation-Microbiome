@@ -24,6 +24,8 @@ PILOT_STUDY_ID = next(iter(PILOT_STUDY_IDS))
 RAW_FASTQC_DIRECTORY = "results/qc/pilot/fastqc_raw"
 RAW_MULTIQC_DIRECTORY = "results/qc/pilot/multiqc_raw"
 CUTADAPT_DIRECTORY = "results/qc/pilot/cutadapt"
+TRIMMED_FASTQC_DIRECTORY = "results/qc/pilot/fastqc_trimmed"
+TRIMMED_MULTIQC_DIRECTORY = "results/qc/pilot/multiqc_trimmed"
 PILOT_INTERIM_PATTERN = (
     f"data/interim/{PILOT_STUDY_ID}/pilot/"
     "{run_accession}/{run_accession}_{direction}.fastq.gz"
@@ -31,6 +33,13 @@ PILOT_INTERIM_PATTERN = (
 PILOT_PROCESSING_CONFIG = config["amplicon_processing"]["PRJNA492720"]
 PILOT_PRIMERS = PILOT_PROCESSING_CONFIG["primers"]
 PILOT_CUTADAPT = PILOT_PROCESSING_CONFIG["cutadapt"]
+PILOT_TRIMMED_FASTQ_BY_READ = {
+    read_id: PILOT_INTERIM_PATTERN.format(
+        run_accession=read_id.rsplit("_", maxsplit=1)[0],
+        direction=read_id.rsplit("_", maxsplit=1)[1],
+    )
+    for read_id in PILOT_READ_IDS
+}
 
 
 rule pilot_raw_qc:
@@ -118,6 +127,77 @@ rule summarize_pilot_cutadapt:
         "python scripts/qc/summarize_cutadapt.py --config {input.config:q} "
         "--manifest {input.manifest:q} "
         "--report-directory {params.report_directory:q} --output {output:q}"
+
+
+rule pilot_post_trim_qc:
+    input:
+        report=f"{TRIMMED_MULTIQC_DIRECTORY}/multiqc_report.html",
+        metrics="results/qc/pilot/trimmed_read_quality.tsv",
+        comparison="results/qc/pilot/read_quality_comparison.tsv",
+        primer_detection="results/qc/pilot/primer_detection_trimmed.tsv",
+
+
+rule fastqc_trimmed:
+    input:
+        lambda wildcards: PILOT_TRIMMED_FASTQ_BY_READ[wildcards.read_id]
+    output:
+        html=f"{TRIMMED_FASTQC_DIRECTORY}/{{read_id}}_fastqc.html",
+        archive=f"{TRIMMED_FASTQC_DIRECTORY}/{{read_id}}_fastqc.zip",
+    params:
+        output_directory=TRIMMED_FASTQC_DIRECTORY,
+    threads: 2
+    shell:
+        "mkdir -p {params.output_directory:q} && "
+        "fastqc --threads {threads} --outdir {params.output_directory:q} {input:q}"
+
+
+rule multiqc_trimmed:
+    input:
+        expand(
+            f"{TRIMMED_FASTQC_DIRECTORY}/{{read_id}}_fastqc.zip",
+            read_id=PILOT_READ_IDS,
+        )
+    output:
+        report=f"{TRIMMED_MULTIQC_DIRECTORY}/multiqc_report.html",
+        fastqc_table=(
+            f"{TRIMMED_MULTIQC_DIRECTORY}/multiqc_report_data/multiqc_fastqc.txt"
+        ),
+    params:
+        output_directory=TRIMMED_MULTIQC_DIRECTORY,
+        input_directory=TRIMMED_FASTQC_DIRECTORY,
+    shell:
+        "mkdir -p {params.output_directory:q} && "
+        "multiqc --force --outdir {params.output_directory:q} "
+        "--filename multiqc_report.html {params.input_directory:q}"
+
+
+rule summarize_trimmed_fastqc:
+    input:
+        multiqc=(
+            f"{TRIMMED_MULTIQC_DIRECTORY}/multiqc_report_data/multiqc_fastqc.txt"
+        ),
+        cutadapt="results/qc/pilot/cutadapt_summary.tsv",
+        raw="results/qc/pilot/raw_read_quality.tsv",
+    output:
+        metrics="results/qc/pilot/trimmed_read_quality.tsv",
+        comparison="results/qc/pilot/read_quality_comparison.tsv",
+    shell:
+        "python scripts/qc/summarize_trimmed_fastqc.py "
+        "--multiqc-fastqc {input.multiqc:q} --cutadapt-summary {input.cutadapt:q} "
+        "--raw-quality {input.raw:q} --output {output.metrics:q} "
+        "--comparison-output {output.comparison:q}"
+
+
+rule detect_trimmed_primers:
+    input:
+        config="config/config.yaml",
+        manifest="metadata/pilot_manifest.tsv",
+        fastq=list(PILOT_TRIMMED_FASTQ_BY_READ.values()),
+    output:
+        "results/qc/pilot/primer_detection_trimmed.tsv"
+    shell:
+        "python scripts/qc/detect_primers.py --input-stage trimmed "
+        "--config {input.config:q} --manifest {input.manifest:q} --output {output:q}"
 
 
 rule fastqc_raw:

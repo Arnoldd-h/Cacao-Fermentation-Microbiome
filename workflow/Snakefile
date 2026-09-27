@@ -8,7 +8,11 @@ rule all:
         "metadata/.inventory.ok",
         "metadata/discovery_candidates.tsv",
         "results/tables/pilot_dataset_selection.tsv",
-        "metadata/pilot_manifest.tsv"
+        "metadata/pilot_manifest.tsv",
+        "results/qc/pilot/multiqc_trimmed/multiqc_report.html",
+        "results/qc/pilot/trimmed_read_quality.tsv",
+        "results/qc/pilot/read_quality_comparison.tsv",
+        "results/qc/pilot/primer_detection_trimmed.tsv"
 
 
 rule discover_candidates:

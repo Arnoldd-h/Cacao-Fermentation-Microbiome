@@ -41,11 +41,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--manifest", type=Path, default=ROOT / "metadata" / "pilot_manifest.tsv"
     )
-    parser.add_argument(
-        "--output",
-        type=Path,
-        default=ROOT / "results" / "qc" / "pilot" / "primer_detection.tsv",
-    )
+    parser.add_argument("--input-stage", choices=("raw", "trimmed"), default="raw")
+    parser.add_argument("--output", type=Path)
     parser.add_argument("--cutadapt", default="cutadapt")
     return parser.parse_args()
 
@@ -110,6 +107,17 @@ def _run_cutadapt(
 
 def main() -> int:
     args = parse_args()
+    output = args.output or (
+        ROOT
+        / "results"
+        / "qc"
+        / "pilot"
+        / (
+            "primer_detection.tsv"
+            if args.input_stage == "raw"
+            else "primer_detection_trimmed.tsv"
+        )
+    )
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     config = load_json_yaml(args.config)
     manifest = read_tsv(args.manifest, PILOT_MANIFEST_COLUMNS)
@@ -124,14 +132,25 @@ def main() -> int:
 
     for sample in manifest:
         for direction, suffix in (("R1", "1"), ("R2", "2")):
-            read_file = (
-                ROOT
-                / "data"
-                / "raw"
-                / sample["study_id"]
-                / sample["run_accession"]
-                / f"{sample['run_accession']}_{suffix}.fastq.gz"
-            )
+            if args.input_stage == "raw":
+                read_file = (
+                    ROOT
+                    / "data"
+                    / "raw"
+                    / sample["study_id"]
+                    / sample["run_accession"]
+                    / f"{sample['run_accession']}_{suffix}.fastq.gz"
+                )
+            else:
+                read_file = (
+                    ROOT
+                    / "data"
+                    / "interim"
+                    / sample["study_id"]
+                    / "pilot"
+                    / sample["run_accession"]
+                    / f"{sample['run_accession']}_{suffix}.fastq.gz"
+                )
             if not read_file.is_file():
                 raise FileNotFoundError(f"Missing pilot FASTQ: {read_file}")
             for primer_role, primer in processing["primers"].items():
@@ -190,7 +209,7 @@ def main() -> int:
                             }
                         )
 
-    write_tsv_atomic(args.output, rows, PRIMER_DETECTION_COLUMNS)
+    write_tsv_atomic(output, rows, PRIMER_DETECTION_COLUMNS)
     logging.info(
         "Recorded %d primer detection tests across %d FASTQ files",
         len(rows),

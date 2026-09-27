@@ -1,0 +1,13 @@
+study_id	bioproject	sample_id	run_accession	read_direction	raw_total_sequences	trimmed_total_sequences	count_retention_percent	raw_sequence_length	trimmed_sequence_length	raw_per_base_quality_status	trimmed_per_base_quality_status	raw_adapter_content_status	trimmed_adapter_content_status
+pacheco_montealegre_2020_colombia	PRJNA492720	BactSaII048z1	SRR7899687	R1	50132	50132	100.000000	220-223	220-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactSaII048z1	SRR7899687	R2	50132	50132	100.000000	215-223	189-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactAnI000z1	SRR7899728	R1	23585	23585	100.000000	222-223	222-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactAnI000z1	SRR7899728	R2	23585	23585	100.000000	220-223	220-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactSaI036z2	SRR7899800	R1	39278	39278	100.000000	220-223	220-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactSaI036z2	SRR7899800	R2	39278	39278	100.000000	221-223	187-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactAnII000z2	SRR7899814	R1	22450	22450	100.000000	220-223	220-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactAnII000z2	SRR7899814	R2	22450	22450	100.000000	220-223	220-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactSaI072z1	SRR7899884	R1	23387	23387	100.000000	219-223	219-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactSaI072z1	SRR7899884	R2	23387	23387	100.000000	214-223	185-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactAnI096z2	SRR7899911	R1	17966	17966	100.000000	221-223	221-223	pass	pass	pass	pass
+pacheco_montealegre_2020_colombia	PRJNA492720	BactAnI096z2	SRR7899911	R2	17966	17966	100.000000	215-223	215-223	pass	pass	pass	pass

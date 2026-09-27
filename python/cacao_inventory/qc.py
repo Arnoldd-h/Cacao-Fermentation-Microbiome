@@ -219,6 +219,114 @@ def build_cutadapt_summary_rows(
     return rows
 
 
+def fastqc_length_bounds(value: str) -> tuple[int, int]:
+    """Parse FastQC's integer or inclusive range sequence-length field."""
+
+    parts = value.split("-", maxsplit=1)
+    try:
+        lower = int(parts[0])
+        upper = int(parts[-1])
+    except ValueError as exc:
+        raise ValueError(f"Invalid FastQC sequence length: {value}") from exc
+    if lower <= 0 or upper < lower:
+        raise ValueError(f"Invalid FastQC sequence length: {value}")
+    return lower, upper
+
+
+def build_trimmed_quality_rows(
+    multiqc_rows: list[dict[str, str]],
+    cutadapt_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    """Join trimmed FastQC metrics to validated Cutadapt counts and provenance."""
+
+    fastqc_by_sample = {row["Sample"]: row for row in multiqc_rows}
+    if len(fastqc_by_sample) != len(multiqc_rows):
+        raise ValueError("Duplicate trimmed MultiQC FastQC sample")
+    pseudo_validation: list[dict[str, str]] = []
+    output_path_by_key: dict[tuple[str, str], str] = {}
+    for row in cutadapt_rows:
+        output_name = Path(row["output_file"]).name
+        sample = fastqc_sample_id(output_name)
+        if sample not in fastqc_by_sample:
+            raise ValueError(f"Missing trimmed FastQC sample: {sample}")
+        lower, upper = fastqc_length_bounds(fastqc_by_sample[sample]["Sequence length"])
+        direction = row["read_direction"]
+        key = (row["run_accession"], direction)
+        if key in output_path_by_key:
+            raise ValueError(f"Duplicate Cutadapt summary row: {key}")
+        output_path_by_key[key] = row["output_file"]
+        pseudo_validation.append(
+            {
+                "study_id": row["study_id"],
+                "bioproject": row["bioproject"],
+                "sample_id": row["sample_id"],
+                "run_accession": row["run_accession"],
+                "read_file": output_name,
+                "read_count": row["reads_written"],
+                "base_count": row["output_bases"],
+                "minimum_read_length": str(lower),
+                "maximum_read_length": str(upper),
+                "status": "valid",
+            }
+        )
+    output = build_raw_quality_rows(multiqc_rows, pseudo_validation)
+    for row in output:
+        key = (row["run_accession"], row["read_direction"])
+        row["read_file"] = output_path_by_key[key]
+    return output
+
+
+def build_read_quality_comparison_rows(
+    raw_rows: list[dict[str, str]],
+    trimmed_rows: list[dict[str, str]],
+) -> list[dict[str, str]]:
+    """Compare raw and post-Cutadapt FastQC metrics by run and direction."""
+
+    def index(rows: list[dict[str, str]], label: str) -> dict[tuple[str, str], dict[str, str]]:
+        indexed: dict[tuple[str, str], dict[str, str]] = {}
+        for row in rows:
+            key = (row["run_accession"], row["read_direction"])
+            if key in indexed:
+                raise ValueError(f"Duplicate {label} QC row: {key}")
+            indexed[key] = row
+        return indexed
+
+    raw_by_key = index(raw_rows, "raw")
+    trimmed_by_key = index(trimmed_rows, "trimmed")
+    if set(raw_by_key) != set(trimmed_by_key):
+        raise ValueError("Raw and trimmed QC sample sets disagree")
+    output: list[dict[str, str]] = []
+    for key in sorted(raw_by_key):
+        raw = raw_by_key[key]
+        trimmed = trimmed_by_key[key]
+        raw_count = int(raw["total_sequences"])
+        trimmed_count = int(trimmed["total_sequences"])
+        if raw_count <= 0 or not 0 <= trimmed_count <= raw_count:
+            raise ValueError(f"Invalid raw/trimmed read counts for {key}")
+        identity_fields = ("study_id", "bioproject", "sample_id")
+        if any(raw[field] != trimmed[field] for field in identity_fields):
+            raise ValueError(f"Raw/trimmed sample metadata disagree for {key}")
+        output.append(
+            {
+                "study_id": raw["study_id"],
+                "bioproject": raw["bioproject"],
+                "sample_id": raw["sample_id"],
+                "run_accession": raw["run_accession"],
+                "read_direction": raw["read_direction"],
+                "raw_total_sequences": str(raw_count),
+                "trimmed_total_sequences": str(trimmed_count),
+                "count_retention_percent": f"{trimmed_count / raw_count * 100:.6f}",
+                "raw_sequence_length": raw["sequence_length"],
+                "trimmed_sequence_length": trimmed["sequence_length"],
+                "raw_per_base_quality_status": raw["per_base_quality_status"],
+                "trimmed_per_base_quality_status": trimmed["per_base_quality_status"],
+                "raw_adapter_content_status": raw["adapter_content_status"],
+                "trimmed_adapter_content_status": trimmed["adapter_content_status"],
+            }
+        )
+    return output
+
+
 def build_raw_quality_rows(
     multiqc_rows: list[dict[str, str]],
     validation_rows: list[dict[str, str]],

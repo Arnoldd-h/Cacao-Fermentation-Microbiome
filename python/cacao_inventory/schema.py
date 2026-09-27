@@ -291,6 +291,23 @@ CUTADAPT_SUMMARY_COLUMNS = [
     "cutadapt_version",
 ]
 
+READ_QUALITY_COMPARISON_COLUMNS = [
+    "study_id",
+    "bioproject",
+    "sample_id",
+    "run_accession",
+    "read_direction",
+    "raw_total_sequences",
+    "trimmed_total_sequences",
+    "count_retention_percent",
+    "raw_sequence_length",
+    "trimmed_sequence_length",
+    "raw_per_base_quality_status",
+    "trimmed_per_base_quality_status",
+    "raw_adapter_content_status",
+    "trimmed_adapter_content_status",
+]
+
 TABLE_SCHEMAS = {
     "studies": STUDY_COLUMNS,
     "runs": RUN_COLUMNS,

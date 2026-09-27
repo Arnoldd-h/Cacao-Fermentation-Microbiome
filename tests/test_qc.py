@@ -11,6 +11,8 @@ sys.path.insert(0, str(ROOT / "python"))
 from cacao_inventory.qc import (  # noqa: E402
     build_raw_quality_rows,
     build_cutadapt_summary_rows,
+    build_read_quality_comparison_rows,
+    build_trimmed_quality_rows,
     cutadapt_detection_counts,
     read_direction,
     validate_iupac_sequence,
@@ -217,6 +219,35 @@ class PilotCutadaptOutputTests(unittest.TestCase):
             all(row["input_reads"] == row["reads_written"] for row in self.rows)
         )
         self.assertEqual(sum(int(row["reads_with_adapter"]) for row in self.rows), 7)
+
+
+class TrimmedQualityTests(unittest.TestCase):
+    def test_length_range_parser_and_trimmed_join(self) -> None:
+        cutadapt = []
+        for direction, suffix in (("R1", "1"), ("R2", "2")):
+            cutadapt.append(
+                {
+                    "study_id": "study",
+                    "bioproject": "PRJNA1",
+                    "sample_id": "sample",
+                    "run_accession": "SRR1",
+                    "read_direction": direction,
+                    "output_file": f"data/interim/SRR1_{suffix}.fastq.gz",
+                    "reads_written": "10",
+                    "output_bases": "990",
+                }
+            )
+        observed = build_trimmed_quality_rows(multiqc_rows(), cutadapt)
+        self.assertEqual(observed[0]["minimum_read_length"], "100")
+        self.assertEqual(observed[0]["maximum_read_length"], "100")
+        self.assertEqual(observed[0]["read_file"], "data/interim/SRR1_1.fastq.gz")
+
+    def test_raw_trimmed_comparison_rejects_count_growth(self) -> None:
+        raw = build_raw_quality_rows(multiqc_rows(), validation_rows())
+        trimmed = [dict(row) for row in raw]
+        trimmed[0]["total_sequences"] = "11"
+        with self.assertRaisesRegex(ValueError, "Invalid raw/trimmed read counts"):
+            build_read_quality_comparison_rows(raw, trimmed)
 
 
 if __name__ == "__main__":
