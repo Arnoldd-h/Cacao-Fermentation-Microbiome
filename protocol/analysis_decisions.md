@@ -44,6 +44,18 @@ instaladas; la versión de referencia en línea puede ser posterior.
 
 ## Pendiente
 
+### Identificadores pareados SRA, 2026-10-03
+
+El primer intento de `filterAndTrim` detectó que la identificación automática
+no reconocía encabezados como `@SRR7899687.1 1/1` y `@SRR7899687.1 1/2`.
+Se configura `id.field=1` e `id.sep="\\s"`: el primer token contiene el
+identificador compartido de la pareja. `matchIDs=true` se mantiene y comprueba
+la correspondencia real; no se permite desactivarlo para sortear el error.
+Esto corrige parsing del depósito, sin modificar filtros, umbrales ni lecturas.
+El caso se incorpora a las pruebas con encabezados sintéticos del mismo formato.
+
+### Decisiones aún abiertas
+
 - Versión de SILVA y método definitivo de clasificación.
 - Validar los parámetros iniciales de DADA2 con los diagnósticos del piloto antes de escalar.
 - Tratamiento de ceros y pseudoconteo para CLR.

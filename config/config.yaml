@@ -89,7 +89,9 @@
           "min_len": 150,
           "trim_left": [0, 0],
           "rm_phix": true,
-          "match_ids": true
+          "match_ids": true,
+          "id_field": 1,
+          "id_sep": "\\s"
         },
         "error_learning": {
           "nbases": 100000000,
