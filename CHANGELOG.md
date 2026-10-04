@@ -6,6 +6,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Added
 
+- Parámetros iniciales de DADA2 por estudio fijados antes de la ejecución del
+  piloto, con semilla, filtros, aprendizaje, merging y quimeras explícitos.
 - Política persistente de control de versiones y trazabilidad científica.
 - Estado inicial del proyecto y registro de decisiones metodológicas.
 - Reglas de exclusión para datos ómicos pesados, credenciales y artefactos locales.
