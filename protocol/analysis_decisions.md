@@ -23,6 +23,20 @@
 | 2026-10-03 | Fijar parámetros iniciales DADA2 1.34.0 del piloto antes de ejecutarlo: sin truncamiento fijo, maxN=0, maxEE=(2,2), truncQ=2, minLen=150, aprendizaje por dirección hasta 10 iteraciones y 100 millones de bases disponibles, inferencia independiente y merging con 12 nt de solapamiento sin discrepancias. | Los FASTQ post-Cutadapt miden 185–223 nt; los perfiles por ciclo no muestran un colapso abrupto de calidad y ya se verificó recorte previo al depósito. minLen=150 es un límite técnico inicial para lecturas excepcionalmente acortadas por truncQ; no descarta las longitudes actualmente observadas. Los valores restantes siguen el tutorial/manual oficial, cotejados con la versión instalada. | Truncar a una longitud arbitraria, relajar merging para elevar retención o ajustar parámetros según taxones/efectos. | Se registran retención por etapa, errores aprendidos, rechazos de merging y longitudes; no se interpreta el piloto como evidencia de sucesión ni se escala antes de revisar estos diagnósticos. Semilla 20260819; no se mezclan estudios. | Adoptada para piloto técnico |
 | 2026-10-03 | Usar eliminación de quimeras consensus con minFoldParentOverAbundance=1.5, minParentAbundance=2, minSampleFraction=0.9, ignoreNNegatives=1 y allowOneOff=false; no aplicar todavía filtro por longitud del amplicón ensamblado. | Son parámetros explícitos de la versión instalada; las longitudes ensambladas reales aún no se conocen. OMEGA_C=0 corresponde al aprendizaje de errores y OMEGA_C=1e-40 a la inferencia final. | Confundir los parámetros de aprendizaje e inferencia o imponer un intervalo post-merge sin observar los datos. | Cualquier filtro posterior exigirá evidencia, configuración, validación y decisión específica, conservando las tablas sin filtrar. | Adoptada para piloto técnico |
 
+### Estructura del diseño, 2026-10-03
+
+Se fija en `config.analysis_design` que la unidad independiente es el lote;
+los tiempos son medidas repetidas y las extracciones/estratos son submuestras
+anidadas. La alternativa de contar cada run como réplica independiente se
+rechaza por pseudorreplicación. Se exportará el mapa estudio/lote/hora sin
+alterar abundancias y se conservará la identificación de cada submuestra para
+la agregación y sensibilidad posteriores. Esta decisión se basa en el diseño
+documentado en `reports/dataset_inventory.md`, no en resultados de abundancia.
+El piloto técnico no habilita inferencia biológica. Los moderadores asociados
+con estudio/región 16S se declararán no identificables mientras el diseño no
+permita separarlos; horas absolutas y tiempo relativo se conservan para evaluar
+la dependencia respecto del último tiempo observado de cada lote.
+
 Fuentes de DADA2: [tutorial oficial](https://benjjneb.github.io/dada2/tutorial.html)
 y [manual de referencia](https://www.bioconductor.org/packages/release/bioc/manuals/dada2/man/dada2.pdf).
 Los valores por defecto se contrastaron con las funciones de DADA2 1.34.0

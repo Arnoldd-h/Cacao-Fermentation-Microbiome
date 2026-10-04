@@ -6,6 +6,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Added
 
+- Jerarquía reproducible run/muestra/lote/tiempo que conserva las submuestras
+  anidadas y evita contarlas como fermentaciones independientes.
+- Registros de procedencia con fecha, commit, estado del checkout, parámetros
+  y checksums de entradas, configuración y salidas.
 - Ejecutor portable de Micromamba que descubre el prefijo registrado o acepta
   una selección local explícita y rechaza instalaciones ausentes o ambiguas.
 - Parámetros iniciales de DADA2 por estudio fijados antes de la ejecución del

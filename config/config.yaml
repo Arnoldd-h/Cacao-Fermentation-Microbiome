@@ -16,6 +16,15 @@
     "minimum_relative_abundance": [0.0001, 0.001, 0.01],
     "study_prevalence": [0.5, 0.75, 1.0]
   },
+  "analysis_design": {
+    "independent_unit": "fermentation_batch",
+    "observation_fields": ["study_id", "fermentation_batch", "fermentation_hours"],
+    "within_observation_policy": "retain_subsamples_for_documented_within_study_aggregation",
+    "pilot_inference": false,
+    "cross_study_asv_pooling": false,
+    "confounded_moderators": "report_as_non_identifiable",
+    "time_sensitivity": ["fermentation_hours", "relative_time"]
+  },
   "pilot_selection": {
     "minimum_timepoints": 3,
     "required_temporal_stages": ["early", "mid", "late"],
