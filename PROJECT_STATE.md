@@ -1,11 +1,11 @@
 # Estado del proyecto
 
-Última actualización: 2026-09-26
+Última actualización: 2026-10-03
 
 ## Fase actual
 
-Inventario sistemático de datasets públicos para la Fase I bacteriana 16S y
-vertical slice técnica del piloto.
+QC técnico del piloto completado; correcciones de reproducibilidad, revisión
+actualizada del inventario y desarrollo del piloto DADA2 en progreso.
 
 ## Completado
 
@@ -32,7 +32,7 @@ vertical slice técnica del piloto.
   con 25.154.687 bytes estimados.
 - Doce FASTQ descargados localmente: 12/12 bytes, MD5, gzip y estructura FASTQ
   válidos; 353.596 reads y 78.651.325 bases en total.
-- Validador independiente y 36 tests unitarios aprobados.
+- Validador independiente y suite de pruebas unitarias aprobados en la auditoría.
 - Micromamba 2.9.0 instalado para Ubuntu/WSL2 y entorno `cacao-microbiome`
   creado con canales Bioconda/conda-forge de prioridad estricta.
 - FastQC 0.12.1, MultiQC 1.25.1, Cutadapt 5.0, Snakemake 8.30.0, R 4.4.3 y
@@ -74,6 +74,9 @@ vertical slice técnica del piloto.
 
 ## En progreso
 
+- Implementación de DADA2 con parámetros prerregistrados en `44f5f4a`.
+- Reconstrucción del workflow sin manifest ni FASTQ preexistentes y registro
+  de procedencia del QC por ejecución.
 - Revisión de publicación y elegibilidad de 13 BioProjects detectados por la
   consulta sistemática que todavía no están configurados.
 - Verificación de primers, región 16S, diseño temporal y condición espontánea
@@ -83,7 +86,10 @@ vertical slice técnica del piloto.
 
 ## Bloqueado
 
-- No hay bloqueos técnicos para iniciar el QC del piloto.
+- La invocación de Micromamba por nombre apuntaba a otra raíz; resuelto con
+  `scripts/environment/run_in_environment.py`, que descubre el prefijo real.
+- Los vacíos científicos se resolverán con fuentes verificadas; una revisión
+  sin evidencia suficiente conserva el estado pendiente.
 
 ## Decisiones importantes
 
@@ -127,6 +133,7 @@ vertical slice técnica del piloto.
 
 ## Último commit relevante
 
-`3d7ba2f feat: add post-trimming pilot quality control`, que integra el QC
-post-Cutadapt, la comparación raw/interim y la detección de primers en el
-workflow del piloto.
+`44f5f4a docs: preregister study-specific pilot DADA2 parameters` fija filtros,
+aprendizaje, ensamblaje y quimeras antes de ejecutar el piloto. El hito anterior
+de QC post-Cutadapt corresponde a `7532540`. Para el estado exacto del checkout,
+usar `git log -1 --oneline` y `git status`.

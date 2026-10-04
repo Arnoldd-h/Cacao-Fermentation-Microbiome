@@ -6,6 +6,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Added
 
+- Ejecutor portable de Micromamba que descubre el prefijo registrado o acepta
+  una selección local explícita y rechaza instalaciones ausentes o ambiguas.
 - Parámetros iniciales de DADA2 por estudio fijados antes de la ejecución del
   piloto, con semilla, filtros, aprendizaje, merging y quimeras explícitos.
 - Política persistente de control de versiones y trazabilidad científica.
