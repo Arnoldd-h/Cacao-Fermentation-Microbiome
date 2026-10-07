@@ -5,6 +5,9 @@ from __future__ import annotations
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any
+import math
+
+from .pilot_workflow import fastq_path
 
 
 IUPAC_DNA = frozenset("ACGTRYSWKMBDHVN")
@@ -114,12 +117,130 @@ def cutadapt_detection_counts(report: dict[str, Any]) -> tuple[int, int]:
     return examined, matched
 
 
+def validate_cutadapt_parameters(primers: dict[str, Any], parameters: dict[str, Any]) -> None:
+    """Reject unsupported method changes instead of silently ignoring flags."""
+
+    for flag in ("allow_indels", "discard_untrimmed", "quality_trimming"):
+        if parameters.get(flag) is not False:
+            raise ValueError(f"Pilot Cutadapt requires {flag}=false; other values are unsupported")
+    error_rate = float(parameters["error_rate"])
+    if not math.isfinite(error_rate) or not 0 <= error_rate <= 1:
+        raise ValueError("Invalid Cutadapt error_rate")
+    if set(primers) != {"forward", "reverse"}:
+        raise ValueError("Cutadapt requires forward and reverse primers")
+    for role in ("forward", "reverse"):
+        sequence = validate_iupac_sequence(primers[role]["gene_specific_sequence"])
+        if int(parameters[f"{role}_minimum_overlap"]) != len(sequence):
+            raise ValueError(f"Cutadapt requires full-length {role} primer overlap")
+
+
+def cutadapt_command(
+    row: dict[str, str], primers: dict[str, Any], parameters: dict[str, Any],
+    outputs: dict[str, str], report_path: str, threads: int = 1,
+) -> list[str]:
+    """Construct the only currently supported primer-only paired trimming command."""
+
+    validate_cutadapt_parameters(primers, parameters)
+    if threads < 1:
+        raise ValueError("Cutadapt threads must be positive")
+    adapters = {
+        role: f"{role}={validate_iupac_sequence(primers[role]['gene_specific_sequence'])};min_overlap={parameters[f'{role}_minimum_overlap']}"
+        for role in ("forward", "reverse")
+    }
+    return [
+        "cutadapt", "--cores", str(threads), "--no-indels", "--error-rate", str(parameters["error_rate"]),
+        "--front", adapters["forward"], "-G", adapters["reverse"],
+        "--json", report_path, "--output", outputs["R1"], "--paired-output", outputs["R2"],
+        fastq_path(row, "1"), fastq_path(row, "2"),
+    ]
+
+
+def _validate_cutadapt_execution(
+    report: dict[str, Any], row: dict[str, str], outputs: dict[str, str],
+    primers: dict[str, Any], parameters: dict[str, Any], root: Path,
+    report_path: str | Path | None,
+) -> None:
+    """Compare actual report paths, command flags and adapters to configured inputs."""
+
+    validate_cutadapt_parameters(primers, parameters)
+    arguments = report.get("command_line_arguments")
+    if not isinstance(arguments, list):
+        raise ValueError("Cutadapt JSON lacks command_line_arguments")
+    aliases = {"-j": "--cores", "-g": "--front", "-o": "--output", "-p": "--paired-output"}
+    valued = {"--cores", "--error-rate", "--front", "-G", "--json", "--output", "--paired-output"}
+    options: dict[str, str | bool] = {}
+    positional: list[str] = []
+    cursor = 0
+    while cursor < len(arguments):
+        token = aliases.get(arguments[cursor], arguments[cursor])
+        if token in options:
+            raise ValueError(f"Duplicate Cutadapt option: {token}")
+        if token == "--no-indels":
+            options[token] = True
+        elif token in valued:
+            cursor += 1
+            if cursor >= len(arguments):
+                raise ValueError(f"Missing Cutadapt option value: {token}")
+            options[token] = str(arguments[cursor])
+        elif token.startswith("-"):
+            raise ValueError(f"Unsupported Cutadapt command option: {token}")
+        else:
+            positional.append(token)
+        cursor += 1
+    if set(options) != valued | {"--no-indels"} or len(positional) != 2:
+        raise ValueError("Cutadapt command does not match the paired primer-only method")
+    if int(options["--cores"]) < 1 or float(options["--error-rate"]) != float(parameters["error_rate"]):
+        raise ValueError("Cutadapt command error rate/cores disagrees with configuration")
+
+    def canonical(value: str | Path) -> Path:
+        return (root / value).resolve()
+
+    for suffix, direction, path_field, output_option, role, adapter_option, adapter_key in (
+        ("1", "R1", "path1", "--output", "forward", "--front", "adapters_read1"),
+        ("2", "R2", "path2", "--paired-output", "reverse", "-G", "adapters_read2"),
+    ):
+        expected_input = canonical(fastq_path(row, suffix))
+        expected_output = canonical(fastq_path(row, suffix, "trimmed"))
+        if canonical(report["input"][path_field]) != expected_input or canonical(positional[int(suffix) - 1]) != expected_input:
+            raise ValueError(f"Cutadapt input path disagrees with manifest for {direction}")
+        if canonical(outputs[direction]) != expected_output or canonical(str(options[output_option])) != expected_output:
+            raise ValueError(f"Cutadapt output path disagrees with manifest for {direction}")
+        sequence = validate_iupac_sequence(primers[role]["gene_specific_sequence"])
+        adapter_value = str(options[adapter_option])
+        name, separator, specification = adapter_value.partition("=")
+        expected_specification = f"{sequence};min_overlap={parameters[f'{role}_minimum_overlap']}"
+        if not separator or not name or specification != expected_specification:
+            raise ValueError(f"Cutadapt command primer/overlap disagrees for {direction}")
+        adapters = report.get(adapter_key)
+        if not isinstance(adapters, list) or len(adapters) != 1:
+            raise ValueError(f"Cutadapt JSON must contain one adapter for {direction}")
+        adapter = adapters[0]
+        end = adapter.get("five_prime_end") or {}
+        if (adapter.get("name") != name or end.get("sequence") != sequence
+                or end.get("indels") is not False
+                or end.get("type") != "regular_five_prime"
+                or float(end.get("error_rate", -1)) != float(parameters["error_rate"])):
+            raise ValueError(f"Cutadapt reported primer/parameters disagree for {direction}")
+        count_key = "read1_with_adapter" if suffix == "1" else "read2_with_adapter"
+        if int(adapter["total_matches"]) != int(report["read_counts"][count_key]):
+            raise ValueError(f"Cutadapt reported adapter counts disagree for {direction}")
+    if report_path is not None and canonical(str(options["--json"])) != canonical(report_path):
+        raise ValueError("Cutadapt JSON output path disagrees with report location")
+    if any(value is not None for value in report["read_counts"].get("filtered", {}).values()):
+        raise ValueError("Cutadapt report unexpectedly enabled read filtering")
+    if report["basepair_counts"].get("quality_trimmed") is not None:
+        raise ValueError("Cutadapt report unexpectedly enabled quality trimming")
+
+
 def build_cutadapt_summary_rows(
     report: dict[str, Any],
     manifest_row: dict[str, str],
     output_files: dict[str, str],
     primers: dict[str, dict[str, Any]],
     parameters: dict[str, Any],
+    *,
+    root: Path | None = None,
+    report_path: str | Path | None = None,
 ) -> list[dict[str, str]]:
     """Validate a paired Cutadapt JSON report and return one row per direction."""
 
@@ -146,6 +267,10 @@ def build_cutadapt_summary_rows(
         raise ValueError(
             "Cutadapt unexpectedly removed paired reads despite non-discarding configuration"
         )
+
+    _validate_cutadapt_execution(
+        report, manifest_row, output_files, primers, parameters, root or Path.cwd(), report_path,
+    )
 
     try:
         error_rate = float(parameters["error_rate"])

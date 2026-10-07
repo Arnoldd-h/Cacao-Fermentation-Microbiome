@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "python"))
 
 from cacao_inventory.io import read_tsv, write_tsv_atomic  # noqa: E402
+from cacao_inventory.provenance import qc_provenance
 from cacao_inventory.qc import (  # noqa: E402
     MULTIQC_FASTQC_COLUMNS,
     build_read_quality_comparison_rows,
@@ -53,6 +54,12 @@ def main() -> int:
         args.comparison_output,
         comparison_rows,
         READ_QUALITY_COMPARISON_COLUMNS,
+    )
+    qc_provenance(
+        args.output, root=ROOT,
+        inputs=[args.multiqc_fastqc, args.cutadapt_summary, args.raw_quality, *(ROOT / row["output_file"] for row in cutadapt_rows)],
+        outputs=[args.output, args.comparison_output], tools=("fastqc", "multiqc"),
+        command=[sys.executable, *sys.argv],
     )
     logging.info("Compared raw and trimmed FastQC for %d FASTQ files", len(trimmed_rows))
     return 0

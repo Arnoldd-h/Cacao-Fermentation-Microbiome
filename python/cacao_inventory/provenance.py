@@ -109,6 +109,7 @@ def qc_provenance(
     code = list((root / "python" / "cacao_inventory").glob("*.py"))
     code += list((root / "scripts" / "qc").glob("*.py"))
     code += [root / "workflow" / "Snakefile", root / "workflow" / "rules" / "pilot_qc.smk"]
+    code += [root / "environment" / "conda-linux-64.lock"]
     write_provenance(
         output.with_suffix(".provenance.json"), root=root,
         inputs=[*inputs, *code], outputs=list(outputs) if outputs is not None else [output],

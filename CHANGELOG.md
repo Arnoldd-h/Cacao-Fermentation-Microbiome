@@ -6,6 +6,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Added
 
+- Workflow del piloto reconstruible mediante checkpoint del manifest y reglas
+  productoras de FASTQ protegidos; pruebas de arranque sin manifest ni datos.
+- Validación de parámetros y rutas realmente ejecutados por Cutadapt, selección
+  de primers por BioProject y procedencia de todos los resúmenes QC.
 - Jerarquía reproducible run/muestra/lote/tiempo que conserva las submuestras
   anidadas y evita contarlas como fermentaciones independientes.
 - Registros de procedencia con fecha, commit, estado del checkout, parámetros

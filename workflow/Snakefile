@@ -1,94 +1,134 @@
+"""Reconstruct inventory and the configured pilot, including absent raw FASTQ."""
+
 configfile: "config/config.yaml"
 
-include: "rules/pilot_qc.smk"
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path("python").resolve()))
+
+
+def python_sources(script, *modules):
+    return [script] + [f"python/cacao_inventory/{module}.py" for module in modules]
 
 
 rule all:
+    default_target: True
     input:
         "metadata/.inventory.ok",
         "metadata/discovery_candidates.tsv",
         "results/tables/pilot_dataset_selection.tsv",
+        "results/tables/analysis_units.tsv",
+        "results/tables/analysis_design.tsv",
+        "results/tables/analysis_design.provenance.json",
         "metadata/pilot_manifest.tsv",
         "results/qc/pilot/multiqc_trimmed/multiqc_report.html",
         "results/qc/pilot/trimmed_read_quality.tsv",
         "results/qc/pilot/read_quality_comparison.tsv",
-        "results/qc/pilot/primer_detection_trimmed.tsv"
+        "results/qc/pilot/primer_detection_trimmed.tsv",
+        "results/qc/pilot/raw_read_quality.provenance.json",
+        "results/qc/pilot/cutadapt_summary.provenance.json",
+        "results/qc/pilot/trimmed_read_quality.provenance.json",
+        "results/qc/pilot/primer_detection.provenance.json",
+        "results/qc/pilot/primer_detection_trimmed.provenance.json",
 
 
 rule discover_candidates:
     input:
-        project_config="config/config.yaml",
+        project_config=ancient("config/config.yaml"),
         datasets="config/datasets.yaml",
+        code=python_sources("scripts/metadata/discover_candidates.py", "config", "discovery", "sources", "schema", "io"),
     output:
         "metadata/discovery_candidates.tsv"
+    params:
+        settings={key: config[key] for key in ("inventory", "discovery_queries")},
     shell:
         "python scripts/metadata/discover_candidates.py"
 
 
 rule build_inventory:
     input:
-        project_config="config/config.yaml",
+        project_config=ancient("config/config.yaml"),
         datasets="config/datasets.yaml",
+        code=python_sources("scripts/metadata/build_inventory.py", "config", "inventory", "validation", "sources", "schema", "io"),
     output:
         studies="metadata/studies.tsv",
         runs="metadata/runs.tsv",
         samples="metadata/samples.tsv",
         exclusions="metadata/exclusion_log.tsv",
+    params:
+        settings={key: config[key] for key in ("inventory", "temporal_stages")},
     shell:
         "python scripts/metadata/build_inventory.py"
 
 
 rule validate_inventory:
     input:
-        rules="config/config.yaml",
+        config=ancient("config/config.yaml"),
+        datasets="config/datasets.yaml",
         studies="metadata/studies.tsv",
         runs="metadata/runs.tsv",
         samples="metadata/samples.tsv",
         exclusions="metadata/exclusion_log.tsv",
+        code=python_sources("scripts/metadata/validate_metadata.py", "config", "validation", "schema", "io"),
     output:
         "metadata/.inventory.ok"
+    params:
+        stages=config["temporal_stages"],
     shell:
-        "python scripts/metadata/validate_metadata.py --stamp {output}"
+        "python scripts/metadata/validate_metadata.py --stamp {output:q}"
 
 
 rule select_pilot_dataset:
     input:
-        config="config/config.yaml",
+        config=ancient("config/config.yaml"),
+        validated="metadata/.inventory.ok",
         studies="metadata/studies.tsv",
         runs="metadata/runs.tsv",
         samples="metadata/samples.tsv",
+        code=python_sources("scripts/metadata/select_pilot_dataset.py", "config", "selection", "schema", "io"),
     output:
         "results/tables/pilot_dataset_selection.tsv"
+    params:
+        settings=config["pilot_selection"],
     shell:
-        "python scripts/metadata/select_pilot_dataset.py --output {output}"
+        "python scripts/metadata/select_pilot_dataset.py --output {output:q}"
 
 
-rule build_pilot_manifest:
+rule build_analysis_units:
     input:
-        config="config/config.yaml",
-        selection="results/tables/pilot_dataset_selection.tsv",
+        config=ancient("config/config.yaml"),
+        validated="metadata/.inventory.ok",
+        studies="metadata/studies.tsv",
         runs="metadata/runs.tsv",
         samples="metadata/samples.tsv",
+        exclusions="metadata/exclusion_log.tsv",
+        code=python_sources("scripts/metadata/build_analysis_units.py", "design", "config", "validation", "provenance", "io", "schema"),
     output:
-        "metadata/pilot_manifest.tsv"
+        units="results/tables/analysis_units.tsv",
+        design="results/tables/analysis_design.tsv",
+        provenance="results/tables/analysis_design.provenance.json",
+    params:
+        settings=config["analysis_design"],
     shell:
-        "python scripts/metadata/build_pilot_manifest.py --selection {input.selection} --output {output}"
+        "python scripts/metadata/build_analysis_units.py"
 
 
-rule download_pilot_fastq:
+checkpoint build_pilot_manifest:
     input:
-        config="config/config.yaml",
-        manifest="metadata/pilot_manifest.tsv",
+        config=ancient("config/config.yaml"),
+        selection="results/tables/pilot_dataset_selection.tsv",
+        studies="metadata/studies.tsv",
+        runs="metadata/runs.tsv",
+        samples="metadata/samples.tsv",
+        exclusions="metadata/exclusion_log.tsv",
+        code=python_sources("scripts/metadata/build_pilot_manifest.py", "config", "pilot", "schema", "io"),
     output:
-        "results/qc/pilot_download_validation.tsv"
+        manifest="metadata/pilot_manifest.tsv"
+    params:
+        settings=config["pilot_vertical_slice"],
     shell:
-        "python scripts/metadata/download_pilot_fastq.py --manifest {input.manifest} --report {output}"
+        "python scripts/metadata/build_pilot_manifest.py --selection {input.selection:q} --output {output.manifest:q}"
 
 
-rule validate_pilot_fastq:
-    input:
-        "results/qc/pilot_download_validation.tsv"
-    output:
-        "results/qc/pilot_fastq_validation.tsv"
-    shell:
-        "python scripts/metadata/validate_pilot_fastq.py --download-report {input} --output {output}"
+include: "rules/pilot_qc.smk"

@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Última actualización: 2026-10-03
+Última actualización: 2026-10-06
 
 ## Fase actual
 
@@ -74,6 +74,10 @@ actualizada del inventario y desarrollo del piloto DADA2 en progreso.
 
 ## En progreso
 
+- Workflow reconstruible implementado y probado en copias sin manifest/FASTQ;
+  pendiente regeneración final QC y cierre de sus artefactos de procedencia.
+- Parser de identificadores SRA corregido en `eafadd7`, conservando la
+  comprobación obligatoria de correspondencia entre R1 y R2.
 - Implementación de DADA2 con parámetros prerregistrados en `44f5f4a`.
 - Reconstrucción del workflow sin manifest ni FASTQ preexistentes y registro
   de procedencia del QC por ejecución.

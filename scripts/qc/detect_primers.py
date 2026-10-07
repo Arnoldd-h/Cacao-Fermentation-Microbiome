@@ -23,14 +23,15 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "python"))
 
 from cacao_inventory.config import load_json_yaml  # noqa: E402
-from cacao_inventory.io import read_tsv, write_tsv_atomic  # noqa: E402
+from cacao_inventory.io import write_tsv_atomic  # noqa: E402
+from cacao_inventory.pilot_workflow import load_pilot_manifest, processing_configuration
+from cacao_inventory.provenance import qc_provenance
 from cacao_inventory.qc import (  # noqa: E402
     cutadapt_detection_counts,
     reverse_complement_iupac,
     validate_iupac_sequence,
 )
 from cacao_inventory.schema import (  # noqa: E402
-    PILOT_MANIFEST_COLUMNS,
     PRIMER_DETECTION_COLUMNS,
 )
 
@@ -120,15 +121,17 @@ def main() -> int:
     )
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     config = load_json_yaml(args.config)
-    manifest = read_tsv(args.manifest, PILOT_MANIFEST_COLUMNS)
+    manifest = load_pilot_manifest(args.manifest)
     bioprojects = {row["bioproject"] for row in manifest}
     if len(bioprojects) != 1:
         raise ValueError("Pilot primer detection requires exactly one BioProject")
     bioproject = next(iter(bioprojects))
     processing = _processing_config(config, bioproject)
+    processing_configuration(config, manifest[0])
     detection = processing["primer_detection"]
     error_rate = float(detection["error_rate"])
     rows: list[dict[str, str]] = []
+    input_files: list[Path] = []
 
     for sample in manifest:
         for direction, suffix in (("R1", "1"), ("R2", "2")):
@@ -153,8 +156,9 @@ def main() -> int:
                 )
             if not read_file.is_file():
                 raise FileNotFoundError(f"Missing pilot FASTQ: {read_file}")
+            input_files.append(read_file)
             for primer_role, primer in processing["primers"].items():
-                primer_label = "515F" if primer_role == "forward" else "806R"
+                primer_label = str(primer["name"]).split("_", maxsplit=1)[0]
                 for sequence_type, config_key, anchored in (
                     ("gene_specific", "gene_specific_sequence", False),
                     ("full_construct", "full_construct_sequence", True),
@@ -210,6 +214,10 @@ def main() -> int:
                         )
 
     write_tsv_atomic(output, rows, PRIMER_DETECTION_COLUMNS)
+    qc_provenance(
+        output, root=ROOT, inputs=[args.manifest, *input_files],
+        tools=(args.cutadapt,), config=args.config, command=[sys.executable, *sys.argv],
+    )
     logging.info(
         "Recorded %d primer detection tests across %d FASTQ files",
         len(rows),
