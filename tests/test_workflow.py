@@ -1,8 +1,11 @@
 from __future__ import annotations
 
 import os
+import csv
 import gzip
 import hashlib
+import io
+import json
 import shutil
 import subprocess
 import sys
@@ -148,6 +151,66 @@ class WorkflowBootstrapTests(unittest.TestCase):
             self.assertEqual(changed.returncode, 0, changed.stdout + changed.stderr)
             self.assertIn("Params have changed", changed.stdout)
             self.assertNotIn("rule download_pilot_read:", changed.stdout)
+
+    def test_full_config_fingerprint_invalidates_dada2_and_validation(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.copy_sources(root)
+            # Empty placeholders and Snakemake --touch are synthetic scheduling
+            # fixtures: no R or network command runs and none of these files are
+            # scientific evidence. --touch records the real rule's parameters.
+            old = time.time() - 200
+            for directory in ("workflow", "scripts", "python", "config", "environment"):
+                for path in (root / directory).rglob("*"):
+                    if path.is_file():
+                        os.utime(path, (old, old))
+            for directory in ("metadata", "results/tables"):
+                for path in (root / directory).rglob("*"):
+                    if path.is_file():
+                        os.utime(path, (old + 100, old + 100))
+            planned = subprocess.run(
+                ["snakemake", "--snakefile", "workflow/Snakefile", "--cores", "1", "--summary", "pilot_dada2"],
+                cwd=root, capture_output=True, text=True, timeout=90,
+            )
+            self.assertEqual(planned.returncode, 0, planned.stdout + planned.stderr)
+            table = csv.DictReader(io.StringIO(planned.stdout), delimiter="\t")
+            self.assertIn("output_file", table.fieldnames or [])
+            for entry in table:
+                placeholder = root / entry["output_file"]
+                if not placeholder.exists():
+                    placeholder.parent.mkdir(parents=True, exist_ok=True)
+                    placeholder.touch()
+                    os.utime(placeholder, (old + 150, old + 150))
+            materialized = subprocess.run(
+                ["snakemake", "pilot_dada2", "--snakefile", "workflow/Snakefile", "--cores", "1", "--touch",
+                 "--forcerun", "run_pilot_dada2", "validate_pilot_dada2"],
+                cwd=root, capture_output=True, text=True, timeout=90,
+            )
+            self.assertEqual(materialized.returncode, 0, materialized.stdout + materialized.stderr)
+            validation = root / "results/dada2/pilot/validation.json"
+            self.assertTrue(validation.exists())
+            self.assertEqual(validation.stat().st_size, 0, "Touch fixture must not execute the validator")
+            unchanged = self.dry_run(root, "pilot_dada2")
+            self.assertEqual(unchanged.returncode, 0, unchanged.stdout + unchanged.stderr)
+            self.assertIn("Nothing to be done", unchanged.stdout)
+
+            path = root / "config/config.yaml"
+            configuration = json.loads(path.read_text(encoding="utf-8"))
+            # This setting is outside DADA2/seed/manifest params. The complete
+            # configuration is nevertheless part of the run's checksum contract.
+            configuration["project"]["primary_outcome"] += " (synthetic scheduling fixture)"
+            path.write_text(json.dumps(configuration, indent=2) + "\n", encoding="utf-8")
+            # Preserve mtime: the parameter fingerprint, not a timestamp,
+            # must detect the change despite ancient(config.yaml).
+            os.utime(path, (old, old))
+            changed = self.dry_run(root, "pilot_dada2")
+            self.assertEqual(changed.returncode, 0, changed.stdout + changed.stderr)
+            self.assertIn("rule run_pilot_dada2:", changed.stdout)
+            self.assertIn("Params have changed", changed.stdout)
+            self.assertIn("rule validate_pilot_dada2:", changed.stdout)
+            self.assertNotIn("rule trim_pilot_primers:", changed.stdout)
+            self.assertNotIn("rule download_pilot_read:", changed.stdout)
+            self.assertEqual(validation.stat().st_size, 0, "Dry-run must leave synthetic output unchanged")
 
 
 if __name__ == "__main__":

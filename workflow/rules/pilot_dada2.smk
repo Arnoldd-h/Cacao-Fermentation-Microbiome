@@ -48,6 +48,7 @@ rule run_pilot_dada2:
         settings=pilot_dada2_settings,
         seed=config["project"]["default_random_seed"],
         manifest_sha256=pilot_manifest_fingerprint,
+        config_sha256=sha256_file("config/config.yaml"),
     threads: lambda wildcards: int(pilot_dada2_settings(wildcards)["threads"])
     log:
         "results/intermediate/dada2/pilot/execution.log"

@@ -29,6 +29,13 @@ commit, estado Git modificado, hashes SHA-256 de configuración, código,
 entradas y salidas, comando y versiones ejecutadas. Son artefactos pequeños que
 acompañan a las tablas TSV; los FASTQ y reportes voluminosos siguen fuera de Git.
 
+`pilot_dada2.smk` consume el QC y los FASTQ recortados, ejecuta inferencia dentro
+del estudio y valida las tablas y secuencias de forma independiente. Su
+parámetro `config_sha256` invalida DADA2 cuando cambia cualquier byte de la
+configuración: coincide con el contrato estricto del registro de hashes de R.
+El target `pilot_dada2` termina en `validation.json`, con checksums de salidas y
+entradas originales comprobados. El target principal `all` incluye esta etapa.
+
 Las etapas posteriores pueden utilizar `pilot_manifest_path(wildcards)`,
 `pilot_manifest_rows(wildcards)`, `pilot_study_id(wildcards)`,
 `pilot_run_ids(wildcards)` y `pilot_fastq_paths(wildcards, stage="trimmed")` como
