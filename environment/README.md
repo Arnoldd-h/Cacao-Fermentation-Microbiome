@@ -81,3 +81,8 @@ críticas— y actualiza
 La ubicación física del entorno es una configuración local y no debe
 versionarse. Las versiones resueltas y las pruebas de carga se registran en los
 artefactos pequeños de `environment/`.
+
+`.gitattributes` normaliza el tratamiento de texto entre Git de Windows y Git
+de WSL. Evita que las diferencias locales de `core.autocrlf` aparezcan como
+cambios científicos en el registro de procedencia. Los hashes de ejecución
+siguen calculándose sobre los bytes reales de cada archivo de entrada.

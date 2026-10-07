@@ -1,0 +1,9 @@
+# Keep text comparison and future checkouts consistent between Windows and WSL.
+* text=auto eol=lf
+*.png binary
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.gz binary
+*.zip binary
+*.rds binary
