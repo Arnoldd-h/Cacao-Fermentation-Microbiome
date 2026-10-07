@@ -42,8 +42,6 @@ y [manual de referencia](https://www.bioconductor.org/packages/release/bioc/manu
 Los valores por defecto se contrastaron con las funciones de DADA2 1.34.0
 instaladas; la versión de referencia en línea puede ser posterior.
 
-## Pendiente
-
 ### Identificadores pareados SRA, 2026-10-03
 
 El primer intento de `filterAndTrim` detectó que la identificación automática
@@ -54,7 +52,43 @@ la correspondencia real; no se permite desactivarlo para sortear el error.
 Esto corrige parsing del depósito, sin modificar filtros, umbrales ni lecturas.
 El caso se incorpora a las pruebas con encabezados sintéticos del mismo formato.
 
-### Decisiones aún abiertas
+### Revisión completa del inventario, 2026-10-06
+
+La revisión pública iniciada el 4 de octubre y terminada el 7 de octubre UTC
+(6 de octubre en Colombia) configura los 34 candidatos: cuatro incluidos,
+siete pendientes y 23 excluidos. Las fuentes y alternativas por candidato
+quedan en `config/datasets.yaml` y `reports/inventory_review_2026-10-04.md`.
+
+- Se incluyen los controles espontáneos F1/F2 de PRJEB40850 (12 runs, V4,
+  0–92 h) y F01/F02 de PRJEB57747 (16 runs, 16S completo, 0–120 h). Los
+  métodos primarios y archivos depositados con marcador explícito permiten
+  distinguirlos de inoculados, ITS y WGS. Se rechazó seleccionar por tamaño
+  de archivo o por la etiqueta genérica AMPLICON. Los primers proceden de los
+  protocolos citados y se preservan con sus variantes exactas en configuración.
+- PRJEB57747 requiere procesamiento PacBio específico; su inclusión científica
+  no autoriza reutilizar parámetros Illumina. Los experimentos Costa Rica
+  2017/2019 se mantienen separados y se evaluará dependencia por sitio/laboratorio.
+- Las decisiones pendientes iniciales de PRJNA865318 y PRJNA1104253 quedan
+  sustituidas por exclusión: sólo hay día 1 bacteriano verificable en el primero;
+  los amplicones del segundo pertenecen a ensayos controlados y el componente
+  natural es WGS. Se rechazó inferir FASTQ de filas de muestreo planificadas.
+- PRJEB53853 permanece pendiente: se resolvieron tratamientos F1/F2, pero no la
+  separación bacteriana/fúngica de bibliotecas mixtas. PRJNA420946 conserva los
+  registros a 144 h, incompatibles con las 120 h de la publicación; no se
+  recodifican ni se excluyen para obtener concordancia. Los otros cinco
+  pendientes conservan el requisito preciso de evidencia en el informe.
+- Un lote desconocido queda vacío; `study_id` ya no lo sustituye. Se preservan
+  horas absolutas conocidas sin fabricar duración, tiempo relativo o etapa.
+  Los valores `unknown`/`not reported` se trasladan a notas y el campo observado
+  queda vacío. Esta corrección evita crear réplicas o covariables sin evidencia.
+
+Las reglas se aplican a 2.357 runs y conservan 182 incluidos, 93 pendientes y
+2.082 excluidos, con 12 lotes entre los incluidos. La selección prerregistrada
+mantiene PRJNA492720 y el mismo manifest de seis runs. Se validan las tablas,
+selectores de marcador/plataforma, ausencia de lotes inventados y conservación
+de los tiempos en conflicto antes de consolidar el cambio metodológico.
+
+## Decisiones aún abiertas
 
 - Versión de SILVA y método definitivo de clasificación.
 - Validar los parámetros iniciales de DADA2 con los diagnósticos del piloto antes de escalar.

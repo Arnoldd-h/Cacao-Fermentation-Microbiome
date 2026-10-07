@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "candidates": [
     {
       "bioproject": "PRJNA492720",
@@ -12,7 +12,7 @@
       "region": "Antioquia; Santander",
       "institution": "AGROSAVIA; Universidad de los Andes",
       "cacao_species": "Theobroma cacao",
-      "cacao_variety": "not reported in public run metadata",
+      "cacao_variety": "",
       "fermentation_type": "spontaneous",
       "fermentation_container": "wooden box",
       "fermentation_duration_hours": "event-specific: 108-144",
@@ -26,61 +26,108 @@
       "screening_reason": "Published spontaneous longitudinal 16S study with 94 paper-consistent runs, public paired-end FASTQ and 12-hour sampling.",
       "metadata_quality": "high",
       "candidate_rules": [
-        {"field": "library_strategy", "pattern": "^AMPLICON$"},
-        {"field": "library_layout", "pattern": "^PAIRED$"},
-        {"field": "sample_alias", "pattern": "^Bact(?P<location_code>An|Sa)(?P<season_code>I{1,2})(?P<hours>\\d{3})z(?P<sampling_stratum>\\d+)$"}
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "library_layout",
+          "pattern": "^PAIRED$"
+        },
+        {
+          "field": "sample_alias",
+          "pattern": "^Bact(?P<location_code>An|Sa)(?P<season_code>I{1,2})(?P<hours>\\d{3})z(?P<sampling_stratum>\\d+)$"
+        }
       ],
-      "time_parser": {"field": "sample_alias", "pattern": "^Bact(?P<location_code>An|Sa)(?P<season_code>I{1,2})(?P<hours>\\d{3})z(?P<sampling_stratum>\\d+)$", "unit": "hours"},
+      "time_parser": {
+        "field": "sample_alias",
+        "pattern": "^Bact(?P<location_code>An|Sa)(?P<season_code>I{1,2})(?P<hours>\\d{3})z(?P<sampling_stratum>\\d+)$",
+        "unit": "hours"
+      },
       "duration_mode": "group_max",
-      "duration_group_fields": ["location_code", "season_code"],
+      "duration_group_fields": [
+        "location_code",
+        "season_code"
+      ],
       "value_maps": {
-        "location_code": {"An": "Antioquia", "Sa": "Santander"},
-        "season_code": {"I": "dry", "II": "wet"}
+        "location_code": {
+          "An": "Antioquia",
+          "Sa": "Santander"
+        },
+        "season_code": {
+          "I": "dry",
+          "II": "wet"
+        }
       },
       "sources": [
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA492720",
         "https://www.ebi.ac.uk/ena/browser/view/PRJNA492720",
         "https://doi.org/10.3389/fmicb.2020.00650",
         "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7174660/supplementaryFiles?includeInlineImage=false"
-      ]
+      ],
+      "missing_metadata_notes": {
+        "normalization": "Unknown curated values are empty. Prior missingness descriptions are preserved here; original deposited descriptions remain unchanged.",
+        "previous_descriptions": {
+          "cacao_variety": "not reported in public run metadata"
+        }
+      },
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00"
     },
     {
       "bioproject": "PRJNA865318",
       "study_id": "hawaii_phyllosphere_ferment_2022",
-      "publication_title": "",
-      "doi": "",
+      "publication_title": "Phyllosphere to Ferment: Site Conditions Structure Cacao Pod and Fermentation Microbiomes in HawaiÊ»i",
+      "doi": "10.1094/PHYTOFR-08-23-0104-R",
       "pmid": "",
-      "year": "2022",
+      "year": "2024",
       "country": "United States",
       "region": "Hawaii, Oahu",
       "institution": "University of Hawai'i at Manoa",
       "cacao_species": "Theobroma cacao",
       "cacao_variety": "multiple genotypes; run-level mapping incomplete",
-      "fermentation_type": "spontaneous; requires publication verification",
-      "fermentation_container": "not reported in public run metadata",
-      "fermentation_duration_hours": "unknown",
-      "season": "not reported",
+      "fermentation_type": "spontaneous",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
       "amplicon_type": "16S rRNA and ITS",
-      "marker": "16S rRNA candidate subset",
-      "region_16s": "unknown",
-      "forward_primer": "unknown",
-      "reverse_primer": "unknown",
-      "screening_status": "pending",
-      "screening_reason": "Public fermentation-bacteria runs exist, but temporal metadata is limited or ambiguous and no linked paper was verified.",
+      "marker": "16S rRNA",
+      "region_16s": "V4",
+      "forward_primer": "GTGYCAGCMGCCGCGGTAA",
+      "reverse_primer": "GGACTACNVGGGTWTCTAAT",
+      "screening_status": "exclude",
+      "screening_reason": "The linked primary paper reports failure to recover fermentation days 2-6; all 21 deposited fermentation-bacteria runs represent day 1 (including aliases .1. and .1day.). The project does not provide a three-timepoint bacterial fermentation series.",
       "metadata_quality": "medium-low",
-      "candidate_rules": [
-        {"field": "library_strategy", "pattern": "^AMPLICON$"},
-        {"field": "sample_title", "pattern": "^fermentation bacteria$"},
-        {"field": "sample_alias", "pattern": "16S"}
-      ],
-      "time_parser": {"field": "sample_alias", "pattern": "(?P<days>\\d+)day", "unit": "days"},
-      "duration_mode": "unknown",
+      "candidate_rules": [],
+      "time_parser": {
+        "field": "sample_alias",
+        "pattern": "(?P<days>\\d+)day",
+        "unit": "days"
+      },
+      "duration_mode": "",
       "duration_group_fields": [],
       "value_maps": {},
       "sources": [
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA865318",
-        "https://www.ebi.ac.uk/ena/browser/view/PRJNA865318"
-      ]
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA865318",
+        "https://doi.org/10.1094/PHYTOFR-08-23-0104-R",
+        "https://github.com/nnguyenlab/cacao-microbiome",
+        "https://raw.githubusercontent.com/nnguyenlab/cacao-microbiome/main/QIIME%20analyses/cacao_metadata_combined.csv",
+        "https://raw.githubusercontent.com/nnguyenlab/cacao-microbiome/main/QIIME%20analyses/cacao_combined_qiime2_commands.txt"
+      ],
+      "missing_metadata_notes": {
+        "normalization": "Unknown curated values are empty. Prior missingness descriptions are preserved here; original deposited descriptions remain unchanged.",
+        "previous_descriptions": {
+          "fermentation_container": "not reported in public run metadata",
+          "fermentation_duration_hours": "unknown",
+          "season": "not reported",
+          "region_16s": "unknown",
+          "forward_primer": "unknown",
+          "reverse_primer": "unknown",
+          "duration_mode": "unknown"
+        }
+      },
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "The author metadata includes intended days 0/1/3/6 and repeated sequencing attempts; these are not evidence that all planned samples were deposited. Public fermentation bacterial runs map only to day 1. Primers are recorded from author QIIME2 commands, not inferred from primer names."
     },
     {
       "bioproject": "PRJNA1104253",
@@ -100,18 +147,18 @@
       "season": "multiple; mapping pending",
       "amplicon_type": "mixed 16S rRNA, ITS and WGS",
       "marker": "16S rRNA candidate subset",
-      "region_16s": "unknown in current inventory",
-      "forward_primer": "unknown in current inventory",
-      "reverse_primer": "unknown in current inventory",
-      "screening_status": "pending",
-      "screening_reason": "High-confidence 16S-labelled runs are controlled in vitro fermentations; non-inoculated controls may support sensitivity analyses but are not yet accepted as primary spontaneous on-farm evidence.",
+      "region_16s": "V3-V4",
+      "forward_primer": "ACTCCTACGGGAGGCAGCA",
+      "reverse_primer": "GGACTACHVGGGTWTCTAAT",
+      "screening_status": "exclude",
+      "screening_reason": "Natural on-farm microbiomes were sequenced by WGS Nanopore. The amplicon datasets are controlled SYNCOM/dropout experiments; No SYNCOM controls used aseptic pod opening, surface sterilization and programmed incubation, while dropout controls used sterilized beans and artificial pulp. Outside the primary natural spontaneous-fermentation design; retain for a separately specified future sensitivity analysis.",
       "metadata_quality": "medium",
-      "candidate_rules": [
-        {"field": "library_strategy", "pattern": "^AMPLICON$"},
-        {"field": "sample_alias", "pattern": "^invitro16S_\\d+$"},
-        {"field": "sample_description", "pattern": "metagenome of non-inoculated fermentation mass"}
-      ],
-      "time_parser": {"field": "sample_description", "pattern": "(?P<hours>\\d+)hr-R(?P<replicate>\\d+)$", "unit": "hours"},
+      "candidate_rules": [],
+      "time_parser": {
+        "field": "sample_description",
+        "pattern": "(?P<hours>\\d+)hr-R(?P<replicate>\\d+)$",
+        "unit": "hours"
+      },
       "duration_mode": "fixed",
       "duration_hours": 96,
       "duration_group_fields": [],
@@ -119,8 +166,19 @@
       "sources": [
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1104253",
         "https://www.ebi.ac.uk/ena/browser/view/PRJNA1104253",
-        "https://doi.org/10.1038/s41564-025-02077-6"
-      ]
+        "https://doi.org/10.1038/s41564-025-02077-6",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC12408344/"
+      ],
+      "missing_metadata_notes": {
+        "normalization": "Unknown curated values are empty. Prior missingness descriptions are preserved here; original deposited descriptions remain unchanged.",
+        "previous_descriptions": {
+          "region_16s": "unknown in current inventory",
+          "forward_primer": "unknown in current inventory",
+          "reverse_primer": "unknown in current inventory"
+        }
+      },
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Primary Methods: in vitro fermentation and bacterial 16S library preparation. 338F/806R V3-V4 are distinct from isolate Sanger 8F/fD1. No SYNCOM samples were collected as duplicate swabs from three boxes; run labels R1-R6 must not be treated as six independent boxes. Four hundred seventy-three deposited runs were reviewed, including 156 bacterial and 156 ITS dropout libraries, 32 invitro16S, 22 invitroITS and 107 WGS runs."
     },
     {
       "bioproject": "PRJNA552479",
@@ -133,11 +191,11 @@
       "region": "Bahia",
       "institution": "PROCAD BIOCAU; Universidade Federal de Minas Gerais",
       "cacao_species": "Theobroma cacao",
-      "cacao_variety": "unknown",
+      "cacao_variety": "",
       "fermentation_type": "spontaneous",
-      "fermentation_container": "unknown",
+      "fermentation_container": "",
       "fermentation_duration_hours": "144",
-      "season": "unknown",
+      "season": "",
       "amplicon_type": "none; whole-metagenome shotgun",
       "marker": "not applicable",
       "region_16s": "not applicable",
@@ -151,7 +209,19 @@
       "duration_hours": 144,
       "duration_group_fields": [],
       "value_maps": {},
-      "sources": ["https://www.ncbi.nlm.nih.gov/bioproject/PRJNA552479", "https://www.ebi.ac.uk/ena/browser/view/PRJNA552479"]
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA552479",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA552479"
+      ],
+      "missing_metadata_notes": {
+        "normalization": "Unknown curated values are empty. Prior missingness descriptions are preserved here; original deposited descriptions remain unchanged.",
+        "previous_descriptions": {
+          "cacao_variety": "unknown",
+          "fermentation_container": "unknown",
+          "season": "unknown"
+        }
+      },
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00"
     },
     {
       "bioproject": "PRJNA1257864",
@@ -164,11 +234,11 @@
       "region": "Milagro",
       "institution": "Escuela Superior Politecnica del Litoral",
       "cacao_species": "Theobroma cacao",
-      "cacao_variety": "unknown",
+      "cacao_variety": "",
       "fermentation_type": "spontaneous",
-      "fermentation_container": "unknown",
+      "fermentation_container": "",
       "fermentation_duration_hours": "96",
-      "season": "unknown",
+      "season": "",
       "amplicon_type": "none reported; WGS on Illumina and MinION",
       "marker": "not applicable",
       "region_16s": "not applicable",
@@ -182,7 +252,19 @@
       "duration_hours": 96,
       "duration_group_fields": [],
       "value_maps": {},
-      "sources": ["https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1257864", "https://www.ebi.ac.uk/ena/browser/view/PRJNA1257864"]
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1257864",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA1257864"
+      ],
+      "missing_metadata_notes": {
+        "normalization": "Unknown curated values are empty. Prior missingness descriptions are preserved here; original deposited descriptions remain unchanged.",
+        "previous_descriptions": {
+          "cacao_variety": "unknown",
+          "fermentation_container": "unknown",
+          "season": "unknown"
+        }
+      },
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00"
     },
     {
       "bioproject": "PRJNA1264670",
@@ -192,14 +274,14 @@
       "pmid": "",
       "year": "2025",
       "country": "Colombia",
-      "region": "not reported in public run metadata",
+      "region": "",
       "institution": "Universidad Pedagogica y Tecnologica de Colombia",
       "cacao_species": "Theobroma cacao",
-      "cacao_variety": "unknown",
+      "cacao_variety": "",
       "fermentation_type": "two fermentation and drying routes",
-      "fermentation_container": "unknown",
-      "fermentation_duration_hours": "unknown",
-      "season": "unknown",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
       "amplicon_type": "none; whole-metagenome shotgun",
       "marker": "not applicable",
       "region_16s": "not applicable",
@@ -209,10 +291,25 @@
       "screening_reason": "All public runs are paired-end WGS with RANDOM selection; outside Phase I bacterial 16S amplicon scope.",
       "metadata_quality": "medium-low",
       "candidate_rules": [],
-      "duration_mode": "unknown",
+      "duration_mode": "",
       "duration_group_fields": [],
       "value_maps": {},
-      "sources": ["https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1264670", "https://www.ebi.ac.uk/ena/browser/view/PRJNA1264670"]
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1264670",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA1264670"
+      ],
+      "missing_metadata_notes": {
+        "normalization": "Unknown curated values are empty. Prior missingness descriptions are preserved here; original deposited descriptions remain unchanged.",
+        "previous_descriptions": {
+          "region": "not reported in public run metadata",
+          "cacao_variety": "unknown",
+          "fermentation_container": "unknown",
+          "fermentation_duration_hours": "unknown",
+          "season": "unknown",
+          "duration_mode": "unknown"
+        }
+      },
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00"
     },
     {
       "bioproject": "PRJNA627078",
@@ -239,10 +336,22 @@
       "screening_reason": "Published spontaneous longitudinal study with a separable 60-run traditional-condition 16S V3-V4 subset, five timepoints, four fermentation boxes and public paired-end FASTQ.",
       "metadata_quality": "high",
       "candidate_rules": [
-        {"field": "library_strategy", "pattern": "^AMPLICON$"},
-        {"field": "library_layout", "pattern": "^PAIRED$"},
-        {"field": "sample_alias", "pattern": "^16S_"},
-        {"field": "sample_title", "pattern": "under tratidional conditions of (?:raw )?(?P<variety>Criollo|Forastero) cocoa beans(?: after \\d+h of fermentation)? from Mexico Batch_?(?P<batch>\\d+)_? replicate_?(?P<replicate>\\d+)$"}
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "library_layout",
+          "pattern": "^PAIRED$"
+        },
+        {
+          "field": "sample_alias",
+          "pattern": "^16S_"
+        },
+        {
+          "field": "sample_title",
+          "pattern": "under tratidional conditions of (?:raw )?(?P<variety>Criollo|Forastero) cocoa beans(?: after \\d+h of fermentation)? from Mexico Batch_?(?P<batch>\\d+)_? replicate_?(?P<replicate>\\d+)$"
+        }
       ],
       "time_parser": {
         "field": "sample_title",
@@ -252,13 +361,17 @@
       },
       "duration_mode": "fixed",
       "duration_hours": 120,
-      "duration_group_fields": ["variety", "batch"],
+      "duration_group_fields": [
+        "variety",
+        "batch"
+      ],
       "value_maps": {},
       "sources": [
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA627078",
         "https://www.ebi.ac.uk/ena/browser/view/PRJNA627078",
         "https://doi.org/10.1128/AEM.00425-21"
-      ]
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00"
     },
     {
       "bioproject": "PRJEB53853",
@@ -282,7 +395,7 @@
       "forward_primer": "",
       "reverse_primer": "",
       "screening_status": "pending",
-      "screening_reason": "The linked paper compares spontaneous and inoculated fermentations, but deposited run descriptions do not yet map each run unambiguously to marker and treatment; no run is promoted until that mapping is verified.",
+      "screening_reason": "The primary paper identifies spontaneous F1/F2 and 96-hour duration, but ENA deposits 60 mixed 16S/ITS-described libraries with unlabelled submitted filenames. The paper reports bacterial and fungal fractions within these samples; a validated read-level separation is required before selecting bacterial FASTQ. No metadata-only rule can yet isolate a verified 16S run subset.",
       "metadata_quality": "medium",
       "candidate_rules": [],
       "duration_mode": "fixed",
@@ -293,8 +406,12 @@
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB53853",
         "https://www.ebi.ac.uk/ena/browser/view/PRJEB53853",
         "https://doi.org/10.1016/j.fm.2022.104115",
-        "https://researchportal.vub.be/en/datasets/starter-culture-initiated-cocoa-fermentations-followed-up-trough-/"
-      ]
+        "https://researchportal.vub.be/en/datasets/starter-culture-initiated-cocoa-fermentations-followed-up-trough-/",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/ERX9521775",
+        "https://backoffice.biblio.ugent.be/download/01HWCNPM6MZCW83NM90MXTM5VZ/01HWCNRFZKZ1B7FMS24E3P0X04"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Reviewed ENA report, representative experiment XML ERX9521775, submitted_ftp names and primary publication Methods/Results 3.1.3. Treatment ambiguity resolved; marker separation remains unresolved. Do not classify both markers as bacterial based on the combined sample description. Exact primer sequences remain blank until verified from the full cited amplification protocol; marker separation remains the decisive unresolved step."
     },
     {
       "bioproject": "PRJEB82327",
@@ -302,7 +419,7 @@
       "publication_title": "",
       "doi": "",
       "pmid": "",
-      "year": "2026",
+      "year": "",
       "country": "Ecuador",
       "region": "",
       "institution": "",
@@ -321,20 +438,41 @@
       "screening_reason": "ENA identifies 48 longitudinal PacBio full-length 16S runs from two spontaneous negative-control fermentations, but no linked paper or primer sequences were verified as of the retrieval date.",
       "metadata_quality": "medium-high",
       "candidate_rules": [
-        {"field": "library_strategy", "pattern": "^AMPLICON$"},
-        {"field": "library_layout", "pattern": "^SINGLE$"},
-        {"field": "instrument_model", "pattern": "^Sequel IIe$"},
-        {"field": "sample_description", "pattern": "^Fermentation (?P<batch>[12]), (?P<sampling_stratum>top|middle|bottom) sample, (?P<hours>\\d+) h, Negative control$"}
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "library_layout",
+          "pattern": "^SINGLE$"
+        },
+        {
+          "field": "instrument_model",
+          "pattern": "^Sequel IIe$"
+        },
+        {
+          "field": "sample_description",
+          "pattern": "^Fermentation (?P<batch>[12]), (?P<sampling_stratum>top|middle|bottom) sample, (?P<hours>\\d+) h, Negative control$"
+        }
       ],
-      "time_parser": {"field": "sample_description", "pattern": "(?P<hours>\\d+) h", "unit": "hours"},
+      "time_parser": {
+        "field": "sample_description",
+        "pattern": "(?P<hours>\\d+) h",
+        "unit": "hours"
+      },
       "duration_mode": "fixed",
       "duration_hours": 96,
-      "duration_group_fields": ["batch"],
+      "duration_group_fields": [
+        "batch"
+      ],
       "value_maps": {},
       "sources": [
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB82327",
-        "https://www.ebi.ac.uk/ena/browser/view/PRJEB82327"
-      ]
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB82327",
+        "https://www.vub.be/sites/default/files/2025-05/PhD%20template%20ENG%20Dario%20Van%20de%20Voorde.pdf"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Refreshed NCBI/ENA and searched accession, exact project title, author/variety combinations and Europe PMC. A VUB doctoral abstract describes matching Nacional/CCN-51 field experiments but does not supply primers or an unambiguous accession-to-method link. No primary full protocol or linked article was verified; retain pending. Public sequencing year is not assumed to be publication year."
     },
     {
       "bioproject": "PRJEB82871",
@@ -342,7 +480,7 @@
       "publication_title": "",
       "doi": "",
       "pmid": "",
-      "year": "2026",
+      "year": "",
       "country": "Ecuador",
       "region": "",
       "institution": "",
@@ -361,20 +499,41 @@
       "screening_reason": "ENA identifies 16 longitudinal PacBio full-length 16S runs from two spontaneous negative-control fermentations, but no linked paper or primer sequences were verified as of the retrieval date.",
       "metadata_quality": "medium-high",
       "candidate_rules": [
-        {"field": "library_strategy", "pattern": "^AMPLICON$"},
-        {"field": "library_layout", "pattern": "^SINGLE$"},
-        {"field": "instrument_model", "pattern": "^Sequel IIe$"},
-        {"field": "sample_description", "pattern": "^Fermentation (?P<batch>[12]), (?P<hours>\\d+) h, negative control$"}
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "library_layout",
+          "pattern": "^SINGLE$"
+        },
+        {
+          "field": "instrument_model",
+          "pattern": "^Sequel IIe$"
+        },
+        {
+          "field": "sample_description",
+          "pattern": "^Fermentation (?P<batch>[12]), (?P<hours>\\d+) h, negative control$"
+        }
       ],
-      "time_parser": {"field": "sample_description", "pattern": "(?P<hours>\\d+) h", "unit": "hours"},
+      "time_parser": {
+        "field": "sample_description",
+        "pattern": "(?P<hours>\\d+) h",
+        "unit": "hours"
+      },
       "duration_mode": "fixed",
       "duration_hours": 96,
-      "duration_group_fields": ["batch"],
+      "duration_group_fields": [
+        "batch"
+      ],
       "value_maps": {},
       "sources": [
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB82871",
-        "https://www.ebi.ac.uk/ena/browser/view/PRJEB82871"
-      ]
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB82871",
+        "https://www.vub.be/sites/default/files/2025-05/PhD%20template%20ENG%20Dario%20Van%20de%20Voorde.pdf"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Refreshed NCBI/ENA and searched accession, exact project title, author/variety combinations and Europe PMC. A VUB doctoral abstract describes matching Nacional/CCN-51 field experiments but does not supply primers or an unambiguous accession-to-method link. No primary full protocol or linked article was verified; retain pending. Public sequencing year is not assumed to be publication year."
     },
     {
       "bioproject": "PRJNA962540",
@@ -401,13 +560,963 @@
       "screening_reason": "All seven amplicon runs reference one BioSample without identifiable timepoints; the only timed samples are WGS at 24 and 48 hours, so the project lacks a three-timepoint bacterial 16S series.",
       "metadata_quality": "low",
       "candidate_rules": [],
-      "duration_mode": "unknown",
+      "duration_mode": "",
       "duration_group_fields": [],
       "value_maps": {},
       "sources": [
         "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA962540",
         "https://www.ebi.ac.uk/ena/browser/view/PRJNA962540"
-      ]
+      ],
+      "missing_metadata_notes": {
+        "normalization": "Unknown curated values are empty. Prior missingness descriptions are preserved here; original deposited descriptions remain unchanged.",
+        "previous_descriptions": {
+          "duration_mode": "unknown"
+        }
+      },
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00"
+    },
+    {
+      "publication_title": "Curing of Cocoa Beans: Fine-Scale Monitoring of the Starter Cultures Applied and Metabolomics of the Fermentation and Drying Steps",
+      "doi": "10.3389/fmicb.2020.616875",
+      "pmid": "33505385",
+      "year": "2021",
+      "country": "Costa Rica",
+      "region": "Heredia; cocoa pods from Upala",
+      "institution": "Vrije Universiteit Brussel; Universidad Nacional de Costa Rica",
+      "cacao_species": "Theobroma cacao",
+      "cacao_variety": "Trinitario",
+      "fermentation_type": "spontaneous negative-control subset; field-scale campus vessels",
+      "fermentation_container": "plastic vessels; 20 kg cocoa pulp-bean mass",
+      "fermentation_duration_hours": "92",
+      "season": "November 2017; transition between wet and dry season",
+      "amplicon_type": "16S V4 and ITS1; separately deposited files",
+      "marker": "16S rRNA",
+      "region_16s": "V4",
+      "forward_primer": "GTGTGCCAGCMGCCGCGGTAA",
+      "reverse_primer": "GGACTACHVGGGTWTCTAAT",
+      "bioproject": "PRJEB40850",
+      "study_id": "diaz_munoz_2021_costa_rica_cr2017",
+      "screening_status": "include",
+      "screening_reason": "Primary publication identifies spontaneous F1/F2 fermentations (20 kg, 92 h); ENA submitted filenames explicitly distinguish 16S from ITS. Twelve paired-end V4 runs at six times are eligible.",
+      "metadata_quality": "high",
+      "candidate_rules": [
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "library_layout",
+          "pattern": "^PAIRED$"
+        },
+        {
+          "field": "submitted_ftp",
+          "pattern": "_16S\\.fastq\\.gz(?:;|$)"
+        },
+        {
+          "field": "sample_alias",
+          "pattern": "^F(?P<batch>[12])T(?P<hours>\\d+)$"
+        }
+      ],
+      "duration_mode": "fixed",
+      "duration_group_fields": [
+        "batch"
+      ],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB40850",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB40850",
+        "https://doi.org/10.3389/fmicb.2020.616875",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC7829357/",
+        "https://doi.org/10.1073/pnas.1000080107",
+        "https://researchportal.vub.be/en/datasets/starter-culture-initiated-cocoa-fermentations-followed-up-trough--2/",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC5165123/"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "time_parser": {
+        "field": "sample_alias",
+        "pattern": "^F(?P<batch>[12])T(?P<hours>\\d+)$",
+        "unit": "hours"
+      },
+      "duration_hours": 92,
+      "review_evidence": "Primary Figure 1 and Cocoa Fermentation Processes identify independent NC vessels F1/F2 in November 2017; methods specify F515-R806 with Caporaso 2011. Observed submitted names _F_16S/_R_16S isolate marker without sequencing downloads. Distinct 2017 cohort from CR2018 and CR2019; shared laboratory/site remain a dependence/sensitivity consideration.",
+      "primer_protocol_notes": "Diaz-Munoz et al. cite the De Bruyn et al. 2017 amplification protocol (PMC5165123), which reports F515 as TCGTCGGCAGCGTCAGATGTGTATAAGAGACAG + GTGTGCCAGCMGCCGCGGTAA and R806 as GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAG + GGACTACHVGGGTWTCTAAT. The configured sequences preserve the reported non-platform segments, including the leading GT in F515; retained primer/adaptor content must be checked in a separate processing pilot."
+    },
+    {
+      "publication_title": "Yeast strains do have an impact on the production of cured cocoa beans, as assessed with Costa Rican Trinitario cocoa fermentation processes and chocolates thereof",
+      "doi": "10.3389/fmicb.2023.1232323",
+      "pmid": "37621398",
+      "year": "2023",
+      "country": "Costa Rica",
+      "region": "Heredia; cocoa pods from Upala",
+      "institution": "Vrije Universiteit Brussel; Universidad Nacional de Costa Rica",
+      "cacao_species": "Theobroma cacao",
+      "cacao_variety": "Trinitario",
+      "fermentation_type": "spontaneous negative-control subset; field-scale campus vessels",
+      "fermentation_container": "49-L plastic vessels; 36 kg cocoa pulp-bean mass",
+      "fermentation_duration_hours": "120",
+      "season": "November 2019; transition between wet and dry season",
+      "amplicon_type": "full-length 16S, ITS1 and WGS; PacBio bacterial subset selected",
+      "marker": "16S rRNA",
+      "region_16s": "full-length",
+      "forward_primer": "AGRGTTYGATYMTGGCTCAG",
+      "reverse_primer": "RGYTACCTTGTTACGACTT",
+      "bioproject": "PRJEB57747",
+      "study_id": "van_de_voorde_2023_costa_rica_cr2019",
+      "screening_status": "include",
+      "screening_reason": "Primary article identifies spontaneous F01/F02 fermentations (36 kg, 120 h). Sixteen single-read PacBio full-length 16S runs have explicit .16S.fastq.gz submitted names, eight times, and verified 27F/1492R primers.",
+      "metadata_quality": "high",
+      "candidate_rules": [
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "library_layout",
+          "pattern": "^SINGLE$"
+        },
+        {
+          "field": "instrument_model",
+          "pattern": "^Sequel II$"
+        },
+        {
+          "field": "submitted_ftp",
+          "pattern": "\\.16S\\.fastq\\.gz(?:;|$)"
+        },
+        {
+          "field": "sample_alias",
+          "pattern": "^F(?P<batch>0[12])T(?P<hours>\\d+)$"
+        }
+      ],
+      "duration_mode": "fixed",
+      "duration_group_fields": [
+        "batch"
+      ],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB57747",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB57747",
+        "https://doi.org/10.3389/fmicb.2023.1232323",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC10445768/",
+        "https://doi.org/10.1093/nar/gkz569",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6765137/"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "time_parser": {
+        "field": "sample_alias",
+        "pattern": "^F(?P<batch>0[12])T(?P<hours>\\d+)$",
+        "unit": "hours"
+      },
+      "duration_hours": 120,
+      "review_evidence": "Primary Sections 2.2 and 2.4.2.2 identify batches, duration and primer pair; exact gene-specific sequences come from cited Callahan 2019 Amplicon sequencing. ENA XML and submitted filenames resolve marker/instrument. PacBio requires its own validated processing; never pass these SINGLE full-length reads to the paired Illumina pilot workflow. Distinct 2019 fermentations from CR2017; shared laboratory/site requires sensitivity analysis."
+    },
+    {
+      "publication_title": "Dynamics and Biodiversity of Bacterial and Yeast Communities during Fermentation of Cocoa Beans",
+      "doi": "10.1128/AEM.01164-18",
+      "pmid": "30054357",
+      "year": "2018",
+      "country": "Cameroon",
+      "region": "Ngoumou, Yaounde",
+      "institution": "University of Turin and collaborators",
+      "cacao_species": "Theobroma cacao",
+      "cacao_variety": "Forastero hybrid",
+      "fermentation_type": "mixed spontaneous controls and starter inoculation",
+      "fermentation_container": "wooden boxes and heaps",
+      "fermentation_duration_hours": "",
+      "season": "September-October 2016; end of mid-crop",
+      "amplicon_type": "bacterial 16S",
+      "marker": "16S rRNA",
+      "region_16s": "V3-V4",
+      "forward_primer": "CCTACGGGNGGCWGCAG",
+      "reverse_primer": "GACTACHVGGGTATCTAATCC",
+      "bioproject": "PRJNA420946",
+      "study_id": "mota_gutierrez_2018_cameroon",
+      "screening_status": "pending",
+      "screening_reason": "Paper SRP126069 explicitly describes fermentation stopping at 120 h, but deposited control runs also report 144 h. Fourteen control runs represent three deposited batch labels; the expected duplicate box control is incomplete. Resolve the paper/deposit timing conflict without deleting or recoding 144-hour records before primary inclusion.",
+      "metadata_quality": "medium",
+      "candidate_rules": [
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "sample_title",
+          "pattern": "^Bacteria_metagenome_from_cocoa_beans_fermentation_time_(?P<hours>\\d+)_fermentation_type_(?P<container>Box|Heap)_Control_(?P<replicate>first|second)_replicate$"
+        }
+      ],
+      "duration_mode": "unknown",
+      "duration_group_fields": [
+        "container",
+        "replicate"
+      ],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA420946",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA420946",
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC6147003/",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX3441502",
+        "https://doi.org/10.1093/nar/gks1039"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "time_parser": {
+        "field": "sample_title",
+        "pattern": "fermentation_time_(?P<hours>\\d+)_",
+        "unit": "hours"
+      },
+      "review_evidence": "Paper accession SRP126069 matches ENA secondary study. Primary methods say 0/48/96/120 h and stop at 120 h; SRR6342740 and SRR6342743 are explicitly 144 h in ENA. Duration and relative stages remain blank, actual deposited hours are retained. Resolve using an author sample sheet/corrected deposition. Primers follow the V3-V4 protocol explicitly cited by the primary paper."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "Brazil",
+      "region": "Para; Bahia",
+      "institution": "",
+      "cacao_species": "Theobroma cacao",
+      "cacao_variety": "",
+      "fermentation_type": "spontaneous",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "16S and ITS; library names verified in experiment XML",
+      "marker": "16S rRNA candidate subset",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA407677",
+      "study_id": "amazonian_cocoa_16s_mapping_unresolved",
+      "screening_status": "pending",
+      "screening_reason": "Experiment XML resolves four 16S libraries and two ITS libraries, but the bacterial run identities are locality-labelled and do not map unambiguously to fermentation times. Do not turn the shared description mentioning days 2/4/6 into per-run metadata. Primary full protocol/sample mapping and primers remain unverified.",
+      "metadata_quality": "medium",
+      "candidate_rules": [
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "run_accession",
+          "pattern": "^(?:SRR6159231|SRR6162951|SRR6162952|SRR6162954)$"
+        }
+      ],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA407677",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA407677",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX3270869",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX3274478",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX3274479",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX3274480",
+        "https://doi.org/10.1016/j.lwt.2019.02.038"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "All six experiment XMLs inspected: library names ilheus16Scocoa, tomeacu16Scocoa, medicilandia16Scocoa and placas16Scocoa versus ilheusITScocoa/placasITScocoa. The Serra 2019 article is a related primary lead; no verified run-time mapping was recovered. Full ScienceDirect access returned HTTP 403. Four candidate rows deliberately have no time/batch."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "Mexico",
+      "region": "Tabasco",
+      "institution": "",
+      "cacao_species": "Theobroma cacao",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "bacterial V3-V4",
+      "marker": "16S rRNA candidate subset",
+      "region_16s": "V3-V4",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA935329",
+      "study_id": "mexico_tabasco_16s_2023_unresolved",
+      "screening_status": "pending",
+      "screening_reason": "Six public V3-V4 bacterial libraries have days 1-6 in sample aliases, but no linked primary protocol verifying spontaneous design, exact primers and batch independence was recovered. The 2024 geographical reanalysis is not the original experimental protocol.",
+      "metadata_quality": "medium",
+      "candidate_rules": [
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "sample_alias",
+          "pattern": "^Day(?P<days>[1-6])$"
+        }
+      ],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA935329",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA935329",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX19376241"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "time_parser": {
+        "field": "sample_alias",
+        "pattern": "^Day(?P<days>[1-6])$",
+        "unit": "days"
+      },
+      "review_evidence": "ENA experiment DESIGN_DESCRIPTION explicitly states Illumina V3-V4 16S protocol; aliases supply 24-144 h. Neither duration nor a longitudinal batch identifier is inferred from having one accession per day. Searches by accession and title returned no original publication with the required design/primer metadata."
+    },
+    {
+      "publication_title": "Investigating luxS gene expression in lactobacilli along lab-scale cocoa fermentations",
+      "doi": "10.1016/j.fm.2023.104429",
+      "pmid": "38225038",
+      "year": "2024",
+      "country": "Brazil",
+      "region": "",
+      "institution": "",
+      "cacao_species": "Theobroma cacao",
+      "cacao_variety": "",
+      "fermentation_type": "laboratory spontaneous comparator plus microbial cocktails",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "96",
+      "season": "",
+      "amplicon_type": "bacterial 16S; ITS in separate PRJNA842340",
+      "marker": "16S rRNA candidate subset",
+      "region_16s": "V3-V4",
+      "forward_primer": "CCTACGGGNGGCWGCAG",
+      "reverse_primer": "GACTACHVGGGTATCTAATCC",
+      "bioproject": "PRJNA842267",
+      "study_id": "almeida_2024_lab_cocoa_cocktails",
+      "screening_status": "pending",
+      "screening_reason": "A five-timepoint non-inoculated F0 subset can be identified, and ENA experiment XML supplies V3-V4 primers. The lab-scale design and exact linkage of deposited F0 samples to independently replicated natural fermentation units need full-primary-protocol verification before inclusion; retain as a candidate, not as primary evidence.",
+      "metadata_quality": "medium",
+      "candidate_rules": [
+        {
+          "field": "library_strategy",
+          "pattern": "^AMPLICON$"
+        },
+        {
+          "field": "sample_title",
+          "pattern": "^F(?P<batch>0)_(?P<hours>\\d+)h$"
+        }
+      ],
+      "duration_mode": "fixed",
+      "duration_group_fields": [
+        "batch"
+      ],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA842267",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA842267",
+        "https://doi.org/10.1016/j.fm.2023.104429",
+        "https://pubmed.ncbi.nlm.nih.gov/38225038/",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX15471927",
+        "https://doi.org/10.1101/2022.06.14.496151"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "time_parser": {
+        "field": "sample_title",
+        "pattern": "^F(?P<batch>0)_(?P<hours>\\d+)h$",
+        "unit": "hours"
+      },
+      "duration_hours": 96,
+      "review_evidence": "Deposited F0 labels cover 0/24/48/72/96 h. Publication abstract describes F0 as non-inoculated and F1-F3 as cocktails; ENA DESIGN_DESCRIPTION supplies complete Illumina-tailed primers. F0 has no replicate suffix unlike F1-F3; do not invent extra independent batches. Publisher full text and bioRxiv full text could not be retrieved; full methods still needed to adjudicate comparability and linkage."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "fungal ITS",
+      "region_16s": "full-length ITS1-5.8S-ITS2",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJEB101075",
+      "study_id": "food_yeast_mock_communities",
+      "screening_status": "exclude",
+      "screening_reason": "All libraries target fungal full-length ITS; cocoa records are mock communities, while natural food samples are sourdough/lambic beer. Neither bacterial 16S nor natural cocoa pulp-bean fermentation.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB101075",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB101075"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "All libraries target fungal full-length ITS; cocoa records are mock communities, while natural food samples are sourdough/lambic beer. Neither bacterial 16S nor natural cocoa pulp-bean fermentation."
+    },
+    {
+      "publication_title": "Effect of roasting conditions on cocoa bioactivity and gut microbiota modulation",
+      "doi": "10.1039/D1FO01155C",
+      "pmid": "",
+      "year": "2021",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "16S rRNA",
+      "region_16s": "V3-V4",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJEB50472",
+      "study_id": "maldonado_mateus_2021_gut_cocoa_roasting",
+      "screening_status": "exclude",
+      "screening_reason": "The experiment studies gut microbiota after in vitro digestion-fermentation of roasted/unroasted cocoa. This is a gastrointestinal model, not cocoa pulp-bean fermentation. Deposited descriptions are inconsistent soil labels; they do not establish an eligible bean-fermentation series.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB50472",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB50472",
+        "https://pubs.rsc.org/en/content/articlehtml/2021/fo/d1fo01155c"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "The experiment studies gut microbiota after in vitro digestion-fermentation of roasted/unroasted cocoa. This is a gastrointestinal model, not cocoa pulp-bean fermentation. Deposited descriptions are inconsistent soil labels; they do not establish an eligible bean-fermentation series."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "fungal ITS2",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA420973",
+      "study_id": "mota_gutierrez_2018_cameroon_its",
+      "screening_status": "exclude",
+      "screening_reason": "ENA experiment design states amplification of fungal ITS2, the fungal companion to bacterial SRP126069/PRJNA420946. Outside bacterial 16S scope.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA420973",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA420973",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX3442157"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "ENA experiment design states amplification of fungal ITS2, the fungal companion to bacterial SRP126069/PRJNA420946. Outside bacterial 16S scope."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "fungal 26S rRNA",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA475867",
+      "study_id": "cocoa_yeast_26s",
+      "screening_status": "exclude",
+      "screening_reason": "ENA experiment design explicitly states yeast 26S amplification. Outside bacterial 16S scope.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA475867",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA475867",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX4201987"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "ENA experiment design explicitly states yeast 26S amplification. Outside bacterial 16S scope."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "16S rRNA",
+      "region_16s": "V4",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA783055",
+      "study_id": "mouse_cecal_microbiome_cocoa_diet",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited sample descriptions identify murine cecal digesta following high-fat diet/cocoa supplementation. The measured matrix is mouse intestine, not cocoa fermentation mass.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA783055",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA783055"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "All deposited sample descriptions identify murine cecal digesta following high-fat diet/cocoa supplementation. The measured matrix is mouse intestine, not cocoa fermentation mass."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "fungal ITS",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA842340",
+      "study_id": "almeida_cocoa_cocktails_its",
+      "screening_status": "exclude",
+      "screening_reason": "BioProject explicitly deposits ITS sequences corresponding to PRJNA842267; experiment titles and aliases identify fungal ITS. Outside bacterial 16S scope.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA842340",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA842340"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "BioProject explicitly deposits ITS sequences corresponding to PRJNA842267; experiment titles and aliases identify fungal ITS. Outside bacterial 16S scope."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "fungal ITS",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA935525",
+      "study_id": "mexico_tabasco_fungal_its_2023",
+      "screening_status": "exclude",
+      "screening_reason": "ENA experiment DESIGN_DESCRIPTION states fungal ITS amplification. This is the eukaryotic companion to PRJNA935329, not bacterial 16S.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA935525",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA935525",
+        "https://www.ebi.ac.uk/ena/browser/api/xml/SRX19386157"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "ENA experiment DESIGN_DESCRIPTION states fungal ITS amplification. This is the eukaryotic companion to PRJNA935329, not bacterial 16S."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJDB13568",
+      "study_id": "out_of_scope_prjdb13568",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use WGS; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJDB13568",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJDB13568"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 12 ENA rows confirms strategies WGS. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJEB38017",
+      "study_id": "out_of_scope_prjeb38017",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use RNA-Seq; WGS; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB38017",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB38017"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 16 ENA rows confirms strategies RNA-Seq, WGS. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJEB46227",
+      "study_id": "out_of_scope_prjeb46227",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use WGS; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB46227",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB46227"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 2 ENA rows confirms strategies WGS. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJEB57751",
+      "study_id": "out_of_scope_prjeb57751",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use WGS; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJEB57751",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJEB57751"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 8 ENA rows confirms strategies WGS. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA1002093",
+      "study_id": "out_of_scope_prjna1002093",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use RNA-Seq; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1002093",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA1002093"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 21 ENA rows confirms strategies RNA-Seq. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA1037292",
+      "study_id": "out_of_scope_prjna1037292",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use WGS; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1037292",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA1037292"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 21 ENA rows confirms strategies WGS. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA212389",
+      "study_id": "out_of_scope_prjna212389",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use RNA-Seq; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA212389",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA212389"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 24 ENA rows confirms strategies RNA-Seq. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA527768",
+      "study_id": "out_of_scope_prjna527768",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use WGS; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA527768",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA527768"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 10 ENA rows confirms strategies WGS. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA627182",
+      "study_id": "out_of_scope_prjna627182",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use WGS; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA627182",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA627182"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 20 ENA rows confirms strategies WGS. The automatic triage was checked against the observed library_strategy column, not merely project titles."
+    },
+    {
+      "publication_title": "",
+      "doi": "",
+      "pmid": "",
+      "year": "",
+      "country": "",
+      "region": "",
+      "institution": "",
+      "cacao_species": "",
+      "cacao_variety": "",
+      "fermentation_type": "",
+      "fermentation_container": "",
+      "fermentation_duration_hours": "",
+      "season": "",
+      "amplicon_type": "",
+      "marker": "",
+      "region_16s": "",
+      "forward_primer": "",
+      "reverse_primer": "",
+      "bioproject": "PRJNA83439",
+      "study_id": "out_of_scope_prjna83439",
+      "screening_status": "exclude",
+      "screening_reason": "All deposited runs use WGS; no separable bacterial 16S amplicon time series is present in the current public run report. Outside Phase I.",
+      "metadata_quality": "medium",
+      "candidate_rules": [],
+      "duration_mode": "unknown",
+      "duration_group_fields": [],
+      "value_maps": {},
+      "sources": [
+        "https://www.ncbi.nlm.nih.gov/bioproject/PRJNA83439",
+        "https://www.ebi.ac.uk/ena/browser/view/PRJNA83439"
+      ],
+      "reviewed_at_utc": "2026-10-07T03:04:03+00:00",
+      "review_evidence": "Manual verification of all 2 ENA rows confirms strategies WGS. The automatic triage was checked against the observed library_strategy column, not merely project titles."
     }
   ]
 }

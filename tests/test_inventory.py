@@ -62,15 +62,20 @@ class InventoryTransformTests(unittest.TestCase):
                 country="USA: Hawaii, Oahu",
             )
         ]
-        samples, _ = build_samples(
-            self.candidates["PRJNA865318"], rows, self.config["temporal_stages"]
-        )
+        candidate = {
+            "study_id": "fixture_unknown_duration", "bioproject": "PRJNA999999",
+            "screening_status": "pending", "duration_mode": "unknown",
+            "candidate_rules": [{"field": "sample_alias", "pattern": "16S"}],
+            "time_parser": {"field": "sample_alias", "pattern": r"(?P<days>\d+)day", "unit": "days"},
+        }
+        samples, _ = build_samples(candidate, rows, self.config["temporal_stages"])
         self.assertEqual(samples[0]["fermentation_hours"], "24")
         self.assertEqual(samples[0]["fermentation_duration_hours"], "")
         self.assertEqual(samples[0]["relative_time"], "")
         self.assertEqual(samples[0]["fermentation_stage"], "")
+        self.assertEqual(samples[0]["fermentation_batch"], "")
 
-    def test_non_inoculated_invitro_time_is_parsed(self) -> None:
+    def test_resolved_invitro_project_does_not_enter_primary_candidates(self) -> None:
         rows = [
             run_row(
                 "SRR3000001",
@@ -82,10 +87,46 @@ class InventoryTransformTests(unittest.TestCase):
         samples, _ = build_samples(
             self.candidates["PRJNA1104253"], rows, self.config["temporal_stages"]
         )
-        self.assertEqual(samples[0]["fermentation_hours"], "48")
-        self.assertEqual(samples[0]["relative_time"], "0.5")
-        self.assertEqual(samples[0]["replicate"], "3")
+        self.assertEqual(samples, [])
+        self.assertEqual(self.candidates["PRJNA1104253"]["screening_status"], "exclude")
+
+    def test_costa_rica_2017_selector_requires_bacterial_submitted_files(self) -> None:
+        rows = [
+            run_row("ERR9000001", "F1T20", submitted_ftp="host/F1T20_F_16S.fastq.gz;host/F1T20_R_16S.fastq.gz"),
+            run_row("ERR9000002", "F1T20", submitted_ftp="host/F1T20_F_ITS.fastq.gz;host/F1T20_R_ITS.fastq.gz"),
+            run_row("ERR9000003", "F3T20", submitted_ftp="host/F3T20_F_16S.fastq.gz;host/F3T20_R_16S.fastq.gz"),
+            run_row("ERR9000004", "F1T20"),
+        ]
+        samples, selected = build_samples(self.candidates["PRJEB40850"], rows, self.config["temporal_stages"])
+        self.assertEqual(selected, {"ERR9000001"})
+        self.assertEqual(samples[0]["fermentation_hours"], "20")
+        self.assertEqual(samples[0]["fermentation_duration_hours"], "92")
+        self.assertTrue(samples[0]["fermentation_batch"].endswith("::1"))
+
+    def test_costa_rica_2019_selector_separates_pacbio_from_its_and_wgs(self) -> None:
+        rows = [
+            run_row("ERR9000011", "F01T120", instrument_model="Sequel II", instrument_platform="PACBIO_SMRT", library_layout="SINGLE", submitted_ftp="host/F01T120.16S.fastq.gz"),
+            run_row("ERR9000012", "F01T120", submitted_ftp="host/F01T120.ITS.fastq.gz"),
+            run_row("ERR9000013", "F01T120", library_strategy="WGS", instrument_model="Illumina NovaSeq 6000"),
+        ]
+        samples, selected = build_samples(self.candidates["PRJEB57747"], rows, self.config["temporal_stages"])
+        self.assertEqual(selected, {"ERR9000011"})
+        self.assertEqual(samples[0]["relative_time"], "1")
+        self.assertEqual(samples[0]["region_16s"], "full-length")
+
+    def test_conflicting_cameroon_144_hour_record_is_preserved_pending(self) -> None:
+        row = run_row("SRR9000021", "J_conflict", sample_title="Bacteria_metagenome_from_cocoa_beans_fermentation_time_144_fermentation_type_Heap_Control_second_replicate")
+        samples, selected = build_samples(self.candidates["PRJNA420946"], [row], self.config["temporal_stages"])
+        self.assertEqual(selected, {"SRR9000021"})
+        self.assertEqual(samples[0]["fermentation_hours"], "144")
         self.assertEqual(samples[0]["analysis_include"], "pending")
+        self.assertEqual(samples[0]["relative_time"], "")
+
+    def test_submitted_files_are_preserved_as_observed_run_metadata(self) -> None:
+        row = run_row("ERR9000031", "F1T0", submitted_ftp="host/F1T0_F_16S.fastq.gz", submitted_format="FASTQ")
+        runs, _ = build_runs(self.candidates["PRJEB40850"], [row], {"ERR9000031"})
+        self.assertEqual(runs[0]["submitted_ftp"], row["submitted_ftp"])
+        self.assertEqual(runs[0]["submitted_format"], "FASTQ")
 
     def test_raw_label_maps_to_zero_and_preserves_sample_variety(self) -> None:
         candidate = {

@@ -55,6 +55,13 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Changed
 
+- Revisión de los 34 BioProjects: cuatro incluidos (182 runs), siete pendientes
+  (93 runs candidatos) y 23 excluidos. Se incorporan los controles espontáneos
+  de Costa Rica 2017/2019, conservando PacBio separado del pipeline Illumina.
+- PRJNA865318 y PRJNA1104253 pasan de pendientes a excluidos por evidencia
+  primaria; cada pendiente restante tiene un requisito de resolución explícito.
+- Metadata de archivos enviados permite separar 16S/ITS sin descargar lecturas;
+  lotes, duración y campos no verificados permanecen vacíos en vez de inferirse.
 - La reescritura idéntica de tablas conserva su archivo y el workflow compara
   el contenido SHA-256 del manifest, evitando repetir QC por un cambio de fecha.
 - Nombre y descripción inicial del proyecto actualizados a

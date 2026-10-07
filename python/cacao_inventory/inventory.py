@@ -140,9 +140,9 @@ def build_samples(
         location = _mapped_value(candidate, "location_code", context) or raw_location
         season = _mapped_value(candidate, "season_code", context) or str(candidate.get("season", ""))
         group_values = [context.get(field, "") for field in group_fields]
-        fermentation_batch = str(candidate["study_id"])
-        if any(group_values):
-            fermentation_batch += "::" + "::".join(group_values)
+        fermentation_batch = ""
+        if group_fields and all(group_values):
+            fermentation_batch = str(candidate["study_id"]) + "::" + "::".join(group_values)
 
         sample_variety = _mapped_value(candidate, "variety", context) or str(
             candidate.get("cacao_variety", "")
@@ -198,7 +198,9 @@ def build_samples(
 def _non_candidate_reason(row: dict[str, str], candidate: dict[str, Any]) -> tuple[str, str]:
     text = " ".join(
         row.get(field, "")
-        for field in ("sample_alias", "sample_title", "sample_description", "experiment_title")
+        for field in (
+            "sample_alias", "sample_title", "sample_description", "experiment_title", "submitted_ftp"
+        )
     ).lower()
     if row.get("library_strategy", "").upper() == "WGS":
         return "whole_metagenome_shotgun", "WGS is outside Phase I bacterial 16S amplicon scope"
@@ -265,6 +267,8 @@ def build_runs(
                 "fastq_bytes": raw.get("fastq_bytes", ""),
                 "fastq_ftp": raw.get("fastq_ftp", ""),
                 "fastq_md5": raw.get("fastq_md5", ""),
+                "submitted_ftp": raw.get("submitted_ftp", ""),
+                "submitted_format": raw.get("submitted_format", ""),
                 "country": raw.get("country", ""),
                 "collection_date": raw.get("collection_date", ""),
                 "cultivar": raw.get("cultivar", ""),

@@ -63,6 +63,8 @@ RUN_COLUMNS = [
     "fastq_bytes",
     "fastq_ftp",
     "fastq_md5",
+    "submitted_ftp",
+    "submitted_format",
     "country",
     "collection_date",
     "cultivar",

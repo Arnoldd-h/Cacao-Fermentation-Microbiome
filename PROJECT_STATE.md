@@ -4,9 +4,9 @@
 
 ## Fase actual
 
-Piloto DADA2 implementado y primera ejecución técnica validada. En consolidación:
-inventario completo de 34 candidatos, regeneración QC con procedencia y ejecución
-integrada final de Snakemake con el código versionado.
+Inventario de 34 candidatos consolidado y QC reproducido con procedencia.
+Piloto DADA2 implementado y primera ejecución técnica validada; falta cerrar
+su ejecución integrada final de Snakemake con el código versionado.
 
 ## Completado
 
@@ -52,10 +52,12 @@ Las fuentes y decisiones por estudio están en `config/datasets.yaml` y
 
 ## En progreso
 
-- Consolidación del inventario y de su auditoría con todas las fuentes primarias.
-- Regeneración QC y verificación de que los 24 FASTQ raw/interim no cambian.
 - Ejecución final integrada DADA2 después de congelar el código y el QC.
-- Actualización de tablas de unidades analíticas y documentación de hitos.
+- Publicación local de los hitos Git y cierre de documentación.
+
+El inventario pasó el validador independiente; las unidades analíticas cubren
+182 runs, 95 observaciones lote-tiempo y 12 lotes. QC terminó 45 trabajos y
+los 24 FASTQ raw/interim coinciden byte a byte con los archivos previos.
 
 ## Bloqueos y limitaciones
 

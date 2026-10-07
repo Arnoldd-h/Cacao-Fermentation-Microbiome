@@ -1,0 +1,5 @@
+study_id	bioproject	country	region_16s	runs	independent_batches	batch_time_observations	unique_timepoints	observations_with_subsamples	minimum_subsamples	maximum_subsamples
+diaz_munoz_2021_costa_rica_cr2017	PRJEB40850	Costa Rica	V4	12	2	12	6	0	1	1
+mota_gutierrez_2021_mexico	PRJNA627078	Mexico	V3-V4	60	4	20	5	20	3	3
+pacheco_montealegre_2020_colombia	PRJNA492720	Colombia	V4	94	4	47	13	47	2	2
+van_de_voorde_2023_costa_rica_cr2019	PRJEB57747	Costa Rica	full-length	16	2	16	8	0	1	1
