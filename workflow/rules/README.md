@@ -12,6 +12,11 @@ metadata; el reporte agregado comprueba los archivos existentes con el manifest
 actual. Las reglas de QC requieren además validación estructural antes de
 procesarlos. Cambiar código o parámetros de un paso invalida sus resultados.
 
+Las reglas consumidoras combinan el manifest como input `ancient` con su SHA-256
+como parámetro. Así el toque de timestamp que Snakemake aplica al checkpoint no
+repite QC si el contenido permanece igual; un cambio real del manifest sí
+invalida la validación y los análisis dependientes.
+
 La configuración de primers se elige por el BioProject del manifest y verifica
 su `study_id`. El método de recorte actual exige `allow_indels=false`,
 `discard_untrimmed=false`, `quality_trimming=false` y coincidencia completa del
@@ -30,6 +35,9 @@ Las etapas posteriores pueden utilizar `pilot_manifest_path(wildcards)`,
 funciones de entrada. Estas funciones consultan el checkpoint, por lo que las
 reglas downstream también pueden partir de un repositorio sin datos crudos.
 
-Los tests de integración en `tests/test_workflow.py` ejecutan únicamente
-dry-runs en copias temporales: uno sin manifest y otro sin datos FASTQ. Se
-ejecutan dentro del entorno Linux declarado y no descargan datos.
+Los tests de integración en `tests/test_workflow.py` comprueban dry-runs en
+copias temporales sin manifest, sin FASTQ y con un crudo protegido. Otro test
+valida FASTQ sintéticos exclusivamente en un repositorio temporal y comprueba
+que modificar sólo el timestamp del manifest no repite trabajo, mientras que
+cambiar su contenido sí lo invalida. Ninguna prueba descarga datos ni presenta
+los fixtures como evidencia científica.

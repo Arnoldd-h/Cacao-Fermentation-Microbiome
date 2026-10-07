@@ -1,10 +1,19 @@
 """Manifest-driven pilot QC; no data files are opened while parsing the workflow."""
 
 from cacao_inventory.pilot_workflow import load_pilot_manifest, manifest_row, fastq_path, processing_configuration
+from cacao_inventory.provenance import sha256_file
 
 
 def pilot_manifest_path(wildcards=None):
     return checkpoints.build_pilot_manifest.get().output.manifest
+
+
+def pilot_manifest_input(wildcards=None):
+    return ancient(str(pilot_manifest_path(wildcards)))
+
+
+def pilot_manifest_fingerprint(wildcards=None):
+    return sha256_file(pilot_manifest_path(wildcards))
 
 
 def pilot_manifest_rows(wildcards=None):
@@ -56,7 +65,7 @@ rule download_pilot_read:
     input:
         # Raw data are immutable. The aggregate report revalidates bytes and MD5;
         # configuration changes cannot overwrite a previously downloaded file.
-        manifest=lambda wildcards: ancient(pilot_manifest_path(wildcards)),
+        manifest=pilot_manifest_input,
         config=ancient("config/config.yaml"),
         code=ancient(python_sources("scripts/qc/download_pilot_read.py", "download", "pilot_workflow", "config", "io", "schema")),
     output:
@@ -69,7 +78,7 @@ rule download_pilot_read:
 
 rule download_pilot_fastq:
     input:
-        manifest=pilot_manifest_path,
+        manifest=pilot_manifest_input,
         fastq=pilot_raw_fastq_paths,
         config=ancient("config/config.yaml"),
         code=python_sources("scripts/metadata/download_pilot_fastq.py", "download", "config", "io", "schema"),
@@ -77,6 +86,7 @@ rule download_pilot_fastq:
         "results/qc/pilot_download_validation.tsv"
     params:
         settings=config["pilot_download"],
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
         "python scripts/metadata/download_pilot_fastq.py --manifest {input.manifest:q} --report {output:q}"
 
@@ -108,7 +118,7 @@ rule pilot_primer_detection:
 rule detect_pilot_primers:
     input:
         config=ancient("config/config.yaml"),
-        manifest=pilot_manifest_path,
+        manifest=pilot_manifest_input,
         validated="results/qc/pilot_fastq_validation.tsv",
         fastq=pilot_raw_fastq_paths,
         code=["scripts/qc/detect_primers.py", *QC_COMMON_CODE],
@@ -117,6 +127,7 @@ rule detect_pilot_primers:
         provenance="results/qc/pilot/primer_detection.provenance.json",
     params:
         processing=pilot_processing,
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
         "python scripts/qc/detect_primers.py --config {input.config:q} --manifest {input.manifest:q} --output {output.table:q}"
 
@@ -130,7 +141,7 @@ rule pilot_primer_trimming:
 
 rule trim_pilot_primers:
     input:
-        manifest=pilot_manifest_path,
+        manifest=pilot_manifest_input,
         config=ancient("config/config.yaml"),
         r1=lambda wildcards: pilot_read_path(wildcards, direction="1"),
         r2=lambda wildcards: pilot_read_path(wildcards, direction="2"),
@@ -143,6 +154,7 @@ rule trim_pilot_primers:
         report="results/qc/pilot/cutadapt/{study_id}/{run_accession}.cutadapt.json",
     params:
         processing=pilot_processing,
+        manifest_sha256=pilot_manifest_fingerprint,
     threads: 2
     shell:
         "python scripts/qc/trim_primers.py --config {input.config:q} --manifest {input.manifest:q} "
@@ -153,7 +165,7 @@ rule trim_pilot_primers:
 rule summarize_pilot_cutadapt:
     input:
         config=ancient("config/config.yaml"),
-        manifest=pilot_manifest_path,
+        manifest=pilot_manifest_input,
         reports=lambda wildcards: [f"results/qc/pilot/cutadapt/{pilot_study_id(wildcards)}/{run}.cutadapt.json" for run in pilot_run_ids(wildcards)],
         trimmed=pilot_fastq_paths,
         code=["scripts/qc/summarize_cutadapt.py", *QC_COMMON_CODE],
@@ -163,6 +175,7 @@ rule summarize_pilot_cutadapt:
     params:
         report_directory=lambda wildcards: f"results/qc/pilot/cutadapt/{pilot_study_id(wildcards)}",
         processing=pilot_processing,
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
         "python scripts/qc/summarize_cutadapt.py --config {input.config:q} --manifest {input.manifest:q} "
         "--report-directory {params.report_directory:q} --output {output.table:q}"
@@ -261,7 +274,7 @@ rule summarize_trimmed_fastqc:
 rule detect_trimmed_primers:
     input:
         config=ancient("config/config.yaml"),
-        manifest=pilot_manifest_path,
+        manifest=pilot_manifest_input,
         fastq=pilot_fastq_paths,
         code=["scripts/qc/detect_primers.py", *QC_COMMON_CODE],
     output:
@@ -269,6 +282,7 @@ rule detect_trimmed_primers:
         provenance="results/qc/pilot/primer_detection_trimmed.provenance.json",
     params:
         processing=pilot_processing,
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
         "python scripts/qc/detect_primers.py --input-stage trimmed --config {input.config:q} "
         "--manifest {input.manifest:q} --output {output.table:q}"

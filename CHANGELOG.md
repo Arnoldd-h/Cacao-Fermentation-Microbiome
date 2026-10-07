@@ -49,6 +49,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Changed
 
+- La reescritura idéntica de tablas conserva su archivo y el workflow compara
+  el contenido SHA-256 del manifest, evitando repetir QC por un cambio de fecha.
 - Nombre y descripción inicial del proyecto actualizados a
   **Cacao Fermentation Microbiome**.
 - `PRJNA492720` adoptado como piloto con 94 corridas 16S V4 compatibles con la
