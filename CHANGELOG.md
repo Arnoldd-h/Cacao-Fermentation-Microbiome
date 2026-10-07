@@ -6,6 +6,12 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Added
 
+- Pipeline DADA2 por estudio para el piloto Illumina: filtros pareados,
+  aprendizaje de errores, inferencia, ensamblaje, quimeras y diagnósticos.
+- Validación independiente de conservación de lecturas, ASVs, FASTA,
+  distribución de longitudes y checksums de entradas y salidas de DADA2.
+- Pruebas R de contratos y regresión de identificadores SRA; target
+  `pilot_dada2` integrado en el workflow principal.
 - Workflow del piloto reconstruible mediante checkpoint del manifest y reglas
   productoras de FASTQ protegidos; pruebas de arranque sin manifest ni datos.
 - Validación de parámetros y rutas realmente ejecutados por Cutadapt, selección

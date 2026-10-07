@@ -31,6 +31,7 @@ rule all:
         "results/qc/pilot/trimmed_read_quality.provenance.json",
         "results/qc/pilot/primer_detection.provenance.json",
         "results/qc/pilot/primer_detection_trimmed.provenance.json",
+        "results/dada2/pilot/validation.json",
 
 
 rule discover_candidates:
@@ -132,3 +133,4 @@ checkpoint build_pilot_manifest:
 
 
 include: "rules/pilot_qc.smk"
+include: "rules/pilot_dada2.smk"
