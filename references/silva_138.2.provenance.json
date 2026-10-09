@@ -1,0 +1,62 @@
+{
+  "command": [
+    "scripts/taxonomy/download_reference.py",
+    "--config",
+    "config/taxonomy.yaml",
+    "--validate-only"
+  ],
+  "config": [
+    {
+      "bytes": 1295,
+      "path": "config/taxonomy.yaml",
+      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    }
+  ],
+  "created_at_utc": "2026-10-09T20:00:51.982787+00:00",
+  "git_commit": "df3a41e318e22f3f681b4f7fde04892de041d10e",
+  "git_dirty": true,
+  "inputs": [
+    {
+      "bytes": 4827,
+      "path": "python/cacao_inventory/download.py",
+      "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 3635,
+      "path": "scripts/taxonomy/download_reference.py",
+      "sha256": "162ffc413a162b51dc18b41745218d8e9d35cbc547b71da2e4901d2d8c84f90c"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 139996892,
+      "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+      "sha256": "e0af8246b900a922ea3ea68e7cb1a5e70ceed4db84246b6ea9865eb132452093"
+    }
+  ],
+  "parameters": {
+    "fasta_inspection": {
+      "reference_bases": 646360937,
+      "reference_sequences": 452055
+    },
+    "reference": {
+      "doi": "10.5281/zenodo.14169026",
+      "expected_bytes": 139996892,
+      "expected_md5": "1764e2a36b4500ccb1c7d5261948a414",
+      "name": "SILVA",
+      "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+      "provenance_path": "references/silva_138.2.provenance.json",
+      "url": "https://zenodo.org/records/14169026/files/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+      "version": "138.2"
+    }
+  },
+  "schema_version": "1.0.0",
+  "software_versions": {
+    "Python": "3.12.13"
+  }
+}

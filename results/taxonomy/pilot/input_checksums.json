@@ -1,0 +1,107 @@
+[
+  {
+    "bytes": 4901,
+    "path": "config/config.yaml",
+    "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+  },
+  {
+    "bytes": 54093,
+    "path": "environment/conda-linux-64.lock",
+    "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+  },
+  {
+    "bytes": 4793,
+    "path": "python/cacao_inventory/config.py",
+    "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+  },
+  {
+    "bytes": 4827,
+    "path": "python/cacao_inventory/download.py",
+    "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+  },
+  {
+    "bytes": 4488,
+    "path": "python/cacao_inventory/provenance.py",
+    "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+  },
+  {
+    "bytes": 4319,
+    "path": "python/cacao_inventory/taxonomy_reference.py",
+    "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+  },
+  {
+    "bytes": 139996892,
+    "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+    "sha256": "e0af8246b900a922ea3ea68e7cb1a5e70ceed4db84246b6ea9865eb132452093"
+  },
+  {
+    "bytes": 1866,
+    "path": "references/silva_138.2.provenance.json",
+    "sha256": "facb8d55e880093966992381912e3923dc804ff967944d0c6dbc15d62a5cf5f7"
+  },
+  {
+    "bytes": 41,
+    "path": "results/dada2/pilot/SUCCESS",
+    "sha256": "586a9c12ad1471d7b28b105d100ac25f9a570f385e794639730ae166996cee3b"
+  },
+  {
+    "bytes": 5764,
+    "path": "results/dada2/pilot/asv_counts.tsv",
+    "sha256": "80a43e4a6dcd7646fabf53fff83dded7d40636db208baa25928e27ebbbffc957"
+  },
+  {
+    "bytes": 30488,
+    "path": "results/dada2/pilot/asv_sequences.tsv",
+    "sha256": "e8f74b324802e86fb5bf4ea3b62a05c3627046837a30e818486b3054226c46a8"
+  },
+  {
+    "bytes": 3423,
+    "path": "results/dada2/pilot/sample_metadata.tsv",
+    "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
+  },
+  {
+    "bytes": 297,
+    "path": "results/dada2/pilot/validation.json",
+    "sha256": "95e4dd2ed19ad528ef3edfad382f8454ac83676e5e1e19a73e67ed29e71b4faa"
+  },
+  {
+    "bytes": 11916,
+    "path": "scripts/dada2/helpers.R",
+    "sha256": "d22d205dd0af7678a38eaa6ee72231012748343c9856d1f410e29d111ff9fce7"
+  },
+  {
+    "bytes": 9234,
+    "path": "scripts/dada2/validate_outputs.py",
+    "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
+  },
+  {
+    "bytes": 6832,
+    "path": "scripts/taxonomy/assign_taxonomy.R",
+    "sha256": "15171c6c828206acf5516c6365fb4181dbcf184b89b4e681d8033f385eaea05f"
+  },
+  {
+    "bytes": 2092,
+    "path": "scripts/taxonomy/helpers.R",
+    "sha256": "73e31b91ec838dc14689e6ce4beb9adf135ef5735ec5d4336f18338dbf9498d5"
+  },
+  {
+    "bytes": 6145,
+    "path": "scripts/taxonomy/run_taxonomy.py",
+    "sha256": "af9842b063e453476c8f1745212406802247820fc0f35d422153a5b92d24637b"
+  },
+  {
+    "bytes": 5301,
+    "path": "workflow/Snakefile",
+    "sha256": "896003ca1010ab44b99d8234b8d0e103cc2d20f099d52b3becdb0d85481df32f"
+  },
+  {
+    "bytes": 3620,
+    "path": "workflow/rules/pilot_taxonomy.smk",
+    "sha256": "290af66bba01108fbe7f783beb95eb2c325e08fe58ef6d79f7cff87d69f26e9d"
+  },
+  {
+    "bytes": 1295,
+    "path": "config/taxonomy.yaml",
+    "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+  }
+]

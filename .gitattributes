@@ -4,6 +4,9 @@
 # Keep R execution records byte-for-byte, including console alignment spaces
 # and the YAML serializer's final blank line; these are checksum artifacts.
 results/dada2/*/session_info.txt whitespace=-blank-at-eol
+results/taxonomy/*/session_info.txt whitespace=-blank-at-eol
+# Final tabs encode empty taxonomy ranks; removing them would change the schema.
+results/taxonomy/*/taxonomy*.tsv whitespace=-blank-at-eol
 results/dada2/*/config_snapshot.yaml whitespace=-blank-at-eof
 *.png binary
 *.pdf binary

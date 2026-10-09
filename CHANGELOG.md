@@ -2,6 +2,39 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## [v0.4.0-taxonomy] - 2026-10-09
+
+- Referencia SILVA NR99 138.2 fijada por DOI, tamaño y MD5 del proveedor;
+  descargador reanudable con inspección FASTA/gzip y procedencia SHA-256.
+- Parámetros taxonómicos prerregistrados: bootstrap 80, sensibilidad 50,
+  seis rangos originales, semilla y revisión de orientación inversa.
+- Se conservan todas las ASVs; etiquetas de orgánulos y asignaciones
+  insuficientes se marcan para revisión sin excluir automáticamente.
+- Fase anterior integrada en `main` mediante PR #1 (`9f0a478`).
+- Clasificador R, ejecutor con SHA-256, figuras de cobertura y validador Python
+  independiente incorporados al workflow.
+- Descarga inmutable de la base separada de su revalidación; una regresión
+  comprueba que cambios de parámetros reutilizan la referencia protegida.
+- Corrección de rutas con espacios en Rscript, con regresión de CLI desde un
+  directorio temporal cuyo nombre contiene espacios.
+- Enlace directo del archivo oficial de Zenodo para reanudar descargas,
+  conservando el mismo DOI, versión, bytes y MD5 de la referencia fijada.
+- Validación de hashes independiente del orden de registros serializados;
+  las rutas relativas/absolutas no producen falsos errores de checksum.
+- Clasificación real de seis muestras, 93 ASVs y 156.561 lecturas sobre
+  `d13c9eb`, con checkout limpio: 21 entradas y 15 artefactos validados,
+  sin warnings R ni exclusiones.
+- Bootstrap 80 asigna género a 64/93 ASVs (99.481 lecturas, 63,54 %);
+  sensibilidad 50, a 79/93 (104.974 lecturas, 67,05 %).
+- Cinco ASVs con etiquetas de orgánulos suman 32.868 lecturas (20,99 %).
+  Se preservan; su separación antes de diversidad requiere registro auditable.
+- 111 pruebas Python y seis comprobaciones taxonómicas R aprobadas;
+  dry-run integrado sin trabajos pendientes.
+- Espacio superior reservado a las leyendas de cobertura, con escala marcada
+  de 0 a 100 %, para evitar superposición sobre las barras.
+- Repetición sobre `4e7ce24`: las siete tablas científicas reproducen por
+  SHA-256 la primera clasificación; figuras revisadas y artefactos validados.
+
 ## [v0.3.0-pilot-dada2] - 2026-10-08
 
 - Ejecución integrada sobre `6221445`: seis muestras, 165.034 pares filtrados,

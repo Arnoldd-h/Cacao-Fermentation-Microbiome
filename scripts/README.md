@@ -1,7 +1,7 @@
 # Scripts
 
-Los ejecutables actuales cubren entorno, metadata, diseño longitudinal, QC y
-DADA2. Cada script declara sus entradas, salidas y condiciones de fallo en
+Los ejecutables actuales cubren entorno, metadata, diseño longitudinal, QC,
+DADA2 y taxonomía. Cada script declara sus entradas, salidas y condiciones de fallo en
 `--help`. Los comandos siguientes se ejecutan desde la raíz del repositorio en
 Linux/WSL.
 
@@ -19,9 +19,11 @@ python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow
 python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2
 ```
 
-El target por defecto alcanza la validación DADA2 del piloto. La ejecución
-integrada sobre `6221445` terminó y el siguiente dry-run no programa trabajos.
-La suite final aprobó 91 pruebas Python en Linux.
+El target por defecto alcanza la validación taxonómica del piloto. La ejecución
+DADA2 sobre `6221445` conserva su validación; la taxonomía tiene configuración
+separada para no modificar sus entradas científicas. La suite aprobó 111 pruebas
+Python en Linux y seis comprobaciones taxonómicas en R; el dry-run integrado
+queda sin trabajos pendientes.
 
 ## Metadata y unidades de análisis
 
@@ -91,7 +93,27 @@ python3 scripts/environment/run_in_environment.py Rscript tests/dada2/test_filte
 ```
 
 El piloto técnico produjo 93 ASVs y conservó 156.561/176.798 pares sin quimeras;
-esas cifras no asignan taxonomía ni evalúan sucesión. Taxonomía, diversidad,
-integración y meta-análisis siguen sin implementar. Los runs PacBio incluidos
+esas cifras no evalúan sucesión. Diversidad, integración y meta-análisis siguen
+sin implementar. Los runs PacBio incluidos
 en el inventario necesitan un procesamiento específico y no son compatibles
 con este ejecutable paired-end Illumina.
+
+## Taxonomía
+
+`taxonomy/download_reference.py` descarga de forma reanudable la referencia
+fijada en `config/taxonomy.yaml`; valida bytes, MD5, gzip y FASTA, y guarda SHA-256
+en un registro pequeño. La base completa se conserva ignorada por Git.
+`taxonomy/run_taxonomy.py` verifica DADA2 y la referencia, ejecuta
+`taxonomy/assign_taxonomy.R`, comprueba que no cambiaron las entradas y genera
+procedencia y marcador de éxito. `taxonomy/validate_taxonomy.py` compara
+independientemente soportes, máscaras, marcas y conteos originales.
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 pilot_taxonomy
+python3 scripts/environment/run_in_environment.py python scripts/taxonomy/validate_taxonomy.py
+python3 scripts/environment/run_in_environment.py Rscript tests/taxonomy/test_helpers.R
+```
+
+Las ASVs y etiquetas originales se preservan, con llamada primaria bootstrap 80
+y sensibilidad 50. No se asignan especies ni se excluyen ASVs automáticamente.
+Método, referencia y limitaciones: [`reports/taxonomy_methods.md`](../reports/taxonomy_methods.md).

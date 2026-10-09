@@ -1,12 +1,15 @@
 # Estado del proyecto
 
-Última actualización: 2026-10-08.
+Última actualización: 2026-10-09.
 
 ## Fase actual
 
-Inventario, QC y piloto DADA2 consolidados. El workflow integrado terminó y
-su siguiente dry-run no programa trabajos. La siguiente fase es clasificación
-taxonómica con referencia y parámetros explícitos antes de escalar por estudio.
+Inventario, QC y piloto DADA2 consolidados e integrados en `main` mediante PR #1
+(`9f0a478`). Clasificación taxonómica del piloto ejecutada y validada con
+SILVA 138.2, checksum de origen y umbrales fijados antes de observar las
+asignaciones. Se conservan 93 ASVs y 156.561 lecturas de seis muestras.
+La siguiente etapa requiere separar de forma auditable las etiquetas de
+orgánulos antes de preparar diversidad y ampliar el estudio completo.
 
 ## Completado
 
@@ -40,6 +43,18 @@ taxonómica con referencia y parámetros explícitos antes de escalar por estudi
 - Corrida final del 2026-10-09 UTC (8 de octubre en Colombia), sobre `6221445`:
   18 entradas y 18 artefactos DADA2 validados. Las cuatro tablas principales
   son idénticas a las de la primera corrida técnica.
+- SILVA 138.2 descargada y verificada por bytes, MD5, SHA-256 y lectura completa
+  de gzip/FASTA: 452.055 secuencias; base protegida y fuera de Git.
+- Primera clasificación del 2026-10-09 sobre `d13c9eb`, con checkout limpio al iniciar:
+  21 entradas y 15 artefactos pasan validación independiente, sin warnings R.
+- Bootstrap 80: 64/93 ASVs asignadas a género, asociadas a 99.481 lecturas
+  (63,54 %). Sensibilidad 50: 79/93 ASVs y 104.974 lecturas (67,05 %).
+- Cinco ASVs marcadas como Chloroplast/Mitochondria, con 32.868 lecturas
+  (20,99 %), conservadas sin exclusión automática. Tablas y figuras trazables.
+- Suite actual: 111 pruebas Python en Linux y seis comprobaciones taxonómicas
+  R aprobadas; dry-run integrado `all` sin trabajos pendientes.
+- Repetición sobre `4e7ce24` tras ajustar la leyenda: siete tablas científicas
+  idénticas por SHA-256, 21 entradas y 15 artefactos validados. Figuras revisadas.
 
 ## Datasets incluidos
 
@@ -67,6 +82,8 @@ bytes y SHA-256 de configuración, código, entradas y salidas.
 El target `all` completó descubrimiento, DADA2 y validación; el siguiente
 dry-run devuelve `Nothing to be done`. El descubrimiento actualizado conserva
 34 BioProjects y sus conteos de runs coinciden con el inventario versionado.
+La taxonomía añade validación independiente de soportes, máscaras jerárquicas,
+marcas y cobertura por muestra; preserva las tablas y configuración DADA2.
 No queda una ejecución activa.
 
 ## Bloqueos y limitaciones
@@ -74,7 +91,12 @@ No queda una ejecución activa.
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - El procesamiento real abarca seis runs del piloto; el resto de los FASTQ no
-  se ha descargado. No hay aún taxonomía, diversidad ni inferencia biológica.
+  se ha descargado. Hay taxonomía del piloto; diversidad e inferencia biológica
+  siguen pendientes.
+- El 20,99 % de las lecturas pertenece a ASVs con etiquetas de orgánulos.
+  La cobertura taxonómica actual incluye esas lecturas en su denominador.
+  Su separación posterior exige configuración, decisión y registro explícitos;
+  estas etiquetas no identifican especie huésped ni demuestran contaminación.
 - Las ASVs de 237–243 nt no se filtran por una longitud canónica; el depósito
   tiene evidencia de recorte previo y su procesamiento exacto es incompleto.
 - Los residuos raros en orientación inversa y la ausencia de controles negativos
@@ -85,7 +107,9 @@ No queda una ejecución activa.
 
 ## Próximas tareas
 
-1. Fijar versión y checksum de una referencia taxonómica y validar la clasificación.
+1. Registrar la política de separación de orgánulos y generar conteos derivados
+   con un registro por ASV, conservando las tablas originales y sin elegir
+   exclusiones según efectos temporales.
 2. Escalar el estudio piloto completo conservando parámetros por estudio y
    revisar por separado los pipelines V3-V4 y PacBio antes de integrar taxonomía.
 3. Definir tratamiento de ceros, agregación de submuestras y modelos longitudinales
@@ -93,15 +117,22 @@ No queda una ejecución activa.
 
 ## Control de versiones
 
-Trabajo en `codex/pilot-dada2-reproducibility`; `main` permanece disponible.
-Los commits son locales. No se publica ni se hace push sin autorización.
+Esta etapa se desarrolló en `codex/pilot-taxonomy`, creada desde el `main`
+integrado (`9f0a478`). La fase anterior y sus tres tags están publicados.
+El hito consolidado de esta etapa es `v0.4.0-taxonomy`, limitado al piloto.
 Los datos pesados permanecen ignorados; las salidas pequeñas conservan procedencia.
 El commit `44f5f4a` prerregistra los parámetros; `eafadd7` corrige identificadores
 SRA; `a2bfa82` y `dd4f364` cierran reproducibilidad del workflow QC.
 `20feeea` corrige reevaluación del checkpoint; `32ab045` consolida inventario y
-`6221445` consolida QC. Los hitos locales son `v0.1.0-dataset-inventory`,
+`6221445` consolida QC. Los hitos publicados son `v0.1.0-dataset-inventory`,
 `v0.2.0-pilot-qc` y `v0.3.0-pilot-dada2`.
-La procedencia final registra `git_dirty=true` por documentación y resultados
+La procedencia DADA2 registra `git_dirty=true` por documentación y resultados
 previos todavía sin commit al iniciar. Sus seis entradas versionadas (config,
 manifest, scripts R y tablas QC) coinciden byte a byte con `6221445`.
+La primera taxonomía registra `git_dirty=false` sobre `d13c9eb`. Las salidas
+finales proceden de `4e7ce24`: antes de lanzar el workflow el checkout estaba
+limpio; Snakemake retiró sus salidas previas para regenerarlas y el ejecutor
+registra `git_dirty=true` sólo por esas eliminaciones. El código y las entradas
+científicas permanecen fijados por sus hashes; las siete tablas reproducen la
+primera corrida sin cambios.
 Para el checkout exacto usar `git log -1 --oneline` y `git status`.

@@ -275,5 +275,31 @@ class WorkflowBootstrapTests(unittest.TestCase):
             self.assertIn("Nothing to be done", completed.stdout)
 
 
+    def test_taxonomy_download_is_immutable_when_configuration_changes(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.copy_sources(root)
+            config_path = root / "config/taxonomy.yaml"
+            config = json.loads(config_path.read_text())
+            reference = root / config["reference"]["path"]
+            reference.parent.mkdir(parents=True)
+            original = b"synthetic immutable reference; DAG planning only"
+            reference.write_bytes(original)
+            # Even an old protected file must be revalidated rather than downloaded.
+            older = time.time() - 1000
+            os.utime(reference, (older, older))
+            reference.chmod(0o444)
+            before = self.dry_run(root, "pilot_taxonomy")
+            self.assertEqual(before.returncode, 0, before.stdout + before.stderr)
+            self.assertNotIn("rule download_taxonomy_database:", before.stdout)
+            config["classification"]["primary_min_boot"] = 90
+            config_path.write_text(json.dumps(config))
+            after = self.dry_run(root, "pilot_taxonomy")
+            self.assertEqual(after.returncode, 0, after.stdout + after.stderr)
+            self.assertIn("rule validate_taxonomy_reference:", after.stdout)
+            self.assertNotIn("rule download_taxonomy_database:", after.stdout)
+            self.assertEqual(reference.read_bytes(), original)
+
+
 if __name__ == "__main__":
     unittest.main()
