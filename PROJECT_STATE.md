@@ -60,6 +60,8 @@ El inventario pasó el validador independiente; las unidades analíticas cubren
 los 24 FASTQ raw/interim coinciden byte a byte con los archivos previos.
 La corrección de los consumidores del checkpoint elimina la repetición de
 resúmenes: el dry-run conjunto QC termina sin trabajos pendientes.
+Los cinco registros de procedencia renovados pasan 222 comprobaciones de
+bytes y SHA-256 de configuración, código, entradas y salidas.
 
 ## Bloqueos y limitaciones
 

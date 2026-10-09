@@ -2,7 +2,25 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## [Unreleased]
+## [v0.2.0-pilot-qc] - 2026-10-08
+
+- QC reproducido con datos crudos inmutables; los 24 FASTQ raw/interim
+  coinciden byte a byte con los anteriores. Cutadapt conserva 176.798 pares.
+- Cinco registros de procedencia renovados sobre el código `20feeea`;
+  222 comprobaciones de bytes y SHA-256 pasan para código, configuración,
+  entradas y salidas. El dry-run QC termina sin trabajos pendientes.
+- Corregida la reevaluación de consumidores/agregados del checkpoint;
+  regresión que falla con el código anterior y pasa con el actual.
+
+## [v0.1.0-dataset-inventory] - 2026-10-06
+
+- 34 BioProjects revisados: cuatro incluidos, siete pendientes y 23 excluidos.
+- 2.357 runs cribados, 182 incluidos, 12 lotes y 95 observaciones lote-tiempo;
+  evidencia, decisiones y requisitos pendientes auditables.
+- Metadata de archivos enviados distingue 16S/ITS y tecnologías; se preservan
+  campos desconocidos y tiempos en conflicto. Piloto y manifest permanecen iguales.
+
+## Desarrollo inicial
 
 ### Added
 

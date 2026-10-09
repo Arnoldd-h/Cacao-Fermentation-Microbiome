@@ -1,0 +1,247 @@
+{
+  "command": [
+    "/home/core_i7/.local/share/micromamba/envs/cacao-microbiome/bin/python",
+    "scripts/qc/summarize_trimmed_fastqc.py",
+    "--multiqc-fastqc",
+    "results/qc/pilot/multiqc_trimmed/multiqc_report_data/multiqc_fastqc.txt",
+    "--cutadapt-summary",
+    "results/qc/pilot/cutadapt_summary.tsv",
+    "--raw-quality",
+    "results/qc/pilot/raw_read_quality.tsv",
+    "--output",
+    "results/qc/pilot/trimmed_read_quality.tsv",
+    "--comparison-output",
+    "results/qc/pilot/read_quality_comparison.tsv"
+  ],
+  "config": [
+    {
+      "bytes": 4901,
+      "path": "config/config.yaml",
+      "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+    }
+  ],
+  "created_at_utc": "2026-10-09T03:00:07.788936+00:00",
+  "git_commit": "20feeea7f9ed2f72f66526af99badc0f1c003a11",
+  "git_dirty": true,
+  "inputs": [
+    {
+      "bytes": 5195919,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899687/SRR7899687_1.fastq.gz",
+      "sha256": "8d64a37cc1c9db253e1335ebb6e9853dfb02b6c504cfa2545cf3f6cfc94565c4"
+    },
+    {
+      "bytes": 5309769,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899687/SRR7899687_2.fastq.gz",
+      "sha256": "b340ca4fcd2ba4f03d26516b355d47912eb0c0fd173023ff63a729fab3ec297a"
+    },
+    {
+      "bytes": 2307085,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899728/SRR7899728_1.fastq.gz",
+      "sha256": "d5f378f0dbe8f8c5bc6c71323ac5337316ca3f6663d7876b5fd47a59dcdaeca3"
+    },
+    {
+      "bytes": 2366046,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899728/SRR7899728_2.fastq.gz",
+      "sha256": "9fe1357866c0b83234c5d2a43f571323d089505bc370feeb4a448ef93a34e1c1"
+    },
+    {
+      "bytes": 2685433,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899800/SRR7899800_1.fastq.gz",
+      "sha256": "e9bce0fd6414606b2f8228e9d77a7228758b666e707dccdd1e776fec6b2f6cf4"
+    },
+    {
+      "bytes": 3568644,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899800/SRR7899800_2.fastq.gz",
+      "sha256": "4b424cb830f6e459b0ed7be32fea97dd079b74f04292dc52c2f744ebea831bb0"
+    },
+    {
+      "bytes": 1992615,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899814/SRR7899814_1.fastq.gz",
+      "sha256": "d55420251040d9a6fa8911b7c1a5445aa08cf1bd250784da18bf2d0a0ff21873"
+    },
+    {
+      "bytes": 2130598,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899814/SRR7899814_2.fastq.gz",
+      "sha256": "697efce19286c168ff3ba3b2f83aacdbc176deccd890752b0585e1b8f73aa85c"
+    },
+    {
+      "bytes": 1546237,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899884/SRR7899884_1.fastq.gz",
+      "sha256": "a82c76efd40dddf2a64306ef8142fc60d28988d6cc2b15ec8124d46acc86e1f7"
+    },
+    {
+      "bytes": 2091941,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899884/SRR7899884_2.fastq.gz",
+      "sha256": "8f6d0c3a1945709386ef57bbdc64497ab4c7ac2615f29e93eb06a11e6016d017"
+    },
+    {
+      "bytes": 1192309,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899911/SRR7899911_1.fastq.gz",
+      "sha256": "e1fbcfc64d330cdc37985d979f0b80bf283c27c41e84e25bae916e0c1d0d2739"
+    },
+    {
+      "bytes": 1632414,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/pilot/SRR7899911/SRR7899911_2.fastq.gz",
+      "sha256": "49071c101be8730517d193f9109a76fd8ff76503a8be2113ff1ea0a2abcb0ea7"
+    },
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 101,
+      "path": "python/cacao_inventory/__init__.py",
+      "sha256": "eeb1bc857ffd5b379336ada6c100c6b1e6bfdd6b4595300af2d8217e8c9ae977"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 4521,
+      "path": "python/cacao_inventory/design.py",
+      "sha256": "0759a1838ba1fe9187642c5cadc9f429ca4703d3222539a73df95d77f828d58d"
+    },
+    {
+      "bytes": 5411,
+      "path": "python/cacao_inventory/discovery.py",
+      "sha256": "28c4b1bdb4f59f1f63a12add9ad8f6d9997cb569bc10d3103e65a3f7f15f065c"
+    },
+    {
+      "bytes": 4827,
+      "path": "python/cacao_inventory/download.py",
+      "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+    },
+    {
+      "bytes": 2107,
+      "path": "python/cacao_inventory/fastq.py",
+      "sha256": "523e80937c4f642a980662cfb0d6593cc6de52f5d33fcac3b476e7a7e857f1aa"
+    },
+    {
+      "bytes": 19454,
+      "path": "python/cacao_inventory/inventory.py",
+      "sha256": "c109138aab986ff5b2be7779679a0de50a98482799168e8f2bbe7dcd54096f5b"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 5958,
+      "path": "python/cacao_inventory/pilot.py",
+      "sha256": "f6ff87e37f2cb1c82d7ba55c4502805743e797011ef6c64d911d55be01365f24"
+    },
+    {
+      "bytes": 3245,
+      "path": "python/cacao_inventory/pilot_workflow.py",
+      "sha256": "e07a0f12cd78538d76893e4e3e0e7ac47457c3e16a36841ea5a6a2feb0d2b329"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 24860,
+      "path": "python/cacao_inventory/qc.py",
+      "sha256": "4bcde25fe579b655a206beaa57398cc360bde8b658771d538cdb3b6f3ea7d9db"
+    },
+    {
+      "bytes": 6504,
+      "path": "python/cacao_inventory/schema.py",
+      "sha256": "8a63c6afcaf9088640e7ad9d29d850e98316bd0d58e42d6579a469ba632ef9e1"
+    },
+    {
+      "bytes": 6276,
+      "path": "python/cacao_inventory/selection.py",
+      "sha256": "6007f00bcf3a73d4a3538533ee5b533acf834e2d1419225aa219b06719642b72"
+    },
+    {
+      "bytes": 6219,
+      "path": "python/cacao_inventory/sources.py",
+      "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
+    },
+    {
+      "bytes": 6563,
+      "path": "python/cacao_inventory/validation.py",
+      "sha256": "40862e9ef8f9be0ddb24c52be0ad62a44f0b62a0f830d4b15d50a238881b8362"
+    },
+    {
+      "bytes": 9337,
+      "path": "scripts/qc/detect_primers.py",
+      "sha256": "3cdde687a6a47457b9148a418e4ca17077c62224dd2db459b66617cb9236ab82"
+    },
+    {
+      "bytes": 2476,
+      "path": "scripts/qc/download_pilot_read.py",
+      "sha256": "deabebb4ed265f36aa4fcd30cb5be7e99832bc0cba9287b0bf919ea90b8b5005"
+    },
+    {
+      "bytes": 4017,
+      "path": "scripts/qc/summarize_cutadapt.py",
+      "sha256": "37f948ba2fa17f3003b1a7f2f800af9365455a181ffd4f434e9af787b7a5db03"
+    },
+    {
+      "bytes": 2361,
+      "path": "scripts/qc/summarize_fastqc.py",
+      "sha256": "2dbfc093872333b3696841d63e95c4a82d8444d4f38e683efcbe04f115cde4fa"
+    },
+    {
+      "bytes": 2607,
+      "path": "scripts/qc/summarize_trimmed_fastqc.py",
+      "sha256": "63463ad59ae68b40ca98cedd59489cf9d2f20eade61d5c6e17ce15e6f1773a9b"
+    },
+    {
+      "bytes": 2300,
+      "path": "scripts/qc/trim_primers.py",
+      "sha256": "deef9f98ffc6b4eca65609bb49f39f3453054a138f16a2a41de29df8486bd570"
+    },
+    {
+      "bytes": 5215,
+      "path": "workflow/Snakefile",
+      "sha256": "c7de0fcfccf262aa66b65bf909ff37ebe33564f564a496ee3b765afb72adec6c"
+    },
+    {
+      "bytes": 12186,
+      "path": "workflow/rules/pilot_qc.smk",
+      "sha256": "99dc799bb30f28eed874db52cc150ca0e752754ef8a1d6cd109e3b19d3823f6f"
+    },
+    {
+      "bytes": 4120,
+      "path": "results/qc/pilot/cutadapt_summary.tsv",
+      "sha256": "8f0bd7dce59ef12e02a2abadd28bb36b187085048188fc0ebfc3552c2fd717db"
+    },
+    {
+      "bytes": 2887,
+      "path": "results/qc/pilot/multiqc_trimmed/multiqc_report_data/multiqc_fastqc.txt",
+      "sha256": "6e2962f450eb616cfd839e20bb15accf49a2d33d77fa7fb1025aeff705b2399f"
+    },
+    {
+      "bytes": 2965,
+      "path": "results/qc/pilot/raw_read_quality.tsv",
+      "sha256": "35a0aaadcb9427f71e04b9f5796553e16141113f8ae2e5f3da096648c687bf59"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 1877,
+      "path": "results/qc/pilot/read_quality_comparison.tsv",
+      "sha256": "c0c5cec045f63f8c1b48539ed00fc37c43f127bc5d5796bc3ee71ac214af4767"
+    },
+    {
+      "bytes": 3732,
+      "path": "results/qc/pilot/trimmed_read_quality.tsv",
+      "sha256": "69c48db405e9388f6bcdba8cae75b622e2b5d93ed020e0094650ede2cc13fa18"
+    }
+  ],
+  "parameters": {},
+  "schema_version": "1.0.0",
+  "software_versions": {
+    "Python": "3.12.13",
+    "fastqc": "FastQC v0.12.1",
+    "multiqc": "multiqc, version 1.25.1"
+  }
+}
