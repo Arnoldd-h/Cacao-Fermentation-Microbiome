@@ -14,6 +14,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   fórmulas y geometría PCA comprobadas por un validador Python independiente.
 - Pruebas sintéticas verifican índices de comunidades conocidas, cambios
   indebidos de conteos/metadata, muestras vacías y sensibilidad de configuración.
+- Figuras con unidades legibles, margen suficiente para profundidad y escala
+  geométrica igual en los dos ejes PCA; los cálculos tabulares se preservan.
 
 ## [v0.4.0-taxonomy] - 2026-10-09
 

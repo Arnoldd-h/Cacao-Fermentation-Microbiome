@@ -95,10 +95,14 @@ withCallingHandlers({
   }
   for (extension in c("pdf", "svg", "png")) {
     open_figure("alpha_diversity", extension)
-    graphics::par(mfrow = c(2, 2), mar = c(6, 4, 3, 1), oma = c(0, 0, 2, 0))
+    graphics::par(mfrow = c(2, 2), mar = c(6, 6, 3, 1), oma = c(0, 0, 2, 0))
+    metric_titles <- c(library_reads = "Retained reads", observed_asvs = "Observed ASVs",
+      shannon_effective = "Shannon effective diversity", inverse_simpson = "Inverse Simpson")
+    metric_units <- c(library_reads = "Reads", observed_asvs = "ASVs",
+      shannon_effective = "Effective ASVs", inverse_simpson = "Effective ASVs")
     for (metric in c("library_reads", "observed_asvs", "shannon_effective", "inverse_simpson")) {
-      graphics::plot(seq_len(nrow(alpha)), alpha[[metric]], xaxt = "n", xlab = "", ylab = metric,
-        pch = 19, col = colors, main = gsub("_", " ", metric), las = 1)
+      graphics::plot(seq_len(nrow(alpha)), alpha[[metric]], xaxt = "n", xlab = "", ylab = metric_units[[metric]],
+        pch = 19, col = colors, main = metric_titles[[metric]], las = 1)
       graphics::axis(1, at = seq_len(nrow(alpha)), labels = alpha$sample_id, las = 2, cex.axis = 0.7)
       graphics::legend("topright", legend = names(config$figures$stage_colors),
         col = unlist(config$figures$stage_colors), pch = 19, bty = "n", cex = 0.6)
@@ -111,9 +115,9 @@ withCallingHandlers({
       xy <- fits[[i]]$x[, 1:2, drop = FALSE]
       fractions <- 100 * variance_tables[[i]]$explained_fraction[1:2]
       padded <- function(value) { span <- max(diff(range(value)), 1); range(value) + c(-1, 1) * 0.25 * span }
-      graphics::plot(xy, xlim = padded(xy[, 1]), ylim = padded(xy[, 2]), pch = 19, col = colors,
+      graphics::plot(xy, xlim = padded(xy[, 1]), ylim = padded(xy[, 2]), pch = 19, col = colors, asp = 1,
         xlab = sprintf("PC1 (%.1f%%)", fractions[1]), ylab = sprintf("PC2 (%.1f%%)", fractions[2]),
-        main = paste("CLR PCA - count pseudocount", constants[i]), las = 1)
+        main = paste("CLR PCA\nCount pseudocount =", constants[i]), las = 1)
       graphics::text(xy, labels = rows$sample_id, pos = 3, cex = 0.6)
       graphics::legend("bottomleft", legend = names(config$figures$stage_colors),
         col = unlist(config$figures$stage_colors), pch = 19, bty = "n", cex = 0.7)
