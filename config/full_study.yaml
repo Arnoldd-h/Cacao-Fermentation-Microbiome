@@ -4,6 +4,8 @@
   "bioproject": "PRJNA492720",
   "scope": "all_included_runs",
   "expected_runs": 94,
+  "expected_paired_runs": 93,
+  "unpaired_fastq_policy": "record_and_exclude_from_paired_processing",
   "expected_batches": 4,
   "project_config": "config/config.yaml",
   "datasets_config": "config/datasets.yaml",

@@ -6,6 +6,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 - Ampliación registrada a todos los 94 runs incluidos de PRJNA492720, con
   auditoría de fuentes y rutas propias, conservando los parámetros del piloto.
+- Auditoría de archivos: dos runs ofrecen reads adicionales sin pareja y uno
+  carece de pares completos. Se registra la política paired-end: 93 runs procesables;
+  el inventario conserva los 94 y no se inventan mates ni exclusiones silenciosas.
 - Diversidad `v0.5.0-diversity` integrada en `main` mediante PR #3 (`868afa8`).
 
 ## [v0.5.0-diversity] - 2026-10-09

@@ -17,6 +17,9 @@ la inferencia temporal y la integración entre estudios siguen pendientes.
 La diversidad está integrada en `main` mediante PR #3 (`868afa8`). En progreso:
 ampliación al estudio completo de 94 runs, con auditoría de fuentes, recursos
 limitados y conservación de los parámetros científicos del piloto.
+NCBI/ENA confirman los 94 runs incluidos. La auditoría de FASTQ identifica
+93 runs con archivos pareados y uno sin pares completos (SRR7899803); su exclusión de la
+ruta paired-end se registra aparte y no cambia la inclusión del inventario.
 
 ## Completado
 
