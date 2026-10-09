@@ -90,9 +90,10 @@ for (extension in c("pdf", "svg", "png")) {
       if (metric == "asvs") 100 * rows$assigned_asvs / rows$total_asvs else 100 * rows$assigned_reads / rows$total_reads
     }, numeric(length(settings$tax_levels))))
     graphics::barplot(values, beside = TRUE, names.arg = settings$tax_levels, las = 2,
-      ylim = c(0, 110), ylab = "% assigned", main = paste("Pilot coverage:", metric),
+      ylim = c(0, 125), yaxt = "n", ylab = "% assigned", main = paste("Pilot coverage:", metric),
       col = c("#27647B", "#BC7D38"), legend.text = paste("Bootstrap >=", thresholds),
       args.legend = list(bty = "n", cex = 0.8))
+    graphics::axis(2, at = seq(0, 100, 20))
   }
   grDevices::dev.off()
 }

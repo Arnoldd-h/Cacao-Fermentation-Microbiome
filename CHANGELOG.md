@@ -30,6 +30,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   Se preservan; su separación antes de diversidad requiere registro auditable.
 - 111 pruebas Python y seis comprobaciones taxonómicas R aprobadas;
   dry-run integrado sin trabajos pendientes.
+- Espacio superior reservado a las leyendas de cobertura, con escala marcada
+  de 0 a 100 %, para evitar superposición sobre las barras.
 
 ## [v0.3.0-pilot-dada2] - 2026-10-08
 
