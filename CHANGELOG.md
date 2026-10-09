@@ -2,6 +2,33 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## [v0.5.0-diversity] - 2026-10-09
+
+- Política de separación de orgánulos y no bacterias en tablas derivadas,
+  conservando originales, desconocidos y un registro por ASV/muestra.
+- Diversidad técnica registrada: métricas alfa sin rarefacción, CLR/Aitchison
+  con pseudoconteo 1 y sensibilidad 0,5, Bray-Curtis sobre proporciones y PCA.
+- No se infieren efectos temporales ni se agregan submuestras en el piloto.
+- Taxonomía integrada y publicada mediante PR #2 (`6da8f86`).
+- Workflow de separación y diversidad implementado con balances por muestra,
+  fórmulas y geometría PCA comprobadas por un validador Python independiente.
+- Pruebas sintéticas verifican índices de comunidades conocidas, cambios
+  indebidos de conteos/metadata, muestras vacías y sensibilidad de configuración.
+- Figuras con unidades legibles, margen suficiente para profundidad y escala
+  geométrica igual en los dos ejes PCA; los cálculos tabulares se preservan.
+- Ejecución real: 88 ASVs y 123.693 lecturas tras separar cinco ASVs de
+  orgánulos (32.868 lecturas), conservando las seis muestras y tablas originales.
+- Separación valida 21 entradas/nueve artefactos; diversidad, 20/17, con
+  índices alfa, distancias y componentes PCA comprobados independientemente.
+- Riqueza observada de 2–46 ASVs y profundidad de 9.250–36.508 lecturas,
+  sin rarefacción, pruebas entre etapas ni extrapolación al estudio completo.
+- Taxonomía regenerada sobre `5221b0f`: siete tablas científicas idénticas
+  por SHA-256 al hito anterior. Figuras alfa y PCA en PDF/SVG/PNG de 300 dpi.
+- 125 pruebas Python aprobadas, incluidas fórmulas R, conservación y
+  regresiones del workflow; no se añaden dependencias.
+- Corrida final sobre `342dd4e`, con seis tablas científicas de diversidad
+  idénticas por SHA-256 y figuras revisadas; dry-run integrado sin trabajos pendientes.
+
 ## [v0.4.0-taxonomy] - 2026-10-09
 
 - Referencia SILVA NR99 138.2 fijada por DOI, tamaño y MD5 del proveedor;

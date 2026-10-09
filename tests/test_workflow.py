@@ -300,6 +300,60 @@ class WorkflowBootstrapTests(unittest.TestCase):
             self.assertNotIn("rule download_taxonomy_database:", after.stdout)
             self.assertEqual(reference.read_bytes(), original)
 
+    def test_absent_manifest_reaches_diversity_checkpoint(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.copy_sources(root)
+            (root / "metadata/pilot_manifest.tsv").unlink()
+            result = self.dry_run(root, "pilot_diversity")
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertIn("build_pilot_manifest", result.stdout)
+            self.assertIn("describe_pilot_diversity", result.stdout)
+
+    def test_diversity_configuration_invalidates_downstream_without_reclassifying(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.copy_sources(root)
+            old = time.time() - 200
+            for directory in ("workflow", "scripts", "python", "config", "environment"):
+                for path in (root / directory).rglob("*"):
+                    if path.is_file():
+                        os.utime(path, (old, old))
+            # copy_sources uses future metadata for dry-run-only tests. A
+            # --touch execution needs those input timestamps in the past.
+            for directory in ("metadata", "results/tables"):
+                for path in (root / directory).rglob("*"):
+                    if path.is_file():
+                        os.utime(path, (old + 100, old + 100))
+            planned = subprocess.run(["snakemake", "pilot_diversity", "--snakefile", "workflow/Snakefile", "--cores", "1", "--summary"],
+                                     cwd=root, capture_output=True, text=True, timeout=90)
+            self.assertEqual(planned.returncode, 0, planned.stdout + planned.stderr)
+            for entry in csv.DictReader(io.StringIO(planned.stdout), delimiter="\t"):
+                path = root / entry["output_file"]
+                if not path.exists():
+                    path.parent.mkdir(parents=True, exist_ok=True)
+                    path.touch()
+                    os.utime(path, (old + 100, old + 100))
+            # Scheduling only: --touch executes no classifier or analysis tool.
+            touched = subprocess.run(["snakemake", "pilot_diversity", "--snakefile", "workflow/Snakefile", "--cores", "1", "--touch",
+                                      "--forcerun", "prepare_pilot_bacterial_table", "validate_pilot_bacterial_table", "describe_pilot_diversity", "validate_pilot_diversity"],
+                                     cwd=root, capture_output=True, text=True, timeout=90)
+            self.assertEqual(touched.returncode, 0, touched.stdout + touched.stderr)
+            stable = self.dry_run(root, "pilot_diversity")
+            self.assertEqual(stable.returncode, 0, stable.stdout + stable.stderr)
+            self.assertIn("Nothing to be done", stable.stdout)
+            path = root / "config/diversity.yaml"
+            config = json.loads(path.read_text())
+            config["analysis"]["primary_pseudocount"] = 2.0
+            path.write_text(json.dumps(config))
+            os.utime(path, (old, old))
+            changed = self.dry_run(root, "pilot_diversity")
+            self.assertEqual(changed.returncode, 0, changed.stdout + changed.stderr)
+            self.assertIn("rule prepare_pilot_bacterial_table:", changed.stdout)
+            self.assertIn("rule describe_pilot_diversity:", changed.stdout)
+            self.assertNotIn("rule run_pilot_taxonomy:", changed.stdout)
+            self.assertNotIn("rule download_taxonomy_database:", changed.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

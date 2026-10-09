@@ -1,0 +1,298 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "command": [
+    "Rscript",
+    "scripts/diversity/describe_pilot.R",
+    "--config",
+    "/mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/config/diversity.yaml"
+  ],
+  "finished_at_utc": "2026-10-09T21:48:51.573157+00:00",
+  "git_commit": "342dd4efafe33dbbc465eb57ac0cbec113f5ddf7",
+  "git_dirty": true,
+  "git_status_at_start": [
+    " M results/taxonomy/pilot/SUCCESS",
+    " M results/taxonomy/pilot/assignment_coverage.pdf",
+    " M results/taxonomy/pilot/input_checksums.json",
+    " M results/taxonomy/pilot/provenance.json",
+    " M results/taxonomy/pilot/validation.json",
+    "?? data/processed/",
+    "?? results/diversity/",
+    "?? results/filtering/"
+  ],
+  "inputs": [
+    {
+      "bytes": 4901,
+      "path": "config/config.yaml",
+      "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+    },
+    {
+      "bytes": 5464,
+      "path": "data/processed/pilot/bacterial/asv_counts.tsv",
+      "sha256": "6c428b25ae3f6f2667ac3168035ccb49cc27f72b30d4dd3d8b9b9cae5f9c21b6"
+    },
+    {
+      "bytes": 28857,
+      "path": "data/processed/pilot/bacterial/asv_sequences.tsv",
+      "sha256": "ff265d543695a9e044d174369965fe78d54293119ef8a51f8c7e9e79d21274e4"
+    },
+    {
+      "bytes": 3423,
+      "path": "data/processed/pilot/bacterial/sample_metadata.tsv",
+      "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
+    },
+    {
+      "bytes": 14040,
+      "path": "data/processed/pilot/bacterial/taxonomy.tsv",
+      "sha256": "229e823d9bcbe6d3c830c740ec767bfaf087ec378eb14c26195663d8b7134228"
+    },
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4203,
+      "path": "python/cacao_inventory/bacterial_filter.py",
+      "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 8676,
+      "path": "results/filtering/pilot/provenance.json",
+      "sha256": "a1daec41ac0a587c4c22026922ca5a99e3163bdc057b6ea258360ea3ece8d3d1"
+    },
+    {
+      "bytes": 422,
+      "path": "results/filtering/pilot/validation.json",
+      "sha256": "b14091ca7fe69cb76546852e96abe3067a0d44abd506802807caddc705ed9fba"
+    },
+    {
+      "bytes": 11916,
+      "path": "scripts/dada2/helpers.R",
+      "sha256": "d22d205dd0af7678a38eaa6ee72231012748343c9856d1f410e29d111ff9fce7"
+    },
+    {
+      "bytes": 9285,
+      "path": "scripts/diversity/describe_pilot.R",
+      "sha256": "5ef982bd8d24bfc174d0db5caa94607280c4a8520bbdfe5c38537c221c5e42ec"
+    },
+    {
+      "bytes": 3272,
+      "path": "scripts/diversity/run_diversity.py",
+      "sha256": "25592221e0d40bee0323c1f4099689502fe242b429dd87a8f961c74968747311"
+    },
+    {
+      "bytes": 6366,
+      "path": "scripts/filtering/validate_bacterial_table.py",
+      "sha256": "6d652de4458c2ec00fc711aceada071b7bf5e16a44448188d92be055060c06b7"
+    },
+    {
+      "bytes": 4766,
+      "path": "workflow/rules/pilot_diversity.smk",
+      "sha256": "624634edf16111ade6adcf4b9c7dde4efb14939714f56586a857c89ac14a1ff0"
+    },
+    {
+      "bytes": 1483,
+      "path": "config/diversity.yaml",
+      "sha256": "8adf155672098942393dedd14c057f05b5ef2cd7f5e269b82d286080ec28b5ad"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 5680,
+      "path": "results/diversity/pilot/aitchison_distances.tsv",
+      "sha256": "cb0b1f9245882a7a412edca4b4ab40d1837c2ab48a4a945aff7e1687ac79336f"
+    },
+    {
+      "bytes": 6249,
+      "path": "results/diversity/pilot/aitchison_pca.pdf",
+      "sha256": "e6484a5be9ba0623841e898875a1408a2b84902bc14b19372a76a2a690dc415a"
+    },
+    {
+      "bytes": 149512,
+      "path": "results/diversity/pilot/aitchison_pca.png",
+      "sha256": "42220f03a9f1037c065884aedd45b56a936c652f42f3e3b15253777fbb7a93f1"
+    },
+    {
+      "bytes": 92007,
+      "path": "results/diversity/pilot/aitchison_pca.svg",
+      "sha256": "8ecf0401e8cdc07f0ad6c9c212fc47a58dac20b14ab1eb75964a54387f8fe718"
+    },
+    {
+      "bytes": 7693,
+      "path": "results/diversity/pilot/alpha_diversity.pdf",
+      "sha256": "9a423a020a5896c7a8e691dca95af38e6556c6d8db33dff1aaabf3153c42c984"
+    },
+    {
+      "bytes": 191858,
+      "path": "results/diversity/pilot/alpha_diversity.png",
+      "sha256": "1f59b9b9356d4d20b103c79ee0feec833db7e714545567c0c87aee0ebce5f56f"
+    },
+    {
+      "bytes": 137860,
+      "path": "results/diversity/pilot/alpha_diversity.svg",
+      "sha256": "ea6624b1d28f3c023359cf535ffbeb83345689649bc96eb41e38cfa72ea81f07"
+    },
+    {
+      "bytes": 1377,
+      "path": "results/diversity/pilot/alpha_diversity.tsv",
+      "sha256": "d5d8ca7bc1d431b00bbe182cd71ef97164ac3659ee27015d48cdc542768276da"
+    },
+    {
+      "bytes": 2460,
+      "path": "results/diversity/pilot/bray_curtis_distances.tsv",
+      "sha256": "bd619bbd1ace79fd89cae9378cb2b6142643249b20fb1df7a3e14abf64155078"
+    },
+    {
+      "bytes": 120022,
+      "path": "results/diversity/pilot/clr_coordinates.tsv",
+      "sha256": "21bda6100e5b56eca4e85bf8b2084e782a7eb6347ceb112e3a56391418616ef5"
+    },
+    {
+      "bytes": 1483,
+      "path": "results/diversity/pilot/config_snapshot.yaml",
+      "sha256": "8adf155672098942393dedd14c057f05b5ef2cd7f5e269b82d286080ec28b5ad"
+    },
+    {
+      "bytes": 3236,
+      "path": "results/diversity/pilot/input_checksums.json",
+      "sha256": "e0763c0225b771a09637f5707c8c7790420e1f9e06f3f9b76a9c5fd0752e597c"
+    },
+    {
+      "bytes": 4244,
+      "path": "results/diversity/pilot/pca_scores.tsv",
+      "sha256": "792124329cd646620ca407f98e12e5ae7147120a198b7165e2638af5b9d6d57d"
+    },
+    {
+      "bytes": 796,
+      "path": "results/diversity/pilot/pca_variance.tsv",
+      "sha256": "424d64f8b58341a494fa6f75ceeea813203ab9afbc949370f1a8624c6155ebe7"
+    },
+    {
+      "bytes": 997,
+      "path": "results/diversity/pilot/session_info.txt",
+      "sha256": "a6fa3ed55e9e05723f47c327abb5fddadfe3225eb529998117a6f4a4d0597893"
+    },
+    {
+      "bytes": 49,
+      "path": "results/diversity/pilot/software_versions.tsv",
+      "sha256": "40b25f21f779cbd2af2eab8dc5b390116373c77af38c696653ce53cc4d5d7732"
+    },
+    {
+      "bytes": 0,
+      "path": "results/diversity/pilot/warnings.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "parameters": {
+    "analysis": {
+      "alpha_metrics": [
+        "observed_asvs",
+        "shannon",
+        "gini_simpson",
+        "inverse_simpson",
+        "shannon_effective"
+      ],
+      "feature_level": "within_study_asv",
+      "inference": false,
+      "log_base": "natural",
+      "pca_center": true,
+      "pca_scale": false,
+      "primary_beta": "euclidean_clr",
+      "primary_pseudocount": 1.0,
+      "random_seed": 20260819,
+      "rarefaction": false,
+      "sample_aggregation": "none",
+      "secondary_beta": "bray_curtis_relative_abundance",
+      "sensitivity_pseudocounts": [
+        0.5
+      ],
+      "validation_tolerance": 1e-08,
+      "zero_policy": "add_pseudocount_to_all_counts"
+    },
+    "figures": {
+      "height_inches": 6,
+      "png_dpi": 300,
+      "stage_colors": {
+        "early": "#27647B",
+        "late": "#536E3B",
+        "mid": "#BC7D38"
+      },
+      "width_inches": 12
+    },
+    "filtering": {
+      "bacterial_kingdom": "Bacteria",
+      "empty_sample_policy": "fail",
+      "exclude_known_non_bacterial": true,
+      "low_abundance_filter": false,
+      "minimum_bootstrap": 80,
+      "organelle_labels": [
+        "Chloroplast",
+        "Mitochondria"
+      ],
+      "tax_levels": [
+        "Kingdom",
+        "Phylum",
+        "Class",
+        "Order",
+        "Family",
+        "Genus"
+      ],
+      "taxonomy_call": "primary",
+      "unclassified_kingdom_policy": "retain_and_flag"
+    },
+    "paths": {
+      "bacterial_dir": "data/processed/pilot/bacterial",
+      "dada2_dir": "results/dada2/pilot",
+      "diversity_dir": "results/diversity/pilot",
+      "filtering_dir": "results/filtering/pilot",
+      "taxonomy_dir": "results/taxonomy/pilot"
+    },
+    "schema_version": "1.0.0"
+  },
+  "software_versions": {
+    "Python": "3.12.13"
+  },
+  "started_at_utc": "2026-10-09T21:48:46.123205+00:00",
+  "status": "success",
+  "upstream_validation": {
+    "artifacts_checked": 9,
+    "excluded_asvs": 5,
+    "excluded_reads": 32868,
+    "input_asvs": 93,
+    "input_reads": 156561,
+    "inputs_checked": 21,
+    "retained_asvs": 88,
+    "retained_reads": 123693,
+    "sample_exclusions": 0,
+    "samples": 6,
+    "source_git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
+    "status": "valid",
+    "study_id": "pacheco_montealegre_2020_colombia",
+    "unclassified_kingdom_retained_asvs": 0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "artifacts_checked": 9,
+  "excluded_asvs": 5,
+  "excluded_reads": 32868,
+  "input_asvs": 93,
+  "input_reads": 156561,
+  "inputs_checked": 21,
+  "retained_asvs": 88,
+  "retained_reads": 123693,
+  "sample_exclusions": 0,
+  "samples": 6,
+  "source_git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
+  "status": "valid",
+  "study_id": "pacheco_montealegre_2020_colombia",
+  "unclassified_kingdom_retained_asvs": 0
+}

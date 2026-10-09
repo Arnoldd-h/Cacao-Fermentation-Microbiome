@@ -1,7 +1,7 @@
 # Scripts
 
 Los ejecutables actuales cubren entorno, metadata, diseño longitudinal, QC,
-DADA2 y taxonomía. Cada script declara sus entradas, salidas y condiciones de fallo en
+DADA2, taxonomía, separación bacteriana y diversidad descriptiva. Cada script declara sus entradas, salidas y condiciones de fallo en
 `--help`. Los comandos siguientes se ejecutan desde la raíz del repositorio en
 Linux/WSL.
 
@@ -19,11 +19,10 @@ python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow
 python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2
 ```
 
-El target por defecto alcanza la validación taxonómica del piloto. La ejecución
+El target por defecto alcanza la validación de diversidad descriptiva del piloto. La ejecución
 DADA2 sobre `6221445` conserva su validación; la taxonomía tiene configuración
-separada para no modificar sus entradas científicas. La suite aprobó 111 pruebas
-Python en Linux y seis comprobaciones taxonómicas en R; el dry-run integrado
-queda sin trabajos pendientes.
+separada para no modificar sus entradas científicas. La suite aprueba 125 pruebas
+Python en Linux, incluidas pruebas con R de fórmulas y geometría de diversidad.
 
 ## Metadata y unidades de análisis
 
@@ -93,8 +92,8 @@ python3 scripts/environment/run_in_environment.py Rscript tests/dada2/test_filte
 ```
 
 El piloto técnico produjo 93 ASVs y conservó 156.561/176.798 pares sin quimeras;
-esas cifras no evalúan sucesión. Diversidad, integración y meta-análisis siguen
-sin implementar. Los runs PacBio incluidos
+esas cifras no evalúan sucesión. La diversidad descriptiva tiene una etapa propia;
+inferencia temporal, integración y meta-análisis siguen pendientes. Los runs PacBio incluidos
 en el inventario necesitan un procesamiento específico y no son compatibles
 con este ejecutable paired-end Illumina.
 
@@ -117,3 +116,25 @@ python3 scripts/environment/run_in_environment.py Rscript tests/taxonomy/test_he
 Las ASVs y etiquetas originales se preservan, con llamada primaria bootstrap 80
 y sensibilidad 50. No se asignan especies ni se excluyen ASVs automáticamente.
 Método, referencia y limitaciones: [`reports/taxonomy_methods.md`](../reports/taxonomy_methods.md).
+
+## Separación bacteriana y diversidad descriptiva
+
+`filtering/prepare_bacterial_table.py` consume DADA2 y taxonomía validados.
+Aplica `config/diversity.yaml`, conserva las tablas originales y genera una
+tabla derivada junto con decisiones por ASV y balance de lecturas por muestra.
+`filtering/validate_bacterial_table.py` contrasta las decisiones, las celdas y
+los balances con las entradas originales de forma independiente.
+
+`diversity/run_diversity.py` comprueba esa etapa y ejecuta `describe_pilot.R`.
+Exporta diversidad alfa sin rarefacción, CLR/Aitchison con pseudoconteos 1 y 0,5,
+Bray–Curtis sobre proporciones y PCA, manteniendo cada run y su diseño original.
+`validate_diversity.py` comprueba fórmulas, distancias, geometría PCA y hashes.
+No ejecuta contrastes de hipótesis ni agrega submuestras como réplicas.
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 pilot_diversity
+python3 scripts/environment/run_in_environment.py python scripts/filtering/validate_bacterial_table.py
+python3 scripts/environment/run_in_environment.py python scripts/diversity/validate_diversity.py
+```
+
+Métodos, política de ceros y límites: [`reports/diversity_methods.md`](../reports/diversity_methods.md).

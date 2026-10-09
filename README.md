@@ -55,9 +55,12 @@ sin quimeras de 176.798 pares de entrada (88,55 %). Se validaron 18 entradas
 y 18 artefactos DADA2. La clasificación con SILVA 138.2 pasó validación
 independiente de 21 entradas y 15 artefactos: 64/93 ASVs tienen asignación a
 género con bootstrap 80 (63,54 % de las lecturas). Se conservan cinco ASVs
-marcadas como orgánulos, con 32.868 lecturas. Diversidad e inferencia temporal
-siguen pendientes. La suite actual aprueba 111 pruebas Python; el dry-run
-integrado queda sin trabajos pendientes.
+marcadas como orgánulos, con 32.868 lecturas, en las tablas originales.
+Su separación auditable produce 88 ASVs y 123.693 lecturas para diversidad
+descriptiva, conservando las seis muestras. Se exportan índices alfa,
+CLR/Aitchison con sensibilidad, Bray–Curtis y PCA, con validación independiente
+de fórmulas y geometría. La suite aprueba 125 pruebas Python. La inferencia
+temporal y la integración entre estudios siguen pendientes.
 
 `PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
 propia y no se procesa con el piloto Illumina paired-end actual.
@@ -83,8 +86,9 @@ python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow
 ```
 
 El workflow reconstruye inventario, diseño longitudinal, selección y manifest;
-descarga los FASTQ ausentes del piloto, ejecuta QC, DADA2 y taxonomía y valida
-sus salidas. La base SILVA pesada se reconstruye desde un depósito con checksum.
+descarga los FASTQ ausentes del piloto, ejecuta QC, DADA2, taxonomía,
+separación bacteriana y diversidad descriptiva, y valida sus salidas.
+La base SILVA pesada se reconstruye desde un depósito con checksum.
 Para ejecutar el target DADA2 con sus dependencias, comprobar sus artefactos y
 entradas, o ejecutar las pruebas:
 
@@ -101,6 +105,19 @@ La clasificación del piloto y sus parámetros se describen en
 python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 pilot_taxonomy
 python3 scripts/environment/run_in_environment.py python scripts/taxonomy/validate_taxonomy.py
 ```
+
+La diversidad descriptiva y la política de ceros están documentadas en
+[métodos de diversidad](reports/diversity_methods.md):
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 pilot_diversity
+python3 scripts/environment/run_in_environment.py python scripts/filtering/validate_bacterial_table.py
+python3 scripts/environment/run_in_environment.py python scripts/diversity/validate_diversity.py
+```
+
+Las profundidades retenidas van de 9.250 a 36.508 lecturas y la riqueza observada
+de 2 a 46 ASVs. Son descripciones sin rarefacción de seis runs de cuatro lotes;
+no reconstruyen sus trayectorias ni demuestran diferencias temporales.
 
 `--check-inputs-root .` comprueba también los hashes de las entradas originales;
 un cambio posterior de esas entradas obliga a reconstruir y validar la etapa

@@ -90,9 +90,9 @@
     "sha256": "af9842b063e453476c8f1745212406802247820fc0f35d422153a5b92d24637b"
   },
   {
-    "bytes": 5301,
+    "bytes": 5520,
     "path": "workflow/Snakefile",
-    "sha256": "896003ca1010ab44b99d8234b8d0e103cc2d20f099d52b3becdb0d85481df32f"
+    "sha256": "3feb72cd52c3616cd4e67c72cb8a6770126c8b2ebd2c34c74381524572068281"
   },
   {
     "bytes": 3620,
