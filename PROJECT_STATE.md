@@ -1,12 +1,12 @@
 # Estado del proyecto
 
-Última actualización: 2026-10-08.
+Última actualización: 2026-10-09.
 
 ## Fase actual
 
-Inventario, QC y piloto DADA2 consolidados. El workflow integrado terminó y
-su siguiente dry-run no programa trabajos. La siguiente fase es clasificación
-taxonómica con referencia y parámetros explícitos antes de escalar por estudio.
+Inventario, QC y piloto DADA2 consolidados e integrados en `main` mediante PR #1
+(`9f0a478`). En desarrollo: clasificación taxonómica del piloto con SILVA 138.2,
+checksum de origen y umbrales fijados antes de observar las asignaciones.
 
 ## Completado
 
@@ -85,7 +85,8 @@ No queda una ejecución activa.
 
 ## Próximas tareas
 
-1. Fijar versión y checksum de una referencia taxonómica y validar la clasificación.
+1. Descargar y validar SILVA 138.2; implementar y ejecutar la clasificación
+   con bootstrap 80 y sensibilidad 50, conservando ASVs y asignaciones originales.
 2. Escalar el estudio piloto completo conservando parámetros por estudio y
    revisar por separado los pipelines V3-V4 y PacBio antes de integrar taxonomía.
 3. Definir tratamiento de ceros, agregación de submuestras y modelos longitudinales
@@ -93,13 +94,14 @@ No queda una ejecución activa.
 
 ## Control de versiones
 
-Trabajo en `codex/pilot-dada2-reproducibility`; `main` permanece disponible.
-Los commits son locales. No se publica ni se hace push sin autorización.
+Trabajo en `codex/pilot-taxonomy`, creada desde el `main` integrado (`9f0a478`).
+La fase anterior y sus tres tags están publicados. Los nuevos commits son
+locales hasta publicar la siguiente unidad completa dentro de la autorización.
 Los datos pesados permanecen ignorados; las salidas pequeñas conservan procedencia.
 El commit `44f5f4a` prerregistra los parámetros; `eafadd7` corrige identificadores
 SRA; `a2bfa82` y `dd4f364` cierran reproducibilidad del workflow QC.
 `20feeea` corrige reevaluación del checkpoint; `32ab045` consolida inventario y
-`6221445` consolida QC. Los hitos locales son `v0.1.0-dataset-inventory`,
+`6221445` consolida QC. Los hitos publicados son `v0.1.0-dataset-inventory`,
 `v0.2.0-pilot-qc` y `v0.3.0-pilot-dada2`.
 La procedencia final registra `git_dirty=true` por documentación y resultados
 previos todavía sin commit al iniciar. Sus seis entradas versionadas (config,

@@ -2,6 +2,16 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-09
+
+- Referencia SILVA NR99 138.2 fijada por DOI, tamaño y MD5 del proveedor;
+  descargador reanudable con inspección FASTA/gzip y procedencia SHA-256.
+- Parámetros taxonómicos prerregistrados: bootstrap 80, sensibilidad 50,
+  seis rangos originales, semilla y revisión de orientación inversa.
+- Se conservan todas las ASVs; etiquetas de orgánulos y asignaciones
+  insuficientes se marcarán para revisión sin excluir automáticamente.
+- Fase anterior integrada en `main` mediante PR #1 (`9f0a478`).
+
 ## [v0.3.0-pilot-dada2] - 2026-10-08
 
 - Ejecución integrada sobre `6221445`: seis muestras, 165.034 pares filtrados,

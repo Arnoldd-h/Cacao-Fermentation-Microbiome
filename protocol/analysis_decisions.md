@@ -90,8 +90,36 @@ de los tiempos en conflicto antes de consolidar el cambio metodológico.
 
 ## Decisiones aún abiertas
 
-- Versión de SILVA y método definitivo de clasificación.
-- Validar los parámetros iniciales de DADA2 con los diagnósticos del piloto antes de escalar.
+- Métodos posteriores de agregación taxonómica entre estudios.
+- Revisar el comportamiento de DADA2 al escalar el estudio completo.
 - Tratamiento de ceros y pseudoconteo para CLR.
 - Método definitivo de abundancia diferencial según el diseño disponible.
 - Selección de licencia del repositorio.
+
+### Clasificación taxonómica del piloto, 2026-10-09
+
+Se fija antes de observar las asignaciones SILVA NR99 138.2, archivo oficial
+toGenus para DADA2 del [depósito 14169026](https://doi.org/10.5281/zenodo.14169026).
+Su MD5 de origen es `1764e2a36b4500ccb1c7d5261948a414` y tamaño 139.996.892 bytes;
+se comprobarán gzip, formato FASTA y SHA-256 local. La base pesada permanece
+ignorada. Sus archivos fueron formateados con DADA2 1.35.4; se utilizará el
+clasificador instalado 1.34.0 y se verificará la compatibilidad mediante ejecución.
+
+`config/taxonomy.yaml` registra `assignTaxonomy`, seis rangos originales Kingdom
+a Genus, comprobación de complemento inverso y semilla 20260819. Se conserva
+la llamada sin máscara y el soporte de cada rango; la clasificación primaria
+exige bootstrap 80 y se compara descriptivamente con 50 usando el mismo ajuste.
+Se elige 80 para conservar soporte conservador al preparar integración a género;
+50 evalúa pérdida de resolución en las secuencias cortas de 237–243 nt. Son
+umbrales documentados por la [guía oficial](https://benjjneb.github.io/dada2/assign.html),
+sin selección según taxones esperados ni efectos temporales. Un rango inferior
+no se acepta si un ancestro carece de soporte. Se preservan los nombres SILVA,
+incluidos grupos sin nombre de género válido; no se inventan sinónimos o especies.
+
+No se asignan especies en esta fase por la resolución limitada de V4. Se
+marcan etiquetas explícitas Chloroplast/Mitochondria, dominios distintos de
+Bacteria y dominios desconocidos para revisión, conservando todas las ASVs y
+lecturas. Esta referencia optimizada para Bacteria/Archaea no permite descartar
+eucariotas por una ausencia de asignación. Cualquier exclusión posterior exigirá
+una decisión y registro específicos. Los resúmenes son técnicos del piloto;
+no habilitan inferencia biológica ni concatenación de ASVs entre estudios.
