@@ -86,6 +86,12 @@ withCallingHandlers({
   export(do.call(rbind, variance_tables), "pca_variance.tsv")
   colors <- config$figures$stage_colors[metadata$fermentation_stage]
   colors <- unlist(lapply(colors, function(color) if (is.null(color)) "#777777" else color), use.names = FALSE)
+  scope_label <- config$figures$scope_label
+  if (is.null(scope_label)) scope_label <- "Pilot descriptive diversity"
+  show_labels <- config$figures$show_sample_labels
+  if (is.null(show_labels)) show_labels <- TRUE
+  if (!is.character(scope_label) || length(scope_label) != 1L || !nzchar(scope_label) ||
+      !is.logical(show_labels) || length(show_labels) != 1L || is.na(show_labels)) fail("Invalid figure scope or label settings")
   open_figure <- function(name, extension) {
     path <- file.path(output, paste0(name, ".", extension))
     width <- config$figures$width_inches; height <- config$figures$height_inches
@@ -101,13 +107,14 @@ withCallingHandlers({
     metric_units <- c(library_reads = "Reads", observed_asvs = "ASVs",
       shannon_effective = "Effective ASVs", inverse_simpson = "Effective ASVs")
     for (metric in c("library_reads", "observed_asvs", "shannon_effective", "inverse_simpson")) {
-      graphics::plot(seq_len(nrow(alpha)), alpha[[metric]], xaxt = "n", xlab = "", ylab = metric_units[[metric]],
+      graphics::plot(seq_len(nrow(alpha)), alpha[[metric]], xaxt = if (show_labels) "n" else "s",
+        xlab = if (show_labels) "" else "Sample index", ylab = metric_units[[metric]],
         pch = 19, col = colors, main = metric_titles[[metric]], las = 1)
-      graphics::axis(1, at = seq_len(nrow(alpha)), labels = alpha$sample_id, las = 2, cex.axis = 0.7)
+      if (show_labels) graphics::axis(1, at = seq_len(nrow(alpha)), labels = alpha$sample_id, las = 2, cex.axis = 0.7)
       graphics::legend("topright", legend = names(config$figures$stage_colors),
         col = unlist(config$figures$stage_colors), pch = 19, bty = "n", cex = 0.6)
     }
-    graphics::mtext("Pilot descriptive diversity - unrarefied; samples remain separate", outer = TRUE)
+    graphics::mtext(paste0(scope_label, " - unrarefied; samples remain separate"), outer = TRUE)
     grDevices::dev.off()
     open_figure("aitchison_pca", extension)
     graphics::par(mfrow = c(1, length(constants)), mar = c(4, 4, 5, 2))
@@ -118,7 +125,7 @@ withCallingHandlers({
       graphics::plot(xy, xlim = padded(xy[, 1]), ylim = padded(xy[, 2]), pch = 19, col = colors, asp = 1,
         xlab = sprintf("PC1 (%.1f%%)", fractions[1]), ylab = sprintf("PC2 (%.1f%%)", fractions[2]),
         main = paste("CLR PCA\nCount pseudocount =", constants[i]), cex.main = 1, las = 1)
-      graphics::text(xy, labels = rows$sample_id, pos = 3, cex = 0.6)
+      if (show_labels) graphics::text(xy, labels = rows$sample_id, pos = 3, cex = 0.6)
       graphics::legend("bottomleft", legend = names(config$figures$stage_colors),
         col = unlist(config$figures$stage_colors), pch = 19, bty = "n", cex = 0.7)
     }

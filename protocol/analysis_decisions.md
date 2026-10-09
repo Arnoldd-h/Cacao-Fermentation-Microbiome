@@ -1,5 +1,48 @@
 # Decisiones de análisis
 
+## Ampliación al estudio completo — 2026-10-09
+
+Se auditan los 94 runs incluidos de PRJNA492720, sin volver a seleccionar
+muestras según diversidad, abundancia o etapa. El manifest paired-end debe
+coincidir exactamente con los runs elegibles según archivos, conservar cuatro lotes y
+los dos estratos, y fallar ante metadata faltante o archivos no verificables.
+Se contrastan NCBI y ENA antes de la descarga; cualquier discrepancia impide
+promover el manifest. La estimación de FASTQ comprimidos es 395.387.959 bytes;
+el espacio adicional para procesamiento es una reserva operativa, no una
+predicción de tamaño exacto ni de duración.
+
+`config/full_study.yaml` fija alcance, rutas y recursos. `config/config.yaml`
+conserva primers, Cutadapt, filtros, aprendizaje de errores, inferencia,
+ensamblaje, quimeras y semilla del piloto. Los errores DADA2 se aprenden de
+nuevo con todos los runs y los mismos parámetros; no se fusiona su tabla
+con la del piloto ni se concatenan ASVs entre estudios. Los IDs ASV son
+locales a cada ejecución; una coincidencia numérica no prueba identidad de
+secuencia entre piloto y estudio completo.
+
+Las salidas completas tienen rutas propias. Se reutilizan los FASTQ crudos
+válidos por accession y MD5. La taxonomía mantiene SILVA 138.2 y bootstrap
+80/50. La separación y diversidad mantienen la política registrada, en
+`config/full_study_diversity.yaml`. No se agregan estratos ni se realizan
+pruebas temporales en esta ampliación; esas decisiones requieren un diseño
+inferencial posterior. Los 94 runs no equivalen a 94 fermentaciones.
+
+La auditoría de empaquetado encontró dos runs con streams `_1`/`_2` más un
+FASTQ de lecturas sin pareja, y SRR7899803 con sólo un FASTQ: 11.064 reads,
+identificadores únicos, 11.056 cabeceras terminadas en `/1` y ocho en `/2`.
+No hay archivos `_1`/`_2` ni IDs repetidos que permitan reconstruir pares.
+Se mantienen los 94 runs en el inventario incluido y se registra su elegibilidad
+de procesamiento en una tabla específica. La ruta paired-end usa los dos
+streams coincidentes, registra los streams adicionales y excluye de esa
+ruta el run sin pareja: 93 runs procesables, cuatro lotes, 47 tiempos lote.
+No se inventan mates ni se combina inferencia single-end con ASVs ensambladas.
+Esta decisión responde al formato verificado antes de observar los resultados
+del estudio completo; no es un filtro por abundancia ni un cambio de hipótesis.
+Los streams excluidos se conservan con URL, bytes, MD5 y razón auditable.
+Los 186 archivos pareados suman 394.515.770 bytes. Los otros tres streams
+suman 872.189 bytes; su exclusión de esta ruta no altera la metadata pública.
+
+## Decisiones previas
+
 | Fecha | Decisión | Justificación | Alternativas consideradas | Impacto esperado | Estado |
 |---|---|---|---|---|---|
 | 2026-08-19 | Limitar la primera fase a amplicones bacterianos 16S rRNA. | Evita mezclar tecnologías y permite estabilizar un pipeline defendible. | Integrar ITS o shotgun desde el inicio. | Menor alcance inicial, mayor comparabilidad. | Adoptada |

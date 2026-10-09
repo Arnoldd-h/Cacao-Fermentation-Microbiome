@@ -2,6 +2,30 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-09
+
+- Ampliación registrada a todos los 94 runs incluidos de PRJNA492720, con
+  auditoría de fuentes y rutas propias, conservando los parámetros del piloto.
+- Auditoría de archivos: dos runs ofrecen reads adicionales sin pareja y uno
+  carece de pares completos. Se registra la política paired-end: 93 runs procesables;
+  el inventario conserva los 94 y no se inventan mates ni exclusiones silenciosas.
+- Diversidad `v0.5.0-diversity` integrada en `main` mediante PR #3 (`868afa8`).
+- Workflow completo separado del piloto: manifest auditado, descarga inmutable,
+  QC reconciliado, DADA2, SILVA, separación bacteriana y diversidad descriptiva.
+- Pruebas de ampliación cubren alcance, streams huérfanos, corrupción de QC,
+  reconstrucción sin manifest y conservación de archivos crudos existentes.
+- La referencia SILVA compartida conserva el contrato del scheduler del piloto,
+  evitando intentar reemplazar una base protegida al ampliar el estudio.
+- Auditoría de disponibilidad y validación completa de los FASTQ locales:
+  reporta HTML, archivos faltantes, bytes/MD5 inválidos y estructura FASTQ/gzip
+  sin añadir exclusiones por fallos de transporte. Cuatro regresiones aprobadas.
+- Figuras completas identifican su alcance y evitan etiquetas superpuestas;
+  la renovación del piloto conserva sus siete tablas TSV por SHA-256.
+- Descarga cerrada con 185/186 FASTQ válidos (393.057.692 bytes). ENA devuelve
+  un directorio HTML vacío para SRR7899804 R2; se registra el bloqueo sin
+  excluir ese run ni producir resultados DADA2 completos sobre un subconjunto.
+- Suite final: 144 pruebas Python aprobadas; piloto validado y dry-run estable.
+
 ## [v0.5.0-diversity] - 2026-10-09
 
 - Política de separación de orgánulos y no bacterias en tablas derivadas,

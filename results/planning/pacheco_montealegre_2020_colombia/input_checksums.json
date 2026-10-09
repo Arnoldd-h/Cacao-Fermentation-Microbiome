@@ -1,0 +1,157 @@
+[
+  {
+    "bytes": 4901,
+    "path": "config/config.yaml",
+    "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+  },
+  {
+    "bytes": 65814,
+    "path": "config/datasets.yaml",
+    "sha256": "f4049abf17059d4e4c98a3584c0d89a243ae095a37fec488cc79ee67d2e50a54"
+  },
+  {
+    "bytes": 613347,
+    "path": "metadata/exclusion_log.tsv",
+    "sha256": "e1dafcfafdbe35aff2401292b76a8401d08d331fe74ba9be404c71bc53dd21b5"
+  },
+  {
+    "bytes": 2135750,
+    "path": "metadata/runs.tsv",
+    "sha256": "64fd7e6d5e75304ac040ff62132dfc4c2a3b7f01902c0164b67aab81061e4f03"
+  },
+  {
+    "bytes": 138166,
+    "path": "metadata/samples.tsv",
+    "sha256": "99d35f084464222c4cd49a59006058d2728ea23a76549f289d3aa05f3869a91f"
+  },
+  {
+    "bytes": 49294,
+    "path": "metadata/studies.tsv",
+    "sha256": "6862899ab05310241af8e54e8e1265f0e586528e3e7fccdb0a6a503500ea2f41"
+  },
+  {
+    "bytes": 101,
+    "path": "python/cacao_inventory/__init__.py",
+    "sha256": "eeb1bc857ffd5b379336ada6c100c6b1e6bfdd6b4595300af2d8217e8c9ae977"
+  },
+  {
+    "bytes": 9376,
+    "path": "python/cacao_inventory/analysis_artifacts.py",
+    "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+  },
+  {
+    "bytes": 4203,
+    "path": "python/cacao_inventory/bacterial_filter.py",
+    "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+  },
+  {
+    "bytes": 4793,
+    "path": "python/cacao_inventory/config.py",
+    "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+  },
+  {
+    "bytes": 4521,
+    "path": "python/cacao_inventory/design.py",
+    "sha256": "0759a1838ba1fe9187642c5cadc9f429ca4703d3222539a73df95d77f828d58d"
+  },
+  {
+    "bytes": 5411,
+    "path": "python/cacao_inventory/discovery.py",
+    "sha256": "28c4b1bdb4f59f1f63a12add9ad8f6d9997cb569bc10d3103e65a3f7f15f065c"
+  },
+  {
+    "bytes": 8359,
+    "path": "python/cacao_inventory/diversity_validation.py",
+    "sha256": "2027045c5d0c5665e6c921a0475ff227e1e1cd7e5a62f4262e805d4d7eece429"
+  },
+  {
+    "bytes": 4827,
+    "path": "python/cacao_inventory/download.py",
+    "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+  },
+  {
+    "bytes": 2107,
+    "path": "python/cacao_inventory/fastq.py",
+    "sha256": "523e80937c4f642a980662cfb0d6593cc6de52f5d33fcac3b476e7a7e857f1aa"
+  },
+  {
+    "bytes": 19454,
+    "path": "python/cacao_inventory/inventory.py",
+    "sha256": "c109138aab986ff5b2be7779679a0de50a98482799168e8f2bbe7dcd54096f5b"
+  },
+  {
+    "bytes": 2405,
+    "path": "python/cacao_inventory/io.py",
+    "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+  },
+  {
+    "bytes": 5958,
+    "path": "python/cacao_inventory/pilot.py",
+    "sha256": "f6ff87e37f2cb1c82d7ba55c4502805743e797011ef6c64d911d55be01365f24"
+  },
+  {
+    "bytes": 3245,
+    "path": "python/cacao_inventory/pilot_workflow.py",
+    "sha256": "e07a0f12cd78538d76893e4e3e0e7ac47457c3e16a36841ea5a6a2feb0d2b329"
+  },
+  {
+    "bytes": 4488,
+    "path": "python/cacao_inventory/provenance.py",
+    "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+  },
+  {
+    "bytes": 24860,
+    "path": "python/cacao_inventory/qc.py",
+    "sha256": "4bcde25fe579b655a206beaa57398cc360bde8b658771d538cdb3b6f3ea7d9db"
+  },
+  {
+    "bytes": 6504,
+    "path": "python/cacao_inventory/schema.py",
+    "sha256": "8a63c6afcaf9088640e7ad9d29d850e98316bd0d58e42d6579a469ba632ef9e1"
+  },
+  {
+    "bytes": 6276,
+    "path": "python/cacao_inventory/selection.py",
+    "sha256": "6007f00bcf3a73d4a3538533ee5b533acf834e2d1419225aa219b06719642b72"
+  },
+  {
+    "bytes": 6219,
+    "path": "python/cacao_inventory/sources.py",
+    "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
+  },
+  {
+    "bytes": 6007,
+    "path": "python/cacao_inventory/study_qc.py",
+    "sha256": "1112b8566d7290367159b404b646ff944dcfd8acce08499e1decb295eb70779e"
+  },
+  {
+    "bytes": 8247,
+    "path": "python/cacao_inventory/study_scope.py",
+    "sha256": "07aee1d6f092ee03a695371d4d574342f09452dc7531d9410f5dc7f37389c888"
+  },
+  {
+    "bytes": 4319,
+    "path": "python/cacao_inventory/taxonomy_reference.py",
+    "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+  },
+  {
+    "bytes": 8046,
+    "path": "python/cacao_inventory/taxonomy_validation.py",
+    "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
+  },
+  {
+    "bytes": 6563,
+    "path": "python/cacao_inventory/validation.py",
+    "sha256": "40862e9ef8f9be0ddb24c52be0ad62a44f0b62a0f830d4b15d50a238881b8362"
+  },
+  {
+    "bytes": 5487,
+    "path": "scripts/study/build_manifest.py",
+    "sha256": "088d32b94dca58bba7d783f4a2f2e1df51143e0c2e755cc144682734fb4f78fb"
+  },
+  {
+    "bytes": 1207,
+    "path": "config/full_study.yaml",
+    "sha256": "7425fabafb1c3c0d98d3e73cbd7c723e0ec1e6e7167bb89691a0946bb01565cc"
+  }
+]

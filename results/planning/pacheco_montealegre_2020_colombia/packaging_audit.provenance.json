@@ -1,0 +1,89 @@
+{
+  "command": [
+    "scripts/study/audit_packaging.py"
+  ],
+  "config": [
+    {
+      "bytes": 1207,
+      "path": "config/full_study.yaml",
+      "sha256": "7425fabafb1c3c0d98d3e73cbd7c723e0ec1e6e7167bb89691a0946bb01565cc"
+    }
+  ],
+  "created_at_utc": "2026-10-09T23:18:19.825713+00:00",
+  "git_commit": "0cc814008c41398b30d587430f96448fe8209218",
+  "git_dirty": true,
+  "inputs": [
+    {
+      "bytes": 1207,
+      "path": "config/full_study.yaml",
+      "sha256": "7425fabafb1c3c0d98d3e73cbd7c723e0ec1e6e7167bb89691a0946bb01565cc"
+    },
+    {
+      "bytes": 177368,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899650/SRR7899650.fastq.gz",
+      "sha256": "129654c299e81c82f7c8696a8f6a368245a67dcbaa82fd656adae771c36450b0"
+    },
+    {
+      "bytes": 667901,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899650/SRR7899650_1.fastq.gz",
+      "sha256": "2f1a7f8f59b8a7a97d63cf75e823352edcbfc4cc9b564deb07c8a05879b8fc32"
+    },
+    {
+      "bytes": 572952,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899650/SRR7899650_2.fastq.gz",
+      "sha256": "5702bc2fdbb89e98261755372826830189b452680af99e5214b68ead11cd86e6"
+    },
+    {
+      "bytes": 156355,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899730/SRR7899730.fastq.gz",
+      "sha256": "364285dfd350690a5ceb6101f92c1d315b6d8eb21abc94ffbb353920497d1c20"
+    },
+    {
+      "bytes": 599377,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899730/SRR7899730_1.fastq.gz",
+      "sha256": "5076391ccf43e1eae81b9deeee0c56c9aa6a922d3120d4a7b202a50a06b28ba3"
+    },
+    {
+      "bytes": 483713,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899730/SRR7899730_2.fastq.gz",
+      "sha256": "ce68da9c7d274d726880f5b0f57218fbce2f82d9098c47f27f4ff051fad14869"
+    },
+    {
+      "bytes": 538466,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899803/SRR7899803.fastq.gz",
+      "sha256": "5ee400b15f49f7e4eaee28fa1c6796c6ecf21bc1031a1c1f1a476e8f583ad85e"
+    },
+    {
+      "bytes": 2135750,
+      "path": "metadata/runs.tsv",
+      "sha256": "64fd7e6d5e75304ac040ff62132dfc4c2a3b7f01902c0164b67aab81061e4f03"
+    },
+    {
+      "bytes": 2121,
+      "path": "results/planning/pacheco_montealegre_2020_colombia/packaging_source_audit.json",
+      "sha256": "e6325ad5d25d374881d39c7058ea0b49b6297325229dc15ebaf17915ca3ba539"
+    },
+    {
+      "bytes": 1694,
+      "path": "results/planning/pacheco_montealegre_2020_colombia/packaging_source_audit.provenance.json",
+      "sha256": "cd26e435ce893f979f863ffa42236298ab4c18b99f9322021ea887b09f7550cb"
+    },
+    {
+      "bytes": 4402,
+      "path": "scripts/study/audit_packaging.py",
+      "sha256": "7a2f16ab145d5c17be0ee18ec71277af048741657d9d04a76c32b961f51ad7af"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 7438,
+      "path": "results/planning/pacheco_montealegre_2020_colombia/packaging_audit.json",
+      "sha256": "f3a39acfd1f0032ad6de5dddac5bd4b046a401fc9816b2af98572a7bc890732f"
+    }
+  ],
+  "parameters": {},
+  "schema_version": "1.0.0",
+  "software_versions": {
+    "Python": "3.12.13"
+  }
+}
