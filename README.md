@@ -37,8 +37,9 @@ BioProject/SRA/ENA metadata
         -> heterogeneidad y sensibilidad
 ```
 
-El inventario consulta metadata pública. La descarga y el procesamiento local
-se limitan a seis runs del piloto; no se descargan todos los proyectos.
+El inventario consulta metadata pública. La ruta piloto conserva seis runs;
+la ruta ampliada audita los 94 de PRJNA492720 y procesa los 93 con pares completos,
+con resultados separados y los mismos parámetros científicos.
 
 ## Inventario actual
 
@@ -84,6 +85,18 @@ python3 scripts/environment/run_in_environment.py python scripts/environment/ver
 python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 --dry-run
 python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2
 ```
+
+Para reconstruir el estudio PRJNA492720 completo, con un presupuesto de 4.500 MB:
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/study.Snakefile --cores 4 --resources mem_mb=4500 --rerun-incomplete
+```
+
+El alcance y la exclusión por formato están en [métodos del estudio completo](reports/full_study_methods.md).
+Se reutilizan crudos y SILVA verificados; los intermedios y resultados ampliados
+usan rutas `full`. Los targets `study_qc` y `study_dada2` permiten ejecutar hasta
+esas etapas. Un run sin pares completos permanece incluido en el inventario
+y queda excluido explícitamente del manifest paired-end.
 
 El workflow reconstruye inventario, diseño longitudinal, selección y manifest;
 descarga los FASTQ ausentes del piloto, ejecuta QC, DADA2, taxonomía,

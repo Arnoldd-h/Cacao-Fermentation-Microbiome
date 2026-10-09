@@ -54,6 +54,8 @@
     "validation_tolerance": 1E-08
   },
   "figures": {
+    "scope_label": "PRJNA492720 - complete paired-study scope",
+    "show_sample_labels": false,
     "width_inches": 24,
     "height_inches": 12,
     "png_dpi": 300,
