@@ -14,6 +14,9 @@ Separación auditable y diversidad descriptiva del piloto ejecutadas y validadas
 Los criterios, métricas y sustitución de ceros quedaron registrados antes de
 calcular diversidad. El hito `v0.5.0-diversity` se limita a esta descripción;
 la inferencia temporal y la integración entre estudios siguen pendientes.
+La diversidad está integrada en `main` mediante PR #3 (`868afa8`). En progreso:
+ampliación al estudio completo de 94 runs, con auditoría de fuentes, recursos
+limitados y conservación de los parámetros científicos del piloto.
 
 ## Completado
 

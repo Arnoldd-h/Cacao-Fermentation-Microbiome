@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "study_id": "pacheco_montealegre_2020_colombia",
+  "bioproject": "PRJNA492720",
+  "scope": "all_included_runs",
+  "expected_runs": 94,
+  "expected_batches": 4,
+  "project_config": "config/config.yaml",
+  "datasets_config": "config/datasets.yaml",
+  "inventory_dir": "metadata",
+  "manifest": "metadata/manifests/pacheco_montealegre_2020_colombia.tsv",
+  "plan_dir": "results/planning/pacheco_montealegre_2020_colombia",
+  "qc_dir": "results/qc/pacheco_montealegre_2020_colombia/full",
+  "interim_dir": "data/interim/pacheco_montealegre_2020_colombia/full",
+  "dada2_dir": "results/dada2/pacheco_montealegre_2020_colombia/full",
+  "dada2_intermediate_dir": "results/intermediate/dada2/pacheco_montealegre_2020_colombia/full",
+  "taxonomy_dir": "results/taxonomy/pacheco_montealegre_2020_colombia/full",
+  "taxonomy_config": "config/taxonomy.yaml",
+  "diversity_config": "config/full_study_diversity.yaml",
+  "resources": {
+    "cores": 4,
+    "memory_budget_mb": 4500,
+    "fastqc_memory_mb": 512,
+    "analysis_memory_mb": 4000,
+    "minimum_free_space_factor": 6.0
+  }
+}

@@ -2,6 +2,12 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-09
+
+- Ampliación registrada a todos los 94 runs incluidos de PRJNA492720, con
+  auditoría de fuentes y rutas propias, conservando los parámetros del piloto.
+- Diversidad `v0.5.0-diversity` integrada en `main` mediante PR #3 (`868afa8`).
+
 ## [v0.5.0-diversity] - 2026-10-09
 
 - Política de separación de orgánulos y no bacterias en tablas derivadas,
