@@ -28,6 +28,8 @@ def validate_taxonomy_config(config: dict, root: Path) -> None:
     if type(reference["expected_bytes"]) is not int or reference["expected_bytes"] <= 0:
         raise ValueError("Invalid reference byte count")
     settings = config["classification"]
+    if settings.get("raw_min_boot") != 0 or settings.get("rng_kind") != ["Mersenne-Twister", "Inversion", "Rejection"]:
+        raise ValueError("Unfiltered calls and the preregistered RNG must be explicit")
     if settings["tax_levels"] != ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus"]:
         raise ValueError("Expected the six original SILVA ranks")
     thresholds = [settings["primary_min_boot"], *settings["sensitivity_min_boot"]]

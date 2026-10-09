@@ -18,12 +18,14 @@
   },
   "classification": {
     "method": "dada2::assignTaxonomy",
+    "raw_min_boot": 0,
     "tax_levels": ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus"],
     "primary_min_boot": 80,
     "sensitivity_min_boot": [50],
     "try_reverse_complement": true,
     "output_bootstraps": true,
     "random_seed": 20260819,
+    "rng_kind": ["Mersenne-Twister", "Inversion", "Rejection"],
     "threads": 2,
     "species_assignment": false
   },

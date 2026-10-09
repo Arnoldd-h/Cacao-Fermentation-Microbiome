@@ -46,11 +46,11 @@ if (file.info(reference)$size != config$reference$expected_bytes ||
 
 dir.create(options[["output-dir"]], recursive = TRUE, showWarnings = FALSE)
 warnings <- character()
-RNGkind("Mersenne-Twister", "Inversion", "Rejection")
+do.call(RNGkind, as.list(settings$rng_kind))
 set.seed(settings$random_seed)
 log_step("Classifying ", nrow(sequences), " ASVs against ", config$reference$name, " ", config$reference$version)
-assignment <- withCallingHandlers(dada2::assignTaxonomy(sequences$sequence, reference, minBoot = 0,
-  tryRC = settings$try_reverse_complement, outputBootstraps = TRUE,
+assignment <- withCallingHandlers(dada2::assignTaxonomy(sequences$sequence, reference, minBoot = settings$raw_min_boot,
+  tryRC = settings$try_reverse_complement, outputBootstraps = settings$output_bootstraps,
   taxLevels = settings$tax_levels, multithread = threads, verbose = TRUE),
   warning = function(w) { warnings <<- c(warnings, conditionMessage(w)) })
 if (!identical(colnames(assignment$tax), settings$tax_levels) ||

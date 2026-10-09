@@ -91,7 +91,7 @@ def main() -> int:
     write_json(output / "provenance.json", {"status": "success", "started_at_utc": started,
         "finished_at_utc": datetime.now(timezone.utc).isoformat(), "git_commit": revision,
         "git_dirty": bool(status), "git_status_at_start": status, "command": command,
-        "classification": config["classification"], "rng_kind": ["Mersenne-Twister", "Inversion", "Rejection"],
+        "classification": config["classification"], "rng_kind": config["classification"]["rng_kind"],
         "effective_threads": threads, "reference": reference, "upstream_validation": upstream,
         "checksum_algorithm": "SHA-256", "inputs": before, "outputs": outputs})
     (output / "SUCCESS").write_text(revision + "\n", encoding="ascii")

@@ -111,6 +111,9 @@ directo admite HTTP Range para reanudar la descarga del mismo archivo fijado.
 `config/taxonomy.yaml` registra `assignTaxonomy`, seis rangos originales Kingdom
 a Genus, comprobación de complemento inverso y semilla 20260819. Se conserva
 la llamada sin máscara y el soporte de cada rango; la clasificación primaria
+usa la extracción sin máscara `raw_min_boot=0` y el generador Mersenne-Twister /
+Inversion / Rejection, ahora enlazados explícitamente desde la configuración.
+La máscara primaria
 exige bootstrap 80 y se compara descriptivamente con 50 usando el mismo ajuste.
 Se elige 80 para conservar soporte conservador al preparar integración a género;
 50 evalúa pérdida de resolución en las secuencias cortas de 237–243 nt. Son
