@@ -1,0 +1,28 @@
+{
+  "batch_time_observations": 47,
+  "compressed_bytes": 394515770,
+  "excluded_runs_without_paired_files": 1,
+  "excluded_streams": 3,
+  "existing_valid_files": 16,
+  "fastq_files": 186,
+  "fermentation_batches": 4,
+  "free_disk_bytes_at_planning": 53296082944,
+  "inventory_runs": 94,
+  "remaining_download_bytes": 367037140,
+  "reserve_is_estimate": true,
+  "reserved_processing_bytes": 2367094620,
+  "resources": {
+    "analysis_memory_mb": 4000,
+    "cores": 4,
+    "fastqc_memory_mb": 512,
+    "memory_budget_mb": 4500,
+    "minimum_free_space_factor": 6.0
+  },
+  "runs": 93,
+  "sampling_strata": [
+    "1",
+    "2"
+  ],
+  "study_id": "pacheco_montealegre_2020_colombia",
+  "temporal_inference": false
+}

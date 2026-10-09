@@ -21,6 +21,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   sin añadir exclusiones por fallos de transporte. Cuatro regresiones aprobadas.
 - Figuras completas identifican su alcance y evitan etiquetas superpuestas;
   la renovación del piloto conserva sus siete tablas TSV por SHA-256.
+- Descarga cerrada con 185/186 FASTQ válidos (393.057.692 bytes). ENA devuelve
+  un directorio HTML vacío para SRR7899804 R2; se registra el bloqueo sin
+  excluir ese run ni producir resultados DADA2 completos sobre un subconjunto.
+- Suite final: 144 pruebas Python aprobadas; piloto validado y dry-run estable.
 
 ## [v0.5.0-diversity] - 2026-10-09
 

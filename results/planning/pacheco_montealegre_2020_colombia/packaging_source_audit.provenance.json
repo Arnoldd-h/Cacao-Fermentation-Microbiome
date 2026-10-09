@@ -1,0 +1,59 @@
+{
+  "command": [
+    "scripts/study/audit_sources.py"
+  ],
+  "config": [
+    {
+      "bytes": 4901,
+      "path": "config/config.yaml",
+      "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+    },
+    {
+      "bytes": 1207,
+      "path": "config/full_study.yaml",
+      "sha256": "7425fabafb1c3c0d98d3e73cbd7c723e0ec1e6e7167bb89691a0946bb01565cc"
+    }
+  ],
+  "created_at_utc": "2026-10-09T23:18:14.233908+00:00",
+  "git_commit": "0cc814008c41398b30d587430f96448fe8209218",
+  "git_dirty": true,
+  "inputs": [
+    {
+      "bytes": 65814,
+      "path": "config/datasets.yaml",
+      "sha256": "f4049abf17059d4e4c98a3584c0d89a243ae095a37fec488cc79ee67d2e50a54"
+    },
+    {
+      "bytes": 2135750,
+      "path": "metadata/runs.tsv",
+      "sha256": "64fd7e6d5e75304ac040ff62132dfc4c2a3b7f01902c0164b67aab81061e4f03"
+    },
+    {
+      "bytes": 6219,
+      "path": "python/cacao_inventory/sources.py",
+      "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
+    },
+    {
+      "bytes": 8247,
+      "path": "python/cacao_inventory/study_scope.py",
+      "sha256": "07aee1d6f092ee03a695371d4d574342f09452dc7531d9410f5dc7f37389c888"
+    },
+    {
+      "bytes": 2417,
+      "path": "scripts/study/audit_sources.py",
+      "sha256": "d213e5417e5f8fcf789364e8d7c5a40dfa53aac2acf1acf3ecd136b965307518"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 2121,
+      "path": "results/planning/pacheco_montealegre_2020_colombia/packaging_source_audit.json",
+      "sha256": "e6325ad5d25d374881d39c7058ea0b49b6297325229dc15ebaf17915ca3ba539"
+    }
+  ],
+  "parameters": {},
+  "schema_version": "1.0.0",
+  "software_versions": {
+    "Python": "3.12.13"
+  }
+}

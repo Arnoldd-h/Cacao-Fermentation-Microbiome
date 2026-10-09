@@ -1,0 +1,188 @@
+{
+  "status": "valid",
+  "streams": [
+    {
+      "base_count": 329974,
+      "bioproject": "PRJNA492720",
+      "distinct_header_ids": 1486,
+      "expected_bytes": "177368",
+      "expected_md5": "da7242987252e1040f9574c2e957b8e5",
+      "header_examples": [
+        "@SRR7899650.5896 M03613:42:000000000-D2E6R:1:1102:13176:1891/1",
+        "@SRR7899650.5897 M03613:42:000000000-D2E6R:1:1102:19093:2492/1",
+        "@SRR7899650.5898 M03613:42:000000000-D2E6R:1:1102:18113:2717/1",
+        "@SRR7899650.5899 M03613:42:000000000-D2E6R:1:1102:19311:2767/1"
+      ],
+      "header_mate_suffixes": {
+        "1": 1486
+      },
+      "maximum_read_length": 223,
+      "minimum_read_length": 220,
+      "read_count": 1486,
+      "read_file": "SRR7899650.fastq.gz",
+      "repeated_header_ids": 0,
+      "run_accession": "SRR7899650",
+      "sample_id": "BactSaI012z1",
+      "source_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/000/SRR7899650/SRR7899650.fastq.gz",
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "target_relative": "pacheco_montealegre_2020_colombia/SRR7899650/SRR7899650.fastq.gz"
+    },
+    {
+      "base_count": 1308968,
+      "bioproject": "PRJNA492720",
+      "distinct_header_ids": 5895,
+      "expected_bytes": "667901",
+      "expected_md5": "c5aeaf9a84f7030c25e7024fc9557483",
+      "header_examples": [
+        "@SRR7899650.1 M03613:42:000000000-D2E6R:1:1102:13508:1895/1",
+        "@SRR7899650.2 M03613:42:000000000-D2E6R:1:1102:13371:1911/1",
+        "@SRR7899650.3 M03613:42:000000000-D2E6R:1:1102:15825:1936/1",
+        "@SRR7899650.4 M03613:42:000000000-D2E6R:1:1102:14056:1959/1"
+      ],
+      "header_mate_suffixes": {
+        "1": 5895
+      },
+      "maximum_read_length": 223,
+      "minimum_read_length": 220,
+      "read_count": 5895,
+      "read_file": "SRR7899650_1.fastq.gz",
+      "repeated_header_ids": 0,
+      "run_accession": "SRR7899650",
+      "sample_id": "BactSaI012z1",
+      "source_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/000/SRR7899650/SRR7899650_1.fastq.gz",
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "target_relative": "pacheco_montealegre_2020_colombia/SRR7899650/SRR7899650_1.fastq.gz"
+    },
+    {
+      "base_count": 1308767,
+      "bioproject": "PRJNA492720",
+      "distinct_header_ids": 5895,
+      "expected_bytes": "572952",
+      "expected_md5": "51fa103402cc35f92300bb18422b4581",
+      "header_examples": [
+        "@SRR7899650.1 M03613:42:000000000-D2E6R:1:1102:13508:1895/2",
+        "@SRR7899650.2 M03613:42:000000000-D2E6R:1:1102:13371:1911/2",
+        "@SRR7899650.3 M03613:42:000000000-D2E6R:1:1102:15825:1936/2",
+        "@SRR7899650.4 M03613:42:000000000-D2E6R:1:1102:14056:1959/2"
+      ],
+      "header_mate_suffixes": {
+        "2": 5895
+      },
+      "maximum_read_length": 223,
+      "minimum_read_length": 221,
+      "read_count": 5895,
+      "read_file": "SRR7899650_2.fastq.gz",
+      "repeated_header_ids": 0,
+      "run_accession": "SRR7899650",
+      "sample_id": "BactSaI012z1",
+      "source_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/000/SRR7899650/SRR7899650_2.fastq.gz",
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "target_relative": "pacheco_montealegre_2020_colombia/SRR7899650/SRR7899650_2.fastq.gz"
+    },
+    {
+      "base_count": 278016,
+      "bioproject": "PRJNA492720",
+      "distinct_header_ids": 1252,
+      "expected_bytes": "156355",
+      "expected_md5": "bcf982472a0db70a6e4ffb6296c4f560",
+      "header_examples": [
+        "@SRR7899730.4956 M03613:42:000000000-D2E6R:1:1102:12388:2109/1",
+        "@SRR7899730.4957 M03613:42:000000000-D2E6R:1:1102:19667:2202/1",
+        "@SRR7899730.4958 M03613:42:000000000-D2E6R:1:1102:11030:2406/1",
+        "@SRR7899730.4959 M03613:42:000000000-D2E6R:1:1102:20845:2478/1"
+      ],
+      "header_mate_suffixes": {
+        "1": 1252
+      },
+      "maximum_read_length": 223,
+      "minimum_read_length": 220,
+      "read_count": 1252,
+      "read_file": "SRR7899730.fastq.gz",
+      "repeated_header_ids": 0,
+      "run_accession": "SRR7899730",
+      "sample_id": "BactSaI036z1",
+      "source_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/000/SRR7899730/SRR7899730.fastq.gz",
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "target_relative": "pacheco_montealegre_2020_colombia/SRR7899730/SRR7899730.fastq.gz"
+    },
+    {
+      "base_count": 1100212,
+      "bioproject": "PRJNA492720",
+      "distinct_header_ids": 4955,
+      "expected_bytes": "599377",
+      "expected_md5": "3f0ca5573b69def7721517cf34448369",
+      "header_examples": [
+        "@SRR7899730.1 M03613:42:000000000-D2E6R:1:1102:11421:2121/1",
+        "@SRR7899730.2 M03613:42:000000000-D2E6R:1:1102:11419:2139/1",
+        "@SRR7899730.3 M03613:42:000000000-D2E6R:1:1102:12555:2206/1",
+        "@SRR7899730.4 M03613:42:000000000-D2E6R:1:1102:11480:2212/1"
+      ],
+      "header_mate_suffixes": {
+        "1": 4955
+      },
+      "maximum_read_length": 223,
+      "minimum_read_length": 220,
+      "read_count": 4955,
+      "read_file": "SRR7899730_1.fastq.gz",
+      "repeated_header_ids": 0,
+      "run_accession": "SRR7899730",
+      "sample_id": "BactSaI036z1",
+      "source_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/000/SRR7899730/SRR7899730_1.fastq.gz",
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "target_relative": "pacheco_montealegre_2020_colombia/SRR7899730/SRR7899730_1.fastq.gz"
+    },
+    {
+      "base_count": 1100071,
+      "bioproject": "PRJNA492720",
+      "distinct_header_ids": 4955,
+      "expected_bytes": "483713",
+      "expected_md5": "fc3a9b7a774cf357debf3829c129da26",
+      "header_examples": [
+        "@SRR7899730.1 M03613:42:000000000-D2E6R:1:1102:11421:2121/2",
+        "@SRR7899730.2 M03613:42:000000000-D2E6R:1:1102:11419:2139/2",
+        "@SRR7899730.3 M03613:42:000000000-D2E6R:1:1102:12555:2206/2",
+        "@SRR7899730.4 M03613:42:000000000-D2E6R:1:1102:11480:2212/2"
+      ],
+      "header_mate_suffixes": {
+        "2": 4955
+      },
+      "maximum_read_length": 223,
+      "minimum_read_length": 221,
+      "read_count": 4955,
+      "read_file": "SRR7899730_2.fastq.gz",
+      "repeated_header_ids": 0,
+      "run_accession": "SRR7899730",
+      "sample_id": "BactSaI036z1",
+      "source_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/000/SRR7899730/SRR7899730_2.fastq.gz",
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "target_relative": "pacheco_montealegre_2020_colombia/SRR7899730/SRR7899730_2.fastq.gz"
+    },
+    {
+      "base_count": 2460413,
+      "bioproject": "PRJNA492720",
+      "distinct_header_ids": 11064,
+      "expected_bytes": "538466",
+      "expected_md5": "2301c31ca829881b1870831c8c7350bf",
+      "header_examples": [
+        "@SRR7899803.1 1/1",
+        "@SRR7899803.2 2/1",
+        "@SRR7899803.3 3/1",
+        "@SRR7899803.4 4/1"
+      ],
+      "header_mate_suffixes": {
+        "1": 11056,
+        "2": 8
+      },
+      "maximum_read_length": 232,
+      "minimum_read_length": 221,
+      "read_count": 11064,
+      "read_file": "SRR7899803.fastq.gz",
+      "repeated_header_ids": 0,
+      "run_accession": "SRR7899803",
+      "sample_id": "BactAnII108z2",
+      "source_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/003/SRR7899803/SRR7899803.fastq.gz",
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "target_relative": "pacheco_montealegre_2020_colombia/SRR7899803/SRR7899803.fastq.gz"
+    }
+  ]
+}

@@ -6,18 +6,31 @@
     "--config",
     "/mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/config/diversity.yaml"
   ],
-  "finished_at_utc": "2026-10-09T21:48:51.573157+00:00",
-  "git_commit": "342dd4efafe33dbbc465eb57ac0cbec113f5ddf7",
+  "finished_at_utc": "2026-10-09T23:27:36.226517+00:00",
+  "git_commit": "e4729844aa26ec17c34f893e13371a02f24c5f9d",
   "git_dirty": true,
   "git_status_at_start": [
-    " M results/taxonomy/pilot/SUCCESS",
-    " M results/taxonomy/pilot/assignment_coverage.pdf",
-    " M results/taxonomy/pilot/input_checksums.json",
-    " M results/taxonomy/pilot/provenance.json",
-    " M results/taxonomy/pilot/validation.json",
-    "?? data/processed/",
-    "?? results/diversity/",
-    "?? results/filtering/"
+    " D results/diversity/pilot/SUCCESS",
+    " D results/diversity/pilot/aitchison_distances.tsv",
+    " D results/diversity/pilot/aitchison_pca.pdf",
+    " D results/diversity/pilot/aitchison_pca.png",
+    " D results/diversity/pilot/aitchison_pca.svg",
+    " D results/diversity/pilot/alpha_diversity.pdf",
+    " D results/diversity/pilot/alpha_diversity.png",
+    " D results/diversity/pilot/alpha_diversity.svg",
+    " D results/diversity/pilot/alpha_diversity.tsv",
+    " D results/diversity/pilot/bray_curtis_distances.tsv",
+    " D results/diversity/pilot/clr_coordinates.tsv",
+    " D results/diversity/pilot/config_snapshot.yaml",
+    " D results/diversity/pilot/input_checksums.json",
+    " D results/diversity/pilot/pca_scores.tsv",
+    " D results/diversity/pilot/pca_variance.tsv",
+    " D results/diversity/pilot/provenance.json",
+    " D results/diversity/pilot/session_info.txt",
+    " D results/diversity/pilot/software_versions.tsv",
+    " D results/diversity/pilot/warnings.txt",
+    "?? metadata/manifests/",
+    "?? results/planning/"
   ],
   "inputs": [
     {
@@ -96,9 +109,9 @@
       "sha256": "d22d205dd0af7678a38eaa6ee72231012748343c9856d1f410e29d111ff9fce7"
     },
     {
-      "bytes": 9285,
+      "bytes": 9819,
       "path": "scripts/diversity/describe_pilot.R",
-      "sha256": "5ef982bd8d24bfc174d0db5caa94607280c4a8520bbdfe5c38537c221c5e42ec"
+      "sha256": "dc22a0316e8f32702473033a8d55806b0cf141bc40195bc2a1e91e8ecb373b4d"
     },
     {
       "bytes": 3272,
@@ -130,7 +143,7 @@
     {
       "bytes": 6249,
       "path": "results/diversity/pilot/aitchison_pca.pdf",
-      "sha256": "e6484a5be9ba0623841e898875a1408a2b84902bc14b19372a76a2a690dc415a"
+      "sha256": "861f0b27963b5fe085f3e3e5845ac214b0e54a2ab11e3c295c2859dc0922ab66"
     },
     {
       "bytes": 149512,
@@ -145,7 +158,7 @@
     {
       "bytes": 7693,
       "path": "results/diversity/pilot/alpha_diversity.pdf",
-      "sha256": "9a423a020a5896c7a8e691dca95af38e6556c6d8db33dff1aaabf3153c42c984"
+      "sha256": "485b7653a9eb83e360a28a0cafe435b04c08bbf40ae452401395d1480b64fc73"
     },
     {
       "bytes": 191858,
@@ -180,7 +193,7 @@
     {
       "bytes": 3236,
       "path": "results/diversity/pilot/input_checksums.json",
-      "sha256": "e0763c0225b771a09637f5707c8c7790420e1f9e06f3f9b76a9c5fd0752e597c"
+      "sha256": "cf90817bb8562ac25989c98c0cc8ea3f63b6832c0bd82e91c6340f5985718293"
     },
     {
       "bytes": 4244,
@@ -277,7 +290,7 @@
   "software_versions": {
     "Python": "3.12.13"
   },
-  "started_at_utc": "2026-10-09T21:48:46.123205+00:00",
+  "started_at_utc": "2026-10-09T23:27:28.031293+00:00",
   "status": "success",
   "upstream_validation": {
     "artifacts_checked": 9,

@@ -60,8 +60,18 @@ marcadas como orgánulos, con 32.868 lecturas, en las tablas originales.
 Su separación auditable produce 88 ASVs y 123.693 lecturas para diversidad
 descriptiva, conservando las seis muestras. Se exportan índices alfa,
 CLR/Aitchison con sensibilidad, Bray–Curtis y PCA, con validación independiente
-de fórmulas y geometría. La suite aprueba 125 pruebas Python. La inferencia
+de fórmulas y geometría. La suite actual aprueba 144 pruebas Python. La inferencia
 temporal y la integración entre estudios siguen pendientes.
+
+La ampliación a PRJNA492720 tiene un manifest auditado de 93 runs y cuatro
+lotes. El inventario conserva 94: uno no ofrece pares completos. La ejecución
+ampliada está detenida antes de QC/DADA2 porque ENA entrega un directorio HTML
+para `SRR7899804_2.fastq.gz` pese a anunciarlo en su API. Ese run permanece
+en el manifest; no se sustituye el archivo ni se excluye por el fallo de acceso.
+El [registro de descarga](results/planning/pacheco_montealegre_2020_colombia/download_status.json)
+documenta la disponibilidad y la validación de los archivos locales.
+Se conservan 185/186 FASTQ verificados por bytes, MD5, gzip y estructura;
+el procesamiento completo continúa pendiente del archivo restante.
 
 `PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
 propia y no se procesa con el piloto Illumina paired-end actual.

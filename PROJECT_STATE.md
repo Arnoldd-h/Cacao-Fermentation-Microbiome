@@ -20,8 +20,14 @@ limitados y conservación de los parámetros científicos del piloto.
 NCBI/ENA confirman los 94 runs incluidos. La auditoría de FASTQ identifica
 93 runs con archivos pareados y uno sin pares completos (SRR7899803); su exclusión de la
 ruta paired-end se registra aparte y no cambia la inclusión del inventario.
-Workflow completo implementado y pruebas de alcance/QC/reconstrucción aprobadas;
-la ejecución científica ampliada sigue pendiente de finalizar y validar.
+Workflow completo implementado y 144 pruebas Python aprobadas. El manifest
+paired-end, las auditorías y el plan de recursos tienen procedencia verificada.
+La ampliación está detenida antes de QC/DADA2 por un archivo público faltante:
+ENA devuelve un directorio HTML vacío para `SRR7899804_2.fastq.gz`. Este run
+permanece en el manifest y no se añade una exclusión por transporte.
+Se descargaron y validaron 185/186 FASTQ: 393.057.692 bytes, con MD5,
+gzip/CRC y estructura correctos. Los archivos verificados se conservan para
+reanudar. No queda una ejecución activa; falta únicamente el R2 público indicado.
 
 ## Completado
 
@@ -79,11 +85,20 @@ la ejecución científica ampliada sigue pendiente de finalizar y validar.
   Profundidad 9.250–36.508 lecturas; riqueza observada 2–46 ASVs.
 - Figuras alfa/PCA en PDF/SVG/PNG de 300 dpi, manteniendo muestras individuales
   y escala geométrica igual en los ejes PCA; sin warnings R de diversidad.
-- Suite actual: 125 pruebas Python en Linux aprobadas. Las 12 específicas
+- Suite del hito piloto: 125 pruebas Python en Linux aprobadas. Las 12 específicas
   de diversidad también pasan tras los ajustes de figuras.
 - Corrida final de diversidad sobre `342dd4e`: seis tablas científicas y
   versiones idénticas por SHA-256 a la primera ejecución, figuras revisadas
   y 20 entradas/17 artefactos validados. Dry-run integrado sin trabajos pendientes.
+- Workflow de estudio completo sobre `0cc8140`, con corrección de referencia
+  compartida `fa236ed`, decisiones de elegibilidad `b10a15e` y alcance `8fd5334`.
+- Manifest de 93 runs/186 archivos a partir de 94 runs auditados; los 189 streams
+  están registrados y tres streams sin pareja quedan excluidos explícitamente.
+- Auditorías de manifest/fuentes/empaquetado: 31 entradas y seis artefactos del
+  manifest, ocho registros de fuentes y 14 de empaquetado pasan hashes actuales.
+- Suite final: 144 pruebas Python en Linux aprobadas, incluidas 19 de ampliación.
+- Piloto renovado sobre `e472984`: siete tablas TSV idénticas por SHA-256,
+  20 entradas/17 artefactos validados y dry-run estable sin trabajos pendientes.
 
 ## Datasets incluidos
 
@@ -121,15 +136,17 @@ El dry-run informa que 12 descargas previas carecen de metadata histórica del
 scheduler Snakemake. Sus FASTQ siguen verificados por manifest, bytes, MD5,
 validación estructural y procedencia científica; no se modifican los crudos
 para reconstruir ese historial auxiliar.
-No queda una ejecución activa.
+La ejecución completa conserva los archivos disponibles y espera el R2 de
+SRR7899804; no produjo tablas DADA2/taxonómicas/de diversidad completas.
 
 ## Bloqueos y limitaciones
 
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
-- El procesamiento real abarca seis runs del piloto; el resto de los FASTQ no
-  se ha descargado. Hay taxonomía y diversidad descriptiva del piloto; la
-  inferencia biológica sigue pendiente. Seis runs de cuatro lotes y distintos
+- Hay taxonomía y diversidad descriptiva de seis runs del piloto. La ampliación
+  tiene su workflow y manifest de 93 runs, pero ENA no entrega el R2 de
+  SRR7899804 pese a declararlo en su API. La inferencia biológica sigue pendiente.
+  Seis runs de cuatro lotes y distintos
   estratos no reconstruyen sus trayectorias ni equivalen a seis lotes independientes.
 - El 20,99 % de las lecturas pertenece a ASVs con etiquetas de orgánulos.
   La cobertura taxonómica actual incluye esas lecturas en su denominador.
@@ -148,8 +165,9 @@ No queda una ejecución activa.
 
 ## Próximas tareas
 
-1. Escalar los 94 runs del estudio piloto, con estimación de recursos,
-   reconstrucción de FASTQ y validación por estudio antes de interpretar efectos.
+1. Recuperar el R2 público de SRR7899804 o documentar y validar una ruta
+   alternativa de origen; reanudar QC/DADA2/taxonomía/diversidad de los 93 runs,
+   conservando el inventario de 94 y sin excluir por un fallo de transporte.
 2. Conservar parámetros por estudio y
    revisar por separado los pipelines V3-V4 y PacBio antes de integrar taxonomía.
 3. Definir tratamiento de ceros, agregación de submuestras y modelos longitudinales
@@ -157,7 +175,7 @@ No queda una ejecución activa.
 
 ## Control de versiones
 
-La etapa actual se desarrolló en `codex/pilot-diversity`, creada desde `main`
+El hito piloto se desarrolló en `codex/pilot-diversity`, creada desde `main`
 con taxonomía integrada (`6da8f86`). Su hito es `v0.5.0-diversity`, limitado
 a separación y diversidad descriptiva del piloto. `f9132b5` registra la
 política; `5221b0f` implementa el workflow y ejecuta taxonomía/separación;
@@ -183,3 +201,5 @@ tablas. Separación y diversidad registran también los resultados anteriores
 o recién generados que todavía no tenían commit al iniciar. Ese estado Git
 se conserva íntegro, junto a los hashes de todas las entradas y salidas.
 Para el checkout exacto usar `git log -1 --oneline` y `git status`.
+La ampliación usa `codex/full-study-processing`, creada desde `868afa8`. No se
+declara el hito multistudio ni una ejecución científica completa mientras falta R2.
