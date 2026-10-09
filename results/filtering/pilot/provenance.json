@@ -1,0 +1,276 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "command": [
+    "scripts/filtering/prepare_bacterial_table.py",
+    "--config",
+    "config/diversity.yaml"
+  ],
+  "finished_at_utc": "2026-10-09T21:42:42.121848+00:00",
+  "git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
+  "git_dirty": true,
+  "git_status_at_start": [
+    " M results/taxonomy/pilot/SUCCESS",
+    " M results/taxonomy/pilot/assignment_coverage.pdf",
+    " M results/taxonomy/pilot/input_checksums.json",
+    " M results/taxonomy/pilot/provenance.json",
+    " M results/taxonomy/pilot/validation.json"
+  ],
+  "inputs": [
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4203,
+      "path": "python/cacao_inventory/bacterial_filter.py",
+      "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 8046,
+      "path": "python/cacao_inventory/taxonomy_validation.py",
+      "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
+    },
+    {
+      "bytes": 5764,
+      "path": "results/dada2/pilot/asv_counts.tsv",
+      "sha256": "80a43e4a6dcd7646fabf53fff83dded7d40636db208baa25928e27ebbbffc957"
+    },
+    {
+      "bytes": 30488,
+      "path": "results/dada2/pilot/asv_sequences.tsv",
+      "sha256": "e8f74b324802e86fb5bf4ea3b62a05c3627046837a30e818486b3054226c46a8"
+    },
+    {
+      "bytes": 3423,
+      "path": "results/dada2/pilot/sample_metadata.tsv",
+      "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
+    },
+    {
+      "bytes": 297,
+      "path": "results/dada2/pilot/validation.json",
+      "sha256": "95e4dd2ed19ad528ef3edfad382f8454ac83676e5e1e19a73e67ed29e71b4faa"
+    },
+    {
+      "bytes": 1295,
+      "path": "results/taxonomy/pilot/config_snapshot.yaml",
+      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    },
+    {
+      "bytes": 9277,
+      "path": "results/taxonomy/pilot/provenance.json",
+      "sha256": "c275c9a42d94e5bb568f3b2fe9c6791cd7ebba6d0166249f8a6f888a6313bf4f"
+    },
+    {
+      "bytes": 14759,
+      "path": "results/taxonomy/pilot/taxonomy.tsv",
+      "sha256": "4750c2437a8899a4b9e404ad6587feb46ec21c1700a57eccb13499545c510822"
+    },
+    {
+      "bytes": 483,
+      "path": "results/taxonomy/pilot/validation.json",
+      "sha256": "662782504280dd0a2ede9394377394d248cc1e5cb3312505c9e932052a733299"
+    },
+    {
+      "bytes": 9234,
+      "path": "scripts/dada2/validate_outputs.py",
+      "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
+    },
+    {
+      "bytes": 3705,
+      "path": "scripts/filtering/prepare_bacterial_table.py",
+      "sha256": "9341c733399a66213595c6097ab0545ad180ee40b00c8abfd29e756d07dbb5f1"
+    },
+    {
+      "bytes": 4335,
+      "path": "scripts/taxonomy/validate_taxonomy.py",
+      "sha256": "b35015cf6bcbd3365269f96afb9eef60fcfd40fc26955fae61fb73694a046427"
+    },
+    {
+      "bytes": 4766,
+      "path": "workflow/rules/pilot_diversity.smk",
+      "sha256": "624634edf16111ade6adcf4b9c7dde4efb14939714f56586a857c89ac14a1ff0"
+    },
+    {
+      "bytes": 1483,
+      "path": "config/diversity.yaml",
+      "sha256": "8adf155672098942393dedd14c057f05b5ef2cd7f5e269b82d286080ec28b5ad"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 5464,
+      "path": "data/processed/pilot/bacterial/asv_counts.tsv",
+      "sha256": "6c428b25ae3f6f2667ac3168035ccb49cc27f72b30d4dd3d8b9b9cae5f9c21b6"
+    },
+    {
+      "bytes": 28857,
+      "path": "data/processed/pilot/bacterial/asv_sequences.tsv",
+      "sha256": "ff265d543695a9e044d174369965fe78d54293119ef8a51f8c7e9e79d21274e4"
+    },
+    {
+      "bytes": 3423,
+      "path": "data/processed/pilot/bacterial/sample_metadata.tsv",
+      "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
+    },
+    {
+      "bytes": 14040,
+      "path": "data/processed/pilot/bacterial/taxonomy.tsv",
+      "sha256": "229e823d9bcbe6d3c830c740ec767bfaf087ec378eb14c26195663d8b7134228"
+    },
+    {
+      "bytes": 17371,
+      "path": "results/filtering/pilot/asv_filter_log.tsv",
+      "sha256": "4c87539620167dcbba88487cacb7bade96d5c04a7a9465b76553690b00a00fba"
+    },
+    {
+      "bytes": 1483,
+      "path": "results/filtering/pilot/config_snapshot.yaml",
+      "sha256": "8adf155672098942393dedd14c057f05b5ef2cd7f5e269b82d286080ec28b5ad"
+    },
+    {
+      "bytes": 3399,
+      "path": "results/filtering/pilot/input_checksums.json",
+      "sha256": "ff78924b8f91dcc21f644840a3429281294c0755ab61300a3017acb2d0251579"
+    },
+    {
+      "bytes": 532,
+      "path": "results/filtering/pilot/sample_retention.tsv",
+      "sha256": "4bb9c71558a83490ee02dfebf4a213ca26df8a276d891d4c258278762de5ec33"
+    },
+    {
+      "bytes": 284,
+      "path": "results/filtering/pilot/summary.json",
+      "sha256": "4e6c1bc6c3789a87203af3b5af3c98c5a74db9400ebd9aa893202a02a25f1f15"
+    }
+  ],
+  "parameters": {
+    "analysis": {
+      "alpha_metrics": [
+        "observed_asvs",
+        "shannon",
+        "gini_simpson",
+        "inverse_simpson",
+        "shannon_effective"
+      ],
+      "feature_level": "within_study_asv",
+      "inference": false,
+      "log_base": "natural",
+      "pca_center": true,
+      "pca_scale": false,
+      "primary_beta": "euclidean_clr",
+      "primary_pseudocount": 1.0,
+      "random_seed": 20260819,
+      "rarefaction": false,
+      "sample_aggregation": "none",
+      "secondary_beta": "bray_curtis_relative_abundance",
+      "sensitivity_pseudocounts": [
+        0.5
+      ],
+      "validation_tolerance": 1e-08,
+      "zero_policy": "add_pseudocount_to_all_counts"
+    },
+    "figures": {
+      "height_inches": 6,
+      "png_dpi": 300,
+      "stage_colors": {
+        "early": "#27647B",
+        "late": "#536E3B",
+        "mid": "#BC7D38"
+      },
+      "width_inches": 12
+    },
+    "filtering": {
+      "bacterial_kingdom": "Bacteria",
+      "empty_sample_policy": "fail",
+      "exclude_known_non_bacterial": true,
+      "low_abundance_filter": false,
+      "minimum_bootstrap": 80,
+      "organelle_labels": [
+        "Chloroplast",
+        "Mitochondria"
+      ],
+      "tax_levels": [
+        "Kingdom",
+        "Phylum",
+        "Class",
+        "Order",
+        "Family",
+        "Genus"
+      ],
+      "taxonomy_call": "primary",
+      "unclassified_kingdom_policy": "retain_and_flag"
+    },
+    "paths": {
+      "bacterial_dir": "data/processed/pilot/bacterial",
+      "dada2_dir": "results/dada2/pilot",
+      "diversity_dir": "results/diversity/pilot",
+      "filtering_dir": "results/filtering/pilot",
+      "taxonomy_dir": "results/taxonomy/pilot"
+    },
+    "schema_version": "1.0.0"
+  },
+  "software_versions": {
+    "Python": "3.12.13"
+  },
+  "started_at_utc": "2026-10-09T21:42:35.828154+00:00",
+  "status": "success",
+  "upstream_validation": {
+    "dada2": {
+      "artifacts_checked": 18,
+      "asvs": 93,
+      "error_models_converged_before_limit": true,
+      "inputs_checked": 18,
+      "nonchim_pairs": 156561,
+      "samples": 6,
+      "source_git_commit": "6221445317a30cab24a67620f251e71ee772129c",
+      "status": "valid",
+      "study_id": "pacheco_montealegre_2020_colombia"
+    },
+    "taxonomy": {
+      "artifacts_checked": 15,
+      "asvs": 93,
+      "excluded_asvs": 0,
+      "genus_assigned_asvs": 64,
+      "inputs_checked": 21,
+      "named_genus_asvs": 64,
+      "non_bacterial_asvs": 0,
+      "organelle_flagged_asvs": 5,
+      "primary_min_boot": 80,
+      "samples": 6,
+      "sensitivity_min_boot": [
+        50
+      ],
+      "source_git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
+      "status": "valid",
+      "study_id": "pacheco_montealegre_2020_colombia",
+      "total_reads": 156561,
+      "unclassified_kingdom_asvs": 0
+    }
+  }
+}

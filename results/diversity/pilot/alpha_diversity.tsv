@@ -1,0 +1,7 @@
+study_id	sample_id	run_accession	fermentation_batch	fermentation_hours	relative_time	fermentation_stage	sampling_stratum	library_reads	observed_asvs	shannon	gini_simpson	inverse_simpson	shannon_effective
+pacheco_montealegre_2020_colombia	BactAnI000z1	SRR7899728	pacheco_montealegre_2020_colombia::An::I	0	0	early	1	9250	5	0.315878424464566	0.132929285609934	1.15330847115906	1.37146350907965
+pacheco_montealegre_2020_colombia	BactAnII000z2	SRR7899814	pacheco_montealegre_2020_colombia::An::II	0	0	early	2	13814	9	0.797871683319118	0.447435157308995	1.80974235553962	2.22080930958817
+pacheco_montealegre_2020_colombia	BactSaI036z2	SRR7899800	pacheco_montealegre_2020_colombia::Sa::I	36	0.33333333	mid	2	36508	21	0.377701864768798	0.11638581139985	1.1317156434351	1.45892792021843
+pacheco_montealegre_2020_colombia	BactSaII048z1	SRR7899687	pacheco_montealegre_2020_colombia::Sa::II	48	0.36363636	mid	1	25324	46	1.80366418762507	0.615048619239156	2.59773064853939	6.07185516954004
+pacheco_montealegre_2020_colombia	BactSaI072z1	SRR7899884	pacheco_montealegre_2020_colombia::Sa::I	72	0.66666667	late	1	21839	10	0.234316090918909	0.0751522406016392	1.08125903948832	1.2640439818907
+pacheco_montealegre_2020_colombia	BactAnI096z2	SRR7899911	pacheco_montealegre_2020_colombia::An::I	96	0.72727273	late	2	16958	2	0.0129786753199616	0.00353189382046692	1.0035444123084	1.01306326387951

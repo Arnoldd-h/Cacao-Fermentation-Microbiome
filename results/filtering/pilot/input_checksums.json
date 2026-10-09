@@ -1,0 +1,107 @@
+[
+  {
+    "bytes": 54093,
+    "path": "environment/conda-linux-64.lock",
+    "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+  },
+  {
+    "bytes": 9376,
+    "path": "python/cacao_inventory/analysis_artifacts.py",
+    "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+  },
+  {
+    "bytes": 4203,
+    "path": "python/cacao_inventory/bacterial_filter.py",
+    "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+  },
+  {
+    "bytes": 4793,
+    "path": "python/cacao_inventory/config.py",
+    "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+  },
+  {
+    "bytes": 2405,
+    "path": "python/cacao_inventory/io.py",
+    "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+  },
+  {
+    "bytes": 4488,
+    "path": "python/cacao_inventory/provenance.py",
+    "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+  },
+  {
+    "bytes": 4319,
+    "path": "python/cacao_inventory/taxonomy_reference.py",
+    "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+  },
+  {
+    "bytes": 8046,
+    "path": "python/cacao_inventory/taxonomy_validation.py",
+    "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
+  },
+  {
+    "bytes": 5764,
+    "path": "results/dada2/pilot/asv_counts.tsv",
+    "sha256": "80a43e4a6dcd7646fabf53fff83dded7d40636db208baa25928e27ebbbffc957"
+  },
+  {
+    "bytes": 30488,
+    "path": "results/dada2/pilot/asv_sequences.tsv",
+    "sha256": "e8f74b324802e86fb5bf4ea3b62a05c3627046837a30e818486b3054226c46a8"
+  },
+  {
+    "bytes": 3423,
+    "path": "results/dada2/pilot/sample_metadata.tsv",
+    "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
+  },
+  {
+    "bytes": 297,
+    "path": "results/dada2/pilot/validation.json",
+    "sha256": "95e4dd2ed19ad528ef3edfad382f8454ac83676e5e1e19a73e67ed29e71b4faa"
+  },
+  {
+    "bytes": 1295,
+    "path": "results/taxonomy/pilot/config_snapshot.yaml",
+    "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+  },
+  {
+    "bytes": 9277,
+    "path": "results/taxonomy/pilot/provenance.json",
+    "sha256": "c275c9a42d94e5bb568f3b2fe9c6791cd7ebba6d0166249f8a6f888a6313bf4f"
+  },
+  {
+    "bytes": 14759,
+    "path": "results/taxonomy/pilot/taxonomy.tsv",
+    "sha256": "4750c2437a8899a4b9e404ad6587feb46ec21c1700a57eccb13499545c510822"
+  },
+  {
+    "bytes": 483,
+    "path": "results/taxonomy/pilot/validation.json",
+    "sha256": "662782504280dd0a2ede9394377394d248cc1e5cb3312505c9e932052a733299"
+  },
+  {
+    "bytes": 9234,
+    "path": "scripts/dada2/validate_outputs.py",
+    "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
+  },
+  {
+    "bytes": 3705,
+    "path": "scripts/filtering/prepare_bacterial_table.py",
+    "sha256": "9341c733399a66213595c6097ab0545ad180ee40b00c8abfd29e756d07dbb5f1"
+  },
+  {
+    "bytes": 4335,
+    "path": "scripts/taxonomy/validate_taxonomy.py",
+    "sha256": "b35015cf6bcbd3365269f96afb9eef60fcfd40fc26955fae61fb73694a046427"
+  },
+  {
+    "bytes": 4766,
+    "path": "workflow/rules/pilot_diversity.smk",
+    "sha256": "624634edf16111ade6adcf4b9c7dde4efb14939714f56586a857c89ac14a1ff0"
+  },
+  {
+    "bytes": 1483,
+    "path": "config/diversity.yaml",
+    "sha256": "8adf155672098942393dedd14c057f05b5ef2cd7f5e269b82d286080ec28b5ad"
+  }
+]

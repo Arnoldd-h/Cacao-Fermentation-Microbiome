@@ -39,8 +39,8 @@
     "2"
   ],
   "effective_threads": 2,
-  "finished_at_utc": "2026-10-09T20:23:19.853796+00:00",
-  "git_commit": "4e7ce24c81425b11c28295b066c75ffcb1dbe673",
+  "finished_at_utc": "2026-10-09T21:42:16.954959+00:00",
+  "git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
   "git_dirty": true,
   "git_status_at_start": [
     " D results/taxonomy/pilot/SUCCESS",
@@ -153,9 +153,9 @@
       "sha256": "af9842b063e453476c8f1745212406802247820fc0f35d422153a5b92d24637b"
     },
     {
-      "bytes": 5301,
+      "bytes": 5520,
       "path": "workflow/Snakefile",
-      "sha256": "896003ca1010ab44b99d8234b8d0e103cc2d20f099d52b3becdb0d85481df32f"
+      "sha256": "3feb72cd52c3616cd4e67c72cb8a6770126c8b2ebd2c34c74381524572068281"
     },
     {
       "bytes": 3620,
@@ -172,7 +172,7 @@
     {
       "bytes": 4944,
       "path": "results/taxonomy/pilot/assignment_coverage.pdf",
-      "sha256": "5026f83b737cd74ed8d763efa1e33ab6682c0b38f60d60f4aa10beffd5c33364"
+      "sha256": "7dcb81f707e0a13f08bd5d47cecfee687af5a533187049e8b0da62ca36a94751"
     },
     {
       "bytes": 119750,
@@ -197,7 +197,7 @@
     {
       "bytes": 3318,
       "path": "results/taxonomy/pilot/input_checksums.json",
-      "sha256": "c30c8cf706509abed66c4692ed2df6c35e4a76a316e47dabf77f2285dc8094b0"
+      "sha256": "4fbf84ff0a6276ed245268e9ae7dac38d1665af82a76f626e695439b7ee57a40"
     },
     {
       "bytes": 5012,
@@ -260,7 +260,7 @@
     "Inversion",
     "Rejection"
   ],
-  "started_at_utc": "2026-10-09T20:19:44.257092+00:00",
+  "started_at_utc": "2026-10-09T21:38:57.514076+00:00",
   "status": "success",
   "upstream_validation": {
     "artifacts_checked": 18,

@@ -26,6 +26,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   por SHA-256 al hito anterior. Figuras alfa y PCA en PDF/SVG/PNG de 300 dpi.
 - 125 pruebas Python aprobadas, incluidas fórmulas R, conservación y
   regresiones del workflow; no se añaden dependencias.
+- Corrida final sobre `342dd4e`, con seis tablas científicas de diversidad
+  idénticas por SHA-256 y figuras revisadas; dry-run integrado sin trabajos pendientes.
 
 ## [v0.4.0-taxonomy] - 2026-10-09
 

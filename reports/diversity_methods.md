@@ -111,8 +111,10 @@ estas fracciones no miden evidencia de sucesión ni significación.
 Las versiones son R 4.4.3, vegan 2.6.8 y yaml 2.3.10, sin warnings R. Los
 ajustes de presentación reservan espacio para etiquetas y títulos y usan
 la misma escala geométrica por unidad en los dos ejes PCA. Las seis tablas
-científicas y la tabla de versiones reproducen sus hashes; el commit final
-de ejecución se consulta en `results/diversity/pilot/provenance.json`.
+científicas y la tabla de versiones reproducen sus hashes en la ejecución
+final sobre `342dd4e`, registrada en `results/diversity/pilot/provenance.json`.
+Las figuras finales se revisaron visualmente y el dry-run integrado quedó
+sin trabajos pendientes.
 La suite completa aprobó 125 pruebas y las 12 pruebas específicas de esta
 etapa se repitieron tras los ajustes de figuras.
 

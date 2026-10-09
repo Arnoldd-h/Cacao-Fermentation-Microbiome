@@ -1,0 +1,21 @@
+{
+  "artifacts_checked": 17,
+  "asvs": 88,
+  "independent_batches": 4,
+  "inference": false,
+  "inputs_checked": 20,
+  "library_reads_max": 36508,
+  "library_reads_min": 9250,
+  "observed_asvs_max": 46,
+  "observed_asvs_min": 2,
+  "pseudocounts": [
+    1.0,
+    0.5
+  ],
+  "rarefaction": false,
+  "retained_reads": 123693,
+  "samples": 6,
+  "source_git_commit": "342dd4efafe33dbbc465eb57ac0cbec113f5ddf7",
+  "status": "valid",
+  "study_id": "pacheco_montealegre_2020_colombia"
+}

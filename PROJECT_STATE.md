@@ -73,6 +73,9 @@ la inferencia temporal y la integración entre estudios siguen pendientes.
   y escala geométrica igual en los ejes PCA; sin warnings R de diversidad.
 - Suite actual: 125 pruebas Python en Linux aprobadas. Las 12 específicas
   de diversidad también pasan tras los ajustes de figuras.
+- Corrida final de diversidad sobre `342dd4e`: seis tablas científicas y
+  versiones idénticas por SHA-256 a la primera ejecución, figuras revisadas
+  y 20 entradas/17 artefactos validados. Dry-run integrado sin trabajos pendientes.
 
 ## Datasets incluidos
 
@@ -106,6 +109,10 @@ Separación y diversidad tienen productores y validadores propios, con política
 en `config/diversity.yaml`. Las tablas derivadas están en `data/processed/`.
 Cambiar el pseudoconteo invalida esas etapas sin reclasificar taxonomía;
 esta conducta se comprueba con una regresión del workflow.
+El dry-run informa que 12 descargas previas carecen de metadata histórica del
+scheduler Snakemake. Sus FASTQ siguen verificados por manifest, bytes, MD5,
+validación estructural y procedencia científica; no se modifican los crudos
+para reconstruir ese historial auxiliar.
 No queda una ejecución activa.
 
 ## Bloqueos y limitaciones

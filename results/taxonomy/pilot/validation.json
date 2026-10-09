@@ -12,7 +12,7 @@
   "sensitivity_min_boot": [
     50
   ],
-  "source_git_commit": "4e7ce24c81425b11c28295b066c75ffcb1dbe673",
+  "source_git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
   "status": "valid",
   "study_id": "pacheco_montealegre_2020_colombia",
   "total_reads": 156561,

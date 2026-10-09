@@ -1,0 +1,7 @@
+study_id	sample_id	input_reads	retained_reads	excluded_reads	retained_fraction
+pacheco_montealegre_2020_colombia	BactAnI000z1	20920	9250	11670	0.442160611855
+pacheco_montealegre_2020_colombia	BactAnII000z2	20127	13814	6313	0.686341730014
+pacheco_montealegre_2020_colombia	BactSaI036z2	36599	36508	91	0.997513593268
+pacheco_montealegre_2020_colombia	BactSaII048z1	40110	25324	14786	0.631363749688
+pacheco_montealegre_2020_colombia	BactSaI072z1	21847	21839	8	0.999633817
+pacheco_montealegre_2020_colombia	BactAnI096z2	16958	16958	0	1
