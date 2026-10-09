@@ -17,6 +17,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   comprueba que cambios de parámetros reutilizan la referencia protegida.
 - Corrección de rutas con espacios en Rscript, con regresión de CLI desde un
   directorio temporal cuyo nombre contiene espacios.
+- Enlace directo del archivo oficial de Zenodo para reanudar descargas,
+  conservando el mismo DOI, versión, bytes y MD5 de la referencia fijada.
 
 ## [v0.3.0-pilot-dada2] - 2026-10-08
 

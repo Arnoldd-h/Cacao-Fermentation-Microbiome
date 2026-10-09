@@ -4,7 +4,7 @@
     "name": "SILVA",
     "version": "138.2",
     "doi": "10.5281/zenodo.14169026",
-    "url": "https://zenodo.org/api/records/14169026/files/silva_nr99_v138.2_toGenus_trainset.fa.gz/content",
+    "url": "https://zenodo.org/records/14169026/files/silva_nr99_v138.2_toGenus_trainset.fa.gz",
     "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
     "expected_bytes": 139996892,
     "expected_md5": "1764e2a36b4500ccb1c7d5261948a414",

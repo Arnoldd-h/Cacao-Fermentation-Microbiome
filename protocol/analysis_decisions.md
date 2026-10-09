@@ -104,6 +104,9 @@ Su MD5 de origen es `1764e2a36b4500ccb1c7d5261948a414` y tamaño 139.996.892 byt
 se comprobarán gzip, formato FASTA y SHA-256 local. La base pesada permanece
 ignorada. Sus archivos fueron formateados con DADA2 1.35.4; se utilizará el
 clasificador instalado 1.34.0 y se verificará la compatibilidad mediante ejecución.
+Se usa el enlace directo del mismo archivo en Zenodo tras observar una descarga
+anormalmente lenta por el endpoint API. Se conserva DOI, tamaño y MD5; el enlace
+directo admite HTTP Range para reanudar la descarga del mismo archivo fijado.
 
 `config/taxonomy.yaml` registra `assignTaxonomy`, seis rangos originales Kingdom
 a Genus, comprobación de complemento inverso y semilla 20260819. Se conserva
