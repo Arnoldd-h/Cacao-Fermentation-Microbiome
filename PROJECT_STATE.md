@@ -1,132 +1,107 @@
 # Estado del proyecto
 
-Última actualización: 2026-09-26
+Última actualización: 2026-10-08.
 
 ## Fase actual
 
-Inventario sistemático de datasets públicos para la Fase I bacteriana 16S y
-vertical slice técnica del piloto.
+Inventario, QC y piloto DADA2 consolidados. El workflow integrado terminó y
+su siguiente dry-run no programa trabajos. La siguiente fase es clasificación
+taxonómica con referencia y parámetros explícitos antes de escalar por estudio.
 
 ## Completado
 
-- Repositorio remoto renombrado a `Cacao-Fermentation-Microbiome`.
-- Rama estable `main` clonada y conectada con `origin`.
-- Política de commits, trazabilidad y manejo de datos incorporada al repositorio.
-- Exclusiones iniciales para datos ómicos pesados, credenciales, entornos y cachés.
-- Pregunta, hipótesis, protocolo, criterios de inclusión/exclusión y decisiones
-  metodológicas iniciales documentados.
-- Arquitectura reproducible con configuración externa, librería Python,
-  scripts, workflow Snakemake, entorno declarado y tests.
-- Skill local `sra-metadata-inventory` creado y validado para regenerar y auditar
-  la metadata sin descargar FASTQ.
-- Consulta sistemática NCBI/ENA ejecutada: 34 BioProjects descubiertos.
-- Once estudios cribados en detalle: dos incluidos, cinco pendientes y cuatro
-  excluidos de Fase I.
-- Inventario generado: 1.573 corridas, 255 muestras candidatas, 1.327
-  exclusiones trazables y 154 corridas incluidas.
-- `PRJNA627078` incorporado como segundo estudio primario con 60 corridas V3-V4
-  tradicionales y cinco tiempos.
-- Comparación reproducible de 11 estudios: `PRJNA492720` seleccionado como
-  piloto frente a `PRJNA627078`.
-- Manifest equilibrado de seis runs (dos por etapa temporal y lotes distintos)
-  con 25.154.687 bytes estimados.
-- Doce FASTQ descargados localmente: 12/12 bytes, MD5, gzip y estructura FASTQ
-  válidos; 353.596 reads y 78.651.325 bases en total.
-- Validador independiente y 36 tests unitarios aprobados.
-- Micromamba 2.9.0 instalado para Ubuntu/WSL2 y entorno `cacao-microbiome`
-  creado con canales Bioconda/conda-forge de prioridad estricta.
-- FastQC 0.12.1, MultiQC 1.25.1, Cutadapt 5.0, Snakemake 8.30.0, R 4.4.3 y
-  DADA2 1.34.0 instalados y verificados mediante pruebas reales de ejecución y
-  carga; el reporte registra 18 componentes y el lock exacto de 463 líneas.
-- FastQC y MultiQC crudos ejecutados por Snakemake sobre los 12 FASTQ del piloto;
-  todos pasan calidad por base y adaptadores, con longitudes de 214-223 nt, GC
-  de 53-56 % y conteos pareados concordantes.
-- Primers de `PRJNA492720` confirmados desde el artículo y `Data_Sheet_2.PDF`,
-  Table S2: 515F `GTGCCAGCMGCCGCGGTAA` y 806R
-  `GGACTACHVGGGTWTCTAAT`, con constructos L1/L2 completos configurados.
-- Barrido Cutadapt de 96 casos completado sobre 12 FASTQ: no hay 515F en R1,
-  solo 7/176.798 coincidencias 806R en R2 y ningún constructo completo en la
-  orientación esperada; el depósito se considera previamente recortado.
-- Cutadapt 5.0 ejecutado sobre los seis pares con coincidencia completa, sin
-  indels, quality trimming ni descarte de untrimmed: se conservaron
-  176.798/176.798 pares, se recortaron 7 R2 y 238 bases en total.
-- QC post-Cutadapt ejecutado por Snakemake en los 12 FASTQ intermedios: 12/12
-  pasan FastQC por calidad de base y contenido de adaptadores; la retención es
-  100 % por dirección y las longitudes quedan entre 185-223 nt.
-- Comparación machine-readable raw/post-Cutadapt generada en
-  `results/qc/pilot/read_quality_comparison.tsv`; los conteos de reads son
-  idénticos en las 12 direcciones y no se detecta pérdida por el paso de primers.
-- Detección de primers repetida después de Cutadapt: 96 casos registrados y
-  cero coincidencias de constructos completos en los 12 casos esperados.
+- Configuración, protocolo, registro de decisiones, inventario y validadores.
+- Revisión de los 34 BioProjects descubiertos: cuatro incluidos, siete pendientes
+  por evidencia insuficiente y 23 excluidos; 2.357 runs revisados y 182 incluidos.
+- Selección del piloto PRJNA492720 y manifest de seis runs, sin cambios tras
+  ampliar el inventario; 12 FASTQ crudos con bytes, MD5, gzip y estructura válidos.
+- Entorno Linux/WSL2 verificado: FastQC 0.12.1, MultiQC 1.25.1, Cutadapt 5.0,
+  Snakemake 8.30.0, R 4.4.3 y DADA2 1.34.0; 18 componentes y lock explícito.
+- Ejecutor Micromamba que resuelve el prefijo registrado, sin rutas absolutas
+  codificadas ni dependencia de una raíz Micromamba particular.
+- Workflow reconstruible sin manifest/FASTQ preexistentes, protección de datos
+  crudos y comparación por contenido del manifest para evitar repetir QC.
+- Validación de parámetros realmente ejecutados por Cutadapt y procedencia de
+  resúmenes QC con hashes de entradas, código, configuración y salidas.
+- Jerarquía run/muestra/lote/tiempo: cada lote es una unidad independiente;
+  los tiempos son medidas repetidas y las submuestras permanecen identificadas.
+- QC inicial completo: 176.798 pares, 100 % de retención Cutadapt, siete R2
+  recortados y 238 bases retiradas; calidad por base y adaptadores pasan 12/12.
+- DADA2 configurado antes de ejecutarse; corrección del parser SRA manteniendo
+  la comprobación obligatoria de identificadores pareados.
+- Ejecución integrada DADA2: 165.034 pares filtrados, 160.649 ensamblados y 156.561
+  sin quimeras (88,55 % de la entrada), 93 ASVs y seis muestras conservadas.
+- Ambos modelos de error convergieron en cinco rondas; gráficas revisadas y
+  doce warnings de representación de frecuencias cero preservados.
+- Validador independiente de DADA2: conteos entre etapas, tabla ASV/FASTA,
+  distribuciones de longitud y hashes; regresiones Python y pruebas R.
+- Suite final: 91 pruebas Python en Linux aprobadas, incluidas seis integraciones
+  Snakemake; 32 comprobaciones R y regresión pareada SRA aprobadas.
+- Corrida final del 2026-10-09 UTC (8 de octubre en Colombia), sobre `6221445`:
+  18 entradas y 18 artefactos DADA2 validados. Las cuatro tablas principales
+  son idénticas a las de la primera corrida técnica.
 
 ## Datasets incluidos
 
-- `PRJNA492720`: 94 runs 16S V4; piloto seleccionado y seis runs descargados.
-- `PRJNA627078`: 60 runs 16S V3-V4 tradicionales.
+| BioProject | Runs incluidos | Lotes | Tecnología |
+|---|---:|---:|---|
+| PRJNA492720 | 94 | 4 | Illumina paired-end, V4; piloto |
+| PRJNA627078 | 60 | 4 | Illumina paired-end, V3-V4 |
+| PRJEB40850 | 12 | 2 | Illumina paired-end, V4 |
+| PRJEB57747 | 16 | 2 | PacBio Sequel II, full-length, single-end |
 
-## Datasets pendientes
+Se incluyen 182 runs y 12 lotes, sin confundir runs con réplicas independientes.
+PacBio requiere un procesamiento específico y no entra en el piloto Illumina.
+Las fuentes y decisiones por estudio están en `config/datasets.yaml` y
+`reports/inventory_review_2026-10-04.md`.
 
-- `PRJNA865318`, `PRJNA1104253`, `PRJEB53853`, `PRJEB82327` y `PRJEB82871`.
+## Estado operativo
 
-## Datasets excluidos de Fase I
+El inventario pasó el validador independiente; las unidades analíticas cubren
+182 runs, 95 observaciones lote-tiempo y 12 lotes. QC terminó 45 trabajos y
+los 24 FASTQ raw/interim coinciden byte a byte con los archivos previos.
+La corrección de los consumidores del checkpoint elimina la repetición de
+resúmenes: el dry-run conjunto QC termina sin trabajos pendientes.
+Los cinco registros de procedencia renovados pasan 222 comprobaciones de
+bytes y SHA-256 de configuración, código, entradas y salidas.
+El target `all` completó descubrimiento, DADA2 y validación; el siguiente
+dry-run devuelve `Nothing to be done`. El descubrimiento actualizado conserva
+34 BioProjects y sus conteos de runs coinciden con el inventario versionado.
+No queda una ejecución activa.
 
-- `PRJNA552479`, `PRJNA1257864`, `PRJNA1264670` y `PRJNA962540`.
+## Bloqueos y limitaciones
 
-## En progreso
-
-- Revisión de publicación y elegibilidad de 13 BioProjects detectados por la
-  consulta sistemática que todavía no están configurados.
-- Verificación de primers, región 16S, diseño temporal y condición espontánea
-  donde la metadata pública es insuficiente.
-- Revisión de los resultados post-Cutadapt y preparación de parámetros iniciales
-  de DADA2 por estudio.
-
-## Bloqueado
-
-- No hay bloqueos técnicos para iniciar el QC del piloto.
-
-## Decisiones importantes
-
-- `main` debe conservar un estado razonablemente funcional y reproducible.
-- Los datos crudos no se versionarán; se reconstruirán desde accessions,
-  manifests y scripts.
-- Los cambios metodológicos deberán quedar documentados y validados.
-- Los commits locales se crearán por unidades lógicas; los pushes requerirán
-  autorización explícita.
-- La triaje automática no puede promover proyectos a inclusión: toda inclusión
-  exige revisión científica documentada en `config/datasets.yaml`.
-- `PRJNA492720` es el piloto inicial; sus 94 corridas paper-consistent se
-  seleccionan por reglas explícitas y auditables.
-- La vertical slice limita la descarga a dos muestras por etapa y valida cada
-  archivo antes de cualquier QC o recorte.
-- El stack Bioconda se ejecuta en Linux mediante WSL2; las versiones con ABI
-  sensible se fijan y se someten a pruebas de carga antes de aceptarse.
-- Los fallos FastQC de composición, duplicación y secuencias sobrerrepresentadas
-  se interpretan en contexto de amplicones y no justifican exclusión automática.
-- Los nombres 515F/806R no determinan por sí solos su variante: para este estudio
-  se usan las secuencias originales de Caporaso y los linkers publicados en
-  Table S2; las variantes Parada/Apprill no se sustituyen silenciosamente.
-- Las lecturas sin primer se conservarán durante Cutadapt porque la evidencia
-  documental y empírica indica trimming previo al depósito.
+- Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
+  pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
+- El procesamiento real abarca seis runs del piloto; el resto de los FASTQ no
+  se ha descargado. No hay aún taxonomía, diversidad ni inferencia biológica.
+- Las ASVs de 237–243 nt no se filtran por una longitud canónica; el depósito
+  tiene evidencia de recorte previo y su procesamiento exacto es incompleto.
+- Los residuos raros en orientación inversa y la ausencia de controles negativos
+  requieren interpretación posterior; no demuestran contaminación ni su ausencia.
+- País, estudio, tecnología y región 16S pueden estar confundidos; no se les
+  atribuirán efectos separables sin respaldo del diseño.
+- Licencia y metadatos de autoría del repositorio siguen pendientes del titular.
 
 ## Próximas tareas
 
-1. Resolver los 13 candidatos de revisión manual y congelar el inventario de Fase I.
-2. Probar DADA2 por estudio y derivar parámetros antes de escalar a 94 runs.
-3. Documentar la versión de SILVA y el método de clasificación taxonómica.
+1. Fijar versión y checksum de una referencia taxonómica y validar la clasificación.
+2. Escalar el estudio piloto completo conservando parámetros por estudio y
+   revisar por separado los pipelines V3-V4 y PacBio antes de integrar taxonomía.
+3. Definir tratamiento de ceros, agregación de submuestras y modelos longitudinales
+   antes de estimar efectos, con sensibilidad temporal absoluta y relativa.
 
-## Limitaciones conocidas
+## Control de versiones
 
-- Solo se descargó la vertical slice de 12 FASTQ; no se descargó el estudio completo.
-- No se ejecutaron todavía DADA2, taxonomía ni resultados biológicos.
-- Existen residuos raros de primers/constructos en orientación inversa,
-  concentrados sobre todo en `SRR7899884`; se vigilarán durante merging sin
-  convertirlos en evidencia de primers sistemáticamente presentes.
-- La revisión paper-level de 13 candidatos todavía no está cerrada.
-- Los metadatos de primers y diseño temporal son incompletos en varios depósitos.
-
-## Último commit relevante
-
-`3d7ba2f feat: add post-trimming pilot quality control`, que integra el QC
-post-Cutadapt, la comparación raw/interim y la detección de primers en el
-workflow del piloto.
+Trabajo en `codex/pilot-dada2-reproducibility`; `main` permanece disponible.
+Los commits son locales. No se publica ni se hace push sin autorización.
+Los datos pesados permanecen ignorados; las salidas pequeñas conservan procedencia.
+El commit `44f5f4a` prerregistra los parámetros; `eafadd7` corrige identificadores
+SRA; `a2bfa82` y `dd4f364` cierran reproducibilidad del workflow QC.
+`20feeea` corrige reevaluación del checkpoint; `32ab045` consolida inventario y
+`6221445` consolida QC. Los hitos locales son `v0.1.0-dataset-inventory`,
+`v0.2.0-pilot-qc` y `v0.3.0-pilot-dada2`.
+La procedencia final registra `git_dirty=true` por documentación y resultados
+previos todavía sin commit al iniciar. Sus seis entradas versionadas (config,
+manifest, scripts R y tablas QC) coinciden byte a byte con `6221445`.
+Para el checkout exacto usar `git log -1 --oneline` y `git status`.

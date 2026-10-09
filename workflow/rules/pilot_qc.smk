@@ -1,243 +1,297 @@
-"""Raw sequencing QC for the configured pilot vertical slice."""
+"""Manifest-driven pilot QC; no data files are opened while parsing the workflow."""
 
-import csv
+from cacao_inventory.pilot_workflow import load_pilot_manifest, manifest_row, fastq_path, processing_configuration
+from cacao_inventory.provenance import sha256_file
 
 
-PILOT_FASTQ_BY_READ = {}
-PILOT_MANIFEST_BY_RUN = {}
-with open("metadata/pilot_manifest.tsv", encoding="utf-8", newline="") as handle:
-    for row in csv.DictReader(handle, delimiter="\t"):
-        PILOT_MANIFEST_BY_RUN[row["run_accession"]] = row
-        for direction in ("1", "2"):
-            read_id = f"{row['run_accession']}_{direction}"
-            PILOT_FASTQ_BY_READ[read_id] = (
-                f"data/raw/{row['study_id']}/{row['run_accession']}/"
-                f"{read_id}.fastq.gz"
-            )
+def pilot_manifest_path(wildcards=None):
+    return checkpoints.build_pilot_manifest.get().output.manifest
 
-PILOT_READ_IDS = sorted(PILOT_FASTQ_BY_READ)
-PILOT_RUNS = sorted(PILOT_MANIFEST_BY_RUN)
-PILOT_STUDY_IDS = {row["study_id"] for row in PILOT_MANIFEST_BY_RUN.values()}
-if len(PILOT_STUDY_IDS) != 1:
-    raise ValueError("Pilot sequencing workflow requires exactly one study")
-PILOT_STUDY_ID = next(iter(PILOT_STUDY_IDS))
-RAW_FASTQC_DIRECTORY = "results/qc/pilot/fastqc_raw"
-RAW_MULTIQC_DIRECTORY = "results/qc/pilot/multiqc_raw"
-CUTADAPT_DIRECTORY = "results/qc/pilot/cutadapt"
-TRIMMED_FASTQC_DIRECTORY = "results/qc/pilot/fastqc_trimmed"
-TRIMMED_MULTIQC_DIRECTORY = "results/qc/pilot/multiqc_trimmed"
-PILOT_INTERIM_PATTERN = (
-    f"data/interim/{PILOT_STUDY_ID}/pilot/"
-    "{run_accession}/{run_accession}_{direction}.fastq.gz"
-)
-PILOT_PROCESSING_CONFIG = config["amplicon_processing"]["PRJNA492720"]
-PILOT_PRIMERS = PILOT_PROCESSING_CONFIG["primers"]
-PILOT_CUTADAPT = PILOT_PROCESSING_CONFIG["cutadapt"]
-PILOT_TRIMMED_FASTQ_BY_READ = {
-    read_id: PILOT_INTERIM_PATTERN.format(
-        run_accession=read_id.rsplit("_", maxsplit=1)[0],
-        direction=read_id.rsplit("_", maxsplit=1)[1],
-    )
-    for read_id in PILOT_READ_IDS
-}
+
+def pilot_manifest_input(wildcards=None):
+    return ancient(str(pilot_manifest_path(wildcards)))
+
+
+def pilot_manifest_fingerprint(wildcards=None):
+    return sha256_file(pilot_manifest_path(wildcards))
+
+
+def pilot_manifest_rows(wildcards=None):
+    return load_pilot_manifest(pilot_manifest_path(wildcards))
+
+
+def pilot_study_id(wildcards=None):
+    return pilot_manifest_rows(wildcards)[0]["study_id"]
+
+
+def pilot_run_ids(wildcards=None):
+    return sorted(row["run_accession"] for row in pilot_manifest_rows(wildcards))
+
+
+def pilot_fastq_paths(wildcards=None, stage="trimmed"):
+    return [fastq_path(row, direction, stage) for row in pilot_manifest_rows(wildcards) for direction in ("1", "2")]
+
+
+def pilot_raw_fastq_paths(wildcards):
+    return pilot_fastq_paths(wildcards, stage="raw")
+
+
+def pilot_read_path(wildcards, stage="raw", direction=None):
+    row = manifest_row(pilot_manifest_rows(wildcards), wildcards.run_accession, getattr(wildcards, "study_id", None))
+    return fastq_path(row, direction or wildcards.direction, stage)
+
+
+def pilot_processing(wildcards):
+    processing = processing_configuration(config, pilot_manifest_rows(wildcards)[0])
+    # Changing downstream DADA2 parameters must not repeat primer trimming.
+    return {key: processing[key] for key in ("study_id", "primers", "primer_detection", "cutadapt")}
+
+
+def pilot_fastqc_archives(wildcards, stage="raw"):
+    return [f"results/qc/pilot/fastqc_{stage}/{run}_{direction}_fastqc.zip" for run in pilot_run_ids(wildcards) for direction in ("1", "2")]
+
+
+QC_ENVIRONMENT = "environment/conda-linux-64.lock"
+QC_COMMON_CODE = ["python/cacao_inventory/qc.py", "python/cacao_inventory/io.py", "python/cacao_inventory/schema.py", "python/cacao_inventory/config.py", "python/cacao_inventory/download.py", "python/cacao_inventory/provenance.py", "python/cacao_inventory/pilot_workflow.py", QC_ENVIRONMENT]
+
+
+wildcard_constraints:
+    direction="[12]",
+    run_accession="(?:SRR|ERR|DRR)[0-9]+",
+    study_id="[A-Za-z0-9][A-Za-z0-9_-]*",
+
+
+rule download_pilot_read:
+    input:
+        # Raw data are immutable. The aggregate report revalidates bytes and MD5;
+        # configuration changes cannot overwrite a previously downloaded file.
+        manifest=pilot_manifest_input,
+        config=ancient("config/config.yaml"),
+        code=ancient(python_sources("scripts/qc/download_pilot_read.py", "download", "pilot_workflow", "config", "io", "schema")),
+    output:
+        protected("data/raw/{study_id}/{run_accession}/{run_accession}_{direction}.fastq.gz")
+    shell:
+        "python scripts/qc/download_pilot_read.py --manifest {input.manifest:q} --config {input.config:q} "
+        "--study-id {wildcards.study_id:q} --run-accession {wildcards.run_accession:q} "
+        "--direction {wildcards.direction:q} --output {output:q}"
+
+
+rule download_pilot_fastq:
+    input:
+        manifest=pilot_manifest_input,
+        fastq=pilot_raw_fastq_paths,
+        config=ancient("config/config.yaml"),
+        code=python_sources("scripts/metadata/download_pilot_fastq.py", "download", "config", "io", "schema"),
+    output:
+        "results/qc/pilot_download_validation.tsv"
+    params:
+        settings=config["pilot_download"],
+        manifest_sha256=pilot_manifest_fingerprint,
+    shell:
+        "python scripts/metadata/download_pilot_fastq.py --manifest {input.manifest:q} --report {output:q}"
+
+
+rule validate_pilot_fastq:
+    input:
+        report="results/qc/pilot_download_validation.tsv",
+        fastq=pilot_raw_fastq_paths,
+        code=python_sources("scripts/metadata/validate_pilot_fastq.py", "fastq", "io", "schema"),
+    output:
+        "results/qc/pilot_fastq_validation.tsv"
+    shell:
+        "python scripts/metadata/validate_pilot_fastq.py --download-report {input.report:q} --output {output:q}"
 
 
 rule pilot_raw_qc:
     input:
-        report=f"{RAW_MULTIQC_DIRECTORY}/multiqc_report.html",
-        metrics="results/qc/pilot/raw_read_quality.tsv",
+        "results/qc/pilot/multiqc_raw/multiqc_report.html",
+        "results/qc/pilot/raw_read_quality.tsv",
+        "results/qc/pilot/raw_read_quality.provenance.json",
+        manifest=pilot_manifest_input,
 
 
 rule pilot_primer_detection:
     input:
         "results/qc/pilot/primer_detection.tsv",
+        "results/qc/pilot/primer_detection.provenance.json",
+        manifest=pilot_manifest_input,
 
 
 rule detect_pilot_primers:
     input:
-        config="config/config.yaml",
-        manifest="metadata/pilot_manifest.tsv",
-        fastq=list(PILOT_FASTQ_BY_READ.values()),
+        config=ancient("config/config.yaml"),
+        manifest=pilot_manifest_input,
+        validated="results/qc/pilot_fastq_validation.tsv",
+        fastq=pilot_raw_fastq_paths,
+        code=["scripts/qc/detect_primers.py", *QC_COMMON_CODE],
     output:
-        "results/qc/pilot/primer_detection.tsv"
+        table="results/qc/pilot/primer_detection.tsv",
+        provenance="results/qc/pilot/primer_detection.provenance.json",
+    params:
+        processing=pilot_processing,
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
-        "python scripts/qc/detect_primers.py "
-        "--config {input.config:q} --manifest {input.manifest:q} --output {output:q}"
+        "python scripts/qc/detect_primers.py --config {input.config:q} --manifest {input.manifest:q} --output {output.table:q}"
 
 
 rule pilot_primer_trimming:
     input:
-        summary="results/qc/pilot/cutadapt_summary.tsv",
-        trimmed=expand(
-            PILOT_INTERIM_PATTERN,
-            run_accession=PILOT_RUNS,
-            direction=("1", "2"),
-        ),
+        "results/qc/pilot/cutadapt_summary.tsv",
+        "results/qc/pilot/cutadapt_summary.provenance.json",
+        pilot_fastq_paths,
 
 
 rule trim_pilot_primers:
     input:
-        r1=lambda wildcards: PILOT_FASTQ_BY_READ[f"{wildcards.run_accession}_1"],
-        r2=lambda wildcards: PILOT_FASTQ_BY_READ[f"{wildcards.run_accession}_2"],
+        manifest=pilot_manifest_input,
+        config=ancient("config/config.yaml"),
+        r1=lambda wildcards: pilot_read_path(wildcards, direction="1"),
+        r2=lambda wildcards: pilot_read_path(wildcards, direction="2"),
+        validated="results/qc/pilot_fastq_validation.tsv",
+        detection="results/qc/pilot/primer_detection.tsv",
+        code=["scripts/qc/trim_primers.py", *QC_COMMON_CODE],
     output:
-        r1=PILOT_INTERIM_PATTERN.replace("{direction}", "1"),
-        r2=PILOT_INTERIM_PATTERN.replace("{direction}", "2"),
-        report=f"{CUTADAPT_DIRECTORY}/{{run_accession}}.cutadapt.json",
+        r1="data/interim/{study_id}/pilot/{run_accession}/{run_accession}_1.fastq.gz",
+        r2="data/interim/{study_id}/pilot/{run_accession}/{run_accession}_2.fastq.gz",
+        report="results/qc/pilot/cutadapt/{study_id}/{run_accession}.cutadapt.json",
     params:
-        output_directory=lambda wildcards: (
-            f"data/interim/{PILOT_STUDY_ID}/pilot/{wildcards.run_accession}"
-        ),
-        report_directory=CUTADAPT_DIRECTORY,
-        forward_adapter=(
-            f"515F={PILOT_PRIMERS['forward']['gene_specific_sequence']};"
-            f"min_overlap={PILOT_CUTADAPT['forward_minimum_overlap']}"
-        ),
-        reverse_adapter=(
-            f"806R={PILOT_PRIMERS['reverse']['gene_specific_sequence']};"
-            f"min_overlap={PILOT_CUTADAPT['reverse_minimum_overlap']}"
-        ),
-        error_rate=PILOT_CUTADAPT["error_rate"],
+        processing=pilot_processing,
+        manifest_sha256=pilot_manifest_fingerprint,
     threads: 2
     shell:
-        "mkdir -p {params.output_directory:q} {params.report_directory:q} && "
-        "cutadapt --cores {threads} --no-indels --error-rate {params.error_rate} "
-        "--front {params.forward_adapter:q} -G {params.reverse_adapter:q} "
-        "--json {output.report:q} --output {output.r1:q} "
-        "--paired-output {output.r2:q} {input.r1:q} {input.r2:q}"
+        "python scripts/qc/trim_primers.py --config {input.config:q} --manifest {input.manifest:q} "
+        "--run-accession {wildcards.run_accession:q} --study-id {wildcards.study_id:q} --threads {threads} "
+        "--report {output.report:q}"
 
 
 rule summarize_pilot_cutadapt:
     input:
-        config="config/config.yaml",
-        manifest="metadata/pilot_manifest.tsv",
-        reports=expand(
-            f"{CUTADAPT_DIRECTORY}/{{run_accession}}.cutadapt.json",
-            run_accession=PILOT_RUNS,
-        ),
-        trimmed=expand(
-            PILOT_INTERIM_PATTERN,
-            run_accession=PILOT_RUNS,
-            direction=("1", "2"),
-        ),
+        config=ancient("config/config.yaml"),
+        manifest=pilot_manifest_input,
+        reports=lambda wildcards: [f"results/qc/pilot/cutadapt/{pilot_study_id(wildcards)}/{run}.cutadapt.json" for run in pilot_run_ids(wildcards)],
+        trimmed=pilot_fastq_paths,
+        code=["scripts/qc/summarize_cutadapt.py", *QC_COMMON_CODE],
     output:
-        "results/qc/pilot/cutadapt_summary.tsv"
+        table="results/qc/pilot/cutadapt_summary.tsv",
+        provenance="results/qc/pilot/cutadapt_summary.provenance.json",
     params:
-        report_directory=CUTADAPT_DIRECTORY,
+        report_directory=lambda wildcards: f"results/qc/pilot/cutadapt/{pilot_study_id(wildcards)}",
+        processing=pilot_processing,
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
-        "python scripts/qc/summarize_cutadapt.py --config {input.config:q} "
-        "--manifest {input.manifest:q} "
-        "--report-directory {params.report_directory:q} --output {output:q}"
+        "python scripts/qc/summarize_cutadapt.py --config {input.config:q} --manifest {input.manifest:q} "
+        "--report-directory {params.report_directory:q} --output {output.table:q}"
 
 
 rule pilot_post_trim_qc:
     input:
-        report=f"{TRIMMED_MULTIQC_DIRECTORY}/multiqc_report.html",
-        metrics="results/qc/pilot/trimmed_read_quality.tsv",
-        comparison="results/qc/pilot/read_quality_comparison.tsv",
-        primer_detection="results/qc/pilot/primer_detection_trimmed.tsv",
-
-
-rule fastqc_trimmed:
-    input:
-        lambda wildcards: PILOT_TRIMMED_FASTQ_BY_READ[wildcards.read_id]
-    output:
-        html=f"{TRIMMED_FASTQC_DIRECTORY}/{{read_id}}_fastqc.html",
-        archive=f"{TRIMMED_FASTQC_DIRECTORY}/{{read_id}}_fastqc.zip",
-    params:
-        output_directory=TRIMMED_FASTQC_DIRECTORY,
-    threads: 2
-    shell:
-        "mkdir -p {params.output_directory:q} && "
-        "fastqc --threads {threads} --outdir {params.output_directory:q} {input:q}"
-
-
-rule multiqc_trimmed:
-    input:
-        expand(
-            f"{TRIMMED_FASTQC_DIRECTORY}/{{read_id}}_fastqc.zip",
-            read_id=PILOT_READ_IDS,
-        )
-    output:
-        report=f"{TRIMMED_MULTIQC_DIRECTORY}/multiqc_report.html",
-        fastqc_table=(
-            f"{TRIMMED_MULTIQC_DIRECTORY}/multiqc_report_data/multiqc_fastqc.txt"
-        ),
-    params:
-        output_directory=TRIMMED_MULTIQC_DIRECTORY,
-        input_directory=TRIMMED_FASTQC_DIRECTORY,
-    shell:
-        "mkdir -p {params.output_directory:q} && "
-        "multiqc --force --outdir {params.output_directory:q} "
-        "--filename multiqc_report.html {params.input_directory:q}"
-
-
-rule summarize_trimmed_fastqc:
-    input:
-        multiqc=(
-            f"{TRIMMED_MULTIQC_DIRECTORY}/multiqc_report_data/multiqc_fastqc.txt"
-        ),
-        cutadapt="results/qc/pilot/cutadapt_summary.tsv",
-        raw="results/qc/pilot/raw_read_quality.tsv",
-    output:
-        metrics="results/qc/pilot/trimmed_read_quality.tsv",
-        comparison="results/qc/pilot/read_quality_comparison.tsv",
-    shell:
-        "python scripts/qc/summarize_trimmed_fastqc.py "
-        "--multiqc-fastqc {input.multiqc:q} --cutadapt-summary {input.cutadapt:q} "
-        "--raw-quality {input.raw:q} --output {output.metrics:q} "
-        "--comparison-output {output.comparison:q}"
-
-
-rule detect_trimmed_primers:
-    input:
-        config="config/config.yaml",
-        manifest="metadata/pilot_manifest.tsv",
-        fastq=list(PILOT_TRIMMED_FASTQ_BY_READ.values()),
-    output:
-        "results/qc/pilot/primer_detection_trimmed.tsv"
-    shell:
-        "python scripts/qc/detect_primers.py --input-stage trimmed "
-        "--config {input.config:q} --manifest {input.manifest:q} --output {output:q}"
+        "results/qc/pilot/multiqc_trimmed/multiqc_report.html",
+        "results/qc/pilot/trimmed_read_quality.tsv",
+        "results/qc/pilot/read_quality_comparison.tsv",
+        "results/qc/pilot/primer_detection_trimmed.tsv",
+        "results/qc/pilot/trimmed_read_quality.provenance.json",
+        "results/qc/pilot/primer_detection_trimmed.provenance.json",
+        manifest=pilot_manifest_input,
 
 
 rule fastqc_raw:
     input:
-        lambda wildcards: PILOT_FASTQ_BY_READ[wildcards.read_id]
+        fastq=lambda wildcards: pilot_read_path(wildcards),
+        validated="results/qc/pilot_fastq_validation.tsv",
+        environment=QC_ENVIRONMENT,
     output:
-        html=f"{RAW_FASTQC_DIRECTORY}/{{read_id}}_fastqc.html",
-        archive=f"{RAW_FASTQC_DIRECTORY}/{{read_id}}_fastqc.zip",
-    params:
-        output_directory=RAW_FASTQC_DIRECTORY,
+        html="results/qc/pilot/fastqc_raw/{run_accession}_{direction}_fastqc.html",
+        archive="results/qc/pilot/fastqc_raw/{run_accession}_{direction}_fastqc.zip",
     threads: 2
     shell:
-        "mkdir -p {params.output_directory:q} && "
-        "fastqc --threads {threads} --outdir {params.output_directory:q} {input:q}"
+        "mkdir -p results/qc/pilot/fastqc_raw && fastqc --threads {threads} --outdir results/qc/pilot/fastqc_raw {input.fastq:q}"
+
+
+rule fastqc_trimmed:
+    input:
+        fastq=lambda wildcards: pilot_read_path(wildcards, stage="trimmed"),
+        environment=QC_ENVIRONMENT,
+    output:
+        html="results/qc/pilot/fastqc_trimmed/{run_accession}_{direction}_fastqc.html",
+        archive="results/qc/pilot/fastqc_trimmed/{run_accession}_{direction}_fastqc.zip",
+    threads: 2
+    shell:
+        "mkdir -p results/qc/pilot/fastqc_trimmed && fastqc --threads {threads} --outdir results/qc/pilot/fastqc_trimmed {input.fastq:q}"
 
 
 rule multiqc_raw:
     input:
-        expand(f"{RAW_FASTQC_DIRECTORY}/{{read_id}}_fastqc.zip", read_id=PILOT_READ_IDS)
+        archives=pilot_fastqc_archives,
+        environment=QC_ENVIRONMENT,
     output:
-        report=f"{RAW_MULTIQC_DIRECTORY}/multiqc_report.html",
-        fastqc_table=(
-            f"{RAW_MULTIQC_DIRECTORY}/multiqc_report_data/multiqc_fastqc.txt"
-        ),
-    params:
-        output_directory=RAW_MULTIQC_DIRECTORY,
-        input_directory=RAW_FASTQC_DIRECTORY,
+        report="results/qc/pilot/multiqc_raw/multiqc_report.html",
+        fastqc_table="results/qc/pilot/multiqc_raw/multiqc_report_data/multiqc_fastqc.txt",
     shell:
-        "mkdir -p {params.output_directory:q} && "
-        "multiqc --force --outdir {params.output_directory:q} "
-        "--filename multiqc_report.html {params.input_directory:q}"
+        "mkdir -p results/qc/pilot/multiqc_raw && multiqc --force --outdir results/qc/pilot/multiqc_raw "
+        "--filename multiqc_report.html {input.archives:q}"
+
+
+rule multiqc_trimmed:
+    input:
+        archives=lambda wildcards: pilot_fastqc_archives(wildcards, stage="trimmed"),
+        environment=QC_ENVIRONMENT,
+    output:
+        report="results/qc/pilot/multiqc_trimmed/multiqc_report.html",
+        fastqc_table="results/qc/pilot/multiqc_trimmed/multiqc_report_data/multiqc_fastqc.txt",
+    shell:
+        "mkdir -p results/qc/pilot/multiqc_trimmed && multiqc --force --outdir results/qc/pilot/multiqc_trimmed "
+        "--filename multiqc_report.html {input.archives:q}"
 
 
 rule summarize_raw_fastqc:
     input:
-        multiqc=f"{RAW_MULTIQC_DIRECTORY}/multiqc_report_data/multiqc_fastqc.txt",
+        manifest=pilot_manifest_input,
+        multiqc="results/qc/pilot/multiqc_raw/multiqc_report_data/multiqc_fastqc.txt",
         validation="results/qc/pilot_fastq_validation.tsv",
+        config=ancient("config/config.yaml"),
+        code=["scripts/qc/summarize_fastqc.py", *QC_COMMON_CODE],
     output:
-        "results/qc/pilot/raw_read_quality.tsv"
+        table="results/qc/pilot/raw_read_quality.tsv",
+        provenance="results/qc/pilot/raw_read_quality.provenance.json",
+    params:
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
-        "python scripts/qc/summarize_fastqc.py "
-        "--multiqc-fastqc {input.multiqc:q} "
-        "--fastq-validation {input.validation:q} --output {output:q}"
+        "python scripts/qc/summarize_fastqc.py --multiqc-fastqc {input.multiqc:q} "
+        "--fastq-validation {input.validation:q} --output {output.table:q}"
+
+
+rule summarize_trimmed_fastqc:
+    input:
+        manifest=pilot_manifest_input,
+        multiqc="results/qc/pilot/multiqc_trimmed/multiqc_report_data/multiqc_fastqc.txt",
+        cutadapt="results/qc/pilot/cutadapt_summary.tsv",
+        raw="results/qc/pilot/raw_read_quality.tsv",
+        config=ancient("config/config.yaml"),
+        code=["scripts/qc/summarize_trimmed_fastqc.py", *QC_COMMON_CODE],
+    output:
+        metrics="results/qc/pilot/trimmed_read_quality.tsv",
+        comparison="results/qc/pilot/read_quality_comparison.tsv",
+        provenance="results/qc/pilot/trimmed_read_quality.provenance.json",
+    params:
+        manifest_sha256=pilot_manifest_fingerprint,
+    shell:
+        "python scripts/qc/summarize_trimmed_fastqc.py --multiqc-fastqc {input.multiqc:q} "
+        "--cutadapt-summary {input.cutadapt:q} --raw-quality {input.raw:q} "
+        "--output {output.metrics:q} --comparison-output {output.comparison:q}"
+
+
+rule detect_trimmed_primers:
+    input:
+        config=ancient("config/config.yaml"),
+        manifest=pilot_manifest_input,
+        fastq=pilot_fastq_paths,
+        code=["scripts/qc/detect_primers.py", *QC_COMMON_CODE],
+    output:
+        table="results/qc/pilot/primer_detection_trimmed.tsv",
+        provenance="results/qc/pilot/primer_detection_trimmed.provenance.json",
+    params:
+        processing=pilot_processing,
+        manifest_sha256=pilot_manifest_fingerprint,
+    shell:
+        "python scripts/qc/detect_primers.py --input-stage trimmed --config {input.config:q} "
+        "--manifest {input.manifest:q} --output {output.table:q}"

@@ -1,0 +1,15 @@
+study_id	stage	length	asv_count	read_count
+pacheco_montealegre_2020_colombia	merged	237	3	98
+pacheco_montealegre_2020_colombia	merged	238	12	17630
+pacheco_montealegre_2020_colombia	merged	239	40	43269
+pacheco_montealegre_2020_colombia	merged	240	39	94804
+pacheco_montealegre_2020_colombia	merged	241	27	4082
+pacheco_montealegre_2020_colombia	merged	242	9	748
+pacheco_montealegre_2020_colombia	merged	243	1	18
+pacheco_montealegre_2020_colombia	nonchim	237	3	98
+pacheco_montealegre_2020_colombia	nonchim	238	9	17471
+pacheco_montealegre_2020_colombia	nonchim	239	25	42041
+pacheco_montealegre_2020_colombia	nonchim	240	29	93638
+pacheco_montealegre_2020_colombia	nonchim	241	20	2896
+pacheco_montealegre_2020_colombia	nonchim	242	6	399
+pacheco_montealegre_2020_colombia	nonchim	243	1	18

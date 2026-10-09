@@ -1,0 +1,14 @@
+# Keep text comparison and future checkouts consistent between Windows and WSL.
+* text=auto eol=lf
+
+# Keep R execution records byte-for-byte, including console alignment spaces
+# and the YAML serializer's final blank line; these are checksum artifacts.
+results/dada2/*/session_info.txt whitespace=-blank-at-eol
+results/dada2/*/config_snapshot.yaml whitespace=-blank-at-eof
+*.png binary
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.gz binary
+*.zip binary
+*.rds binary

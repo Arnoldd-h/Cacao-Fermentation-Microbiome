@@ -1,0 +1,3 @@
+read_direction	self_consistency_rounds	maximum_rounds	repeated_error_matrix	reached_iteration_limit	converged_before_limit	transition_base_observations
+F	5	10	TRUE	FALSE	TRUE	36567800
+R	5	10	TRUE	FALSE	TRUE	36502828

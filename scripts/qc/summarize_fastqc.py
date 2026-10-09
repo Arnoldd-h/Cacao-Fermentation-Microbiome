@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "python"))
 
 from cacao_inventory.io import read_tsv, write_tsv_atomic  # noqa: E402
+from cacao_inventory.provenance import qc_provenance
 from cacao_inventory.qc import (  # noqa: E402
     MULTIQC_FASTQC_COLUMNS,
     build_raw_quality_rows,
@@ -60,6 +61,11 @@ def main() -> int:
     validation_rows = read_tsv(args.fastq_validation, FASTQ_VALIDATION_COLUMNS)
     output_rows = build_raw_quality_rows(multiqc_rows, validation_rows)
     write_tsv_atomic(args.output, output_rows, RAW_READ_QUALITY_COLUMNS)
+    qc_provenance(
+        args.output, root=ROOT,
+        inputs=[args.multiqc_fastqc, args.fastq_validation, *(ROOT / row["local_path"] for row in validation_rows)],
+        tools=("fastqc", "multiqc"), command=[sys.executable, *sys.argv],
+    )
     logging.info("Recorded raw FastQC metrics for %d FASTQ files", len(output_rows))
     return 0
 

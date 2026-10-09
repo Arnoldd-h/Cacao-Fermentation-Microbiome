@@ -1,0 +1,11 @@
+{
+  "artifacts_checked": 18,
+  "asvs": 93,
+  "error_models_converged_before_limit": true,
+  "inputs_checked": 18,
+  "nonchim_pairs": 156561,
+  "samples": 6,
+  "source_git_commit": "6221445317a30cab24a67620f251e71ee772129c",
+  "status": "valid",
+  "study_id": "pacheco_montealegre_2020_colombia"
+}

@@ -20,11 +20,78 @@
 | 2026-08-25 | Configurar para PRJNA492720 los núcleos 515F `GTGCCAGCMGCCGCGGTAA` y 806R `GGACTACHVGGGTWTCTAAT`, junto con sus constructos L1/L2 completos de Table S2. | El artículo primario identifica V4 y primers modificados 515F-806R; `Data_Sheet_2.PDF`, Table S2, resuelve que la modificación son linkers 5′ y proporciona las secuencias exactas. | Usar las variantes posteriores Parada/Apprill solo por compartir los nombres 515F/806R o conservar descripciones no secuenciales. | Evita recortar una variante de primer incorrecta y deja fuente primaria y constructos auditables en configuración. | Adoptada |
 | 2026-08-25 | Tratar los FASTQ depositados del piloto como lecturas ya recortadas de primers y conservar las lecturas sin coincidencia en Cutadapt. | En 176.798 reads por dirección no se detectó 515F en R1; solo 7 coincidencias de 806R en R2 (0,004 %) y ningún constructo L1/L2 completo en la orientación esperada. Se observaron residuos raros en orientación inversa, principalmente en SRR7899884, coherentes con artefactos/adaptadores de una fracción menor y no con primers conservados de forma sistemática. El artículo además declara trimming con Trimmomatic en su procesamiento publicado. | Descartar todas las lecturas sin primer o aplicar trimming obligatorio como si los FASTQ fueran crudos de instrumento. | El paso Cutadapt será no destructivo para lecturas sin coincidencia y deberá demostrar retención, sin asumir que el primer sigue presente. | Adoptada |
 | 2026-08-25 | Ejecutar Cutadapt 5.0 solo para los núcleos verificados en la orientación esperada, con coincidencia de longitud completa, `error_rate=0.1`, sin indels, sin quality trimming y sin descartar untrimmed. | La detección previa mostró primers sistemáticamente ausentes; mezclar recorte de calidad o descarte impediría atribuir las pérdidas. La ejecución conservó 176.798/176.798 pares, recortó solo 7 R2 y retiró 238 bases. | Descartar untrimmed, recortar orientaciones raras o combinar primers y calidad en un paso. | Produce FASTQ interim pareados y una tabla por dirección; cualquier pérdida posterior podrá atribuirse a QC/DADA2 y no a descarte de Cutadapt. | Adoptada |
+| 2026-10-03 | Fijar parámetros iniciales DADA2 1.34.0 del piloto antes de ejecutarlo: sin truncamiento fijo, maxN=0, maxEE=(2,2), truncQ=2, minLen=150, aprendizaje por dirección hasta 10 iteraciones y 100 millones de bases disponibles, inferencia independiente y merging con 12 nt de solapamiento sin discrepancias. | Los FASTQ post-Cutadapt miden 185–223 nt; los perfiles por ciclo no muestran un colapso abrupto de calidad y ya se verificó recorte previo al depósito. minLen=150 es un límite técnico inicial para lecturas excepcionalmente acortadas por truncQ; no descarta las longitudes actualmente observadas. Los valores restantes siguen el tutorial/manual oficial, cotejados con la versión instalada. | Truncar a una longitud arbitraria, relajar merging para elevar retención o ajustar parámetros según taxones/efectos. | Se registran retención por etapa, errores aprendidos, rechazos de merging y longitudes; no se interpreta el piloto como evidencia de sucesión ni se escala antes de revisar estos diagnósticos. Semilla 20260819; no se mezclan estudios. | Adoptada para piloto técnico |
+| 2026-10-03 | Usar eliminación de quimeras consensus con minFoldParentOverAbundance=1.5, minParentAbundance=2, minSampleFraction=0.9, ignoreNNegatives=1 y allowOneOff=false; no aplicar todavía filtro por longitud del amplicón ensamblado. | Son parámetros explícitos de la versión instalada; las longitudes ensambladas reales aún no se conocen. OMEGA_C=0 corresponde al aprendizaje de errores y OMEGA_C=1e-40 a la inferencia final. | Confundir los parámetros de aprendizaje e inferencia o imponer un intervalo post-merge sin observar los datos. | Cualquier filtro posterior exigirá evidencia, configuración, validación y decisión específica, conservando las tablas sin filtrar. | Adoptada para piloto técnico |
 
-## Pendiente
+### Estructura del diseño, 2026-10-03
+
+Se fija en `config.analysis_design` que la unidad independiente es el lote;
+los tiempos son medidas repetidas y las extracciones/estratos son submuestras
+anidadas. La alternativa de contar cada run como réplica independiente se
+rechaza por pseudorreplicación. Se exportará el mapa estudio/lote/hora sin
+alterar abundancias y se conservará la identificación de cada submuestra para
+la agregación y sensibilidad posteriores. Esta decisión se basa en el diseño
+documentado en `reports/dataset_inventory.md`, no en resultados de abundancia.
+El piloto técnico no habilita inferencia biológica. Los moderadores asociados
+con estudio/región 16S se declararán no identificables mientras el diseño no
+permita separarlos; horas absolutas y tiempo relativo se conservan para evaluar
+la dependencia respecto del último tiempo observado de cada lote.
+
+Fuentes de DADA2: [tutorial oficial](https://benjjneb.github.io/dada2/tutorial.html)
+y [manual de referencia](https://www.bioconductor.org/packages/release/bioc/manuals/dada2/man/dada2.pdf).
+Los valores por defecto se contrastaron con las funciones de DADA2 1.34.0
+instaladas; la versión de referencia en línea puede ser posterior.
+
+### Identificadores pareados SRA, 2026-10-03
+
+El primer intento de `filterAndTrim` detectó que la identificación automática
+no reconocía encabezados como `@SRR7899687.1 1/1` y `@SRR7899687.1 1/2`.
+Se configura `id.field=1` e `id.sep="\\s"`: el primer token contiene el
+identificador compartido de la pareja. `matchIDs=true` se mantiene y comprueba
+la correspondencia real; no se permite desactivarlo para sortear el error.
+Esto corrige parsing del depósito, sin modificar filtros, umbrales ni lecturas.
+El caso se incorpora a las pruebas con encabezados sintéticos del mismo formato.
+
+### Revisión completa del inventario, 2026-10-06
+
+La revisión pública iniciada el 4 de octubre y terminada el 7 de octubre UTC
+(6 de octubre en Colombia) configura los 34 candidatos: cuatro incluidos,
+siete pendientes y 23 excluidos. Las fuentes y alternativas por candidato
+quedan en `config/datasets.yaml` y `reports/inventory_review_2026-10-04.md`.
+
+- Se incluyen los controles espontáneos F1/F2 de PRJEB40850 (12 runs, V4,
+  0–92 h) y F01/F02 de PRJEB57747 (16 runs, 16S completo, 0–120 h). Los
+  métodos primarios y archivos depositados con marcador explícito permiten
+  distinguirlos de inoculados, ITS y WGS. Se rechazó seleccionar por tamaño
+  de archivo o por la etiqueta genérica AMPLICON. Los primers proceden de los
+  protocolos citados y se preservan con sus variantes exactas en configuración.
+- PRJEB57747 requiere procesamiento PacBio específico; su inclusión científica
+  no autoriza reutilizar parámetros Illumina. Los experimentos Costa Rica
+  2017/2019 se mantienen separados y se evaluará dependencia por sitio/laboratorio.
+- Las decisiones pendientes iniciales de PRJNA865318 y PRJNA1104253 quedan
+  sustituidas por exclusión: sólo hay día 1 bacteriano verificable en el primero;
+  los amplicones del segundo pertenecen a ensayos controlados y el componente
+  natural es WGS. Se rechazó inferir FASTQ de filas de muestreo planificadas.
+- PRJEB53853 permanece pendiente: se resolvieron tratamientos F1/F2, pero no la
+  separación bacteriana/fúngica de bibliotecas mixtas. PRJNA420946 conserva los
+  registros a 144 h, incompatibles con las 120 h de la publicación; no se
+  recodifican ni se excluyen para obtener concordancia. Los otros cinco
+  pendientes conservan el requisito preciso de evidencia en el informe.
+- Un lote desconocido queda vacío; `study_id` ya no lo sustituye. Se preservan
+  horas absolutas conocidas sin fabricar duración, tiempo relativo o etapa.
+  Los valores `unknown`/`not reported` se trasladan a notas y el campo observado
+  queda vacío. Esta corrección evita crear réplicas o covariables sin evidencia.
+
+Las reglas se aplican a 2.357 runs y conservan 182 incluidos, 93 pendientes y
+2.082 excluidos, con 12 lotes entre los incluidos. La selección prerregistrada
+mantiene PRJNA492720 y el mismo manifest de seis runs. Se validan las tablas,
+selectores de marcador/plataforma, ausencia de lotes inventados y conservación
+de los tiempos en conflicto antes de consolidar el cambio metodológico.
+
+## Decisiones aún abiertas
 
 - Versión de SILVA y método definitivo de clasificación.
-- Umbrales de QC derivados del piloto.
+- Validar los parámetros iniciales de DADA2 con los diagnósticos del piloto antes de escalar.
 - Tratamiento de ceros y pseudoconteo para CLR.
 - Método definitivo de abundancia diferencial según el diseño disponible.
 - Selección de licencia del repositorio.

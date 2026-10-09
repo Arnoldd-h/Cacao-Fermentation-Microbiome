@@ -16,6 +16,8 @@ from cacao_inventory.qc import (  # noqa: E402
     cutadapt_detection_counts,
     read_direction,
     validate_iupac_sequence,
+    cutadapt_command,
+    validate_cutadapt_parameters,
 )
 
 
@@ -176,6 +178,26 @@ class CutadaptSummaryTests(unittest.TestCase):
             "forward_minimum_overlap": 4,
             "reverse_minimum_overlap": 5,
         }
+        self.report["input"].update({
+            "path1": "data/raw/study/SRR1/SRR1_1.fastq.gz",
+            "path2": "data/raw/study/SRR1/SRR1_2.fastq.gz",
+        })
+        self.outputs = {
+            "R1": "data/interim/study/pilot/SRR1/SRR1_1.fastq.gz",
+            "R2": "data/interim/study/pilot/SRR1/SRR1_2.fastq.gz",
+        }
+        self.report["command_line_arguments"] = cutadapt_command(
+            self.manifest, self.primers, self.parameters, self.outputs, "report.json"
+        )[1:]
+        for role, key, sequence, count in (
+            ("forward", "adapters_read1", "ACGT", 0),
+            ("reverse", "adapters_read2", "ACGTA", 1),
+        ):
+            self.report[key] = [{
+                "name": role, "total_matches": count,
+                "five_prime_end": {"sequence": sequence, "indels": False,
+                                   "type": "regular_five_prime", "error_rate": 0.1},
+            }]
 
     def test_paired_report_builds_one_row_per_direction(self) -> None:
         rows = build_cutadapt_summary_rows(
@@ -193,6 +215,37 @@ class CutadaptSummaryTests(unittest.TestCase):
             build_cutadapt_summary_rows(
                 self.report, self.manifest, self.outputs, self.primers, self.parameters
             )
+
+    def test_configured_method_flags_cannot_be_silently_ignored(self) -> None:
+        for flag in ("allow_indels", "discard_untrimmed", "quality_trimming"):
+            parameters = dict(self.parameters, **{flag: True})
+            with self.subTest(flag=flag), self.assertRaisesRegex(ValueError, flag):
+                validate_cutadapt_parameters(self.primers, parameters)
+
+    def test_report_from_another_run_is_rejected(self) -> None:
+        self.report["input"]["path1"] = "data/raw/study/SRR2/SRR2_1.fastq.gz"
+        with self.assertRaisesRegex(ValueError, "input path disagrees"):
+            build_cutadapt_summary_rows(self.report, self.manifest, self.outputs, self.primers, self.parameters)
+
+    def test_stale_report_cannot_acquire_new_configured_error_rate(self) -> None:
+        parameters = dict(self.parameters, error_rate=0.05)
+        with self.assertRaisesRegex(ValueError, "error rate/cores disagrees"):
+            build_cutadapt_summary_rows(self.report, self.manifest, self.outputs, self.primers, parameters)
+
+    def test_changed_reported_primer_is_rejected(self) -> None:
+        self.report["adapters_read2"][0]["five_prime_end"]["sequence"] = "TTTTT"
+        with self.assertRaisesRegex(ValueError, "reported primer/parameters disagree"):
+            build_cutadapt_summary_rows(self.report, self.manifest, self.outputs, self.primers, self.parameters)
+
+    def test_unexpected_quality_command_is_rejected(self) -> None:
+        self.report["command_line_arguments"][:0] = ["-q", "20"]
+        with self.assertRaisesRegex(ValueError, "Unsupported Cutadapt command"):
+            build_cutadapt_summary_rows(self.report, self.manifest, self.outputs, self.primers, self.parameters)
+
+    def test_output_path_must_match_manifest(self) -> None:
+        outputs = dict(self.outputs, R2="data/interim/other/pilot/SRR1/SRR1_2.fastq.gz")
+        with self.assertRaisesRegex(ValueError, "output path disagrees"):
+            build_cutadapt_summary_rows(self.report, self.manifest, outputs, self.primers, self.parameters)
 
 
 class PilotCutadaptOutputTests(unittest.TestCase):

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import filecmp
 import os
 import tempfile
 from pathlib import Path
@@ -11,7 +12,7 @@ from .schema import TABLE_SCHEMAS
 
 
 def write_tsv_atomic(path: str | Path, rows: list[dict[str, str]], columns: list[str]) -> None:
-    """Write a TSV atomically so interrupted runs do not leave partial metadata."""
+    """Write a TSV atomically, preserving the destination when bytes are unchanged."""
 
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
@@ -23,7 +24,10 @@ def write_tsv_atomic(path: str | Path, rows: list[dict[str, str]], columns: list
             writer = csv.DictWriter(handle, fieldnames=columns, delimiter="\t", lineterminator="\n")
             writer.writeheader()
             writer.writerows(rows)
-        os.replace(temporary_name, destination)
+        if destination.exists() and filecmp.cmp(temporary_name, destination, shallow=False):
+            os.unlink(temporary_name)
+        else:
+            os.replace(temporary_name, destination)
     except Exception:
         try:
             os.unlink(temporary_name)

@@ -1,0 +1,31 @@
+record_type: historical_failure_summary
+reproducibility_status: partial
+status: failed
+started_at_utc: '2026-10-04T02:01:20Z'
+finished_at_utc: '2026-10-04T02:01:31Z'
+source_git_commit: dd74b744f200beec651f255c8c116d1a78c93d28
+source_git_dirty: true
+study_id: pacheco_montealegre_2020_colombia
+bioproject: PRJNA492720
+manifest_sample_count: 6
+failed_stage: paired_filtering
+failure_message: "Couldn't automatically detect the sequence identifier field in the fastq id string."
+warning: all scheduled cores encountered errors in user code
+outputs_certified: false
+cause: >-
+  matchIDs=TRUE could not autodetect the shared SRA read identifier from paired
+  headers such as '@SRR7899687.1 1/1' and '@SRR7899687.1 1/2'.
+correction:
+  configuration_commit: eafadd7aee48ad4ce367d8a4777a6d31e16792a1
+  filter_id_field: 1
+  filter_id_sep: '\s'
+  match_ids_retained: true
+  scientific_thresholds_changed: false
+  regression_test: tests/dada2/test_filter.R
+evidence_scope: >-
+  This concise historical record was reconstructed from the original failed
+  run_provenance.yaml and the error observed in stderr before the retry.
+  The failed attempt's separate checksum table, software table, configuration
+  snapshot and complete log were not archived before the output directory was
+  reused. This is an audit of the failure and correction, not a complete
+  reproducibility bundle for the failed attempt.

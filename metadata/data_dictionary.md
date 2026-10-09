@@ -17,6 +17,14 @@ Contiene todos los runs públicos recuperados desde ENA, incluidos WGS, ITS,
 controles y runs excluidos. Registra estrategia, selección, layout, instrumento,
 conteos, bytes FASTQ estimados, enlaces, checksums y decisión auditable.
 
+`fastq_ftp`, `fastq_md5` y `fastq_bytes` describen los FASTQ distribuidos por
+ENA. `submitted_ftp` y `submitted_format` conservan, sin reinterpretación, los
+archivos y formatos enviados por los depositantes. Sus nombres pueden aportar
+evidencia explícita de marcador, pero no prueban por sí solos ausencia de
+procesamiento previo. Un archivo enviado llamado `16S.fastq.gz` no implica dos
+lecturas: el layout se conserva desde `library_layout`; en PacBio puede ser
+`SINGLE`. La revisión no descarga ninguno de estos archivos.
+
 ## `samples.tsv`
 
 Contiene únicamente runs que cumplen el selector 16S de cada candidato incluido
@@ -31,6 +39,15 @@ o pendiente. Las columnas mínimas son:
 Se añaden `fermentation_batch`, `sampling_stratum`, `time_source`,
 `analysis_include` y `exclusion_reason` para trazabilidad. Los límites temporales
 son: early `<= 0.33`, mid `> 0.33` y `<= 0.66`, late `> 0.66` y `<= 1.0`.
+
+`fermentation_batch` sólo se construye cuando todos los componentes declarados
+en `duration_group_fields` están presentes en el identificador publicado. Si
+el lote es desconocido queda vacío; `study_id` no sustituye un lote ausente.
+Un tiempo absoluto conocido puede conservarse sin duración, tiempo relativo
+ni etapa cuando el final de fermentación no se ha verificado. Los textos
+anteriores `unknown`/`not reported` se preservan en las notas de configuración,
+sin usarlos como valores observados. El año de publicación no se deduce del
+año de depósito en SRA/ENA.
 
 ## `exclusion_log.tsv`
 

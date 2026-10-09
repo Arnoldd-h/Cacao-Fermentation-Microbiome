@@ -51,16 +51,26 @@ MAMBA_CHANNEL_PRIORITY=strict micromamba env update \
 
 ## Usar sin activación interactiva
 
+El ejecutor del proyecto descubre el prefijo registrado de Micromamba y utiliza
+`--prefix`. Así funciona aunque el entorno esté instalado fuera del
+`MAMBA_ROOT_PREFIX` de la sesión actual. Desde la raíz del repositorio en WSL:
+
 ```bash
-micromamba run --name cacao-microbiome fastqc --version
-micromamba run --name cacao-microbiome snakemake --version
-micromamba run --name cacao-microbiome Rscript -e 'packageVersion("dada2")'
+python3 scripts/environment/run_in_environment.py fastqc --version
+python3 scripts/environment/run_in_environment.py snakemake --version
+python3 scripts/environment/run_in_environment.py Rscript -e 'packageVersion("dada2")'
 ```
+
+Si hay más de un entorno con el mismo nombre, seleccionar el prefijo existente
+mediante `CACAO_ENV_PREFIX` o `--prefix /ruta/local/al/entorno` antes del comando.
+La ruta es configuración local: no se incorpora al código ni al repositorio.
+El ejecutor falla ante un entorno ausente o ambiguo y no instala dependencias.
+El uso de prefijos sigue la [guía oficial de Micromamba](https://mamba.readthedocs.io/en/latest/user_guide/micromamba.html).
 
 La comprobación reproducible completa se ejecuta dentro del entorno:
 
 ```bash
-micromamba run --name cacao-microbiome \
+python3 scripts/environment/run_in_environment.py \
   python scripts/environment/verify_environment.py
 ```
 
@@ -71,3 +81,8 @@ críticas— y actualiza
 La ubicación física del entorno es una configuración local y no debe
 versionarse. Las versiones resueltas y las pruebas de carga se registran en los
 artefactos pequeños de `environment/`.
+
+`.gitattributes` normaliza el tratamiento de texto entre Git de Windows y Git
+de WSL. Evita que las diferencias locales de `core.autocrlf` aparezcan como
+cambios científicos en el registro de procedencia. Los hashes de ejecución
+siguen calculándose sobre los bytes reales de cada archivo de entrada.

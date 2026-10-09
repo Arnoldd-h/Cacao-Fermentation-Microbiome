@@ -2,10 +2,59 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## [Unreleased]
+## [v0.3.0-pilot-dada2] - 2026-10-08
+
+- Ejecución integrada sobre `6221445`: seis muestras, 165.034 pares filtrados,
+  160.649 ensamblados, 156.561 sin quimeras (88,55 %) y 93 ASVs de 237–243 nt.
+- Ambos modelos de error convergen en cinco rondas; doce warnings gráficos
+  por frecuencias cero permanecen registrados y los diagnósticos se revisaron.
+- 18 entradas y 18 artefactos pasan validación independiente; cuatro tablas
+  principales reproducen exactamente la primera corrida por SHA-256.
+- 91 pruebas Python, contratos R y regresión SRA aprobados. El target `all`
+  termina y el siguiente dry-run queda sin trabajos pendientes.
+- Resultados pequeños, diagnósticos PDF/SVG/PNG y procedencia versionados;
+  FASTQ filtrados y objetos RDS permanecen fuera de Git. Taxonomía pendiente.
+
+## [v0.2.0-pilot-qc] - 2026-10-08
+
+- QC reproducido con datos crudos inmutables; los 24 FASTQ raw/interim
+  coinciden byte a byte con los anteriores. Cutadapt conserva 176.798 pares.
+- Cinco registros de procedencia renovados sobre el código `20feeea`;
+  222 comprobaciones de bytes y SHA-256 pasan para código, configuración,
+  entradas y salidas. El dry-run QC termina sin trabajos pendientes.
+- Corregida la reevaluación de consumidores/agregados del checkpoint;
+  regresión que falla con el código anterior y pasa con el actual.
+
+## [v0.1.0-dataset-inventory] - 2026-10-06
+
+- 34 BioProjects revisados: cuatro incluidos, siete pendientes y 23 excluidos.
+- 2.357 runs cribados, 182 incluidos, 12 lotes y 95 observaciones lote-tiempo;
+  evidencia, decisiones y requisitos pendientes auditables.
+- Metadata de archivos enviados distingue 16S/ITS y tecnologías; se preservan
+  campos desconocidos y tiempos en conflicto. Piloto y manifest permanecen iguales.
+
+## Desarrollo inicial
 
 ### Added
 
+- Pipeline DADA2 por estudio para el piloto Illumina: filtros pareados,
+  aprendizaje de errores, inferencia, ensamblaje, quimeras y diagnósticos.
+- Validación independiente de conservación de lecturas, ASVs, FASTA,
+  distribución de longitudes y checksums de entradas y salidas de DADA2.
+- Pruebas R de contratos y regresión de identificadores SRA; target
+  `pilot_dada2` integrado en el workflow principal.
+- Workflow del piloto reconstruible mediante checkpoint del manifest y reglas
+  productoras de FASTQ protegidos; pruebas de arranque sin manifest ni datos.
+- Validación de parámetros y rutas realmente ejecutados por Cutadapt, selección
+  de primers por BioProject y procedencia de todos los resúmenes QC.
+- Jerarquía reproducible run/muestra/lote/tiempo que conserva las submuestras
+  anidadas y evita contarlas como fermentaciones independientes.
+- Registros de procedencia con fecha, commit, estado del checkout, parámetros
+  y checksums de entradas, configuración y salidas.
+- Ejecutor portable de Micromamba que descubre el prefijo registrado o acepta
+  una selección local explícita y rechaza instalaciones ausentes o ambiguas.
+- Parámetros iniciales de DADA2 por estudio fijados antes de la ejecución del
+  piloto, con semilla, filtros, aprendizaje, merging y quimeras explícitos.
 - Política persistente de control de versiones y trazabilidad científica.
 - Estado inicial del proyecto y registro de decisiones metodológicas.
 - Reglas de exclusión para datos ómicos pesados, credenciales y artefactos locales.
@@ -37,6 +86,18 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Changed
 
+- Los consumidores y agregados QC/DADA2 resuelven directamente el checkpoint
+  del manifest; desaparecen razones de actualización obsoletas que repetían
+  resúmenes pese a descartar sus productores. Se prueba estabilidad del grafo.
+- Revisión de los 34 BioProjects: cuatro incluidos (182 runs), siete pendientes
+  (93 runs candidatos) y 23 excluidos. Se incorporan los controles espontáneos
+  de Costa Rica 2017/2019, conservando PacBio separado del pipeline Illumina.
+- PRJNA865318 y PRJNA1104253 pasan de pendientes a excluidos por evidencia
+  primaria; cada pendiente restante tiene un requisito de resolución explícito.
+- Metadata de archivos enviados permite separar 16S/ITS sin descargar lecturas;
+  lotes, duración y campos no verificados permanecen vacíos en vez de inferirse.
+- La reescritura idéntica de tablas conserva su archivo y el workflow compara
+  el contenido SHA-256 del manifest, evitando repetir QC por un cambio de fecha.
 - Nombre y descripción inicial del proyecto actualizados a
   **Cacao Fermentation Microbiome**.
 - `PRJNA492720` adoptado como piloto con 94 corridas 16S V4 compatibles con la

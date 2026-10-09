@@ -1,0 +1,223 @@
+{
+  "command": [
+    "/home/core_i7/.local/share/micromamba/envs/cacao-microbiome/bin/python",
+    "scripts/qc/detect_primers.py",
+    "--output",
+    "results/qc/pilot/primer_detection.tsv"
+  ],
+  "config": [
+    {
+      "bytes": 4901,
+      "path": "config/config.yaml",
+      "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+    }
+  ],
+  "created_at_utc": "2026-10-09T03:00:23.984761+00:00",
+  "git_commit": "20feeea7f9ed2f72f66526af99badc0f1c003a11",
+  "git_dirty": true,
+  "inputs": [
+    {
+      "bytes": 3982668,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899687/SRR7899687_1.fastq.gz",
+      "sha256": "b64d76d0c7172a5f5f7e23fcb0db445d1216f0c92cbd7718c18d67feb04142fe"
+    },
+    {
+      "bytes": 4104998,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899687/SRR7899687_2.fastq.gz",
+      "sha256": "f31c80d58c10660428e3b903d10ee879400b4a22fb23911f2184911c9ea9b7cd"
+    },
+    {
+      "bytes": 1845520,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899728/SRR7899728_1.fastq.gz",
+      "sha256": "554c2fd74d822091ac3a1a5d91f6a9f6738b15ad5e79c90baf8e72e5a727b94a"
+    },
+    {
+      "bytes": 1932166,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899728/SRR7899728_2.fastq.gz",
+      "sha256": "868169573f880dfad906c5f6bfb88b7bec13e51d17523018c48d646c15a11494"
+    },
+    {
+      "bytes": 2018517,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899800/SRR7899800_1.fastq.gz",
+      "sha256": "0de311335b2956638ca237831920e0fdff49ca078a5392fe6ab2e61e8b773945"
+    },
+    {
+      "bytes": 2913413,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899800/SRR7899800_2.fastq.gz",
+      "sha256": "c44c16ca015ea048c54fb7d80116102ca5f7eec48d043262304ddc8164b504c6"
+    },
+    {
+      "bytes": 1538423,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899814/SRR7899814_1.fastq.gz",
+      "sha256": "dde54e2e5730f5826b7c0de2e1dc1b380e7c9adf921203b676bce92ea3c738da"
+    },
+    {
+      "bytes": 1706593,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899814/SRR7899814_2.fastq.gz",
+      "sha256": "bef412941762ca09dbffdf8ddd0df92a26ffaae45102ca7730cce890c0c89a01"
+    },
+    {
+      "bytes": 1159147,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899884/SRR7899884_1.fastq.gz",
+      "sha256": "7776a1b45ebd28f91c5f313bf2432b847a4b3d618de0eae89f50962bf5db14ec"
+    },
+    {
+      "bytes": 1716729,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899884/SRR7899884_2.fastq.gz",
+      "sha256": "d8f37f38fe60d4911687a77c811254f0a485c26ed6c68f8f7095b708c6aaecbb"
+    },
+    {
+      "bytes": 895400,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899911/SRR7899911_1.fastq.gz",
+      "sha256": "a868eda8c254bd7ca5656f1ae49178679ba3d3457b1975b7c646dce9feecf7d9"
+    },
+    {
+      "bytes": 1341113,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899911/SRR7899911_2.fastq.gz",
+      "sha256": "362b3e296873d0763f53b51f1adff77719d52aba109d09491d32cfc70fd3f747"
+    },
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 3423,
+      "path": "metadata/pilot_manifest.tsv",
+      "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
+    },
+    {
+      "bytes": 101,
+      "path": "python/cacao_inventory/__init__.py",
+      "sha256": "eeb1bc857ffd5b379336ada6c100c6b1e6bfdd6b4595300af2d8217e8c9ae977"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 4521,
+      "path": "python/cacao_inventory/design.py",
+      "sha256": "0759a1838ba1fe9187642c5cadc9f429ca4703d3222539a73df95d77f828d58d"
+    },
+    {
+      "bytes": 5411,
+      "path": "python/cacao_inventory/discovery.py",
+      "sha256": "28c4b1bdb4f59f1f63a12add9ad8f6d9997cb569bc10d3103e65a3f7f15f065c"
+    },
+    {
+      "bytes": 4827,
+      "path": "python/cacao_inventory/download.py",
+      "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+    },
+    {
+      "bytes": 2107,
+      "path": "python/cacao_inventory/fastq.py",
+      "sha256": "523e80937c4f642a980662cfb0d6593cc6de52f5d33fcac3b476e7a7e857f1aa"
+    },
+    {
+      "bytes": 19454,
+      "path": "python/cacao_inventory/inventory.py",
+      "sha256": "c109138aab986ff5b2be7779679a0de50a98482799168e8f2bbe7dcd54096f5b"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 5958,
+      "path": "python/cacao_inventory/pilot.py",
+      "sha256": "f6ff87e37f2cb1c82d7ba55c4502805743e797011ef6c64d911d55be01365f24"
+    },
+    {
+      "bytes": 3245,
+      "path": "python/cacao_inventory/pilot_workflow.py",
+      "sha256": "e07a0f12cd78538d76893e4e3e0e7ac47457c3e16a36841ea5a6a2feb0d2b329"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 24860,
+      "path": "python/cacao_inventory/qc.py",
+      "sha256": "4bcde25fe579b655a206beaa57398cc360bde8b658771d538cdb3b6f3ea7d9db"
+    },
+    {
+      "bytes": 6504,
+      "path": "python/cacao_inventory/schema.py",
+      "sha256": "8a63c6afcaf9088640e7ad9d29d850e98316bd0d58e42d6579a469ba632ef9e1"
+    },
+    {
+      "bytes": 6276,
+      "path": "python/cacao_inventory/selection.py",
+      "sha256": "6007f00bcf3a73d4a3538533ee5b533acf834e2d1419225aa219b06719642b72"
+    },
+    {
+      "bytes": 6219,
+      "path": "python/cacao_inventory/sources.py",
+      "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
+    },
+    {
+      "bytes": 6563,
+      "path": "python/cacao_inventory/validation.py",
+      "sha256": "40862e9ef8f9be0ddb24c52be0ad62a44f0b62a0f830d4b15d50a238881b8362"
+    },
+    {
+      "bytes": 9337,
+      "path": "scripts/qc/detect_primers.py",
+      "sha256": "3cdde687a6a47457b9148a418e4ca17077c62224dd2db459b66617cb9236ab82"
+    },
+    {
+      "bytes": 2476,
+      "path": "scripts/qc/download_pilot_read.py",
+      "sha256": "deabebb4ed265f36aa4fcd30cb5be7e99832bc0cba9287b0bf919ea90b8b5005"
+    },
+    {
+      "bytes": 4017,
+      "path": "scripts/qc/summarize_cutadapt.py",
+      "sha256": "37f948ba2fa17f3003b1a7f2f800af9365455a181ffd4f434e9af787b7a5db03"
+    },
+    {
+      "bytes": 2361,
+      "path": "scripts/qc/summarize_fastqc.py",
+      "sha256": "2dbfc093872333b3696841d63e95c4a82d8444d4f38e683efcbe04f115cde4fa"
+    },
+    {
+      "bytes": 2607,
+      "path": "scripts/qc/summarize_trimmed_fastqc.py",
+      "sha256": "63463ad59ae68b40ca98cedd59489cf9d2f20eade61d5c6e17ce15e6f1773a9b"
+    },
+    {
+      "bytes": 2300,
+      "path": "scripts/qc/trim_primers.py",
+      "sha256": "deef9f98ffc6b4eca65609bb49f39f3453054a138f16a2a41de29df8486bd570"
+    },
+    {
+      "bytes": 5215,
+      "path": "workflow/Snakefile",
+      "sha256": "c7de0fcfccf262aa66b65bf909ff37ebe33564f564a496ee3b765afb72adec6c"
+    },
+    {
+      "bytes": 12186,
+      "path": "workflow/rules/pilot_qc.smk",
+      "sha256": "99dc799bb30f28eed874db52cc150ca0e752754ef8a1d6cd109e3b19d3823f6f"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 25066,
+      "path": "results/qc/pilot/primer_detection.tsv",
+      "sha256": "8792ec9ee6b3c348f470b74b5c78210eac7b6d8c534765701d4a96ae56444349"
+    }
+  ],
+  "parameters": {},
+  "schema_version": "1.0.0",
+  "software_versions": {
+    "Python": "3.12.13",
+    "cutadapt": "5.0"
+  }
+}

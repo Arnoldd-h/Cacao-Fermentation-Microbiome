@@ -55,6 +55,20 @@ El inventario se reconstruye sin descargar FASTQ. Toda decisión se conserva en
 múltiples fermentaciones, cada combinación de ubicación/temporada/lote se
 conserva como `fermentation_batch`.
 
+La unidad independiente es el lote de fermentación; el tiempo es una medida
+repetida dentro del lote. Extracciones y estratos de una misma combinación
+estudio/lote/hora se conservan como submuestras, sin contarlas como fermentaciones
+independientes. `results/tables/analysis_units.tsv` registra esta jerarquía y
+`analysis_design.tsv` resume sus tamaños antes de cualquier modelo. La futura
+agregación de abundancias dentro de cada observación se implementará y validará
+por estudio; estas tablas no suman ni modifican conteos ASV.
+
+La rebanada técnica de seis runs no se usará para contrastar sucesión, estimar
+efectos temporales ni construir un core. En los dos estudios iniciales país,
+estudio y región 16S están asociados; no se atribuirá un efecto independiente a
+geografía o tecnología sin un diseño que lo identifique. La ampliación del
+inventario obliga a reevaluar esa identificabilidad, no la garantiza por sí sola.
+
 Se mantienen `fermentation_hours` y `fermentation_duration_hours`. El tiempo
 relativo se calcula únicamente cuando ambos son conocidos y la duración es
 positiva:
@@ -67,6 +81,11 @@ La clasificación inicial usa límites configurables: `early` hasta 0.33
 inclusive, `mid` mayor que 0.33 y hasta 0.66 inclusive, y `late` mayor que 0.66.
 El análisis conservará además `relative_time` continuo y evaluará sensibilidad a
 los límites.
+
+Cuando la duración procede del último tiempo observado, se registra esa fuente
+y se contrasta el análisis de tiempo relativo con horas absolutas. No se supone
+que el último muestreo representa el mismo estado biológico final en todos los
+lotes.
 
 ## Procesamiento previsto
 
