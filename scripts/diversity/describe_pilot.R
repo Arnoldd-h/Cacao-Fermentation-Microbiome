@@ -95,7 +95,7 @@ withCallingHandlers({
   }
   for (extension in c("pdf", "svg", "png")) {
     open_figure("alpha_diversity", extension)
-    graphics::par(mfrow = c(2, 2), mar = c(6, 6, 3, 1), oma = c(0, 0, 2, 0))
+    graphics::par(mfrow = c(2, 2), mar = c(6, 6, 3, 1), mgp = c(4.5, 1, 0), oma = c(0, 0, 2, 0))
     metric_titles <- c(library_reads = "Retained reads", observed_asvs = "Observed ASVs",
       shannon_effective = "Shannon effective diversity", inverse_simpson = "Inverse Simpson")
     metric_units <- c(library_reads = "Reads", observed_asvs = "ASVs",
@@ -110,14 +110,14 @@ withCallingHandlers({
     graphics::mtext("Pilot descriptive diversity - unrarefied; samples remain separate", outer = TRUE)
     grDevices::dev.off()
     open_figure("aitchison_pca", extension)
-    graphics::par(mfrow = c(1, length(constants)), mar = c(4, 4, 4, 2))
+    graphics::par(mfrow = c(1, length(constants)), mar = c(4, 4, 5, 2))
     for (i in seq_along(constants)) {
       xy <- fits[[i]]$x[, 1:2, drop = FALSE]
       fractions <- 100 * variance_tables[[i]]$explained_fraction[1:2]
       padded <- function(value) { span <- max(diff(range(value)), 1); range(value) + c(-1, 1) * 0.25 * span }
       graphics::plot(xy, xlim = padded(xy[, 1]), ylim = padded(xy[, 2]), pch = 19, col = colors, asp = 1,
         xlab = sprintf("PC1 (%.1f%%)", fractions[1]), ylab = sprintf("PC2 (%.1f%%)", fractions[2]),
-        main = paste("CLR PCA\nCount pseudocount =", constants[i]), las = 1)
+        main = paste("CLR PCA\nCount pseudocount =", constants[i]), cex.main = 1, las = 1)
       graphics::text(xy, labels = rows$sample_id, pos = 3, cex = 0.6)
       graphics::legend("bottomleft", legend = names(config$figures$stage_colors),
         col = unlist(config$figures$stage_colors), pch = 19, bty = "n", cex = 0.7)

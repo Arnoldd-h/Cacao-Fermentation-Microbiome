@@ -107,3 +107,10 @@ antes de lanzar el workflow; el estado inicial del ejecutor registra sólo
 las salidas previas retiradas por Snakemake para su regeneración. La
 procedencia final conserva ese estado sin ocultarlo y vuelve a validar los
 21 hashes de entrada y los 15 artefactos.
+
+Al incorporar diversidad, el cambio del workflow principal obliga a renovar
+su procedencia. La ejecución del 2026-10-09 sobre `5221b0f` vuelve a validar
+21 entradas y 15 artefactos; las siete tablas científicas son idénticas por
+SHA-256 a las del hito taxonómico. Las tablas originales siguen conservando
+las cinco ASVs de orgánulos; su separación sólo afecta a la tabla derivada
+descrita en [`diversity_methods.md`](diversity_methods.md).

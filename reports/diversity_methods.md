@@ -93,3 +93,32 @@ piloto técnico. El procesamiento completo por estudio, tratamiento de
 submuestras/profundidad y diagnóstico de dispersión siguen siendo requisitos
 antes de interpretar sucesión. Los fixtures sintéticos sólo prueban contratos
 y fórmulas; no aparecen como resultados del estudio.
+
+## Resultados observados y validación
+
+La ejecución del 2026-10-09 sobre `5221b0f` conserva seis muestras y separa
+cinco ASVs etiquetadas como orgánulos, con 32.868 lecturas. La tabla derivada
+contiene 88 ASVs y 123.693 lecturas, sin exclusiones de muestras ni Kingdom
+desconocido. La separación valida 21 entradas y nueve artefactos. Las siete
+tablas taxonómicas reproducen por SHA-256 las del hito anterior.
+
+La diversidad valida 20 entradas y 17 artefactos. Profundidades: 9.250–36.508
+lecturas; riqueza observada: 2–46 ASVs; diversidad efectiva de Shannon:
+1,013–6,072. PC1+PC2 explican 68,92 % con pseudoconteo 1 y 68,87 % con 0,5.
+Se exportan las cinco componentes para verificar las distancias completas;
+estas fracciones no miden evidencia de sucesión ni significación.
+
+Las versiones son R 4.4.3, vegan 2.6.8 y yaml 2.3.10, sin warnings R. Los
+ajustes de presentación reservan espacio para etiquetas y títulos y usan
+la misma escala geométrica por unidad en los dos ejes PCA. Las seis tablas
+científicas y la tabla de versiones reproducen sus hashes; el commit final
+de ejecución se consulta en `results/diversity/pilot/provenance.json`.
+La suite completa aprobó 125 pruebas y las 12 pruebas específicas de esta
+etapa se repitieron tras los ajustes de figuras.
+
+El estado Git inicial se conserva íntegro en cada procedencia. Snakemake
+retira salidas previas antes de regenerarlas; las etapas posteriores observan
+también resultados recién producidos y aún sin commit. `git_dirty=true` no se
+oculta: los commits de código y los hashes de entradas/salidas permiten
+reconstruir qué se ejecutó. No había cambios sin commit de código o
+configuración al lanzar las ejecuciones científicas.

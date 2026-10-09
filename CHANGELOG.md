@@ -2,7 +2,7 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## En desarrollo - 2026-10-09
+## [v0.5.0-diversity] - 2026-10-09
 
 - Política de separación de orgánulos y no bacterias en tablas derivadas,
   conservando originales, desconocidos y un registro por ASV/muestra.
@@ -16,6 +16,16 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   indebidos de conteos/metadata, muestras vacías y sensibilidad de configuración.
 - Figuras con unidades legibles, margen suficiente para profundidad y escala
   geométrica igual en los dos ejes PCA; los cálculos tabulares se preservan.
+- Ejecución real: 88 ASVs y 123.693 lecturas tras separar cinco ASVs de
+  orgánulos (32.868 lecturas), conservando las seis muestras y tablas originales.
+- Separación valida 21 entradas/nueve artefactos; diversidad, 20/17, con
+  índices alfa, distancias y componentes PCA comprobados independientemente.
+- Riqueza observada de 2–46 ASVs y profundidad de 9.250–36.508 lecturas,
+  sin rarefacción, pruebas entre etapas ni extrapolación al estudio completo.
+- Taxonomía regenerada sobre `5221b0f`: siete tablas científicas idénticas
+  por SHA-256 al hito anterior. Figuras alfa y PCA en PDF/SVG/PNG de 300 dpi.
+- 125 pruebas Python aprobadas, incluidas fórmulas R, conservación y
+  regresiones del workflow; no se añaden dependencias.
 
 ## [v0.4.0-taxonomy] - 2026-10-09
 

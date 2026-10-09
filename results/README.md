@@ -1,9 +1,10 @@
 # Resultados
 
-Los outputs actuales se organizan en `qc/`, `tables/`, `dada2/` y `taxonomy/`.
+Los outputs actuales se organizan en `qc/`, `tables/`, `dada2/`, `taxonomy/`,
+`filtering/` y `diversity/`.
 Se conservan tablas pequeñas, diagnósticos y procedencia; FASTQ e intermedios pesados
-quedan fuera de Git. Los resultados técnicos del piloto no incluyen todavía
-diversidad, inferencia temporal ni meta-análisis.
+quedan fuera de Git. Hay diversidad descriptiva del piloto; inferencia temporal
+y meta-análisis siguen pendientes.
 
 ## Inventario y diseño
 
@@ -93,8 +94,10 @@ La primera clasificación del 2026-10-09 sobre `d13c9eb`, con checkout limpio al
 consume las 93 ASVs y 156.561 lecturas originales de seis muestras. Utiliza
 SILVA NR99 138.2, R 4.4.3 y DADA2 1.34.0. El validador independiente confirma
 21 entradas y 15 artefactos, sin exclusiones ni warnings de clasificación.
-Las salidas finales proceden de una repetición sobre `4e7ce24` después de
-ajustar la leyenda; las siete tablas científicas son idénticas por SHA-256.
+Una repetición sobre `4e7ce24` ajustó la leyenda sin cambiar las siete tablas
+científicas. Las salidas actuales proceden de `5221b0f`: la incorporación de
+diversidad renueva la procedencia del workflow principal, y las siete tablas
+vuelven a ser idénticas por SHA-256 a las del hito anterior.
 El estado inicial registrado contiene únicamente las salidas previas que
 Snakemake retiró antes de regenerarlas; al iniciar no había cambios sin commit
 de código o entradas.
@@ -111,8 +114,9 @@ Con bootstrap 80, 64/93 ASVs tienen etiqueta de género, asociadas a
 99.481 lecturas (63,54 %); con 50 son 79/93 y 104.974 lecturas (67,05 %).
 Dos ASVs etiquetadas Chloroplast reúnen 32.719 lecturas; tres etiquetadas
 Mitochondria reúnen 149. Las cinco conservadas suman 32.868 (20,99 %).
-Aunque sus etiquetas Kingdom son Bacteria en SILVA, deben revisarse como
-orgánulos antes de diversidad. No se atribuye especie huésped ni contaminación.
+Aunque sus etiquetas Kingdom son Bacteria en SILVA, la etapa derivada siguiente
+las separa como orgánulos antes de diversidad. No se atribuye especie huésped
+ni contaminación.
 
 Las figuras `assignment_coverage.{pdf,svg,png}` proceden de esas tablas.
 `config_snapshot.yaml`, `input_checksums.json`, `provenance.json`,
@@ -120,3 +124,48 @@ Las figuras `assignment_coverage.{pdf,svg,png}` proceden de esas tablas.
 versiones y estado inicial de Git. `SUCCESS` y `validation.json` distinguen
 ejecución terminada de validación independiente. El método y las limitaciones
 están en [`reports/taxonomy_methods.md`](../reports/taxonomy_methods.md).
+
+## Separación bacteriana del piloto
+
+La ejecución sobre `5221b0f` aplica la política registrada en `f9132b5`:
+separación de etiquetas exactas de orgánulos y Kingdom conocido no bacteriano,
+sin filtros de abundancia, prevalencia ni etapa. En estos datos sólo se separan
+las cinco ASVs de orgánulos: 32.868/156.561 lecturas (20,99 %). Se conservan
+88 ASVs, 123.693 lecturas y las seis muestras; no hay Kingdom desconocido.
+El validador comprueba 21 entradas y nueve artefactos, además de cada celda
+retenida y su identidad, secuencia, taxonomía, metadata y balance de lecturas.
+
+`filtering/pilot/asv_filter_log.tsv` registra todas las ASVs y
+`sample_retention.tsv`, cada muestra. `summary.json`, configuración, hashes,
+procedencia, `SUCCESS` y `validation.json` completan la trazabilidad.
+Las cuatro tablas derivadas están en `data/processed/pilot/bacterial/`.
+
+## Diversidad descriptiva del piloto
+
+`diversity/pilot/alpha_diversity.tsv` conserva estudio, run, lote, hora,
+tiempo relativo, etapa y estrato junto a profundidad, riqueza, Shannon,
+Gini-Simpson, inverso de Simpson y diversidad efectiva de Shannon.
+Sin rarefacción, las profundidades van de 9.250 a 36.508 lecturas y la riqueza
+observada de 2 a 46 ASVs. La diversidad efectiva de Shannon va de 1,013 a 6,072;
+estos valores describen las bibliotecas observadas, no riqueza total ni
+un efecto temporal estimado.
+
+`clr_coordinates.tsv` y `aitchison_distances.tsv` incluyen pseudoconteos 1 y
+0,5 sobre los mismos conteos retenidos; `bray_curtis_distances.tsv` usa
+proporciones sin sustitución de ceros. `pca_scores.tsv` y `pca_variance.tsv`
+conservan cinco componentes por pseudoconteo. Las primeras dos explican
+68,92 % y 68,87 % de la variación, respectivamente; la geometría completa
+reproduce las distancias CLR. Las figuras alfa y PCA se exportan como
+PDF/SVG/PNG de 300 dpi, con muestras individuales y escala PCA igual en ambos
+ejes; no se unen puntos como trayectorias.
+
+R 4.4.3, vegan 2.6.8 y yaml 2.3.10 quedan registrados; no hay warnings R en
+esta etapa. El validador comprueba 20 entradas y 17 artefactos, fórmulas y
+geometría. `provenance.json` registra el commit de cada ejecución y sus hashes;
+los ajustes de presentación conservan las seis tablas científicas por SHA-256.
+La suite de 125 pruebas incluye comunidades sintéticas de composición conocida;
+los fixtures no son resultados del estudio.
+
+El piloto contiene seis runs de cuatro lotes con distintos estratos y tiempos.
+No se calculan PERMANOVA, pruebas entre etapas, abundancia diferencial ni
+meta-análisis. Método y límites: [`reports/diversity_methods.md`](../reports/diversity_methods.md).
