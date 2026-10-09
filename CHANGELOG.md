@@ -19,6 +19,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   directorio temporal cuyo nombre contiene espacios.
 - Enlace directo del archivo oficial de Zenodo para reanudar descargas,
   conservando el mismo DOI, versión, bytes y MD5 de la referencia fijada.
+- Validación de hashes independiente del orden de registros serializados;
+  las rutas relativas/absolutas no producen falsos errores de checksum.
 
 ## [v0.3.0-pilot-dada2] - 2026-10-08
 

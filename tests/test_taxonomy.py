@@ -140,6 +140,18 @@ class TaxonomyTests(unittest.TestCase):
             inputs, outputs = self.provenance_fixture(root)
             self.assertEqual(validate(outputs, inputs, root)["status"], "valid")
 
+    def test_checksum_list_order_does_not_change_file_identity(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            inputs, outputs = self.provenance_fixture(root)
+            path = outputs / "provenance.json"
+            record = json.loads(path.read_text())
+            record["inputs"].reverse()
+            (outputs / "input_checksums.json").write_text(json.dumps(record["inputs"]))
+            record["outputs"] = list(reversed(file_records([outputs / name for name in REQUIRED], root)))
+            path.write_text(json.dumps(record))
+            self.assertEqual(validate(outputs, inputs, root)["status"], "valid")
+
     def test_changed_input_or_output_fails_hashes(self):
         for section in ("inputs", "outputs"):
             with tempfile.TemporaryDirectory() as temporary:

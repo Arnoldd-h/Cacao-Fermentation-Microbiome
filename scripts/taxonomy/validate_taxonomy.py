@@ -41,7 +41,11 @@ def validate(directory: Path, input_directory: Path, root: Path) -> dict:
             raise ValueError("Duplicate checksum path")
         if section == "outputs" and any(directory not in path.parents for path in paths):
             raise ValueError("Output path escapes taxonomy directory")
-        if file_records(paths, root) != records:
+        # Relative/absolute spellings can produce different list orders in the
+        # producer. Membership and hashes matter; serialization order does not.
+        expected = sorted(records, key=lambda record: record["path"])
+        observed = sorted(file_records(paths, root), key=lambda record: record["path"])
+        if observed != expected:
             raise ValueError(f"Taxonomy {section} checksum mismatch")
     if not REQUIRED.issubset({Path(record["path"]).name for record in provenance["outputs"]}):
         raise ValueError("Provenance omits essential taxonomy artifacts")
