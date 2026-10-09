@@ -12,8 +12,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Diversidad `v0.5.0-diversity` integrada en `main` mediante PR #3 (`868afa8`).
 - Workflow completo separado del piloto: manifest auditado, descarga inmutable,
   QC reconciliado, DADA2, SILVA, separación bacteriana y diversidad descriptiva.
-- 14 pruebas de ampliación cubren alcance, streams huérfanos, corrupción de QC,
+- Pruebas de ampliación cubren alcance, streams huérfanos, corrupción de QC,
   reconstrucción sin manifest y conservación de archivos crudos existentes.
+- La referencia SILVA compartida conserva el contrato del scheduler del piloto,
+  evitando intentar reemplazar una base protegida al ampliar el estudio.
 
 ## [v0.5.0-diversity] - 2026-10-09
 

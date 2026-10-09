@@ -24,6 +24,7 @@ new_code = ["scripts/study/qc_stage.py", "scripts/qc/detect_primers.py", "enviro
 processing = project["amplicon_processing"][scope["bioproject"]]
 reference = load_json_yaml(scope["taxonomy_config"])["reference"]
 analysis_code = [str(path) for path in Path("python/cacao_inventory").glob("*.py")]
+reference_code = ["scripts/taxonomy/download_reference.py"] + ["python/cacao_inventory/" + n + ".py" for n in ("config", "download", "provenance", "taxonomy_reference")]
 
 def manifest_input(wildcards=None):
     return ancient(str(checkpoints.study_manifest.get().output.manifest))
@@ -190,14 +191,14 @@ rule validate_dada2:
     params: directory=dada
     shell: "python scripts/dada2/validate_outputs.py --run-dir {params.directory:q} --check-inputs-root . --output {output:q}"
 
-rule download_reference:
-    input: config=ancient(scope["taxonomy_config"])
+rule download_taxonomy_database:
+    input: config=ancient(scope["taxonomy_config"]), code=ancient(reference_code)
     output: protected(reference["path"])
     shell: "python scripts/taxonomy/download_reference.py --config {input.config:q} --database-only"
 
-rule validate_reference:
-    input: database=reference["path"], config=scope["taxonomy_config"], code="scripts/taxonomy/download_reference.py"
-    output: reference["provenance_path"]
+rule validate_taxonomy_reference:
+    input: reference=reference["path"], config=scope["taxonomy_config"], code=reference_code
+    output: provenance=reference["provenance_path"]
     params: config_sha256=sha256_file(scope["taxonomy_config"])
     shell: "python scripts/taxonomy/download_reference.py --config {input.config:q} --validate-only"
 
