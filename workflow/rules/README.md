@@ -58,3 +58,17 @@ Sus productores y consumidores resuelven directamente el checkpoint del
 manifest. Un SHA-256 de la configuración taxonómica obliga a recalcular
 si cambian los parámetros, incluso con timestamp conservado. La configuración
 taxonómica separada conserva las entradas del DADA2 original.
+
+`pilot_diversity.smk` añade separación bacteriana y diversidad descriptiva,
+cada una con productor y validador independiente. `pilot_bacterial_table`
+termina en `results/filtering/pilot/validation.json`; `pilot_diversity` y `all`
+requieren también `results/diversity/pilot/validation.json`. Las tablas
+derivadas están en `data/processed/pilot/bacterial/`; las originales permanecen
+en DADA2 y taxonomía. La política registrada está en `config/diversity.yaml`.
+
+El SHA-256 de esa configuración invalida las etapas posteriores aunque su
+timestamp no cambie. La prueba de integración comprueba que modificar el
+pseudoconteo vuelve a ejecutar separación y diversidad sin reclasificar
+taxonomía ni descargar la referencia. Un cambio del workflow principal sí
+obliga a renovar la procedencia taxonómica, porque ese archivo forma parte de
+sus entradas registradas.

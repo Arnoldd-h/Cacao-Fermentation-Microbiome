@@ -10,6 +10,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   con pseudoconteo 1 y sensibilidad 0,5, Bray-Curtis sobre proporciones y PCA.
 - No se infieren efectos temporales ni se agregan submuestras en el piloto.
 - Taxonomía integrada y publicada mediante PR #2 (`6da8f86`).
+- Workflow de separación y diversidad implementado con balances por muestra,
+  fórmulas y geometría PCA comprobadas por un validador Python independiente.
+- Pruebas sintéticas verifican índices de comunidades conocidas, cambios
+  indebidos de conteos/metadata, muestras vacías y sensibilidad de configuración.
 
 ## [v0.4.0-taxonomy] - 2026-10-09
 

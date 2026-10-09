@@ -92,7 +92,6 @@ de los tiempos en conflicto antes de consolidar el cambio metodológico.
 
 - Métodos posteriores de agregación taxonómica entre estudios.
 - Revisar el comportamiento de DADA2 al escalar el estudio completo.
-- Tratamiento de ceros y pseudoconteo para CLR.
 - Evaluar sustitución de ceros para inferencia al ampliar el estudio; la política
   técnica del piloto se fija abajo y no establece el método inferencial definitivo.
 - Método definitivo de abundancia diferencial según el diseño disponible.
