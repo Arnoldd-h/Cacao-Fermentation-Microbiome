@@ -3,7 +3,11 @@
 # Output: original calls, bootstrap support, masked calls, flags and coverage.
 # Fails on invalid input/mixed studies, incompatible ranks, changed reference or R errors.
 
-script_path <- normalizePath(sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[[1]]))
+script_file <- sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE)[[1]])
+# Some Rscript builds encode spaces in their internal --file argument as ~+~.
+# Preserve a literal path when it exists; decode only an otherwise absent path.
+if (!file.exists(script_file)) script_file <- gsub("~+~", " ", script_file, fixed = TRUE)
+script_path <- normalizePath(script_file, mustWork = TRUE)
 root <- normalizePath(file.path(dirname(script_path), "..", ".."))
 source(file.path(root, "scripts/dada2/helpers.R"))
 source(file.path(dirname(script_path), "helpers.R"))

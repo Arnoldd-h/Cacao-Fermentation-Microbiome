@@ -15,6 +15,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   independiente incorporados al workflow, con 104 pruebas Python aprobadas.
 - Descarga inmutable de la base separada de su revalidación; una regresión
   comprueba que cambios de parámetros reutilizan la referencia protegida.
+- Corrección de rutas con espacios en Rscript, con regresión de CLI desde un
+  directorio temporal cuyo nombre contiene espacios.
 
 ## [v0.3.0-pilot-dada2] - 2026-10-08
 

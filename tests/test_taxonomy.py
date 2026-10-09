@@ -1,6 +1,8 @@
 """Synthetic taxonomies exercise scientific validation; no biological evidence."""
 
 import csv
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -158,3 +160,16 @@ class TaxonomyTests(unittest.TestCase):
             path.write_text(json.dumps(record))
             with self.assertRaisesRegex(ValueError, "inside the repository"):
                 validate(outputs, inputs, root)
+
+    @unittest.skipUnless(shutil.which("Rscript"), "Rscript is available in the declared Linux environment")
+    def test_rscript_absolute_path_with_spaces_reaches_cli_help(self):
+        with tempfile.TemporaryDirectory(prefix="taxonomy root with spaces ") as temporary:
+            root = Path(temporary)
+            for name in ("scripts/dada2/helpers.R", "scripts/taxonomy/helpers.R", "scripts/taxonomy/assign_taxonomy.R"):
+                target = root / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(ROOT / name, target)
+            result = subprocess.run(["Rscript", str(root / "scripts/taxonomy/assign_taxonomy.R"), "--help"],
+                                    capture_output=True, text=True, timeout=60)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn("Usage:", result.stdout)

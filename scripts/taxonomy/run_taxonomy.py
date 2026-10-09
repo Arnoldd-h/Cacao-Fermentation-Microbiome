@@ -80,7 +80,7 @@ def main() -> int:
               ROOT / "python/cacao_inventory/download.py", ROOT / "python/cacao_inventory/config.py",
               ROOT / "environment/conda-linux-64.lock", ROOT / "workflow/Snakefile", ROOT / "workflow/rules/pilot_taxonomy.smk"]
     before = file_records(inputs, ROOT)
-    command = ["Rscript", str(ROOT / "scripts/taxonomy/assign_taxonomy.R"), "--config", str(args.config.resolve()),
+    command = ["Rscript", "scripts/taxonomy/assign_taxonomy.R", "--config", str(args.config.resolve()),
                "--input-dir", str(args.input_dir.resolve()), "--output-dir", str(output), "--threads", str(threads)]
     subprocess.run(command, cwd=ROOT, check=True)
     if file_records(inputs, ROOT) != before:
