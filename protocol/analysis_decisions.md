@@ -93,6 +93,8 @@ de los tiempos en conflicto antes de consolidar el cambio metodológico.
 - Métodos posteriores de agregación taxonómica entre estudios.
 - Revisar el comportamiento de DADA2 al escalar el estudio completo.
 - Tratamiento de ceros y pseudoconteo para CLR.
+- Evaluar sustitución de ceros para inferencia al ampliar el estudio; la política
+  técnica del piloto se fija abajo y no establece el método inferencial definitivo.
 - Método definitivo de abundancia diferencial según el diseño disponible.
 - Selección de licencia del repositorio.
 
@@ -129,3 +131,45 @@ lecturas. Esta referencia optimizada para Bacteria/Archaea no permite descartar
 eucariotas por una ausencia de asignación. Cualquier exclusión posterior exigirá
 una decisión y registro específicos. Los resúmenes son técnicos del piloto;
 no habilitan inferencia biológica ni concatenación de ASVs entre estudios.
+
+### Separación bacteriana y diversidad descriptiva, 2026-10-09
+
+La clasificación primaria ya permitió observar etiquetas de orgánulos. Antes
+de calcular diversidad se fija `config/diversity.yaml`: excluir de una tabla
+derivada las ASVs con etiquetas exactas Chloroplast/Mitochondria en cualquiera
+de los seis rangos de la llamada primaria (bootstrap 80), y Kingdom conocido
+distinto de Bacteria. La razón es el alcance bacteriano del estudio; no se usa
+abundancia, prevalencia, etapa ni significación. Las asignaciones de Kingdom
+desconocidas se conservan y marcan; una falta de resolución no justifica
+inventar una identidad. No se excluyen muestras: una muestra vacía causa fallo.
+
+La coincidencia por rango conserva la nomenclatura SILVA y evita seleccionar
+por fragmentos de nombres. Se conserva todo el resultado DADA2/taxonómico
+original, con un registro por ASV y balances de lecturas por muestra. El
+[ejemplo oficial de QIIME 2](https://docs.qiime2.org/2024.10/tutorials/filtering/)
+documenta separación taxonómica de orgánulos; aquí no se instala QIIME ni se
+aplica su búsqueda por subcadenas. La separación no es un análisis de
+contaminación y no identifica especie huésped.
+
+La diversidad se calcula sólo dentro del estudio a nivel ASV. No se agregan
+submuestras ni se interpreta cada run como un lote independiente. Riqueza
+observada, Shannon con logaritmos naturales, Gini-Simpson (1−Σp²), inverso de
+Simpson y exp(Shannon) describen las bibliotecas retenidas sin rarefacción;
+su comparación inferencial requiere tratar la profundidad de muestreo.
+Las definiciones se contrastan con el [manual de vegan](https://vegandevs.github.io/vegan/reference/diversity.html).
+
+Para el diagnóstico composicional se suma 1 a todos los conteos, se calcula
+CLR y su distancia euclídea; la sensibilidad usa 0,5 sobre las mismas ASVs.
+Es una sustitución técnica explícita, dependiente de escala/profundidad, no
+una estimación de ceros estructurales. Ambos valores se fijan antes de observar
+distancias, sin escoger el que favorezca separación temporal. La
+[definición oficial de CLR](https://scikit.bio/docs/dev/generated/skbio.stats.composition.clr.html)
+usa logaritmos de componentes positivos respecto de su media geométrica.
+Bray-Curtis sobre proporciones se conserva como diagnóstico secundario.
+
+PCA de CLR usa centrado por ASV y no estandariza varianzas; se guardan todas
+las componentes hasta n−1, su varianza y las distancias originales. Las
+figuras muestran muestras individuales, sin unir lotes/estratos en una
+trayectoria inventada. Semilla 20260819 registrada; las operaciones actuales
+son deterministas. No se ejecutan PERMANOVA, pruebas de etapas, abundancia
+diferencial, core ni meta-análisis en esta rebanada técnica de seis runs.

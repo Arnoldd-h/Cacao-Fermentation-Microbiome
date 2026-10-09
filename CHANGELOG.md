@@ -2,6 +2,15 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-09
+
+- Política de separación de orgánulos y no bacterias en tablas derivadas,
+  conservando originales, desconocidos y un registro por ASV/muestra.
+- Diversidad técnica registrada: métricas alfa sin rarefacción, CLR/Aitchison
+  con pseudoconteo 1 y sensibilidad 0,5, Bray-Curtis sobre proporciones y PCA.
+- No se infieren efectos temporales ni se agregan submuestras en el piloto.
+- Taxonomía integrada y publicada mediante PR #2 (`6da8f86`).
+
 ## [v0.4.0-taxonomy] - 2026-10-09
 
 - Referencia SILVA NR99 138.2 fijada por DOI, tamaño y MD5 del proveedor;

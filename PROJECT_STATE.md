@@ -8,8 +8,9 @@ Inventario, QC y piloto DADA2 consolidados e integrados en `main` mediante PR #1
 (`9f0a478`). Clasificación taxonómica del piloto ejecutada y validada con
 SILVA 138.2, checksum de origen y umbrales fijados antes de observar las
 asignaciones. Se conservan 93 ASVs y 156.561 lecturas de seis muestras.
-La siguiente etapa requiere separar de forma auditable las etiquetas de
-orgánulos antes de preparar diversidad y ampliar el estudio completo.
+Taxonomía integrada en `main` mediante PR #2 (`6da8f86`) y tag `v0.4.0-taxonomy`.
+En desarrollo: separación auditable de orgánulos y diversidad descriptiva;
+criterios, métricas y sustitución de ceros registrados antes de su ejecución.
 
 ## Completado
 
