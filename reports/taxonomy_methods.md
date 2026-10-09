@@ -65,7 +65,9 @@ python3 scripts/environment/run_in_environment.py Rscript tests/taxonomy/test_he
 ```
 
 La regla de descarga reconstruye y verifica la referencia a partir del DOI,
-URL, bytes y MD5 fijados. El ejecutor verifica previamente los resultados
+URL, bytes y MD5 fijados. La base se protege y se separa de la regeneración
+del registro de validación: cambiar parámetros o código no reemplaza la base.
+El ejecutor verifica previamente los resultados
 DADA2 y compara hashes de todas sus entradas antes y después de clasificar.
 El registro conserva commit, estado inicial de Git, semilla, parámetros,
 versiones de R/paquetes y SHA-256 de entradas y artefactos. `SUCCESS` se crea

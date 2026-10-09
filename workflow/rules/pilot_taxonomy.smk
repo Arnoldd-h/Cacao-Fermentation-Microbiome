@@ -16,17 +16,27 @@ rule pilot_taxonomy:
         manifest=pilot_manifest_input,
 
 
-rule download_taxonomy_reference:
+rule download_taxonomy_database:
     input:
+        config=ancient("config/taxonomy.yaml"),
+        code=ancient(python_sources("scripts/taxonomy/download_reference.py", "config", "download", "provenance", "taxonomy_reference")),
+    output:
+        protected(taxonomy_reference["path"]),
+    shell:
+        "python scripts/taxonomy/download_reference.py --config {input.config:q} --database-only"
+
+
+rule validate_taxonomy_reference:
+    input:
+        reference=taxonomy_reference["path"],
         config="config/taxonomy.yaml",
         code=python_sources("scripts/taxonomy/download_reference.py", "config", "download", "provenance", "taxonomy_reference"),
     output:
-        reference=taxonomy_reference["path"],
         provenance=taxonomy_reference["provenance_path"],
     params:
         config_sha256=sha256_file("config/taxonomy.yaml"),
     shell:
-        "python scripts/taxonomy/download_reference.py --config {input.config:q}"
+        "python scripts/taxonomy/download_reference.py --config {input.config:q} --validate-only"
 
 
 rule run_pilot_taxonomy:
@@ -41,7 +51,8 @@ rule run_pilot_taxonomy:
         config="config/taxonomy.yaml",
         project_config=ancient("config/config.yaml"),
         code=python_sources("scripts/taxonomy/run_taxonomy.py", "config", "download", "provenance", "taxonomy_reference") +
-            ["scripts/taxonomy/assign_taxonomy.R", "scripts/taxonomy/helpers.R", "scripts/dada2/helpers.R", "scripts/dada2/validate_outputs.py"],
+            ["scripts/taxonomy/assign_taxonomy.R", "scripts/taxonomy/helpers.R", "scripts/dada2/helpers.R", "scripts/dada2/validate_outputs.py",
+             "workflow/Snakefile", "workflow/rules/pilot_taxonomy.smk"],
         environment="environment/conda-linux-64.lock",
     output:
         expand("results/taxonomy/pilot/{product}", product=taxonomy_products),

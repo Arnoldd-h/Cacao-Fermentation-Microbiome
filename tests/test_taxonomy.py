@@ -10,6 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "python"))
 from cacao_inventory.config import load_json_yaml
 from cacao_inventory.taxonomy_validation import mask_lineage, screening_flags, validate_taxonomy_tables
+from cacao_inventory.provenance import file_records
+sys.path.insert(0, str(ROOT / "scripts/taxonomy"))
+from validate_taxonomy import REQUIRED, validate
+import json
 
 
 def write_rows(path, rows):
@@ -102,3 +106,55 @@ class TaxonomyTests(unittest.TestCase):
             path.write_text(path.read_text().replace("\t6\n", "\t7\n"))
             with self.assertRaisesRegex(ValueError, "Coverage totals"):
                 validate_taxonomy_tables(outputs, inputs, self.config)
+
+    def test_duplicate_or_missing_taxonomy_asv_fails(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            inputs, outputs = self.fixture(Path(temporary))
+            path = outputs / "taxonomy.tsv"
+            rows = path.read_text().splitlines()
+            path.write_text("\n".join([*rows, rows[1]]) + "\n")
+            with self.assertRaisesRegex(ValueError, "duplicate"):
+                validate_taxonomy_tables(outputs, inputs, self.config)
+
+    def provenance_fixture(self, root):
+        inputs, outputs = self.fixture(root)
+        # Nonbiological stand-ins allow checksum/path checks without any R run.
+        for name in REQUIRED:
+            if not (outputs / name).exists():
+                (outputs / name).write_text("synthetic checksum fixture\n")
+        (outputs / "config_snapshot.yaml").write_text(json.dumps(self.config))
+        before = file_records(list(inputs.iterdir()), root)
+        (outputs / "input_checksums.json").write_text(json.dumps(before))
+        record = {"status": "success", "git_commit": "a" * 40, "inputs": before,
+                  "outputs": file_records([outputs / name for name in REQUIRED], root),
+                  "classification": self.config["classification"], "reference": self.config["reference"]}
+        (outputs / "provenance.json").write_text(json.dumps(record))
+        (outputs / "SUCCESS").write_text("a" * 40 + "\n")
+        return inputs, outputs
+
+    def test_completed_provenance_and_semantics_pass(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            inputs, outputs = self.provenance_fixture(root)
+            self.assertEqual(validate(outputs, inputs, root)["status"], "valid")
+
+    def test_changed_input_or_output_fails_hashes(self):
+        for section in ("inputs", "outputs"):
+            with tempfile.TemporaryDirectory() as temporary:
+                root = Path(temporary)
+                inputs, outputs = self.provenance_fixture(root)
+                path = inputs / "asv_counts.tsv" if section == "inputs" else outputs / "taxonomy.tsv"
+                path.write_text(path.read_text() + "altered\n")
+                with self.assertRaisesRegex(ValueError, f"{section} checksum mismatch"):
+                    validate(outputs, inputs, root)
+
+    def test_provenance_input_cannot_escape_repository(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            inputs, outputs = self.provenance_fixture(root)
+            path = outputs / "provenance.json"
+            record = json.loads(path.read_text())
+            record["inputs"][0]["path"] = "../outside"
+            path.write_text(json.dumps(record))
+            with self.assertRaisesRegex(ValueError, "inside the repository"):
+                validate(outputs, inputs, root)
