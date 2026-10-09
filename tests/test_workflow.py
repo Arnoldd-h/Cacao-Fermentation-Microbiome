@@ -212,6 +212,68 @@ class WorkflowBootstrapTests(unittest.TestCase):
             self.assertNotIn("rule download_pilot_read:", changed.stdout)
             self.assertEqual(validation.stat().st_size, 0, "Dry-run must leave synthetic output unchanged")
 
+    def test_completed_qc_is_stable_after_manifest_checkpoint_refresh(self) -> None:
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.copy_sources(root)
+            targets = ["pilot_post_trim_qc", "pilot_primer_detection"]
+            # Empty outputs only test scheduling contracts. --touch records the
+            # actual QC producer parameters without running sequencing tools,
+            # downloading reads, or producing purported scientific evidence.
+            old = time.time() - 200
+            for directory in ("workflow", "scripts", "python", "config", "environment"):
+                for path in (root / directory).rglob("*"):
+                    if path.is_file():
+                        os.utime(path, (old, old))
+            for directory in ("metadata", "results/tables"):
+                for path in (root / directory).rglob("*"):
+                    if path.is_file():
+                        os.utime(path, (old + 100, old + 100))
+            planned = subprocess.run(
+                ["snakemake", *targets, "--snakefile", "workflow/Snakefile", "--cores", "1", "--summary"],
+                cwd=root, capture_output=True, text=True, timeout=90,
+            )
+            self.assertEqual(planned.returncode, 0, planned.stdout + planned.stderr)
+            table = csv.DictReader(io.StringIO(planned.stdout), delimiter="\t")
+            self.assertIn("output_file", table.fieldnames or [])
+            for entry in table:
+                placeholder = root / entry["output_file"]
+                if not placeholder.exists():
+                    placeholder.parent.mkdir(parents=True, exist_ok=True)
+                    placeholder.touch()
+                    os.utime(placeholder, (old + 150, old + 150))
+            producers = ["build_pilot_manifest", "download_pilot_fastq", "validate_pilot_fastq",
+                         "detect_pilot_primers", "trim_pilot_primers", "summarize_pilot_cutadapt",
+                         "fastqc_raw", "fastqc_trimmed", "multiqc_raw", "multiqc_trimmed",
+                         "summarize_raw_fastqc", "summarize_trimmed_fastqc", "detect_trimmed_primers"]
+            materialized = subprocess.run(
+                ["snakemake", *targets, "--snakefile", "workflow/Snakefile", "--cores", "1", "--touch",
+                 "--forcerun", *producers],
+                cwd=root, capture_output=True, text=True, timeout=90,
+            )
+            self.assertEqual(materialized.returncode, 0, materialized.stdout + materialized.stderr)
+            for name in ("raw_read_quality.tsv", "trimmed_read_quality.tsv", "primer_detection.tsv"):
+                output = root / "results/qc/pilot" / name
+                self.assertEqual(output.stat().st_size, 0, "Touch fixture must not run QC commands")
+            manifest = root / "metadata/pilot_manifest.tsv"
+            original_manifest = manifest.read_bytes()
+            # Refresh the checkpoint separately, after downstream execution
+            # metadata exist. The raw-read producers remain unexecuted, as
+            # happens when an immutable download was already available.
+            refreshed = subprocess.run(
+                ["snakemake", "metadata/pilot_manifest.tsv", "--snakefile", "workflow/Snakefile",
+                 "--cores", "1", "--touch", "--forcerun", "build_pilot_manifest"],
+                cwd=root, capture_output=True, text=True, timeout=90,
+            )
+            self.assertEqual(refreshed.returncode, 0, refreshed.stdout + refreshed.stderr)
+            self.assertEqual(manifest.read_bytes(), original_manifest)
+            completed = subprocess.run(
+                ["snakemake", *targets, "--snakefile", "workflow/Snakefile", "--cores", "1", "--dry-run"],
+                cwd=root, capture_output=True, text=True, timeout=90,
+            )
+            self.assertEqual(completed.returncode, 0, completed.stdout + completed.stderr)
+            self.assertIn("Nothing to be done", completed.stdout)
+
 
 if __name__ == "__main__":
     unittest.main()

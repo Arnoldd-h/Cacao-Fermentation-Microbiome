@@ -12,6 +12,7 @@ def pilot_dada2_settings(wildcards):
 rule pilot_dada2:
     input:
         "results/dada2/pilot/validation.json",
+        manifest=pilot_manifest_input,
 
 
 rule run_pilot_dada2:
@@ -62,6 +63,7 @@ rule run_pilot_dada2:
 
 rule validate_pilot_dada2:
     input:
+        manifest=pilot_manifest_input,
         products=rules.run_pilot_dada2.output,
         code="scripts/dada2/validate_outputs.py",
     output:

@@ -13,9 +13,11 @@ actual. Las reglas de QC requieren además validación estructural antes de
 procesarlos. Cambiar código o parámetros de un paso invalida sus resultados.
 
 Las reglas consumidoras combinan el manifest como input `ancient` con su SHA-256
-como parámetro. Así el toque de timestamp que Snakemake aplica al checkpoint no
-repite QC si el contenido permanece igual; un cambio real del manifest sí
-invalida la validación y los análisis dependientes.
+como parámetro. Un mero cambio de timestamp no invalida los análisis. Los
+resúmenes y agregados también resuelven directamente el checkpoint: al
+reconstruir el grafo se descartan razones de actualización de productores que
+ya no deben ejecutarse. Un cambio real del manifest invalida la validación y
+los análisis dependientes.
 
 La configuración de primers se elige por el BioProject del manifest y verifica
 su `study_id`. El método de recorte actual exige `allow_indels=false`,

@@ -55,6 +55,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ### Changed
 
+- Los consumidores y agregados QC/DADA2 resuelven directamente el checkpoint
+  del manifest; desaparecen razones de actualización obsoletas que repetían
+  resúmenes pese a descartar sus productores. Se prueba estabilidad del grafo.
 - Revisión de los 34 BioProjects: cuatro incluidos (182 runs), siete pendientes
   (93 runs candidatos) y 23 excluidos. Se incorporan los controles espontáneos
   de Costa Rica 2017/2019, conservando PacBio separado del pipeline Illumina.

@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Última actualización: 2026-10-06 (ejecuciones del 2026-10-07 UTC).
+Última actualización: 2026-10-08.
 
 ## Fase actual
 
@@ -58,6 +58,8 @@ Las fuentes y decisiones por estudio están en `config/datasets.yaml` y
 El inventario pasó el validador independiente; las unidades analíticas cubren
 182 runs, 95 observaciones lote-tiempo y 12 lotes. QC terminó 45 trabajos y
 los 24 FASTQ raw/interim coinciden byte a byte con los archivos previos.
+La corrección de los consumidores del checkpoint elimina la repetición de
+resúmenes: el dry-run conjunto QC termina sin trabajos pendientes.
 
 ## Bloqueos y limitaciones
 

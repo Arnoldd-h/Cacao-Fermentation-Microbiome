@@ -107,12 +107,14 @@ rule pilot_raw_qc:
         "results/qc/pilot/multiqc_raw/multiqc_report.html",
         "results/qc/pilot/raw_read_quality.tsv",
         "results/qc/pilot/raw_read_quality.provenance.json",
+        manifest=pilot_manifest_input,
 
 
 rule pilot_primer_detection:
     input:
         "results/qc/pilot/primer_detection.tsv",
         "results/qc/pilot/primer_detection.provenance.json",
+        manifest=pilot_manifest_input,
 
 
 rule detect_pilot_primers:
@@ -189,6 +191,7 @@ rule pilot_post_trim_qc:
         "results/qc/pilot/primer_detection_trimmed.tsv",
         "results/qc/pilot/trimmed_read_quality.provenance.json",
         "results/qc/pilot/primer_detection_trimmed.provenance.json",
+        manifest=pilot_manifest_input,
 
 
 rule fastqc_raw:
@@ -242,6 +245,7 @@ rule multiqc_trimmed:
 
 rule summarize_raw_fastqc:
     input:
+        manifest=pilot_manifest_input,
         multiqc="results/qc/pilot/multiqc_raw/multiqc_report_data/multiqc_fastqc.txt",
         validation="results/qc/pilot_fastq_validation.tsv",
         config=ancient("config/config.yaml"),
@@ -249,6 +253,8 @@ rule summarize_raw_fastqc:
     output:
         table="results/qc/pilot/raw_read_quality.tsv",
         provenance="results/qc/pilot/raw_read_quality.provenance.json",
+    params:
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
         "python scripts/qc/summarize_fastqc.py --multiqc-fastqc {input.multiqc:q} "
         "--fastq-validation {input.validation:q} --output {output.table:q}"
@@ -256,6 +262,7 @@ rule summarize_raw_fastqc:
 
 rule summarize_trimmed_fastqc:
     input:
+        manifest=pilot_manifest_input,
         multiqc="results/qc/pilot/multiqc_trimmed/multiqc_report_data/multiqc_fastqc.txt",
         cutadapt="results/qc/pilot/cutadapt_summary.tsv",
         raw="results/qc/pilot/raw_read_quality.tsv",
@@ -265,6 +272,8 @@ rule summarize_trimmed_fastqc:
         metrics="results/qc/pilot/trimmed_read_quality.tsv",
         comparison="results/qc/pilot/read_quality_comparison.tsv",
         provenance="results/qc/pilot/trimmed_read_quality.provenance.json",
+    params:
+        manifest_sha256=pilot_manifest_fingerprint,
     shell:
         "python scripts/qc/summarize_trimmed_fastqc.py --multiqc-fastqc {input.multiqc:q} "
         "--cutadapt-summary {input.cutadapt:q} --raw-quality {input.raw:q} "
