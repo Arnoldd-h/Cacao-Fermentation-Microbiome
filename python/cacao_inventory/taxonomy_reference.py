@@ -46,7 +46,8 @@ def validate_taxonomy_config(config: dict, root: Path) -> None:
     download = config["download"]
     for field in ("timeout_seconds", "retries", "chunk_size_bytes", "minimum_free_space_factor"):
         value = download[field]
-        if isinstance(value, bool) or not isinstance(value, (int, float)) or value <= 0:
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or value <= 0 or (
+                field != "minimum_free_space_factor" and type(value) is not int):
             raise ValueError(f"Invalid download {field}")
 
 

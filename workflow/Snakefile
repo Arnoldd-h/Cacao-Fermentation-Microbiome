@@ -32,6 +32,7 @@ rule all:
         "results/qc/pilot/primer_detection.provenance.json",
         "results/qc/pilot/primer_detection_trimmed.provenance.json",
         "results/dada2/pilot/validation.json",
+        "results/taxonomy/pilot/validation.json",
         # Resolve the checkpoint here too, so tentative upstream jobs do not
         # leave stale update reasons on this aggregate after DAG re-evaluation.
         manifest=lambda wildcards: pilot_manifest_input(wildcards),
@@ -137,3 +138,4 @@ checkpoint build_pilot_manifest:
 
 include: "rules/pilot_qc.smk"
 include: "rules/pilot_dada2.smk"
+include: "rules/pilot_taxonomy.smk"

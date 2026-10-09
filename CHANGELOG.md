@@ -11,6 +11,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Se conservan todas las ASVs; etiquetas de orgánulos y asignaciones
   insuficientes se marcarán para revisión sin excluir automáticamente.
 - Fase anterior integrada en `main` mediante PR #1 (`9f0a478`).
+- Clasificador R, ejecutor con SHA-256, figuras de cobertura y validador Python
+  independiente incorporados al workflow, con 104 pruebas Python aprobadas.
 
 ## [v0.3.0-pilot-dada2] - 2026-10-08
 

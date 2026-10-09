@@ -50,3 +50,11 @@ valida FASTQ sintéticos exclusivamente en un repositorio temporal y comprueba
 que modificar sólo el timestamp del manifest no repite trabajo, mientras que
 cambiar su contenido sí lo invalida. Ninguna prueba descarga datos ni presenta
 los fixtures como evidencia científica.
+
+`pilot_taxonomy.smk` consume DADA2 validado, reconstruye la referencia SILVA
+fijada y ejecuta clasificación y validación independiente. El target
+`pilot_taxonomy` y `all` requieren `results/taxonomy/pilot/validation.json`.
+Sus productores y consumidores resuelven directamente el checkpoint del
+manifest. Un SHA-256 de la configuración taxonómica obliga a recalcular
+si cambian los parámetros, incluso con timestamp conservado. La configuración
+taxonómica separada conserva las entradas del DADA2 original.

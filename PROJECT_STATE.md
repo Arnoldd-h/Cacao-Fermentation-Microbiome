@@ -7,6 +7,9 @@
 Inventario, QC y piloto DADA2 consolidados e integrados en `main` mediante PR #1
 (`9f0a478`). En desarrollo: clasificación taxonómica del piloto con SILVA 138.2,
 checksum de origen y umbrales fijados antes de observar las asignaciones.
+SILVA descargada y validada: 452.055 secuencias de referencia; workflow,
+clasificador y validador implementados. 104 pruebas Python y seis comprobaciones
+taxonómicas R aprobadas. La ejecución real se realizará tras consolidar el código.
 
 ## Completado
 

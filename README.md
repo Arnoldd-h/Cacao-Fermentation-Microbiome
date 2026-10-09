@@ -53,8 +53,9 @@ La selección reproducible mantiene `PRJNA492720` como piloto. Sus seis runs
 tienen QC y una ejecución integrada DADA2 con 93 ASVs y 156.561 pares
 sin quimeras de 176.798 pares de entrada (88,55 %). Se validaron 18 entradas
 y 18 artefactos; 91 pruebas Python pasan y el workflow queda sin trabajos
-pendientes tras ejecutarse. Estas cifras describen procesamiento; todavía
-no hay asignación taxonómica, análisis de diversidad ni inferencia temporal.
+pendientes tras ejecutarse en la fase DADA2. La clasificación taxonómica del
+piloto está implementada con SILVA 138.2 y validación independiente. Diversidad
+e inferencia temporal siguen pendientes.
 
 `PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
 propia y no se procesa con el piloto Illumina paired-end actual.
@@ -80,7 +81,8 @@ python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow
 ```
 
 El workflow reconstruye inventario, diseño longitudinal, selección y manifest;
-descarga los FASTQ ausentes del piloto, ejecuta QC y DADA2 y valida sus salidas.
+descarga los FASTQ ausentes del piloto, ejecuta QC, DADA2 y taxonomía y valida
+sus salidas. La base SILVA pesada se reconstruye desde un depósito con checksum.
 Para ejecutar el target DADA2 con sus dependencias, comprobar sus artefactos y
 entradas, o ejecutar las pruebas:
 
@@ -88,6 +90,14 @@ entradas, o ejecutar las pruebas:
 python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 pilot_dada2
 python3 scripts/environment/run_in_environment.py python scripts/dada2/validate_outputs.py --run-dir results/dada2/pilot --check-inputs-root .
 python3 scripts/environment/run_in_environment.py python -m unittest discover -s tests -v
+```
+
+La clasificación del piloto y sus parámetros se describen en
+[métodos taxonómicos](reports/taxonomy_methods.md):
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 pilot_taxonomy
+python3 scripts/environment/run_in_environment.py python scripts/taxonomy/validate_taxonomy.py
 ```
 
 `--check-inputs-root .` comprueba también los hashes de las entradas originales;
@@ -125,7 +135,7 @@ environment/  dependencias reproducibles
 ## Estado
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
-`CHANGELOG.md`. La taxonomía, integración entre estudios y evaluación de las
+`CHANGELOG.md`. La integración entre estudios y evaluación de las
 hipótesis siguen pendientes; el resultado técnico del piloto no demuestra
 sucesión conservada ni ausencia de contaminación.
 
