@@ -39,10 +39,28 @@
     "2"
   ],
   "effective_threads": 2,
-  "finished_at_utc": "2026-10-09T20:05:03.484449+00:00",
-  "git_commit": "d13c9eba75e1b6200833a25593cfe0dbf048f233",
-  "git_dirty": false,
-  "git_status_at_start": [],
+  "finished_at_utc": "2026-10-09T20:23:19.853796+00:00",
+  "git_commit": "4e7ce24c81425b11c28295b066c75ffcb1dbe673",
+  "git_dirty": true,
+  "git_status_at_start": [
+    " D results/taxonomy/pilot/SUCCESS",
+    " D results/taxonomy/pilot/assignment_coverage.pdf",
+    " D results/taxonomy/pilot/assignment_coverage.png",
+    " D results/taxonomy/pilot/assignment_coverage.svg",
+    " D results/taxonomy/pilot/assignment_coverage.tsv",
+    " D results/taxonomy/pilot/config_snapshot.yaml",
+    " D results/taxonomy/pilot/input_checksums.json",
+    " D results/taxonomy/pilot/provenance.json",
+    " D results/taxonomy/pilot/sample_coverage.tsv",
+    " D results/taxonomy/pilot/session_info.txt",
+    " D results/taxonomy/pilot/software_versions.tsv",
+    " D results/taxonomy/pilot/taxonomy.tsv",
+    " D results/taxonomy/pilot/taxonomy_bootstraps.tsv",
+    " D results/taxonomy/pilot/taxonomy_screening.tsv",
+    " D results/taxonomy/pilot/taxonomy_sensitivity.tsv",
+    " D results/taxonomy/pilot/taxonomy_unfiltered.tsv",
+    " D results/taxonomy/pilot/warnings.txt"
+  ],
   "inputs": [
     {
       "bytes": 4901,
@@ -120,9 +138,9 @@
       "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
     },
     {
-      "bytes": 6776,
+      "bytes": 6832,
       "path": "scripts/taxonomy/assign_taxonomy.R",
-      "sha256": "57e2f0cd90d2dbcc62ef1a636e2045b97769465b8237458b4d0c4adf16585c61"
+      "sha256": "15171c6c828206acf5516c6365fb4181dbcf184b89b4e681d8033f385eaea05f"
     },
     {
       "bytes": 2092,
@@ -152,19 +170,19 @@
   ],
   "outputs": [
     {
-      "bytes": 4971,
+      "bytes": 4944,
       "path": "results/taxonomy/pilot/assignment_coverage.pdf",
-      "sha256": "3a25b51374bc4b225306c034c5f697f778c3fe4b881d3722d12c607ad948361f"
+      "sha256": "5026f83b737cd74ed8d763efa1e33ab6682c0b38f60d60f4aa10beffd5c33364"
     },
     {
-      "bytes": 118949,
+      "bytes": 119750,
       "path": "results/taxonomy/pilot/assignment_coverage.png",
-      "sha256": "e41f550df4f855149873eb27ad95a62db378e1ce473f2f34da4886b5ba46bf98"
+      "sha256": "ee84641c00d540e54c0b115f907682dc01fd9fd7042c4c215ba91a5f20d0c61c"
     },
     {
-      "bytes": 73669,
+      "bytes": 73976,
       "path": "results/taxonomy/pilot/assignment_coverage.svg",
-      "sha256": "71b55a664251b6e21a6571c44450c7999a22618238a8c0203af6b49259aab4fc"
+      "sha256": "c4f13ce15a94adab44b02d38d7858b2072e4a098e8a6fc3f22f183afe24d24b7"
     },
     {
       "bytes": 838,
@@ -179,7 +197,7 @@
     {
       "bytes": 3318,
       "path": "results/taxonomy/pilot/input_checksums.json",
-      "sha256": "fd5edd800c2d86dbe194cc95b16f4ce826992913ef6d49bf8a6a9fb27439f0ab"
+      "sha256": "c30c8cf706509abed66c4692ed2df6c35e4a76a316e47dabf77f2285dc8094b0"
     },
     {
       "bytes": 5012,
@@ -242,7 +260,7 @@
     "Inversion",
     "Rejection"
   ],
-  "started_at_utc": "2026-10-09T20:01:38.011099+00:00",
+  "started_at_utc": "2026-10-09T20:19:44.257092+00:00",
   "status": "success",
   "upstream_validation": {
     "artifacts_checked": 18,

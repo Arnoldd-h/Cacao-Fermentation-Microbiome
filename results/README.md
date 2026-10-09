@@ -89,10 +89,15 @@ requiere una ruta propia antes de integración taxonómica.
 
 ## Taxonomía del piloto
 
-La clasificación del 2026-10-09 sobre `d13c9eb`, con checkout limpio al iniciar,
+La primera clasificación del 2026-10-09 sobre `d13c9eb`, con checkout limpio al iniciar,
 consume las 93 ASVs y 156.561 lecturas originales de seis muestras. Utiliza
 SILVA NR99 138.2, R 4.4.3 y DADA2 1.34.0. El validador independiente confirma
 21 entradas y 15 artefactos, sin exclusiones ni warnings de clasificación.
+Las salidas finales proceden de una repetición sobre `4e7ce24` después de
+ajustar la leyenda; las siete tablas científicas son idénticas por SHA-256.
+El estado inicial registrado contiene únicamente las salidas previas que
+Snakemake retiró antes de regenerarlas; al iniciar no había cambios sin commit
+de código o entradas.
 
 En `taxonomy/pilot/`, `taxonomy_unfiltered.tsv` conserva las llamadas sin
 máscara; `taxonomy_bootstraps.tsv`, el soporte original; `taxonomy.tsv`, la

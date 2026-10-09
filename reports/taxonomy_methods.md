@@ -59,7 +59,7 @@ Las figuras de cobertura se exportan en PDF, SVG y PNG de 300 dpi.
 
 ## Resultados observados del piloto
 
-La ejecución del 2026-10-09 sobre `d13c9eb` empezó con checkout limpio y
+La primera ejecución del 2026-10-09 sobre `d13c9eb` empezó con checkout limpio y
 conservó seis muestras, 93 ASVs y 156.561 lecturas. La validación independiente
 comprobó 21 entradas y 15 artefactos; no hubo warnings R ni exclusiones.
 
@@ -99,3 +99,11 @@ marcas, pertenencia de ASVs y cobertura global/por muestra a partir de las
 tablas R y conteos DADA2. También comprueba los hashes de entradas y salidas.
 Las pruebas con fixtures sintéticos se limitan a parsing y conservación;
 no aportan evidencia científica.
+
+La repetición sobre `4e7ce24`, tras corregir la superposición de la leyenda,
+reproduce por SHA-256 las siete tablas científicas de la primera ejecución.
+Las figuras regeneradas se revisaron visualmente. El checkout estaba limpio
+antes de lanzar el workflow; el estado inicial del ejecutor registra sólo
+las salidas previas retiradas por Snakemake para su regeneración. La
+procedencia final conserva ese estado sin ocultarlo y vuelve a validar los
+21 hashes de entrada y los 15 artefactos.

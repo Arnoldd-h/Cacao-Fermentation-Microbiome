@@ -32,6 +32,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   dry-run integrado sin trabajos pendientes.
 - Espacio superior reservado a las leyendas de cobertura, con escala marcada
   de 0 a 100 %, para evitar superposición sobre las barras.
+- Repetición sobre `4e7ce24`: las siete tablas científicas reproducen por
+  SHA-256 la primera clasificación; figuras revisadas y artefactos validados.
 
 ## [v0.3.0-pilot-dada2] - 2026-10-08
 
