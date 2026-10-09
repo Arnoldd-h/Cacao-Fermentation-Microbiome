@@ -74,3 +74,22 @@ entradas y salidas y estado Git. `git_dirty=true` puede reflejar los nuevos
 resultados aún sin commit; ese estado se registra sin ocultarlo. Los crudos,
 la base SILVA, los informes completos de herramientas y RDS quedan fuera de
 Git. Los resúmenes, tablas derivadas y figuras pequeñas se versionan.
+
+## Disponibilidad y condición de avance
+
+`scripts/study/audit_downloads.py` verifica íntegramente los archivos locales
+por bytes, MD5, gzip/CRC y estructura FASTQ. Para los archivos faltantes consulta
+las cabeceras HTTP y registra la URL efectiva y el tipo de contenido. Escribe
+`download_status.json` y su procedencia; salida 2 indica datos incompletos.
+Una descarga fallida no añade exclusiones al manifest ni habilita DADA2 con
+una selección de runs. Los datos verificados se reutilizan al reanudar.
+
+El 2026-10-09, los 186 enlaces se inspeccionaron. La URL de
+`SRR7899804_2.fastq.gz` devolvió un directorio HTML vacío, mientras la API ENA
+siguió declarando 1.458.078 bytes y MD5 `49b5d1b26dd75169352b52aace2c5524`.
+Se repitieron accesos HTTP/HTTPS, un segundo hostname público y FTP. La API
+no ofreció archivos submitted/SRA alternativos para ese run. Esta discrepancia
+de disponibilidad es distinta de la elegibilidad de SRR7899803: SRR7899804
+permanece en el manifest de 93 runs y el procesamiento completo espera su R2.
+Los mecanismos oficiales de transferencia se describen en la
+[documentación ENA](https://ena-docs.readthedocs.io/en/latest/retrieval/file-download.html).

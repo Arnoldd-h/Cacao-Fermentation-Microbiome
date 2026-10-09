@@ -16,6 +16,11 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   reconstrucción sin manifest y conservación de archivos crudos existentes.
 - La referencia SILVA compartida conserva el contrato del scheduler del piloto,
   evitando intentar reemplazar una base protegida al ampliar el estudio.
+- Auditoría de disponibilidad y validación completa de los FASTQ locales:
+  reporta HTML, archivos faltantes, bytes/MD5 inválidos y estructura FASTQ/gzip
+  sin añadir exclusiones por fallos de transporte. Cuatro regresiones aprobadas.
+- Figuras completas identifican su alcance y evitan etiquetas superpuestas;
+  la renovación del piloto conserva sus siete tablas TSV por SHA-256.
 
 ## [v0.5.0-diversity] - 2026-10-09
 
