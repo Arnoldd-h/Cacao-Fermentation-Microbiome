@@ -52,10 +52,12 @@ submuestras, sin contarlos como lotes independientes.
 La selección reproducible mantiene `PRJNA492720` como piloto. Sus seis runs
 tienen QC y una ejecución integrada DADA2 con 93 ASVs y 156.561 pares
 sin quimeras de 176.798 pares de entrada (88,55 %). Se validaron 18 entradas
-y 18 artefactos; 91 pruebas Python pasan y el workflow queda sin trabajos
-pendientes tras ejecutarse en la fase DADA2. La clasificación taxonómica del
-piloto está implementada con SILVA 138.2 y validación independiente. Diversidad
-e inferencia temporal siguen pendientes.
+y 18 artefactos DADA2. La clasificación con SILVA 138.2 pasó validación
+independiente de 21 entradas y 15 artefactos: 64/93 ASVs tienen asignación a
+género con bootstrap 80 (63,54 % de las lecturas). Se conservan cinco ASVs
+marcadas como orgánulos, con 32.868 lecturas. Diversidad e inferencia temporal
+siguen pendientes. La suite actual aprueba 111 pruebas Python; el dry-run
+integrado queda sin trabajos pendientes.
 
 `PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
 propia y no se procesa con el piloto Illumina paired-end actual.

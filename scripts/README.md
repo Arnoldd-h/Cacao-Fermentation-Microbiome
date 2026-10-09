@@ -1,6 +1,6 @@
 # Scripts
 
-Los ejecutables actuales cubren entorno, metadata, diseño longitudinal, QC y
+Los ejecutables actuales cubren entorno, metadata, diseño longitudinal, QC,
 DADA2 y taxonomía. Cada script declara sus entradas, salidas y condiciones de fallo en
 `--help`. Los comandos siguientes se ejecutan desde la raíz del repositorio en
 Linux/WSL.
@@ -21,8 +21,9 @@ python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow
 
 El target por defecto alcanza la validación taxonómica del piloto. La ejecución
 DADA2 sobre `6221445` conserva su validación; la taxonomía tiene configuración
-separada para no modificar sus entradas científicas. La suite aprobó 104 pruebas
-Python en Linux y seis comprobaciones taxonómicas en R.
+separada para no modificar sus entradas científicas. La suite aprobó 111 pruebas
+Python en Linux y seis comprobaciones taxonómicas en R; el dry-run integrado
+queda sin trabajos pendientes.
 
 ## Metadata y unidades de análisis
 

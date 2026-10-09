@@ -38,8 +38,9 @@ umbrales; 50 permite revisar la pérdida de resolución de estas ASVs cortas,
 sin escoger parámetros según los taxones esperados o resultados temporales.
 
 Los nombres originales se preservan, incluidos `uncultured` y otros grupos
-sin nombre de género. La bandera `named_genus` permite distinguirlos de una
-etiqueta de género resuelta; no los reemplaza. No se realiza asignación de
+sin nombre de género. La bandera `named_genus` distingue etiquetas vacías o
+marcadas como desconocidas; no certifica nomenclatura formal ni resuelve grupos
+compuestos de SILVA. No reemplaza las etiquetas. No se realiza asignación de
 especies con la región V4. No se concatenan ASVs de otros estudios.
 
 ## Revisión de secuencias y conservación
@@ -53,8 +54,28 @@ una evaluación de contaminación o abundancia diferencial.
 
 La cobertura se expresa por número de ASVs y lecturas asociadas en cada
 rango/umbral, con cobertura adicional por muestra. Las ASVs con nombre
-`uncultured` cuentan como etiquetas asignadas, pero no como géneros resueltos.
+`uncultured` cuentan como etiquetas asignadas, pero no como `named_genus`.
 Las figuras de cobertura se exportan en PDF, SVG y PNG de 300 dpi.
+
+## Resultados observados del piloto
+
+La ejecución del 2026-10-09 sobre `d13c9eb` empezó con checkout limpio y
+conservó seis muestras, 93 ASVs y 156.561 lecturas. La validación independiente
+comprobó 21 entradas y 15 artefactos; no hubo warnings R ni exclusiones.
+
+| Bootstrap | Rango | ASVs asignadas | Lecturas asociadas | Cobertura de lecturas |
+|---|---|---:|---:|---:|
+| 80 | Family | 79/93 | 100.348 | 64,10 % |
+| 80 | Genus | 64/93 | 99.481 | 63,54 % |
+| 50 | Family | 87/93 | 105.372 | 67,30 % |
+| 50 | Genus | 79/93 | 104.974 | 67,05 % |
+
+La llamada primaria identifica cinco ASVs con etiquetas de orgánulos:
+dos Chloroplast (32.719 lecturas) y tres Mitochondria (149), en total 32.868
+lecturas (20,99 %). Se mantienen en las tablas y denominadores de cobertura;
+su separación posterior requiere una decisión auditable y conteos derivados.
+Kingdom Bacteria en SILVA no descarta esas etiquetas de orgánulos. No se
+infiere especie huésped, contaminación ni trayectoria temporal a partir de ellas.
 
 ## Reproducción y validación
 

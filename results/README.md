@@ -1,9 +1,9 @@
 # Resultados
 
-Los outputs actuales se organizan en `qc/`, `tables/` y `dada2/`. Se conservan
-tablas pequeñas, diagnósticos y procedencia; FASTQ y objetos intermedios pesados
+Los outputs actuales se organizan en `qc/`, `tables/`, `dada2/` y `taxonomy/`.
+Se conservan tablas pequeñas, diagnósticos y procedencia; FASTQ e intermedios pesados
 quedan fuera de Git. Los resultados técnicos del piloto no incluyen todavía
-taxonomía, diversidad, inferencia temporal ni meta-análisis.
+diversidad, inferencia temporal ni meta-análisis.
 
 ## Inventario y diseño
 
@@ -82,7 +82,36 @@ fuera de Git. El intento fallido inicial por identificación de pares SRA se
 preserva en `dada2/attempts/sra_identifier_failure.yaml`. El método y sus límites
 están en [`reports/dada2_methods.md`](../reports/dada2_methods.md).
 
-Los 93 ASVs aún no tienen asignación taxonómica. La retención no demuestra
-sucesión conservada ni valida parámetros para otros estudios. Los conjuntos
+La retención no demuestra sucesión conservada ni valida parámetros para otros
+estudios. Los conjuntos
 V4, V3–V4 y full-length se procesarán por separado; el nuevo estudio PacBio
 requiere una ruta propia antes de integración taxonómica.
+
+## Taxonomía del piloto
+
+La clasificación del 2026-10-09 sobre `d13c9eb`, con checkout limpio al iniciar,
+consume las 93 ASVs y 156.561 lecturas originales de seis muestras. Utiliza
+SILVA NR99 138.2, R 4.4.3 y DADA2 1.34.0. El validador independiente confirma
+21 entradas y 15 artefactos, sin exclusiones ni warnings de clasificación.
+
+En `taxonomy/pilot/`, `taxonomy_unfiltered.tsv` conserva las llamadas sin
+máscara; `taxonomy_bootstraps.tsv`, el soporte original; `taxonomy.tsv`, la
+asignación primaria con bootstrap 80; y `taxonomy_sensitivity.tsv`, los
+umbrales 80/50 del mismo ajuste. `taxonomy_screening.tsv` conserva las marcas
+por ASV y sus lecturas originales. `assignment_coverage.tsv` y
+`sample_coverage.tsv` describen cobertura global y por muestra, incluyendo
+todas las lecturas en sus denominadores.
+
+Con bootstrap 80, 64/93 ASVs tienen etiqueta de género, asociadas a
+99.481 lecturas (63,54 %); con 50 son 79/93 y 104.974 lecturas (67,05 %).
+Dos ASVs etiquetadas Chloroplast reúnen 32.719 lecturas; tres etiquetadas
+Mitochondria reúnen 149. Las cinco conservadas suman 32.868 (20,99 %).
+Aunque sus etiquetas Kingdom son Bacteria en SILVA, deben revisarse como
+orgánulos antes de diversidad. No se atribuye especie huésped ni contaminación.
+
+Las figuras `assignment_coverage.{pdf,svg,png}` proceden de esas tablas.
+`config_snapshot.yaml`, `input_checksums.json`, `provenance.json`,
+`software_versions.tsv` y `session_info.txt` documentan parámetros, hashes,
+versiones y estado inicial de Git. `SUCCESS` y `validation.json` distinguen
+ejecución terminada de validación independiente. El método y las limitaciones
+están en [`reports/taxonomy_methods.md`](../reports/taxonomy_methods.md).

@@ -1,0 +1,258 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "classification": {
+    "method": "dada2::assignTaxonomy",
+    "output_bootstraps": true,
+    "primary_min_boot": 80,
+    "random_seed": 20260819,
+    "raw_min_boot": 0,
+    "rng_kind": [
+      "Mersenne-Twister",
+      "Inversion",
+      "Rejection"
+    ],
+    "sensitivity_min_boot": [
+      50
+    ],
+    "species_assignment": false,
+    "tax_levels": [
+      "Kingdom",
+      "Phylum",
+      "Class",
+      "Order",
+      "Family",
+      "Genus"
+    ],
+    "threads": 2,
+    "try_reverse_complement": true
+  },
+  "command": [
+    "Rscript",
+    "scripts/taxonomy/assign_taxonomy.R",
+    "--config",
+    "/mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/config/taxonomy.yaml",
+    "--input-dir",
+    "/mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/dada2/pilot",
+    "--output-dir",
+    "/mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/taxonomy/pilot",
+    "--threads",
+    "2"
+  ],
+  "effective_threads": 2,
+  "finished_at_utc": "2026-10-09T20:05:03.484449+00:00",
+  "git_commit": "d13c9eba75e1b6200833a25593cfe0dbf048f233",
+  "git_dirty": false,
+  "git_status_at_start": [],
+  "inputs": [
+    {
+      "bytes": 4901,
+      "path": "config/config.yaml",
+      "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+    },
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 4827,
+      "path": "python/cacao_inventory/download.py",
+      "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 139996892,
+      "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+      "sha256": "e0af8246b900a922ea3ea68e7cb1a5e70ceed4db84246b6ea9865eb132452093"
+    },
+    {
+      "bytes": 1866,
+      "path": "references/silva_138.2.provenance.json",
+      "sha256": "facb8d55e880093966992381912e3923dc804ff967944d0c6dbc15d62a5cf5f7"
+    },
+    {
+      "bytes": 41,
+      "path": "results/dada2/pilot/SUCCESS",
+      "sha256": "586a9c12ad1471d7b28b105d100ac25f9a570f385e794639730ae166996cee3b"
+    },
+    {
+      "bytes": 5764,
+      "path": "results/dada2/pilot/asv_counts.tsv",
+      "sha256": "80a43e4a6dcd7646fabf53fff83dded7d40636db208baa25928e27ebbbffc957"
+    },
+    {
+      "bytes": 30488,
+      "path": "results/dada2/pilot/asv_sequences.tsv",
+      "sha256": "e8f74b324802e86fb5bf4ea3b62a05c3627046837a30e818486b3054226c46a8"
+    },
+    {
+      "bytes": 3423,
+      "path": "results/dada2/pilot/sample_metadata.tsv",
+      "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
+    },
+    {
+      "bytes": 297,
+      "path": "results/dada2/pilot/validation.json",
+      "sha256": "95e4dd2ed19ad528ef3edfad382f8454ac83676e5e1e19a73e67ed29e71b4faa"
+    },
+    {
+      "bytes": 11916,
+      "path": "scripts/dada2/helpers.R",
+      "sha256": "d22d205dd0af7678a38eaa6ee72231012748343c9856d1f410e29d111ff9fce7"
+    },
+    {
+      "bytes": 9234,
+      "path": "scripts/dada2/validate_outputs.py",
+      "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
+    },
+    {
+      "bytes": 6776,
+      "path": "scripts/taxonomy/assign_taxonomy.R",
+      "sha256": "57e2f0cd90d2dbcc62ef1a636e2045b97769465b8237458b4d0c4adf16585c61"
+    },
+    {
+      "bytes": 2092,
+      "path": "scripts/taxonomy/helpers.R",
+      "sha256": "73e31b91ec838dc14689e6ce4beb9adf135ef5735ec5d4336f18338dbf9498d5"
+    },
+    {
+      "bytes": 6145,
+      "path": "scripts/taxonomy/run_taxonomy.py",
+      "sha256": "af9842b063e453476c8f1745212406802247820fc0f35d422153a5b92d24637b"
+    },
+    {
+      "bytes": 5301,
+      "path": "workflow/Snakefile",
+      "sha256": "896003ca1010ab44b99d8234b8d0e103cc2d20f099d52b3becdb0d85481df32f"
+    },
+    {
+      "bytes": 3620,
+      "path": "workflow/rules/pilot_taxonomy.smk",
+      "sha256": "290af66bba01108fbe7f783beb95eb2c325e08fe58ef6d79f7cff87d69f26e9d"
+    },
+    {
+      "bytes": 1295,
+      "path": "config/taxonomy.yaml",
+      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 4971,
+      "path": "results/taxonomy/pilot/assignment_coverage.pdf",
+      "sha256": "3a25b51374bc4b225306c034c5f697f778c3fe4b881d3722d12c607ad948361f"
+    },
+    {
+      "bytes": 118949,
+      "path": "results/taxonomy/pilot/assignment_coverage.png",
+      "sha256": "e41f550df4f855149873eb27ad95a62db378e1ce473f2f34da4886b5ba46bf98"
+    },
+    {
+      "bytes": 73669,
+      "path": "results/taxonomy/pilot/assignment_coverage.svg",
+      "sha256": "71b55a664251b6e21a6571c44450c7999a22618238a8c0203af6b49259aab4fc"
+    },
+    {
+      "bytes": 838,
+      "path": "results/taxonomy/pilot/assignment_coverage.tsv",
+      "sha256": "eb2b05c57294768e267e2bc097126a895001f49da64740ca6f82a8f6296eee2c"
+    },
+    {
+      "bytes": 1295,
+      "path": "results/taxonomy/pilot/config_snapshot.yaml",
+      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    },
+    {
+      "bytes": 3318,
+      "path": "results/taxonomy/pilot/input_checksums.json",
+      "sha256": "fd5edd800c2d86dbe194cc95b16f4ce826992913ef6d49bf8a6a9fb27439f0ab"
+    },
+    {
+      "bytes": 5012,
+      "path": "results/taxonomy/pilot/sample_coverage.tsv",
+      "sha256": "ad8c27fe414fcad1ad565e341b70099902826c4bd7a8b5d58e67e1c8b76f8f14"
+    },
+    {
+      "bytes": 2677,
+      "path": "results/taxonomy/pilot/session_info.txt",
+      "sha256": "513a08e1416614a20035ca1dc44a85f2a16bb269ae3767507eb0e3d22cfa7472"
+    },
+    {
+      "bytes": 87,
+      "path": "results/taxonomy/pilot/software_versions.tsv",
+      "sha256": "a66a712952e113959d3856f86f55cb3ef32db7a0485756b33f63ae626d636b6d"
+    },
+    {
+      "bytes": 14759,
+      "path": "results/taxonomy/pilot/taxonomy.tsv",
+      "sha256": "4750c2437a8899a4b9e404ad6587feb46ec21c1700a57eccb13499545c510822"
+    },
+    {
+      "bytes": 9551,
+      "path": "results/taxonomy/pilot/taxonomy_bootstraps.tsv",
+      "sha256": "4cab436c3095d2dbaaaefc1bfe84693a2d76aeed5f0c1a1630557a885616ba32"
+    },
+    {
+      "bytes": 9888,
+      "path": "results/taxonomy/pilot/taxonomy_screening.tsv",
+      "sha256": "07efbffd8f68e95a6d2e42676c446d8540ca4c088e5d73a4b1d266dbcc6127df"
+    },
+    {
+      "bytes": 30354,
+      "path": "results/taxonomy/pilot/taxonomy_sensitivity.tsv",
+      "sha256": "ce5b293c3db6f962daffa2e06776bff536409099530855e5d382b7c79a1e6f19"
+    },
+    {
+      "bytes": 15202,
+      "path": "results/taxonomy/pilot/taxonomy_unfiltered.tsv",
+      "sha256": "ce0902ea8e7f04d32c5c9751dd09f8b405b4da182f7d79dbd2a962aba81fb282"
+    },
+    {
+      "bytes": 0,
+      "path": "results/taxonomy/pilot/warnings.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "reference": {
+    "doi": "10.5281/zenodo.14169026",
+    "expected_bytes": 139996892,
+    "expected_md5": "1764e2a36b4500ccb1c7d5261948a414",
+    "name": "SILVA",
+    "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+    "provenance_path": "references/silva_138.2.provenance.json",
+    "url": "https://zenodo.org/records/14169026/files/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+    "version": "138.2"
+  },
+  "rng_kind": [
+    "Mersenne-Twister",
+    "Inversion",
+    "Rejection"
+  ],
+  "started_at_utc": "2026-10-09T20:01:38.011099+00:00",
+  "status": "success",
+  "upstream_validation": {
+    "artifacts_checked": 18,
+    "asvs": 93,
+    "error_models_converged_before_limit": true,
+    "inputs_checked": 18,
+    "nonchim_pairs": 156561,
+    "samples": 6,
+    "source_git_commit": "6221445317a30cab24a67620f251e71ee772129c",
+    "status": "valid",
+    "study_id": "pacheco_montealegre_2020_colombia"
+  }
+}
