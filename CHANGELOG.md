@@ -2,6 +2,19 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## [v0.3.0-pilot-dada2] - 2026-10-08
+
+- Ejecución integrada sobre `6221445`: seis muestras, 165.034 pares filtrados,
+  160.649 ensamblados, 156.561 sin quimeras (88,55 %) y 93 ASVs de 237–243 nt.
+- Ambos modelos de error convergen en cinco rondas; doce warnings gráficos
+  por frecuencias cero permanecen registrados y los diagnósticos se revisaron.
+- 18 entradas y 18 artefactos pasan validación independiente; cuatro tablas
+  principales reproducen exactamente la primera corrida por SHA-256.
+- 91 pruebas Python, contratos R y regresión SRA aprobados. El target `all`
+  termina y el siguiente dry-run queda sin trabajos pendientes.
+- Resultados pequeños, diagnósticos PDF/SVG/PNG y procedencia versionados;
+  FASTQ filtrados y objetos RDS permanecen fuera de Git. Taxonomía pendiente.
+
 ## [v0.2.0-pilot-qc] - 2026-10-08
 
 - QC reproducido con datos crudos inmutables; los 24 FASTQ raw/interim

@@ -268,7 +268,7 @@ requisitos descritos. No se contactó a autores; los intentos públicos fallidos
 no se presentan como evidencia primaria verificada.
 
 Se completaron `discover_candidates.py`, `build_inventory.py` y
-`validate_metadata.py`. La suite Python final ejecutó 85 tests: 81 pasaron y
+`validate_metadata.py`. La suite de esta revisión ejecutó 85 tests: 81 pasaron y
 4 comprobaciones de integración Snakemake se omitieron en Windows por requerir
 el entorno Linux declarado. Incluye separación 16S/ITS, campos enviados,
 ausencia de lotes inventados, conservación de 144 h pendientes y escritura TSV
@@ -278,6 +278,8 @@ La validación integrada posterior ejecutada por el proceso principal aprobó
 89 tests en Linux, incluidas las cuatro integraciones Snakemake y las pruebas
 independientes de artefactos DADA2. Los fixtures sintéticos sólo comprueban
 contratos de software y no se presentan como evidencia de fermentación.
+El cierre integrado del 8 de octubre aprobó 91 tests en Linux, incluidos los
+casos posteriores de invalidación por configuración y estabilidad del checkpoint.
 
 El ranking recalculado en memoria conserva PRJNA492720 primero. El manifest
 resultante es idéntico al actual: seis runs y 25.154.687 bytes. Esta revisión

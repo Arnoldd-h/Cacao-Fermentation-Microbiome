@@ -118,7 +118,8 @@ Se completaron descubrimiento, reconstrucción y validación independiente. La
 suite inicial ejecutó 85 tests: 81 pasaron y 4 integraciones Snakemake
 se omitieron en Windows por requerir el entorno Linux declarado. La validación
 integrada posterior en Linux aprobó 89 tests, incluidas esas cuatro integraciones
-y las comprobaciones independientes de DADA2. No se
+y las comprobaciones independientes de DADA2. El cierre del workflow del 8 de
+octubre aprobó 91 tests, con dos regresiones adicionales del grafo. No se
 versionaron cachés, secuencias ni textos completos de artículos. La búsqueda
 textual reproducible no garantiza sensibilidad bibliográfica absoluta; los
 siguientes cierres dependen de las fuentes primarias específicas documentadas

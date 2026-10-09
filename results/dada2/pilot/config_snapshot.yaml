@@ -1,0 +1,161 @@
+schema_version: 1.0.0
+project:
+  scope: bacterial_16s_amplicon
+  primary_outcome: within-study temporal microbial succession effects
+  default_random_seed: 20260819
+temporal_stages:
+  boundary_policy: early includes 0.00-0.33; mid includes >0.33-0.66; late includes
+    >0.66-1.00
+  early:
+  - 0.0
+  - 0.33
+  mid:
+  - 0.33
+  - 0.66
+  late:
+  - 0.66
+  - 1.0
+core_microbiome_sensitivity:
+  sample_prevalence:
+  - 0.5
+  - 0.7
+  - 0.9
+  minimum_relative_abundance:
+  - 0.0001
+  - 0.001
+  - 0.01
+  study_prevalence:
+  - 0.5
+  - 0.75
+  - 1.0
+analysis_design:
+  independent_unit: fermentation_batch
+  observation_fields:
+  - study_id
+  - fermentation_batch
+  - fermentation_hours
+  within_observation_policy: retain_subsamples_for_documented_within_study_aggregation
+  pilot_inference: no
+  cross_study_asv_pooling: no
+  confounded_moderators: report_as_non_identifiable
+  time_sensitivity:
+  - fermentation_hours
+  - relative_time
+pilot_selection:
+  minimum_timepoints: 3
+  required_temporal_stages:
+  - early
+  - mid
+  - late
+  metadata_quality_order:
+  - high
+  - medium-high
+  - medium
+  - medium-low
+  - low
+  ranking_priority:
+  - metadata_quality
+  - primers_known
+  - paired_end
+  - unique_timepoints
+  - fermentation_batches
+  - selected_fastq_bytes
+pilot_vertical_slice:
+  samples_per_stage: 2
+  required_stages:
+  - early
+  - mid
+  - late
+  required_layout: PAIRED
+  required_fastq_files: 2
+pilot_download:
+  chunk_size_bytes: 1048576
+  minimum_free_space_factor: 2.0
+amplicon_processing:
+  PRJNA492720:
+    study_id: pacheco_montealegre_2020_colombia
+    marker: 16S rRNA
+    region: V4
+    primers:
+      forward:
+        name: 515F_L1
+        gene_specific_sequence: GTGCCAGCMGCCGCGGTAA
+        linker_sequence: ACACTCTTTCCCTACACGACGCTCTTCCGATCT
+        full_construct_sequence: ACACTCTTTCCCTACACGACGCTCTTCCGATCTGTGCCAGCMGCCGCGGTAA
+      reverse:
+        name: 806R_L2
+        gene_specific_sequence: GGACTACHVGGGTWTCTAAT
+        linker_sequence: GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
+        full_construct_sequence: GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCTGGACTACHVGGGTWTCTAAT
+    primer_detection:
+      error_rate: 0.1
+      allow_indels: no
+      minimum_overlap_fraction: 1.0
+    cutadapt:
+      error_rate: 0.1
+      allow_indels: no
+      discard_untrimmed: no
+      quality_trimming: no
+      forward_minimum_overlap: 19
+      reverse_minimum_overlap: 20
+    dada2:
+      filter:
+        trunc_len:
+        - 0
+        - 0
+        max_n: 0
+        max_ee:
+        - 2
+        - 2
+        trunc_q: 2
+        min_len: 150
+        trim_left:
+        - 0
+        - 0
+        rm_phix: yes
+        match_ids: yes
+        id_field: 1
+        id_sep: \s
+      error_learning:
+        nbases: 100000000
+        randomize: no
+        max_consist: 10
+        omega_c: 0
+      inference:
+        pool: no
+        omega_a: 1e-40
+        omega_c: 1e-40
+      merge:
+        min_overlap: 12
+        max_mismatch: 0
+        trim_overhang: no
+        just_concatenate: no
+      chimera:
+        method: consensus
+        min_fold_parent_over_abundance: 1.5
+        min_parent_abundance: 2
+        min_sample_fraction: 0.9
+        ignore_n_negatives: 1
+        allow_one_off: no
+      length_filter:
+        enabled: no
+      random_seed: 20260819
+      threads: 2
+    sources:
+      article: https://doi.org/10.3389/fmicb.2020.00650
+      supplementary_archive: https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7174660/supplementaryFiles?includeInlineImage=false
+      supplementary_file: Data_Sheet_2.PDF
+      evidence_location: Table S2
+inventory:
+  ncbi_esearch_url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi
+  ncbi_esummary_url: https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi
+  ena_filereport_url: https://www.ebi.ac.uk/ena/portal/api/filereport
+  http_timeout_seconds: 60
+  http_retries: 3
+  user_agent: cacao-microbiome-inventory/0.1 (public metadata only)
+discovery_queries:
+- search_id: ncbi_cacao_fermentation_sra_v1
+  term: (cacao[All Fields] OR cocoa[All Fields] OR "Theobroma cacao"[Organism]) AND
+    ferment*[All Fields] AND "bioproject sra"[Filter]
+  retmax: 200
+

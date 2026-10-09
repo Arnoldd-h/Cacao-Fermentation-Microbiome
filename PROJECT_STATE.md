@@ -4,9 +4,9 @@
 
 ## Fase actual
 
-Inventario de 34 candidatos consolidado y QC reproducido con procedencia.
-Piloto DADA2 implementado y primera ejecución técnica validada; falta cerrar
-su ejecución integrada final de Snakemake con el código versionado.
+Inventario, QC y piloto DADA2 consolidados. El workflow integrado terminó y
+su siguiente dry-run no programa trabajos. La siguiente fase es clasificación
+taxonómica con referencia y parámetros explícitos antes de escalar por estudio.
 
 ## Completado
 
@@ -29,12 +29,17 @@ su ejecución integrada final de Snakemake con el código versionado.
   recortados y 238 bases retiradas; calidad por base y adaptadores pasan 12/12.
 - DADA2 configurado antes de ejecutarse; corrección del parser SRA manteniendo
   la comprobación obligatoria de identificadores pareados.
-- Primera ejecución DADA2: 165.034 pares filtrados, 160.649 ensamblados y 156.561
+- Ejecución integrada DADA2: 165.034 pares filtrados, 160.649 ensamblados y 156.561
   sin quimeras (88,55 % de la entrada), 93 ASVs y seis muestras conservadas.
 - Ambos modelos de error convergieron en cinco rondas; gráficas revisadas y
   doce warnings de representación de frecuencias cero preservados.
 - Validador independiente de DADA2: conteos entre etapas, tabla ASV/FASTA,
   distribuciones de longitud y hashes; regresiones Python y pruebas R.
+- Suite final: 91 pruebas Python en Linux aprobadas, incluidas seis integraciones
+  Snakemake; 32 comprobaciones R y regresión pareada SRA aprobadas.
+- Corrida final del 2026-10-09 UTC (8 de octubre en Colombia), sobre `6221445`:
+  18 entradas y 18 artefactos DADA2 validados. Las cuatro tablas principales
+  son idénticas a las de la primera corrida técnica.
 
 ## Datasets incluidos
 
@@ -50,10 +55,7 @@ PacBio requiere un procesamiento específico y no entra en el piloto Illumina.
 Las fuentes y decisiones por estudio están en `config/datasets.yaml` y
 `reports/inventory_review_2026-10-04.md`.
 
-## En progreso
-
-- Ejecución final integrada DADA2 después de congelar el código y el QC.
-- Publicación local de los hitos Git y cierre de documentación.
+## Estado operativo
 
 El inventario pasó el validador independiente; las unidades analíticas cubren
 182 runs, 95 observaciones lote-tiempo y 12 lotes. QC terminó 45 trabajos y
@@ -62,6 +64,10 @@ La corrección de los consumidores del checkpoint elimina la repetición de
 resúmenes: el dry-run conjunto QC termina sin trabajos pendientes.
 Los cinco registros de procedencia renovados pasan 222 comprobaciones de
 bytes y SHA-256 de configuración, código, entradas y salidas.
+El target `all` completó descubrimiento, DADA2 y validación; el siguiente
+dry-run devuelve `Nothing to be done`. El descubrimiento actualizado conserva
+34 BioProjects y sus conteos de runs coinciden con el inventario versionado.
+No queda una ejecución activa.
 
 ## Bloqueos y limitaciones
 
@@ -79,11 +85,10 @@ bytes y SHA-256 de configuración, código, entradas y salidas.
 
 ## Próximas tareas
 
-1. Cerrar validaciones y tags de inventario, QC y piloto DADA2.
-2. Fijar versión y checksum de una referencia taxonómica y validar la clasificación.
-3. Escalar el estudio piloto completo conservando parámetros por estudio y
+1. Fijar versión y checksum de una referencia taxonómica y validar la clasificación.
+2. Escalar el estudio piloto completo conservando parámetros por estudio y
    revisar por separado los pipelines V3-V4 y PacBio antes de integrar taxonomía.
-4. Definir tratamiento de ceros, agregación de submuestras y modelos longitudinales
+3. Definir tratamiento de ceros, agregación de submuestras y modelos longitudinales
    antes de estimar efectos, con sensibilidad temporal absoluta y relativa.
 
 ## Control de versiones
@@ -93,4 +98,10 @@ Los commits son locales. No se publica ni se hace push sin autorización.
 Los datos pesados permanecen ignorados; las salidas pequeñas conservan procedencia.
 El commit `44f5f4a` prerregistra los parámetros; `eafadd7` corrige identificadores
 SRA; `a2bfa82` y `dd4f364` cierran reproducibilidad del workflow QC.
+`20feeea` corrige reevaluación del checkpoint; `32ab045` consolida inventario y
+`6221445` consolida QC. Los hitos locales son `v0.1.0-dataset-inventory`,
+`v0.2.0-pilot-qc` y `v0.3.0-pilot-dada2`.
+La procedencia final registra `git_dirty=true` por documentación y resultados
+previos todavía sin commit al iniciar. Sus seis entradas versionadas (config,
+manifest, scripts R y tablas QC) coinciden byte a byte con `6221445`.
 Para el checkout exacto usar `git log -1 --oneline` y `git status`.

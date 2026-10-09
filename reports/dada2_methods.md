@@ -129,8 +129,8 @@ El intento fallido se conserva en
 
 ## Resultado técnico observado
 
-La primera ejecución técnica completa del 7 de octubre de 2026 (UTC), previa a
-la consolidación del código y la ejecución final del workflow, conservó 165.034 de
+La ejecución integrada del 9 de octubre de 2026 UTC (8 de octubre en Colombia),
+sobre el código versionado `6221445`, conservó 165.034 de
 176.798 pares durante el filtrado (93,35 %), ensambló 160.649 y retuvo 156.561
 pares sin quimeras (88,55 % de la entrada). Las 131 secuencias ensambladas se
 redujeron a 93 ASVs después del consenso de quimeras. Ninguna de las seis muestras
@@ -157,3 +157,12 @@ que las abundancias agregadas conservan los conteos.
 Las cifras proceden de `results/dada2/pilot/summary.tsv`, `read_tracking.tsv`,
 `sequence_length_distribution.tsv` y `error_learning.tsv`. La ejecución definitiva
 del workflow conserva su propio commit y hashes en `run_provenance.yaml`.
+
+El validador independiente comprobó 18 entradas y 18 artefactos; las cuatro
+tablas principales (conteos ASV, secuencias, seguimiento y resumen) son idénticas
+por SHA-256 a la primera corrida técnica del 7 de octubre UTC. Las seis entradas
+versionadas de R coinciden con el commit declarado, aunque `git_dirty=true`
+registre documentación y resultados aún sin commit al iniciar. La suite final
+aprobó 91 pruebas Python en Linux; los contratos R y la regresión SRA habían
+aprobado 32 comprobaciones y el ensayo pareado. El target `all` terminó y el
+siguiente dry-run no programó trabajos.

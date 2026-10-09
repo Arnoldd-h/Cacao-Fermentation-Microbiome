@@ -37,19 +37,32 @@ BioProject/SRA/ENA metadata
         -> heterogeneidad y sensibilidad
 ```
 
-El primer hito se concentra en metadata y no descarga FASTQ de forma masiva. La
-vertical slice local contiene únicamente seis runs del piloto.
+El inventario consulta metadata pública. La descarga y el procesamiento local
+se limitan a seis runs del piloto; no se descargan todos los proyectos.
 
 ## Inventario actual
 
-La consulta sistemática documentada recupera 34 BioProjects. Once están
-configurados y cribados en detalle; el inventario contiene 1.573 corridas, con
-154 incluidas, 101 pendientes y 1.318 excluidas. La comparación reproducible
-selecciona `PRJNA492720` como piloto y `PRJNA627078` es el segundo estudio
-primario. Otros 13 proyectos permanecen en revisión manual.
+La consulta sistemática recupera 34 BioProjects, todos configurados y revisados:
+4 incluidos, 7 pendientes y 23 excluidos. El inventario contiene 2.357 runs,
+con 182 incluidos, 93 pendientes y 2.082 excluidos. Los estudios incluidos son
+`PRJNA492720`, `PRJNA627078`, `PRJEB40850` y `PRJEB57747`; representan 12 lotes
+de fermentación. Las extracciones y estratos de muestreo se conservan como
+submuestras, sin contarlos como lotes independientes.
 
-El informe y los vacíos de metadata están en
-`reports/dataset_inventory.md`.
+La selección reproducible mantiene `PRJNA492720` como piloto. Sus seis runs
+tienen QC y una ejecución integrada DADA2 con 93 ASVs y 156.561 pares
+sin quimeras de 176.798 pares de entrada (88,55 %). Se validaron 18 entradas
+y 18 artefactos; 91 pruebas Python pasan y el workflow queda sin trabajos
+pendientes tras ejecutarse. Estas cifras describen procesamiento; todavía
+no hay asignación taxonómica, análisis de diversidad ni inferencia temporal.
+
+`PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
+propia y no se procesa con el piloto Illumina paired-end actual.
+
+Las fuentes y requisitos de los siete pendientes están en el
+[informe del inventario](reports/dataset_inventory.md) y la
+[revisión detallada](reports/inventory_review_2026-10-04.md). Los parámetros y
+límites del piloto se documentan en [métodos DADA2](reports/dada2_methods.md).
 
 ## Ejecución
 
@@ -57,22 +70,32 @@ El stack bioinformático se ejecuta en Ubuntu/WSL2 mediante el entorno
 `cacao-microbiome`. Las instrucciones de creación, actualización y verificación
 están en [`environment/README.md`](environment/README.md).
 
-Con Python 3.11 o posterior para las tareas de inventario:
+Desde la raíz del repositorio en Linux/WSL, con el entorno creado, el wrapper
+descubre su prefijo registrado en Micromamba. No requiere activación interactiva:
 
-```powershell
-python scripts/metadata/discover_candidates.py
-python scripts/metadata/build_inventory.py
-python scripts/metadata/validate_metadata.py
-python scripts/metadata/select_pilot_dataset.py
-python scripts/metadata/build_pilot_manifest.py
-python scripts/metadata/download_pilot_fastq.py
-python scripts/metadata/validate_pilot_fastq.py
-python -m unittest discover -s tests -v
+```bash
+python3 scripts/environment/run_in_environment.py python scripts/environment/verify_environment.py
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 --dry-run
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2
 ```
 
-La búsqueda y el inventario consultan únicamente metadata pública de NCBI y
-ENA. Los resultados tabulares se escriben de forma atómica; una falla de red o
-un cambio de esquema no debe sobrescribir un inventario válido.
+El workflow reconstruye inventario, diseño longitudinal, selección y manifest;
+descarga los FASTQ ausentes del piloto, ejecuta QC y DADA2 y valida sus salidas.
+Para ejecutar el target DADA2 con sus dependencias, comprobar sus artefactos y
+entradas, o ejecutar las pruebas:
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/Snakefile --cores 2 pilot_dada2
+python3 scripts/environment/run_in_environment.py python scripts/dada2/validate_outputs.py --run-dir results/dada2/pilot --check-inputs-root .
+python3 scripts/environment/run_in_environment.py python -m unittest discover -s tests -v
+```
+
+`--check-inputs-root .` comprueba también los hashes de las entradas originales;
+un cambio posterior de esas entradas obliga a reconstruir y validar la etapa
+afectada. Los comandos individuales de metadata y QC están descritos en
+[`scripts/README.md`](scripts/README.md). La búsqueda y el inventario no
+descargan secuencias. Las tablas se escriben de forma atómica y conservan su
+mtime cuando el contenido no cambia.
 
 ## Reproducibilidad
 
@@ -89,7 +112,7 @@ un cambio de esquema no debe sobrescribir un inventario válido.
 config/       parámetros y candidatos
 metadata/     estudios, muestras, runs y exclusiones
 protocol/     protocolo, criterios y decisiones científicas
-python/       librería testeable del inventario
+python/       módulos testeables de metadata, diseño y QC
 scripts/      entradas ejecutables del workflow
 workflow/     reglas de Snakemake
 tests/        pruebas unitarias y de humo
@@ -102,7 +125,9 @@ environment/  dependencias reproducibles
 ## Estado
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
-`CHANGELOG.md`. No existen todavía resultados biológicos ni un meta-análisis.
+`CHANGELOG.md`. La taxonomía, integración entre estudios y evaluación de las
+hipótesis siguen pendientes; el resultado técnico del piloto no demuestra
+sucesión conservada ni ausencia de contaminación.
 
 La selección de licencia y los metadatos completos de citación están pendientes
 para no atribuir autores ni términos legales sin confirmación.

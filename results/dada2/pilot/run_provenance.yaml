@@ -1,0 +1,95 @@
+status: complete
+started_at_utc: '2026-10-09T03:03:15Z'
+git_commit: 6221445317a30cab24a67620f251e71ee772129c
+git_dirty: yes
+git_status:
+- ' M README.md'
+- ' M results/README.md'
+- ' M scripts/README.md'
+- ?? results/dada2/
+command:
+- Rscript
+- scripts/dada2/run_pilot.R
+- --config
+- config/config.yaml
+- --manifest
+- metadata/pilot_manifest.tsv
+- --output-dir
+- results/dada2/pilot
+- --intermediate-dir
+- results/intermediate/dada2/pilot
+- --raw-quality
+- results/qc/pilot/raw_read_quality.tsv
+- --trimmed-quality
+- results/qc/pilot/trimmed_read_quality.tsv
+- --threads
+- '2'
+study_id: pacheco_montealegre_2020_colombia
+bioproject: PRJNA492720
+manifest_sample_count: 6
+random_seed: 20260819
+settings:
+  filter:
+    trunc_len:
+    - 0
+    - 0
+    max_n: 0
+    max_ee:
+    - 2
+    - 2
+    trunc_q: 2
+    min_len: 150
+    trim_left:
+    - 0
+    - 0
+    rm_phix: yes
+    match_ids: yes
+    id_field: 1
+    id_sep: \s
+  error_learning:
+    nbases: 100000000
+    randomize: no
+    max_consist: 10
+    omega_c: 0
+  inference:
+    pool: no
+    omega_a: 1.0e-40
+    omega_c: 1.0e-40
+  merge:
+    min_overlap: 12
+    max_mismatch: 0
+    trim_overhang: no
+    just_concatenate: no
+  chimera:
+    method: consensus
+    min_fold_parent_over_abundance: 1.5
+    min_parent_abundance: 2
+    min_sample_fraction: 0.9
+    ignore_n_negatives: 1
+    allow_one_off: no
+  length_filter:
+    enabled: no
+  random_seed: 20260819
+  threads: 2
+checksum_algorithm: MD5
+checksum_table: input_checksums.tsv
+software_versions: software_versions.tsv
+host_platform: x86_64-conda-linux-gnu
+effective_threads: 2
+error_models_converged_before_limit: yes
+input_checksums_verified_at_completion: yes
+output_checksums: output_checksums.tsv
+finished_at_utc: '2026-10-09T03:05:23Z'
+warnings:
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
+- log-10 transformation introduced infinite values.
