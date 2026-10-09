@@ -25,6 +25,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   un directorio HTML vacío para SRR7899804 R2; se registra el bloqueo sin
   excluir ese run ni producir resultados DADA2 completos sobre un subconjunto.
 - Suite final: 144 pruebas Python aprobadas; piloto validado y dry-run estable.
+- Workflow y registros de ampliación integrados en `main` mediante PR #4
+  (`e28049c`), conservando explícitamente el bloqueo de disponibilidad de ENA.
 
 ## [v0.5.0-diversity] - 2026-10-09
 

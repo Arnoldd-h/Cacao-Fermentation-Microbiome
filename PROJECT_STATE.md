@@ -28,6 +28,8 @@ permanece en el manifest y no se añade una exclusión por transporte.
 Se descargaron y validaron 185/186 FASTQ: 393.057.692 bytes, con MD5,
 gzip/CRC y estructura correctos. Los archivos verificados se conservan para
 reanudar. No queda una ejecución activa; falta únicamente el R2 público indicado.
+Workflow, manifest, auditorías y registro del bloqueo integrados en `main`
+mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
 
 ## Completado
 
