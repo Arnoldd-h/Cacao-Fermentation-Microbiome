@@ -20,6 +20,8 @@ limitados y conservación de los parámetros científicos del piloto.
 NCBI/ENA confirman los 94 runs incluidos. La auditoría de FASTQ identifica
 93 runs con archivos pareados y uno sin pares completos (SRR7899803); su exclusión de la
 ruta paired-end se registra aparte y no cambia la inclusión del inventario.
+Workflow completo implementado y pruebas de alcance/QC/reconstrucción aprobadas;
+la ejecución científica ampliada sigue pendiente de finalizar y validar.
 
 ## Completado
 

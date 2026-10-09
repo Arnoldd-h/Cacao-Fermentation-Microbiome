@@ -31,6 +31,11 @@ results/qc/pilot/multiqc_raw/
 results/qc/pilot/cutadapt/
 results/qc/pilot/fastqc_trimmed/
 results/qc/pilot/multiqc_trimmed/
+results/qc/*/full/fastqc_raw/
+results/qc/*/full/fastqc_trimmed/
+results/qc/*/full/multiqc_raw/
+results/qc/*/full/multiqc_trimmed/
+results/qc/*/full/cutadapt/
 metadata/cache/
 metadata/.inventory.ok
 

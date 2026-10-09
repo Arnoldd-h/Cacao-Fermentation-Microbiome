@@ -10,6 +10,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   carece de pares completos. Se registra la política paired-end: 93 runs procesables;
   el inventario conserva los 94 y no se inventan mates ni exclusiones silenciosas.
 - Diversidad `v0.5.0-diversity` integrada en `main` mediante PR #3 (`868afa8`).
+- Workflow completo separado del piloto: manifest auditado, descarga inmutable,
+  QC reconciliado, DADA2, SILVA, separación bacteriana y diversidad descriptiva.
+- 14 pruebas de ampliación cubren alcance, streams huérfanos, corrupción de QC,
+  reconstrucción sin manifest y conservación de archivos crudos existentes.
 
 ## [v0.5.0-diversity] - 2026-10-09
 
