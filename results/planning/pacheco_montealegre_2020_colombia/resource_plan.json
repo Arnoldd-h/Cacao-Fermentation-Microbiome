@@ -6,14 +6,14 @@
   "existing_valid_files": 186,
   "fastq_files": 186,
   "fermentation_batches": 4,
-  "free_disk_bytes_at_planning": 33632636928,
+  "free_disk_bytes_at_planning": 33587691520,
   "inventory_runs": 94,
   "remaining_download_bytes": 0,
   "reserve_is_estimate": true,
   "reserved_processing_bytes": 2367094620,
   "resources": {
     "analysis_memory_mb": 4000,
-    "cores": 4,
+    "cores": 8,
     "fastqc_memory_mb": 512,
     "memory_budget_mb": 4500,
     "minimum_free_space_factor": 6.0

@@ -25,8 +25,11 @@ gzip/CRC y estructura FASTQ completa. El informe y su procedencia están en
 La ejecución de la auditoría registra `f908ba6` y conserva el estado Git observado.
 La comprobación renovada de NCBI/ENA confirma los 94 runs sin discrepancias;
 manifest y log de streams conservan su contenido. Las auditorías auxiliares
-registran Python del sistema 3.14.4; el workflow científico utiliza el entorno
-Micromamba registrado, con Python 3.12.13 y las versiones fijadas.
+iniciales registran Python del sistema 3.14.4. Tras el ajuste operativo, el
+checkpoint y la auditoría de los 186 archivos se repitieron sobre `0941180`
+en el entorno Micromamba registrado, con Python 3.12.13 y las versiones fijadas.
+El manifest y la planificación renovados pasan una comprobación independiente
+de 31 entradas y seis artefactos, incluida la configuración operativa vigente.
 
 Los 18 componentes del entorno existente cargan correctamente y conservan las
 versiones registradas, incluidos R 4.4.3, DADA2 1.34.0, Cutadapt 5.0 y
@@ -58,3 +61,13 @@ ampliar el límite a ocho tareas; el presupuesto global sigue en 4.500 MB y
 DADA2/taxonomía siguen usando dos hilos. Ocho FastQC reservan 4.096 MB.
 Los resultados FastQC completos se conservan y el reinicio revisa trabajos
 incompletos. No se modifican entradas ni parámetros científicos.
+
+## Composición descriptiva del piloto
+
+La política `61da448` y la implementación `ad4c3ca` añaden resúmenes por
+familia/género, conservando linajes y desconocidos. El perfil piloto produce
+95 filas de composición para las seis muestras, 88 ASVs y 123.693 lecturas.
+La validación reconcilia cada linaje y cobertura, comprueba 15 entradas y cinco
+artefactos y se repite con `--validate-only` sin regenerar salidas. Las siete
+pruebas nuevas usan datos sintéticos; los resultados anteriores proceden de
+las muestras públicas reales. No se agregan estratos ni se contrastan hipótesis.

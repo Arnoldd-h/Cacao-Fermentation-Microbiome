@@ -110,6 +110,9 @@ mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
   cuatro regresiones de descarga aprobadas y dry-run de ampliación de 670 trabajos.
 - Suite completa renovada: 144 pruebas aprobadas. Ajuste operativo a ocho tareas
   concurrentes y 4.500 MB, conservando dos hilos para DADA2/taxonomía y los métodos.
+- Resúmenes de composición del piloto: 95 filas por familia/género sobre seis
+  muestras, 88 ASVs y 123.693 lecturas; 15 entradas/cinco artefactos validados,
+  sin renormalizar sólo taxones clasificados. Siete pruebas nuevas aprobadas.
 
 ## Datasets incluidos
 

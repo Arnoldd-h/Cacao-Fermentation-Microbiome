@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "ranks": ["Family", "Genus"],
+  "preserve_ancestral_ranks": true,
+  "unclassified_policy": "preserve_empty_lineage",
+  "sample_aggregation": "none",
+  "zero_policy": "omit_zero_count_rows",
+  "relative_abundance_denominator": "all_retained_reads_per_sample",
+  "inference": false,
+  "analyses": {
+    "pilot": {
+      "diversity_config": "config/diversity.yaml",
+      "output_dir": "results/composition/pilot",
+      "expected_samples": 6
+    },
+    "full_study": {
+      "diversity_config": "config/full_study_diversity.yaml",
+      "output_dir": "results/composition/pacheco_montealegre_2020_colombia/full",
+      "expected_samples": 93
+    }
+  }
+}

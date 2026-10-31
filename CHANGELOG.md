@@ -9,6 +9,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   retenidas, sin agregar submuestras ni realizar inferencia.
 - Productor y validador de composición por muestra/rango, con perfiles para piloto
   y estudio completo, procedencia SHA-256 y pruebas de conservación y corrupción.
+- Primera ejecución de composición del piloto: 95 filas, seis muestras y todas
+  las 123.693 lecturas retenidas; validación de 15 entradas y cinco artefactos.
 - Resuelto el bloqueo de ENA: recuperación de SRR7899804 R2 desde su URL original,
   con los mismos bytes y MD5 del manifest registrado. Cierre de descarga de
   186/186 FASTQ válidos, 394.515.770 bytes, sin nuevas exclusiones ni cambios metodológicos.

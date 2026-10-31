@@ -1,0 +1,17 @@
+{
+  "artifacts_checked": 5,
+  "asvs": 88,
+  "composition_rows": 95,
+  "inference": false,
+  "inputs_checked": 15,
+  "retained_reads": 123693,
+  "sample_aggregation": "none",
+  "samples": 6,
+  "source_git_commit": "ad4c3ca5154f1d14dd1fadc90980ab2ea04e7daf",
+  "status": "valid",
+  "study_id": "pacheco_montealegre_2020_colombia",
+  "taxonomic_ranks": [
+    "Family",
+    "Genus"
+  ]
+}

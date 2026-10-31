@@ -50,3 +50,10 @@ Las tablas conservan muestras y estratos individuales. No agregan lotes o
 tiempos, no estiman asociaciones o significación y no definen un core. Son
 entradas descriptivas para revisar la composición antes de registrar y ejecutar
 los modelos longitudinales del protocolo.
+
+## Primera ejecución observada
+
+El perfil piloto ejecutado sobre `ad4c3ca` conserva seis muestras, 88 ASVs y
+123.693 lecturas en 95 filas de composición. La validación de 15 entradas y
+cinco artefactos pasa tanto al generar como al comprobar las salidas existentes.
+El perfil completo permanece pendiente de la separación de los 93 runs.
