@@ -71,3 +71,6 @@ La validación reconcilia cada linaje y cobertura, comprueba 15 entradas y cinco
 artefactos y se repite con `--validate-only` sin regenerar salidas. Las siete
 pruebas nuevas usan datos sintéticos; los resultados anteriores proceden de
 las muestras públicas reales. No se agregan estratos ni se contrastan hipótesis.
+La suite completa posterior aprueba 151 pruebas en Linux (580,497 segundos
+con el procesamiento del estudio en paralelo), incluidas las integraciones
+existentes de R y Snakemake. No hay nuevas dependencias.

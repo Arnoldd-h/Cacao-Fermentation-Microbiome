@@ -113,6 +113,8 @@ mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
 - Resúmenes de composición del piloto: 95 filas por familia/género sobre seis
   muestras, 88 ASVs y 123.693 lecturas; 15 entradas/cinco artefactos validados,
   sin renormalizar sólo taxones clasificados. Siete pruebas nuevas aprobadas.
+- Suite completa posterior a la implementación de composición: 151 pruebas
+  Python aprobadas en Linux, incluidas las integraciones R y Snakemake existentes.
 
 ## Datasets incluidos
 
