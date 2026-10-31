@@ -7,6 +7,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Política registrada para tablas descriptivas por familia/género: conservación
   del linaje, desconocidos y metadata temporal; denominador de todas las lecturas
   retenidas, sin agregar submuestras ni realizar inferencia.
+- Productor y validador de composición por muestra/rango, con perfiles para piloto
+  y estudio completo, procedencia SHA-256 y pruebas de conservación y corrupción.
 - Resuelto el bloqueo de ENA: recuperación de SRR7899804 R2 desde su URL original,
   con los mismos bytes y MD5 del manifest registrado. Cierre de descarga de
   186/186 FASTQ válidos, 394.515.770 bytes, sin nuevas exclusiones ni cambios metodológicos.

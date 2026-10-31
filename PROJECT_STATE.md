@@ -28,8 +28,9 @@ manifest original. Se descargaron y validaron 186/186 FASTQ: 394.515.770 bytes,
 con MD5, gzip/CRC y estructura correctos. No se modificaron inclusiones,
 parámetros ni archivos crudos válidos. Se reanuda QC/DADA2/taxonomía/diversidad;
 todavía no hay resultados científicos del estudio completo.
-En desarrollo: resúmenes descriptivos por familia/género con política registrada
-en `config/taxonomic_reporting.yaml`, conservando linajes, desconocidos y tiempos.
+Implementado: productor/validador de resúmenes por familia/género con política
+registrada en `config/taxonomic_reporting.yaml`, conservando linajes, desconocidos
+y tiempos. La generación del perfil completo espera el cierre de su separación.
 Workflow, manifest, auditorías y registro del bloqueo integrados en `main`
 mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
 

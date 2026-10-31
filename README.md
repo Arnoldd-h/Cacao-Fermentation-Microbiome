@@ -142,6 +142,18 @@ Las profundidades retenidas van de 9.250 a 36.508 lecturas y la riqueza observad
 de 2 a 46 ASVs. Son descripciones sin rarefacción de seis runs de cuatro lotes;
 no reconstruyen sus trayectorias ni demuestran diferencias temporales.
 
+Para generar tablas descriptivas por familia/género después de validar la
+separación bacteriana, conservando linajes y metadata temporal:
+
+```bash
+python3 scripts/environment/run_in_environment.py python scripts/reporting/summarize_composition.py --analysis full_study
+python3 scripts/environment/run_in_environment.py python scripts/reporting/summarize_composition.py --analysis full_study --validate-only
+```
+
+`--analysis pilot` aplica la misma política al piloto. Los
+[métodos de composición](reports/composition_methods.md) describen el denominador,
+las etiquetas desconocidas y la validación; estas tablas no contrastan sucesión.
+
 `--check-inputs-root .` comprueba también los hashes de las entradas originales;
 un cambio posterior de esas entradas obliga a reconstruir y validar la etapa
 afectada. Los comandos individuales de metadata y QC están descritos en
