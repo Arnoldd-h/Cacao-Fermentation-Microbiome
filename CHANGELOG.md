@@ -2,6 +2,28 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-31
+
+- Política registrada para tablas descriptivas por familia/género: conservación
+  del linaje, desconocidos y metadata temporal; denominador de todas las lecturas
+  retenidas, sin agregar submuestras ni realizar inferencia.
+- Productor y validador de composición por muestra/rango, con perfiles para piloto
+  y estudio completo, procedencia SHA-256 y pruebas de conservación y corrupción.
+- Primera ejecución de composición del piloto: 95 filas, seis muestras y todas
+  las 123.693 lecturas retenidas; validación de 15 entradas y cinco artefactos.
+- Suite completa renovada: 151 pruebas Python aprobadas, incluidas las siete
+  nuevas de composición y las integraciones existentes con R y Snakemake.
+- Resuelto el bloqueo de ENA: recuperación de SRR7899804 R2 desde su URL original,
+  con los mismos bytes y MD5 del manifest registrado. Cierre de descarga de
+  186/186 FASTQ válidos, 394.515.770 bytes, sin nuevas exclusiones ni cambios metodológicos.
+- Revalidación de gzip/CRC y estructura FASTQ, entorno de 18 componentes y
+  cuatro regresiones de descarga; preparación de la ejecución de 93 runs.
+- El HTML residual del intento anterior se conserva fuera de Git y no se concatena
+  con la descarga válida. La ampliación científica sigue pendiente de ejecución.
+- Concurrencia operativa ampliada a ocho tareas tras verificar los recursos de WSL,
+  conservando 4.500 MB globales y dos hilos para DADA2/taxonomía. Los parámetros
+  científicos permanecen fijados; se reutilizan los FastQC completos al reanudar.
+
 ## En desarrollo - 2026-10-09
 
 - Ampliación registrada a todos los 94 runs incluidos de PRJNA492720, con

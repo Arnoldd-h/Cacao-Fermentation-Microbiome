@@ -215,3 +215,26 @@ figuras muestran muestras individuales, sin unir lotes/estratos en una
 trayectoria inventada. Semilla 20260819 registrada; las operaciones actuales
 son deterministas. No se ejecutan PERMANOVA, pruebas de etapas, abundancia
 diferencial, core ni meta-análisis en esta rebanada técnica de seis runs.
+
+### Tablas descriptivas por rango taxonómico, 2026-10-31
+
+Antes de generar resúmenes del estudio completo se fija
+`config/taxonomic_reporting.yaml`: agregar conteos ASV por familia y género
+únicamente dentro de cada muestra, conservando la ruta taxonómica ancestral
+original. Etiquetas iguales con ancestros distintos no se fusionan. Una etiqueta
+vacía permanece vacía y se mantiene su linaje conocido; no se imputa el género
+a partir de la familia ni se agrupan todos los desconocidos en un taxón ficticio.
+
+La abundancia relativa usa todas las lecturas retenidas de cada muestra como
+denominador, incluidas las de asignación insuficiente. No se renormalizan sólo
+los taxones clasificados ni se añaden pseudoconteos. Se omiten únicamente filas
+de conteo cero en la representación larga; no se filtran ASVs ni muestras.
+La cobertura reporta etiquetas vacías/no vacías en el rango, sin equiparar una
+etiqueta no vacía con identificación de especie o género cultivado.
+
+Se conservan estudio, muestra, run, lote, horas, tiempo relativo, etapa y estrato.
+No se agregan submuestras, lotes, tiempos ni estudios; no se calculan asociaciones,
+significación, core ni efectos temporales. Las tablas deben reconciliar cada
+conteo y el total de lecturas por muestra/rango con la tabla derivada validada.
+Estos resúmenes describen composiciones y preparan la revisión longitudinal;
+no cambian las hipótesis ni la clasificación primaria de SILVA.

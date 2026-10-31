@@ -1,6 +1,6 @@
 # Estado del proyecto
 
-Última actualización: 2026-10-09.
+Última actualización: 2026-10-31.
 
 ## Fase actual
 
@@ -22,12 +22,15 @@ NCBI/ENA confirman los 94 runs incluidos. La auditoría de FASTQ identifica
 ruta paired-end se registra aparte y no cambia la inclusión del inventario.
 Workflow completo implementado y 144 pruebas Python aprobadas. El manifest
 paired-end, las auditorías y el plan de recursos tienen procedencia verificada.
-La ampliación está detenida antes de QC/DADA2 por un archivo público faltante:
-ENA devuelve un directorio HTML vacío para `SRR7899804_2.fastq.gz`. Este run
-permanece en el manifest y no se añade una exclusión por transporte.
-Se descargaron y validaron 185/186 FASTQ: 393.057.692 bytes, con MD5,
-gzip/CRC y estructura correctos. Los archivos verificados se conservan para
-reanudar. No queda una ejecución activa; falta únicamente el R2 público indicado.
+El bloqueo de disponibilidad quedó resuelto el 2026-10-31: ENA vuelve a entregar
+`SRR7899804_2.fastq.gz`, con los mismos 1.458.078 bytes y MD5 declarados en el
+manifest original. Se descargaron y validaron 186/186 FASTQ: 394.515.770 bytes,
+con MD5, gzip/CRC y estructura correctos. No se modificaron inclusiones,
+parámetros ni archivos crudos válidos. Se reanuda QC/DADA2/taxonomía/diversidad;
+todavía no hay resultados científicos del estudio completo.
+Implementado: productor/validador de resúmenes por familia/género con política
+registrada en `config/taxonomic_reporting.yaml`, conservando linajes, desconocidos
+y tiempos. La generación del perfil completo espera el cierre de su separación.
 Workflow, manifest, auditorías y registro del bloqueo integrados en `main`
 mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
 
@@ -101,6 +104,17 @@ mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
 - Suite final: 144 pruebas Python en Linux aprobadas, incluidas 19 de ampliación.
 - Piloto renovado sobre `e472984`: siete tablas TSV idénticas por SHA-256,
   20 entradas/17 artefactos validados y dry-run estable sin trabajos pendientes.
+- Recuperación del R2 pendiente desde ENA el 2026-10-31 y cierre de descarga:
+  186/186 FASTQ, 394.515.770 bytes; cero exclusiones añadidas por transporte.
+- Entorno existente verificado de nuevo: 18 componentes, con las mismas versiones;
+  cuatro regresiones de descarga aprobadas y dry-run de ampliación de 670 trabajos.
+- Suite completa renovada: 144 pruebas aprobadas. Ajuste operativo a ocho tareas
+  concurrentes y 4.500 MB, conservando dos hilos para DADA2/taxonomía y los métodos.
+- Resúmenes de composición del piloto: 95 filas por familia/género sobre seis
+  muestras, 88 ASVs y 123.693 lecturas; 15 entradas/cinco artefactos validados,
+  sin renormalizar sólo taxones clasificados. Siete pruebas nuevas aprobadas.
+- Suite completa posterior a la implementación de composición: 151 pruebas
+  Python aprobadas en Linux, incluidas las integraciones R y Snakemake existentes.
 
 ## Datasets incluidos
 
@@ -138,16 +152,18 @@ El dry-run informa que 12 descargas previas carecen de metadata histórica del
 scheduler Snakemake. Sus FASTQ siguen verificados por manifest, bytes, MD5,
 validación estructural y procedencia científica; no se modifican los crudos
 para reconstruir ese historial auxiliar.
-La ejecución completa conserva los archivos disponibles y espera el R2 de
-SRR7899804; no produjo tablas DADA2/taxonómicas/de diversidad completas.
+La descarga completa está validada desde el 2026-10-31. El archivo HTML de
+797 bytes del intento anterior se conserva en `results/tmp/`, fuera de Git;
+no se utilizó para reanudar bytes de un FASTQ. El análisis completo puede avanzar
+con los 93 runs registrados; todavía no produjo tablas científicas completas.
 
 ## Bloqueos y limitaciones
 
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - Hay taxonomía y diversidad descriptiva de seis runs del piloto. La ampliación
-  tiene su workflow y manifest de 93 runs, pero ENA no entrega el R2 de
-  SRR7899804 pese a declararlo en su API. La inferencia biológica sigue pendiente.
+  tiene su workflow, manifest de 93 runs y 186 FASTQ válidos; el bloqueo de ENA
+  está resuelto. La ejecución completa y la inferencia biológica siguen pendientes.
   Seis runs de cuatro lotes y distintos
   estratos no reconstruyen sus trayectorias ni equivalen a seis lotes independientes.
 - El 20,99 % de las lecturas pertenece a ASVs con etiquetas de orgánulos.
@@ -167,9 +183,8 @@ SRR7899804; no produjo tablas DADA2/taxonómicas/de diversidad completas.
 
 ## Próximas tareas
 
-1. Recuperar el R2 público de SRR7899804 o documentar y validar una ruta
-   alternativa de origen; reanudar QC/DADA2/taxonomía/diversidad de los 93 runs,
-   conservando el inventario de 94 y sin excluir por un fallo de transporte.
+1. Ejecutar y validar QC/DADA2/taxonomía/diversidad de los 93 runs,
+   conservando el inventario de 94 y los parámetros científicos registrados.
 2. Conservar parámetros por estudio y
    revisar por separado los pipelines V3-V4 y PacBio antes de integrar taxonomía.
 3. Definir tratamiento de ceros, agregación de submuestras y modelos longitudinales

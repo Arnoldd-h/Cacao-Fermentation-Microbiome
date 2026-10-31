@@ -1,9 +1,9 @@
 {
-  "checked_at_utc": "2026-10-09T23:36:32.751673+00:00",
+  "checked_at_utc": "2026-10-31T23:34:59.803178+00:00",
   "expected_files": 186,
-  "pending_files": 1,
+  "pending_files": 0,
   "processing_exclusions_added": 0,
-  "status": "blocked",
+  "status": "complete",
   "streams": [
     {
       "base_count": 5252489,
@@ -1706,18 +1706,22 @@
       "target_relative": "pacheco_montealegre_2020_colombia/SRR7899804/SRR7899804_1.fastq.gz"
     },
     {
+      "base_count": 4437578,
       "bioproject": "PRJNA492720",
-      "content_length": "797",
-      "content_type": "text/html;charset=UTF-8",
-      "effective_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/004/SRR7899804/SRR7899804_2.fastq.gz/",
       "expected_bytes": "1458078",
       "expected_md5": "49b5d1b26dd75169352b52aace2c5524",
-      "http_status": 200,
+      "fastq_valid": true,
+      "gzip_valid": true,
+      "maximum_read_length": 223,
+      "minimum_read_length": 218,
+      "observed_bytes": 1458078,
+      "observed_md5": "49b5d1b26dd75169352b52aace2c5524",
+      "read_count": 19955,
       "read_file": "SRR7899804_2.fastq.gz",
       "run_accession": "SRR7899804",
       "sample_id": "BactAnII108z1",
       "source_url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/004/SRR7899804/SRR7899804_2.fastq.gz",
-      "status": "html_instead_of_fastq",
+      "status": "valid",
       "study_id": "pacheco_montealegre_2020_colombia",
       "target_relative": "pacheco_montealegre_2020_colombia/SRR7899804/SRR7899804_2.fastq.gz"
     },
@@ -3722,6 +3726,6 @@
       "target_relative": "pacheco_montealegre_2020_colombia/SRR7899647/SRR7899647_2.fastq.gz"
     }
   ],
-  "valid_compressed_bytes": 393057692,
-  "valid_files": 185
+  "valid_compressed_bytes": 394515770,
+  "valid_files": 186
 }

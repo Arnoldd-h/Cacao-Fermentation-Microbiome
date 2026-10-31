@@ -1,0 +1,13 @@
+study_id	sample_id	run_accession	fermentation_batch	fermentation_hours	relative_time	fermentation_stage	sampling_stratum	taxonomic_rank	labeled_reads	unlabeled_reads	total_retained_reads	labeled_fraction
+pacheco_montealegre_2020_colombia	BactAnI000z1	SRR7899728	pacheco_montealegre_2020_colombia::An::I	0	0	early	1	Family	483	8767	9250	0.052216216216216214
+pacheco_montealegre_2020_colombia	BactAnI000z1	SRR7899728	pacheco_montealegre_2020_colombia::An::I	0	0	early	1	Genus	483	8767	9250	0.052216216216216214
+pacheco_montealegre_2020_colombia	BactAnII000z2	SRR7899814	pacheco_montealegre_2020_colombia::An::II	0	0	early	2	Family	84	13730	13814	0.0060807876067757345
+pacheco_montealegre_2020_colombia	BactAnII000z2	SRR7899814	pacheco_montealegre_2020_colombia::An::II	0	0	early	2	Genus	84	13730	13814	0.0060807876067757345
+pacheco_montealegre_2020_colombia	BactSaI036z2	SRR7899800	pacheco_montealegre_2020_colombia::Sa::I	36	0.33333333	mid	2	Family	36405	103	36508	0.9971787005587817
+pacheco_montealegre_2020_colombia	BactSaI036z2	SRR7899800	pacheco_montealegre_2020_colombia::Sa::I	36	0.33333333	mid	2	Genus	36265	243	36508	0.9933439246192616
+pacheco_montealegre_2020_colombia	BactSaII048z1	SRR7899687	pacheco_montealegre_2020_colombia::Sa::II	48	0.36363636	mid	1	Family	24430	894	25324	0.9646975201389986
+pacheco_montealegre_2020_colombia	BactSaII048z1	SRR7899687	pacheco_montealegre_2020_colombia::Sa::II	48	0.36363636	mid	1	Genus	24140	1184	25324	0.9532459327120518
+pacheco_montealegre_2020_colombia	BactSaI072z1	SRR7899884	pacheco_montealegre_2020_colombia::Sa::I	72	0.66666667	late	1	Family	21839	0	21839	1.0
+pacheco_montealegre_2020_colombia	BactSaI072z1	SRR7899884	pacheco_montealegre_2020_colombia::Sa::I	72	0.66666667	late	1	Genus	21551	288	21839	0.9868125829937269
+pacheco_montealegre_2020_colombia	BactAnI096z2	SRR7899911	pacheco_montealegre_2020_colombia::An::I	96	0.72727273	late	2	Family	16958	0	16958	1.0
+pacheco_montealegre_2020_colombia	BactAnI096z2	SRR7899911	pacheco_montealegre_2020_colombia::An::I	96	0.72727273	late	2	Genus	16958	0	16958	1.0

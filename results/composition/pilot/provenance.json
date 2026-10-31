@@ -1,0 +1,171 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "command": [
+    "scripts/reporting/summarize_composition.py",
+    "--analysis",
+    "pilot"
+  ],
+  "finished_at_utc": "2026-10-31T23:40:39.328375+00:00",
+  "git_commit": "ad4c3ca5154f1d14dd1fadc90980ab2ea04e7daf",
+  "git_dirty": true,
+  "git_status_at_start": [
+    " M results/planning/pacheco_montealegre_2020_colombia/SUCCESS",
+    " M results/planning/pacheco_montealegre_2020_colombia/config_snapshot.yaml",
+    " M results/planning/pacheco_montealegre_2020_colombia/download_status.json",
+    " M results/planning/pacheco_montealegre_2020_colombia/download_status.provenance.json",
+    " M results/planning/pacheco_montealegre_2020_colombia/input_checksums.json",
+    " M results/planning/pacheco_montealegre_2020_colombia/provenance.json",
+    " M results/planning/pacheco_montealegre_2020_colombia/resource_plan.json",
+    "?? results/qc/pacheco_montealegre_2020_colombia/"
+  ],
+  "inputs": [
+    {
+      "bytes": 1483,
+      "path": "config/diversity.yaml",
+      "sha256": "8adf155672098942393dedd14c057f05b5ef2cd7f5e269b82d286080ec28b5ad"
+    },
+    {
+      "bytes": 685,
+      "path": "config/taxonomic_reporting.yaml",
+      "sha256": "906f4f2c2505ef4b28b655bd497cae964da9658a138ea8c27a7dd8fd2ce7562d"
+    },
+    {
+      "bytes": 5464,
+      "path": "data/processed/pilot/bacterial/asv_counts.tsv",
+      "sha256": "6c428b25ae3f6f2667ac3168035ccb49cc27f72b30d4dd3d8b9b9cae5f9c21b6"
+    },
+    {
+      "bytes": 3423,
+      "path": "data/processed/pilot/bacterial/sample_metadata.tsv",
+      "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
+    },
+    {
+      "bytes": 14040,
+      "path": "data/processed/pilot/bacterial/taxonomy.tsv",
+      "sha256": "229e823d9bcbe6d3c830c740ec767bfaf087ec378eb14c26195663d8b7134228"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4203,
+      "path": "python/cacao_inventory/bacterial_filter.py",
+      "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 8676,
+      "path": "results/filtering/pilot/provenance.json",
+      "sha256": "a1daec41ac0a587c4c22026922ca5a99e3163bdc057b6ea258360ea3ece8d3d1"
+    },
+    {
+      "bytes": 422,
+      "path": "results/filtering/pilot/validation.json",
+      "sha256": "b14091ca7fe69cb76546852e96abe3067a0d44abd506802807caddc705ed9fba"
+    },
+    {
+      "bytes": 6366,
+      "path": "scripts/filtering/validate_bacterial_table.py",
+      "sha256": "6d652de4458c2ec00fc711aceada071b7bf5e16a44448188d92be055060c06b7"
+    },
+    {
+      "bytes": 12523,
+      "path": "scripts/reporting/summarize_composition.py",
+      "sha256": "f1ca5281e3da66701258f52b80a983d2c868cfc3d26d471964bef9ad9e0037f2"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 685,
+      "path": "results/composition/pilot/config_snapshot.yaml",
+      "sha256": "906f4f2c2505ef4b28b655bd497cae964da9658a138ea8c27a7dd8fd2ce7562d"
+    },
+    {
+      "bytes": 2459,
+      "path": "results/composition/pilot/input_checksums.json",
+      "sha256": "ebe35918ada7d73f559b341e0eab32043242c51b07abb15f1528399653629e28"
+    },
+    {
+      "bytes": 22043,
+      "path": "results/composition/pilot/sample_composition.tsv",
+      "sha256": "0a4b3dc5d46147bcd74996083d29e13b68a3b444a68df96747854e09958340fd"
+    },
+    {
+      "bytes": 2064,
+      "path": "results/composition/pilot/sample_label_coverage.tsv",
+      "sha256": "850f98424bc93d21342d63915aebb1a062f3a8f56354f03e2da8580d750dba0a"
+    },
+    {
+      "bytes": 246,
+      "path": "results/composition/pilot/summary.json",
+      "sha256": "2f32c63ef25162a5d9b006e514d944d0021ce799a3959d5e85aa42209c4efd9d"
+    }
+  ],
+  "parameters": {
+    "analyses": {
+      "full_study": {
+        "diversity_config": "config/full_study_diversity.yaml",
+        "expected_samples": 93,
+        "output_dir": "results/composition/pacheco_montealegre_2020_colombia/full"
+      },
+      "pilot": {
+        "diversity_config": "config/diversity.yaml",
+        "expected_samples": 6,
+        "output_dir": "results/composition/pilot"
+      }
+    },
+    "inference": false,
+    "preserve_ancestral_ranks": true,
+    "ranks": [
+      "Family",
+      "Genus"
+    ],
+    "relative_abundance_denominator": "all_retained_reads_per_sample",
+    "sample_aggregation": "none",
+    "schema_version": "1.0.0",
+    "unclassified_policy": "preserve_empty_lineage",
+    "zero_policy": "omit_zero_count_rows"
+  },
+  "software_versions": {
+    "Python": "3.12.13"
+  },
+  "started_at_utc": "2026-10-31T23:40:33.743468+00:00",
+  "status": "success",
+  "upstream_validation": {
+    "artifacts_checked": 9,
+    "excluded_asvs": 5,
+    "excluded_reads": 32868,
+    "input_asvs": 93,
+    "input_reads": 156561,
+    "inputs_checked": 21,
+    "retained_asvs": 88,
+    "retained_reads": 123693,
+    "sample_exclusions": 0,
+    "samples": 6,
+    "source_git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
+    "status": "valid",
+    "study_id": "pacheco_montealegre_2020_colombia",
+    "unclassified_kingdom_retained_asvs": 0
+  }
+}

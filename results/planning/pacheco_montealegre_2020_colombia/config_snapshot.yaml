@@ -20,7 +20,7 @@
   "taxonomy_config": "config/taxonomy.yaml",
   "diversity_config": "config/full_study_diversity.yaml",
   "resources": {
-    "cores": 4,
+    "cores": 8,
     "memory_budget_mb": 4500,
     "fastqc_memory_mb": 512,
     "analysis_memory_mb": 4000,
