@@ -48,7 +48,11 @@ separación bacteriana y diversidad descriptiva, con validación en cada etapa.
 `config/full_study.yaml` fija alcance, rutas y recursos operativos; no altera
 primers, filtros ni decisiones de `config/config.yaml`. La reserva de disco
 equivale a seis veces los bytes comprimidos y es una estimación operativa.
-Se limitan cuatro tareas simultáneas y 4.500 MB; DADA2 y taxonomía usan dos hilos.
+Se limitan ocho tareas simultáneas y 4.500 MB; DADA2 y taxonomía usan dos hilos.
+El límite inicial de cuatro tareas se amplió el 2026-10-31 tras verificar ocho
+procesadores y 5.875 MB de RAM en WSL. Ocho FastQC reservan 4.096 MB;
+el scheduler conserva el presupuesto global de memoria. Es un ajuste operativo,
+sin cambios de filtros, semillas ni métodos científicos.
 
 QC verifica íntegramente bytes, MD5 y FASTQ pareados antes de FastQC/MultiQC.
 Cutadapt conserva la política sin descartar no coincidencias y sin trimming

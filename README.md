@@ -99,7 +99,7 @@ python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow
 Para reconstruir el estudio PRJNA492720 completo, con un presupuesto de 4.500 MB:
 
 ```bash
-python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/study.Snakefile --cores 4 --resources mem_mb=4500 --rerun-incomplete
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/study.Snakefile --cores 8 --resources mem_mb=4500 --rerun-incomplete
 ```
 
 El alcance y la exclusión por formato están en [métodos del estudio completo](reports/full_study_methods.md).

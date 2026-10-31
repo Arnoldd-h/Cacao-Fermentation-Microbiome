@@ -11,6 +11,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   cuatro regresiones de descarga; preparación de la ejecución de 93 runs.
 - El HTML residual del intento anterior se conserva fuera de Git y no se concatena
   con la descarga válida. La ampliación científica sigue pendiente de ejecución.
+- Concurrencia operativa ampliada a ocho tareas tras verificar los recursos de WSL,
+  conservando 4.500 MB globales y dos hilos para DADA2/taxonomía. Los parámetros
+  científicos permanecen fijados; se reutilizan los FastQC completos al reanudar.
 
 ## En desarrollo - 2026-10-09
 

@@ -105,6 +105,8 @@ mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
   186/186 FASTQ, 394.515.770 bytes; cero exclusiones añadidas por transporte.
 - Entorno existente verificado de nuevo: 18 componentes, con las mismas versiones;
   cuatro regresiones de descarga aprobadas y dry-run de ampliación de 670 trabajos.
+- Suite completa renovada: 144 pruebas aprobadas. Ajuste operativo a ocho tareas
+  concurrentes y 4.500 MB, conservando dos hilos para DADA2/taxonomía y los métodos.
 
 ## Datasets incluidos
 

@@ -45,3 +45,16 @@ bacteriana y diversidad descriptiva con validación de cada etapa. Este registro
 de descarga no constituye un resultado biológico, un contraste temporal ni un
 meta-análisis. El piloto de seis muestras sigue siendo la única ejecución
 científica completa hasta que se cierren y validen esas etapas.
+
+## Recursos operativos
+
+La suite completa aprobó 144 pruebas en el entorno registrado. La primera
+ejecución inició los 670 trabajos con cuatro tareas concurrentes y cerró las
+validaciones de descarga y estructura de los 186 FASTQ.
+
+Se verificaron ocho procesadores y 5.875 MB de RAM en WSL, con 4.845 MB
+disponibles en ese momento. Se interrumpió ordenadamente el scheduler para
+ampliar el límite a ocho tareas; el presupuesto global sigue en 4.500 MB y
+DADA2/taxonomía siguen usando dos hilos. Ocho FastQC reservan 4.096 MB.
+Los resultados FastQC completos se conservan y el reinicio revisa trabajos
+incompletos. No se modifican entradas ni parámetros científicos.
