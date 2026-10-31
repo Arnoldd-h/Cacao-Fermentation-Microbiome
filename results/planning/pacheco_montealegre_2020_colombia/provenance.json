@@ -6,11 +6,12 @@
     "config/full_study.yaml",
     "--verify-sources"
   ],
-  "finished_at_utc": "2026-10-09T23:20:48.081638+00:00",
-  "git_commit": "fa236ed08ddff1f2c6b004ba96a0c77cb3069623",
+  "finished_at_utc": "2026-10-31T23:27:51.645132+00:00",
+  "git_commit": "f908ba61eab10ca7e746580ffb30e291e9a9ad1d",
   "git_dirty": true,
   "git_status_at_start": [
-    "?? results/planning/"
+    " M results/planning/pacheco_montealegre_2020_colombia/download_status.json",
+    " M results/planning/pacheco_montealegre_2020_colombia/download_status.provenance.json"
   ],
   "inputs": [
     {
@@ -191,9 +192,9 @@
       "sha256": "fc7ad24dcf84adc3ccdb9b42a25d9fab681a60234441c8ea090f745b7be07986"
     },
     {
-      "bytes": 710,
+      "bytes": 703,
       "path": "results/planning/pacheco_montealegre_2020_colombia/resource_plan.json",
-      "sha256": "68984296bf41d674655f13de351aa361947043bacda15338d4df5b079efa4591"
+      "sha256": "f16ab659fb568a1b65343fe39ffe6e98ef829f5b998d4ca06d03eeb829d2877d"
     },
     {
       "bytes": 2121,
@@ -231,9 +232,9 @@
     "unpaired_fastq_policy": "record_and_exclude_from_paired_processing"
   },
   "software_versions": {
-    "Python": "3.12.13"
+    "Python": "3.14.4"
   },
-  "started_at_utc": "2026-10-09T23:20:43.002854+00:00",
+  "started_at_utc": "2026-10-31T23:27:40.332592+00:00",
   "status": "success",
   "upstream_validation": {
     "eligible_runs": 94,

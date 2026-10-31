@@ -2,6 +2,16 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-31
+
+- Resuelto el bloqueo de ENA: recuperación de SRR7899804 R2 desde su URL original,
+  con los mismos bytes y MD5 del manifest registrado. Cierre de descarga de
+  186/186 FASTQ válidos, 394.515.770 bytes, sin nuevas exclusiones ni cambios metodológicos.
+- Revalidación de gzip/CRC y estructura FASTQ, entorno de 18 componentes y
+  cuatro regresiones de descarga; preparación de la ejecución de 93 runs.
+- El HTML residual del intento anterior se conserva fuera de Git y no se concatena
+  con la descarga válida. La ampliación científica sigue pendiente de ejecución.
+
 ## En desarrollo - 2026-10-09
 
 - Ampliación registrada a todos los 94 runs incluidos de PRJNA492720, con

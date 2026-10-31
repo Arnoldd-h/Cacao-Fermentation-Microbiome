@@ -1,0 +1,47 @@
+# Reanudación del estudio completo — 2026-10-31
+
+## Recuperación de la fuente pública
+
+El R2 de `SRR7899804` vuelve a estar disponible en la URL ENA registrada:
+
+<https://ftp.sra.ebi.ac.uk/vol1/fastq/SRR789/004/SRR7899804/SRR7899804_2.fastq.gz>.
+
+El acceso HTTPS devuelve HTTP 200, `application/x-gzip` y 1.458.078 bytes.
+La API ENA conserva las mismas URLs, tamaños y MD5 de ambos mates. El R2
+descargado coincide con el MD5 original `49b5d1b26dd75169352b52aace2c5524`;
+no se sustituyó la fuente ni se reconstruyeron lecturas.
+
+El `.part` anterior contenía 797 bytes de HTML, SHA-256
+`161e2e8a066b0e07fdc925c15d25adb3b169bc16186799525470c98c3520eff6`.
+Se trasladó a `results/tmp/ena_html_2026-10-09_SRR7899804_2.fastq.gz.part`,
+fuera de Git, antes de descargar. Ningún FASTQ crudo válido fue reemplazado.
+
+## Validación previa al análisis
+
+La auditoría del manifest registra 186/186 FASTQ válidos, 394.515.770 bytes,
+cero pendientes y cero exclusiones nuevas. Se comprobaron tamaño, MD5,
+gzip/CRC y estructura FASTQ completa. El informe y su procedencia están en
+`results/planning/pacheco_montealegre_2020_colombia/download_status*.json`.
+La ejecución de la auditoría registra `f908ba6` y conserva el estado Git observado.
+La comprobación renovada de NCBI/ENA confirma los 94 runs sin discrepancias;
+manifest y log de streams conservan su contenido. Las auditorías auxiliares
+registran Python del sistema 3.14.4; el workflow científico utiliza el entorno
+Micromamba registrado, con Python 3.12.13 y las versiones fijadas.
+
+Los 18 componentes del entorno existente cargan correctamente y conservan las
+versiones registradas, incluidos R 4.4.3, DADA2 1.34.0, Cutadapt 5.0 y
+Snakemake 8.30.0. Las cuatro regresiones de descarga pasan; el dry-run identifica
+670 trabajos para completar las etapas pendientes. Los avisos de metadata
+histórica ausente del scheduler no invalidan los FASTQ verificados.
+
+## Alcance de la reanudación
+
+Se conserva el inventario de 94 runs y el manifest paired-end de 93 runs,
+cuatro lotes y 47 observaciones lote-tiempo. No cambian criterios de inclusión,
+primers, filtros, taxonomía, tratamiento de ceros ni semillas.
+
+La siguiente ejecución debe completar QC, DADA2, taxonomía, separación
+bacteriana y diversidad descriptiva con validación de cada etapa. Este registro
+de descarga no constituye un resultado biológico, un contraste temporal ni un
+meta-análisis. El piloto de seis muestras sigue siendo la única ejecución
+científica completa hasta que se cierren y validen esas etapas.
