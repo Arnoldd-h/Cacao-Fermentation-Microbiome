@@ -189,7 +189,11 @@ environment/  dependencias reproducibles
 ## Estado
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
-`CHANGELOG.md`. La integración entre estudios y evaluación de las
+`CHANGELOG.md`. El 2026-10-31 quedó resuelto el bloqueo de ENA: los 186 FASTQ
+del manifest de 93 runs están descargados y validados, y su análisis completo
+está en curso. Los resúmenes por familia/género del piloto ya están validados
+en `results/composition/pilot/`.
+La integración entre estudios y evaluación de las
 hipótesis siguen pendientes; el resultado técnico del piloto no demuestra
 sucesión conservada ni ausencia de contaminación.
 
