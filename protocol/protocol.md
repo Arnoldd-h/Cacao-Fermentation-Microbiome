@@ -115,6 +115,14 @@ lotes.
 No se afirmará que existe un meta-análisis hasta disponer de varios estudios
 independientes apropiados.
 
+El primer modelo concretado dentro de estudio se fija antes del ajuste en
+`config/longitudinal.yaml` y `analysis_decisions.md`: centros CLR con igual peso
+por estrato, OLS por lote y contraste global exhaustivo de signos de pendientes.
+Es exploratorio, posterior a la descripción inicial, con cuatro lotes y límite
+p mínimo 0,125. Sus métodos específicos y supuestos están en
+[`reports/longitudinal_methods.md`](../reports/longitudinal_methods.md).
+No sustituye los objetivos de conservación cross-study, core o abundancia diferencial.
+
 ## Exclusiones y control de calidad
 
 Ninguna muestra se excluirá silenciosamente. Cada decisión deberá registrar

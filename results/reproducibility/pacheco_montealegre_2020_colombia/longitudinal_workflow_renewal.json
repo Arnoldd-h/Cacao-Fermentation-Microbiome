@@ -1,0 +1,99 @@
+{
+  "compared_at_utc": "2026-11-01T03:26:57.557500+00:00",
+  "before_git_commit": "7b6d5a6570034f3ba523256254860cca32afde2a",
+  "after_git_commit": "6415bfdac24572a4645afd32dc62a39f22a42875",
+  "changed_inputs": [
+    "workflow/longitudinal.Snakefile"
+  ],
+  "reason": "Single owner of validation output in scheduler; no analytical change",
+  "before_git_dirty": false,
+  "after_git_dirty": true,
+  "before_archive": "results/tmp/longitudinal_first_run_7b6d5a6",
+  "all_scientific_products_identical": true,
+  "files": [
+    {
+      "file": "observations.tsv",
+      "before_sha256": "d6f0f0cf9536726e76b54ad28e07ab915d1013692fb7bc7b5e4b30aa4287291c",
+      "after_sha256": "d6f0f0cf9536726e76b54ad28e07ab915d1013692fb7bc7b5e4b30aa4287291c",
+      "identical": true
+    },
+    {
+      "file": "sample_membership.tsv",
+      "before_sha256": "0d22d11bf2342465ce01922bade7190096c65b037c148207735b8a68fe65265c",
+      "after_sha256": "0d22d11bf2342465ce01922bade7190096c65b037c148207735b8a68fe65265c",
+      "identical": true
+    },
+    {
+      "file": "batch_models.tsv",
+      "before_sha256": "c42c4667aa2e0a62d4750b526a31f7585a5b3c4ce266ad5b4e493768ffe480cb",
+      "after_sha256": "c42c4667aa2e0a62d4750b526a31f7585a5b3c4ce266ad5b4e493768ffe480cb",
+      "identical": true
+    },
+    {
+      "file": "slopes.tsv",
+      "before_sha256": "c8a0680b41de80e386f82264a3ba26df904e173bb23ffc2996f3f2cd169fcf44",
+      "after_sha256": "c8a0680b41de80e386f82264a3ba26df904e173bb23ffc2996f3f2cd169fcf44",
+      "identical": true
+    },
+    {
+      "file": "intercepts.tsv",
+      "before_sha256": "dff40b202e35a85f11c2df3ec58c712065a97d87814c4a31f953b69950769f8d",
+      "after_sha256": "dff40b202e35a85f11c2df3ec58c712065a97d87814c4a31f953b69950769f8d",
+      "identical": true
+    },
+    {
+      "file": "global_tests.tsv",
+      "before_sha256": "71f1ea4ea758f459899105ba8c2291a4f43609ab6121a675c9410ac4c72d0414",
+      "after_sha256": "71f1ea4ea758f459899105ba8c2291a4f43609ab6121a675c9410ac4c72d0414",
+      "identical": true
+    },
+    {
+      "file": "direction_cosines.tsv",
+      "before_sha256": "f44efb542274620f7d789baa20ba573ba3a2deaf82b33b80145dbc6fa097a233",
+      "after_sha256": "f44efb542274620f7d789baa20ba573ba3a2deaf82b33b80145dbc6fa097a233",
+      "identical": true
+    },
+    {
+      "file": "leave_one_batch_out.tsv",
+      "before_sha256": "efa041977bce661d65fb41d2fd6700b328fa42fccf4e69117b29a989e414d1c1",
+      "after_sha256": "efa041977bce661d65fb41d2fd6700b328fa42fccf4e69117b29a989e414d1c1",
+      "identical": true
+    },
+    {
+      "file": "sign_statistics.tsv",
+      "before_sha256": "11da7a918b5a349eda0dc0fc725e886d74f68958a0aabbf44ea05c7b99b51571",
+      "after_sha256": "11da7a918b5a349eda0dc0fc725e886d74f68958a0aabbf44ea05c7b99b51571",
+      "identical": true
+    },
+    {
+      "file": "trajectory_plot_data.tsv",
+      "before_sha256": "7584ebe9b1cd8885fa56e9e422438649d61b81ac6e12994f8713f9be13645f7f",
+      "after_sha256": "7584ebe9b1cd8885fa56e9e422438649d61b81ac6e12994f8713f9be13645f7f",
+      "identical": true
+    },
+    {
+      "file": "summary.json",
+      "before_sha256": "73a8b46e2471550c363948421aae346c24284a0c34deb7eab9c495c85095c20a",
+      "after_sha256": "73a8b46e2471550c363948421aae346c24284a0c34deb7eab9c495c85095c20a",
+      "identical": true
+    },
+    {
+      "file": "independent_validation.tsv",
+      "before_sha256": "dd29477cd0ad193a9ecb2b6c5797a1d61528916e6a8de7be11c853727ae68fc0",
+      "after_sha256": "dd29477cd0ad193a9ecb2b6c5797a1d61528916e6a8de7be11c853727ae68fc0",
+      "identical": true
+    },
+    {
+      "file": "community_trajectories.png",
+      "before_sha256": "3f13e658b54ebd728de02d7de88f71fcc219cf6a685de2399968225bbca0af0a",
+      "after_sha256": "3f13e658b54ebd728de02d7de88f71fcc219cf6a685de2399968225bbca0af0a",
+      "identical": true
+    },
+    {
+      "file": "community_trajectories.svg",
+      "before_sha256": "548a90bd961e3b502b5d36fe3c916d2e479c7454a7b010a7bb56cf6795b13974",
+      "after_sha256": "548a90bd961e3b502b5d36fe3c916d2e479c7454a7b010a7bb56cf6795b13974",
+      "identical": true
+    }
+  ]
+}

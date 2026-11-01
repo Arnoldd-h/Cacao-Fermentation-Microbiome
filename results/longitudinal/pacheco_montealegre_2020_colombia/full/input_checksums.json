@@ -1,0 +1,137 @@
+[
+  {
+    "bytes": 4901,
+    "path": "config/config.yaml",
+    "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+  },
+  {
+    "bytes": 1873,
+    "path": "config/full_study_diversity.yaml",
+    "sha256": "499cef4e31399a2d9c66554becb8021aed6d2d756d7dd152dc236aeac6b5dc30"
+  },
+  {
+    "bytes": 183737,
+    "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/asv_counts.tsv",
+    "sha256": "b39d79ef1f39a9a14bd77de2d1f840898ac680904f420e2431a9b4f9bcb09d22"
+  },
+  {
+    "bytes": 87048,
+    "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/sample_metadata.tsv",
+    "sha256": "55876544d81292653080be9bf746da3cc1ed2fc3de682554913c34f2597b7373"
+  },
+  {
+    "bytes": 119339,
+    "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/taxonomy.tsv",
+    "sha256": "5a013d834224c4219c14fb68020ddb9ea635573b4fc99e1e3f717c8f8ad1eed0"
+  },
+  {
+    "bytes": 54093,
+    "path": "environment/conda-linux-64.lock",
+    "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+  },
+  {
+    "bytes": 9376,
+    "path": "python/cacao_inventory/analysis_artifacts.py",
+    "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+  },
+  {
+    "bytes": 4203,
+    "path": "python/cacao_inventory/bacterial_filter.py",
+    "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+  },
+  {
+    "bytes": 4793,
+    "path": "python/cacao_inventory/config.py",
+    "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+  },
+  {
+    "bytes": 2405,
+    "path": "python/cacao_inventory/io.py",
+    "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+  },
+  {
+    "bytes": 4488,
+    "path": "python/cacao_inventory/provenance.py",
+    "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+  },
+  {
+    "bytes": 4319,
+    "path": "python/cacao_inventory/taxonomy_reference.py",
+    "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+  },
+  {
+    "bytes": 8046,
+    "path": "python/cacao_inventory/taxonomy_validation.py",
+    "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
+  },
+  {
+    "bytes": 41,
+    "path": "results/filtering/pacheco_montealegre_2020_colombia/full/SUCCESS",
+    "sha256": "a6765d3c7318544d04618f52b067095bbc6ee76f9ca4269e04a484588fc0ea7b"
+  },
+  {
+    "bytes": 11423,
+    "path": "results/filtering/pacheco_montealegre_2020_colombia/full/provenance.json",
+    "sha256": "a11a406e33d7a4fe24134a002ec81b5f64f8f3cc6d5c8c511f8bbc88e71f763e"
+  },
+  {
+    "bytes": 429,
+    "path": "results/filtering/pacheco_montealegre_2020_colombia/full/validation.json",
+    "sha256": "7c4def7b15714dd4a4851c2b7ddb5cc0b90b09dd10e34684461588eb993a9891"
+  },
+  {
+    "bytes": 6366,
+    "path": "scripts/filtering/validate_bacterial_table.py",
+    "sha256": "6d652de4458c2ec00fc711aceada071b7bf5e16a44448188d92be055060c06b7"
+  },
+  {
+    "bytes": 16022,
+    "path": "scripts/longitudinal/longitudinal_model.py",
+    "sha256": "9db9a467a00433a265be191e94ec8247e335fa520c33d18cff338b5603312bc3"
+  },
+  {
+    "bytes": 4742,
+    "path": "scripts/longitudinal/longitudinal_policy.py",
+    "sha256": "12465f2da9436a1628ca25b8d4ada8046307245ccbaa72a7ee8566e40c7903ee"
+  },
+  {
+    "bytes": 3704,
+    "path": "scripts/longitudinal/plot_trajectories.R",
+    "sha256": "5e910c07583f933de47a38f1aa06e6e8e9b3cbc44463ce28e05e24a5748f9289"
+  },
+  {
+    "bytes": 4408,
+    "path": "scripts/longitudinal/run_longitudinal.py",
+    "sha256": "76223088e029467b6e59d31c9034a02613ecbd0e93b59efbd764a0103aa09d26"
+  },
+  {
+    "bytes": 6956,
+    "path": "scripts/longitudinal/validate_longitudinal.py",
+    "sha256": "cefc633d3105d463ea66ca559ba19f3c71a9ae20caa3adbc215fcd0694f5d1cd"
+  },
+  {
+    "bytes": 8908,
+    "path": "scripts/longitudinal/validate_model.R",
+    "sha256": "6ef0211d79a4248b6d8e5039d6550ed79b8106228d49e191f72a650fd1d28478"
+  },
+  {
+    "bytes": 558,
+    "path": "scripts/taxonomy/seeded_policy.py",
+    "sha256": "c922080d37aa86e1ba788d2df401185bd787dc193335d43887fdbd2dbb8e0068"
+  },
+  {
+    "bytes": 4413,
+    "path": "scripts/taxonomy/validate_taxonomy.py",
+    "sha256": "5959cb0ed371289f9055944811f8d1065c01bdb5c5489c8d8bde95bfbadbf0be"
+  },
+  {
+    "bytes": 2391,
+    "path": "workflow/longitudinal.Snakefile",
+    "sha256": "ee2957d56b856b3cf7d9bc80ff1fce2f3cf7ef3b86ea6c4452490560dab398a2"
+  },
+  {
+    "bytes": 2613,
+    "path": "config/longitudinal.yaml",
+    "sha256": "37297d144a1f3e7cf251dff6591b0a1f0d8ad7a24ba09c3be1c1d3e7e54e03c9"
+  }
+]

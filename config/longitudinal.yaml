@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "source_diversity_config": "config/full_study_diversity.yaml",
+  "output_dir": "results/longitudinal/pacheco_montealegre_2020_colombia/full",
+  "cohort": {
+    "study_id": "pacheco_montealegre_2020_colombia",
+    "expected_samples": 93,
+    "expected_batches": 4,
+    "expected_batch_times": 47,
+    "expected_strata": ["1", "2"],
+    "minimum_timepoints_per_batch": 3,
+    "duration_basis": "last_observed_time_in_registered_metadata"
+  },
+  "method": {
+    "scope": "exploratory_within_study",
+    "independent_unit": "fermentation_batch",
+    "feature_level": "within_study_asv",
+    "zero_policy": "add_pseudocount_to_all_counts",
+    "aggregation": "equal_weight_mean_clr_within_batch_time",
+    "model": "multivariate_ordinary_least_squares_with_intercept_per_batch",
+    "combination": "equal_weight_mean_batch_slope",
+    "global_test": "exhaustive_batch_sign_flip_norm_mean_slope",
+    "null_assumptions": ["independent_batches", "centrally_symmetric_batch_slope_vectors_about_zero"],
+    "fdr_method": "BY",
+    "fdr_family": "all_configured_global_scenarios",
+    "alpha": 0.05,
+    "confidence_intervals": false,
+    "uncertainty": "batch_effects_and_leave_one_batch_out",
+    "pilot_inference": false,
+    "random_sampling": false,
+    "random_seed": 20260819,
+    "maximum_sign_patterns": 65536,
+    "comparison_tolerance": 1e-12,
+    "validation_tolerance": 1e-8
+  },
+  "primary_scenario": "relative_primary",
+  "scenarios": [
+    {"id": "relative_primary", "time_field": "relative_time", "time_scale": 1, "time_unit": "observed_duration", "pseudocount": 1.0, "strata_policy": "complete"},
+    {"id": "pseudocount_sensitivity", "time_field": "relative_time", "time_scale": 1, "time_unit": "observed_duration", "pseudocount": 0.5, "strata_policy": "complete"},
+    {"id": "absolute_time_sensitivity", "time_field": "fermentation_hours", "time_scale": 24, "time_unit": "24_hours", "pseudocount": 1.0, "strata_policy": "complete"},
+    {"id": "available_strata_sensitivity", "time_field": "relative_time", "time_scale": 1, "time_unit": "observed_duration", "pseudocount": 1.0, "strata_policy": "available"},
+    {"id": "stratum_1_sensitivity", "time_field": "relative_time", "time_scale": 1, "time_unit": "observed_duration", "pseudocount": 1.0, "strata_policy": "single", "stratum": "1"},
+    {"id": "stratum_2_sensitivity", "time_field": "relative_time", "time_scale": 1, "time_unit": "observed_duration", "pseudocount": 1.0, "strata_policy": "single", "stratum": "2"}
+  ],
+  "figures": {"width_inches": 12, "height_inches": 9, "png_dpi": 300, "color": "#27647B"}
+}

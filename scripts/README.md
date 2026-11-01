@@ -138,3 +138,21 @@ python3 scripts/environment/run_in_environment.py python scripts/diversity/valid
 ```
 
 Métodos, política de ceros y límites: [`reports/diversity_methods.md`](../reports/diversity_methods.md).
+
+## Modelo longitudinal dentro de estudio
+
+Después de completar `workflow/study.Snakefile`, el workflow independiente
+`workflow/longitudinal.Snakefile` consume la tabla bacteriana validada y conserva
+sus fuentes. `longitudinal/run_longitudinal.py` registra pertenencia por escenario,
+centros CLR, OLS por lote, pendientes, signos exhaustivos, FDR BY, direcciones
+y leave-one-batch-out. `validate_model.R` reconstruye los centros desde conteos
+y verifica coeficientes con `lm.fit`, signos y `p.adjust`; el validador Python
+comprueba fórmulas, configuración, figuras y hashes. El piloto no se utiliza.
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/longitudinal.Snakefile --cores 2
+python3 scripts/environment/run_in_environment.py python scripts/longitudinal/run_longitudinal.py --validate-only
+```
+
+El principal utiliza pares de estratos completos y cuatro lotes independientes.
+Supuestos y límite p mínimo 0,125: [`reports/longitudinal_methods.md`](../reports/longitudinal_methods.md).

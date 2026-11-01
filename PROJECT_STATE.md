@@ -4,6 +4,21 @@
 
 ## Fase actual
 
+Primer modelo longitudinal exploratorio ejecutado y validado dentro del
+estudio completo: 764 ASVs, cuatro lotes independientes, 46 tiempos con pares
+completos y 92 muestras; el punto incompleto permanece en sensibilidad.
+Plan previo `c97345c`, primer ajuste `7b6d5a6` y renovación operativa `6415bfd`
+(dos trabajos, diez tablas científicas idénticas). Se validan 27 entradas/19
+artefactos. R contrasta independientemente 36.672 coeficientes,
+pertenencia, residuos, signos y FDR BY. Desarrollo: 181 pruebas de suite más
+dos del nuevo workflow, 183 pruebas distintas aprobadas.
+
+Las seis parejas de pendientes tienen cosenos 0,249–0,584; el ajuste lineal
+recoge 11,82–16,44 % de la variación por lote. Los seis escenarios dan p=0,125
+y q BY=0,30625, sin rechazo a 0,05. Ese p es el mínimo posible con cuatro lotes
+y el contraste fijado; no demuestra ausencia de sucesión ni conservación entre
+estudios. Informe: `reports/longitudinal_results_2026-10-31.md`.
+
 Control explícito del desempate taxonómico validado en el entorno registrado:
 adaptador `r_seeded_query_mt19937_v1`, sin modificar el paquete DADA2 instalado.
 Piloto y estudio completo repiten exactamente sus siete tablas científicas
@@ -55,8 +70,9 @@ regresión adicional de auditoría que rechaza entradas discordantes aunque
 las tablas coincidan. Los siete trabajos de cada alcance y las repeticiones
 independientes pasan sus validadores; la cobertura renovada se revisó visualmente.
 
-La inferencia longitudinal, el core temporal y la integración/meta-análisis
-siguen pendientes. Los otros tres estudios incluidos todavía no están procesados.
+El primer contraste longitudinal lineal está completado dentro de estudio.
+Los modelos por taxón/etapa, el core y la integración/meta-análisis siguen
+pendientes. Los otros tres estudios incluidos todavía no están procesados.
 La ampliación se entrega mediante PR #6; PR #5 integró recuperación de datos,
 recursos y resúmenes de composición en `main` (`7cd3986`). Los FASTQ, RDS,
 base SILVA e informes pesados permanecen fuera de Git.
@@ -205,9 +221,11 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
   asignaciones cercanas a 50 siguen siendo una sensibilidad, no evidencia primaria.
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
-- Hay taxonomía y diversidad descriptiva del primer estudio completo; faltan
-  los otros tres estudios y la inferencia biológica. Sus 93 muestras representan
-  cuatro lotes, no 93 fermentaciones independientes. El piloto solapa seis de ellas.
+- Hay taxonomía, diversidad descriptiva y un modelo longitudinal exploratorio
+  del primer estudio; faltan los otros tres y la inferencia cross-study. Sus
+  93 muestras representan cuatro lotes, no 93 fermentaciones independientes.
+  El contraste fijado no puede bajar de p=0,125 y supone simetría central;
+  el piloto solapa seis muestras y no se usa como evidencia independiente.
 - En el piloto, el 20,99 % de las lecturas pertenece a ASVs etiquetadas como
   orgánulos; en el estudio completo son 157.550 lecturas (6,99 %), en 18 ASVs.
   La cobertura de las tablas originales incluye esas lecturas en su denominador.
@@ -215,7 +233,8 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
   etiquetas no identifican especie huésped ni demuestran contaminación.
 - Profundidad desigual y dependencia del pseudoconteo respecto a la escala de
   conteos limitan las comparaciones descriptivas. La riqueza no está rarefactada;
-  no se calcula significación ni se elige la sensibilidad por separación visual.
+  no incluye pruebas alfa por muestra ni selección de sensibilidad por separación
+  visual. Los contrastes globales CLR tienen su propio plan por lote y límites.
 - Las ASVs del piloto de 237–243 nt y las completas de 236–247 nt no se filtran
   por una longitud canónica; el depósito
   tiene evidencia de recorte previo y su procesamiento exacto es incompleto.
@@ -227,11 +246,13 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 
 ## Próximas tareas
 
-1. Registrar agregación de submuestras, tratamiento de ceros y modelos
-   longitudinales antes de estimar efectos; conservar lote y sensibilidades
-   temporal absoluta/relativa, sin utilizar el piloto para inferencia.
-2. Procesar los otros estudios por separado, revisando primers, V3-V4 y PacBio
+1. Procesar los otros estudios por separado, revisando primers, V3-V4 y PacBio
    antes de armonizar taxonomía e integrar efectos y heterogeneidad.
+2. Registrar armonización género/familia, modelos por taxón/etapa y core antes
+   de la inferencia cross-study. Las pendientes ASV actuales no son combinables
+   directamente con ASVs de otros estudios.
+3. Evaluar si un nuevo plan temporal debe representar curvatura/transitorios,
+   sin cambiar el contraste actual para buscar significación.
 
 ## Control de versiones
 
@@ -274,3 +295,9 @@ entrega mediante [PR #7](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbi
 limitado a reproducción taxonómica del primer estudio y su piloto. No se
 declara todavía un hito multistudio. Ambos workflows quedan sin trabajos
 pendientes; la siguiente fase es registrar y contrastar el modelo longitudinal.
+
+El hito `v0.5.3-longitudinal` entrega ese primer modelo exploratorio mediante
+[PR #8](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/8):
+plan `c97345c`, implementación `7b6d5a6`, renovación operativa `6415bfd` y
+resultados `0132f7d`. Sus tres workflows quedan sin pendientes. La siguiente
+fase es procesar los otros estudios, sin combinar directamente sus ASVs.

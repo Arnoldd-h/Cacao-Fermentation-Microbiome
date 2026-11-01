@@ -316,3 +316,28 @@ esta precisión operativa no altera criterios ni escoge corridas. El informe
 `reports/seeded_taxonomy_reproducibility_2026-10-31.md` y los registros por
 celda conservan la secuencia y sus límites. Se adopta la primera ejecución
 controlada de cada alcance, verificada por la siguiente.
+
+### Plan longitudinal por lote, 2026-10-31
+
+Se registra `config/longitudinal.yaml` antes de estimar modelos, después de
+conocer la descripción del primer estudio. El alcance es exploratorio dentro
+de estudio, con cuatro lotes independientes; no se presenta como un contraste
+prospectivo ciego ni se modifica la pregunta original. ASVs por estudio,
+CLR con pseudoconteo 1 y sensibilidad 0,5, centro con igual peso por estrato
+y OLS multivariado con intercepto por lote. La media de pendientes da igual
+peso a cada lote. No se seleccionan taxones a partir del patrón observado.
+
+Principal: pares completos, 46 lote/horas y 92 muestras; BactAnII108z1
+permanece en la sensibilidad de estratos disponibles. No se imputa su pareja.
+Se fijan además horas/24, ceros 0,5 y estratos 1/2 separados. Las exclusiones
+por escenario responden exclusivamente a la cobertura del diseño y se auditan.
+No cambian las tablas originales ni la separación bacteriana.
+
+Se enumeran signos de los vectores de pendiente por lote bajo independencia
+y simetría central, sin barajar horas. T es la norma de la media. Con cuatro
+lotes y 16 patrones, p no puede bajar de 0,125; no se afirmará ausencia de
+efecto por falta de significación ni se contarán tiempos como réplicas. Los
+seis escenarios forman una familia FDR BY; se reportan heterogeneidad,
+direcciones y leave-one-batch-out. No hay pruebas por ASV, PERMANOVA, ANCOM-BC2,
+core o meta-análisis en esta unidad de trabajo. Métodos, fuentes primarias,
+supuestos y condiciones de fallo: `reports/longitudinal_methods.md`.

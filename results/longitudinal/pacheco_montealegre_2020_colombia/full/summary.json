@@ -1,0 +1,23 @@
+{
+  "asvs": 764,
+  "cross_study_inference": false,
+  "fdr_method": "BY",
+  "independent_batches": 4,
+  "minimum_attainable_p": 0.125,
+  "null_assumptions": [
+    "independent_batches",
+    "centrally_symmetric_batch_slope_vectors_about_zero"
+  ],
+  "pilot_inference": false,
+  "primary_observations": 46,
+  "primary_samples": 92,
+  "primary_samples_not_used": 1,
+  "primary_scenario": "relative_primary",
+  "random_sampling": false,
+  "random_seed": 20260819,
+  "scenarios": 6,
+  "scope": "exploratory_within_study",
+  "sign_patterns_per_scenario": 16,
+  "source_samples": 93,
+  "study_id": "pacheco_montealegre_2020_colombia"
+}

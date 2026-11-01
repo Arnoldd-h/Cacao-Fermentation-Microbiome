@@ -1,7 +1,8 @@
 # Notas de resultados
 
 Actualización: 2026-10-31. Son notas de trabajo basadas en outputs observados;
-no constituyen todavía un contraste de hipótesis ni un meta-análisis.
+incluyen un primer contraste longitudinal exploratorio dentro de estudio;
+no constituyen todavía un meta-análisis ni evidencia de conservación cross-study.
 
 ## Inventario y unidad analítica
 
@@ -119,9 +120,35 @@ ocho fermentaciones independientes ni un contraste de hipótesis.
 Fuentes: [composición completa](../results/composition/pacheco_montealegre_2020_colombia/full/sample_composition.tsv)
 y [cobertura por muestra](../results/composition/pacheco_montealegre_2020_colombia/full/sample_label_coverage.tsv).
 
-## Preguntas aún sin contrastar
+## Primer modelo longitudinal dentro de estudio
 
-- Repetición de trayectorias bacterianas dentro de los lotes y entre estudios.
+El plan `c97345c` se registró después de esta descripción y antes del ajuste
+sobre `7b6d5a6`. El principal usa 764 ASVs, 46 tiempos/92 muestras y cuatro lotes,
+con centro CLR igual por estrato y OLS con intercepto por lote. La observación
+incompleta permanece en sensibilidad: 47 tiempos/93 muestras. Las muestras y
+tiempos no se consideran lotes adicionales.
+
+Las seis parejas de pendientes muestran cosenos positivos de 0,249–0,584.
+El R² multivariado lineal por lote varía de 0,1182 a 0,1644: el gradiente
+lineal recoge una fracción modesta de la variación comunitaria. La norma
+de la pendiente media es 12,152 por duración observada, con dispersión RMS
+entre pendientes de 11,976. Leave-one-batch-out conserva cosenos de 0,898–0,973
+con la dirección completa; no constituye replicación independiente.
+
+Todos los escenarios fijados dan p exacto=0,125 y q BY=0,30625. Con cuatro
+lotes, p=0,125 es el mínimo alcanzable por el contraste de signos de norma;
+no es posible rechazar a 0,05. No significación no implica ausencia de cambio,
+y la alineación observada no prueba conservación entre estudios. El contraste
+asume independencia y simetría central de pendientes bajo la nula, no
+intercambiabilidad entre tiempos autocorrelacionados.
+Fuentes: [contrastes globales](../results/longitudinal/pacheco_montealegre_2020_colombia/full/global_tests.tsv),
+[modelos por lote](../results/longitudinal/pacheco_montealegre_2020_colombia/full/batch_models.tsv)
+y [reporte longitudinal](../reports/longitudinal_results_2026-10-31.md).
+
+## Preguntas pendientes
+
+- Conservación de trayectorias entre estudios y representación de transitorios
+  más allá del primer gradiente lineal exploratorio.
 - Asociación de taxones con el tiempo y las etapas predefinidas.
 - Existencia de un núcleo temporal reproducible.
 - Efectos temporales y heterogeneidad entre estudios, sin atribuir efectos
