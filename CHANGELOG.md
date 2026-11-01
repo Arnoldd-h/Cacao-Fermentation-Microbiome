@@ -4,6 +4,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- Corrección del validador compartido de Cutadapt: la ruta de salida se contrasta
+  con el directorio de procesamiento registrado, conservando el valor piloto
+  por defecto y la comprobación estricta de estudio, run, mate, entradas y parámetros.
+  Se añade una integración con Cutadapt real sobre FASTQ sintéticos para la ruta completa.
 - Política registrada para tablas descriptivas por familia/género: conservación
   del linaje, desconocidos y metadata temporal; denominador de todas las lecturas
   retenidas, sin agregar submuestras ni realizar inferencia.

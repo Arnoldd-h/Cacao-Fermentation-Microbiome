@@ -1,6 +1,9 @@
 """Reject full-study QC corruption using copies of validated pilot summaries."""
 
 import copy
+import gzip
+import shutil
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -13,7 +16,8 @@ from cacao_inventory.analysis_artifacts import read_table
 from cacao_inventory.config import load_json_yaml
 from cacao_inventory.io import write_tsv_atomic
 from cacao_inventory.pilot_workflow import load_pilot_manifest
-from cacao_inventory.study_qc import reconcile_qc
+from cacao_inventory.qc import cutadapt_command
+from cacao_inventory.study_qc import cutadapt_rows, reconcile_qc, trimmed_path
 
 
 class StudyQcTests(unittest.TestCase):
@@ -78,6 +82,41 @@ class StudyQcTests(unittest.TestCase):
         self.write("primer_detection_trimmed")
         with self.assertRaises(ValueError):
             reconcile_qc(self.config, self.project, self.manifest, self.root)
+
+
+@unittest.skipUnless(shutil.which("cutadapt"), "Requires the declared Cutadapt environment")
+class StudyCutadaptRoutingTests(unittest.TestCase):
+    def test_real_cutadapt_report_validates_in_registered_full_study_directory(self):
+        """Tiny synthetic reads exercise the unmocked full-study parser wiring."""
+        config = load_json_yaml(ROOT / "config/full_study.yaml")
+        project = load_json_yaml(ROOT / config["project_config"])
+        row = load_pilot_manifest(ROOT / "metadata/pilot_manifest.tsv")[0]
+        processing = project["amplicon_processing"][row["bioproject"]]
+        choices = {"R": "A", "Y": "C", "S": "C", "W": "A", "K": "G", "M": "A", "B": "C", "D": "A", "H": "A", "V": "A", "N": "A"}
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            outputs = {}
+            for direction, suffix, role in (("R1", "1", "forward"), ("R2", "2", "reverse")):
+                primer = processing["primers"][role]["gene_specific_sequence"]
+                sequence = "".join(choices.get(base, base) for base in primer) + "ACGT" * 30
+                other = "T" * 120
+                reads = f"@synthetic_1/{suffix}\n{sequence}\n+\n{'I' * len(sequence)}\n@synthetic_2/{suffix}\n{other}\n+\n{'I' * len(other)}\n"
+                source = root / "data/raw" / row["study_id"] / row["run_accession"] / (row["run_accession"] + "_" + suffix + ".fastq.gz")
+                source.parent.mkdir(parents=True, exist_ok=True)
+                source.write_bytes(gzip.compress(reads.encode(), mtime=0))
+                output = Path(trimmed_path(config, row, suffix))
+                (root / output).parent.mkdir(parents=True, exist_ok=True)
+                outputs[direction] = output.as_posix()
+            report = Path(config["qc_dir"]) / "cutadapt" / (row["run_accession"] + ".cutadapt.json")
+            (root / report).parent.mkdir(parents=True)
+            command = cutadapt_command(row, processing["primers"], processing["cutadapt"], outputs, report.as_posix())
+            result = subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=30)
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            summary = cutadapt_rows(config, project, [row], root)
+            self.assertEqual(len(summary), 2)
+            self.assertEqual({item["output_file"] for item in summary}, set(outputs.values()))
+            self.assertTrue(all(item["input_reads"] == item["reads_written"] == "2" for item in summary))
+            self.assertTrue(all(item["reads_with_adapter"] == "1" for item in summary))
 
 
 if __name__ == "__main__":

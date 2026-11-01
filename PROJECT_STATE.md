@@ -28,6 +28,10 @@ manifest original. Se descargaron y validaron 186/186 FASTQ: 394.515.770 bytes,
 con MD5, gzip/CRC y estructura correctos. No se modificaron inclusiones,
 parámetros ni archivos crudos válidos. Se reanuda QC/DADA2/taxonomía/diversidad;
 todavía no hay resultados científicos del estudio completo.
+El primer cierre QC detectó que el validador compartido de Cutadapt esperaba
+siempre la ruta piloto. La corrección admite el directorio registrado del estudio
+sin relajar comprobaciones; el resumen real de los 93 runs ya pasa esa validación.
+La reanudación debe renovar los outputs afectados por el cambio de código.
 Implementado: productor/validador de resúmenes por familia/género con política
 registrada en `config/taxonomic_reporting.yaml`, conservando linajes, desconocidos
 y tiempos. La generación del perfil completo espera el cierre de su separación.

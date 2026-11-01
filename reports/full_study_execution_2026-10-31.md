@@ -74,3 +74,37 @@ las muestras públicas reales. No se agregan estratos ni se contrastan hipótesi
 La suite completa posterior aprueba 151 pruebas en Linux (580,497 segundos
 con el procesamiento del estudio en paralelo), incluidas las integraciones
 existentes de R y Snakemake. No hay nuevas dependencias.
+
+## Diagnóstico inicial del estudio completo
+
+Los 186 informes FastQC crudos cubren 2.728.920 pares, con 4.955–79.920
+pares por muestra. La calidad por base pasa en 184 archivos y muestra avisos
+en los dos mates de `SRR7899641` (`BactSaII120z2`). Los 186 archivos pasan
+calidad por secuencia.
+
+El módulo de adaptadores pasa en 183 archivos: ambos mates de `SRR7899641`
+tienen estado `fail` y R2 de `SRR7899691` (`BactSaI096z1`) tiene `warn`.
+Son estados de FastQC, no exclusiones ni una prueba de contaminación biológica.
+La tabla fuente es `results/qc/pacheco_montealegre_2020_colombia/full/raw_read_quality.tsv`.
+Se revisarán de nuevo tras el recorte y junto a la retención/longitud DADA2;
+no se modifican los parámetros registrados para eliminar estas alertas.
+
+La profundidad desigual debe considerarse antes de interpretar riqueza y efectos
+temporales. Los 93 runs siguen representando cuatro lotes independientes y
+47 observaciones lote-tiempo, con sus estratos separados.
+
+## Corrección del cierre QC
+
+El primer intento cerró 622 trabajos y se detuvo al resumir Cutadapt: el
+validador compartido derivaba siempre una salida `pilot`, aunque el ejecutor
+había escrito correctamente los 93 runs en el directorio `full` registrado.
+No hubo un cambio de parámetros ni una pérdida de archivos crudos.
+
+Se permite pasar el directorio de procesamiento registrado al validador;
+permanece la ruta piloto por defecto. Se mantienen las comprobaciones de
+entradas, estudio, run, mate, primers, flags y conteos. Se rechazan directorios
+fuera del estudio y rutas de salida de otro run. Una nueva integración ejecuta
+Cutadapt 5.0 con FASTQ sintéticos en la ruta completa, sin sustituir el parser
+por un mock. El resumen de los 93 informes reales ya valida correctamente.
+La reanudación renueva las etapas cuyo código de entrada cambió y conserva
+los crudos protegidos.

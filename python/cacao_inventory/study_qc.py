@@ -20,7 +20,8 @@ def cutadapt_rows(config: dict, project: dict, manifest: list[dict], root: Path)
         report = json.loads(path.read_text())
         processing = processing_configuration(project, row)
         outputs = {direction: Path(trimmed_path(config, row, suffix)).as_posix() for direction, suffix in (("R1", "1"), ("R2", "2"))}
-        rows.extend(build_cutadapt_summary_rows(report, row, outputs, processing["primers"], processing["cutadapt"], root=root, report_path=path))
+        rows.extend(build_cutadapt_summary_rows(report, row, outputs, processing["primers"], processing["cutadapt"], root=root, report_path=path,
+                                               interim_dir=config["interim_dir"]))
     return rows
 
 
