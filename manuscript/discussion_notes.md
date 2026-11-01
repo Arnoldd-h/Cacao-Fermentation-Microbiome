@@ -59,3 +59,16 @@ umbral. El cambio de cinco lecturas en sensibilidad 50 no afecta la primaria
 80 ni los patrones descriptivos publicados y no se interpreta como un hallazgo
 microbiológico nuevo. La repetición técnica y la generalización biológica
 requieren evidencias distintas.
+
+El primer modelo comunitario por lote aporta una estimación temporal explícita:
+las direcciones lineales están parcialmente alineadas, pero sólo recogen
+11,82–16,44 % de la variación por lote. El componente compartido es compatible
+con la hipótesis inicial dentro del estudio; no basta para afirmar sucesión
+conservada entre países o tecnologías. Los transitorios y la heterogeneidad
+permanecen fuera de una descripción lineal simple.
+
+El valor p=0,125 es el mínimo del contraste elegido con cuatro lotes. La falta
+de rechazo no permite concluir ausencia de sucesión; tampoco se cambiará el
+análisis para alcanzar significación. Se requiere ampliar estudios independientes,
+armonizar taxonomía y registrar modelos/core apropiados. No se cuenta el piloto,
+los estratos ni los tiempos como evidencia independiente adicional.

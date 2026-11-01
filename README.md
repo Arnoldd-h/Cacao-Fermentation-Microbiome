@@ -54,15 +54,15 @@ La selección reproducible mantiene `PRJNA492720` como piloto. Sus seis runs
 tienen QC y una ejecución integrada DADA2 con 93 ASVs y 156.561 pares
 sin quimeras de 176.798 pares de entrada (88,55 %). Se validaron 18 entradas
 y 18 artefactos DADA2. La clasificación con SILVA 138.2 pasó validación
-independiente de 21 entradas y 15 artefactos: 64/93 ASVs tienen asignación a
+independiente de 26 entradas y 15 artefactos: 64/93 ASVs tienen asignación a
 género con bootstrap 80 (63,54 % de las lecturas). Se conservan cinco ASVs
 marcadas como orgánulos, con 32.868 lecturas, en las tablas originales.
 Su separación auditable produce 88 ASVs y 123.693 lecturas para diversidad
 descriptiva, conservando las seis muestras. Se exportan índices alfa,
 CLR/Aitchison con sensibilidad, Bray–Curtis y PCA, con validación independiente
-de fórmulas y geometría. La suite completa más reciente aprueba 161 pruebas Python.
-La inferencia
-temporal y la integración entre estudios siguen pendientes.
+de fórmulas y geometría. La validación más reciente aprueba 181 pruebas de suite
+y dos del nuevo workflow longitudinal, 183 pruebas distintas. El piloto
+permanece fuera de la inferencia temporal y de la integración entre estudios.
 
 La ampliación a PRJNA492720 tiene un manifest auditado de 93 runs y cuatro
 lotes. El inventario conserva 94: uno no ofrece pares completos. El bloqueo
@@ -91,7 +91,12 @@ ya reproduce exactamente las siete tablas científicas entre procesos con
 dos/un hilo, tanto en piloto como en completo. Primaria, diversidad y composición
 se conservan; una ASV/cinco lecturas cambia sólo en sensibilidad a 50 frente
 al histórico. La garantía exige el mismo orden de entradas y entorno registrado.
-La inferencia sigue pendiente.
+El [primer modelo longitudinal](reports/longitudinal_results_2026-10-31.md)
+ya analiza cuatro lotes del estudio completo, con 46 tiempos/92 muestras y
+sensibilidades de tiempo, ceros y estratos. Hay alineación parcial de pendientes
+(cosenos 0,249–0,584), con R² lineal 0,118–0,164. Los seis escenarios dan p=0,125,
+el mínimo posible con cuatro lotes; no demuestran ausencia de sucesión ni
+conservación entre estudios. [Figura de cambio comunitario](results/longitudinal/pacheco_montealegre_2020_colombia/full/community_trajectories.png).
 
 `PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
 propia y no se procesa con el piloto Illumina paired-end actual.

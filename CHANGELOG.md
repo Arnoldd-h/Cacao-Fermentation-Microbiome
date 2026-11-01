@@ -2,7 +2,7 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## En desarrollo - 2026-10-31
+## v0.5.3-longitudinal - 2026-10-31
 
 - Plan longitudinal exploratorio fijado antes del ajuste: CLR por ASV,
   centro con igual peso por estrato y OLS por lote; media de pendientes con
@@ -14,6 +14,18 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   coeficientes completos, auditoría por muestra, signos exhaustivos, FDR BY,
   heterogeneidad y leave-one-batch-out; comprobación independiente R/QR y
   figuras de distancia Aitchison exportadas en PDF/SVG/PNG de 300 dpi.
+- Primer ajuste real sobre 764 ASVs y cuatro lotes: 46 tiempos/92 muestras
+  en el principal, 47/93 en sensibilidad de estratos disponibles; 27 entradas
+  y 19 artefactos validados. R comprueba 36.672 coeficientes en seis escenarios.
+  Cosenos de pendientes 0,249–0,584 y R² lineal 0,118–0,164. Los seis contrastes
+  dan p=0,125/q BY=0,30625; la resolución impide rechazar a 0,05, sin demostrar
+  ausencia de sucesión ni conservación cross-study.
+- Validación: 181 pruebas de suite y dos de aislamiento/fingerprint del nuevo
+  workflow, 183 distintas aprobadas. Figura revisada y fuentes previas intactas.
+- Propiedad única del archivo de validación en el productor del workflow:
+  cierre en dos trabajos sin aviso de salidas duplicadas. La renovación cambia
+  únicamente ese input del scheduler y conserva 14 productos científicos y
+  de verificación/figuras exactamente por SHA-256.
 
 ## v0.5.2-taxonomy-reproducibility - 2026-10-31
 

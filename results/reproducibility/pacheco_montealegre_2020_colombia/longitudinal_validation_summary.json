@@ -1,0 +1,63 @@
+{
+  "created_at_utc": "2026-11-01T03:28:05.364495+00:00",
+  "scientific_validation": {
+    "artifacts_checked": 19,
+    "asvs": 764,
+    "cross_study_inference": false,
+    "fdr_method": "BY",
+    "independent_batches": 4,
+    "independent_r_scenarios_checked": 6,
+    "inputs_checked": 27,
+    "minimum_attainable_p": 0.125,
+    "null_assumptions": [
+      "independent_batches",
+      "centrally_symmetric_batch_slope_vectors_about_zero"
+    ],
+    "pilot_inference": false,
+    "primary_observations": 46,
+    "primary_samples": 92,
+    "primary_samples_not_used": 1,
+    "primary_scenario": "relative_primary",
+    "random_sampling": false,
+    "random_seed": 20260819,
+    "scenarios": 6,
+    "scope": "exploratory_within_study",
+    "sign_patterns_per_scenario": 16,
+    "source_git_commit": "6415bfdac24572a4645afd32dc62a39f22a42875",
+    "source_samples": 93,
+    "status": "valid",
+    "study_id": "pacheco_montealegre_2020_colombia"
+  },
+  "tests": {
+    "longitudinal_all_tests.log": {
+      "tests": 181,
+      "elapsed_seconds": 152.629,
+      "status": "passed",
+      "log_sha256": "3762c5ff6efd21ad258e701fd7bc9b1f0509354315b1a6b3043704b2310dc322"
+    },
+    "longitudinal_workflow_tests.log": {
+      "tests": 2,
+      "elapsed_seconds": 10.738,
+      "status": "passed",
+      "log_sha256": "d3bd30a91a1683dabb4214d676cfe2eed76e4a13e75b9a4b2d7baeaddd1205bb"
+    }
+  },
+  "distinct_tests_passed": 183,
+  "workflows": {
+    "longitudinal": {
+      "pending_jobs": 0,
+      "log_sha256": "70ba81bba1391e43bd12e6d5a6f0e5ff35a44961951ba64cda207d2c3e73f69c"
+    },
+    "full_study": {
+      "pending_jobs": 0,
+      "log_sha256": "3d70969330deea430cbeee8e72bae8150e7ed210bd7d623b6785c21c937e34f1"
+    },
+    "pilot": {
+      "pending_jobs": 0,
+      "log_sha256": "fde25366dbe87d8623d774dd7f60432b241cdf6c583fe86d8717a32f2c8d80f7"
+    }
+  },
+  "renewal_unchanged_products": 14,
+  "figure_visually_reviewed": true,
+  "figure_png_sha256": "3f13e658b54ebd728de02d7de88f71fcc219cf6a685de2399968225bbca0af0a"
+}

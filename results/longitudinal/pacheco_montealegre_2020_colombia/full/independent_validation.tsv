@@ -1,0 +1,7 @@
+scenario_id	status	asv_coefficients_checked	observations_checked	batches_checked
+relative_primary	passed	6112	46	4
+pseudocount_sensitivity	passed	6112	46	4
+absolute_time_sensitivity	passed	6112	46	4
+available_strata_sensitivity	passed	6112	47	4
+stratum_1_sensitivity	passed	6112	47	4
+stratum_2_sensitivity	passed	6112	46	4

@@ -1,0 +1,7 @@
+scenario_id	study_id	time_unit	n_batches	n_observations	n_samples	sign_patterns	minimum_attainable_p	norm_mean_slope	mean_batch_slope_norm	between_batch_rms	exact_p_value	fdr_by_q_value	reject_fdr
+relative_primary	pacheco_montealegre_2020_colombia	observed_duration	4	46	92	16	0.125	12.15231304738739	16.67852104280698	11.975810392105306	0.125	0.30625	FALSE
+pseudocount_sensitivity	pacheco_montealegre_2020_colombia	observed_duration	4	46	92	16	0.125	13.385670807209527	18.54755066120225	13.463662660421031	0.125	0.30625	FALSE
+absolute_time_sensitivity	pacheco_montealegre_2020_colombia	24_hours	4	46	92	16	0.125	2.2941130136461663	3.1439178342364316	2.2759401329339646	0.125	0.30625	FALSE
+available_strata_sensitivity	pacheco_montealegre_2020_colombia	observed_duration	4	47	93	16	0.125	12.012142197975333	16.553641267955715	11.976862650725968	0.125	0.30625	FALSE
+stratum_1_sensitivity	pacheco_montealegre_2020_colombia	observed_duration	4	47	47	16	0.125	13.804666123697949	20.623609877037087	16.017263395715208	0.125	0.30625	FALSE
+stratum_2_sensitivity	pacheco_montealegre_2020_colombia	observed_duration	4	46	46	16	0.125	13.458948720808053	21.005559484096928	16.71096715518935	0.125	0.30625	FALSE
