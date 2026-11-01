@@ -57,7 +57,7 @@
   {
     "bytes": 297,
     "path": "results/dada2/pilot/validation.json",
-    "sha256": "95e4dd2ed19ad528ef3edfad382f8454ac83676e5e1e19a73e67ed29e71b4faa"
+    "sha256": "c243a3b851872fe4d4f54e0985db472e91794574d73a3546c7f66885a9d97b6c"
   },
   {
     "bytes": 1295,
@@ -65,9 +65,9 @@
     "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
   },
   {
-    "bytes": 9277,
+    "bytes": 10192,
     "path": "results/taxonomy/pilot/provenance.json",
-    "sha256": "c275c9a42d94e5bb568f3b2fe9c6791cd7ebba6d0166249f8a6f888a6313bf4f"
+    "sha256": "918fe5f9e334337745d6c5c0891d9684150eb72d32aabbbd746fc90183e4bc51"
   },
   {
     "bytes": 14759,
@@ -77,7 +77,7 @@
   {
     "bytes": 483,
     "path": "results/taxonomy/pilot/validation.json",
-    "sha256": "662782504280dd0a2ede9394377394d248cc1e5cb3312505c9e932052a733299"
+    "sha256": "806df3c13bc47afc6c6f540b8963f649606414d5eeb4be6359fbf83dfd799670"
   },
   {
     "bytes": 9234,

@@ -12,7 +12,7 @@
   "sample_aggregation": "none",
   "samples": 6,
   "series": 6,
-  "source_git_commit": "afb7705b9ecfc5bb145aa7c3f5be29d0cd971a87",
+  "source_git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
   "status": "valid",
   "study_id": "pacheco_montealegre_2020_colombia"
 }

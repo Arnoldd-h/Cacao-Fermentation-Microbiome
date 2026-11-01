@@ -60,14 +60,14 @@
     "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
   },
   {
-    "bytes": 8676,
+    "bytes": 10420,
     "path": "results/filtering/pilot/provenance.json",
-    "sha256": "a1daec41ac0a587c4c22026922ca5a99e3163bdc057b6ea258360ea3ece8d3d1"
+    "sha256": "7cdf51dd39fc5b09623b60f27c52e0508e99f37c5b854551057caa81c2d42c07"
   },
   {
     "bytes": 422,
     "path": "results/filtering/pilot/validation.json",
-    "sha256": "b14091ca7fe69cb76546852e96abe3067a0d44abd506802807caddc705ed9fba"
+    "sha256": "51441d8207b4aeb64a5a592ccc28af9e793fe28c30e40476fdc20bb2d566949a"
   },
   {
     "bytes": 11916,

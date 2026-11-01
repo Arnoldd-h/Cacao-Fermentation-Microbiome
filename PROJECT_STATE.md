@@ -28,8 +28,10 @@ la procedencia de cada etapa y en el registro de ejecución del 2026-10-31.
 El primer recorrido cerró 481 trabajos; la renovación de la figura taxonómica
 cerró siete trabajos adicionales sin repetir QC ni DADA2 completos. La suite
 completa pasa 161 pruebas Python en Linux (135,991 s). El piloto de seis muestras
-se está renovando con el código compartido actual; sus tablas se contrastarán
-con la referencia anterior. Es un subconjunto del estudio completo, no un
+cerró 33 trabajos con el código compartido actual: ocho tablas DADA2, ocho
+taxonómicas y once derivadas/de diversidad coinciden con la referencia anterior.
+Sus cinco registros QC pasan 257 comprobaciones de bytes/SHA-256. Es un
+subconjunto del estudio completo, no un
 segundo estudio ni seis muestras independientes adicionales.
 
 La repetición mantiene idénticas la taxonomía primaria, separación y diversidad,
@@ -174,7 +176,10 @@ La descarga completa está validada desde el 2026-10-31. El archivo HTML de
 797 bytes del intento anterior se conserva en `results/tmp/`, fuera de Git;
 no se utilizó para reanudar bytes de un FASTQ. QC, DADA2, taxonomía, separación,
 diversidad, composición y figuras temporales de los 93 runs están validados.
-El piloto se está renovando tras cambios compartidos de QC y del título taxonómico.
+El piloto cerró 33 trabajos tras cambios compartidos de QC y del título
+taxonómico, manteniendo sus tablas. La normalización local a LF del config
+completo renovó cinco trabajos de separación/diversidad; conserva valores y
+coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendientes.
 
 ## Bloqueos y limitaciones
 

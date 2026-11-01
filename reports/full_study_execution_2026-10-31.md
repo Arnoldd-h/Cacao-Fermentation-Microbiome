@@ -208,3 +208,29 @@ de muestra, no horas; las figuras temporales posteriores usan las horas reales.
 Los once TSV bacterianos/de diversidad son idénticos antes y después de
 renovar el título taxonómico. El CLR largo de 16,3 MB queda ignorado y se
 regenera mediante el workflow; su hash y validación se conservan.
+
+La revisión de bytes detectó finales de línea mixtos en la copia local de
+`config/full_study_diversity.yaml`, aunque el blob Git registrado ya usa LF.
+Se normalizó la copia local a LF y se comprobó igualdad JSON de todos sus
+valores, además de coincidencia exacta con el blob Git
+`8e761c3f4b5eb528c7e22beb5437bc4f1e08d863`. No hay un cambio metodológico ni
+un diff de configuración. Se renovaron cinco trabajos de separación/diversidad
+y sus resúmenes para que snapshots y hashes correspondan a esos mismos bytes
+en un checkout nuevo. Se mantienen idénticos los once TSV derivados y cuatro
+productos de composición/representación, incluido el PNG temporal revisado.
+
+## Renovación del piloto y cierre de workflows
+
+El workflow piloto cierra 33 trabajos después de los cambios compartidos de
+QC y del título taxonómico. Sus ocho tablas DADA2, ocho taxonómicas y once
+bacterianas/de diversidad son idénticas a la referencia anterior. Los cinco
+registros QC pasan 257 comprobaciones independientes de bytes y SHA-256.
+El piloto conserva 93 ASVs/156.561 pares sin quimeras y 88 ASVs/123.693
+lecturas después de separar orgánulos. Se renuevan también composición y
+figuras temporales; el PNG temporal es idéntico al ya revisado.
+
+Los dry-runs finales de `workflow/Snakefile` y `workflow/study.Snakefile`
+terminan con `Nothing to be done`. Snakemake conserva avisos sobre metadata
+auxiliar histórica ausente en 12 descargas piloto y 20 trabajos completos
+de descarga/FastQC. No son trabajos pendientes: sus archivos y procedencia
+científica siguen comprobados, sin reemplazar crudos para reconstruir esa caché.

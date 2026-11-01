@@ -4,6 +4,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- Renovación del piloto cerrada en 33 trabajos: tablas DADA2/taxonomía y
+  derivadas/diversidad conservadas, cinco registros QC y 257 comprobaciones.
+  Normalización local de configuración completa a los bytes LF ya registrados
+  en Git; cinco trabajos renovados y ambos workflows sin pendientes en dry-run.
 - Separación/diversidad del estudio completo validadas: 764 ASVs, 2.096.980
   lecturas y las 93 muestras; riqueza 1–75 y Shannon efectivo 1–30,363.
   Tablas y figuras pequeñas versionadas; CLR largo de 16,3 MB regenerable fuera de Git.

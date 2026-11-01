@@ -15,7 +15,7 @@
   "rarefaction": false,
   "retained_reads": 2096980,
   "samples": 93,
-  "source_git_commit": "da43eebdd430bed8c31d1b45701ccb68e079ad78",
+  "source_git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
   "status": "valid",
   "study_id": "pacheco_montealegre_2020_colombia"
 }
