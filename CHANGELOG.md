@@ -2,8 +2,53 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## En desarrollo - 2026-10-31
+## v0.5.1-full-study - 2026-10-31
 
+- Composición completa y figuras temporales consolidadas: 1.477 filas para
+  93 muestras y ocho series de lote/estrato, con comprobación independiente
+  y revisión visual. Las notas registran el aumento descriptivo de la fracción
+  etiquetada como Acetobacter entre primer y último muestreo, sin inferencia.
+- Renovación del piloto cerrada en 33 trabajos: tablas DADA2/taxonomía y
+  derivadas/diversidad conservadas, cinco registros QC y 257 comprobaciones.
+  Normalización local de configuración completa a los bytes LF ya registrados
+  en Git; cinco trabajos renovados y ambos workflows sin pendientes en dry-run.
+- Separación/diversidad del estudio completo validadas: 764 ASVs, 2.096.980
+  lecturas y las 93 muestras; riqueza 1–75 y Shannon efectivo 1–30,363.
+  Tablas y figuras pequeñas versionadas; CLR largo de 16,3 MB regenerable fuera de Git.
+- Taxonomía del estudio completo validada con SILVA 138.2: 475/782 ASVs y
+  1.855.013 lecturas con género a bootstrap 80; 21 entradas/15 artefactos.
+  Las 18 ASVs con etiquetas de orgánulos permanecen en las tablas originales.
+- Auditoría de repetición taxonómica: tabla primaria, separación y diversidad
+  idénticas; variación neta de una ASV/cinco lecturas en sensibilidad a 50.
+  Se documenta el desempate nativo no controlado completamente por la semilla R,
+  sin declarar resuelta la reproducción de bootstrap ni cambiar los umbrales.
+- Suite final completa: 161 pruebas Python aprobadas en Linux (135,991 s),
+  incluidas integraciones con R, Cutadapt y Snakemake.
+- Corrección del título de cobertura taxonómica compartido: elimina la etiqueta
+  fija de piloto para describir correctamente cualquier alcance. No cambia
+  clasificación, umbrales ni conteos; requiere regenerar las salidas afectadas.
+- DADA2 completo de PRJNA492720 validado: 93 muestras, 782 ASVs y 2.254.530
+  pares sin quimeras (82,62 %); 192 entradas/18 artefactos comprobados.
+  Convergencia forward/reverse en seis rondas y nueve avisos gráficos preservados.
+- Primera exportación temporal piloto validada: seis muestras, cuatro lotes,
+  16 entradas/ocho artefactos, con revisión visual y corrección de márgenes.
+- Política registrada para figuras temporales de riqueza, diversidad efectiva y
+  lecturas retenidas por lote/estrato, con horas originales y saltos explícitos
+  cuando falta una observación; sin agregación ni inferencia.
+- Productor/validador de figuras temporales PDF/SVG/PNG de 300 dpi con puntos
+  exactos auditables, perfiles piloto/completo y siete pruebas de integridad y agrupación.
+- QC del primer estudio completo cerrado: 93 runs y 2.728.920 pares, con
+  retención Cutadapt del 100 %, 112 lecturas recortadas y 3.812 bases retiradas.
+  Validación de 505 entradas/11 artefactos; cero exclusiones y avisos de calidad
+  y adaptadores conservados explícitamente. DADA2 completo iniciado.
+- Corrección del validador compartido de Cutadapt: la ruta de salida se contrasta
+  con el directorio de procesamiento registrado, conservando el valor piloto
+  por defecto y la comprobación estricta de estudio, run, mate, entradas y parámetros.
+  Se añade una integración con Cutadapt real sobre FASTQ sintéticos para la ruta completa.
+  La corrección pasa la suite completa de 154 pruebas en Linux.
+- Notas de resultados/discusión actualizadas con observaciones del piloto,
+  fuentes tabulares y límites de interpretación, separando la ampliación en curso
+  de la sucesión, el core y el meta-análisis todavía sin contrastar.
 - Política registrada para tablas descriptivas por familia/género: conservación
   del linaje, desconocidos y metadata temporal; denominador de todas las lecturas
   retenidas, sin agregar submuestras ni realizar inferencia.

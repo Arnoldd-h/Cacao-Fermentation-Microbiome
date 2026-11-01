@@ -2,6 +2,10 @@
   "command": [
     "/home/core_i7/.local/share/micromamba/envs/cacao-microbiome/bin/python",
     "scripts/qc/detect_primers.py",
+    "--config",
+    "config/config.yaml",
+    "--manifest",
+    "metadata/pilot_manifest.tsv",
     "--output",
     "results/qc/pilot/primer_detection.tsv"
   ],
@@ -12,8 +16,8 @@
       "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
     }
   ],
-  "created_at_utc": "2026-10-09T03:00:23.984761+00:00",
-  "git_commit": "20feeea7f9ed2f72f66526af99badc0f1c003a11",
+  "created_at_utc": "2026-11-01T01:35:27.893454+00:00",
+  "git_commit": "da43eebdd430bed8c31d1b45701ccb68e079ad78",
   "git_dirty": true,
   "inputs": [
     {
@@ -82,14 +86,19 @@
       "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
     },
     {
-      "bytes": 3423,
-      "path": "metadata/pilot_manifest.tsv",
-      "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
-    },
-    {
       "bytes": 101,
       "path": "python/cacao_inventory/__init__.py",
       "sha256": "eeb1bc857ffd5b379336ada6c100c6b1e6bfdd6b4595300af2d8217e8c9ae977"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4203,
+      "path": "python/cacao_inventory/bacterial_filter.py",
+      "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
     },
     {
       "bytes": 4793,
@@ -105,6 +114,11 @@
       "bytes": 5411,
       "path": "python/cacao_inventory/discovery.py",
       "sha256": "28c4b1bdb4f59f1f63a12add9ad8f6d9997cb569bc10d3103e65a3f7f15f065c"
+    },
+    {
+      "bytes": 8359,
+      "path": "python/cacao_inventory/diversity_validation.py",
+      "sha256": "2027045c5d0c5665e6c921a0475ff227e1e1cd7e5a62f4262e805d4d7eece429"
     },
     {
       "bytes": 4827,
@@ -142,9 +156,9 @@
       "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
     },
     {
-      "bytes": 24860,
+      "bytes": 25449,
       "path": "python/cacao_inventory/qc.py",
-      "sha256": "4bcde25fe579b655a206beaa57398cc360bde8b658771d538cdb3b6f3ea7d9db"
+      "sha256": "843acf8627f60b8aece692a28c9dce8c87c5228638e2e23d9722b2ce058de082"
     },
     {
       "bytes": 6504,
@@ -160,6 +174,26 @@
       "bytes": 6219,
       "path": "python/cacao_inventory/sources.py",
       "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
+    },
+    {
+      "bytes": 6089,
+      "path": "python/cacao_inventory/study_qc.py",
+      "sha256": "c436ac23d4c6fac78c4f7ab6bc09e291bb85963f3506183cf32d00a6cbaeb574"
+    },
+    {
+      "bytes": 8247,
+      "path": "python/cacao_inventory/study_scope.py",
+      "sha256": "07aee1d6f092ee03a695371d4d574342f09452dc7531d9410f5dc7f37389c888"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 8046,
+      "path": "python/cacao_inventory/taxonomy_validation.py",
+      "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
     },
     {
       "bytes": 6563,
@@ -197,14 +231,19 @@
       "sha256": "deef9f98ffc6b4eca65609bb49f39f3453054a138f16a2a41de29df8486bd570"
     },
     {
-      "bytes": 5215,
+      "bytes": 5520,
       "path": "workflow/Snakefile",
-      "sha256": "c7de0fcfccf262aa66b65bf909ff37ebe33564f564a496ee3b765afb72adec6c"
+      "sha256": "3feb72cd52c3616cd4e67c72cb8a6770126c8b2ebd2c34c74381524572068281"
     },
     {
       "bytes": 12186,
       "path": "workflow/rules/pilot_qc.smk",
       "sha256": "99dc799bb30f28eed874db52cc150ca0e752754ef8a1d6cd109e3b19d3823f6f"
+    },
+    {
+      "bytes": 3423,
+      "path": "metadata/pilot_manifest.tsv",
+      "sha256": "55c0ae4aeb8a2eac8e33e069ff89d3e2760b1f1a81db507b0dde9a967a4d175b"
     }
   ],
   "outputs": [

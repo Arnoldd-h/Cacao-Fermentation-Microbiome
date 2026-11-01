@@ -1,0 +1,125 @@
+{
+  "captured_at_utc": "2026-11-01T01:34:55Z",
+  "study_id": "pacheco_montealegre_2020_colombia",
+  "scope": "full",
+  "records": [
+    {
+      "unchanged": false,
+      "before_sha256": "7b7c8853a8ccc522ae68284497d4211db3066dbf1c1e8a8c101a45fbd211401c",
+      "after_sha256": "e08493fec91c4d9f7605f3480dad1fcbad182518492493a4b9552989aa25251f",
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.tsv"
+    },
+    {
+      "unchanged": false,
+      "before_sha256": "2aa974cceb76bf31dbd868beec306ebba84732f202b68da1885cd2c828c32960",
+      "after_sha256": "bd8a10b8b91c9dde5f832abec0e54b1f05536d1c19bd3557dc882248e29c35bc",
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/sample_coverage.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "a66a712952e113959d3856f86f55cb3ef32db7a0485756b33f63ae626d636b6d",
+      "after_sha256": "a66a712952e113959d3856f86f55cb3ef32db7a0485756b33f63ae626d636b6d",
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/software_versions.tsv"
+    },
+    {
+      "unchanged": false,
+      "before_sha256": "d93ed5bac8c332b3bb398031e7f6e3314ef4c9bae0eb4f6360397d8294720f03",
+      "after_sha256": "a885e578fffef580743b57fcca0e4531e8a74a521557f33535fb4a9710840f2c",
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_bootstraps.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "bcb91fde1e9d13b85540a3312de115f657f13f323bf137b81524cca9bf725998",
+      "after_sha256": "bcb91fde1e9d13b85540a3312de115f657f13f323bf137b81524cca9bf725998",
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_screening.tsv"
+    },
+    {
+      "unchanged": false,
+      "before_sha256": "d6a01a814467991970c0901ed162b500da3227b393426c576edb7d9fd29b84cc",
+      "after_sha256": "8393e2953fe7dc54d2b2ae5e7a23617ee966f410d0ec62ff7afedaadfdfdb507",
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_sensitivity.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "75c540ba96fa3774dc2b38c57cf86b7db809e594c66f5bf166208c84efdffc9d",
+      "after_sha256": "75c540ba96fa3774dc2b38c57cf86b7db809e594c66f5bf166208c84efdffc9d",
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_unfiltered.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "998cf45432ab0079b6240de030a9cf69442f7a9bae72836f8499bf82d00015e7",
+      "after_sha256": "998cf45432ab0079b6240de030a9cf69442f7a9bae72836f8499bf82d00015e7",
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "b39d79ef1f39a9a14bd77de2d1f840898ac680904f420e2431a9b4f9bcb09d22",
+      "after_sha256": "b39d79ef1f39a9a14bd77de2d1f840898ac680904f420e2431a9b4f9bcb09d22",
+      "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/asv_counts.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "720ec4e32914378da1a544eb832bb4734b06f6fc92fb74ab18c3f3f942e6c4b4",
+      "after_sha256": "720ec4e32914378da1a544eb832bb4734b06f6fc92fb74ab18c3f3f942e6c4b4",
+      "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/asv_sequences.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "55876544d81292653080be9bf746da3cc1ed2fc3de682554913c34f2597b7373",
+      "after_sha256": "55876544d81292653080be9bf746da3cc1ed2fc3de682554913c34f2597b7373",
+      "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/sample_metadata.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "5a013d834224c4219c14fb68020ddb9ea635573b4fc99e1e3f717c8f8ad1eed0",
+      "after_sha256": "5a013d834224c4219c14fb68020ddb9ea635573b4fc99e1e3f717c8f8ad1eed0",
+      "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/taxonomy.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "7b17a8e4d257c4c8407228ee7a4750086fafa475e9289e34cee6b1b560ca1981",
+      "after_sha256": "7b17a8e4d257c4c8407228ee7a4750086fafa475e9289e34cee6b1b560ca1981",
+      "path": "results/diversity/pacheco_montealegre_2020_colombia/full/aitchison_distances.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "9c88bb61356557e0d529f62317c580053995b8d9f872aad2471e22ad1454113a",
+      "after_sha256": "9c88bb61356557e0d529f62317c580053995b8d9f872aad2471e22ad1454113a",
+      "path": "results/diversity/pacheco_montealegre_2020_colombia/full/alpha_diversity.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "a91889984b00d9bb56aa1743257b5166c56cfd5c32d5a0fae636038b42a8044d",
+      "after_sha256": "a91889984b00d9bb56aa1743257b5166c56cfd5c32d5a0fae636038b42a8044d",
+      "path": "results/diversity/pacheco_montealegre_2020_colombia/full/bray_curtis_distances.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "5d79a1b238fe652c2554c1ea7efe9662cd173f43b2018057a93dd49c77a86a82",
+      "after_sha256": "5d79a1b238fe652c2554c1ea7efe9662cd173f43b2018057a93dd49c77a86a82",
+      "path": "results/diversity/pacheco_montealegre_2020_colombia/full/clr_coordinates.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "cb92632773245a0ca325774971c7e98df1fa20bcff377c38e5a1bd10471cbd9a",
+      "after_sha256": "cb92632773245a0ca325774971c7e98df1fa20bcff377c38e5a1bd10471cbd9a",
+      "path": "results/diversity/pacheco_montealegre_2020_colombia/full/pca_scores.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "fe57232b8bbe6bf7713156947f94401ea0af3f6bb728dab3963a7651312d2a76",
+      "after_sha256": "fe57232b8bbe6bf7713156947f94401ea0af3f6bb728dab3963a7651312d2a76",
+      "path": "results/diversity/pacheco_montealegre_2020_colombia/full/pca_variance.tsv"
+    },
+    {
+      "unchanged": true,
+      "before_sha256": "40b25f21f779cbd2af2eab8dc5b390116373c77af38c696653ce53cc4d5d7732",
+      "after_sha256": "40b25f21f779cbd2af2eab8dc5b390116373c77af38c696653ce53cc4d5d7732",
+      "path": "results/diversity/pacheco_montealegre_2020_colombia/full/software_versions.tsv"
+    }
+  ],
+  "after_source_git_commit": "da43eebdd430bed8c31d1b45701ccb68e079ad78",
+  "comparison": "caption_only_reexecution",
+  "limitation": "Native C++ tie-breaking is not fully controlled by the recorded R seed.",
+  "before_source_git_commit": "bb2d484ebeca4a9a71e723d9a5068a89270bb7ce"
+}

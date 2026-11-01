@@ -1,0 +1,12 @@
+{
+  "excluded_asvs": 18,
+  "excluded_reads": 157550,
+  "input_asvs": 782,
+  "input_reads": 2254530,
+  "retained_asvs": 764,
+  "retained_reads": 2096980,
+  "sample_exclusions": 0,
+  "samples": 93,
+  "study_id": "pacheco_montealegre_2020_colombia",
+  "unclassified_kingdom_retained_asvs": 0
+}

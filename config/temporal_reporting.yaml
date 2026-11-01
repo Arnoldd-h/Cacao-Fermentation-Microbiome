@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "x_field": "fermentation_hours",
+  "group_fields": ["fermentation_batch", "sampling_stratum"],
+  "sample_aggregation": "none",
+  "inference": false,
+  "break_at_missing_batch_times": true,
+  "metrics": [
+    {"field": "observed_asvs", "label": "ASVs observadas"},
+    {"field": "shannon_effective", "label": "Diversidad efectiva de Shannon"},
+    {"field": "library_reads", "label": "Lecturas retenidas"}
+  ],
+  "figures": {
+    "width_inches": 15,
+    "height_inches": 12,
+    "png_dpi": 300,
+    "stratum_colors": ["#27647B", "#BC7D38"]
+  },
+  "analyses": {
+    "pilot": {
+      "diversity_config": "config/diversity.yaml",
+      "output_dir": "results/temporal/pilot",
+      "expected_samples": 6,
+      "expected_batches": 4,
+      "connect_points": false,
+      "scope_label": "Piloto técnico: series incompletas"
+    },
+    "full_study": {
+      "diversity_config": "config/full_study_diversity.yaml",
+      "output_dir": "results/temporal/pacheco_montealegre_2020_colombia/full",
+      "expected_samples": 93,
+      "expected_batches": 4,
+      "connect_points": true,
+      "scope_label": "PRJNA492720: 93 muestras de cuatro lotes"
+    }
+  }
+}

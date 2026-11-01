@@ -238,3 +238,40 @@ significación, core ni efectos temporales. Las tablas deben reconciliar cada
 conteo y el total de lecturas por muestra/rango con la tabla derivada validada.
 Estos resúmenes describen composiciones y preparan la revisión longitudinal;
 no cambian las hipótesis ni la clasificación primaria de SILVA.
+
+### Figuras temporales descriptivas por lote y estrato, 2026-10-31
+
+Antes de generar estas figuras se fija `config/temporal_reporting.yaml`. Se
+representan riqueza observada, diversidad efectiva de Shannon y lecturas
+retenidas a partir de la diversidad alfa ya validada, sin recalcular métricas,
+agregar muestras ni modificar ceros. El eje temporal utiliza las horas originales.
+Las lecturas retenidas muestran la profundidad que limita la comparación de riqueza.
+
+Cada lote ocupa paneles separados. En el estudio completo se unen únicamente
+observaciones consecutivas de un mismo lote/estrato; una hora presente en el
+lote pero ausente en un estrato rompe la línea. No se imputan puntos, no se
+ajustan modelos y no se unen lotes o estratos distintos. El piloto se muestra
+sin líneas porque sus seis muestras no reconstruyen series completas.
+Duplicados lote/hora/estrato provocan fallo, en lugar de una agregación implícita.
+
+Las figuras se exportan en PDF/SVG/PNG de 300 dpi, con identificadores de muestras y
+procedencia de las tablas fuente. Son una representación descriptiva dentro de
+estudio, no pruebas de sucesión conservada, core o significación temporal.
+
+### Límite observado del RNG taxonómico, 2026-10-31
+
+La repetición del estudio completo, motivada por un título de figura, conserva
+exactamente taxonomía primaria a 80, separación y diversidad, pero modifica
+soportes bootstrap y la sensibilidad a 50: diferencia neta de una ASV y cinco
+lecturas asignadas a género. La semilla configurada controla el muestreo R,
+pero el código nativo de DADA2 1.34 resuelve empates con un generador inicializado
+desde `std::random_device`. No se declara reproducción exacta de los soportes.
+
+No cambia ningún parámetro de `config/taxonomy.yaml`, umbral o asignación
+manualmente. Se conserva la última ejecución cronológica con procedencia,
+sin escoger por significación o cobertura. La inferencia sobre asignaciones
+próximas a umbrales queda pendiente de evaluar el desempate reproducible y
+registrar cualquier solución como cambio metodológico específico. Antes de
+otra reclasificación se deben conservar las tablas bootstrap completas de
+referencia, además de hashes. Evidencia y fuentes en
+`reports/taxonomy_reproducibility_2026-10-31.md`.

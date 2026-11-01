@@ -1,0 +1,18 @@
+{
+  "artifacts_checked": 8,
+  "batches": 4,
+  "connect_points": false,
+  "inference": false,
+  "inputs_checked": 16,
+  "metrics": [
+    "observed_asvs",
+    "shannon_effective",
+    "library_reads"
+  ],
+  "sample_aggregation": "none",
+  "samples": 6,
+  "series": 6,
+  "source_git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
+  "status": "valid",
+  "study_id": "pacheco_montealegre_2020_colombia"
+}

@@ -39,10 +39,26 @@
     "2"
   ],
   "effective_threads": 2,
-  "finished_at_utc": "2026-10-09T21:42:16.954959+00:00",
-  "git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
+  "finished_at_utc": "2026-11-01T01:46:30.228323+00:00",
+  "git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
   "git_dirty": true,
   "git_status_at_start": [
+    " M README.md",
+    " M config/full_study_diversity.yaml",
+    " M manuscript/discussion_notes.md",
+    " M manuscript/results_notes.md",
+    " M reports/full_study_execution_2026-10-31.md",
+    " M results/dada2/pilot/SUCCESS",
+    " M results/dada2/pilot/error_model_F.pdf",
+    " M results/dada2/pilot/error_model_R.pdf",
+    " M results/dada2/pilot/output_checksums.tsv",
+    " M results/dada2/pilot/run_provenance.yaml",
+    " M results/dada2/pilot/validation.json",
+    " M results/qc/pilot/cutadapt_summary.provenance.json",
+    " M results/qc/pilot/primer_detection.provenance.json",
+    " M results/qc/pilot/primer_detection_trimmed.provenance.json",
+    " M results/qc/pilot/raw_read_quality.provenance.json",
+    " M results/qc/pilot/trimmed_read_quality.provenance.json",
     " D results/taxonomy/pilot/SUCCESS",
     " D results/taxonomy/pilot/assignment_coverage.pdf",
     " D results/taxonomy/pilot/assignment_coverage.png",
@@ -59,7 +75,9 @@
     " D results/taxonomy/pilot/taxonomy_screening.tsv",
     " D results/taxonomy/pilot/taxonomy_sensitivity.tsv",
     " D results/taxonomy/pilot/taxonomy_unfiltered.tsv",
-    " D results/taxonomy/pilot/warnings.txt"
+    " D results/taxonomy/pilot/warnings.txt",
+    "?? results/composition/pacheco_montealegre_2020_colombia/",
+    "?? results/temporal/pacheco_montealegre_2020_colombia/"
   ],
   "inputs": [
     {
@@ -105,7 +123,7 @@
     {
       "bytes": 41,
       "path": "results/dada2/pilot/SUCCESS",
-      "sha256": "586a9c12ad1471d7b28b105d100ac25f9a570f385e794639730ae166996cee3b"
+      "sha256": "4746c2d1d84887c669673060d6b2e4b0035ed7b932055e6dcd1d7f4b2523b55f"
     },
     {
       "bytes": 5764,
@@ -125,7 +143,7 @@
     {
       "bytes": 297,
       "path": "results/dada2/pilot/validation.json",
-      "sha256": "95e4dd2ed19ad528ef3edfad382f8454ac83676e5e1e19a73e67ed29e71b4faa"
+      "sha256": "c243a3b851872fe4d4f54e0985db472e91794574d73a3546c7f66885a9d97b6c"
     },
     {
       "bytes": 11916,
@@ -138,9 +156,9 @@
       "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
     },
     {
-      "bytes": 6832,
+      "bytes": 6836,
       "path": "scripts/taxonomy/assign_taxonomy.R",
-      "sha256": "15171c6c828206acf5516c6365fb4181dbcf184b89b4e681d8033f385eaea05f"
+      "sha256": "d08f829a0289e8580f00dd3b6b4e8a693441a7e32cff1fa0bc6e34988544dfc9"
     },
     {
       "bytes": 2092,
@@ -170,19 +188,19 @@
   ],
   "outputs": [
     {
-      "bytes": 4944,
+      "bytes": 4953,
       "path": "results/taxonomy/pilot/assignment_coverage.pdf",
-      "sha256": "7dcb81f707e0a13f08bd5d47cecfee687af5a533187049e8b0da62ca36a94751"
+      "sha256": "a2e40f5cf1758557937dedc554d3801c2bd5b39428d0b64b1f5c0395f40b05d7"
     },
     {
-      "bytes": 119750,
+      "bytes": 122567,
       "path": "results/taxonomy/pilot/assignment_coverage.png",
-      "sha256": "ee84641c00d540e54c0b115f907682dc01fd9fd7042c4c215ba91a5f20d0c61c"
+      "sha256": "e6a28f0a064dfa03ea6e654d94890aea106f63f487e9f51fc1e046478776fcb4"
     },
     {
-      "bytes": 73976,
+      "bytes": 75616,
       "path": "results/taxonomy/pilot/assignment_coverage.svg",
-      "sha256": "c4f13ce15a94adab44b02d38d7858b2072e4a098e8a6fc3f22f183afe24d24b7"
+      "sha256": "15566adf5f91687ea6e9362e23908a1dfb3d4e5c01946ad750e0b814ab7dcef7"
     },
     {
       "bytes": 838,
@@ -197,7 +215,7 @@
     {
       "bytes": 3318,
       "path": "results/taxonomy/pilot/input_checksums.json",
-      "sha256": "4fbf84ff0a6276ed245268e9ae7dac38d1665af82a76f626e695439b7ee57a40"
+      "sha256": "3350557f4b791b681788ce02a36dba243ef4104b565e795d6b8f4a1b9a080a56"
     },
     {
       "bytes": 5012,
@@ -260,7 +278,7 @@
     "Inversion",
     "Rejection"
   ],
-  "started_at_utc": "2026-10-09T21:38:57.514076+00:00",
+  "started_at_utc": "2026-11-01T01:42:18.148451+00:00",
   "status": "success",
   "upstream_validation": {
     "artifacts_checked": 18,
@@ -269,7 +287,7 @@
     "inputs_checked": 18,
     "nonchim_pairs": 156561,
     "samples": 6,
-    "source_git_commit": "6221445317a30cab24a67620f251e71ee772129c",
+    "source_git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
     "status": "valid",
     "study_id": "pacheco_montealegre_2020_colombia"
   }

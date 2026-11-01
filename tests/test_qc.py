@@ -247,6 +247,28 @@ class CutadaptSummaryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "output path disagrees"):
             build_cutadapt_summary_rows(self.report, self.manifest, outputs, self.primers, self.parameters)
 
+    def test_registered_full_study_directory_keeps_strict_output_validation(self) -> None:
+        outputs = {direction: path.replace("/pilot/", "/full/") for direction, path in self.outputs.items()}
+        self.report["command_line_arguments"] = cutadapt_command(
+            self.manifest, self.primers, self.parameters, outputs, "report.json"
+        )[1:]
+        rows = build_cutadapt_summary_rows(self.report, self.manifest, outputs, self.primers, self.parameters,
+                                          interim_dir="data/interim/study/full")
+        self.assertEqual({row["output_file"] for row in rows}, set(outputs.values()))
+        with self.assertRaisesRegex(ValueError, "output path disagrees"):
+            build_cutadapt_summary_rows(self.report, self.manifest, outputs, self.primers, self.parameters)
+        arguments = self.report["command_line_arguments"]
+        arguments[arguments.index("--paired-output") + 1] = outputs["R2"].replace("SRR1_2", "SRR2_2")
+        with self.assertRaisesRegex(ValueError, "output path disagrees"):
+            build_cutadapt_summary_rows(self.report, self.manifest, outputs, self.primers, self.parameters,
+                                        interim_dir="data/interim/study/full")
+
+    def test_configured_output_directory_cannot_escape_the_manifest_study(self) -> None:
+        for directory in ("data/raw/study", "data/interim/other/full", "data/interim/study/../../../outside"):
+            with self.subTest(directory=directory), self.assertRaisesRegex(ValueError, "within the manifest study"):
+                build_cutadapt_summary_rows(self.report, self.manifest, self.outputs, self.primers, self.parameters,
+                                            interim_dir=directory)
+
 
 class PilotCutadaptOutputTests(unittest.TestCase):
     @classmethod

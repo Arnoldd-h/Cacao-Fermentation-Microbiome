@@ -1,0 +1,263 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "classification": {
+    "method": "dada2::assignTaxonomy",
+    "output_bootstraps": true,
+    "primary_min_boot": 80,
+    "random_seed": 20260819,
+    "raw_min_boot": 0,
+    "rng_kind": [
+      "Mersenne-Twister",
+      "Inversion",
+      "Rejection"
+    ],
+    "sensitivity_min_boot": [
+      50
+    ],
+    "species_assignment": false,
+    "tax_levels": [
+      "Kingdom",
+      "Phylum",
+      "Class",
+      "Order",
+      "Family",
+      "Genus"
+    ],
+    "threads": 2,
+    "try_reverse_complement": true
+  },
+  "command": [
+    "Rscript",
+    "scripts/taxonomy/assign_taxonomy.R",
+    "--config",
+    "/mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/config/taxonomy.yaml",
+    "--input-dir",
+    "/mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/dada2/pacheco_montealegre_2020_colombia/full",
+    "--output-dir",
+    "/mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/taxonomy/pacheco_montealegre_2020_colombia/full",
+    "--threads",
+    "2"
+  ],
+  "effective_threads": 2,
+  "finished_at_utc": "2026-11-01T01:30:36.199535+00:00",
+  "git_commit": "da43eebdd430bed8c31d1b45701ccb68e079ad78",
+  "git_dirty": true,
+  "git_status_at_start": [
+    "?? data/processed/pacheco_montealegre_2020_colombia/",
+    "?? results/diversity/pacheco_montealegre_2020_colombia/",
+    "?? results/filtering/pacheco_montealegre_2020_colombia/",
+    "?? results/taxonomy/pacheco_montealegre_2020_colombia/"
+  ],
+  "inputs": [
+    {
+      "bytes": 4901,
+      "path": "config/config.yaml",
+      "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+    },
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 4827,
+      "path": "python/cacao_inventory/download.py",
+      "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 139996892,
+      "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+      "sha256": "e0af8246b900a922ea3ea68e7cb1a5e70ceed4db84246b6ea9865eb132452093"
+    },
+    {
+      "bytes": 1866,
+      "path": "references/silva_138.2.provenance.json",
+      "sha256": "facb8d55e880093966992381912e3923dc804ff967944d0c6dbc15d62a5cf5f7"
+    },
+    {
+      "bytes": 11916,
+      "path": "scripts/dada2/helpers.R",
+      "sha256": "d22d205dd0af7678a38eaa6ee72231012748343c9856d1f410e29d111ff9fce7"
+    },
+    {
+      "bytes": 9234,
+      "path": "scripts/dada2/validate_outputs.py",
+      "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
+    },
+    {
+      "bytes": 6836,
+      "path": "scripts/taxonomy/assign_taxonomy.R",
+      "sha256": "d08f829a0289e8580f00dd3b6b4e8a693441a7e32cff1fa0bc6e34988544dfc9"
+    },
+    {
+      "bytes": 2092,
+      "path": "scripts/taxonomy/helpers.R",
+      "sha256": "73e31b91ec838dc14689e6ce4beb9adf135ef5735ec5d4336f18338dbf9498d5"
+    },
+    {
+      "bytes": 6145,
+      "path": "scripts/taxonomy/run_taxonomy.py",
+      "sha256": "af9842b063e453476c8f1745212406802247820fc0f35d422153a5b92d24637b"
+    },
+    {
+      "bytes": 5520,
+      "path": "workflow/Snakefile",
+      "sha256": "3feb72cd52c3616cd4e67c72cb8a6770126c8b2ebd2c34c74381524572068281"
+    },
+    {
+      "bytes": 3620,
+      "path": "workflow/rules/pilot_taxonomy.smk",
+      "sha256": "290af66bba01108fbe7f783beb95eb2c325e08fe58ef6d79f7cff87d69f26e9d"
+    },
+    {
+      "bytes": 1295,
+      "path": "config/taxonomy.yaml",
+      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    },
+    {
+      "bytes": 41,
+      "path": "results/dada2/pacheco_montealegre_2020_colombia/full/SUCCESS",
+      "sha256": "e60f10c22900d16182497cfddb55423761c3c8871cf6d1fa62c5abaf5c30fb07"
+    },
+    {
+      "bytes": 188052,
+      "path": "results/dada2/pacheco_montealegre_2020_colombia/full/asv_counts.tsv",
+      "sha256": "ad2e557f3b755d84d47c80b98118b44e4b3545b1f0aed4a951d76392842ad935"
+    },
+    {
+      "bytes": 256154,
+      "path": "results/dada2/pacheco_montealegre_2020_colombia/full/asv_sequences.tsv",
+      "sha256": "fcba527b7a753627d9dde04393c53176667f7b211e1629e1619fbc1e0d6d5ab8"
+    },
+    {
+      "bytes": 87048,
+      "path": "results/dada2/pacheco_montealegre_2020_colombia/full/sample_metadata.tsv",
+      "sha256": "55876544d81292653080be9bf746da3cc1ed2fc3de682554913c34f2597b7373"
+    },
+    {
+      "bytes": 301,
+      "path": "results/dada2/pacheco_montealegre_2020_colombia/full/validation.json",
+      "sha256": "f9c0ec87500d08de66079e5efd47710f5aad6ce9b078632eb0b8f3bec097455a"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 4979,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.pdf",
+      "sha256": "d811a9fc8b2917efb00f62b061b7b7a5cbaf4d6d520feeeb408a1574690a9eaf"
+    },
+    {
+      "bytes": 104723,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.png",
+      "sha256": "d83e911212925c9912f721dd763dcb618561f091149f119301353aefc6c11c3b"
+    },
+    {
+      "bytes": 75618,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.svg",
+      "sha256": "0ddb03c12da659b1e0f8050c7fbe98fe732d4cc19089fbed45330c970d24dc74"
+    },
+    {
+      "bytes": 887,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.tsv",
+      "sha256": "e08493fec91c4d9f7605f3480dad1fcbad182518492493a4b9552989aa25251f"
+    },
+    {
+      "bytes": 1295,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/config_snapshot.yaml",
+      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    },
+    {
+      "bytes": 3487,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/input_checksums.json",
+      "sha256": "fc6caf4dba872b341948b5fc0be71b6e123a278925de99545cb546a7804060ad"
+    },
+    {
+      "bytes": 77070,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/sample_coverage.tsv",
+      "sha256": "bd8a10b8b91c9dde5f832abec0e54b1f05536d1c19bd3557dc882248e29c35bc"
+    },
+    {
+      "bytes": 2677,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/session_info.txt",
+      "sha256": "513a08e1416614a20035ca1dc44a85f2a16bb269ae3767507eb0e3d22cfa7472"
+    },
+    {
+      "bytes": 87,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/software_versions.tsv",
+      "sha256": "a66a712952e113959d3856f86f55cb3ef32db7a0485756b33f63ae626d636b6d"
+    },
+    {
+      "bytes": 121913,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy.tsv",
+      "sha256": "998cf45432ab0079b6240de030a9cf69442f7a9bae72836f8499bf82d00015e7"
+    },
+    {
+      "bytes": 79724,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_bootstraps.tsv",
+      "sha256": "a885e578fffef580743b57fcca0e4531e8a74a521557f33535fb4a9710840f2c"
+    },
+    {
+      "bytes": 82449,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_screening.tsv",
+      "sha256": "bcb91fde1e9d13b85540a3312de115f657f13f323bf137b81524cca9bf725998"
+    },
+    {
+      "bytes": 252078,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_sensitivity.tsv",
+      "sha256": "8393e2953fe7dc54d2b2ae5e7a23617ee966f410d0ec62ff7afedaadfdfdb507"
+    },
+    {
+      "bytes": 126816,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_unfiltered.tsv",
+      "sha256": "75c540ba96fa3774dc2b38c57cf86b7db809e594c66f5bf166208c84efdffc9d"
+    },
+    {
+      "bytes": 0,
+      "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/warnings.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "reference": {
+    "doi": "10.5281/zenodo.14169026",
+    "expected_bytes": 139996892,
+    "expected_md5": "1764e2a36b4500ccb1c7d5261948a414",
+    "name": "SILVA",
+    "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+    "provenance_path": "references/silva_138.2.provenance.json",
+    "url": "https://zenodo.org/records/14169026/files/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+    "version": "138.2"
+  },
+  "rng_kind": [
+    "Mersenne-Twister",
+    "Inversion",
+    "Rejection"
+  ],
+  "started_at_utc": "2026-11-01T01:26:18.734339+00:00",
+  "status": "success",
+  "upstream_validation": {
+    "artifacts_checked": 18,
+    "asvs": 782,
+    "error_models_converged_before_limit": true,
+    "inputs_checked": 192,
+    "nonchim_pairs": 2254530,
+    "samples": 93,
+    "source_git_commit": "1250c7222db8d40779f9fce3ba7592b60df26ea5",
+    "status": "valid",
+    "study_id": "pacheco_montealegre_2020_colombia"
+  }
+}

@@ -56,4 +56,8 @@ los modelos longitudinales del protocolo.
 El perfil piloto ejecutado sobre `ad4c3ca` conserva seis muestras, 88 ASVs y
 123.693 lecturas en 95 filas de composición. La validación de 15 entradas y
 cinco artefactos pasa tanto al generar como al comprobar las salidas existentes.
-El perfil completo permanece pendiente de la separación de los 93 runs.
+El perfil completo contiene 93 muestras, 764 ASVs y 2.096.980 lecturas en
+1.477 filas de composición. Se conservan los cuatro lotes y sus estratos;
+15 entradas y cinco artefactos pasan validación. El hash de la ejecución
+vigente figura en su procedencia, sin equiparar los ASVs del perfil completo
+con los identificadores del piloto.

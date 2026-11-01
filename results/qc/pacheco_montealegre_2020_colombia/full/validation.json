@@ -1,0 +1,15 @@
+{
+  "artifacts_checked": 11,
+  "fastq_files": 186,
+  "input_pairs": 2728920,
+  "inputs_checked": 505,
+  "paired_retention_fraction": 1.0,
+  "raw_base_quality_pass_files": 184,
+  "runs": 93,
+  "sample_exclusions": 0,
+  "source_git_commit": "1250c7222db8d40779f9fce3ba7592b60df26ea5",
+  "status": "valid",
+  "study_id": "pacheco_montealegre_2020_colombia",
+  "trimmed_base_quality_pass_files": 184,
+  "trimmed_pairs": 2728920
+}

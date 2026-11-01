@@ -1,12 +1,38 @@
 status: complete
-started_at_utc: '2026-10-09T03:03:15Z'
-git_commit: 6221445317a30cab24a67620f251e71ee772129c
+started_at_utc: '2026-11-01T01:39:00Z'
+git_commit: 302b7f769c06e6567fff65c5055848b719e5acdf
 git_dirty: yes
 git_status:
-- ' M README.md'
-- ' M results/README.md'
-- ' M scripts/README.md'
-- ?? results/dada2/
+- ' D results/dada2/pilot/SUCCESS'
+- ' D results/dada2/pilot/asv_counts.tsv'
+- ' D results/dada2/pilot/asv_sequences.fasta'
+- ' D results/dada2/pilot/asv_sequences.tsv'
+- ' D results/dada2/pilot/config_snapshot.yaml'
+- ' D results/dada2/pilot/error_learning.tsv'
+- ' D results/dada2/pilot/error_model_F.pdf'
+- ' D results/dada2/pilot/error_model_F.png'
+- ' D results/dada2/pilot/error_model_F.svg'
+- ' D results/dada2/pilot/error_model_R.pdf'
+- ' D results/dada2/pilot/error_model_R.png'
+- ' D results/dada2/pilot/error_model_R.svg'
+- ' D results/dada2/pilot/input_checksums.tsv'
+- ' D results/dada2/pilot/merge_diagnostics.tsv'
+- ' D results/dada2/pilot/output_checksums.tsv'
+- ' D results/dada2/pilot/read_tracking.tsv'
+- ' D results/dada2/pilot/run_provenance.yaml'
+- ' D results/dada2/pilot/sample_metadata.tsv'
+- ' D results/dada2/pilot/sequence_length_distribution.tsv'
+- ' D results/dada2/pilot/session_info.txt'
+- ' D results/dada2/pilot/software_versions.tsv'
+- ' D results/dada2/pilot/summary.tsv'
+- ' D results/dada2/pilot/warnings.txt'
+- ' M results/qc/pilot/cutadapt_summary.provenance.json'
+- ' M results/qc/pilot/primer_detection.provenance.json'
+- ' M results/qc/pilot/primer_detection_trimmed.provenance.json'
+- ' M results/qc/pilot/raw_read_quality.provenance.json'
+- ' M results/qc/pilot/trimmed_read_quality.provenance.json'
+- ?? results/composition/pacheco_montealegre_2020_colombia/
+- ?? results/temporal/pacheco_montealegre_2020_colombia/
 command:
 - Rscript
 - scripts/dada2/run_pilot.R
@@ -79,7 +105,7 @@ effective_threads: 2
 error_models_converged_before_limit: yes
 input_checksums_verified_at_completion: yes
 output_checksums: output_checksums.tsv
-finished_at_utc: '2026-10-09T03:05:23Z'
+finished_at_utc: '2026-11-01T01:41:58Z'
 warnings:
 - log-10 transformation introduced infinite values.
 - log-10 transformation introduced infinite values.

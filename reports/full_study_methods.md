@@ -78,6 +78,9 @@ entradas y salidas y estado Git. `git_dirty=true` puede reflejar los nuevos
 resultados aún sin commit; ese estado se registra sin ocultarlo. Los crudos,
 la base SILVA, los informes completos de herramientas y RDS quedan fuera de
 Git. Los resúmenes, tablas derivadas y figuras pequeñas se versionan.
+La tabla CLR larga completa (16,3 MB en PRJNA492720) se conserva localmente
+y se regenera con el workflow; no se versiona. Su hash permanece en la
+procedencia y la validación exige su presencia al ejecutar o verificar la etapa.
 
 ## Disponibilidad y condición de avance
 
@@ -94,6 +97,11 @@ siguió declarando 1.458.078 bytes y MD5 `49b5d1b26dd75169352b52aace2c5524`.
 Se repitieron accesos HTTP/HTTPS, un segundo hostname público y FTP. La API
 no ofreció archivos submitted/SRA alternativos para ese run. Esta discrepancia
 de disponibilidad es distinta de la elegibilidad de SRR7899803: SRR7899804
-permanece en el manifest de 93 runs y el procesamiento completo espera su R2.
+permaneció en el manifest de 93 runs durante el bloqueo.
+El 2026-10-31 se recuperó desde la URL original con esos mismos bytes y MD5;
+la auditoría cierra 186/186 FASTQ válidos. No se añadieron exclusiones por
+transporte ni se modificaron archivos crudos válidos. El
+[registro de ejecución](full_study_execution_2026-10-31.md) documenta el avance
+posterior de cada etapa.
 Los mecanismos oficiales de transferencia se describen en la
 [documentación ENA](https://ena-docs.readthedocs.io/en/latest/retrieval/file-download.html).

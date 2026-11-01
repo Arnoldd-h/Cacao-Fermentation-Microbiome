@@ -100,9 +100,9 @@
     "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
   },
   {
-    "bytes": 24860,
+    "bytes": 25449,
     "path": "python/cacao_inventory/qc.py",
-    "sha256": "4bcde25fe579b655a206beaa57398cc360bde8b658771d538cdb3b6f3ea7d9db"
+    "sha256": "843acf8627f60b8aece692a28c9dce8c87c5228638e2e23d9722b2ce058de082"
   },
   {
     "bytes": 6504,
@@ -120,9 +120,9 @@
     "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
   },
   {
-    "bytes": 6007,
+    "bytes": 6089,
     "path": "python/cacao_inventory/study_qc.py",
-    "sha256": "1112b8566d7290367159b404b646ff944dcfd8acce08499e1decb295eb70779e"
+    "sha256": "c436ac23d4c6fac78c4f7ab6bc09e291bb85963f3506183cf32d00a6cbaeb574"
   },
   {
     "bytes": 8247,

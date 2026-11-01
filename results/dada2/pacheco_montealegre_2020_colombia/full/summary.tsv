@@ -1,0 +1,2 @@
+study_id	bioproject	samples	input_pairs	filtered_pairs	merged_pairs	nonchim_pairs	merged_asvs	nonchim_asvs	nonchim_fraction_of_input
+pacheco_montealegre_2020_colombia	PRJNA492720	93	2728920	2540412	2395174	2254530	1606	782	0.826161998153116

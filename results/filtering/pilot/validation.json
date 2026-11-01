@@ -9,7 +9,7 @@
   "retained_reads": 123693,
   "sample_exclusions": 0,
   "samples": 6,
-  "source_git_commit": "5221b0ff5b744c6e372dc062b40a6a70acaef83d",
+  "source_git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
   "status": "valid",
   "study_id": "pacheco_montealegre_2020_colombia",
   "unclassified_kingdom_retained_asvs": 0

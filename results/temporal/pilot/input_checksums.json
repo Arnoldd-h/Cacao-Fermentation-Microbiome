@@ -1,0 +1,82 @@
+[
+  {
+    "bytes": 1483,
+    "path": "config/diversity.yaml",
+    "sha256": "8adf155672098942393dedd14c057f05b5ef2cd7f5e269b82d286080ec28b5ad"
+  },
+  {
+    "bytes": 1186,
+    "path": "config/temporal_reporting.yaml",
+    "sha256": "8b417f2fecda14b0ffd6a3a6e3e41ba3de5fb4c65412675117f8ab3225296c35"
+  },
+  {
+    "bytes": 54093,
+    "path": "environment/conda-linux-64.lock",
+    "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+  },
+  {
+    "bytes": 9376,
+    "path": "python/cacao_inventory/analysis_artifacts.py",
+    "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+  },
+  {
+    "bytes": 4793,
+    "path": "python/cacao_inventory/config.py",
+    "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+  },
+  {
+    "bytes": 8359,
+    "path": "python/cacao_inventory/diversity_validation.py",
+    "sha256": "2027045c5d0c5665e6c921a0475ff227e1e1cd7e5a62f4262e805d4d7eece429"
+  },
+  {
+    "bytes": 2405,
+    "path": "python/cacao_inventory/io.py",
+    "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+  },
+  {
+    "bytes": 4488,
+    "path": "python/cacao_inventory/provenance.py",
+    "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+  },
+  {
+    "bytes": 4319,
+    "path": "python/cacao_inventory/taxonomy_reference.py",
+    "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+  },
+  {
+    "bytes": 1377,
+    "path": "results/diversity/pilot/alpha_diversity.tsv",
+    "sha256": "d5d8ca7bc1d431b00bbe182cd71ef97164ac3659ee27015d48cdc542768276da"
+  },
+  {
+    "bytes": 11859,
+    "path": "results/diversity/pilot/provenance.json",
+    "sha256": "a108e1d0740881c7ca475bf102ef91c809ab7133f9e72638c1ef3f1442c4f8ba"
+  },
+  {
+    "bytes": 479,
+    "path": "results/diversity/pilot/validation.json",
+    "sha256": "2c20f39dd20ec913cce452d9dcdfd6a0e4edd9a418862a80f4e79a2239b49590"
+  },
+  {
+    "bytes": 3272,
+    "path": "scripts/diversity/run_diversity.py",
+    "sha256": "25592221e0d40bee0323c1f4099689502fe242b429dd87a8f961c74968747311"
+  },
+  {
+    "bytes": 1703,
+    "path": "scripts/diversity/validate_diversity.py",
+    "sha256": "0c679adae550a8ac54c6e16941e4498b36e28677ac3f8894a7ca850169fa8e35"
+  },
+  {
+    "bytes": 6120,
+    "path": "scripts/reporting/plot_temporal_diversity.R",
+    "sha256": "7b5fb95e5f2c7a293c133f02c7ac2784f6909ea8f7419fd3c1baeae1e597305d"
+  },
+  {
+    "bytes": 9621,
+    "path": "scripts/reporting/plot_temporal_diversity.py",
+    "sha256": "359308d984389885778b4e40669a084a1bec6ada4f0231629e53b1a65cf8d3e0"
+  }
+]

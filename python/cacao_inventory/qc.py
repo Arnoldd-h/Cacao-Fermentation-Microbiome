@@ -159,6 +159,7 @@ def _validate_cutadapt_execution(
     report: dict[str, Any], row: dict[str, str], outputs: dict[str, str],
     primers: dict[str, Any], parameters: dict[str, Any], root: Path,
     report_path: str | Path | None,
+    interim_dir: str | Path | None,
 ) -> None:
     """Compare actual report paths, command flags and adapters to configured inputs."""
 
@@ -195,12 +196,22 @@ def _validate_cutadapt_execution(
     def canonical(value: str | Path) -> Path:
         return (root / value).resolve()
 
+    output_directory = canonical(interim_dir) if interim_dir is not None else None
+    if output_directory is not None and not output_directory.is_relative_to(
+        canonical(Path("data/interim") / row["study_id"])
+    ):
+        raise ValueError("Cutadapt output directory must remain within the manifest study")
+
     for suffix, direction, path_field, output_option, role, adapter_option, adapter_key in (
         ("1", "R1", "path1", "--output", "forward", "--front", "adapters_read1"),
         ("2", "R2", "path2", "--paired-output", "reverse", "-G", "adapters_read2"),
     ):
         expected_input = canonical(fastq_path(row, suffix))
-        expected_output = canonical(fastq_path(row, suffix, "trimmed"))
+        expected_output = (
+            output_directory / row["run_accession"] / f"{row['run_accession']}_{suffix}.fastq.gz"
+            if output_directory is not None
+            else canonical(fastq_path(row, suffix, "trimmed"))
+        )
         if canonical(report["input"][path_field]) != expected_input or canonical(positional[int(suffix) - 1]) != expected_input:
             raise ValueError(f"Cutadapt input path disagrees with manifest for {direction}")
         if canonical(outputs[direction]) != expected_output or canonical(str(options[output_option])) != expected_output:
@@ -241,6 +252,7 @@ def build_cutadapt_summary_rows(
     *,
     root: Path | None = None,
     report_path: str | Path | None = None,
+    interim_dir: str | Path | None = None,
 ) -> list[dict[str, str]]:
     """Validate a paired Cutadapt JSON report and return one row per direction."""
 
@@ -270,6 +282,7 @@ def build_cutadapt_summary_rows(
 
     _validate_cutadapt_execution(
         report, manifest_row, output_files, primers, parameters, root or Path.cwd(), report_path,
+        interim_dir,
     )
 
     try:

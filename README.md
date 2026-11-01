@@ -60,18 +60,34 @@ marcadas como orgánulos, con 32.868 lecturas, en las tablas originales.
 Su separación auditable produce 88 ASVs y 123.693 lecturas para diversidad
 descriptiva, conservando las seis muestras. Se exportan índices alfa,
 CLR/Aitchison con sensibilidad, Bray–Curtis y PCA, con validación independiente
-de fórmulas y geometría. La suite actual aprueba 144 pruebas Python. La inferencia
+de fórmulas y geometría. La suite completa más reciente aprueba 161 pruebas Python.
+La inferencia
 temporal y la integración entre estudios siguen pendientes.
 
 La ampliación a PRJNA492720 tiene un manifest auditado de 93 runs y cuatro
-lotes. El inventario conserva 94: uno no ofrece pares completos. La ejecución
-ampliada está detenida antes de QC/DADA2 porque ENA entrega un directorio HTML
-para `SRR7899804_2.fastq.gz` pese a anunciarlo en su API. Ese run permanece
-en el manifest; no se sustituye el archivo ni se excluye por el fallo de acceso.
+lotes. El inventario conserva 94: uno no ofrece pares completos. El bloqueo
+de ENA quedó resuelto el 2026-10-31: el R2 recuperado coincide en bytes y MD5
+con el manifest original. No se excluyó ningún run por el fallo de acceso.
 El [registro de descarga](results/planning/pacheco_montealegre_2020_colombia/download_status.json)
 documenta la disponibilidad y la validación de los archivos locales.
-Se conservan 185/186 FASTQ verificados por bytes, MD5, gzip y estructura;
-el procesamiento completo continúa pendiente del archivo restante.
+Se conservan 186/186 FASTQ verificados por bytes, MD5, gzip y estructura.
+QC y DADA2 del estudio completo están validados: 93 muestras, 782 ASVs y
+2.254.530 pares sin quimeras (82,62 % de la entrada). Taxonomía, separación y
+diversidad también están validadas: 764 ASVs y 2.096.980 lecturas retenidas,
+con todas las muestras. El piloto solapa seis de esas 93 muestras. El
+[registro de ejecución](reports/full_study_execution_2026-10-31.md) conserva
+las validaciones y los avisos de calidad sin ocultarlos.
+
+Se exportan [composición por familia/género](results/composition/pacheco_montealegre_2020_colombia/full/sample_composition.tsv)
+y [figuras temporales por lote/estrato](results/temporal/pacheco_montealegre_2020_colombia/full/temporal_diversity.png).
+Las [notas de resultados](manuscript/results_notes.md) describen el aumento de
+la fracción etiquetada como Acetobacter entre el primer y último muestreo de
+las ocho series, sin atribuir significación o crecimiento absoluto.
+
+La [auditoría de repetición taxonómica](reports/taxonomy_reproducibility_2026-10-31.md)
+documenta una limitación: la semilla R no fija todo el desempate nativo de DADA2.
+La primaria y la diversidad se repitieron exactamente, pero cambió la sensibilidad
+a 50 en una ASV/cinco lecturas netas. La inferencia sigue pendiente.
 
 `PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
 propia y no se procesa con el piloto Illumina paired-end actual.
@@ -154,6 +170,17 @@ python3 scripts/environment/run_in_environment.py python scripts/reporting/summa
 [métodos de composición](reports/composition_methods.md) describen el denominador,
 las etiquetas desconocidas y la validación; estas tablas no contrastan sucesión.
 
+Para visualizar la diversidad y profundidad frente a las horas originales,
+conservando lote y estrato, después de validar la diversidad:
+
+```bash
+python3 scripts/environment/run_in_environment.py python scripts/reporting/plot_temporal_diversity.py --analysis full_study
+python3 scripts/environment/run_in_environment.py python scripts/reporting/plot_temporal_diversity.py --analysis full_study --validate-only
+```
+
+Los [métodos temporales descriptivos](reports/temporal_reporting_methods.md)
+explican las líneas y los huecos; el perfil `pilot` muestra puntos aislados.
+
 `--check-inputs-root .` comprueba también los hashes de las entradas originales;
 un cambio posterior de esas entradas obliga a reconstruir y validar la etapa
 afectada. Los comandos individuales de metadata y QC están descritos en
@@ -190,12 +217,14 @@ environment/  dependencias reproducibles
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
 `CHANGELOG.md`. El 2026-10-31 quedó resuelto el bloqueo de ENA: los 186 FASTQ
-del manifest de 93 runs están descargados y validados, y su análisis completo
-está en curso. Los resúmenes por familia/género del piloto ya están validados
-en `results/composition/pilot/`.
+del manifest de 93 runs están descargados y validados. Su procesamiento,
+diversidad descriptiva, composición y figuras temporales están completos;
+las salidas conservan configuración y procedencia. El CLR largo completo es
+regenerable y queda fuera de Git, junto a los datos pesados.
 La integración entre estudios y evaluación de las
-hipótesis siguen pendientes; el resultado técnico del piloto no demuestra
-sucesión conservada ni ausencia de contaminación.
+hipótesis siguen pendientes; la descripción de un estudio no demuestra
+sucesión conservada entre estudios ni ausencia de contaminación. El límite
+del RNG taxonómico se registra antes de avanzar a inferencia.
 
 La selección de licencia y los metadatos completos de citación están pendientes
 para no atribuir autores ni términos legales sin confirmación.
