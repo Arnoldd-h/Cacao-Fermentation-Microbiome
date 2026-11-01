@@ -41,6 +41,9 @@ y tiempos. La generación del perfil completo espera el cierre de su separación
 Implementado: figuras temporales descriptivas por lote/estrato; política en
 `config/temporal_reporting.yaml`, sin modelos ni agregación de submuestras.
 La generación y revisión visual del perfil completo espera la diversidad validada.
+Perfil temporal piloto generado sobre `afb7705`: seis muestras, cuatro lotes,
+16 entradas y ocho artefactos válidos; PNG revisado visualmente tras corregir
+los márgenes. Las seis series parciales se muestran sin líneas.
 Workflow, manifest, auditorías y registro del bloqueo integrados en `main`
 mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
 

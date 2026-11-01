@@ -1,0 +1,14 @@
+{
+  "batches": 4,
+  "connect_points": false,
+  "inference": false,
+  "metrics": [
+    "observed_asvs",
+    "shannon_effective",
+    "library_reads"
+  ],
+  "sample_aggregation": "none",
+  "samples": 6,
+  "series": 6,
+  "study_id": "pacheco_montealegre_2020_colombia"
+}

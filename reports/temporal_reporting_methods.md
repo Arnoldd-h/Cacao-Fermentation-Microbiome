@@ -41,3 +41,10 @@ python3 scripts/environment/run_in_environment.py python scripts/reporting/plot_
 `--analysis pilot` utiliza la misma política, con líneas desactivadas. No se
 añaden dependencias: se usan Python estándar, R base y `yaml` ya declarados.
 Estos gráficos no demuestran sucesión conservada entre estudios ni definen un core.
+
+Primera ejecución piloto: seis muestras, cuatro lotes y seis series parciales,
+sobre `afb7705`. Se validaron 16 entradas y ocho artefactos; los valores de
+`plot_data.tsv` coinciden exactamente con la diversidad fuente. La revisión
+visual del PNG comprobó títulos, ejes, leyenda, colores y puntos sin conexiones.
+Se corrigieron los márgenes antes de aceptar esta exportación. El perfil
+completo todavía espera el cierre de su diversidad.

@@ -4,6 +4,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- Primera exportación temporal piloto validada: seis muestras, cuatro lotes,
+  16 entradas/ocho artefactos, con revisión visual y corrección de márgenes.
 - Política registrada para figuras temporales de riqueza, diversidad efectiva y
   lecturas retenidas por lote/estrato, con horas originales y saltos explícitos
   cuando falta una observación; sin agregación ni inferencia.
