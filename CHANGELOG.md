@@ -2,6 +2,15 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-31
+
+- Plan longitudinal exploratorio fijado antes del ajuste: CLR por ASV,
+  centro con igual peso por estrato y OLS por lote; media de pendientes con
+  cuatro lotes independientes. Sensibilidades de tiempo, ceros y estratos;
+  signos exhaustivos y FDR BY, con resolución mínima p=0,125 documentada.
+  El principal exige pares completos (46 tiempos/92 muestras), conservando
+  el punto incompleto en sensibilidad sin editar los datos originales.
+
 ## v0.5.2-taxonomy-reproducibility - 2026-10-31
 
 - Adaptador nativo explícito de desempate con semilla R por consulta para
