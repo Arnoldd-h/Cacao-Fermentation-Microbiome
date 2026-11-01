@@ -4,6 +4,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- Taxonomía del estudio completo validada con SILVA 138.2: 475/782 ASVs y
+  1.855.013 lecturas con género a bootstrap 80; 21 entradas/15 artefactos.
+  Las 18 ASVs con etiquetas de orgánulos permanecen en las tablas originales.
 - Auditoría de repetición taxonómica: tabla primaria, separación y diversidad
   idénticas; variación neta de una ASV/cinco lecturas en sensibilidad a 50.
   Se documenta el desempate nativo no controlado completamente por la semilla R,

@@ -1,0 +1,6 @@
+software	version
+R	4.4.3
+dada2	1.34.0
+yaml	2.3.10
+Biostrings	2.74.0
+RcppParallel	5.1.9

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "reference": {
+    "name": "SILVA",
+    "version": "138.2",
+    "doi": "10.5281/zenodo.14169026",
+    "url": "https://zenodo.org/records/14169026/files/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+    "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+    "expected_bytes": 139996892,
+    "expected_md5": "1764e2a36b4500ccb1c7d5261948a414",
+    "provenance_path": "references/silva_138.2.provenance.json"
+  },
+  "download": {
+    "timeout_seconds": 120,
+    "retries": 3,
+    "chunk_size_bytes": 1048576,
+    "minimum_free_space_factor": 3.0
+  },
+  "classification": {
+    "method": "dada2::assignTaxonomy",
+    "raw_min_boot": 0,
+    "tax_levels": ["Kingdom", "Phylum", "Class", "Order", "Family", "Genus"],
+    "primary_min_boot": 80,
+    "sensitivity_min_boot": [50],
+    "try_reverse_complement": true,
+    "output_bootstraps": true,
+    "random_seed": 20260819,
+    "rng_kind": ["Mersenne-Twister", "Inversion", "Rejection"],
+    "threads": 2,
+    "species_assignment": false
+  },
+  "screening": {
+    "bacterial_kingdom": "Bacteria",
+    "organelle_labels": ["Chloroplast", "Mitochondria"],
+    "unresolved_genus_pattern": "^(uncultured|unclassified|unknown|unidentified|metagenome)([ _-].*)?$",
+    "exclude_flagged_asvs": false
+  }
+}

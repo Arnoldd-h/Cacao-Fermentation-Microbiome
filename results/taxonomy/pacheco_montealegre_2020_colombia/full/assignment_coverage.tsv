@@ -1,0 +1,13 @@
+study_id	min_boot	rank	assigned_asvs	total_asvs	assigned_reads	total_reads
+pacheco_montealegre_2020_colombia	80	Kingdom	782	782	2254530	2254530
+pacheco_montealegre_2020_colombia	80	Phylum	779	782	2254360	2254530
+pacheco_montealegre_2020_colombia	80	Class	771	782	2254313	2254530
+pacheco_montealegre_2020_colombia	80	Order	762	782	2254085	2254530
+pacheco_montealegre_2020_colombia	80	Family	692	782	1932980	2254530
+pacheco_montealegre_2020_colombia	80	Genus	475	782	1855013	2254530
+pacheco_montealegre_2020_colombia	50	Kingdom	782	782	2254530	2254530
+pacheco_montealegre_2020_colombia	50	Phylum	782	782	2254530	2254530
+pacheco_montealegre_2020_colombia	50	Class	782	782	2254530	2254530
+pacheco_montealegre_2020_colombia	50	Order	780	782	2254447	2254530
+pacheco_montealegre_2020_colombia	50	Family	747	782	2072258	2254530
+pacheco_montealegre_2020_colombia	50	Genus	648	782	2051009	2254530

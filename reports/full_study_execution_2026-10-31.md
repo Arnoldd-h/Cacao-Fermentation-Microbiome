@@ -167,3 +167,24 @@ fijo `Pilot coverage` en el productor compartido. Se sustituye por
 ni cálculos. Se guardan hashes de las tablas anteriores para contrastar
 que la renovación conserve sus valores. Las figuras se regeneran por código;
 no se retocan manualmente.
+
+La renovación sobre `da43eeb` cierra siete trabajos y vuelve a validar todas
+las etapas. La comparación encuentra idénticas la taxonomía primaria y las
+once tablas bacterianas/de diversidad. Cambian soportes y sensibilidad a 50,
+con una diferencia neta de una ASV/cinco lecturas asignadas a género. El
+desempate nativo no está completamente controlado por la semilla R; evidencia,
+fuentes y limitación pendiente en `taxonomy_reproducibility_2026-10-31.md`.
+
+## Cierre taxonómico del estudio completo
+
+SILVA 138.2 conserva las 782 ASVs y 2.254.530 lecturas originales; todas tienen
+Kingdom asignado como Bacteria. La máscara primaria a 80 asigna género a
+475 ASVs y 1.855.013 lecturas, y familia a 692 ASVs y 1.932.980 lecturas.
+La última sensibilidad a 50 asigna género a 648 ASVs y 2.051.009 lecturas.
+Se marcan 18 ASVs con etiquetas de orgánulos para la separación posterior;
+no se eliminan de estas tablas originales y no hay asignación de especie.
+
+La validación independiente comprueba 21 entradas y 15 artefactos, sin
+warnings R en esta clasificación. El PNG de cobertura se revisó con su título
+corregido y ambas sensibilidades; se conservan también PDF y SVG. Ausencia
+de warnings R no elimina la limitación del RNG nativo documentada aparte.
