@@ -4,6 +4,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- Adquisición comprobada de 120 FASTQ pareados de PRJNA627078:
+  1.379.724.114 bytes, 5.689.175 pares, bytes/MD5 y gzip/CRC/estructura válidos;
+  concordancia del manifest y recuentos R1/R2, sin excluir bibliotecas.
 - Perfil independiente para PRJNA627078 y selección configurable del estudio
   en el workflow. Conservación explícita de estratos desconocidos y cribado
   sólo de primers establecidos; no se imputan constructos no documentados.

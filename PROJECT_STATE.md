@@ -16,7 +16,9 @@ activo a títulos/descripciones e instrumento, las 26 pruebas de estudio pasan
 (27,230 s tras verificar el contrato de campos ENA), incluida una regresión
 nueva: 189 pruebas distintas verificadas. La auditoría ampliada confirma los
 60 runs, sin cambios del diseño. Los 120 FASTQ están descargados y pasan
-bytes/MD5; la revisión estructural y QC están en ejecución. Dos conexiones
+bytes/MD5 y gzip/CRC/estructura FASTQ: 5.689.175 pares, 877–192.977 por
+biblioteca, longitudes de 35–251 bases. Los informes concuerdan con el manifest
+y los recuentos de mates. QC posterior sigue en ejecución. Dos conexiones
 detenidas se recuperaron al reintentar. El descargador adopta el timeout HTTP
 ya configurado, con prueba real de transferencia local detenida/reanudada;
 pendiente renovar el checkpoint de fuentes con esta versión de verificación.
