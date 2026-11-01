@@ -1,0 +1,1702 @@
+[
+  {
+    "bytes": 3566,
+    "path": "config/prjna627078_processing.yaml",
+    "sha256": "74d201d618cf44dbc34c0be3c0805a79e33ed769bdf1baf749cd2342e11603f2"
+  },
+  {
+    "bytes": 15988760,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11578992/SRR11578992_1.fastq.gz",
+    "sha256": "399fc5e1b90da549f073beaf2081c6fb7c4a9358b8e008ddc8a5e64f32e2e20b"
+  },
+  {
+    "bytes": 16536041,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11578992/SRR11578992_2.fastq.gz",
+    "sha256": "6408bfea2c87da0b460bfb63870686fcc44aac8a6d7bfde612b6ce7a0a7771e4"
+  },
+  {
+    "bytes": 14891666,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579003/SRR11579003_1.fastq.gz",
+    "sha256": "2d2c435c7d6072f34b3c8377e54e12416e2570bb17234db0ec94fc20f244839d"
+  },
+  {
+    "bytes": 15075746,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579003/SRR11579003_2.fastq.gz",
+    "sha256": "14c2d4906c5aa9fa9339380508c9a190f8a598291e5626d808a906ea2a17386c"
+  },
+  {
+    "bytes": 17463180,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579014/SRR11579014_1.fastq.gz",
+    "sha256": "e783b75efeae498da618b5b535dda592fec3d0a86a04dbc49974ef649ba22a18"
+  },
+  {
+    "bytes": 18199808,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579014/SRR11579014_2.fastq.gz",
+    "sha256": "ba26adda9b0bcec824be74d357729b7da109d30181a25c42a5eef18102327cff"
+  },
+  {
+    "bytes": 15207332,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579019/SRR11579019_1.fastq.gz",
+    "sha256": "d660a13642113e6d11867f5e0964b696307a05146808a6dc6ff87a24ea280706"
+  },
+  {
+    "bytes": 16467786,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579019/SRR11579019_2.fastq.gz",
+    "sha256": "44688877249f7f2ae44cfe2f73de7a3fcf5cd6b995b8d2d21d4bb94d0cfe1cbf"
+  },
+  {
+    "bytes": 12643267,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579020/SRR11579020_1.fastq.gz",
+    "sha256": "af480f79a2bf6484d4c28db31dbe8e40c7b06343bc3292f7665d92d53147f8f3"
+  },
+  {
+    "bytes": 12728155,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579020/SRR11579020_2.fastq.gz",
+    "sha256": "e431c003166d7da87ef1133ac331ecf52bfefd8a3c9d005be810e4cb3a3f7042"
+  },
+  {
+    "bytes": 12401883,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579021/SRR11579021_1.fastq.gz",
+    "sha256": "7cdbe8b50462785011475c335df2eb0cbda73b620c22e66cb65469a00cffdc4a"
+  },
+  {
+    "bytes": 13079775,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579021/SRR11579021_2.fastq.gz",
+    "sha256": "640c679a116ce6afb1c1235b9794eb78a8c1a794f72113c3ab162b168ed15668"
+  },
+  {
+    "bytes": 8825714,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579023/SRR11579023_1.fastq.gz",
+    "sha256": "1f15fc45b85592b6a1f8b30ee7451153364059108d5b1e29a510df96bcd5e907"
+  },
+  {
+    "bytes": 9141625,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579023/SRR11579023_2.fastq.gz",
+    "sha256": "dee5f46359039e0b0b8bad4099009088ad2a70205a8d8bcb94dac891a8906849"
+  },
+  {
+    "bytes": 8597248,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579024/SRR11579024_1.fastq.gz",
+    "sha256": "da6e9acb6ad6f8ff6b20468527525d8c2f035073ee39428e85418de65fa5889d"
+  },
+  {
+    "bytes": 9208880,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579024/SRR11579024_2.fastq.gz",
+    "sha256": "3fc88b3d214c8ffdc625df1d74cb7fe9190edae1a8047eba3a44fbf903f53fd0"
+  },
+  {
+    "bytes": 12512207,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579025/SRR11579025_1.fastq.gz",
+    "sha256": "a5f15fd99c7568b1f88fd9222b9db5432a989db757c38fbedf5e618ee3980301"
+  },
+  {
+    "bytes": 12631508,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579025/SRR11579025_2.fastq.gz",
+    "sha256": "26e09dae22e43b780985f5571a96b5800fb12d1b25573a2e717ceefe827a86d6"
+  },
+  {
+    "bytes": 11861172,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579026/SRR11579026_1.fastq.gz",
+    "sha256": "c1da6dea0c1148f3a771cd9656ad0f7a329071aa6c03fb465b1ca4473900d09f"
+  },
+  {
+    "bytes": 11935424,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579026/SRR11579026_2.fastq.gz",
+    "sha256": "aa44c3fe8d62d88f0e5ab3ab6780a3425f60c360b2e440023ebe70d8ec4ca5ed"
+  },
+  {
+    "bytes": 11654527,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579027/SRR11579027_1.fastq.gz",
+    "sha256": "0ca28c6617d6cd9a4753c2263e8a58bf943d3a3c2bbf0cb7c1478006254c1d8e"
+  },
+  {
+    "bytes": 13795279,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579027/SRR11579027_2.fastq.gz",
+    "sha256": "0696c920c04768962d1db0735bcc6eb6d2f2ca55833a604829c3f0cd86490fbc"
+  },
+  {
+    "bytes": 12516079,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579028/SRR11579028_1.fastq.gz",
+    "sha256": "bf1adae404bcf8e5d2bd6d890581cab77647f19d22115f98f9ad8286fb1de76e"
+  },
+  {
+    "bytes": 13476100,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579028/SRR11579028_2.fastq.gz",
+    "sha256": "9f3f65428f523983daac98827401c8d207b9bd7bab1313308aa11641ed1a6976"
+  },
+  {
+    "bytes": 12018660,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579029/SRR11579029_1.fastq.gz",
+    "sha256": "80b6e3d1a36eec36fc8029cfcf44401bb859f04eefd7306ae718d56bb53ba829"
+  },
+  {
+    "bytes": 13740003,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579029/SRR11579029_2.fastq.gz",
+    "sha256": "09bc050f8c9a35190dac82eb75394420277bca7de643de81d68120b46fade5a3"
+  },
+  {
+    "bytes": 9892527,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579030/SRR11579030_1.fastq.gz",
+    "sha256": "89064d6cdcf15af4b654b1505d622c131cbec013e9cfb4ee3a8e5c988845f8fd"
+  },
+  {
+    "bytes": 10857594,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579030/SRR11579030_2.fastq.gz",
+    "sha256": "12b7b9197b11cc627d762bb5cbb29c09a8a31991191c87d2c606076ea3a01f0e"
+  },
+  {
+    "bytes": 176483,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579032/SRR11579032_1.fastq.gz",
+    "sha256": "da60049c4ba21a0c118aa33e4e46753a3ee74095a087a02211097d009e72c972"
+  },
+  {
+    "bytes": 179038,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579032/SRR11579032_2.fastq.gz",
+    "sha256": "be37faaa418b3efaed986daffde499ebbd71610d304345e72836ecb61ea14c83"
+  },
+  {
+    "bytes": 10473570,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579033/SRR11579033_1.fastq.gz",
+    "sha256": "3a7dc0cd0369c0f772f546101b0094726cb2d354e44fc98836710ea238cf1662"
+  },
+  {
+    "bytes": 10999717,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579033/SRR11579033_2.fastq.gz",
+    "sha256": "f3e690595a1efdf8973db65ebd9e43534c0108c7c749b8ddce5de1ff13244f68"
+  },
+  {
+    "bytes": 13099002,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579034/SRR11579034_1.fastq.gz",
+    "sha256": "990b6df4b8f01d81db28908ae39b6352df95935935060436a48a6ac293f0d585"
+  },
+  {
+    "bytes": 14181889,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579034/SRR11579034_2.fastq.gz",
+    "sha256": "23ace7f591a40e2b445d029c406371dde703c4e1a2a3e6166d31123ddbf93735"
+  },
+  {
+    "bytes": 12363432,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579035/SRR11579035_1.fastq.gz",
+    "sha256": "9c7ff041dbb5ca77a55cf3a45acaa2c5aa76deb6c87e9b59d5c38f74c6c0cca2"
+  },
+  {
+    "bytes": 12354331,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579035/SRR11579035_2.fastq.gz",
+    "sha256": "cfb37941455492f262e487b4ff7a18e0eaa57c646fc4af2e3be6a44e92cc8a87"
+  },
+  {
+    "bytes": 14519225,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579036/SRR11579036_1.fastq.gz",
+    "sha256": "113d2b77e2ea8ce3371c3878d1189c29b34f1e3bbd0d2f8e8079bd1a3312e226"
+  },
+  {
+    "bytes": 15972589,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579036/SRR11579036_2.fastq.gz",
+    "sha256": "7a6c212247ef89219521e5f163fd9e1f6c0ffc3708630cd36872b7e6b4ef377d"
+  },
+  {
+    "bytes": 9388406,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579037/SRR11579037_1.fastq.gz",
+    "sha256": "048a86ba705894df60e51b278fedc4cc5000c71564358f9f6b82c82ff2040128"
+  },
+  {
+    "bytes": 11960117,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579037/SRR11579037_2.fastq.gz",
+    "sha256": "eafdbe23a50f944e5669bfdc6fc9af243a72777f2d1b6c9391df44901bba71a4"
+  },
+  {
+    "bytes": 1740451,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579038/SRR11579038_1.fastq.gz",
+    "sha256": "86012c23210cd9e8e6c6aee8f5a253f09b83b77d60104ed3120d746480aa2566"
+  },
+  {
+    "bytes": 1856439,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579038/SRR11579038_2.fastq.gz",
+    "sha256": "e0b0fd86f261846ebdb03bc0c48cc302b627b257c8205c4dd80ff91096be1f61"
+  },
+  {
+    "bytes": 15228255,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579039/SRR11579039_1.fastq.gz",
+    "sha256": "50d1c6bb8152641464c5d322348888df0342f5258509de893bbf2c8d119132db"
+  },
+  {
+    "bytes": 17720228,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579039/SRR11579039_2.fastq.gz",
+    "sha256": "becc673ac5b6254c1115ac67545226ba9b82e0e6078ed358bf5494a1380dc6d3"
+  },
+  {
+    "bytes": 9199463,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579040/SRR11579040_1.fastq.gz",
+    "sha256": "21ec6c865e4d1f375562bdd00d86497a80849ce6410e8caae8d5b4886683847f"
+  },
+  {
+    "bytes": 9954325,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579040/SRR11579040_2.fastq.gz",
+    "sha256": "56c0a3bf5b82729a8ea2c9bb7a81519ba4e96f8f72beced6926a8654a8a1881d"
+  },
+  {
+    "bytes": 12075896,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579041/SRR11579041_1.fastq.gz",
+    "sha256": "97ee50d321828948f50c106e8cd270046feab154aa3999ffe0413524deb477a4"
+  },
+  {
+    "bytes": 12190012,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579041/SRR11579041_2.fastq.gz",
+    "sha256": "807081111dc715945097b806c130781bd32a066eaf8d3474b5e1724a7ee5bc93"
+  },
+  {
+    "bytes": 14699025,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579042/SRR11579042_1.fastq.gz",
+    "sha256": "b711edfdb126ff9c125afdf1d9fd6cb51d97446f44ff01d2ad9ad025a5ededb5"
+  },
+  {
+    "bytes": 15303426,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579042/SRR11579042_2.fastq.gz",
+    "sha256": "fddd0e6725b9a1904a09a429be12ed1f059babd63dc96a95e4adfdbcdb776f44"
+  },
+  {
+    "bytes": 11619645,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579044/SRR11579044_1.fastq.gz",
+    "sha256": "44c0afec7857b4e6532e251f92105f0368637e947f0abbfa81f422470bac8e3b"
+  },
+  {
+    "bytes": 12410899,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579044/SRR11579044_2.fastq.gz",
+    "sha256": "f435060b55200048eff93727a9b1e82e6e40b334bfc8de19b73c86739296c4d3"
+  },
+  {
+    "bytes": 10977967,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579045/SRR11579045_1.fastq.gz",
+    "sha256": "b9fb95ca2e1d677dd2bc56f201c96b4c03552e9ffd34cd7c57a31f071584674b"
+  },
+  {
+    "bytes": 11917482,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579045/SRR11579045_2.fastq.gz",
+    "sha256": "150e7fa6023e627efa90d89ac7a1a5195b76b9a7effc5ed18b61ed11d26704aa"
+  },
+  {
+    "bytes": 15161943,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579046/SRR11579046_1.fastq.gz",
+    "sha256": "c8029e377fdc618dbbdcdf45abaa07c17b8eed45885507388695e4ce467def89"
+  },
+  {
+    "bytes": 17158417,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579046/SRR11579046_2.fastq.gz",
+    "sha256": "c5b09dad5de457e6ab31ef1defcd9518b4c2e5beb747b271d127041d72fab9a1"
+  },
+  {
+    "bytes": 16975094,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579047/SRR11579047_1.fastq.gz",
+    "sha256": "f77c1137b4e908261d36d264723fd29fc9ef51e57b0686aa32bedf37424234e0"
+  },
+  {
+    "bytes": 18363226,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579047/SRR11579047_2.fastq.gz",
+    "sha256": "b55fa395073a40c5ee9bfb9db18bdbf9f1d1f8ed001cae33add54fc2dc20bd1e"
+  },
+  {
+    "bytes": 15318673,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579048/SRR11579048_1.fastq.gz",
+    "sha256": "2d6d1bfd9d4f5ff847eff6ffb9a3d4ba3634ed26e79f0168f32f017034cd85a7"
+  },
+  {
+    "bytes": 17372512,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579048/SRR11579048_2.fastq.gz",
+    "sha256": "bf1c067ca5fed2713a0703b2e24ecf569e84e1f9507bffc2e10ae15d33d14f0a"
+  },
+  {
+    "bytes": 15611962,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579049/SRR11579049_1.fastq.gz",
+    "sha256": "1bead1900b169eed2c580449116889655ffa5be1874918097fb1956795d8c98e"
+  },
+  {
+    "bytes": 17702874,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579049/SRR11579049_2.fastq.gz",
+    "sha256": "8ba520766c823f96721a8539bb4f284a143a957044e7aa83540f580d6f5258c4"
+  },
+  {
+    "bytes": 14073184,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579050/SRR11579050_1.fastq.gz",
+    "sha256": "b49db48523c8d0cf1c227cde9faa6e7a982c26ad7195ef57ad60a99a3b03f8ba"
+  },
+  {
+    "bytes": 16211189,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579050/SRR11579050_2.fastq.gz",
+    "sha256": "b25c5371e91e41a70b9830dba3b719ff9218f0eb0e09341bb9abfecfd3e4eeaf"
+  },
+  {
+    "bytes": 10938983,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579051/SRR11579051_1.fastq.gz",
+    "sha256": "5dcd7069ac4a6209dc6fd535fc945659d803e2f7cf9dacae3e690a005a7327f6"
+  },
+  {
+    "bytes": 11933568,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579051/SRR11579051_2.fastq.gz",
+    "sha256": "31d2803fde609148e5a47743939522f9c68c07f885a8b233fb296abc0063fb5d"
+  },
+  {
+    "bytes": 21902115,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579052/SRR11579052_1.fastq.gz",
+    "sha256": "70741fdf3bca890911ea0fab1e5175e879c36957afde2eb3713aaaee44c757c0"
+  },
+  {
+    "bytes": 24196445,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579052/SRR11579052_2.fastq.gz",
+    "sha256": "56efeaa58b3e1dcc24aa7e875c5ba9b442deaf95a8d5cc48333b04950d2afb09"
+  },
+  {
+    "bytes": 12472259,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579053/SRR11579053_1.fastq.gz",
+    "sha256": "d28d632d9aa65875344e5592f5d4cdaeb37d1d356bf0be33640fc3a22d7c1924"
+  },
+  {
+    "bytes": 14338026,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579053/SRR11579053_2.fastq.gz",
+    "sha256": "cacc00440e4983c1e875b62f25ff60062c06bc489e3dbc69f0fe45d36f48e217"
+  },
+  {
+    "bytes": 21089488,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579054/SRR11579054_1.fastq.gz",
+    "sha256": "33590d649bd700744d5595b06d824e72c03950b5a3122fcf3ac39349689b4210"
+  },
+  {
+    "bytes": 21295515,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579054/SRR11579054_2.fastq.gz",
+    "sha256": "f50fd7b9950c450922fc3c214a3b273823ae8f4f7804ceb00884ff572402ee1d"
+  },
+  {
+    "bytes": 17558552,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579056/SRR11579056_1.fastq.gz",
+    "sha256": "1415339f6df2fbe178acdb6b25c56613cebbf14a28f0d2cd74a2cbe8cf463e6b"
+  },
+  {
+    "bytes": 19662462,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579056/SRR11579056_2.fastq.gz",
+    "sha256": "868e5ff86a560d8e154849a9bb39ca3feee8121b099e79fe146112e246c03466"
+  },
+  {
+    "bytes": 16768719,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579057/SRR11579057_1.fastq.gz",
+    "sha256": "5b20a2e2e52a40a9ec3746392ed1141c65f666840d6fa3a0e896c98c2d2ac365"
+  },
+  {
+    "bytes": 18192880,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579057/SRR11579057_2.fastq.gz",
+    "sha256": "1337d9df2cd26a15857de52663ba27b678411beb743d49ff6f03caf9398a7639"
+  },
+  {
+    "bytes": 13209888,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579058/SRR11579058_1.fastq.gz",
+    "sha256": "bb9827cbfc4f45fea2fcca2c11983d2039f00ef2049525d5ea4104031176cd4e"
+  },
+  {
+    "bytes": 14606719,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579058/SRR11579058_2.fastq.gz",
+    "sha256": "c9b28bf51b75d2e0c1885c8a8cc16cba4fd8aa7116dc34b9dc461458aef6e601"
+  },
+  {
+    "bytes": 15096558,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579059/SRR11579059_1.fastq.gz",
+    "sha256": "be747f8d0a32ac94b7e20f8a46842f96c8e2017460a9d001341d3689709da564"
+  },
+  {
+    "bytes": 16822684,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579059/SRR11579059_2.fastq.gz",
+    "sha256": "8917f9e1994ce2d97ef59018cb83e0b5c6cf6bfdc2c53202b3b3b32350152ece"
+  },
+  {
+    "bytes": 9891137,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579060/SRR11579060_1.fastq.gz",
+    "sha256": "df27cbf19bb6a29d8c38c5858ea879692f19d1ba5801cbae280bcfaaed2dfa9b"
+  },
+  {
+    "bytes": 11093796,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579060/SRR11579060_2.fastq.gz",
+    "sha256": "96b1f98d10fb0b8f3732816a5c0a151d44e30dd1664c06aa3bf573e305ace395"
+  },
+  {
+    "bytes": 18918746,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579061/SRR11579061_1.fastq.gz",
+    "sha256": "6ff6c5761b1ad093209eae661e7c437087d39c31e4d24bb902f4d6a3fd31ca48"
+  },
+  {
+    "bytes": 20043342,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579061/SRR11579061_2.fastq.gz",
+    "sha256": "79839bc801fbcd653997ea14f6afaa544f8512c23d69d8451ac8f380ee014419"
+  },
+  {
+    "bytes": 14560420,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579062/SRR11579062_1.fastq.gz",
+    "sha256": "abf0722501e9a9d93fcde614f9cd3781c2898ef1e4c9ef73788d4634e592ccfb"
+  },
+  {
+    "bytes": 15563181,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579062/SRR11579062_2.fastq.gz",
+    "sha256": "1bc3bbfef9ff9a35f33b4d1bbc03eb137edee36cc736ed697d3a824314fa1a89"
+  },
+  {
+    "bytes": 9971135,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579063/SRR11579063_1.fastq.gz",
+    "sha256": "67066645662b19cf04f5543bcbfaa7a416380e7324b3b38bf3b848c785d48298"
+  },
+  {
+    "bytes": 10748105,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579063/SRR11579063_2.fastq.gz",
+    "sha256": "b49858a0e153b22c5789a2d453ea703dd206c3ed36b1a1a1e99784ddec9bae8c"
+  },
+  {
+    "bytes": 22901908,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579064/SRR11579064_1.fastq.gz",
+    "sha256": "a9051c33a0063d422b174c4b46a683b7b9e819c5aa936a8d872ebd821f73101c"
+  },
+  {
+    "bytes": 25795778,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579064/SRR11579064_2.fastq.gz",
+    "sha256": "3e72acd438a79f592667f783f1ad5bcbb0696c51c904b412a65aedb95c3be145"
+  },
+  {
+    "bytes": 30213267,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579065/SRR11579065_1.fastq.gz",
+    "sha256": "6341a39b3bcca12ef440c31c8c3c57715bb4fb18296226073b6542cb77ae8e27"
+  },
+  {
+    "bytes": 32982701,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579065/SRR11579065_2.fastq.gz",
+    "sha256": "99a367515cfb0c9c0a4866eb81c017ee6e6778a33d8dc290e54599e94851df2c"
+  },
+  {
+    "bytes": 12762343,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579066/SRR11579066_1.fastq.gz",
+    "sha256": "24f28092269a272bb7ecb9efeb33d18152317183e0b49b9010c934bd5dd57c29"
+  },
+  {
+    "bytes": 14895001,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579066/SRR11579066_2.fastq.gz",
+    "sha256": "1b3bffe9916e1a658761234daf2127bcb3a83bee32cf86bc75e2e77e5f20b03c"
+  },
+  {
+    "bytes": 11312526,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579068/SRR11579068_1.fastq.gz",
+    "sha256": "ee6e4881fb042592d03a5e8c22e65dd3f964daa0fc8b4cb85c1345e2f5f418f6"
+  },
+  {
+    "bytes": 12726951,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579068/SRR11579068_2.fastq.gz",
+    "sha256": "461e11dceac60c48301f1cefa53ac54623382b08f1dc502d2e111cc8f5b26733"
+  },
+  {
+    "bytes": 9179915,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579069/SRR11579069_1.fastq.gz",
+    "sha256": "909eeb6fc2f730b75c0a9fcdd68832b3f0d9f72cd90272b81ccf3e23ad83c5e0"
+  },
+  {
+    "bytes": 10512354,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579069/SRR11579069_2.fastq.gz",
+    "sha256": "9478fd11baeee2f08bdb8de750063c8842ca3b1b881018820e4da98d35feba08"
+  },
+  {
+    "bytes": 20897374,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579070/SRR11579070_1.fastq.gz",
+    "sha256": "6c325b7a1647d64bddf3cd6fa62e5148051198007f6cc34426f1ac1374735794"
+  },
+  {
+    "bytes": 24065261,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579070/SRR11579070_2.fastq.gz",
+    "sha256": "66a6625a11af83f3fa6901a458bbb55f7d669b8fb4ef92e4f6a95c8d5b140780"
+  },
+  {
+    "bytes": 1825871,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579071/SRR11579071_1.fastq.gz",
+    "sha256": "881962925451b2f7a12c0a46e3bf298bc8f55c7f6cad21bd5307e4ce6b5e01a7"
+  },
+  {
+    "bytes": 1878928,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579071/SRR11579071_2.fastq.gz",
+    "sha256": "70adefbaac644dd5c28a82a83a23d18f88db6ed8855c68f4e053141af2cbe22f"
+  },
+  {
+    "bytes": 7248861,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579072/SRR11579072_1.fastq.gz",
+    "sha256": "af16f5acd902f6cc9c19b50a8a4a7d59e9cd46a2dc76eaf0108bbe2f3bd1c966"
+  },
+  {
+    "bytes": 8251734,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579072/SRR11579072_2.fastq.gz",
+    "sha256": "e6566f1c1466ada53036b498299901afa4de7037541b677c1bb9fe2cf45fbb25"
+  },
+  {
+    "bytes": 6461107,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579073/SRR11579073_1.fastq.gz",
+    "sha256": "78f9aa159a89c92c7a395b0185a2073e02b35445c6573098e789645ac2311c00"
+  },
+  {
+    "bytes": 7189987,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579073/SRR11579073_2.fastq.gz",
+    "sha256": "e83783d8c7e4e4697b437ce88276956cdeb7b60fe21581a25a05e7aa4217ab55"
+  },
+  {
+    "bytes": 25861577,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579074/SRR11579074_1.fastq.gz",
+    "sha256": "e05691e840790b498b00c61044922927a705d84a29f74b22ef5fb7a30b772d6d"
+  },
+  {
+    "bytes": 25281314,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579074/SRR11579074_2.fastq.gz",
+    "sha256": "6d9f4d5fefc3deee15d6a239d479bcbf5549d06114313c94389fef978c331f3e"
+  },
+  {
+    "bytes": 11382451,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579075/SRR11579075_1.fastq.gz",
+    "sha256": "b4d2d0b6103c560850f17f5c1324846f4e160e5fa9e49189f8363868846b9221"
+  },
+  {
+    "bytes": 12037680,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579075/SRR11579075_2.fastq.gz",
+    "sha256": "b9cb607568a14affc787b7fb770079fad9d84d143ada2274d4331f0c7f6819cd"
+  },
+  {
+    "bytes": 15986560,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579078/SRR11579078_1.fastq.gz",
+    "sha256": "72b15111a600136a441470307bc3d6be14074bdc59bf4d4b0775021c4f43c973"
+  },
+  {
+    "bytes": 16969352,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579078/SRR11579078_2.fastq.gz",
+    "sha256": "00db48056b6d701ad6ad7de044fa9fd47d046492970f5eb00a5e1a76b743c895"
+  },
+  {
+    "bytes": 10122145,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579089/SRR11579089_1.fastq.gz",
+    "sha256": "9da9b5ebe57dbf640c74e235f8d39de646b1c06a106f2ac46e00d6875a7a0941"
+  },
+  {
+    "bytes": 10875581,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579089/SRR11579089_2.fastq.gz",
+    "sha256": "b7d312f852d0adffcb94a464ea3aa2e29653f663e5397f7e91cea70ae50bb947"
+  },
+  {
+    "bytes": 16168837,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579100/SRR11579100_1.fastq.gz",
+    "sha256": "899ed6722d7d954f3be15144c2d9ede8d2b0e60a2ae387aca554bd658ce102ca"
+  },
+  {
+    "bytes": 17695816,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579100/SRR11579100_2.fastq.gz",
+    "sha256": "14e69e568bd687acb3cbfa412c9695fbbec79f900075e7710f3a3b65dc1acca5"
+  },
+  {
+    "bytes": 13978497,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579112/SRR11579112_1.fastq.gz",
+    "sha256": "c1701dd984ffb398d622537dd4c94b1b0cd9b5905eb8e865831a15f5339dd2c7"
+  },
+  {
+    "bytes": 15287236,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579112/SRR11579112_2.fastq.gz",
+    "sha256": "8cd2aa023b18d0817fdd86510cb96f784685bbc7208332b4731af0f0e5a64fb4"
+  },
+  {
+    "bytes": 11120578,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579113/SRR11579113_1.fastq.gz",
+    "sha256": "bc62a7d0cd50a93c19fd9b754a03e25075f9b36410e82d31c2a5717e460c7dfb"
+  },
+  {
+    "bytes": 11799210,
+    "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579113/SRR11579113_2.fastq.gz",
+    "sha256": "0265b7ee5ec3372096a0c166c75dd7d46479522295e6702c75cdb62eb5ce0434"
+  },
+  {
+    "bytes": 12922297,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11578992/SRR11578992_1.fastq.gz",
+    "sha256": "7c451eec104b84fe1843364811c1929bc67e47a054ef1ce88b5a614673cab63c"
+  },
+  {
+    "bytes": 13449245,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11578992/SRR11578992_2.fastq.gz",
+    "sha256": "c44adf433d3e796dc4afd316262f58397162f6559b25cc193d5e69d9d78e9967"
+  },
+  {
+    "bytes": 12196601,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579003/SRR11579003_1.fastq.gz",
+    "sha256": "5fc9be180c937fedf1f3e5ad0ca65078a54310ba407354c8ce8124e4e3453840"
+  },
+  {
+    "bytes": 12296326,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579003/SRR11579003_2.fastq.gz",
+    "sha256": "709b768fa6827614f2c6d1770a1520c61cc17825ea0658fc81e2abce1d764574"
+  },
+  {
+    "bytes": 14239966,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579014/SRR11579014_1.fastq.gz",
+    "sha256": "0a49857729b9755b5240453b67c913d84979d4376821df09cf6614372d2036af"
+  },
+  {
+    "bytes": 14845856,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579014/SRR11579014_2.fastq.gz",
+    "sha256": "cf41c0e7d173b02a5e3c50d7dbcb053c77a62c7bf9e83918d9bdf84339f887f6"
+  },
+  {
+    "bytes": 12258458,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579019/SRR11579019_1.fastq.gz",
+    "sha256": "054856c2c9db4d75c2f4e2bd35181320dc1505f2e8e21ad52af7f8b364ab7d2f"
+  },
+  {
+    "bytes": 13484305,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579019/SRR11579019_2.fastq.gz",
+    "sha256": "9517133b423e3c305e78a93c055110b5a97ff055404046688a37311aad0e0175"
+  },
+  {
+    "bytes": 10271625,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579020/SRR11579020_1.fastq.gz",
+    "sha256": "6b76f4579636f5906e6cae9f891968d1a8a3457340d773ecc425c1a51c7ecaf0"
+  },
+  {
+    "bytes": 10363571,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579020/SRR11579020_2.fastq.gz",
+    "sha256": "47bbc4417f6ce5daaf5796439af8e4993b32f79a30db0a3536783bb7136b738e"
+  },
+  {
+    "bytes": 9986514,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579021/SRR11579021_1.fastq.gz",
+    "sha256": "3a61d39c41d023b525835ac71983ff32c50a5a5baacba4972650892980cef805"
+  },
+  {
+    "bytes": 10631692,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579021/SRR11579021_2.fastq.gz",
+    "sha256": "ab71b9a3f0ac95f23eb5205fd9680c2e8f8b01e4318b08cbfe7edd0e8d1a12ef"
+  },
+  {
+    "bytes": 7503867,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579023/SRR11579023_1.fastq.gz",
+    "sha256": "ceeffa811e45a92c5a1ffc5e65cf9de1ce7d2d9d24a43589ed06f2115ef48455"
+  },
+  {
+    "bytes": 7762613,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579023/SRR11579023_2.fastq.gz",
+    "sha256": "d87bd23c01288c8a7eafce773ad0cbad3c34f88a9929ec464348fea8d1973f06"
+  },
+  {
+    "bytes": 7324337,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579024/SRR11579024_1.fastq.gz",
+    "sha256": "c307d7e10324af90e69c5edd772c9af5b9ab99d772a53462bdc7798482ddaa15"
+  },
+  {
+    "bytes": 7866617,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579024/SRR11579024_2.fastq.gz",
+    "sha256": "934ab99aad84d838e1544ee8e5b909f20d4822f5fc4584f3cbe8106b815c8162"
+  },
+  {
+    "bytes": 10220491,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579025/SRR11579025_1.fastq.gz",
+    "sha256": "5e4443a71939c8cf4b5186e7611be8466738992eb4252d8462b86ef7675e3c95"
+  },
+  {
+    "bytes": 10300719,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579025/SRR11579025_2.fastq.gz",
+    "sha256": "660c54b218132b522f5e3605c63681947f96f61cfd259366addf9b17f29f5f56"
+  },
+  {
+    "bytes": 9927589,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579026/SRR11579026_1.fastq.gz",
+    "sha256": "904745801d07eec65e2d8b28c5c82ed92378031e268936c1aa114db68f01d7fa"
+  },
+  {
+    "bytes": 9978498,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579026/SRR11579026_2.fastq.gz",
+    "sha256": "f7d9c0f2ab4af51b52e94c45e6e11632d270e773df99df826381126e46c4f024"
+  },
+  {
+    "bytes": 9881010,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579027/SRR11579027_1.fastq.gz",
+    "sha256": "de9b264d7ff1152f9dd3b19c41d4b6a4eee71580714c8329c8e5149cae1fc124"
+  },
+  {
+    "bytes": 11792293,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579027/SRR11579027_2.fastq.gz",
+    "sha256": "1618cc596fdbda6bb75fb22ef6ad0d03663cf240119adca19d91ba5cbacd4bfc"
+  },
+  {
+    "bytes": 10658806,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579028/SRR11579028_1.fastq.gz",
+    "sha256": "ea64f09ae0e784202ea4b6b73b9b17bb26f319277bab03dea112263d0b846a00"
+  },
+  {
+    "bytes": 11457022,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579028/SRR11579028_2.fastq.gz",
+    "sha256": "9ce6cc76bbaf3211bb4236ac959fb7ca0c78ce053b17df635043b5f799302af7"
+  },
+  {
+    "bytes": 10257215,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579029/SRR11579029_1.fastq.gz",
+    "sha256": "53ca8326511552ca5d6b606052d85e94e900ebeb793595f67417e11358950f56"
+  },
+  {
+    "bytes": 11777127,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579029/SRR11579029_2.fastq.gz",
+    "sha256": "a9be1003e6cdad0275ea92ea653050f8d709c0a13d1091bf962dd33b4fc97f84"
+  },
+  {
+    "bytes": 8300424,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579030/SRR11579030_1.fastq.gz",
+    "sha256": "ce662c5985138f5e34e86e4092615ab0dfd0cbced99a5fc74e419285cbdb9889"
+  },
+  {
+    "bytes": 9137094,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579030/SRR11579030_2.fastq.gz",
+    "sha256": "7c198a790c551a1ed8512bdae88d4db10d2fbf8f7cbe0143d624f6059da4fb57"
+  },
+  {
+    "bytes": 154842,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579032/SRR11579032_1.fastq.gz",
+    "sha256": "3ced6074cb534afc68132ba92c1eb42864bee54fc907430d90bed2e3b8cdd48e"
+  },
+  {
+    "bytes": 159000,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579032/SRR11579032_2.fastq.gz",
+    "sha256": "09720319fa4c57626965b2ad57a5850532a2896421594590119c3c87c091233c"
+  },
+  {
+    "bytes": 8738691,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579033/SRR11579033_1.fastq.gz",
+    "sha256": "06b7bd3e995d4353f3b9fa79edf4d81cbe28d6420e526619cb93d3196f43a51e"
+  },
+  {
+    "bytes": 9139837,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579033/SRR11579033_2.fastq.gz",
+    "sha256": "4247cb038402aaa69a852bc99950bfb512a5c3a5a5fefe54b3d1cfd078f59d69"
+  },
+  {
+    "bytes": 10872168,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579034/SRR11579034_1.fastq.gz",
+    "sha256": "4fab5b6fe23dae0d1ee1d642d9b6e61ad5b595828790a991ad9856932285835a"
+  },
+  {
+    "bytes": 11800775,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579034/SRR11579034_2.fastq.gz",
+    "sha256": "96d74ce7660b356929e5f6f885b1dfbcb2079d2b40b3d87c5fd340a0332ac959"
+  },
+  {
+    "bytes": 10276105,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579035/SRR11579035_1.fastq.gz",
+    "sha256": "a95a3cd158b4ed37f9fec5f27fd1b6bbd019aeda0cb0c801b663fd01a3fddba3"
+  },
+  {
+    "bytes": 10156344,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579035/SRR11579035_2.fastq.gz",
+    "sha256": "fd3c7856d0ee00aff4081d77d480a24c655cc7e57a7b8e754f95c92db65da411"
+  },
+  {
+    "bytes": 11800602,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579036/SRR11579036_1.fastq.gz",
+    "sha256": "a78641a292b9517d0725fcac0d875be73ce54c2e865717da67664ec06cb61e02"
+  },
+  {
+    "bytes": 13083068,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579036/SRR11579036_2.fastq.gz",
+    "sha256": "762ca1188315b4c3db92c5aec849bf64cf075238e454122460aa29ddd7753de9"
+  },
+  {
+    "bytes": 8002808,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579037/SRR11579037_1.fastq.gz",
+    "sha256": "acdccbbbc6cf434a0878396c179d5d4fa5dbb6cff1f24806494d2d525bd6af4f"
+  },
+  {
+    "bytes": 10672509,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579037/SRR11579037_2.fastq.gz",
+    "sha256": "4732af0270f1842ebd0a5e68c537070b0e82a04f7e84aadff2987cd9a9b4089b"
+  },
+  {
+    "bytes": 1441853,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579038/SRR11579038_1.fastq.gz",
+    "sha256": "5e6ca37dc146789f22494ebddc9250573e256fc38d25f5f4b32b9ac99865ab43"
+  },
+  {
+    "bytes": 1558835,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579038/SRR11579038_2.fastq.gz",
+    "sha256": "da956d9edd064e9684c50f7e8395779ed4155edd32e8fd7be2cda3aae776e906"
+  },
+  {
+    "bytes": 12838167,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579039/SRR11579039_1.fastq.gz",
+    "sha256": "b2580e043e29c5a431a52d79a4841201d28582c8418462ffae7966778c4f7793"
+  },
+  {
+    "bytes": 15299378,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579039/SRR11579039_2.fastq.gz",
+    "sha256": "3c15337c7429783ea40eaf6358f0bb311ce64973f82f463b85e78d779b7b3293"
+  },
+  {
+    "bytes": 7714553,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579040/SRR11579040_1.fastq.gz",
+    "sha256": "3f7f057ca1642cb75a03984b0b6790a36f6743ee3382c2bfe6bc00b85c6cd633"
+  },
+  {
+    "bytes": 8437714,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579040/SRR11579040_2.fastq.gz",
+    "sha256": "a386ac9d87007352001b710a74dba9fdbbdb6191047679aa889bcd5ce31ef77d"
+  },
+  {
+    "bytes": 9952842,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579041/SRR11579041_1.fastq.gz",
+    "sha256": "d6b12af16ae56e350d282477157a2fdcb79c15696bad04445fe3b047972888b4"
+  },
+  {
+    "bytes": 10107071,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579041/SRR11579041_2.fastq.gz",
+    "sha256": "d41dd793bcd330147a11eab03b7c47e76b3990214c8b091da470adc80c272f0b"
+  },
+  {
+    "bytes": 12124138,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579042/SRR11579042_1.fastq.gz",
+    "sha256": "3906820d103b05280461ae9baf097cb058e17efe22920d36f809ed706d71189b"
+  },
+  {
+    "bytes": 12702716,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579042/SRR11579042_2.fastq.gz",
+    "sha256": "e0636f1816c1b605e60b32fd69d67e5e5a25bf6bbe7994e27c69c783c21eed90"
+  },
+  {
+    "bytes": 9547239,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579044/SRR11579044_1.fastq.gz",
+    "sha256": "a6a288fa92aa3d80e945a0fe77a0200e86f4ae628b3165af63a28de2850cfdd9"
+  },
+  {
+    "bytes": 10301023,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579044/SRR11579044_2.fastq.gz",
+    "sha256": "d22cf048b84531e488ba970460c260f697d16bb4d26247850a1b71a9cffa921e"
+  },
+  {
+    "bytes": 9072058,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579045/SRR11579045_1.fastq.gz",
+    "sha256": "d09d81793cf989e664a835de65b6c2a2ddacc23a06e9d5e2231e343eccfe5bc1"
+  },
+  {
+    "bytes": 10004655,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579045/SRR11579045_2.fastq.gz",
+    "sha256": "2ea03a09d19bdddb3c1c0faf0b4d86129a8f30f52cdf1c9b349b4834b693fbe7"
+  },
+  {
+    "bytes": 12451983,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579046/SRR11579046_1.fastq.gz",
+    "sha256": "e1dc32db54c26d7030c67e2ac2af9fc9339b6f31f2210c2be16846b14d6b2b9b"
+  },
+  {
+    "bytes": 14315154,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579046/SRR11579046_2.fastq.gz",
+    "sha256": "1a5e2791e0272ad080ae546ec481758fb3a1646ebf9faa3f348659bc6cc3df23"
+  },
+  {
+    "bytes": 13707142,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579047/SRR11579047_1.fastq.gz",
+    "sha256": "fadb0f3b6ac7445bfcecb8e14b2b31ac42b12d36bc25cc6168a0dbb8cc52967f"
+  },
+  {
+    "bytes": 14985157,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579047/SRR11579047_2.fastq.gz",
+    "sha256": "99aadda579bd6897d7fd422534b5d4843a7baf12758c3ef4f9c1c9450d121ac0"
+  },
+  {
+    "bytes": 12638025,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579048/SRR11579048_1.fastq.gz",
+    "sha256": "57c70537cf8b17d790f8d23103b55df6a1fbb5249eee15b54e621819b1369df2"
+  },
+  {
+    "bytes": 14632610,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579048/SRR11579048_2.fastq.gz",
+    "sha256": "4de5e2010201f27f431b0e76897a5a632369a8b8b426a359fe24af86df1e46c0"
+  },
+  {
+    "bytes": 12881874,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579049/SRR11579049_1.fastq.gz",
+    "sha256": "9348df2a745aeab7229c5f6ef8fdcf5554b7435773770a9a69a71b1f9b625c9e"
+  },
+  {
+    "bytes": 14897401,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579049/SRR11579049_2.fastq.gz",
+    "sha256": "f6ae463f367306d4b8ae92f1a7ea42a35b57c71ba337037de5ec7e718bb5d5f3"
+  },
+  {
+    "bytes": 11538234,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579050/SRR11579050_1.fastq.gz",
+    "sha256": "3b02f9cf51b4d77d38d998298b0ef3fd29f68c25ca6ae67bf25e2608d8ea896e"
+  },
+  {
+    "bytes": 13677208,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579050/SRR11579050_2.fastq.gz",
+    "sha256": "1c26c0811e7c1f33bbc4b700e01bff37dcd7e7ec61584d4baa017b80062933c3"
+  },
+  {
+    "bytes": 9040834,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579051/SRR11579051_1.fastq.gz",
+    "sha256": "a03c1f0c5e19ad630f2a5091bd414a97927902d4a2a3ccaac656a4a01856ebf7"
+  },
+  {
+    "bytes": 10056738,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579051/SRR11579051_2.fastq.gz",
+    "sha256": "1704ecc587c44aa8cedf2d9eba410dd8ed9f2c3dd8e5460d77e989db5441b9ad"
+  },
+  {
+    "bytes": 18141167,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579052/SRR11579052_1.fastq.gz",
+    "sha256": "7291b5a2a9b08939107d2f56a5c33783e4f0f434514a7ba4af7a2f3b5a3e8cff"
+  },
+  {
+    "bytes": 20229459,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579052/SRR11579052_2.fastq.gz",
+    "sha256": "464ad3344d4ba974c2ec8e23f20c018185d945e3322b5ba1dadb7aa4f57056ad"
+  },
+  {
+    "bytes": 10331342,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579053/SRR11579053_1.fastq.gz",
+    "sha256": "f5828274a298e81007a61e9bf36378e7e9ce45190d68fc5f76aa2b9cc8c116fc"
+  },
+  {
+    "bytes": 12056786,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579053/SRR11579053_2.fastq.gz",
+    "sha256": "d44a8af7706fbc22fbb4a680e90072b79619cc712f94ed80d36bd63aa3cbd9f5"
+  },
+  {
+    "bytes": 17581853,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579054/SRR11579054_1.fastq.gz",
+    "sha256": "b41e7aa54798e040381f13ef1b1a343f75f6249d55134f65b93f71b4a44b1bce"
+  },
+  {
+    "bytes": 17764426,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579054/SRR11579054_2.fastq.gz",
+    "sha256": "2993378258e6cc62b6bfdfadfc58330eacad7a3e0bd6095ec6c6f312b1e6a311"
+  },
+  {
+    "bytes": 14403869,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579056/SRR11579056_1.fastq.gz",
+    "sha256": "b3e1b08c2bf54fdb7b8c779ce213b3c4d46aa5ef48f6984e0678f91ada3b9863"
+  },
+  {
+    "bytes": 16244566,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579056/SRR11579056_2.fastq.gz",
+    "sha256": "2893378f8b2469a8e351b4d229034835a881e6a18899a0ac0f93388f00dcbe7c"
+  },
+  {
+    "bytes": 13777630,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579057/SRR11579057_1.fastq.gz",
+    "sha256": "14146102182b9fb6b02cc799bb610dd9a6f3f12b270d753ee93610e2bfa7f3e4"
+  },
+  {
+    "bytes": 15045404,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579057/SRR11579057_2.fastq.gz",
+    "sha256": "c2985d1e4a6215d290a275337e40f65b0666fbc3372c661bb17e43be7665374f"
+  },
+  {
+    "bytes": 10758834,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579058/SRR11579058_1.fastq.gz",
+    "sha256": "7cdc0c18ce9d0f5342daed844ad65cac74569b938cc1320bcb63ae3efb8d2146"
+  },
+  {
+    "bytes": 12008892,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579058/SRR11579058_2.fastq.gz",
+    "sha256": "848b2c58508189f6a1de80d741e25120a2884141c6ccefee2dc9dd112d303a18"
+  },
+  {
+    "bytes": 12407272,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579059/SRR11579059_1.fastq.gz",
+    "sha256": "95cfe5a9c59ac0d12c8a0c98fc50db9b546e988aa1105697c2cb2a2cb028cf05"
+  },
+  {
+    "bytes": 13932535,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579059/SRR11579059_2.fastq.gz",
+    "sha256": "fa4837a6a47745ab17b2191627e9824fd295644660226cf9df60ba4bd8e81079"
+  },
+  {
+    "bytes": 8103863,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579060/SRR11579060_1.fastq.gz",
+    "sha256": "fad4e71330e292dbdfaafde0c3260f2b81340d96ce5239b31fce5266f4b1aece"
+  },
+  {
+    "bytes": 9314542,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579060/SRR11579060_2.fastq.gz",
+    "sha256": "88953aa25318d80c030629ce3cccd49ed862fe58732256331689c7722a595a32"
+  },
+  {
+    "bytes": 15455023,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579061/SRR11579061_1.fastq.gz",
+    "sha256": "775215d56ecd76281093c9184fca86b320770ec36febedd3c8ce17261b5b0057"
+  },
+  {
+    "bytes": 16589759,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579061/SRR11579061_2.fastq.gz",
+    "sha256": "1a40d03493d0747a869c76be376c33fd21a1a1b3812bf16288f3742b6ba26fce"
+  },
+  {
+    "bytes": 11894785,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579062/SRR11579062_1.fastq.gz",
+    "sha256": "df0003cb363786a14cc7a32171f0bec75aac0d31d0db1db2f2a3f9af35ae5348"
+  },
+  {
+    "bytes": 12936975,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579062/SRR11579062_2.fastq.gz",
+    "sha256": "25b6615a2ffe337033b15531fa885efd58f1ece99dca382c752ab50ec4086cce"
+  },
+  {
+    "bytes": 8058245,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579063/SRR11579063_1.fastq.gz",
+    "sha256": "8d5e0f6edb9dd5628b53df9914beffd5d4b7271ed3b6e0d160b11cd475a630a2"
+  },
+  {
+    "bytes": 8903741,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579063/SRR11579063_2.fastq.gz",
+    "sha256": "2b3e277992a2e815cfc1238da4c37577201e48a69645fe641901686c0d4da33e"
+  },
+  {
+    "bytes": 18223689,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579064/SRR11579064_1.fastq.gz",
+    "sha256": "c71fc8a72594c123c0bedcef2ed3e7c596bc67acbe95232516f9a6ee37ab0cec"
+  },
+  {
+    "bytes": 21134801,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579064/SRR11579064_2.fastq.gz",
+    "sha256": "bc2f20230286513cfc934f4b96216ad7bde57704998a1d96ead0cb60a2267028"
+  },
+  {
+    "bytes": 24191112,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579065/SRR11579065_1.fastq.gz",
+    "sha256": "3d5e43ddb906e9dbb40eca915487fe461f00f2a52c30c1b82c758adc749427f2"
+  },
+  {
+    "bytes": 27395185,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579065/SRR11579065_2.fastq.gz",
+    "sha256": "64266a922afa433c1b95e3df0e6af57f89b2d95e81ecd13d53cc37e7e9d0cf79"
+  },
+  {
+    "bytes": 10568909,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579066/SRR11579066_1.fastq.gz",
+    "sha256": "e3322d87240f912923d8c155c4c3a91bfcac642ecb8ed2932d9be970a36ce4d3"
+  },
+  {
+    "bytes": 12614317,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579066/SRR11579066_2.fastq.gz",
+    "sha256": "991d6acc098affb2b38bcaf7d94db683fe5da2bf5e011c7f66484fa2143e66a9"
+  },
+  {
+    "bytes": 9401788,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579068/SRR11579068_1.fastq.gz",
+    "sha256": "afe501fd70c10e46106b658b3e44f494ae705586477e91e36d2b35c4d10c4912"
+  },
+  {
+    "bytes": 10760193,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579068/SRR11579068_2.fastq.gz",
+    "sha256": "3d5aecf316227f9fecdac191a85a1b870db9968d0c1bf88676a15bc4a3e391b2"
+  },
+  {
+    "bytes": 7616095,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579069/SRR11579069_1.fastq.gz",
+    "sha256": "d2d5220668c23b8fcffedab0c135eaead89096add7fda8f941a636144ccf38c9"
+  },
+  {
+    "bytes": 8807794,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579069/SRR11579069_2.fastq.gz",
+    "sha256": "a1cca5377fbb712f86229ecd743331b0eca68b7dcabf4787b7a562c570518b6e"
+  },
+  {
+    "bytes": 17336086,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579070/SRR11579070_1.fastq.gz",
+    "sha256": "93724d5153126f536181be99044fbb3f8a7cd981ce12354597dd8a4404958050"
+  },
+  {
+    "bytes": 20388619,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579070/SRR11579070_2.fastq.gz",
+    "sha256": "d7b638e617a80be0c80a653dca363b60bed544d0141209821f96fad310c894da"
+  },
+  {
+    "bytes": 1546125,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579071/SRR11579071_1.fastq.gz",
+    "sha256": "c712fa7ec4d6c7205eba721c99e11c1d59b4765ac2d27ab34938d67da164911e"
+  },
+  {
+    "bytes": 1603841,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579071/SRR11579071_2.fastq.gz",
+    "sha256": "845bed5f3dd3faf2c61e400078e5e0952cfe57054f6d3760ac6e2e2bd9262150"
+  },
+  {
+    "bytes": 6018978,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579072/SRR11579072_1.fastq.gz",
+    "sha256": "1ee6d92d4be7abac279cbd7c0a09703ea3e4ade5bc31e36430c776799280a3e8"
+  },
+  {
+    "bytes": 6984163,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579072/SRR11579072_2.fastq.gz",
+    "sha256": "fea37ab64f5573ce33c03b2e1ddbe458ddc2614fc7d2d96ef57c0076c4c0af45"
+  },
+  {
+    "bytes": 5391550,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579073/SRR11579073_1.fastq.gz",
+    "sha256": "aefce537a27d15bc8559f37979c0f1d2d56b74d3b176a523f2ebad0160916851"
+  },
+  {
+    "bytes": 6097613,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579073/SRR11579073_2.fastq.gz",
+    "sha256": "27df0ebfda06d76449be9c2f163c04515c4c3135252017b8f5f74bd6d208b517"
+  },
+  {
+    "bytes": 21100076,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579074/SRR11579074_1.fastq.gz",
+    "sha256": "2622ce18d5d27b551a8bfeadc16f550ccd17753fa153771012607ff4ff82de1a"
+  },
+  {
+    "bytes": 20652031,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579074/SRR11579074_2.fastq.gz",
+    "sha256": "e98be52dd5a5eaa0eb01dbab4d237ee7ae7f33d05ed343210fc06916773fd50e"
+  },
+  {
+    "bytes": 9186157,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579075/SRR11579075_1.fastq.gz",
+    "sha256": "e6129cafc38908d02b175794f235a2fbfeda30409343c8292922d49a0c839733"
+  },
+  {
+    "bytes": 9851569,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579075/SRR11579075_2.fastq.gz",
+    "sha256": "963aac67296473e34fe6f77a28df912e3b9e2686a28ebf8c9450a3a21446f8ff"
+  },
+  {
+    "bytes": 12911591,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579078/SRR11579078_1.fastq.gz",
+    "sha256": "7f04028fb075b818fa190d2526f75d0a3fe87834bf28e9c0478eb43c8c18410d"
+  },
+  {
+    "bytes": 13939043,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579078/SRR11579078_2.fastq.gz",
+    "sha256": "1409f36d9f1081b6af47507e6cc3f31a28e892cffb709da98e6dad63be602cc4"
+  },
+  {
+    "bytes": 8173194,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579089/SRR11579089_1.fastq.gz",
+    "sha256": "4db9937af3e53846caa0e147a1396994e8b19d91affca39470431fbdf42f7d32"
+  },
+  {
+    "bytes": 8897597,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579089/SRR11579089_2.fastq.gz",
+    "sha256": "3fae07543e309c1911f7af6f717c8157a1217fecc86282802f5ed63fd8aca1bf"
+  },
+  {
+    "bytes": 13145997,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579100/SRR11579100_1.fastq.gz",
+    "sha256": "d14dedb2fe9bf9651f7ac10a4ec342b0835e0009e51eaf455f9fe1ce05fa7201"
+  },
+  {
+    "bytes": 14653690,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579100/SRR11579100_2.fastq.gz",
+    "sha256": "846bb33cad6b00e835e626cec0648d2f6df50a63b16d2ef2b9030aa2c4dbafea"
+  },
+  {
+    "bytes": 11548401,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579112/SRR11579112_1.fastq.gz",
+    "sha256": "2a8e97d9566468cfacc195d444047927f941f357d9dc82b070709ad7dc1bc3e4"
+  },
+  {
+    "bytes": 12737595,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579112/SRR11579112_2.fastq.gz",
+    "sha256": "d69319e3ddcc0fe69d10edd2efacb42dd56e5b13bb479149369769e9705329f0"
+  },
+  {
+    "bytes": 9238629,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579113/SRR11579113_1.fastq.gz",
+    "sha256": "c24fb5a89a30b0b404a82c316c6785add086d62bc1b76244a462f83c3dc74ee3"
+  },
+  {
+    "bytes": 9793189,
+    "path": "data/raw/mota_gutierrez_2021_mexico/SRR11579113/SRR11579113_2.fastq.gz",
+    "sha256": "aff54190d2a5a1d5042231183280112a1ce73dc17eb4f0a25f7cf25312205b3a"
+  },
+  {
+    "bytes": 54093,
+    "path": "environment/conda-linux-64.lock",
+    "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+  },
+  {
+    "bytes": 73195,
+    "path": "metadata/manifests/mota_gutierrez_2021_mexico.tsv",
+    "sha256": "09c190f379884f9ebe8c1a6e5561a9ffe0fbf39a7262bc205c50d39e483b98b2"
+  },
+  {
+    "bytes": 101,
+    "path": "python/cacao_inventory/__init__.py",
+    "sha256": "eeb1bc857ffd5b379336ada6c100c6b1e6bfdd6b4595300af2d8217e8c9ae977"
+  },
+  {
+    "bytes": 9376,
+    "path": "python/cacao_inventory/analysis_artifacts.py",
+    "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+  },
+  {
+    "bytes": 4203,
+    "path": "python/cacao_inventory/bacterial_filter.py",
+    "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+  },
+  {
+    "bytes": 4793,
+    "path": "python/cacao_inventory/config.py",
+    "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+  },
+  {
+    "bytes": 4521,
+    "path": "python/cacao_inventory/design.py",
+    "sha256": "0759a1838ba1fe9187642c5cadc9f429ca4703d3222539a73df95d77f828d58d"
+  },
+  {
+    "bytes": 5411,
+    "path": "python/cacao_inventory/discovery.py",
+    "sha256": "28c4b1bdb4f59f1f63a12add9ad8f6d9997cb569bc10d3103e65a3f7f15f065c"
+  },
+  {
+    "bytes": 8359,
+    "path": "python/cacao_inventory/diversity_validation.py",
+    "sha256": "2027045c5d0c5665e6c921a0475ff227e1e1cd7e5a62f4262e805d4d7eece429"
+  },
+  {
+    "bytes": 4827,
+    "path": "python/cacao_inventory/download.py",
+    "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+  },
+  {
+    "bytes": 2107,
+    "path": "python/cacao_inventory/fastq.py",
+    "sha256": "523e80937c4f642a980662cfb0d6593cc6de52f5d33fcac3b476e7a7e857f1aa"
+  },
+  {
+    "bytes": 19454,
+    "path": "python/cacao_inventory/inventory.py",
+    "sha256": "c109138aab986ff5b2be7779679a0de50a98482799168e8f2bbe7dcd54096f5b"
+  },
+  {
+    "bytes": 2405,
+    "path": "python/cacao_inventory/io.py",
+    "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+  },
+  {
+    "bytes": 5958,
+    "path": "python/cacao_inventory/pilot.py",
+    "sha256": "f6ff87e37f2cb1c82d7ba55c4502805743e797011ef6c64d911d55be01365f24"
+  },
+  {
+    "bytes": 3245,
+    "path": "python/cacao_inventory/pilot_workflow.py",
+    "sha256": "e07a0f12cd78538d76893e4e3e0e7ac47457c3e16a36841ea5a6a2feb0d2b329"
+  },
+  {
+    "bytes": 4488,
+    "path": "python/cacao_inventory/provenance.py",
+    "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+  },
+  {
+    "bytes": 25449,
+    "path": "python/cacao_inventory/qc.py",
+    "sha256": "843acf8627f60b8aece692a28c9dce8c87c5228638e2e23d9722b2ce058de082"
+  },
+  {
+    "bytes": 6504,
+    "path": "python/cacao_inventory/schema.py",
+    "sha256": "8a63c6afcaf9088640e7ad9d29d850e98316bd0d58e42d6579a469ba632ef9e1"
+  },
+  {
+    "bytes": 6276,
+    "path": "python/cacao_inventory/selection.py",
+    "sha256": "6007f00bcf3a73d4a3538533ee5b533acf834e2d1419225aa219b06719642b72"
+  },
+  {
+    "bytes": 6219,
+    "path": "python/cacao_inventory/sources.py",
+    "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
+  },
+  {
+    "bytes": 6188,
+    "path": "python/cacao_inventory/study_qc.py",
+    "sha256": "8694ec3b93758ec7bfb6cc45375a5b630d53a401f1227e769d1fc38db13a02b9"
+  },
+  {
+    "bytes": 8976,
+    "path": "python/cacao_inventory/study_scope.py",
+    "sha256": "1bda54e5fcb02e87747e7bfd7aa57f45051d11d3b097f574b2471ee69293deff"
+  },
+  {
+    "bytes": 4319,
+    "path": "python/cacao_inventory/taxonomy_reference.py",
+    "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+  },
+  {
+    "bytes": 8046,
+    "path": "python/cacao_inventory/taxonomy_validation.py",
+    "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
+  },
+  {
+    "bytes": 6563,
+    "path": "python/cacao_inventory/validation.py",
+    "sha256": "40862e9ef8f9be0ddb24c52be0ad62a44f0b62a0f830d4b15d50a238881b8362"
+  },
+  {
+    "bytes": 3201,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11578992.cutadapt.json",
+    "sha256": "562a466185b12f2b9e9ecd43030a4a70c66979e9bbbf2f3cf3972f8d4fa7d693"
+  },
+  {
+    "bytes": 3245,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579003.cutadapt.json",
+    "sha256": "d48121b131e3782a1af9bf7d1e0dce46e0e4f07372de85c09d13a12acb322df5"
+  },
+  {
+    "bytes": 3363,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579014.cutadapt.json",
+    "sha256": "05ee26f905f840ae74a63c88cac367fc61fc5efb3243cc75e3e5145061e6e38b"
+  },
+  {
+    "bytes": 3201,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579019.cutadapt.json",
+    "sha256": "5ca4d96c92a395c41f8e7ca02fd2bbf43d863ded2fe0d7eee3b944efa8692c94"
+  },
+  {
+    "bytes": 3190,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579020.cutadapt.json",
+    "sha256": "cec5a22ec87732ad3a0c514679f0f2fd1b77c09e48f6cd35a593248757c156b1"
+  },
+  {
+    "bytes": 3190,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579021.cutadapt.json",
+    "sha256": "5e16fc04fa2106ebe9f32d6970b9ef656168a5b87e0fd22ed945aecbbc9010b1"
+  },
+  {
+    "bytes": 3245,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579023.cutadapt.json",
+    "sha256": "1660502637d0a026dd75072d1dfdce973fc4c896245eb6c986ffa961775db34b"
+  },
+  {
+    "bytes": 3190,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579024.cutadapt.json",
+    "sha256": "b36d227ac27e538fbf17eaaaf6bd9426e64126ae0f701aa4e30d85ee244b0bea"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579025.cutadapt.json",
+    "sha256": "21dba1dbaab0f775bf4e4ae61aa0f2a72686ed5ce0d74b51e7bf673b2da830ef"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579026.cutadapt.json",
+    "sha256": "c7b58b9af8fe5f756a582321381c3ad8d43eb8a421a4120a9a43c386f1ade574"
+  },
+  {
+    "bytes": 3240,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579027.cutadapt.json",
+    "sha256": "243317f1ba13006001635e74d658a0db1d789b2cc389d77d01f65e32e3eb9329"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579028.cutadapt.json",
+    "sha256": "4a25e8043ca2421a6fb62dd5f37917bfc2f16e32d7dcaeb461e058799890b735"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579029.cutadapt.json",
+    "sha256": "29326abde344e981a836e20f628fdf8d932d736ce6da3e0177397db9626fbdc9"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579030.cutadapt.json",
+    "sha256": "ff046a1924dac73154329e2cd5261a47d87237e79298980c124b20f8f839ff68"
+  },
+  {
+    "bytes": 3036,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579032.cutadapt.json",
+    "sha256": "c0012d6dd7b55feb174c34d558c7f8cb45d25df15db4e1a6832d2a3d13d54a54"
+  },
+  {
+    "bytes": 3191,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579033.cutadapt.json",
+    "sha256": "cccb6e1f408ade02929a7752825b092c93c5782f4b9199badcbcb3b28aa78be2"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579034.cutadapt.json",
+    "sha256": "886fde7fa7b75552345e156fe54612ae022e983b8c011648a40302efed9372d7"
+  },
+  {
+    "bytes": 3244,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579035.cutadapt.json",
+    "sha256": "61a5a8ce54b96cc074ae20d7776ad26e8ff53ebf1ed89cef4a835c2e4598f7fb"
+  },
+  {
+    "bytes": 3254,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579036.cutadapt.json",
+    "sha256": "30b13ff02e7527d632b6a7e881026e299150177ef57c07f4b0408b75dcffb71e"
+  },
+  {
+    "bytes": 3300,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579037.cutadapt.json",
+    "sha256": "53a3e79c323bd42e825c236f7d9179f44349eecf8c959f2329f2300da813912a"
+  },
+  {
+    "bytes": 3177,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579038.cutadapt.json",
+    "sha256": "97b02d67559f3368ff70437ee7f2ed964edb8b3a53b39063f100c9febbd3f540"
+  },
+  {
+    "bytes": 3313,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579039.cutadapt.json",
+    "sha256": "ce666628c359a1a73dc035cdf9d084f1dba5f20d0527df6f97b9389b932a10b0"
+  },
+  {
+    "bytes": 3191,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579040.cutadapt.json",
+    "sha256": "5209288c765475b482643107cfc3c0dfaa25b9be535a3767aad789ed10a4c738"
+  },
+  {
+    "bytes": 3187,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579041.cutadapt.json",
+    "sha256": "120a777a8c8ac5f6bad81aeb0937ab83a42e9ef82a417aeaf27dd5ee4ca2ac5f"
+  },
+  {
+    "bytes": 3258,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579042.cutadapt.json",
+    "sha256": "c624b15f4c824b5872d727f4131e8f45741d5bf350f1bba0959d85e095eadb57"
+  },
+  {
+    "bytes": 3190,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579044.cutadapt.json",
+    "sha256": "035bd3fbb671f316c4282ff188fec57e16ce42a85a3204aa4885ad397e74c1bd"
+  },
+  {
+    "bytes": 3244,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579045.cutadapt.json",
+    "sha256": "7c420d124fa64983376275f17f372e99685d6385f5a95f89ef5b02ef47cf9840"
+  },
+  {
+    "bytes": 3203,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579046.cutadapt.json",
+    "sha256": "06309105d4d4adf040ff4dcdda199cc797d80c6063f9b6b542ed5194ae930bd1"
+  },
+  {
+    "bytes": 3202,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579047.cutadapt.json",
+    "sha256": "6f0e84c34c29b031c14b8988f83d65a2b980eb7ca3705a76ac2980b1c883d8ba"
+  },
+  {
+    "bytes": 3309,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579048.cutadapt.json",
+    "sha256": "d0e6773a59c3720c17d29d57e0fb14f3bc7dea5dceb55e77a700e7ee65261321"
+  },
+  {
+    "bytes": 3257,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579049.cutadapt.json",
+    "sha256": "aabeac4c049d0b232582c96a5e0a6070315a964d166bf6dd9efa8de0e1d26bcc"
+  },
+  {
+    "bytes": 3303,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579050.cutadapt.json",
+    "sha256": "9cf7362dca37007f1e258c785e39d140151c09c7b5b99428d488bbd189ad2255"
+  },
+  {
+    "bytes": 3191,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579051.cutadapt.json",
+    "sha256": "e2798c63de328efb0744be2f6467446fbd146a10699b74dff2bb2b1aeb5b8d61"
+  },
+  {
+    "bytes": 3311,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579052.cutadapt.json",
+    "sha256": "560bf21581f7ad8fcb6be894f788ab195cde15b180638ce509599c5185dceae7"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579053.cutadapt.json",
+    "sha256": "fcea16cb1f266ac20d657edb46c85da8243807ef72b2108cb7ac5c2a07a2dc67"
+  },
+  {
+    "bytes": 3203,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579054.cutadapt.json",
+    "sha256": "ddb5dfb2da22433d6cfb0ceff4c0290092aec501b3ce626e5f17c1507942b4f5"
+  },
+  {
+    "bytes": 3310,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579056.cutadapt.json",
+    "sha256": "00c79740406b18b9df880e677e3a252eb55ee7aa6529c055df4807d49b60062b"
+  },
+  {
+    "bytes": 3256,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579057.cutadapt.json",
+    "sha256": "75e9b3a2a99c0e9272df91770b04207efe74969a1495f57c9a8f95c3a97e6b7c"
+  },
+  {
+    "bytes": 3245,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579058.cutadapt.json",
+    "sha256": "bd69cc58cc713590adc3c44d5be60478e3434410de5f65728a51a71113b773e3"
+  },
+  {
+    "bytes": 3203,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579059.cutadapt.json",
+    "sha256": "dd80f688f4846d81ca4db7a57de81183c156ba441a816e6ecf7f7c21b08332b4"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579060.cutadapt.json",
+    "sha256": "f22ef37d22e11aef1ffb7ddfaf70b750462f886325f1b34af585366b2fdf8016"
+  },
+  {
+    "bytes": 3204,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579061.cutadapt.json",
+    "sha256": "dbf4e2273f4c134a598bb16f49f3fdc8deae0115023274665dc1b89aaeb9bb13"
+  },
+  {
+    "bytes": 3199,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579062.cutadapt.json",
+    "sha256": "064e66022b105957c0f55eab13e9192789006d598ae795c1a0fdcd91fca47ec5"
+  },
+  {
+    "bytes": 3191,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579063.cutadapt.json",
+    "sha256": "6a3359c66db4ee27f04bd1359daa324611b2775c3ce1725609aa72658018cb3b"
+  },
+  {
+    "bytes": 3370,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579064.cutadapt.json",
+    "sha256": "6e987697ffaa5f324c2ff8d17916c40bc59e52ef6ba72d835cf8686289371544"
+  },
+  {
+    "bytes": 3589,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579065.cutadapt.json",
+    "sha256": "e81f6a5d7a700c1c4120fb7c94b3e3248bd37e1fcde41e7d0a56ca1e84f63e97"
+  },
+  {
+    "bytes": 3190,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579066.cutadapt.json",
+    "sha256": "38bfa15817e2eb436e3e3d5636db18bf506fa4fdf23ad8aee2ef14a901be673c"
+  },
+  {
+    "bytes": 3191,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579068.cutadapt.json",
+    "sha256": "1b8a08ce126e1ed50c5c96a36a4c1c4e04a3d8400e18c4715461aa716a4b4250"
+  },
+  {
+    "bytes": 3303,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579069.cutadapt.json",
+    "sha256": "d7b30c1f1a5aedff8bd6622bd296d6183fcfc2e42871e4bf2e3045a0abbf54a8"
+  },
+  {
+    "bytes": 3204,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579070.cutadapt.json",
+    "sha256": "c578b6096a7d89ffac6312905c9cbe7e479bb3b75ffe2eefaa2331979c74bffd"
+  },
+  {
+    "bytes": 3177,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579071.cutadapt.json",
+    "sha256": "1510712781e23441a40f165ad7d5d2557385a3021bcf993cd82d44b7e6a58268"
+  },
+  {
+    "bytes": 3246,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579072.cutadapt.json",
+    "sha256": "3b7b799d892b2266a7f0a3ec1fa85065455731f47bfb935f3955f49b4cd6a4a3"
+  },
+  {
+    "bytes": 3243,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579073.cutadapt.json",
+    "sha256": "456b3f9bb0b62626e764d15106833a16418159a51e02aae2339c6a6040cf695e"
+  },
+  {
+    "bytes": 3310,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579074.cutadapt.json",
+    "sha256": "aa380cc221c05f8350b34d71b71cecdbb24dffd6bb73f0f6bf9fb2fc83248b1d"
+  },
+  {
+    "bytes": 3244,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579075.cutadapt.json",
+    "sha256": "3bc0dd350fc181416be3e5fbd666956ec4e3cb9acd9e1266a6cb3607b9047a0d"
+  },
+  {
+    "bytes": 3202,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579078.cutadapt.json",
+    "sha256": "bac1a240028e8cde2f40bf7513a16798e397c678d95caa5786d7831053e6ccf1"
+  },
+  {
+    "bytes": 3240,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579089.cutadapt.json",
+    "sha256": "ba2b0e9d935ac4557f865a9331dad9eadc16890e9cb6f8163a3751fb6b37ad31"
+  },
+  {
+    "bytes": 3257,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579100.cutadapt.json",
+    "sha256": "eb0ea09c115584aad2212e103198907def44676810c383dad7debf8fc58257f1"
+  },
+  {
+    "bytes": 3192,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579112.cutadapt.json",
+    "sha256": "27653f025487e5961d849fc68c78b720ef702108e5e9bd81cedefa99d264ad8c"
+  },
+  {
+    "bytes": 3245,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt/SRR11579113.cutadapt.json",
+    "sha256": "9e908d9ba10d06426ddac9f39bbdae60bb92c67a12f928c10bd00042e6ad6f12"
+  },
+  {
+    "bytes": 38268,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/cutadapt_summary.tsv",
+    "sha256": "b4140e33cdb94a3e7b944f34bcfa001b5a0757464af60264f8c1d3a3148b0d2d"
+  },
+  {
+    "bytes": 49874,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/download_validation.tsv",
+    "sha256": "27d71d20972f4c9cc9f1e23d44b01e01d579c0534a286782bbcb08479bb071fa"
+  },
+  {
+    "bytes": 34031,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/fastq_validation.tsv",
+    "sha256": "e43d87170ae573f4e1003a6d3d068290955dbc06b70e233101671e1bcee323b4"
+  },
+  {
+    "bytes": 111533,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/primer_detection_raw.tsv",
+    "sha256": "539d80b1a769257f364e6637a0b595421040dbc897f7fb5d2a28f31d84d6b170"
+  },
+  {
+    "bytes": 110891,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/primer_detection_trimmed.tsv",
+    "sha256": "b1413decb1eb54be450ddd2bd1fb1e50f857ed0cd91f4d77203c4cc526c6bcc6"
+  },
+  {
+    "bytes": 24599,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/raw_read_quality.tsv",
+    "sha256": "f924aba2b14d852cbc6f8560d6678574cac91dbe29f2d0aa8625613e362710b7"
+  },
+  {
+    "bytes": 15481,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/read_quality_comparison.tsv",
+    "sha256": "426457f00baae2f9722d4ff52db614344f0abe680a317ee9b9b8d8979a1d5880"
+  },
+  {
+    "bytes": 31440,
+    "path": "results/qc/mota_gutierrez_2021_mexico/full/trimmed_read_quality.tsv",
+    "sha256": "7e4859b5b3331f8a9cea448aa07190fbf5dc7e6a8d838370df0f899693b64240"
+  },
+  {
+    "bytes": 9337,
+    "path": "scripts/qc/detect_primers.py",
+    "sha256": "3cdde687a6a47457b9148a418e4ca17077c62224dd2db459b66617cb9236ab82"
+  },
+  {
+    "bytes": 2361,
+    "path": "scripts/qc/summarize_fastqc.py",
+    "sha256": "2dbfc093872333b3696841d63e95c4a82d8444d4f38e683efcbe04f115cde4fa"
+  },
+  {
+    "bytes": 2607,
+    "path": "scripts/qc/summarize_trimmed_fastqc.py",
+    "sha256": "63463ad59ae68b40ca98cedd59489cf9d2f20eade61d5c6e17ce15e6f1773a9b"
+  },
+  {
+    "bytes": 7677,
+    "path": "scripts/study/qc_stage.py",
+    "sha256": "48792e214aaac2d7e1f076c76f865b5953cab7256dc534ba93f44250af6cffbf"
+  },
+  {
+    "bytes": 17532,
+    "path": "workflow/study.Snakefile",
+    "sha256": "faad21ab20642f3bf0b9089b69dee12e3ca4f12af134851987a8531e4e8bdd55"
+  },
+  {
+    "bytes": 1247,
+    "path": "config/prjna627078_study.yaml",
+    "sha256": "90374770be68b8feeb7807e0081b3e8309c5828b5f26109d2ac882c1291845f1"
+  }
+]

@@ -9,10 +9,16 @@ from .schema import PILOT_MANIFEST_COLUMNS, SAMPLE_COLUMNS
 from .taxonomy_reference import repository_path
 
 MANIFEST_COLUMNS = PILOT_MANIFEST_COLUMNS + [name for name in SAMPLE_COLUMNS if name not in PILOT_MANIFEST_COLUMNS] + ["source_fastq_ftp", "source_fastq_md5", "source_fastq_bytes"]
-LIVE_FIELDS = ("sample_alias", "library_strategy", "library_layout", "fastq_ftp", "fastq_bytes", "fastq_md5", "read_count", "base_count")
+LIVE_FIELDS = ("sample_alias", "sample_title", "sample_description", "library_strategy", "library_layout",
+               "sequencing_platform", "sequencing_instrument", "fastq_ftp", "fastq_bytes", "fastq_md5", "read_count", "base_count")
+LIVE_SOURCE_FIELDS = {"sequencing_platform": "instrument_platform", "sequencing_instrument": "instrument_model"}
 
 
 def validate_scope(config: dict, root: Path) -> None:
+    if config.get("processing_ceiling", "diversity") not in ("qc", "dada2", "diversity"):
+        raise ValueError("Unsupported processing ceiling")
+    if config.get("sampling_stratum_policy", "require_known") not in ("require_known", "preserve_unknown"):
+        raise ValueError("Unsupported sampling-stratum metadata policy")
     if config["scope"] != "all_included_runs" or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", config["study_id"]):
         raise ValueError("Unsupported scope or unsafe study ID")
     if not re.fullmatch(r"PRJ(?:NA|EB|DB)[0-9]+", config["bioproject"]):
@@ -74,7 +80,8 @@ def build_study_manifest(config: dict, runs: list[dict], samples: list[dict]) ->
         run = by_run[sample["run_accession"]]
         if sample["bioproject"] != config["bioproject"] or run["bioproject"] != config["bioproject"] or run["library_layout"] != "PAIRED" or run["sequencing_platform"] != "ILLUMINA":
             raise ValueError("Full-study route requires one configured paired Illumina study")
-        if not sample["fermentation_batch"] or not sample["sampling_stratum"] or sample["marker"] != "16S rRNA" or not sample["relative_time"]:
+        if (not sample["fermentation_batch"] or sample["marker"] != "16S rRNA" or not sample["relative_time"]
+                or (not sample["sampling_stratum"] and config.get("sampling_stratum_policy", "require_known") == "require_known")):
             raise ValueError("Missing verified marker, batch, time or stratum")
         records, _ = select_streams(run, sample["sample_id"])
         if not records:
@@ -104,7 +111,8 @@ def compare_live_runs(config: dict, candidate: dict, current: list[dict], live: 
     if eligible != set(selected):
         raise ValueError("ENA eligible run membership changed; review inventory before downloading")
     for accession, original in selected.items():
-        if any(original[field] != live_by_id[accession][field] for field in LIVE_FIELDS):
+        if any(original[field] != live_by_id[accession][LIVE_SOURCE_FIELDS.get(field, field)] for field in LIVE_FIELDS):
             raise ValueError("ENA download/design metadata changed for " + accession)
     return {"status": "valid", "ena_runs_returned": len(live), "eligible_runs": len(eligible),
-            "verified_fields": list(LIVE_FIELDS), "verified_run_accessions": sorted(eligible)}
+            "verified_fields": list(LIVE_FIELDS), "source_field_mapping": LIVE_SOURCE_FIELDS,
+            "verified_run_accessions": sorted(eligible)}

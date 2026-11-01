@@ -156,3 +156,36 @@ python3 scripts/environment/run_in_environment.py python scripts/longitudinal/ru
 
 El principal utiliza pares de estratos completos y cuatro lotes independientes.
 Supuestos y límite p mínimo 0,125: [`reports/longitudinal_methods.md`](../reports/longitudinal_methods.md).
+
+
+## Segundo estudio: PRJNA627078
+
+El mismo workflow selecciona un perfil independiente; los outputs se resuelven
+por estudio. La configuración inicial limita la ejecución a descarga y QC:
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/study.Snakefile --cores 8 --resources mem_mb=4500 --retries 2 --keep-going --config scope_config=config/prjna627078_study.yaml
+```
+
+La verificación activa de NCBI/ENA precede a la descarga. El manifest conserva
+los 60 runs y sus tres etiquetas de réplica por caja/tiempo, con estrato vacío;
+se seleccionan únicamente streams pareados y se registra cualquier huérfano.
+Los constructos completos desconocidos no se criban ni se informan como ausentes.
+`processing_ceiling=qc` impide DADA2/taxonomía incluso si se solicitan como target.
+Elevarlo exige revisión de QC, decisión/configuración y commit específicos.
+Los resultados previos conservan el código y la procedencia de su ejecución;
+la ampliación del workflow no los convierte automáticamente en una corrida nueva.
+
+El descargador usa `inventory.http_timeout_seconds` como límite de inactividad
+de conexión/lectura. Los reintentos del scheduler reanudan `.part` mediante Range
+cuando el servidor lo admite y verifican tamaño/MD5 antes de promover a raw.
+El límite no es una duración máxima total para un archivo que sigue transfiriendo.
+
+
+`study/review_primer_positions.py --config config/prjna627078_study.yaml
+--direction R1` (o R2) reproduce, sin recortar, el caso con mayor número de
+coincidencias del primer opuesto RC en cada mate; requiere QC terminado.
+Escribe posiciones agregadas, resumen, JSON Cutadapt y procedencia; los datos
+por read quedan en `results/intermediate`. La selección es ilustrativa y no
+estima la fracción terminal de todo el estudio. Recuentos deben coincidir con
+el cribado anterior. El método y resultados están en el informe PRJNA627078.

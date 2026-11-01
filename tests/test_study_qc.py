@@ -2,6 +2,7 @@
 
 import copy
 import gzip
+import importlib.util
 import shutil
 import subprocess
 import sys
@@ -63,6 +64,30 @@ class StudyQcTests(unittest.TestCase):
         self.write("raw_read_quality")
         with self.assertRaises(ValueError):
             reconcile_qc(self.config, self.project, self.manifest, self.root)
+
+    def test_unknown_full_constructs_skip_only_unavailable_screen_cases(self):
+        for primer in self.project["amplicon_processing"][self.manifest[0]["bioproject"]]["primers"].values():
+            primer["full_construct_sequence"] = ""
+        for name in ("primer_detection_raw", "primer_detection_trimmed"):
+            self.tables[name] = [row for row in self.tables[name] if row["sequence_type"] != "full_construct"]
+            self.write(name)
+        self.assertEqual(reconcile_qc(self.config, self.project, self.manifest, self.root)["runs"], 2)
+        self.tables["primer_detection_raw"].pop()
+        self.write("primer_detection_raw")
+        with self.assertRaises(ValueError):
+            reconcile_qc(self.config, self.project, self.manifest, self.root)
+
+    def test_screen_producer_does_not_invent_unknown_construct_sequences(self):
+        spec = importlib.util.spec_from_file_location("study_qc_stage", ROOT / "scripts/study/qc_stage.py")
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        for primer in self.project["amplicon_processing"][self.manifest[0]["bioproject"]]["primers"].values():
+            primer["full_construct_sequence"] = ""
+        with patch.object(module, "_run_cutadapt", return_value=(10, 0)) as run:
+            rows = module.screen(self.config, self.project, self.manifest[0], "raw")
+        self.assertEqual(run.call_count, 8)
+        self.assertEqual(len(rows), 8)
+        self.assertEqual({row["sequence_type"] for row in rows}, {"gene_specific"})
 
     def test_altered_cutadapt_parameters_fail_independent_reconciliation(self):
         self.tables["cutadapt_summary"][0]["error_rate"] = "0.5"

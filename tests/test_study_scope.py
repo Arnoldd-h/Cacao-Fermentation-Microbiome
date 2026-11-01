@@ -9,7 +9,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "python"))
 from cacao_inventory.config import load_json_yaml
+from cacao_inventory.io import read_inventory
 from cacao_inventory.study_scope import build_study_manifest, build_stream_log, compare_live_runs, validate_scope
+from cacao_inventory.sources import ENA_FIELDS
 
 
 class StudyScopeTests(unittest.TestCase):
@@ -19,14 +21,22 @@ class StudyScopeTests(unittest.TestCase):
         self.samples = []
         for index in (1, 2):
             run = "SRR" + str(index)
-            common = {"study_id": "synthetic_study", "bioproject": "PRJNA1", "run_accession": run, "analysis_include": "true", "sample_alias": "Bact" + str(index)}
-            self.runs.append({**common, "library_layout": "PAIRED", "library_strategy": "AMPLICON", "sequencing_platform": "ILLUMINA",
+            common = {"study_id": "synthetic_study", "bioproject": "PRJNA1", "run_accession": run, "analysis_include": "true", "sample_alias": "Bact" + str(index),
+                      "sample_title": "Synthetic time " + str(index), "sample_description": "Synthetic design fixture"}
+            self.runs.append({**common, "library_layout": "PAIRED", "library_strategy": "AMPLICON", "sequencing_platform": "ILLUMINA", "sequencing_instrument": "synthetic instrument",
                 "fastq_ftp": ";".join("example.invalid/" + run + "_" + d + ".fastq.gz" for d in ("1", "2")),
                 "fastq_md5": "a" * 32 + ";" + "b" * 32, "fastq_bytes": "10;20", "read_count": "2", "base_count": "100"})
             self.samples.append({**common, "sample_id": "sample" + str(index), "fermentation_batch": "batch1", "fermentation_hours": str((index - 1) * 12),
                 "relative_time": str(index - 1), "fermentation_stage": "early" if index == 1 else "late", "sampling_stratum": "1",
                 "marker": "16S rRNA", "country": "", "time_source": "synthetic fixture"})
         self.candidate = {"candidate_rules": [{"field": "sample_alias", "pattern": "^Bact"}, {"field": "library_strategy", "pattern": "^AMPLICON$"}]}
+
+    def live_rows(self):
+        rows = copy.deepcopy(self.runs)
+        for row in rows:
+            row["instrument_platform"] = row.pop("sequencing_platform")
+            row["instrument_model"] = row.pop("sequencing_instrument")
+        return rows
 
     def test_all_included_runs_preserve_known_and_unknown_metadata(self):
         rows = build_study_manifest(self.config, self.runs, self.samples)
@@ -40,6 +50,15 @@ class StudyScopeTests(unittest.TestCase):
         for samples in (self.samples[:1], [self.samples[0], self.samples[0]], [{**row, "analysis_include": "pending"} for row in self.samples]):
             with self.subTest(samples=samples), self.assertRaises(ValueError):
                 build_study_manifest(self.config, self.runs, samples)
+
+    def test_explicit_unknown_strata_policy_preserves_replicates_and_empty_fields(self):
+        samples = [{**row, "sampling_stratum": "", "replicate": str(i)} for i, row in enumerate(self.samples, 1)]
+        with self.assertRaises(ValueError):
+            build_study_manifest(self.config, self.runs, samples)
+        config = {**self.config, "sampling_stratum_policy": "preserve_unknown"}
+        rows = build_study_manifest(config, self.runs, samples)
+        self.assertEqual([row["sampling_stratum"] for row in rows], ["", ""])
+        self.assertEqual([row["replicate"] for row in rows], ["1", "2"])
 
     def test_malformed_downloads_and_incompatible_technology_fail(self):
         for field, value in (("fastq_md5", "not-a-checksum"), ("fastq_bytes", "10"), ("fastq_ftp", ""), ("library_layout", "SINGLE"), ("sequencing_platform", "PACBIO_SMRT")):
@@ -56,11 +75,21 @@ class StudyScopeTests(unittest.TestCase):
                 build_study_manifest(self.config, self.runs, changed)
 
     def test_live_sources_match_or_fail_on_new_missing_or_changed_runs(self):
-        self.assertEqual(compare_live_runs(self.config, self.candidate, self.runs, self.runs)["eligible_runs"], 2)
-        changed = copy.deepcopy(self.runs)
+        live = self.live_rows()
+        audit = compare_live_runs(self.config, self.candidate, self.runs, live)
+        self.assertEqual(audit["eligible_runs"], 2)
+        self.assertTrue(all(audit["source_field_mapping"].get(field, field) in ENA_FIELDS for field in audit["verified_fields"]))
+        changed = copy.deepcopy(live)
         changed[0]["fastq_md5"] = "c" * 32 + ";" + "b" * 32
-        for live in (self.runs[:1], self.runs + [{**self.runs[0], "run_accession": "SRR3"}], changed, self.runs + self.runs):
+        for live in (live[:1], live + [{**live[0], "run_accession": "SRR3"}], changed, live + live):
             with self.subTest(live=live), self.assertRaises(ValueError):
+                compare_live_runs(self.config, self.candidate, self.runs, live)
+
+    def test_changed_temporal_design_or_instrument_fails_with_same_accessions(self):
+        for field in ("sample_title", "sample_description", "instrument_platform", "instrument_model"):
+            live = self.live_rows()
+            live[0][field] += " altered"
+            with self.subTest(field=field), self.assertRaises(ValueError):
                 compare_live_runs(self.config, self.candidate, self.runs, live)
 
     def test_orphan_streams_are_logged_and_missing_mate_is_explicit(self):
@@ -83,11 +112,22 @@ class StudyScopeTests(unittest.TestCase):
     def test_registered_paths_and_resource_budget_reject_unsafe_outputs(self):
         config = load_json_yaml(ROOT / "config/full_study.yaml")
         validate_scope(config, ROOT)
-        for field, value in (("interim_dir", "data/raw/full"), ("dada2_dir", "results/dada2/pilot"), ("manifest", "../outside.tsv"), ("scope", "select_significant_runs")):
+        for field, value in (("interim_dir", "data/raw/full"), ("dada2_dir", "results/dada2/pilot"), ("manifest", "../outside.tsv"), ("scope", "select_significant_runs"), ("sampling_stratum_policy", "invent_from_replicate")):
             changed = copy.deepcopy(config)
             changed[field] = value
             with self.subTest(field=field), self.assertRaises(ValueError):
                 validate_scope(changed, ROOT)
+
+    def test_registered_mexican_scope_keeps_all_runs_and_unknown_strata(self):
+        config = load_json_yaml(ROOT / "config/prjna627078_study.yaml")
+        validate_scope(config, ROOT)
+        inventory = read_inventory(ROOT / "metadata")
+        rows = build_study_manifest(config, inventory["runs"], inventory["samples"])
+        self.assertEqual(len(rows), 60)
+        self.assertEqual(len({row["fermentation_batch"] for row in rows}), 4)
+        self.assertEqual({row["fermentation_hours"] for row in rows}, {"0", "24", "48", "72", "120"})
+        self.assertEqual({row["replicate"] for row in rows}, {"1", "2", "3"})
+        self.assertEqual({row["sampling_stratum"] for row in rows}, {""})
 
 
 if __name__ == "__main__":

@@ -224,6 +224,12 @@ environment/  dependencias reproducibles
 
 ## Estado
 
+PRJNA627078 tiene 60 bibliotecas adquiridas y QC basal 5' validado:
+5.689.175 pares, sin exclusiones. El QC detecta residuos terminales de primers
+y cambios importantes de flags por base que deben resolverse antes de DADA2;
+no se declara todavía una segunda tabla de ASVs ni un core compartido.
+Informe: [`QC de PRJNA627078`](reports/prjna627078_qc_2026-10-31.md).
+
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
 `CHANGELOG.md`. El 2026-10-31 quedó resuelto el bloqueo de ENA: los 186 FASTQ
 del manifest de 93 runs están descargados y validados. Su procesamiento,

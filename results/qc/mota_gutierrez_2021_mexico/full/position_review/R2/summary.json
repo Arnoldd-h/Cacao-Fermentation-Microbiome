@@ -1,0 +1,32 @@
+{
+  "case": {
+    "bioproject": "PRJNA627078",
+    "error_rate": "0.1",
+    "expected_case": "false",
+    "match_percent": "6.371226",
+    "minimum_overlap": "17",
+    "orientation": "reverse_complement",
+    "primer": "V3V4Forward",
+    "primer_matches": "12295",
+    "primer_sequence": "CCTACGGGNGGCWGCAG",
+    "read_direction": "R2",
+    "read_file": "SRR11579065_2.fastq.gz",
+    "reads_examined": "192977",
+    "run_accession": "SRR11579065",
+    "sample_id": "16S_cocoa_B31",
+    "search_scope": "any_position_full_length",
+    "search_sequence": "CTGCWGCCNCCCGTAGG",
+    "sequence_type": "gene_specific",
+    "study_id": "mota_gutierrez_2021_mexico"
+  },
+  "coordinate_system": "zero_based_half_open",
+  "illustrative_not_cohort_estimate": true,
+  "matched_reads": 12295,
+  "read_filtering": false,
+  "reads_examined": 192977,
+  "sample_exclusions": 0,
+  "selection": "largest matched count for the opposite primer RC in this mate; ties by run accession",
+  "study_id": "mota_gutierrez_2021_mexico",
+  "terminal_fraction_of_matches": 0.8411549410329402,
+  "terminal_matches": 10342
+}

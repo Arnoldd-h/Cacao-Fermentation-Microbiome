@@ -40,6 +40,8 @@ def screen(config, project, row, stage):
         for role, primer in processing["primers"].items():
             label = primer["name"].split("_", 1)[0]
             for kind, field, anchored in (("gene_specific", "gene_specific_sequence", False), ("full_construct", "full_construct_sequence", True)):
+                if kind == "full_construct" and not primer[field]:
+                    continue
                 sequence = validate_iupac_sequence(primer[field], field)
                 for orientation, search in (("as_synthesized", sequence), ("reverse_complement", reverse_complement_iupac(sequence))):
                     examined, matched = _run_cutadapt("cutadapt", path, label + "_" + kind + "_" + orientation, search, anchored, processing["primer_detection"]["error_rate"])

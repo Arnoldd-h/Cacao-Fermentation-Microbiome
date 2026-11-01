@@ -59,6 +59,8 @@ def reconcile_qc(config: dict, project: dict, manifest: list[dict], root: Path) 
                 label = primer["name"].split("_", 1)[0]
                 for kind, field in (("gene_specific", "gene_specific_sequence"), ("full_construct", "full_construct_sequence")):
                     sequence = primer[field]
+                    if kind == "full_construct" and not sequence:
+                        continue
                     for orientation in ("as_synthesized", "reverse_complement"):
                         required[(*key, label, kind, orientation)] = {
                             "primer_sequence": sequence,

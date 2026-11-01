@@ -341,3 +341,66 @@ seis escenarios forman una familia FDR BY; se reportan heterogeneidad,
 direcciones y leave-one-batch-out. No hay pruebas por ASV, PERMANOVA, ANCOM-BC2,
 core o meta-análisis en esta unidad de trabajo. Métodos, fuentes primarias,
 supuestos y condiciones de fallo: `reports/longitudinal_methods.md`.
+
+
+### Procesamiento independiente de PRJNA627078, 2026-10-31
+
+Se abre el segundo estudio con los 60 runs bacterianos tradicionales ya
+incluidos, cuatro cajas y cinco tiempos (0, 24, 48, 72 y 120 h), tres réplicas
+etiquetadas por caja/tiempo. El inventario no cambia. La caja conserva el papel
+de unidad independiente; las 60 bibliotecas no equivalen a 60 fermentaciones.
+No se presupone que la etiqueta de réplica identifique un estrato espacial.
+`sampling_stratum` permanece vacío mediante una política explícita de
+preservación de desconocidos. No se aplica el modelo de pares de estratos
+colombiano a este diseño.
+
+Los primers específicos V3–V4 se verifican en el artículo asociado a
+[PRJNA627078](https://doi.org/10.1128/AEM.00425-21):
+CCTACGGGNGGCWGCAG / GACTACHVGGGTATCTAATCC. No se han establecido las
+secuencias completas de los constructos: campos vacíos y cribado sólo de las
+secuencias específicas, ambas orientaciones y ambos mates. Un caso no medido
+no se reporta como ausencia observada. Cutadapt conserva todos los pares,
+sin recorte por calidad ni descarte de primers ausentes: error 0,1, sin indels
+y coincidencia del primer completo (17/21 bases). No se añaden exclusiones por
+warnings de FastQC.
+
+`config/prjna627078_processing.yaml` fija una copia independiente de las
+políticas necesarias desde `1847708`; no modifica la configuración del primer
+estudio. Su bloque DADA2 es candidato sin truncamiento fijo, maxEE 2/2 y
+solapamiento mínimo 12, pendiente de revisar longitudes/calidad de V3–V4.
+`processing_ceiling=qc` impide ejecutarlo hasta registrar esa revisión.
+No se concatenan ASVs ni lecturas entre estudios.
+
+El workflow admite `--config scope_config=config/prjna627078_study.yaml`.
+Los resultados previos conservan su versión productora y hashes originales;
+esta ampliación de código compartido requiere una renovación explícita si se
+reprocesa el primer estudio, sin editar sus resultados históricos a mano.
+
+
+La auditoría activa contrasta también `sample_title`, `sample_description`,
+plataforma e instrumento: un accession/MD5 estable no basta para descartar
+cambios de tiempo, caja o réplica en la fuente. Se corrige esa omisión antes de
+cerrar QC y se repite el checkpoint de fuentes. No cambian inclusiones ni
+parámetros de procesamiento. La fuente inicial de descargas se conserva en el
+log; las lecturas se reutilizan sólo si sus checksums siguen concordando.
+
+El contraste de plataforma/instrumento usa el mapeo explícito
+`sequencing_platform <- instrument_platform` y
+`sequencing_instrument <- instrument_model`, igual que el inventario.
+Las pruebas verifican que los nombres de fuente existan en el contrato ENA;
+no simulan una respuesta remota con columnas renombradas por el pipeline.
+
+
+### Diagnóstico de residuos después del QC 5', 2026-10-31
+
+El QC basal de PRJNA627078 encuentra un aumento de flags por calidad de base
+tras mover el origen de las lecturas y residuos de secuencias compatibles con
+primers opuestos. Se añade un diagnóstico ilustrativo después de observar el
+problema: seleccionar por mate el mayor número de coincidencias del primer
+opuesto en complemento inverso, desempatar por accession y repetir exactamente
+el cribado con Cutadapt `--action=none`, igual tolerancia y overlap completos.
+Se registran coordenadas 0-based y coincidencias que terminan al final de la
+lectura, validando los recuentos contra el cribado inicial. No se filtran reads,
+se excluyen muestras, se cambian parámetros DADA2 ni se generaliza la fracción
+terminal del caso seleccionado a todo el estudio. DADA2 permanece pendiente.
+Formato: https://cutadapt.readthedocs.io/en/v5.0/reference.html#info-file-format.

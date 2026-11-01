@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "study_id": "mota_gutierrez_2021_mexico",
+  "bioproject": "PRJNA627078",
+  "scope": "all_included_runs",
+  "expected_runs": 60,
+  "expected_paired_runs": 60,
+  "unpaired_fastq_policy": "record_and_exclude_from_paired_processing",
+  "expected_batches": 4,
+  "project_config": "config/prjna627078_processing.yaml",
+  "datasets_config": "config/datasets.yaml",
+  "inventory_dir": "metadata",
+  "manifest": "metadata/manifests/mota_gutierrez_2021_mexico.tsv",
+  "plan_dir": "results/planning/mota_gutierrez_2021_mexico",
+  "qc_dir": "results/qc/mota_gutierrez_2021_mexico/full",
+  "interim_dir": "data/interim/mota_gutierrez_2021_mexico/full",
+  "dada2_dir": "results/dada2/mota_gutierrez_2021_mexico/full",
+  "dada2_intermediate_dir": "results/intermediate/dada2/mota_gutierrez_2021_mexico/full",
+  "taxonomy_dir": "results/taxonomy/mota_gutierrez_2021_mexico/full",
+  "taxonomy_config": "config/taxonomy.yaml",
+  "diversity_config": "config/prjna627078_diversity.yaml",
+  "resources": {
+    "cores": 8,
+    "memory_budget_mb": 4500,
+    "fastqc_memory_mb": 512,
+    "analysis_memory_mb": 4000,
+    "minimum_free_space_factor": 6.0
+  },
+  "sampling_stratum_policy": "preserve_unknown",
+  "processing_ceiling": "qc"
+}

@@ -3,16 +3,20 @@
 
 Inputs: pilot manifest, config, study/run/direction. Output: its exact data/raw
 path. Fails on ambiguous metadata, invalid paths, insufficient disk, or checksum
-mismatch. Existing valid raw files are reused; invalid raw files are never replaced.
+mismatch. Uses the configured inventory HTTP inactivity timeout; partial files
+remain resumable. Existing valid raw files are reused; invalid raw files are never replaced.
 """
 
 from __future__ import annotations
 
 import argparse
+import functools
 import logging
+import math
 import shutil
 import sys
 from pathlib import Path
+from urllib.request import urlopen
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "python"))
@@ -20,6 +24,14 @@ sys.path.insert(0, str(ROOT / "python"))
 from cacao_inventory.config import load_json_yaml
 from cacao_inventory.download import download_file, expand_pilot_manifest
 from cacao_inventory.pilot_workflow import fastq_path, load_pilot_manifest, manifest_row
+
+
+def download_opener(config):
+    """Use the registered socket timeout for connection and stalled reads."""
+    timeout = float(config["inventory"]["http_timeout_seconds"])
+    if not math.isfinite(timeout) or timeout <= 0:
+        raise ValueError("Download HTTP timeout must be finite and positive")
+    return functools.partial(urlopen, timeout=timeout)
 
 
 def main() -> int:
@@ -37,7 +49,9 @@ def main() -> int:
     if args.output.resolve() != expected.resolve():
         raise ValueError("Output path disagrees with the immutable manifest raw path")
     record = next(record for record in expand_pilot_manifest([row]) if record["read_file"] == expected.name)
-    settings = load_json_yaml(args.config)["pilot_download"]
+    config = load_json_yaml(args.config)
+    settings = config["pilot_download"]
+    opener = download_opener(config)
     chunk_size = int(settings["chunk_size_bytes"])
     factor = float(settings["minimum_free_space_factor"])
     if chunk_size <= 0 or factor < 1:
@@ -45,7 +59,7 @@ def main() -> int:
     expected.parent.mkdir(parents=True, exist_ok=True)
     if not expected.exists() and shutil.disk_usage(expected.parent).free < int(record["expected_bytes"]) * factor:
         raise OSError("Insufficient disk space for pilot FASTQ")
-    status = download_file(record["source_url"], expected, int(record["expected_bytes"]), record["expected_md5"], chunk_size)
+    status = download_file(record["source_url"], expected, int(record["expected_bytes"]), record["expected_md5"], chunk_size, opener=opener)
     logging.info("%s: %s", expected.name, status)
     return 0
 

@@ -2,6 +2,32 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## v0.5.4-second-study-qc - 2026-10-31
+
+- QC basal 5' completo: 552 pasos, 340 entradas/11 artefactos validados,
+  100 % de pares retenidos. Los flags de calidad por base suben de ocho a 61
+  fail y persisten coincidencias de primers opuestos. DADA2 sigue pendiente.
+- Diagnóstico ilustrativo de mayor recuento residual: en SRR11579065 son
+  terminales 12.400/13.892 coincidencias R1 y 10.342/12.295 R2. No se generaliza
+  esa fracción a la cohorte ni se asigna identidad a los fragmentos cortos.
+- Adquisición comprobada de 120 FASTQ pareados de PRJNA627078:
+  1.379.724.114 bytes, 5.689.175 pares, bytes/MD5 y gzip/CRC/estructura válidos;
+  concordancia del manifest y recuentos R1/R2, sin excluir bibliotecas.
+- Perfil independiente para PRJNA627078 y selección configurable del estudio
+  en el workflow. Conservación explícita de estratos desconocidos y cribado
+  sólo de primers establecidos; no se imputan constructos no documentados.
+- Auditoría activa ampliada a título/descripción de muestra y plataforma/instrumento;
+  rechaza cambios del diseño temporal aunque accessions y FASTQ coincidan.
+  Mapeo explícito de instrument_platform/model de ENA a los nombres del
+  inventario, comprobado con fixtures que conservan los nombres reales de API.
+- El descargador aplica el timeout HTTP configurado a conexión/lecturas detenidas.
+  Una prueba con servidor HTTP local verifica fallo acotado, conservación de
+  bytes parciales y reanudación Range con checksum antes de promover el archivo.
+- Diagnóstico reproducible de posiciones de coincidencia de primers residuales:
+  selecciona el mayor recuento por mate, reproduce el cribado sin modificar
+  lecturas y distingue coincidencias terminales/internas con procedencia.
+- Límite de etapa configurado: QC antes de aprobar parámetros DADA2 V3–V4.
+
 ## v0.5.3-longitudinal - 2026-10-31
 
 - Plan longitudinal exploratorio fijado antes del ajuste: CLR por ASV,

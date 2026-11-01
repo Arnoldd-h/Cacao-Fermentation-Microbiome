@@ -1,0 +1,344 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "command": [
+    "scripts/study/build_manifest.py",
+    "--config",
+    "config/prjna627078_study.yaml",
+    "--verify-sources"
+  ],
+  "finished_at_utc": "2026-11-01T04:34:38.318388+00:00",
+  "git_commit": "75407e9e92ab042dd8e0ee67b03cc4801767d7cd",
+  "git_dirty": true,
+  "git_status_at_start": [
+    " D metadata/manifests/mota_gutierrez_2021_mexico.tsv",
+    "?? reports/prjna627078_qc_2026-10-31.md",
+    "?? results/planning/mota_gutierrez_2021_mexico/",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/SUCCESS",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/config_snapshot.yaml",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/cutadapt_summary.tsv",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/input_checksums.json",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/position_review/",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/primer_detection_raw.tsv",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/primer_detection_trimmed.tsv",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/provenance.json",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/raw_read_quality.provenance.json",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/raw_read_quality.tsv",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/read_quality_comparison.tsv",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/summary.json",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/trimmed_read_quality.provenance.json",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/trimmed_read_quality.tsv",
+    "?? results/qc/mota_gutierrez_2021_mexico/full/validation.json"
+  ],
+  "inputs": [
+    {
+      "bytes": 65814,
+      "path": "config/datasets.yaml",
+      "sha256": "f4049abf17059d4e4c98a3584c0d89a243ae095a37fec488cc79ee67d2e50a54"
+    },
+    {
+      "bytes": 3566,
+      "path": "config/prjna627078_processing.yaml",
+      "sha256": "74d201d618cf44dbc34c0be3c0805a79e33ed769bdf1baf749cd2342e11603f2"
+    },
+    {
+      "bytes": 613347,
+      "path": "metadata/exclusion_log.tsv",
+      "sha256": "e1dafcfafdbe35aff2401292b76a8401d08d331fe74ba9be404c71bc53dd21b5"
+    },
+    {
+      "bytes": 2135750,
+      "path": "metadata/runs.tsv",
+      "sha256": "64fd7e6d5e75304ac040ff62132dfc4c2a3b7f01902c0164b67aab81061e4f03"
+    },
+    {
+      "bytes": 138166,
+      "path": "metadata/samples.tsv",
+      "sha256": "99d35f084464222c4cd49a59006058d2728ea23a76549f289d3aa05f3869a91f"
+    },
+    {
+      "bytes": 49294,
+      "path": "metadata/studies.tsv",
+      "sha256": "6862899ab05310241af8e54e8e1265f0e586528e3e7fccdb0a6a503500ea2f41"
+    },
+    {
+      "bytes": 101,
+      "path": "python/cacao_inventory/__init__.py",
+      "sha256": "eeb1bc857ffd5b379336ada6c100c6b1e6bfdd6b4595300af2d8217e8c9ae977"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4203,
+      "path": "python/cacao_inventory/bacterial_filter.py",
+      "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 4521,
+      "path": "python/cacao_inventory/design.py",
+      "sha256": "0759a1838ba1fe9187642c5cadc9f429ca4703d3222539a73df95d77f828d58d"
+    },
+    {
+      "bytes": 5411,
+      "path": "python/cacao_inventory/discovery.py",
+      "sha256": "28c4b1bdb4f59f1f63a12add9ad8f6d9997cb569bc10d3103e65a3f7f15f065c"
+    },
+    {
+      "bytes": 8359,
+      "path": "python/cacao_inventory/diversity_validation.py",
+      "sha256": "2027045c5d0c5665e6c921a0475ff227e1e1cd7e5a62f4262e805d4d7eece429"
+    },
+    {
+      "bytes": 4827,
+      "path": "python/cacao_inventory/download.py",
+      "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+    },
+    {
+      "bytes": 2107,
+      "path": "python/cacao_inventory/fastq.py",
+      "sha256": "523e80937c4f642a980662cfb0d6593cc6de52f5d33fcac3b476e7a7e857f1aa"
+    },
+    {
+      "bytes": 19454,
+      "path": "python/cacao_inventory/inventory.py",
+      "sha256": "c109138aab986ff5b2be7779679a0de50a98482799168e8f2bbe7dcd54096f5b"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 5958,
+      "path": "python/cacao_inventory/pilot.py",
+      "sha256": "f6ff87e37f2cb1c82d7ba55c4502805743e797011ef6c64d911d55be01365f24"
+    },
+    {
+      "bytes": 3245,
+      "path": "python/cacao_inventory/pilot_workflow.py",
+      "sha256": "e07a0f12cd78538d76893e4e3e0e7ac47457c3e16a36841ea5a6a2feb0d2b329"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 25449,
+      "path": "python/cacao_inventory/qc.py",
+      "sha256": "843acf8627f60b8aece692a28c9dce8c87c5228638e2e23d9722b2ce058de082"
+    },
+    {
+      "bytes": 6504,
+      "path": "python/cacao_inventory/schema.py",
+      "sha256": "8a63c6afcaf9088640e7ad9d29d850e98316bd0d58e42d6579a469ba632ef9e1"
+    },
+    {
+      "bytes": 6276,
+      "path": "python/cacao_inventory/selection.py",
+      "sha256": "6007f00bcf3a73d4a3538533ee5b533acf834e2d1419225aa219b06719642b72"
+    },
+    {
+      "bytes": 6219,
+      "path": "python/cacao_inventory/sources.py",
+      "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
+    },
+    {
+      "bytes": 6188,
+      "path": "python/cacao_inventory/study_qc.py",
+      "sha256": "8694ec3b93758ec7bfb6cc45375a5b630d53a401f1227e769d1fc38db13a02b9"
+    },
+    {
+      "bytes": 8976,
+      "path": "python/cacao_inventory/study_scope.py",
+      "sha256": "1bda54e5fcb02e87747e7bfd7aa57f45051d11d3b097f574b2471ee69293deff"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 8046,
+      "path": "python/cacao_inventory/taxonomy_validation.py",
+      "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
+    },
+    {
+      "bytes": 6563,
+      "path": "python/cacao_inventory/validation.py",
+      "sha256": "40862e9ef8f9be0ddb24c52be0ad62a44f0b62a0f830d4b15d50a238881b8362"
+    },
+    {
+      "bytes": 5487,
+      "path": "scripts/study/build_manifest.py",
+      "sha256": "088d32b94dca58bba7d783f4a2f2e1df51143e0c2e755cc144682734fb4f78fb"
+    },
+    {
+      "bytes": 1247,
+      "path": "config/prjna627078_study.yaml",
+      "sha256": "90374770be68b8feeb7807e0081b3e8309c5828b5f26109d2ac882c1291845f1"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 73195,
+      "path": "metadata/manifests/mota_gutierrez_2021_mexico.tsv",
+      "sha256": "09c190f379884f9ebe8c1a6e5561a9ffe0fbf39a7262bc205c50d39e483b98b2"
+    },
+    {
+      "bytes": 1247,
+      "path": "results/planning/mota_gutierrez_2021_mexico/config_snapshot.yaml",
+      "sha256": "90374770be68b8feeb7807e0081b3e8309c5828b5f26109d2ac882c1291845f1"
+    },
+    {
+      "bytes": 36114,
+      "path": "results/planning/mota_gutierrez_2021_mexico/fastq_stream_log.tsv",
+      "sha256": "3a09c2d08c6f5d34e4030178b17564896b527bf2c51ba4b9409013f56ae018ed"
+    },
+    {
+      "bytes": 4909,
+      "path": "results/planning/mota_gutierrez_2021_mexico/input_checksums.json",
+      "sha256": "94304a8bf42980fa98060c44910d948828f41f67373f2b22907211f158374758"
+    },
+    {
+      "bytes": 687,
+      "path": "results/planning/mota_gutierrez_2021_mexico/resource_plan.json",
+      "sha256": "82c0405ea507bedb51b8717274b28ab5933659b0f70679442b9054cb6e9b6d3a"
+    },
+    {
+      "bytes": 1832,
+      "path": "results/planning/mota_gutierrez_2021_mexico/source_audit.json",
+      "sha256": "f71a09762ef567099efa185a0f250f03db28c9a1dcf1846c5f8a28499a9d73e7"
+    }
+  ],
+  "parameters": {
+    "bioproject": "PRJNA627078",
+    "dada2_dir": "results/dada2/mota_gutierrez_2021_mexico/full",
+    "dada2_intermediate_dir": "results/intermediate/dada2/mota_gutierrez_2021_mexico/full",
+    "datasets_config": "config/datasets.yaml",
+    "diversity_config": "config/prjna627078_diversity.yaml",
+    "expected_batches": 4,
+    "expected_paired_runs": 60,
+    "expected_runs": 60,
+    "interim_dir": "data/interim/mota_gutierrez_2021_mexico/full",
+    "inventory_dir": "metadata",
+    "manifest": "metadata/manifests/mota_gutierrez_2021_mexico.tsv",
+    "plan_dir": "results/planning/mota_gutierrez_2021_mexico",
+    "processing_ceiling": "qc",
+    "project_config": "config/prjna627078_processing.yaml",
+    "qc_dir": "results/qc/mota_gutierrez_2021_mexico/full",
+    "resources": {
+      "analysis_memory_mb": 4000,
+      "cores": 8,
+      "fastqc_memory_mb": 512,
+      "memory_budget_mb": 4500,
+      "minimum_free_space_factor": 6.0
+    },
+    "sampling_stratum_policy": "preserve_unknown",
+    "schema_version": "1.0.0",
+    "scope": "all_included_runs",
+    "study_id": "mota_gutierrez_2021_mexico",
+    "taxonomy_config": "config/taxonomy.yaml",
+    "taxonomy_dir": "results/taxonomy/mota_gutierrez_2021_mexico/full",
+    "unpaired_fastq_policy": "record_and_exclude_from_paired_processing"
+  },
+  "software_versions": {
+    "Python": "3.12.13"
+  },
+  "started_at_utc": "2026-11-01T04:33:08.185189+00:00",
+  "status": "success",
+  "upstream_validation": {
+    "eligible_runs": 60,
+    "ena_runs_returned": 132,
+    "ncbi_bioproject": "PRJNA627078",
+    "ncbi_title": "Microbiota and Mycobiota composition during the fermentation of Criollo and Forastero cocoa varieties in Mexico",
+    "source_field_mapping": {
+      "sequencing_instrument": "instrument_model",
+      "sequencing_platform": "instrument_platform"
+    },
+    "status": "valid",
+    "verified_fields": [
+      "sample_alias",
+      "sample_title",
+      "sample_description",
+      "library_strategy",
+      "library_layout",
+      "sequencing_platform",
+      "sequencing_instrument",
+      "fastq_ftp",
+      "fastq_bytes",
+      "fastq_md5",
+      "read_count",
+      "base_count"
+    ],
+    "verified_run_accessions": [
+      "SRR11578992",
+      "SRR11579003",
+      "SRR11579014",
+      "SRR11579019",
+      "SRR11579020",
+      "SRR11579021",
+      "SRR11579023",
+      "SRR11579024",
+      "SRR11579025",
+      "SRR11579026",
+      "SRR11579027",
+      "SRR11579028",
+      "SRR11579029",
+      "SRR11579030",
+      "SRR11579032",
+      "SRR11579033",
+      "SRR11579034",
+      "SRR11579035",
+      "SRR11579036",
+      "SRR11579037",
+      "SRR11579038",
+      "SRR11579039",
+      "SRR11579040",
+      "SRR11579041",
+      "SRR11579042",
+      "SRR11579044",
+      "SRR11579045",
+      "SRR11579046",
+      "SRR11579047",
+      "SRR11579048",
+      "SRR11579049",
+      "SRR11579050",
+      "SRR11579051",
+      "SRR11579052",
+      "SRR11579053",
+      "SRR11579054",
+      "SRR11579056",
+      "SRR11579057",
+      "SRR11579058",
+      "SRR11579059",
+      "SRR11579060",
+      "SRR11579061",
+      "SRR11579062",
+      "SRR11579063",
+      "SRR11579064",
+      "SRR11579065",
+      "SRR11579066",
+      "SRR11579068",
+      "SRR11579069",
+      "SRR11579070",
+      "SRR11579071",
+      "SRR11579072",
+      "SRR11579073",
+      "SRR11579074",
+      "SRR11579075",
+      "SRR11579078",
+      "SRR11579089",
+      "SRR11579100",
+      "SRR11579112",
+      "SRR11579113"
+    ]
+  }
+}

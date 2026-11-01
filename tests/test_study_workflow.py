@@ -26,8 +26,24 @@ class StudyWorkflowTests(unittest.TestCase):
         for path in (ROOT / "metadata").glob("*.tsv"):
             shutil.copy2(path, root / "metadata" / path.name)
 
-    def dry_run(self, root, target="all"):
-        return subprocess.run(["snakemake", "--snakefile", "workflow/study.Snakefile", "--cores", "1", "--dry-run", target], cwd=root, capture_output=True, text=True, timeout=90)
+    def dry_run(self, root, target="all", scope_config=None):
+        command = ["snakemake", "--snakefile", "workflow/study.Snakefile", "--cores", "1", "--dry-run", target]
+        if scope_config:
+            command.extend(["--config", "scope_config=" + scope_config])
+        return subprocess.run(command, cwd=root, capture_output=True, text=True, timeout=90)
+
+    def test_second_study_uses_only_its_configured_checkpoint_and_paths(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            self.copy_sources(root)
+            result = self.dry_run(root, scope_config="config/prjna627078_study.yaml")
+            self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+            self.assertIn("mota_gutierrez_2021_mexico", result.stdout)
+            self.assertIn("config/prjna627078_study.yaml", result.stdout)
+            self.assertNotIn("pacheco_montealegre_2020_colombia", result.stdout)
+            blocked = self.dry_run(root, "study_dada2", scope_config="config/prjna627078_study.yaml")
+            self.assertNotEqual(blocked.returncode, 0, blocked.stdout + blocked.stderr)
+            self.assertIn("requires a registered QC/method review", blocked.stdout + blocked.stderr)
 
     def test_absent_manifest_reaches_source_checkpoint_and_reference(self):
         with tempfile.TemporaryDirectory() as temporary:

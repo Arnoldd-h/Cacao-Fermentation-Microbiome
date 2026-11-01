@@ -1,4 +1,4 @@
-"""Complete single-study processing with unchanged pilot scientific methods."""
+"""Independent paired-Illumina study processing selected by scope_config."""
 import sys
 from pathlib import Path
 
@@ -10,8 +10,9 @@ from cacao_inventory.study_qc import trimmed_path
 from cacao_inventory.study_scope import validate_scope
 
 configfile: "config/full_study.yaml"
-validate_scope(config, Path.cwd())
-scope = config
+scope_config = config.get("scope_config", "config/full_study.yaml")
+scope = load_json_yaml(scope_config)
+validate_scope(scope, Path.cwd())
 project = load_json_yaml(scope["project_config"])
 diversity = load_json_yaml(scope["diversity_config"])["paths"]
 qc = scope["qc_dir"]
@@ -25,6 +26,12 @@ processing = project["amplicon_processing"][scope["bioproject"]]
 reference = load_json_yaml(scope["taxonomy_config"])["reference"]
 analysis_code = [str(path) for path in Path("python/cacao_inventory").glob("*.py")]
 reference_code = ["scripts/taxonomy/download_reference.py"] + ["python/cacao_inventory/" + n + ".py" for n in ("config", "download", "provenance", "taxonomy_reference")]
+
+def approved_config(stage):
+    ceiling = scope.get("processing_ceiling", "diversity")
+    if (stage == "dada2" and ceiling == "qc") or (stage == "diversity" and ceiling != "diversity"):
+        raise ValueError("Stage " + stage + " requires a registered QC/method review in " + scope_config)
+    return scope_config
 
 def manifest_input(wildcards=None):
     return ancient(str(checkpoints.study_manifest.get().output.manifest))
@@ -48,7 +55,7 @@ def archives(wildcards, stage="raw"):
 
 rule all:
     input:
-        diversity["diversity_dir"] + "/validation.json",
+        (qc if scope.get("processing_ceiling") == "qc" else dada if scope.get("processing_ceiling") == "dada2" else diversity["diversity_dir"]) + "/validation.json",
         manifest=manifest_input,
 
 rule study_qc:
@@ -59,13 +66,13 @@ rule study_dada2:
 
 checkpoint study_manifest:
     input:
-        config="config/full_study.yaml",
+        config=scope_config,
         sources=[scope["project_config"], scope["datasets_config"], *[scope["inventory_dir"] + "/" + n + ".tsv" for n in ("studies", "runs", "samples", "exclusion_log")]],
         code=["scripts/study/build_manifest.py", *analysis_code],
     output:
         manifest=scope["manifest"],
         products=[scope["plan_dir"] + "/" + n for n in ("source_audit.json", "resource_plan.json", "fastq_stream_log.tsv", "provenance.json", "input_checksums.json", "config_snapshot.yaml", "SUCCESS")],
-    params: config_sha256=sha256_file("config/full_study.yaml")
+    params: config_sha256=sha256_file(scope_config)
     shell: "python scripts/study/build_manifest.py --config {input.config:q} --verify-sources"
 
 wildcard_constraints:
@@ -117,7 +124,7 @@ rule raw_summary:
 
 rule primer_screen:
     input:
-        manifest=manifest_input, config="config/full_study.yaml", project=ancient(scope["project_config"]), code=new_code,
+        manifest=manifest_input, config=scope_config, project=ancient(scope["project_config"]), code=new_code,
         r1=lambda wc: read_path(wc, wc.stage, "1"), r2=lambda wc: read_path(wc, wc.stage, "2"),
         validation=qc + "/fastq_validation.tsv",
     output: screen_dir + "/primers_{stage}/{run_accession}.tsv"
@@ -127,13 +134,13 @@ rule primer_screen:
 rule screen_summary:
     input:
         tables=lambda wc: [screen_dir + "/primers_" + wc.stage + "/" + row["run_accession"] + ".tsv" for row in rows()],
-        manifest=manifest_input, config="config/full_study.yaml", code=new_code,
+        manifest=manifest_input, config=scope_config, code=new_code,
     output: qc + "/primer_detection_{stage}.tsv"
     shell: "python scripts/study/qc_stage.py summarize_screen --config {input.config:q} --stage {wildcards.stage:q}"
 
 rule trim:
     input:
-        manifest=manifest_input, config="config/full_study.yaml", project=ancient(scope["project_config"]), code=new_code,
+        manifest=manifest_input, config=scope_config, project=ancient(scope["project_config"]), code=new_code,
         r1=lambda wc: read_path(wc, direction="1"), r2=lambda wc: read_path(wc, direction="2"),
         detection=qc + "/primer_detection_raw.tsv",
     output:
@@ -146,7 +153,7 @@ rule trim:
 rule cutadapt_summary:
     input:
         reports=lambda wc: [qc + "/cutadapt/" + row["run_accession"] + ".cutadapt.json" for row in rows()],
-        reads=lambda wc: reads(wc, "trimmed"), manifest=manifest_input, config="config/full_study.yaml", code=new_code,
+        reads=lambda wc: reads(wc, "trimmed"), manifest=manifest_input, config=scope_config, code=new_code,
     output: qc + "/cutadapt_summary.tsv"
     shell: "python scripts/study/qc_stage.py summarize_cutadapt --config {input.config:q}"
 
@@ -163,13 +170,14 @@ rule trimmed_summary:
 rule finalize_qc:
     input:
         tables=[qc + "/" + n for n in ("download_validation.tsv", "fastq_validation.tsv", "raw_read_quality.tsv", "trimmed_read_quality.tsv", "read_quality_comparison.tsv", "cutadapt_summary.tsv", "primer_detection_raw.tsv", "primer_detection_trimmed.tsv")],
-        manifest=manifest_input, config="config/full_study.yaml", code=new_code,
+        manifest=manifest_input, config=scope_config, code=new_code,
     output:
         [qc + "/" + n for n in ("summary.json", "SUCCESS", "provenance.json", "input_checksums.json", "config_snapshot.yaml", "validation.json")],
     shell: "python scripts/study/qc_stage.py finalize --config {input.config:q}"
 
 rule run_dada2:
     input:
+        approval=lambda wc: approved_config("dada2"),
         validated=qc + "/validation.json", raw=qc + "/raw_read_quality.tsv", trimmed=qc + "/trimmed_read_quality.tsv",
         manifest=manifest_input, config=ancient(scope["project_config"]), reads=lambda wc: reads(wc, "trimmed"),
         code=["scripts/dada2/run_pilot.R", "scripts/dada2/helpers.R"],
@@ -204,6 +212,7 @@ rule validate_taxonomy_reference:
 
 rule run_taxonomy:
     input:
+        approval=lambda wc: approved_config("diversity"),
         validated=dada + "/validation.json", config=scope["taxonomy_config"], reference=reference["path"], reference_provenance=reference["provenance_path"], manifest=manifest_input,
         data=[dada + "/" + n for n in ("SUCCESS", "asv_sequences.tsv", "asv_counts.tsv", "sample_metadata.tsv")],
         code=["scripts/taxonomy/run_taxonomy.py", "scripts/taxonomy/assign_taxonomy.R", "scripts/taxonomy/helpers.R",
