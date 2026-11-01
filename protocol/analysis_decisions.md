@@ -238,3 +238,22 @@ significación, core ni efectos temporales. Las tablas deben reconciliar cada
 conteo y el total de lecturas por muestra/rango con la tabla derivada validada.
 Estos resúmenes describen composiciones y preparan la revisión longitudinal;
 no cambian las hipótesis ni la clasificación primaria de SILVA.
+
+### Figuras temporales descriptivas por lote y estrato, 2026-10-31
+
+Antes de generar estas figuras se fija `config/temporal_reporting.yaml`. Se
+representan riqueza observada, diversidad efectiva de Shannon y lecturas
+retenidas a partir de la diversidad alfa ya validada, sin recalcular métricas,
+agregar muestras ni modificar ceros. El eje temporal utiliza las horas originales.
+Las lecturas retenidas muestran la profundidad que limita la comparación de riqueza.
+
+Cada lote ocupa paneles separados. En el estudio completo se unen únicamente
+observaciones consecutivas de un mismo lote/estrato; una hora presente en el
+lote pero ausente en un estrato rompe la línea. No se imputan puntos, no se
+ajustan modelos y no se unen lotes o estratos distintos. El piloto se muestra
+sin líneas porque sus seis muestras no reconstruyen series completas.
+Duplicados lote/hora/estrato provocan fallo, en lugar de una agregación implícita.
+
+Las figuras se exportan en PDF/SVG/PNG de 300 dpi, con linajes de muestras y
+procedencia de las tablas fuente. Son una representación descriptiva dentro de
+estudio, no pruebas de sucesión conservada, core o significación temporal.

@@ -38,6 +38,8 @@ La reanudación renovó los outputs afectados y cerró QC sobre `1250c72`.
 Implementado: productor/validador de resúmenes por familia/género con política
 registrada en `config/taxonomic_reporting.yaml`, conservando linajes, desconocidos
 y tiempos. La generación del perfil completo espera el cierre de su separación.
+En desarrollo: figuras temporales descriptivas por lote/estrato; política en
+`config/temporal_reporting.yaml`, sin modelos ni agregación de submuestras.
 Workflow, manifest, auditorías y registro del bloqueo integrados en `main`
 mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
 
