@@ -186,6 +186,11 @@ validados; taxonomía está en ejecución y faltan separación/diversidad comple
 
 ## Bloqueos y limitaciones
 
+- La semilla R no controla por completo el desempate nativo de DADA2 en
+  taxonomía. Dos corridas completas mantienen primaria a 80, separación y
+  diversidad idénticas, pero difieren en soportes y sensibilidad a 50
+  (neto: una ASV/cinco lecturas). Véase la auditoría de repetición; la solución
+  del RNG queda pendiente antes de inferir con asignaciones próximas a umbrales.
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - Hay taxonomía y diversidad descriptiva de seis runs del piloto. La ampliación

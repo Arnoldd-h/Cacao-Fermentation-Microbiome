@@ -4,6 +4,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- Auditoría de repetición taxonómica: tabla primaria, separación y diversidad
+  idénticas; variación neta de una ASV/cinco lecturas en sensibilidad a 50.
+  Se documenta el desempate nativo no controlado completamente por la semilla R,
+  sin declarar resuelta la reproducción de bootstrap ni cambiar los umbrales.
 - Suite final completa: 161 pruebas Python aprobadas en Linux (135,991 s),
   incluidas integraciones con R, Cutadapt y Snakemake.
 - Corrección del título de cobertura taxonómica compartido: elimina la etiqueta

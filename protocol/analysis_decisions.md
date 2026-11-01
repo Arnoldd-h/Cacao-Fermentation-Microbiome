@@ -257,3 +257,21 @@ Duplicados lote/hora/estrato provocan fallo, en lugar de una agregación implíc
 Las figuras se exportan en PDF/SVG/PNG de 300 dpi, con identificadores de muestras y
 procedencia de las tablas fuente. Son una representación descriptiva dentro de
 estudio, no pruebas de sucesión conservada, core o significación temporal.
+
+### Límite observado del RNG taxonómico, 2026-10-31
+
+La repetición del estudio completo, motivada por un título de figura, conserva
+exactamente taxonomía primaria a 80, separación y diversidad, pero modifica
+soportes bootstrap y la sensibilidad a 50: diferencia neta de una ASV y cinco
+lecturas asignadas a género. La semilla configurada controla el muestreo R,
+pero el código nativo de DADA2 1.34 resuelve empates con un generador inicializado
+desde `std::random_device`. No se declara reproducción exacta de los soportes.
+
+No cambia ningún parámetro de `config/taxonomy.yaml`, umbral o asignación
+manualmente. Se conserva la última ejecución cronológica con procedencia,
+sin escoger por significación o cobertura. La inferencia sobre asignaciones
+próximas a umbrales queda pendiente de evaluar el desempate reproducible y
+registrar cualquier solución como cambio metodológico específico. Antes de
+otra reclasificación se deben conservar las tablas bootstrap completas de
+referencia, además de hashes. Evidencia y fuentes en
+`reports/taxonomy_reproducibility_2026-10-31.md`.
