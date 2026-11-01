@@ -1,0 +1,2641 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "command": [
+    "scripts/study/qc_stage.py",
+    "finalize",
+    "--config",
+    "config/full_study.yaml"
+  ],
+  "finished_at_utc": "2026-11-01T00:48:16.205990+00:00",
+  "git_commit": "1250c7222db8d40779f9fce3ba7592b60df26ea5",
+  "git_dirty": true,
+  "git_status_at_start": [
+    " M results/planning/pacheco_montealegre_2020_colombia/SUCCESS",
+    " M results/planning/pacheco_montealegre_2020_colombia/input_checksums.json",
+    " M results/planning/pacheco_montealegre_2020_colombia/provenance.json",
+    " M results/planning/pacheco_montealegre_2020_colombia/resource_plan.json",
+    "?? results/qc/pacheco_montealegre_2020_colombia/"
+  ],
+  "inputs": [
+    {
+      "bytes": 4901,
+      "path": "config/config.yaml",
+      "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+    },
+    {
+      "bytes": 3226313,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899641/SRR7899641_1.fastq.gz",
+      "sha256": "329be7e9a7626d1fe8996a9eeb6f10d614885f7a11bc833574df66a8a0eab8cb"
+    },
+    {
+      "bytes": 3641343,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899641/SRR7899641_2.fastq.gz",
+      "sha256": "5d70c1a4979b41e0bb90ebd7d783809387682321eac121d9c0acd0ad6bcdd950"
+    },
+    {
+      "bytes": 1308952,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899642/SRR7899642_1.fastq.gz",
+      "sha256": "5dffbc63336ed09621ff4c0cea7742e0e3d1feea935ee32f78ba6e030a4b49d0"
+    },
+    {
+      "bytes": 1677185,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899642/SRR7899642_2.fastq.gz",
+      "sha256": "277b6d35e76859b7d73758aa353c40de2af1527e7f504644f06463654b3ea5d8"
+    },
+    {
+      "bytes": 3098285,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899643/SRR7899643_1.fastq.gz",
+      "sha256": "dbd7a9089c3e03210526ca785b3b35c6c4e6a5136cdf37bf4b0459e09b27fa21"
+    },
+    {
+      "bytes": 3890100,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899643/SRR7899643_2.fastq.gz",
+      "sha256": "472521ff087e50867ba556c5d6814f5561e2db3e219e3f8472556fca73956938"
+    },
+    {
+      "bytes": 2389518,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899644/SRR7899644_1.fastq.gz",
+      "sha256": "ba43df6b5246af037c23948c8e85e78d76388c3c99697d4e18a7c6d67e3acaa0"
+    },
+    {
+      "bytes": 3251097,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899644/SRR7899644_2.fastq.gz",
+      "sha256": "771cbfe5ab966075978e3e820f6f5c0353cadfa6abe02aee55035d5df4cad89e"
+    },
+    {
+      "bytes": 1389753,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899647/SRR7899647_1.fastq.gz",
+      "sha256": "8f64a8c0d7d499685c8e747ffcdcc660c1e3f7763d7f587a32717b29aabec6b4"
+    },
+    {
+      "bytes": 1682498,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899647/SRR7899647_2.fastq.gz",
+      "sha256": "4bb9bcab70f36e15c6a6e18559abfb6ffe4e5d404a994ea97f670a376e95c89a"
+    },
+    {
+      "bytes": 1320853,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899648/SRR7899648_1.fastq.gz",
+      "sha256": "9502ab71a5aea68c997d22a6b41dcf92b155e5795b10d4d981e5e9d7edc23ddd"
+    },
+    {
+      "bytes": 1786722,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899648/SRR7899648_2.fastq.gz",
+      "sha256": "db1cd6b45bf4d010ed6fbbaa851a3d74ddd573b89ab7a32e8dfe6953a598556d"
+    },
+    {
+      "bytes": 2026549,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899649/SRR7899649_1.fastq.gz",
+      "sha256": "fd728cb809d8249fc6da30fd2576b49502e6ce023ee708ed391dfe9281a2a39d"
+    },
+    {
+      "bytes": 1982460,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899649/SRR7899649_2.fastq.gz",
+      "sha256": "1efdce8db0b8cf4f37e15f6e9d3cd8cb6468276b9dca1f1e5378cab4f6fe3094"
+    },
+    {
+      "bytes": 829164,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899650/SRR7899650_1.fastq.gz",
+      "sha256": "760b028d9be72da215246ae20f345b878b67ee603e47693fb80737e98e59dbcb"
+    },
+    {
+      "bytes": 737781,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899650/SRR7899650_2.fastq.gz",
+      "sha256": "c3efb98c5fd82c90ea7a8e3ab00e0a3516a3e6f6d45c5a7fb1cdf5b5cf7769c2"
+    },
+    {
+      "bytes": 1854656,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899655/SRR7899655_1.fastq.gz",
+      "sha256": "2f9ceec88d558e36377de24232b747dfff897f138d72d5f09c141756d333c1cf"
+    },
+    {
+      "bytes": 2492570,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899655/SRR7899655_2.fastq.gz",
+      "sha256": "68803fde36ecd74d7a63a3fde7670abdb920f106002d75354e03d2837dc7f9fd"
+    },
+    {
+      "bytes": 3417230,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899656/SRR7899656_1.fastq.gz",
+      "sha256": "d632a6a3cede28cc9e23538fb5c681682b0be603a0b4ac4e996d1918d1b2a6e0"
+    },
+    {
+      "bytes": 3115977,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899656/SRR7899656_2.fastq.gz",
+      "sha256": "7d7ffe723fa0435c2f2dce4b5cf087cd707ed3d7bed2d93cfb2cb8e987bf5a67"
+    },
+    {
+      "bytes": 2701925,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899678/SRR7899678_1.fastq.gz",
+      "sha256": "9105891442271e5b0061f607f1532b237282a867e2b9abed12b39f8de8bda65e"
+    },
+    {
+      "bytes": 3656920,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899678/SRR7899678_2.fastq.gz",
+      "sha256": "53bd1d7b0b5a0056d70646ffecbf6b96808d7759309c2dd469e18030730c4c49"
+    },
+    {
+      "bytes": 2748839,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899679/SRR7899679_1.fastq.gz",
+      "sha256": "c362b3a8c70774afce68a09e2a3f3f9d1f7f6c5c88a50827c2d92ffa6077c9dc"
+    },
+    {
+      "bytes": 3763049,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899679/SRR7899679_2.fastq.gz",
+      "sha256": "7014bbe049bc24beab34bdfd4b46c4c9315935d1a91ef144eb5d4b3d25b82d20"
+    },
+    {
+      "bytes": 2510288,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899680/SRR7899680_1.fastq.gz",
+      "sha256": "031622ab3dd60c2d7367153f0c9bb42fa8ea06f5e1d262d2fb2d0b85c7eac4ee"
+    },
+    {
+      "bytes": 3291106,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899680/SRR7899680_2.fastq.gz",
+      "sha256": "9307e629c3dce0a6580558cbf1d12ef9ec44aad9cc3bfb19375c4e80944a709b"
+    },
+    {
+      "bytes": 3298136,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899681/SRR7899681_1.fastq.gz",
+      "sha256": "907b5651ff0b1e761ce67cbe4f040d6d885dc995ada4c0f5b4871fc5276a85e6"
+    },
+    {
+      "bytes": 4434121,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899681/SRR7899681_2.fastq.gz",
+      "sha256": "ae9e62bc5ae7cd5ccf4ebbfc6a197e690cb1c962722adc09ee25b4c1394ad8b0"
+    },
+    {
+      "bytes": 3216312,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899682/SRR7899682_1.fastq.gz",
+      "sha256": "12946dbb672fe31badbf0b077e2c03b2d1e464750daa56de0a31441f5f083189"
+    },
+    {
+      "bytes": 3936466,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899682/SRR7899682_2.fastq.gz",
+      "sha256": "33f162978efc70d1da7a42819970c1bb23ed72ae686aa93eb754433c5099791b"
+    },
+    {
+      "bytes": 2260963,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899683/SRR7899683_1.fastq.gz",
+      "sha256": "0792b52817be2c52ea0d96b8cb6667d05fce2fa67d5705d054a6232e19579115"
+    },
+    {
+      "bytes": 3036700,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899683/SRR7899683_2.fastq.gz",
+      "sha256": "b93e9642f4cf83d912af9a29dbf22cb159ba8e51859c302b0b3c4298d3841563"
+    },
+    {
+      "bytes": 3728370,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899684/SRR7899684_1.fastq.gz",
+      "sha256": "2d83e316f87f1f54453d178e6b38d1c41c0a006ec13049fa43de8a211e18d159"
+    },
+    {
+      "bytes": 4145800,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899684/SRR7899684_2.fastq.gz",
+      "sha256": "c12fa1b962467f2a934faea38ce1781c085ba44b2b6a441e1a4e5159857ad1c8"
+    },
+    {
+      "bytes": 2853675,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899685/SRR7899685_1.fastq.gz",
+      "sha256": "0ae5c2be1c50c717e58430f2329a942d05f7082e6706a1df286e350f1dc1a4b1"
+    },
+    {
+      "bytes": 3657343,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899685/SRR7899685_2.fastq.gz",
+      "sha256": "d19b35761c529c1562cfe3bcabbc7c298a0761f0e6038e09a9dd489716264186"
+    },
+    {
+      "bytes": 4282235,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899686/SRR7899686_1.fastq.gz",
+      "sha256": "9856e2ec5b0de5dccbacdf233ea4879c4699d0cb6b5dc801f8765cee58bf73a5"
+    },
+    {
+      "bytes": 4974257,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899686/SRR7899686_2.fastq.gz",
+      "sha256": "052300c55077eb68bacc82e1f53d78708f65841ceda0393603a3e1d5416c0334"
+    },
+    {
+      "bytes": 5196564,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899687/SRR7899687_1.fastq.gz",
+      "sha256": "0566b1d2101f736fb76624a90a37de64ceec035601a9c2b7156a671ff7af0bb4"
+    },
+    {
+      "bytes": 5311335,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899687/SRR7899687_2.fastq.gz",
+      "sha256": "08f63e36903fa10ec916b607f79cc7be2fc1594dd4b30cfb110576bc63c8f877"
+    },
+    {
+      "bytes": 3835958,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899688/SRR7899688_1.fastq.gz",
+      "sha256": "1a1141301507869e2a4a8e320846232787c9ad09415745a0c4d86a6f4cdfede0"
+    },
+    {
+      "bytes": 4246677,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899688/SRR7899688_2.fastq.gz",
+      "sha256": "a652082d78ef8d0ae877bd95866b63b58b96f7c950d03eb37bf3433da4615724"
+    },
+    {
+      "bytes": 2546547,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899691/SRR7899691_1.fastq.gz",
+      "sha256": "1312eab78037816a3a3995da84cbc206327be861b260013d1b18cd2e96e4a74c"
+    },
+    {
+      "bytes": 3521844,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899691/SRR7899691_2.fastq.gz",
+      "sha256": "1e82b94f14aeb1d27ff8819acc74b35690c31cc6893f84c75650006c1913a159"
+    },
+    {
+      "bytes": 1172662,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899692/SRR7899692_1.fastq.gz",
+      "sha256": "f9b2fc129875155de801e1808b28e79bc487e3a23d2576a4df5d7daf541af79b"
+    },
+    {
+      "bytes": 1568727,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899692/SRR7899692_2.fastq.gz",
+      "sha256": "1f180d4a93746ddab51d0f2a279d6335d607dac5ba650f63a228cba46eab3c32"
+    },
+    {
+      "bytes": 2230033,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899693/SRR7899693_1.fastq.gz",
+      "sha256": "b1fe34a71f973f3f7fb9dd3b20a76210be04d1058e7f6f05c0156ca0c682b32e"
+    },
+    {
+      "bytes": 3000420,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899693/SRR7899693_2.fastq.gz",
+      "sha256": "93988c1e0022f6247ca41ea16b2f7fa1d26603ab5aaa3743c76942b01f862aea"
+    },
+    {
+      "bytes": 1362218,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899694/SRR7899694_1.fastq.gz",
+      "sha256": "77e07cac6b94959845709a3c9e6dfae42fe9974324c59596102db0d3c7a3884e"
+    },
+    {
+      "bytes": 1844792,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899694/SRR7899694_2.fastq.gz",
+      "sha256": "6723dea774c6cdb0c24fe6cc4bef2f53c27d8a71a69f5164e91cb7e5debb4782"
+    },
+    {
+      "bytes": 2500870,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899696/SRR7899696_1.fastq.gz",
+      "sha256": "d6a6746f970a8c5720764ca12b3a097b2edc4397f7fab2c028a267999afe38fb"
+    },
+    {
+      "bytes": 3363456,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899696/SRR7899696_2.fastq.gz",
+      "sha256": "6e7788aa015eef58600c8fd13023f107b5a05210b2811931646335972e71377e"
+    },
+    {
+      "bytes": 1151145,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899697/SRR7899697_1.fastq.gz",
+      "sha256": "df6b9d0977a253b6391723d073147dd1723efd7d2fecb6ef6b57afa1c52ec5f5"
+    },
+    {
+      "bytes": 1547520,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899697/SRR7899697_2.fastq.gz",
+      "sha256": "297ca51acebbecceadaa742d40a3595cd7c0444ec38a8c7ecc25b00465fddfa2"
+    },
+    {
+      "bytes": 1799322,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899698/SRR7899698_1.fastq.gz",
+      "sha256": "3d8c8c3d9e7f69aff2d5df3ecc23e577999b2891c48568364af0c5bac9275ac6"
+    },
+    {
+      "bytes": 2488581,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899698/SRR7899698_2.fastq.gz",
+      "sha256": "431d836506b0b04e79d7bd5645d824681f3fdbd8b02d2d2556e18d44f3eef520"
+    },
+    {
+      "bytes": 4288466,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899699/SRR7899699_1.fastq.gz",
+      "sha256": "9b2e56d5473180b514cb656b78d0985e1fd3957df3b746031cf96452f0991468"
+    },
+    {
+      "bytes": 6249311,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899699/SRR7899699_2.fastq.gz",
+      "sha256": "873012d65ec1950ec3b3d8501402a3cef9f32cb878193fea506c320e143b2379"
+    },
+    {
+      "bytes": 2379473,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899700/SRR7899700_1.fastq.gz",
+      "sha256": "d533adb771b7e073d5991ea4addf96eaedbef8fca5ff9f890dd1bc497d6234ff"
+    },
+    {
+      "bytes": 3123258,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899700/SRR7899700_2.fastq.gz",
+      "sha256": "62332f2dd8c57504e702dbad9fde78f96b760b0bf74607112a7d8cc75fee522a"
+    },
+    {
+      "bytes": 3163920,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899709/SRR7899709_1.fastq.gz",
+      "sha256": "ce12967a9bad660ea69fc4529952fc6f5d6773bb169476875172c941db871465"
+    },
+    {
+      "bytes": 3344239,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899709/SRR7899709_2.fastq.gz",
+      "sha256": "7db7893f9f18f1eacbca44b5991ac3ed5f9de72aae6bcb54e83698bd636ecf2f"
+    },
+    {
+      "bytes": 4960357,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899718/SRR7899718_1.fastq.gz",
+      "sha256": "58cbce7d47a60a60df9215232aa4c8641086082d2be3e73880e268c7d4081bd1"
+    },
+    {
+      "bytes": 4818623,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899718/SRR7899718_2.fastq.gz",
+      "sha256": "e48d20a481cc2ffebd7bc2b92931c59f730acad597c84b89ab2786681e3b2427"
+    },
+    {
+      "bytes": 4328986,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899719/SRR7899719_1.fastq.gz",
+      "sha256": "9ecff854a3cedc6a115a68ae9c3c06e3bfb70cf7ec55ef85c9911d2b4c6266e4"
+    },
+    {
+      "bytes": 3942386,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899719/SRR7899719_2.fastq.gz",
+      "sha256": "d1a1db0c40ee035e242a691d38370aab2db75d90b01c5dbca588ea31146e6ae2"
+    },
+    {
+      "bytes": 2287365,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899720/SRR7899720_1.fastq.gz",
+      "sha256": "9bead2a707daf2305660ab28b819a6591d894d131d5d5be49874fb180ba607a7"
+    },
+    {
+      "bytes": 2562128,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899720/SRR7899720_2.fastq.gz",
+      "sha256": "b01c9d11c6ec092c35351bc40ed93c52132ca857ce51fa977a0f07f3f6863570"
+    },
+    {
+      "bytes": 832013,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899721/SRR7899721_1.fastq.gz",
+      "sha256": "abadbf16e12f2364863cf47b421dc3833c19d2178a2f42141aa0ec6e9d14722f"
+    },
+    {
+      "bytes": 707796,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899721/SRR7899721_2.fastq.gz",
+      "sha256": "6b81b3d9cf2d914a4c4ea4a1b260ebf89d7dbe621172c9ca971f93287cb56a0f"
+    },
+    {
+      "bytes": 5159363,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899722/SRR7899722_1.fastq.gz",
+      "sha256": "46b86023d4c2826738badaa412f3d4b2b0b81dae28362afdae3a6b24ef584dca"
+    },
+    {
+      "bytes": 5214209,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899722/SRR7899722_2.fastq.gz",
+      "sha256": "5df26dd18739cfcd97f77b8ccdbe0158b51c3ad975f62b0831aeba80940ec815"
+    },
+    {
+      "bytes": 6475587,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899723/SRR7899723_1.fastq.gz",
+      "sha256": "73ca8407acf0d7c350147630ccbc68211a2e2cd7543fd55ab13c7b2f67c60f01"
+    },
+    {
+      "bytes": 6979117,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899723/SRR7899723_2.fastq.gz",
+      "sha256": "e3b26dad3b74a9875a3d0df92b8e36b8e98a753255cd6e102c993af82f48487c"
+    },
+    {
+      "bytes": 6057615,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899724/SRR7899724_1.fastq.gz",
+      "sha256": "6b230b8b209c5162fedd13280a68fe828e8578c5f9927dd19bc1b2b76503cb10"
+    },
+    {
+      "bytes": 6703160,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899724/SRR7899724_2.fastq.gz",
+      "sha256": "4288c5bcd8e300f63d58bf9898e6779917e4d14ded9208319801297ee994ffa9"
+    },
+    {
+      "bytes": 4440694,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899725/SRR7899725_1.fastq.gz",
+      "sha256": "ee31438154f477b76b868634445647de4195da42cca973ba6fe0df6f50934d8d"
+    },
+    {
+      "bytes": 5045106,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899725/SRR7899725_2.fastq.gz",
+      "sha256": "4606bc54f07154fc2fae5540d04a0d166df8d6abbb42d69c71f90640ce2597eb"
+    },
+    {
+      "bytes": 1379469,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899726/SRR7899726_1.fastq.gz",
+      "sha256": "4c7b1e08118aa9995e700c678dc2a1466060b9451f6920ec456c6ec265887929"
+    },
+    {
+      "bytes": 1845333,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899726/SRR7899726_2.fastq.gz",
+      "sha256": "02535a0ab0679b840eaaa82b066c8286478213535f2c08103e0c514b86a6ae6c"
+    },
+    {
+      "bytes": 3654064,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899727/SRR7899727_1.fastq.gz",
+      "sha256": "38da39ef6d2a7ceaaa4e9c3d9bcaeec3f41bb94a3b97cd63d3f5a3f6a814df50"
+    },
+    {
+      "bytes": 4947458,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899727/SRR7899727_2.fastq.gz",
+      "sha256": "54d44a1b026dad8fa185b584abe99b6111a97baaee3cd1b3e28ab966b5fd3d6c"
+    },
+    {
+      "bytes": 2308027,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899728/SRR7899728_1.fastq.gz",
+      "sha256": "e210a7c074cff938d48c6fa47b21182a1eea647013b5f646037c9083189fe96b"
+    },
+    {
+      "bytes": 2366744,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899728/SRR7899728_2.fastq.gz",
+      "sha256": "5a15bef6ad61562f742f2df8e9cb0c546e3f6e351852370b369fc12a3c31a495"
+    },
+    {
+      "bytes": 3796684,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899729/SRR7899729_1.fastq.gz",
+      "sha256": "9adf3fb7f76b2c10152732b0287fef97e437ab5e0a43a07bccddd7632547c9e4"
+    },
+    {
+      "bytes": 4242682,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899729/SRR7899729_2.fastq.gz",
+      "sha256": "307a143ab41da7e38b94637866b4de9222f41293c428fdb393abb7755aa15d5f"
+    },
+    {
+      "bytes": 728832,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899730/SRR7899730_1.fastq.gz",
+      "sha256": "a490682591d69d8bf8cd77c366a32269d0c2e7c4559a4e3ec68f68c461dbf144"
+    },
+    {
+      "bytes": 613967,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899730/SRR7899730_2.fastq.gz",
+      "sha256": "ebb59bef2e43377d456dcbb3eeea0688fa43a194ae1079a67426326757e22ea4"
+    },
+    {
+      "bytes": 3004128,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899744/SRR7899744_1.fastq.gz",
+      "sha256": "092868febd0c8ae4d4995cc514f077d4e6d0e88d8ccedc5552002e0adc4e3be0"
+    },
+    {
+      "bytes": 3635341,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899744/SRR7899744_2.fastq.gz",
+      "sha256": "8049db273ef5e0f097d463511714061777ca97375a914570d903e554bf21f36e"
+    },
+    {
+      "bytes": 2351786,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899745/SRR7899745_1.fastq.gz",
+      "sha256": "a10cede68f0308a411b14bf906da478611886c5e5dab6947475b5c9cf6b547b1"
+    },
+    {
+      "bytes": 2836634,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899745/SRR7899745_2.fastq.gz",
+      "sha256": "3f737a53d1d1d802209efc8c8e3fc5ba7e6e218019d6e78dfe2c217ecd4ff6b7"
+    },
+    {
+      "bytes": 2271805,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899777/SRR7899777_1.fastq.gz",
+      "sha256": "55ee533320c6219d69cb43c9cf7b78bb20711be252f1dd139ede06f463ba17cf"
+    },
+    {
+      "bytes": 1967566,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899777/SRR7899777_2.fastq.gz",
+      "sha256": "a7d1f2bd08989238696b2b20af5778b33ea62f820d99283df7eba81e30a8f1d3"
+    },
+    {
+      "bytes": 1670906,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899798/SRR7899798_1.fastq.gz",
+      "sha256": "ab06372777e2cbeef95958fad3084d916f4c19b6b7efb39fc6798beaea10d067"
+    },
+    {
+      "bytes": 2160094,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899798/SRR7899798_2.fastq.gz",
+      "sha256": "9ea5242440af31ee03dcb9f780bc0d5090e0afae68b122ffde801509b751572f"
+    },
+    {
+      "bytes": 1626626,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899799/SRR7899799_1.fastq.gz",
+      "sha256": "886bb1965a5c18724f6316e300bd5fa363cb8b9f67525fcbe8fcf764c2fe1336"
+    },
+    {
+      "bytes": 2302882,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899799/SRR7899799_2.fastq.gz",
+      "sha256": "3d4a0066a65da1c742bfea9556c704cf8b897198830d422712c0b2c3bbd7473f"
+    },
+    {
+      "bytes": 2687036,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899800/SRR7899800_1.fastq.gz",
+      "sha256": "25be6ceeb7d9069dd2691c16ede767e9cedd7612a7743f00736f41f2acd22474"
+    },
+    {
+      "bytes": 3570269,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899800/SRR7899800_2.fastq.gz",
+      "sha256": "bf43d5c0e4739fd174616442867209673194c11e675b472b3942071128d3608e"
+    },
+    {
+      "bytes": 1161576,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899801/SRR7899801_1.fastq.gz",
+      "sha256": "f956cea20585e7bb7eec3aa2e42c53161920ff103a8dcedc33fc8e710a5e7d1f"
+    },
+    {
+      "bytes": 1687529,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899801/SRR7899801_2.fastq.gz",
+      "sha256": "fee166354ed2560eb1c1b3090402f2266197b58f05cd6b5eed9c9a13303d51e1"
+    },
+    {
+      "bytes": 1049035,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899802/SRR7899802_1.fastq.gz",
+      "sha256": "45d40ee5561f92c51d190c5fd80024ee3751a59529ecdfece86c0f0f0426274a"
+    },
+    {
+      "bytes": 1412800,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899802/SRR7899802_2.fastq.gz",
+      "sha256": "844d5c007eb1f3704e98b1008b006d8f8f4a1c98623fe5ebb73cbb256c12df3a"
+    },
+    {
+      "bytes": 1295204,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899804/SRR7899804_1.fastq.gz",
+      "sha256": "8564f2e0f8398ba8a574c54bb8c36b7ab6abee73c3689886befcfc1c4262b7b7"
+    },
+    {
+      "bytes": 1773621,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899804/SRR7899804_2.fastq.gz",
+      "sha256": "46837555ccb70a5e120fb143b493b4571be4f170880e65c10e6288271cb93bfa"
+    },
+    {
+      "bytes": 2314252,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899805/SRR7899805_1.fastq.gz",
+      "sha256": "abc70d0f1bb04c59c18b8768484e070d58db38bad810d9d3e07e1948b7648b26"
+    },
+    {
+      "bytes": 3460119,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899805/SRR7899805_2.fastq.gz",
+      "sha256": "14c7f4f370d20b35755d753b2320d32a7402044a4829ec85e275f1c3e09bcde2"
+    },
+    {
+      "bytes": 2477678,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899806/SRR7899806_1.fastq.gz",
+      "sha256": "55c538468bb9ab6b36ebc977a33b90225d34b75175646939e267c143f38a5634"
+    },
+    {
+      "bytes": 3390629,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899806/SRR7899806_2.fastq.gz",
+      "sha256": "d206b2831eff8f24cf33b6bbf38b1fab107b818efea77e9647d0269aa3d8c83e"
+    },
+    {
+      "bytes": 1977069,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899807/SRR7899807_1.fastq.gz",
+      "sha256": "6650cccd8b785e98888f5fbd73e905e6019beed278d4bdbde227281a361516b8"
+    },
+    {
+      "bytes": 2723236,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899807/SRR7899807_2.fastq.gz",
+      "sha256": "429478de93cb5b70e8937380d2cb1d3179ea27e8ab50cd96b5af0941b72ec2c0"
+    },
+    {
+      "bytes": 3855362,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899808/SRR7899808_1.fastq.gz",
+      "sha256": "26d74e3dcdf27807474e4a1832a52ecc76cce246fb2d7c9961cc8047866f0249"
+    },
+    {
+      "bytes": 5073599,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899808/SRR7899808_2.fastq.gz",
+      "sha256": "bce22b2daa0370fd60e28ea0a9afcb1cb2dd8e61bccbb0b4534c017ad950399f"
+    },
+    {
+      "bytes": 3861106,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899810/SRR7899810_1.fastq.gz",
+      "sha256": "9610a411c76f48f39498049c2f9844adc258f83b98b25306ffe2bfbeff1abb59"
+    },
+    {
+      "bytes": 3255907,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899810/SRR7899810_2.fastq.gz",
+      "sha256": "31fa35c0348e2a0352f24384b71ba2341df2fd2f6f26402021107d36e7da44cf"
+    },
+    {
+      "bytes": 2416042,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899811/SRR7899811_1.fastq.gz",
+      "sha256": "e517c54ff014ec72b3f1f62376f92ba1abc0011ff342c0a2b3ea310009323772"
+    },
+    {
+      "bytes": 2092985,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899811/SRR7899811_2.fastq.gz",
+      "sha256": "dcefa86372bb3a1978a3ec267aa2b1e41c1da7e89839958256a94083940e4ae7"
+    },
+    {
+      "bytes": 1855690,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899812/SRR7899812_1.fastq.gz",
+      "sha256": "73cbc8fcfd91a534f6e02973248e1ab13314749bf75026b370a7222a6e40835f"
+    },
+    {
+      "bytes": 1601531,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899812/SRR7899812_2.fastq.gz",
+      "sha256": "67b5c95f1cd67ac8d16870c3c5f32b4c21259623bbc6cd81428d37cf355e5ebd"
+    },
+    {
+      "bytes": 1641858,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899813/SRR7899813_1.fastq.gz",
+      "sha256": "021c4c79e9fe46f6ea821465a61261797a54baba53fbc83d9f370b4197870708"
+    },
+    {
+      "bytes": 1856773,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899813/SRR7899813_2.fastq.gz",
+      "sha256": "59a83acd975a98785159d8ec5bdac6c10880f413dcde1ab15cd1794e461b181f"
+    },
+    {
+      "bytes": 1993399,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899814/SRR7899814_1.fastq.gz",
+      "sha256": "ec10ac1fb18ffcbd957174068898610ad2c1366d33bfb251fd91538d3fa78ef4"
+    },
+    {
+      "bytes": 2132234,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899814/SRR7899814_2.fastq.gz",
+      "sha256": "f2bbc5d44795e940856e30ccc4705d19d39378a232b0dcc160822e4643c0dd2b"
+    },
+    {
+      "bytes": 1126860,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899815/SRR7899815_1.fastq.gz",
+      "sha256": "dc15e86ca8fab0d245eaacddb8d87f20f08e04ea8eff90194610926dc34ccf58"
+    },
+    {
+      "bytes": 1059563,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899815/SRR7899815_2.fastq.gz",
+      "sha256": "25cd18b54d4122fc192a91bc577a3a4afc814fb2b1895e00e04cc3c77604024c"
+    },
+    {
+      "bytes": 1675228,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899816/SRR7899816_1.fastq.gz",
+      "sha256": "e41c53dff90a92274db16b63a5b592680e6055b57d4b6be2fc336bacb66a7bd1"
+    },
+    {
+      "bytes": 2297911,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899816/SRR7899816_2.fastq.gz",
+      "sha256": "f304272143e88932886f9f1ed47163df613a1e045e389eb30e558039ddf092aa"
+    },
+    {
+      "bytes": 2014709,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899817/SRR7899817_1.fastq.gz",
+      "sha256": "ccd474c9df6a074fc29ecd0feede02d762f9cc0ddfdb9476aabeaeb3e368762e"
+    },
+    {
+      "bytes": 2497604,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899817/SRR7899817_2.fastq.gz",
+      "sha256": "c77d1ed764b2697ce8d5ba57602dc1d0588e4033b1c171aa04521d55489cf90d"
+    },
+    {
+      "bytes": 1187106,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899818/SRR7899818_1.fastq.gz",
+      "sha256": "309aa20371094eb46b27886ee9d303c7bdd9e9480f4b29101aaf49c2784c17a6"
+    },
+    {
+      "bytes": 1591408,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899818/SRR7899818_2.fastq.gz",
+      "sha256": "237440320c5cc1073e92916266f85f0c9b869316a80a62809eddb6e83c907cd7"
+    },
+    {
+      "bytes": 2079310,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899819/SRR7899819_1.fastq.gz",
+      "sha256": "183c4ba619f3d2ff72a6cd3dc938847fcefdd0b89822174c439966436daa24b3"
+    },
+    {
+      "bytes": 3118257,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899819/SRR7899819_2.fastq.gz",
+      "sha256": "958993eadffd1ebccdf5ed7422b0df63855322ed28339b203e2f3c7603f50122"
+    },
+    {
+      "bytes": 2971320,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899832/SRR7899832_1.fastq.gz",
+      "sha256": "93fa75f942e17a16b861f0ab5e72c2c7da52047f76eddafdf7e3b22782b4c5cb"
+    },
+    {
+      "bytes": 2911687,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899832/SRR7899832_2.fastq.gz",
+      "sha256": "1b5bd78e749a88af8784e5fcaec1a5aead7f65a871723009c37939e3a8d18165"
+    },
+    {
+      "bytes": 2023571,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899837/SRR7899837_1.fastq.gz",
+      "sha256": "edc6ccc606f9a25fe340cbab77701af4827e5e4bfadd38ccfe6c770b4546108a"
+    },
+    {
+      "bytes": 2549632,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899837/SRR7899837_2.fastq.gz",
+      "sha256": "b5a7d5c9ccd0a0c5d1873fe6b6b84c7a5d31c76ca5f7151d0ff162420d3e86e3"
+    },
+    {
+      "bytes": 2554152,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899841/SRR7899841_1.fastq.gz",
+      "sha256": "24e3f799fed0e4cc2ec9695ab11880f915d7fa5d5065e21c79976fb0540dc1e6"
+    },
+    {
+      "bytes": 2887552,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899841/SRR7899841_2.fastq.gz",
+      "sha256": "8b9451aa5e9cb568ce7604f99671b7adea8e9faeb450cc26f3f8cc2005e9c6ba"
+    },
+    {
+      "bytes": 5012824,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899843/SRR7899843_1.fastq.gz",
+      "sha256": "09d6b716a0d745b6d87db54420d13145346e2448767f9cb2b4e73f9ee1de469f"
+    },
+    {
+      "bytes": 5197242,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899843/SRR7899843_2.fastq.gz",
+      "sha256": "4e6987f77c8b5136a446eead960e4832872f57e952d416ab102c282530134a03"
+    },
+    {
+      "bytes": 7206861,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899849/SRR7899849_1.fastq.gz",
+      "sha256": "72b34030f4c3e1d7f3966559020d22627967c6e318a30f4344bc1950c65abf67"
+    },
+    {
+      "bytes": 6552173,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899849/SRR7899849_2.fastq.gz",
+      "sha256": "43e776f56850b7824f2cac7d2465aeca284ba946f5c7b15d8e093d5fc864240a"
+    },
+    {
+      "bytes": 1379072,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899851/SRR7899851_1.fastq.gz",
+      "sha256": "ba912142be6f5d83215f5817c8a991b5f7b85a895ab7e5403f3357639ac3cd5b"
+    },
+    {
+      "bytes": 1847188,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899851/SRR7899851_2.fastq.gz",
+      "sha256": "3a9a7e0dfcf57498ca3557f9cd8b758c3a05f5d1a11f964dab331d3e065b2882"
+    },
+    {
+      "bytes": 1092534,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899852/SRR7899852_1.fastq.gz",
+      "sha256": "9b9fbba796242917710808f3bdf8a260d7895af32ff749d1384568533e77da0f"
+    },
+    {
+      "bytes": 1354824,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899852/SRR7899852_2.fastq.gz",
+      "sha256": "84de58cf34cd8eed0f7cce378f4dc16830165378dbef9927acf07bca004483ef"
+    },
+    {
+      "bytes": 817184,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899853/SRR7899853_1.fastq.gz",
+      "sha256": "91e703d86d7154402a46f58b43559b8016ffeb4cb0a511ec8620d1d3f7e146a1"
+    },
+    {
+      "bytes": 977388,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899853/SRR7899853_2.fastq.gz",
+      "sha256": "d64a3a7d532c9771efc6063a9b53dcadb2db94754d25c7407a05f62182f47174"
+    },
+    {
+      "bytes": 6059203,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899854/SRR7899854_1.fastq.gz",
+      "sha256": "7b70a2fcb59c92e2a8efc561e6d604e0131fd6547fba12150306a36b181012c0"
+    },
+    {
+      "bytes": 7532152,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899854/SRR7899854_2.fastq.gz",
+      "sha256": "36d987f2c925d57d95cb8221ed9aaf21ed560a5421346e850bebe55d10eef036"
+    },
+    {
+      "bytes": 1219717,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899855/SRR7899855_1.fastq.gz",
+      "sha256": "a43d3449d526dbe1b4349595a0f63c5734ea4f09e681722922aeb25e939913b6"
+    },
+    {
+      "bytes": 1342771,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899855/SRR7899855_2.fastq.gz",
+      "sha256": "9acf1ac2fa199ccd59c576cf7257aecb3d8eca1aa2955c3d47c0095152551035"
+    },
+    {
+      "bytes": 2081878,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899856/SRR7899856_1.fastq.gz",
+      "sha256": "8c07dab9c5e336c13800610203aadb4719dc18d738dcbc672b74726041d33325"
+    },
+    {
+      "bytes": 2818033,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899856/SRR7899856_2.fastq.gz",
+      "sha256": "cf94f89340e9c7f085373b8e50fa4babeb3b0c0e442e551be165f07047a23695"
+    },
+    {
+      "bytes": 1950621,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899857/SRR7899857_1.fastq.gz",
+      "sha256": "621d5c584923af9c1c6bd10a43276d18d206d685ca0543bb2e266a2bd71c883a"
+    },
+    {
+      "bytes": 2378720,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899857/SRR7899857_2.fastq.gz",
+      "sha256": "667b2f126b76c79b9805298461f8af1b1956e05e39e1711540ebd5a2c78beb9f"
+    },
+    {
+      "bytes": 528358,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899858/SRR7899858_1.fastq.gz",
+      "sha256": "38d0f12f1cc400ca9ebe64aea5ffd30f8243ac056f38b1ba717fd0993ccabe3a"
+    },
+    {
+      "bytes": 660251,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899858/SRR7899858_2.fastq.gz",
+      "sha256": "ce7075e85aae370313a48a7d7218c1e932baefee887c649b93c1bf2837617299"
+    },
+    {
+      "bytes": 1839669,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899859/SRR7899859_1.fastq.gz",
+      "sha256": "44bdead91b11864f2c90aec296950298343801a6ab9ff4152944afd51f9b2d89"
+    },
+    {
+      "bytes": 2467009,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899859/SRR7899859_2.fastq.gz",
+      "sha256": "04cb22d872356ce11e8efba6fb1ce64db21b8fb1d07b7d0d08ecef28b2c53e7d"
+    },
+    {
+      "bytes": 1512856,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899860/SRR7899860_1.fastq.gz",
+      "sha256": "83ef0bba6c0333447899dee25f47e30e462526655e224ff669893b0501367f5c"
+    },
+    {
+      "bytes": 2032436,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899860/SRR7899860_2.fastq.gz",
+      "sha256": "88ea5aa0e74c624d94f978fcd81dba895b7d94a30dc78ba29419bde6c001dc55"
+    },
+    {
+      "bytes": 1547469,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899884/SRR7899884_1.fastq.gz",
+      "sha256": "f7ffa864f9d6aa90103802e8690d464fc5a58de851210e38217437a6d10e37d2"
+    },
+    {
+      "bytes": 2093129,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899884/SRR7899884_2.fastq.gz",
+      "sha256": "c62e716f0ca9de9345ff1b6045f214c1e81c6e02932a14db984abf429be84508"
+    },
+    {
+      "bytes": 1853189,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899910/SRR7899910_1.fastq.gz",
+      "sha256": "a4fcb751574fe7118a1cf7b860cbe518db000d692b3417c47967314d9a8aa6b9"
+    },
+    {
+      "bytes": 2717125,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899910/SRR7899910_2.fastq.gz",
+      "sha256": "a9ceaca844f4827edf96cac5b913d29b5f396b8b9c4284cab4b4e3241e18cc9e"
+    },
+    {
+      "bytes": 1193155,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899911/SRR7899911_1.fastq.gz",
+      "sha256": "581a0934e922ef4852ede77245779f7f96fa7ab95be47b54cddfc1cd4728e77c"
+    },
+    {
+      "bytes": 1633075,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899911/SRR7899911_2.fastq.gz",
+      "sha256": "21cc6c42fbe1fcb368ec5bc86493ae54cb804e9bbe8aa6a706a1c2180da6a414"
+    },
+    {
+      "bytes": 2300505,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899912/SRR7899912_1.fastq.gz",
+      "sha256": "1ec5a2b1c8338325b379add0ec1383a8c108f60a563efc0e34d36cf9e3c8e17f"
+    },
+    {
+      "bytes": 3075845,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899912/SRR7899912_2.fastq.gz",
+      "sha256": "5c730d6b5a80fe6b8c8021c94e5fe3a753b4b55cbe52d0c3aaba84b7c39ae7b3"
+    },
+    {
+      "bytes": 1670934,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899913/SRR7899913_1.fastq.gz",
+      "sha256": "ef112c3378b6bf062d83a58614b0f8993e7da38eb5eaef95be707dd6abcaf0e5"
+    },
+    {
+      "bytes": 2000589,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899913/SRR7899913_2.fastq.gz",
+      "sha256": "6d4af93ecca0c78c6d9f744b1445ea57dd69a6cf85d2943e90b43390447381e7"
+    },
+    {
+      "bytes": 2243856,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899914/SRR7899914_1.fastq.gz",
+      "sha256": "175f6d99c825e1e3a8608944332580f11a2547dd63b2bcb087146950c09749b6"
+    },
+    {
+      "bytes": 2338977,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899914/SRR7899914_2.fastq.gz",
+      "sha256": "0913130133d7ea05eff0f2d891fde8dc531079eeb197c5d1c65a44f529d00a04"
+    },
+    {
+      "bytes": 2145145,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899915/SRR7899915_1.fastq.gz",
+      "sha256": "b432257f06b1fc51357a251bb78c0fdf3eefe433422d936a8b37fd2ca4c1d0b0"
+    },
+    {
+      "bytes": 2233154,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899915/SRR7899915_2.fastq.gz",
+      "sha256": "195beebb881ee75e439f84e15b594a760ee301323547f1701df2368356889e18"
+    },
+    {
+      "bytes": 2357342,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899916/SRR7899916_1.fastq.gz",
+      "sha256": "4c524eda3a858ea90897aa4ed609713c77610338e9602f9dd96e12952baea48e"
+    },
+    {
+      "bytes": 2341031,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899916/SRR7899916_2.fastq.gz",
+      "sha256": "669245fac0d6289731349dcb0eee3544a444913e4b5c83bac2696b8b2551d1d3"
+    },
+    {
+      "bytes": 1777684,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899917/SRR7899917_1.fastq.gz",
+      "sha256": "14aac0b43829be2bdad3a3edca0c37af97060f00b1f86c722fcdf35bdec99f56"
+    },
+    {
+      "bytes": 1754252,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899917/SRR7899917_2.fastq.gz",
+      "sha256": "278866d10a8d5af0e971dfda11f9ccfd42e2962d282d62a25d6332711d61cdfd"
+    },
+    {
+      "bytes": 1267191,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899920/SRR7899920_1.fastq.gz",
+      "sha256": "6b29383c9a5e810bc804983d7e91169d54573b3afc34177427b160093250eac0"
+    },
+    {
+      "bytes": 1748784,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899920/SRR7899920_2.fastq.gz",
+      "sha256": "63cccecad622bd5695e5da3c15bdfb2119fb4c18a1d8fb6a302fa34f19a4f365"
+    },
+    {
+      "bytes": 1525627,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899921/SRR7899921_1.fastq.gz",
+      "sha256": "08ae590d50676441d19b2062178f347248e31886c14bd31dccf1ec314b1d4574"
+    },
+    {
+      "bytes": 2047899,
+      "path": "data/interim/pacheco_montealegre_2020_colombia/full/SRR7899921/SRR7899921_2.fastq.gz",
+      "sha256": "39072a6667009295834fae3c318106d69f8c6c4944fb6c6fbdb12b1f0da5917f"
+    },
+    {
+      "bytes": 2613834,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899641/SRR7899641_1.fastq.gz",
+      "sha256": "a1b1b437ba9963f921fb41541076d037975437b222f61aec8ed85152d06a26f0"
+    },
+    {
+      "bytes": 3009907,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899641/SRR7899641_2.fastq.gz",
+      "sha256": "c0376072ae58cbed028106907863f60c1b256b1b733dc57dffd2572f16f0136b"
+    },
+    {
+      "bytes": 977863,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899642/SRR7899642_1.fastq.gz",
+      "sha256": "804e20466b497e8871c54b98488130f55ba0589f6c268a6234b9d2cd062b0937"
+    },
+    {
+      "bytes": 1338160,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899642/SRR7899642_2.fastq.gz",
+      "sha256": "abf5083aedc7a6b0ca737fe2cb55b4a758708c67f47d231bcdf9878b75d21a7b"
+    },
+    {
+      "bytes": 2405478,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899643/SRR7899643_1.fastq.gz",
+      "sha256": "d8fd82d2e09b1503f8ae686e9f07504708f3b04f4f2160d4a751e321417f1347"
+    },
+    {
+      "bytes": 3218818,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899643/SRR7899643_2.fastq.gz",
+      "sha256": "bbe038e4bc38839eda1e30b4774bb15b8e5236852bfa1c2227cc343d1808b517"
+    },
+    {
+      "bytes": 1793107,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899644/SRR7899644_1.fastq.gz",
+      "sha256": "ad971ee91de5f307481989f517709b5db327904fc777e26bbee55a45b1460bb2"
+    },
+    {
+      "bytes": 2672289,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899644/SRR7899644_2.fastq.gz",
+      "sha256": "6de11be64784d90e8e933dc4d065e9854c4dc3995d52c7c3ae0e048afc225a65"
+    },
+    {
+      "bytes": 1017551,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899647/SRR7899647_1.fastq.gz",
+      "sha256": "97dfa15f1867e7fb20aaeea57e56b5e6c18caa47e82ab0339f68423ef1b18391"
+    },
+    {
+      "bytes": 1295761,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899647/SRR7899647_2.fastq.gz",
+      "sha256": "30fc64197fa752ace293b1c327f1d6a58d5af3ee5a6abd5eb39496d251111257"
+    },
+    {
+      "bytes": 988773,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899648/SRR7899648_1.fastq.gz",
+      "sha256": "c50756f309fb0c12e89ede5ff4498ade5664d1df30f7d600448e7c9c06e5dc89"
+    },
+    {
+      "bytes": 1458120,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899648/SRR7899648_2.fastq.gz",
+      "sha256": "a3d9ec4e4a3c388ffde66266d1d704aaed46ae0e55464924755701ca6e5b4c6c"
+    },
+    {
+      "bytes": 1536943,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899649/SRR7899649_1.fastq.gz",
+      "sha256": "abbd626114dc886b2c5955a16ea4a1a18c98c1c342b737d14d5dc8e9e97702cf"
+    },
+    {
+      "bytes": 1473259,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899649/SRR7899649_2.fastq.gz",
+      "sha256": "272d9b04f66323de6fce164dd55ebdbec0afb091b1db36b1a4522b85f9266888"
+    },
+    {
+      "bytes": 667901,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899650/SRR7899650_1.fastq.gz",
+      "sha256": "2f1a7f8f59b8a7a97d63cf75e823352edcbfc4cc9b564deb07c8a05879b8fc32"
+    },
+    {
+      "bytes": 572952,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899650/SRR7899650_2.fastq.gz",
+      "sha256": "5702bc2fdbb89e98261755372826830189b452680af99e5214b68ead11cd86e6"
+    },
+    {
+      "bytes": 1459488,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899655/SRR7899655_1.fastq.gz",
+      "sha256": "7e7b71fed79e28a2f6c7ce261479b65e10fad31f0955e29b1e9a75d85eb52a12"
+    },
+    {
+      "bytes": 2062242,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899655/SRR7899655_2.fastq.gz",
+      "sha256": "253b51f1cd935aa73867d2ff2813cf202a577f569b67465f893a38de459d92e8"
+    },
+    {
+      "bytes": 2831930,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899656/SRR7899656_1.fastq.gz",
+      "sha256": "741deefc3e0bf62accb7546d3ed3ba982e9d6e7c538d2b4f7cae68adc97c6648"
+    },
+    {
+      "bytes": 2550187,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899656/SRR7899656_2.fastq.gz",
+      "sha256": "eba52eae1741b9f53f159476fe70e626a23cc346d2dbc2b24702378db032a4b8"
+    },
+    {
+      "bytes": 1995338,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899678/SRR7899678_1.fastq.gz",
+      "sha256": "0d09e843c4f6c3c8375c1e7fee0728b555070b7f1a5a7b4e91744c240f13ce28"
+    },
+    {
+      "bytes": 3054896,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899678/SRR7899678_2.fastq.gz",
+      "sha256": "95ccc45fd77a66b38cc2db1fd36eca22128d9202365e3310bc55709e32de98b1"
+    },
+    {
+      "bytes": 2061276,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899679/SRR7899679_1.fastq.gz",
+      "sha256": "c68093004375c451fb7fc837e78ec1103dbfeba84629f1f91be09d191ae6284b"
+    },
+    {
+      "bytes": 3096925,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899679/SRR7899679_2.fastq.gz",
+      "sha256": "5e5bef67a4c19690516affdd8bcbaa8bd1ccd13e6ee9e1985f584d5e4a3b69a3"
+    },
+    {
+      "bytes": 1872509,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899680/SRR7899680_1.fastq.gz",
+      "sha256": "16baa2af48bd09421aa9c4e816b7058768ec2e3b54648206f107707113ca3a08"
+    },
+    {
+      "bytes": 2669770,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899680/SRR7899680_2.fastq.gz",
+      "sha256": "38f1bc4bcec588d364d9a042b5184afbb77cadc2fc253e559b9dee5c256c9756"
+    },
+    {
+      "bytes": 2459680,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899681/SRR7899681_1.fastq.gz",
+      "sha256": "99b95363ec2444cdc87e75e8dedddf05c1f14c1da30fca23f104c9e4edd1145b"
+    },
+    {
+      "bytes": 3613514,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899681/SRR7899681_2.fastq.gz",
+      "sha256": "6e5f3a8461801c396f7e3ff2c02b9a958e3b527087bb8d78212ab59cdcb540de"
+    },
+    {
+      "bytes": 2377692,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899682/SRR7899682_1.fastq.gz",
+      "sha256": "e45eecb1555f8a557980ee1104798cd692c7bc3902fb6be2a643b8c121b6582c"
+    },
+    {
+      "bytes": 3121758,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899682/SRR7899682_2.fastq.gz",
+      "sha256": "23502d16992b9f1d77ed039d37ba4d8d07c4ce7fac1092cd5c734c5d8ffe8f0c"
+    },
+    {
+      "bytes": 1685289,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899683/SRR7899683_1.fastq.gz",
+      "sha256": "aee7daef3c743de5cccfcf0af6e3eca345b2e6bef922c063897ac67d87960699"
+    },
+    {
+      "bytes": 2473143,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899683/SRR7899683_2.fastq.gz",
+      "sha256": "aad6822dce2e310f21e31412c418152f3a674045c81bd2194643ce49a9998169"
+    },
+    {
+      "bytes": 2794493,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899684/SRR7899684_1.fastq.gz",
+      "sha256": "82aaee1ab842ffee0fd7a88b9b9f276c4478e5e4410ed7de49bbf926c3364aa2"
+    },
+    {
+      "bytes": 3225893,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899684/SRR7899684_2.fastq.gz",
+      "sha256": "c777e5b163b9d9059038bc00b5f302f4f6f9f187850f4ccdc402f1a33b4a28d6"
+    },
+    {
+      "bytes": 2141984,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899685/SRR7899685_1.fastq.gz",
+      "sha256": "0577633f6117f503853fe1af748d74e925cf0b59929533997c455772080a74e7"
+    },
+    {
+      "bytes": 2961503,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899685/SRR7899685_2.fastq.gz",
+      "sha256": "a417011f6ba48f8ee0dadf51b842e2b8b59450064f7def177a62f26fa82c3f4f"
+    },
+    {
+      "bytes": 3113859,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899686/SRR7899686_1.fastq.gz",
+      "sha256": "5e41c5c0f6757c1b4d6f7b7113b031526f726921b5ecfd0cb06f7af2b5402354"
+    },
+    {
+      "bytes": 3806296,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899686/SRR7899686_2.fastq.gz",
+      "sha256": "6426cc422bdd9318919769c8c9468edb82b493bda33b39a28dd26ed373a3d233"
+    },
+    {
+      "bytes": 3982668,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899687/SRR7899687_1.fastq.gz",
+      "sha256": "b64d76d0c7172a5f5f7e23fcb0db445d1216f0c92cbd7718c18d67feb04142fe"
+    },
+    {
+      "bytes": 4104998,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899687/SRR7899687_2.fastq.gz",
+      "sha256": "f31c80d58c10660428e3b903d10ee879400b4a22fb23911f2184911c9ea9b7cd"
+    },
+    {
+      "bytes": 2883923,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899688/SRR7899688_1.fastq.gz",
+      "sha256": "35335fb1b0bce8918b7428ea0655a67df0f4c18573369698345943762bc04896"
+    },
+    {
+      "bytes": 3295071,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899688/SRR7899688_2.fastq.gz",
+      "sha256": "54cc2b76049a48d6fe6d684ee931e4ecb7d1fc32e13e2085721cbed7b65b65eb"
+    },
+    {
+      "bytes": 1927877,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899691/SRR7899691_1.fastq.gz",
+      "sha256": "65ee66d7502948c744a9f4fa19304425c805afdc68da2bffade9f4310a17da73"
+    },
+    {
+      "bytes": 2903545,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899691/SRR7899691_2.fastq.gz",
+      "sha256": "9f348949fc326e95879f008b766a1b5a6c637c92a09d54a883f3e4642cb8ae6b"
+    },
+    {
+      "bytes": 884311,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899692/SRR7899692_1.fastq.gz",
+      "sha256": "5221080afff1ca36ceb8470a458a28c303cc6a1e9bccbbc449b6035dde7c5721"
+    },
+    {
+      "bytes": 1285652,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899692/SRR7899692_2.fastq.gz",
+      "sha256": "d337bfcd5a485a4cda3bd0362b48e32dbda4e748ffb1620ac59625b03b9d01a2"
+    },
+    {
+      "bytes": 1679222,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899693/SRR7899693_1.fastq.gz",
+      "sha256": "5019fcc0f02f43205eebdec7513761d83c3115cb1cbbdcfade53552142a7b5a1"
+    },
+    {
+      "bytes": 2461869,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899693/SRR7899693_2.fastq.gz",
+      "sha256": "f6bdbb3432f27e1ba0792019f9dab01344b0d68ff460ad93b50e762f7cbe0948"
+    },
+    {
+      "bytes": 1017042,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899694/SRR7899694_1.fastq.gz",
+      "sha256": "e43dada449bde71ccf698fd9085f163730086f9cf615518b4fd7266e9d4d4325"
+    },
+    {
+      "bytes": 1509154,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899694/SRR7899694_2.fastq.gz",
+      "sha256": "b00445363044c7e6d94c4a8c49ccd32312d7205964943f5563c4c20b16248aea"
+    },
+    {
+      "bytes": 1882555,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899696/SRR7899696_1.fastq.gz",
+      "sha256": "30accf99876743a6770db800e895f3d5359240e75f8e4c018f33116de45ab253"
+    },
+    {
+      "bytes": 2760920,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899696/SRR7899696_2.fastq.gz",
+      "sha256": "f33354c872d1ae85bbe703069cc7c34754eb6d8dab66039addce96ab78b81f3c"
+    },
+    {
+      "bytes": 862472,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899697/SRR7899697_1.fastq.gz",
+      "sha256": "7a5028fc4b66b04aea0266a902d742c4b10a641bc72de03d8282423e8967316a"
+    },
+    {
+      "bytes": 1263737,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899697/SRR7899697_2.fastq.gz",
+      "sha256": "2bbaedab992816ac8735032a6cc5f1c4ca907dee0c2ced721eb5c51789f70fb0"
+    },
+    {
+      "bytes": 1356086,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899698/SRR7899698_1.fastq.gz",
+      "sha256": "93c42d5d8af9bbc6445771de4f8c44ad437511bf2db4c5c6f228cc27b2bff1e9"
+    },
+    {
+      "bytes": 2057248,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899698/SRR7899698_2.fastq.gz",
+      "sha256": "4589bf2800f5bd8fdb785e213c2799f45c9e89c469b89b93a8512f71a343a930"
+    },
+    {
+      "bytes": 3195969,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899699/SRR7899699_1.fastq.gz",
+      "sha256": "760cc91f9d3790255eb1e59c220c04741c91a1184f510e170cfcd2445bff29b5"
+    },
+    {
+      "bytes": 5202188,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899699/SRR7899699_2.fastq.gz",
+      "sha256": "78c6f0ab45ed9034baa2cc83c4de83dc2efb41bce37acc6d03819de1a234cb01"
+    },
+    {
+      "bytes": 1784491,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899700/SRR7899700_1.fastq.gz",
+      "sha256": "ddefa8d38a81ac39a0079f2adebe277ce12586e20f1609c95ef82c11cbab1cef"
+    },
+    {
+      "bytes": 2537212,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899700/SRR7899700_2.fastq.gz",
+      "sha256": "00db3e5aa9c094442ee6ad5e3f8d64fc75b5befbe650b5549d7bc2463adcb074"
+    },
+    {
+      "bytes": 2420466,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899709/SRR7899709_1.fastq.gz",
+      "sha256": "a07ff3cd4dc8f98e019556dc61d0701de25369ebd912e87b5caf9d3a70fcb532"
+    },
+    {
+      "bytes": 2637690,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899709/SRR7899709_2.fastq.gz",
+      "sha256": "fd61008767fca0a9380bbeb521d75fab48ced7cfbd91446186695918bbe1b3b0"
+    },
+    {
+      "bytes": 3875815,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899718/SRR7899718_1.fastq.gz",
+      "sha256": "24607d5dff764618c335114a58bd1961c28266ec59249d270e1cfdde6ba3b3bf"
+    },
+    {
+      "bytes": 3726984,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899718/SRR7899718_2.fastq.gz",
+      "sha256": "e4271fc23e4fda209a260e0769e0ee3c43a907386b1a7e4dd31bf8af8ca4d6d6"
+    },
+    {
+      "bytes": 3408510,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899719/SRR7899719_1.fastq.gz",
+      "sha256": "7742bf9fa38393c19b6b49ff799dfdc5ed54f69636e73153b27700235ec39f14"
+    },
+    {
+      "bytes": 2936844,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899719/SRR7899719_2.fastq.gz",
+      "sha256": "534a0394e8dd3799418f3b84b94f359fefc1a5d8fdbfbdede208474e028a606e"
+    },
+    {
+      "bytes": 1738590,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899720/SRR7899720_1.fastq.gz",
+      "sha256": "9ae3e47d0f49e29df9f18bff97d313548ca056591d5fea11df3d91224972cdc7"
+    },
+    {
+      "bytes": 1992314,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899720/SRR7899720_2.fastq.gz",
+      "sha256": "b4794d902a9f030557592727ec21ba84fd27b02cd63d7a1d5d87a8db7b41e95c"
+    },
+    {
+      "bytes": 675341,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899721/SRR7899721_1.fastq.gz",
+      "sha256": "817edecc4dd4a708f359fd746d664d7409c3fa699543c1e83652cb61b42ab910"
+    },
+    {
+      "bytes": 530775,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899721/SRR7899721_2.fastq.gz",
+      "sha256": "dbd2073cba715af29c66e61ee8c093fb23e3812bef26059cd5d2d2330db2a5ab"
+    },
+    {
+      "bytes": 3955039,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899722/SRR7899722_1.fastq.gz",
+      "sha256": "ae0f62b1497965bea5317c90337505739241da899d0822de2a2d7b4275c3be4c"
+    },
+    {
+      "bytes": 3989815,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899722/SRR7899722_2.fastq.gz",
+      "sha256": "5b963e353a951fb29b30198017e9ce8944566eff577e1b77b6aa431ca476e8e8"
+    },
+    {
+      "bytes": 4806371,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899723/SRR7899723_1.fastq.gz",
+      "sha256": "0215fbdd1edb85655ed35aa663b05a09a173a1f660ca1e3ddb680e575bbe50f3"
+    },
+    {
+      "bytes": 5198290,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899723/SRR7899723_2.fastq.gz",
+      "sha256": "874a4ac7f2fded34cbca69b2c4066fa49cecf3b39bc002768c18eaa4cb085ece"
+    },
+    {
+      "bytes": 4342893,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899724/SRR7899724_1.fastq.gz",
+      "sha256": "8d50a527c64f01984bd5ab854b69cf020df1c9287f94bda43d0ff4714c9c780f"
+    },
+    {
+      "bytes": 4989208,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899724/SRR7899724_2.fastq.gz",
+      "sha256": "b2bfe306eacb4fe382dd32e19c8fdae4394f716494cfb291c0dee7b8c6625cf8"
+    },
+    {
+      "bytes": 3178150,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899725/SRR7899725_1.fastq.gz",
+      "sha256": "9ef8e4ba7ab4de32042f558708ba0b638064b6c71ea3302460d7392dc2fb458c"
+    },
+    {
+      "bytes": 3783540,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899725/SRR7899725_2.fastq.gz",
+      "sha256": "a0de3ca10e1f9652afad1fa2bb5f96cebcb2baae70bbf69d6e2f3d00bfde640e"
+    },
+    {
+      "bytes": 1020284,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899726/SRR7899726_1.fastq.gz",
+      "sha256": "3c504d4ddf5824fba495274ead000f04c1af2d8b776ff371c30ec73eb23ee5d6"
+    },
+    {
+      "bytes": 1485068,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899726/SRR7899726_2.fastq.gz",
+      "sha256": "49be51c0bcc9fadeb11be72110ce97c1356a933097b18209f7a937c1a8329675"
+    },
+    {
+      "bytes": 2714103,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899727/SRR7899727_1.fastq.gz",
+      "sha256": "fa188e54b42adf97643f482bd23bb22676c20dfb3beaa9174b7f733fbb41785a"
+    },
+    {
+      "bytes": 4019462,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899727/SRR7899727_2.fastq.gz",
+      "sha256": "9e5695728a403cd1854b8a4594add0d636376a577a80f843a6f700257b096e38"
+    },
+    {
+      "bytes": 1845520,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899728/SRR7899728_1.fastq.gz",
+      "sha256": "554c2fd74d822091ac3a1a5d91f6a9f6738b15ad5e79c90baf8e72e5a727b94a"
+    },
+    {
+      "bytes": 1932166,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899728/SRR7899728_2.fastq.gz",
+      "sha256": "868169573f880dfad906c5f6bfb88b7bec13e51d17523018c48d646c15a11494"
+    },
+    {
+      "bytes": 2907107,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899729/SRR7899729_1.fastq.gz",
+      "sha256": "dc4be4310464ca47f71f63635669036debf36866bdea21b330de93bf4cc6fbc0"
+    },
+    {
+      "bytes": 3419206,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899729/SRR7899729_2.fastq.gz",
+      "sha256": "347f7778651878f2ec8c3bf12fd1952df5ed1b91c7ef91875d045076fb8829f7"
+    },
+    {
+      "bytes": 599377,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899730/SRR7899730_1.fastq.gz",
+      "sha256": "5076391ccf43e1eae81b9deeee0c56c9aa6a922d3120d4a7b202a50a06b28ba3"
+    },
+    {
+      "bytes": 483713,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899730/SRR7899730_2.fastq.gz",
+      "sha256": "ce68da9c7d274d726880f5b0f57218fbce2f82d9098c47f27f4ff051fad14869"
+    },
+    {
+      "bytes": 2199123,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899744/SRR7899744_1.fastq.gz",
+      "sha256": "8eb29f0b6ff78119ece036e116e17922c5b22bceb50018d26abafd16f2afba1c"
+    },
+    {
+      "bytes": 2823145,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899744/SRR7899744_2.fastq.gz",
+      "sha256": "4027b8e89d7e9889f84721b097a088e5cc95fa451ac204760606e186d0975ad5"
+    },
+    {
+      "bytes": 1677370,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899745/SRR7899745_1.fastq.gz",
+      "sha256": "9806e1118beb2414c8c8c5898c7c802f23db7a6fa0513ee363d664704c9cff25"
+    },
+    {
+      "bytes": 2187023,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899745/SRR7899745_2.fastq.gz",
+      "sha256": "fb2da0500243e43429c37d333dc1f0c99c3a49b897c7c8223c5c5c78cc07ab8f"
+    },
+    {
+      "bytes": 1841642,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899777/SRR7899777_1.fastq.gz",
+      "sha256": "6f704e76b67fb1c843b93e3c9eb960993714c7245ae0ef8048a96eba58c43c66"
+    },
+    {
+      "bytes": 1503176,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899777/SRR7899777_2.fastq.gz",
+      "sha256": "0f1a8274bb777ecaa6c760cb0bd57c0b85455fa497578664bacde2a444a18a35"
+    },
+    {
+      "bytes": 1244301,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899798/SRR7899798_1.fastq.gz",
+      "sha256": "40d3940b4a914920a302e0eabc499751e6722d33568ae98867a2bbff8741b957"
+    },
+    {
+      "bytes": 1735995,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899798/SRR7899798_2.fastq.gz",
+      "sha256": "95af147fee4de9e37e68b4dc81a65db37bb81696959e064274dffc3f124ffb3d"
+    },
+    {
+      "bytes": 1229172,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899799/SRR7899799_1.fastq.gz",
+      "sha256": "bed2eccd98ee1fc8009e65cd82d47ef2fb4f246adee413d6bd14e8e157639156"
+    },
+    {
+      "bytes": 1927358,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899799/SRR7899799_2.fastq.gz",
+      "sha256": "51b865696bbb7eaca82023d8f970ca16ef4d5fb17579ddbf73e9f0b38c6f176d"
+    },
+    {
+      "bytes": 2018517,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899800/SRR7899800_1.fastq.gz",
+      "sha256": "0de311335b2956638ca237831920e0fdff49ca078a5392fe6ab2e61e8b773945"
+    },
+    {
+      "bytes": 2913413,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899800/SRR7899800_2.fastq.gz",
+      "sha256": "c44c16ca015ea048c54fb7d80116102ca5f7eec48d043262304ddc8164b504c6"
+    },
+    {
+      "bytes": 866458,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899801/SRR7899801_1.fastq.gz",
+      "sha256": "39ac05bf27293202c96dc799b335e88ff48081abd3687b6b4cb8df4b4131bef7"
+    },
+    {
+      "bytes": 1404586,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899801/SRR7899801_2.fastq.gz",
+      "sha256": "4f0cbf2c592cbae48a9a4bb84cb231d08f1aa4fb2f77a5d793187add42375ce9"
+    },
+    {
+      "bytes": 784557,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899802/SRR7899802_1.fastq.gz",
+      "sha256": "97cd60dde6e8f422f8a0bdbc8c2235adbd7e9a4eff834ea05f1c6be5a76ec73e"
+    },
+    {
+      "bytes": 1152780,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899802/SRR7899802_2.fastq.gz",
+      "sha256": "8ed569303aff0b7f5ee3cd972ab880afcee81c51d3b166b8d46813d46c88dbc9"
+    },
+    {
+      "bytes": 972370,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899804/SRR7899804_1.fastq.gz",
+      "sha256": "3f64765072f968387597275d508598fabba3f9b2b4b0314fd6adeacbcd8c4da3"
+    },
+    {
+      "bytes": 1458078,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899804/SRR7899804_2.fastq.gz",
+      "sha256": "f4f904620f0d6498c03f04ab368bf06bb5af4f328912bfe1dceaf8938d402f2e"
+    },
+    {
+      "bytes": 1729703,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899805/SRR7899805_1.fastq.gz",
+      "sha256": "ce5c738d7f85b12f0f6b874320e0280fcd34fc298ac20354b0f09302cc2f9a64"
+    },
+    {
+      "bytes": 2915341,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899805/SRR7899805_2.fastq.gz",
+      "sha256": "76f39ae15522a2bc2f5b7db5b52759ddb11f9d616afe4277431173bf32deaa19"
+    },
+    {
+      "bytes": 1859293,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899806/SRR7899806_1.fastq.gz",
+      "sha256": "43b56ff78f8c2e42223de615455971f40e61506a31372bbb1e9cea0aac3a80a5"
+    },
+    {
+      "bytes": 2794818,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899806/SRR7899806_2.fastq.gz",
+      "sha256": "2250807f817e81c0065078e64fc995e252b257cb2200b6eac42fdf3cc137c4a1"
+    },
+    {
+      "bytes": 1486729,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899807/SRR7899807_1.fastq.gz",
+      "sha256": "3410bfb5af4dbecefb9f63bde8e07680cc507595e071397d6e88f3e4796bb20c"
+    },
+    {
+      "bytes": 2249579,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899807/SRR7899807_2.fastq.gz",
+      "sha256": "2c3a3eddf41ed1baf69fbf0d8e9ceff4934508d8aab19def6e877f025c89486f"
+    },
+    {
+      "bytes": 2915980,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899808/SRR7899808_1.fastq.gz",
+      "sha256": "a46e985fb118ecc53eb906afe16853188cb990b181c833c011449071b78602ba"
+    },
+    {
+      "bytes": 4159697,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899808/SRR7899808_2.fastq.gz",
+      "sha256": "607155d5c6d8b779751b48f8a49eeed9db9d07835004503bf8681813f81efb12"
+    },
+    {
+      "bytes": 3274942,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899810/SRR7899810_1.fastq.gz",
+      "sha256": "78db16a38742e0e5480fa94fa2ad6d9d8ba62ebc076d3f97b5b1ff9097c52e3d"
+    },
+    {
+      "bytes": 2684062,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899810/SRR7899810_2.fastq.gz",
+      "sha256": "4ff97337995e374f780bdd252d0f56ff60a823894cc553930024dd97f58a7fd1"
+    },
+    {
+      "bytes": 1915568,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899811/SRR7899811_1.fastq.gz",
+      "sha256": "ef8c552dc41c0f07a51602bddd970c65fca1c1dab7afa6f5866e2013d6fd7b39"
+    },
+    {
+      "bytes": 1615534,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899811/SRR7899811_2.fastq.gz",
+      "sha256": "285171fb8597e0c5fd8511c51d26d42a9eef008a5d0c3e6316aaeafa2ba3f929"
+    },
+    {
+      "bytes": 1499773,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899812/SRR7899812_1.fastq.gz",
+      "sha256": "cfd5ae692c18490d240c8be89c28903bf14dccd0b997e12af4bc6c699955dab5"
+    },
+    {
+      "bytes": 1260744,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899812/SRR7899812_2.fastq.gz",
+      "sha256": "b59f59dd56de48955a05f2ddbd8b3dbd7ad5890779cb32d234514739047bceeb"
+    },
+    {
+      "bytes": 1257197,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899813/SRR7899813_1.fastq.gz",
+      "sha256": "3f23dfc4bd41836616814e4f3e13ef2a6753f08b5c8b2e5c7d8e57ae2b15c640"
+    },
+    {
+      "bytes": 1477213,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899813/SRR7899813_2.fastq.gz",
+      "sha256": "97a5abd709d166893a2d74094bd731b5932972dbd8c92c347d59d770725d2ac2"
+    },
+    {
+      "bytes": 1538423,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899814/SRR7899814_1.fastq.gz",
+      "sha256": "dde54e2e5730f5826b7c0de2e1dc1b380e7c9adf921203b676bce92ea3c738da"
+    },
+    {
+      "bytes": 1706593,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899814/SRR7899814_2.fastq.gz",
+      "sha256": "bef412941762ca09dbffdf8ddd0df92a26ffaae45102ca7730cce890c0c89a01"
+    },
+    {
+      "bytes": 928561,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899815/SRR7899815_1.fastq.gz",
+      "sha256": "3cc5319323825315165f71d8a41e04a34706e8cfd36b0c90ad578356ade9f03b"
+    },
+    {
+      "bytes": 870211,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899815/SRR7899815_2.fastq.gz",
+      "sha256": "e47b2b507f599b51c18400405c5e5d26ba51b450bbef77c6f4b31527394a5b24"
+    },
+    {
+      "bytes": 1266282,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899816/SRR7899816_1.fastq.gz",
+      "sha256": "7ba3eb4243e5d4bec8d311ac9827ff053eb1a51b0c5b24a520dd463e6f83cb9d"
+    },
+    {
+      "bytes": 1905455,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899816/SRR7899816_2.fastq.gz",
+      "sha256": "68c6640c7a228d5da75f4c773e6c90ce874e755dde300fc906fe8f59a7663653"
+    },
+    {
+      "bytes": 1539116,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899817/SRR7899817_1.fastq.gz",
+      "sha256": "e30c7c83a63763fb7c5e11171f916d5ba78182a3080a021c27e4bac993b46363"
+    },
+    {
+      "bytes": 2029927,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899817/SRR7899817_2.fastq.gz",
+      "sha256": "65a121824b281c69d65e4786663432266dd38dfa26b146a234ff284d46808050"
+    },
+    {
+      "bytes": 895913,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899818/SRR7899818_1.fastq.gz",
+      "sha256": "ebdd9e6450e9e6d1034e40301b367ea5be72393abf5ef164572c1a45bbf15e28"
+    },
+    {
+      "bytes": 1308073,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899818/SRR7899818_2.fastq.gz",
+      "sha256": "7bc0f68b4b206821d80c251160064c3f07a0ee9f34657a8ef8b38504e21951f9"
+    },
+    {
+      "bytes": 1551531,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899819/SRR7899819_1.fastq.gz",
+      "sha256": "b668c2ffb8812e4dece54a57ed0f72b608038f181b6162dc63dce4d543360742"
+    },
+    {
+      "bytes": 2627792,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899819/SRR7899819_2.fastq.gz",
+      "sha256": "b0b7ce793385a4600524985d19e7b046f518a2e498be79dc010afb8f2b1f8309"
+    },
+    {
+      "bytes": 2356981,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899832/SRR7899832_1.fastq.gz",
+      "sha256": "49e614078b54a36f81d8de640f93ae49967ce663233c2a2720b7323822a6bc3c"
+    },
+    {
+      "bytes": 2281022,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899832/SRR7899832_2.fastq.gz",
+      "sha256": "6c9a0f851a742b390c34d199a2f29b58c5e717212d5a9615f2193db8a3d581f6"
+    },
+    {
+      "bytes": 1509288,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899837/SRR7899837_1.fastq.gz",
+      "sha256": "a0ed02d4f02dcf6ec165164e7e9764c2c7b4293394b3fa7f5ac3ad7e3d82e248"
+    },
+    {
+      "bytes": 2098012,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899837/SRR7899837_2.fastq.gz",
+      "sha256": "e6929fd73662bf66d97424b7fce1adcecf8cd2458941a2f71cf09d880961ea1c"
+    },
+    {
+      "bytes": 1920956,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899841/SRR7899841_1.fastq.gz",
+      "sha256": "010b6018c9409dc363427457c3d772e578042bda8dd66a0379ab67134278d4da"
+    },
+    {
+      "bytes": 2285839,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899841/SRR7899841_2.fastq.gz",
+      "sha256": "baf028654e5480e226833ef9bb7a3884eeb1d048d029f8f1aaf0cd6b34cb333e"
+    },
+    {
+      "bytes": 3537420,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899843/SRR7899843_1.fastq.gz",
+      "sha256": "d8e80c01c4f2fc9c99dd319680ae0653f0fffe901b08bb6be6c08218b86803be"
+    },
+    {
+      "bytes": 3761488,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899843/SRR7899843_2.fastq.gz",
+      "sha256": "83686c53f7857858fcbee710b1d6f6356121cce36dc9bfd005ec0db3a30a0dfa"
+    },
+    {
+      "bytes": 5628855,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899849/SRR7899849_1.fastq.gz",
+      "sha256": "05abb76f46da55e718c85d2489329a1503890099da9ab1771b2db09ab3a09e68"
+    },
+    {
+      "bytes": 5035621,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899849/SRR7899849_2.fastq.gz",
+      "sha256": "eb362d6a8aef2ca2eef389345691f833c26945df05ae6dc40fe28f89a2b9d1e0"
+    },
+    {
+      "bytes": 1029972,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899851/SRR7899851_1.fastq.gz",
+      "sha256": "25678c05bcd101354e2eedfb808833bb6ef6ce5ab70740d338b0ef8f640a0550"
+    },
+    {
+      "bytes": 1503418,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899851/SRR7899851_2.fastq.gz",
+      "sha256": "6433eec2273e3138ba49e539b99defe90dffea8ecc078e023bd10ce3c9c48dc8"
+    },
+    {
+      "bytes": 821372,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899852/SRR7899852_1.fastq.gz",
+      "sha256": "8ab102ecb006aa9a83d1abb834d0e7ff2999e9ce8f5309d82a6c2b7c712aba42"
+    },
+    {
+      "bytes": 1083211,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899852/SRR7899852_2.fastq.gz",
+      "sha256": "dbb11115dd460887ee2b4d3d94fd6ee363701c1c3c5bcd2c71d7825632fd3d9c"
+    },
+    {
+      "bytes": 607133,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899853/SRR7899853_1.fastq.gz",
+      "sha256": "26c86f149f21ce1294d42d1fd9b2fdbdea4e9be111a3bb7d3b5c447003389773"
+    },
+    {
+      "bytes": 766499,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899853/SRR7899853_2.fastq.gz",
+      "sha256": "003ffcee5c6cb4486dee2368bba6e3e372159632be5c813cae33e6f609720ab2"
+    },
+    {
+      "bytes": 4543593,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899854/SRR7899854_1.fastq.gz",
+      "sha256": "23a922136023c47b14937e85ccef955ced84e142b3b439a7b5720fc1c252b984"
+    },
+    {
+      "bytes": 6046507,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899854/SRR7899854_2.fastq.gz",
+      "sha256": "fafea32493e199b09aafafc91fb4d517331bcb12a95a951cddd9e49b735ce308"
+    },
+    {
+      "bytes": 939170,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899855/SRR7899855_1.fastq.gz",
+      "sha256": "9f76e01176824430569ab10c18768e5d115308ae407cfd9aa68fa0b144687e55"
+    },
+    {
+      "bytes": 1060615,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899855/SRR7899855_2.fastq.gz",
+      "sha256": "76749a710539bc072e90e976f4bd69cd44eaa943fee2055d4b44f903d556bbee"
+    },
+    {
+      "bytes": 1553217,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899856/SRR7899856_1.fastq.gz",
+      "sha256": "b1401dc3f9103761e424b8c758a2ac5fc16c1bfa6ebeab1d5d10a63fb3161069"
+    },
+    {
+      "bytes": 2306166,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899856/SRR7899856_2.fastq.gz",
+      "sha256": "f07ef0766826aa45092b321b2529d8d79decc8e8ff596d071f3b7bf3a831ed9e"
+    },
+    {
+      "bytes": 1463253,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899857/SRR7899857_1.fastq.gz",
+      "sha256": "ad25e42601a20a6ab5fe36f14c57b8d63ba9c877f13016982a16e7ea4ab31f82"
+    },
+    {
+      "bytes": 1885670,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899857/SRR7899857_2.fastq.gz",
+      "sha256": "7e786e20ca6ebcfe39552b798eda375ab0a81da11474771628f00b1d2263a137"
+    },
+    {
+      "bytes": 396233,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899858/SRR7899858_1.fastq.gz",
+      "sha256": "f65237cdeaaf150d3ed441998b11136886d03768f09750174d98cccc9360bbc2"
+    },
+    {
+      "bytes": 527485,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899858/SRR7899858_2.fastq.gz",
+      "sha256": "94a5ce418f83b63e7973e8f5844f4a64bf2c34863333ee75ff849d1ab7fa0282"
+    },
+    {
+      "bytes": 1390741,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899859/SRR7899859_1.fastq.gz",
+      "sha256": "1bbd11077cccc60a3188bafb677a76b0bb1a6ea386ad24290dfc031df9a65856"
+    },
+    {
+      "bytes": 2030218,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899859/SRR7899859_2.fastq.gz",
+      "sha256": "059dad2e0784cc2a734a4406b9c8270d8d87f758ec589319b6335c616d7b6d8c"
+    },
+    {
+      "bytes": 1121326,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899860/SRR7899860_1.fastq.gz",
+      "sha256": "5297d3e44dabbb30add56cff3ed4337def9a4d86669552b84c9a1f432d811d05"
+    },
+    {
+      "bytes": 1648342,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899860/SRR7899860_2.fastq.gz",
+      "sha256": "ca755e0092576a1c1225adb641bad6db84da07c3ce24bc3bf84ceb6138b4c91c"
+    },
+    {
+      "bytes": 1159147,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899884/SRR7899884_1.fastq.gz",
+      "sha256": "7776a1b45ebd28f91c5f313bf2432b847a4b3d618de0eae89f50962bf5db14ec"
+    },
+    {
+      "bytes": 1716729,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899884/SRR7899884_2.fastq.gz",
+      "sha256": "d8f37f38fe60d4911687a77c811254f0a485c26ed6c68f8f7095b708c6aaecbb"
+    },
+    {
+      "bytes": 1376287,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899910/SRR7899910_1.fastq.gz",
+      "sha256": "bb09b2972c5446597c78c6216ea3b212fac44b3fb376f34c36a980677b0a7307"
+    },
+    {
+      "bytes": 2262487,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899910/SRR7899910_2.fastq.gz",
+      "sha256": "914d7b6798688d7703b38f73bcdf4f824c477ab8c4ca3dca7feb62f1b7fdcd71"
+    },
+    {
+      "bytes": 895400,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899911/SRR7899911_1.fastq.gz",
+      "sha256": "a868eda8c254bd7ca5656f1ae49178679ba3d3457b1975b7c646dce9feecf7d9"
+    },
+    {
+      "bytes": 1341113,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899911/SRR7899911_2.fastq.gz",
+      "sha256": "362b3e296873d0763f53b51f1adff77719d52aba109d09491d32cfc70fd3f747"
+    },
+    {
+      "bytes": 1722368,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899912/SRR7899912_1.fastq.gz",
+      "sha256": "96c30b4d0964e4d15f52e5224235baeefa0feaf46512a1af03b1068e1297a345"
+    },
+    {
+      "bytes": 2502762,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899912/SRR7899912_2.fastq.gz",
+      "sha256": "25732a7464ebb60a8d7bb444d55f39173ca2631ed10f186c3ad40dc8b5847192"
+    },
+    {
+      "bytes": 1258528,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899913/SRR7899913_1.fastq.gz",
+      "sha256": "52f5cb63b0376edcf116efe625e0b11f80027eadd24f49b864861258e9842192"
+    },
+    {
+      "bytes": 1587038,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899913/SRR7899913_2.fastq.gz",
+      "sha256": "b8c6a0a45a124348093df814665345e853f2d0228fda5788169862530f712d03"
+    },
+    {
+      "bytes": 1718180,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899914/SRR7899914_1.fastq.gz",
+      "sha256": "d7b157db1e805ae0d7d2bd08a0d1bc636df09f82348f26ad4a18258a1fb26af4"
+    },
+    {
+      "bytes": 1806694,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899914/SRR7899914_2.fastq.gz",
+      "sha256": "38b34d4eb5b05fa40831c2a4b783e777464f70d8c5da82ebe20532d6884e1d64"
+    },
+    {
+      "bytes": 1627558,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899915/SRR7899915_1.fastq.gz",
+      "sha256": "b2b115a53bb68c8e2ad12382ca822335a9ceedf25aee2a0a8cd2005df8ece061"
+    },
+    {
+      "bytes": 1700262,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899915/SRR7899915_2.fastq.gz",
+      "sha256": "8af95df6bf740262354963bb0ac56bc524d0afdfa7d004801b775b000e516eb7"
+    },
+    {
+      "bytes": 1828997,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899916/SRR7899916_1.fastq.gz",
+      "sha256": "dd572abfa5b460e9d55434b1cf87656e055f05beea3a9a1761df2a3f09850e3c"
+    },
+    {
+      "bytes": 1794562,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899916/SRR7899916_2.fastq.gz",
+      "sha256": "0b4a4b5334e9cdfeb38886b3dc0149325b5925df4854a3d80874f5690d56901a"
+    },
+    {
+      "bytes": 1395926,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899917/SRR7899917_1.fastq.gz",
+      "sha256": "639f24f29de764e12a32bbc758bdccf4490c107ed70f4ee4ac922987845b5b68"
+    },
+    {
+      "bytes": 1359666,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899917/SRR7899917_2.fastq.gz",
+      "sha256": "eb270e12913f2e0280f1b668a59969a3aad4b59218e33c467b8d865912036235"
+    },
+    {
+      "bytes": 941362,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899920/SRR7899920_1.fastq.gz",
+      "sha256": "213f368c90743f2ad05410faaeee2e1f36946fa75e7afd17e81d78e56b33eeec"
+    },
+    {
+      "bytes": 1430439,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899920/SRR7899920_2.fastq.gz",
+      "sha256": "13bd96088d15861b4fc3969eb02a1ca952e7e3eb5c36c0dd236fcc7b8e711c81"
+    },
+    {
+      "bytes": 1147492,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899921/SRR7899921_1.fastq.gz",
+      "sha256": "47af82e70d0201cdc8735a324ca2d7870635373445f3ef4f2630d8638c858d6c"
+    },
+    {
+      "bytes": 1678804,
+      "path": "data/raw/pacheco_montealegre_2020_colombia/SRR7899921/SRR7899921_2.fastq.gz",
+      "sha256": "c58cb1c9cd4f2ebdfc7fca048cb615c46409d86c14b941248b32b5542906e794"
+    },
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 87048,
+      "path": "metadata/manifests/pacheco_montealegre_2020_colombia.tsv",
+      "sha256": "55876544d81292653080be9bf746da3cc1ed2fc3de682554913c34f2597b7373"
+    },
+    {
+      "bytes": 101,
+      "path": "python/cacao_inventory/__init__.py",
+      "sha256": "eeb1bc857ffd5b379336ada6c100c6b1e6bfdd6b4595300af2d8217e8c9ae977"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4203,
+      "path": "python/cacao_inventory/bacterial_filter.py",
+      "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 4521,
+      "path": "python/cacao_inventory/design.py",
+      "sha256": "0759a1838ba1fe9187642c5cadc9f429ca4703d3222539a73df95d77f828d58d"
+    },
+    {
+      "bytes": 5411,
+      "path": "python/cacao_inventory/discovery.py",
+      "sha256": "28c4b1bdb4f59f1f63a12add9ad8f6d9997cb569bc10d3103e65a3f7f15f065c"
+    },
+    {
+      "bytes": 8359,
+      "path": "python/cacao_inventory/diversity_validation.py",
+      "sha256": "2027045c5d0c5665e6c921a0475ff227e1e1cd7e5a62f4262e805d4d7eece429"
+    },
+    {
+      "bytes": 4827,
+      "path": "python/cacao_inventory/download.py",
+      "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+    },
+    {
+      "bytes": 2107,
+      "path": "python/cacao_inventory/fastq.py",
+      "sha256": "523e80937c4f642a980662cfb0d6593cc6de52f5d33fcac3b476e7a7e857f1aa"
+    },
+    {
+      "bytes": 19454,
+      "path": "python/cacao_inventory/inventory.py",
+      "sha256": "c109138aab986ff5b2be7779679a0de50a98482799168e8f2bbe7dcd54096f5b"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 5958,
+      "path": "python/cacao_inventory/pilot.py",
+      "sha256": "f6ff87e37f2cb1c82d7ba55c4502805743e797011ef6c64d911d55be01365f24"
+    },
+    {
+      "bytes": 3245,
+      "path": "python/cacao_inventory/pilot_workflow.py",
+      "sha256": "e07a0f12cd78538d76893e4e3e0e7ac47457c3e16a36841ea5a6a2feb0d2b329"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 25449,
+      "path": "python/cacao_inventory/qc.py",
+      "sha256": "843acf8627f60b8aece692a28c9dce8c87c5228638e2e23d9722b2ce058de082"
+    },
+    {
+      "bytes": 6504,
+      "path": "python/cacao_inventory/schema.py",
+      "sha256": "8a63c6afcaf9088640e7ad9d29d850e98316bd0d58e42d6579a469ba632ef9e1"
+    },
+    {
+      "bytes": 6276,
+      "path": "python/cacao_inventory/selection.py",
+      "sha256": "6007f00bcf3a73d4a3538533ee5b533acf834e2d1419225aa219b06719642b72"
+    },
+    {
+      "bytes": 6219,
+      "path": "python/cacao_inventory/sources.py",
+      "sha256": "b7481cccd227014f8c92ab568c17ea3cebc319f105b9de6d59508a07796373ff"
+    },
+    {
+      "bytes": 6089,
+      "path": "python/cacao_inventory/study_qc.py",
+      "sha256": "c436ac23d4c6fac78c4f7ab6bc09e291bb85963f3506183cf32d00a6cbaeb574"
+    },
+    {
+      "bytes": 8247,
+      "path": "python/cacao_inventory/study_scope.py",
+      "sha256": "07aee1d6f092ee03a695371d4d574342f09452dc7531d9410f5dc7f37389c888"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 8046,
+      "path": "python/cacao_inventory/taxonomy_validation.py",
+      "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
+    },
+    {
+      "bytes": 6563,
+      "path": "python/cacao_inventory/validation.py",
+      "sha256": "40862e9ef8f9be0ddb24c52be0ad62a44f0b62a0f830d4b15d50a238881b8362"
+    },
+    {
+      "bytes": 3170,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899641.cutadapt.json",
+      "sha256": "77990a1084f90ca33cac87772491518c895d40fad55aac03c0397674d2b74814"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899642.cutadapt.json",
+      "sha256": "1f090d491abdc5efa9ec42bd8270bce31fa823ad3122a14448a5ca7ba4236417"
+    },
+    {
+      "bytes": 3121,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899643.cutadapt.json",
+      "sha256": "56aa8b649fdd5af243acc6569df99ed270fba9899cf75908e2fe2d2e8c325a50"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899644.cutadapt.json",
+      "sha256": "d41e905bf8037d3034e6b120e014d1df2c8372edb9bb9f6aa644c1bf3dba5ea5"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899647.cutadapt.json",
+      "sha256": "dc85bcc8e8677023975f86a0b50013e30c7e92b816a68942c3319ef4932fe411"
+    },
+    {
+      "bytes": 2998,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899648.cutadapt.json",
+      "sha256": "19f0447c9bd4be7872b31d8119f4d125385b093f303ca99d34c5011f10c0035c"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899649.cutadapt.json",
+      "sha256": "0d9ab1e923bc0cc9f86d71bb51d5e772560af5c40d79ac00d5fff13d3b1b9629"
+    },
+    {
+      "bytes": 2932,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899650.cutadapt.json",
+      "sha256": "ed1dd64f549b1815a1aeddcd2c0a9ab70726ecc24796c40e6d625b11bffb595b"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899655.cutadapt.json",
+      "sha256": "8387eba435e7b4f8f237f1e53bc1caaadd1f4adab768c5b376ce1b0a1fcf3d6f"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899656.cutadapt.json",
+      "sha256": "44dbf55d5f03236eac5ffd7f6247067548db30e2abb1b482da35528137f439f8"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899678.cutadapt.json",
+      "sha256": "1dc7e550b13bfab8b7f75db6ad701026a6d4636516d9f91f953649381ee5f3e1"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899679.cutadapt.json",
+      "sha256": "83d03bacfc7a28517a7522b4d5f60a2ca73362041c7f0e4aaa496adc5a81c9e8"
+    },
+    {
+      "bytes": 3118,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899680.cutadapt.json",
+      "sha256": "d99fb2f622175dd01137632f2fd75d2297495b8b7a3f414cde091bb3e1bd016e"
+    },
+    {
+      "bytes": 3066,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899681.cutadapt.json",
+      "sha256": "e408b2c2a8e605f19da2907aba3af1ec26432893fefe82536382be5b4d1ca6a1"
+    },
+    {
+      "bytes": 3062,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899682.cutadapt.json",
+      "sha256": "5d1b5383e17f3c9402e0decc13a89711bd97875ed1512edfa43dd0866634f883"
+    },
+    {
+      "bytes": 3121,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899683.cutadapt.json",
+      "sha256": "a88ec5b61636fc098bb626f88f474cc548dc464d856cc6a43bc8f986b14e3394"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899684.cutadapt.json",
+      "sha256": "5684bff8551bc8cd7f30b834ce505fe0d5a95168c3f2c8dd39e81bc5b3591e1c"
+    },
+    {
+      "bytes": 3050,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899685.cutadapt.json",
+      "sha256": "597f3b77b40b9fa770feeb750fc8006b0fe94896a8fb29f148080a7e73507a92"
+    },
+    {
+      "bytes": 3057,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899686.cutadapt.json",
+      "sha256": "da1a97933d4921013e213d3814d41fd924d7d2bf87f402380104b2aeb0e60c6d"
+    },
+    {
+      "bytes": 3063,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899687.cutadapt.json",
+      "sha256": "2d263585e4e0b36994a33b4eb275bc0c5dd350576cc2cbfab03b1d5187fdaf82"
+    },
+    {
+      "bytes": 3053,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899688.cutadapt.json",
+      "sha256": "d875a095c460b56347ea753b58c0f229d0b9dbbb495ae3e2c711876e7a568cf2"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899691.cutadapt.json",
+      "sha256": "7bb121c759a42dff90d7b421fe3ee30f1f9b971ef2420f0a588846ac824d79ef"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899692.cutadapt.json",
+      "sha256": "e73a9d0f5e10b2f318c6f00cc57dcf99f8f8ec88d83b16bd630e2b6713348a1b"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899693.cutadapt.json",
+      "sha256": "473747391bb2fc9ee3bb2ce8e576703defd465ff22c9b1304c9229ca6303b884"
+    },
+    {
+      "bytes": 3054,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899694.cutadapt.json",
+      "sha256": "226a695b8ab2bcc9be079057b56e82ad5da0fa29727b5c87373997b8d7763eea"
+    },
+    {
+      "bytes": 3118,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899696.cutadapt.json",
+      "sha256": "4ef1112f2aa4fccecb6dd803f043ab340ade02df2d08a2822d3392941d978750"
+    },
+    {
+      "bytes": 3116,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899697.cutadapt.json",
+      "sha256": "5651e5efcfb823199c9692f7938070be83b71e78f75bfe669d157d59e79ab3d0"
+    },
+    {
+      "bytes": 3059,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899698.cutadapt.json",
+      "sha256": "d4e92b0cb3b77ac9be91898b16dcdf92082bfe0951945919b8aa75c874a68b39"
+    },
+    {
+      "bytes": 3181,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899699.cutadapt.json",
+      "sha256": "5be8fb672c0299a96b1ae35f0a6f57316e0341c7802384759ca3a3d9bf3d4088"
+    },
+    {
+      "bytes": 3000,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899700.cutadapt.json",
+      "sha256": "f6895e8258065e8f836fd2e52defea4a69531ca529ead8d31ad86f4864830ea1"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899709.cutadapt.json",
+      "sha256": "0bbf7e55990b2f6d4cc25734e9a8c173492dd4f12799aff9c081adb275b5d3e2"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899718.cutadapt.json",
+      "sha256": "d536f354df1d57be94223f7b1343a1bbe0187c867371ee51a1f9efe0b1fce935"
+    },
+    {
+      "bytes": 3062,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899719.cutadapt.json",
+      "sha256": "5e7730c968eab49a0ce64d3bbb07fa3f4ad61a7994e9126f4430c1d346ff5ac3"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899720.cutadapt.json",
+      "sha256": "1ec0796d80e2b57ba8f1dc8f6598c0ba89b8704de2eb5c34482f83923cf395ac"
+    },
+    {
+      "bytes": 2932,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899721.cutadapt.json",
+      "sha256": "e821da1d00ec0ada4b9ce281919756003446b34c59b19a4b7268deb6ca27a6fb"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899722.cutadapt.json",
+      "sha256": "e000a9d77baa4f41d8be7520ccc299b2d8537a86c0abf8beb45854d932a676ce"
+    },
+    {
+      "bytes": 3007,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899723.cutadapt.json",
+      "sha256": "b581630aa4b0582d3be8f353ec1bbf10b2e3092b0485ca1963b566de7722f823"
+    },
+    {
+      "bytes": 3007,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899724.cutadapt.json",
+      "sha256": "c6b3980a83faf3177c6fa5666014b0e5c89d27399046412ba11943708effc940"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899725.cutadapt.json",
+      "sha256": "e6b738bfd1bb6cc3c61c75f05d7c015cc31f12aacb3ac7f5e65a3c08c043988e"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899726.cutadapt.json",
+      "sha256": "a6c125410a1bcbd2e6b0fd697ba149b03e435ecf06356fabda8181183cdf8362"
+    },
+    {
+      "bytes": 3296,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899727.cutadapt.json",
+      "sha256": "37cd82b943765d465d29e562e4f864039f4552e0bc28936cc3d051f2e8906fd1"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899728.cutadapt.json",
+      "sha256": "5c816dce2184f56e681df4125bc123a6c78ad2381de280107adadbdd2b45e960"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899729.cutadapt.json",
+      "sha256": "0396ea3b784e1667a45557cfac69171f27e3375e6ebf91c47b0f16eb3ceffb01"
+    },
+    {
+      "bytes": 2993,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899730.cutadapt.json",
+      "sha256": "97452ea3492623af8bbee2a3e27bdbe7c440da29e01c699d5633d6fa139b0be4"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899744.cutadapt.json",
+      "sha256": "3c0bf10f00d3de423e896bfd1616b4e8855b686007e84ce1ed7fe7a6d5b271c8"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899745.cutadapt.json",
+      "sha256": "676c4c2bad9b3948b90773baee5908aa9be74e21f2dc4aa01ee4278e55e9ca54"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899777.cutadapt.json",
+      "sha256": "cdc60d586f587ee54829071e52c20b370b2d8d53364b4c28dbf6bbde30a4847c"
+    },
+    {
+      "bytes": 3000,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899798.cutadapt.json",
+      "sha256": "425c929c564c32136bb0b66d807c2aeed4b2bb267336dd1b0cbe987e21dfb185"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899799.cutadapt.json",
+      "sha256": "2820bb0455499979e436f5e514d62f765037db8cd682a85a46f4993fe4dd43f0"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899800.cutadapt.json",
+      "sha256": "371b5f66b14f0bbac2af9abac779686ce23d21bb107032baa65f385c6a2b45f2"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899801.cutadapt.json",
+      "sha256": "545c1a95bb5be9bada36457e4c3b444b020ad5d75d8d41e110fe82d01454f4cf"
+    },
+    {
+      "bytes": 3001,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899802.cutadapt.json",
+      "sha256": "923ece1bd44ae1d8c3ca70f36edebfba6fc32cd5834632e7cbb20c79627cc9fa"
+    },
+    {
+      "bytes": 2998,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899804.cutadapt.json",
+      "sha256": "d38fc1879f8cbf79b16af20499bf682cb1c098706e091be2fee767737090774d"
+    },
+    {
+      "bytes": 3115,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899805.cutadapt.json",
+      "sha256": "d5a2a9444232968ff3b62b944c85eed76c1af13a0ef6d3a8253e3ee2338a7274"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899806.cutadapt.json",
+      "sha256": "97d0cdda875fc8516aee1c5d3602821528adbda61ce742944a50a46c9ee17325"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899807.cutadapt.json",
+      "sha256": "83a31c5ada055b6218aa6ba5b7b2688475c4b4d519fa50326c579e18c95dfe7e"
+    },
+    {
+      "bytes": 3066,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899808.cutadapt.json",
+      "sha256": "ae9bb4b27b83f2631915f382a3b9bb973fd0fd37f5b30088e2a2ab26fec3f735"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899810.cutadapt.json",
+      "sha256": "95754b5a5dfd661b985ce10e95427eb01138fc4d6eb6f111c58de24a783d49c0"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899811.cutadapt.json",
+      "sha256": "0ff19935a39741c34ecb65a78348bd732028eb25f922b61d2eed0a144e982040"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899812.cutadapt.json",
+      "sha256": "b9e971d6fd199f54362db4782cb6c86a839d0ad5c60313450f24a9d8e9b4f449"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899813.cutadapt.json",
+      "sha256": "43789cb52ca91f822e23f4df0ea375e2d8567c51294da9bed36edbc3befcacc1"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899814.cutadapt.json",
+      "sha256": "b809aaee6ef044916f9cedccec0d6e4cca1e3beca50b3467e38cd0e89b51f760"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899815.cutadapt.json",
+      "sha256": "9a7aa31ae51792c81b88dc6e83d3f86db7d2cef65322c09ccd0e95c2a12aac83"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899816.cutadapt.json",
+      "sha256": "5f3a35676264fdc60159136bd0f3261a066e8686b8dd33944c79767c4a70a9e3"
+    },
+    {
+      "bytes": 3059,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899817.cutadapt.json",
+      "sha256": "d22736b934056dfbe81fe71e7412c9c2376926e3daf5f126c04af86e4f06c779"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899818.cutadapt.json",
+      "sha256": "d848d26b00346661bb2d1944297575aa7a50fe4c8688a1d833f2dd5e4ea40291"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899819.cutadapt.json",
+      "sha256": "f093921684f75cd6dad508fad1ebd11e7f71c3081bd1f191de137a652e03cd87"
+    },
+    {
+      "bytes": 3000,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899832.cutadapt.json",
+      "sha256": "3f7328bb6740165cf5df5f09b6ab0093b2afd5d05c6f8c4ddf064c4faac141bb"
+    },
+    {
+      "bytes": 3000,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899837.cutadapt.json",
+      "sha256": "673105403379e0918b66249b6d454f68530b15dea3ee9dd30cec22bf0f08170e"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899841.cutadapt.json",
+      "sha256": "e50a73c99bd6c844f06f489ee43720339e981a2d3765da0f3d88fc1590ac3656"
+    },
+    {
+      "bytes": 3121,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899843.cutadapt.json",
+      "sha256": "fcbe04281c394a04b5381fcdf12d1dd410ad3f6a80c85a5c715c712267bb5fd3"
+    },
+    {
+      "bytes": 2940,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899849.cutadapt.json",
+      "sha256": "f1794a6331d7c2270867517a2dda6fe761b65e1613529d50a61f3ef74503eb98"
+    },
+    {
+      "bytes": 2998,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899851.cutadapt.json",
+      "sha256": "041e68d65fab11da59abb8194c408edaebb736b2b921354e6761f81eb2551b2f"
+    },
+    {
+      "bytes": 3057,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899852.cutadapt.json",
+      "sha256": "8e9a8bac66553669c652ccdadb782a79b5c0cd2f731247384fe1aa1e953e6c11"
+    },
+    {
+      "bytes": 2932,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899853.cutadapt.json",
+      "sha256": "fee2f5cd45390e520ed2ec60488975e3d463d1feb62ff2f904bf6468be5bbae6"
+    },
+    {
+      "bytes": 2940,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899854.cutadapt.json",
+      "sha256": "19c52b06bb2fddeb1c93f311cd7762581a9189ccc25b0fe18325dcbcd4a9db65"
+    },
+    {
+      "bytes": 3001,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899855.cutadapt.json",
+      "sha256": "9ea97e7240a3d6b1928a426bf927005905d921e5edde263614180a45ab68bf53"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899856.cutadapt.json",
+      "sha256": "ac5ba5968c92bc2684ed298d7c6606ceb44f35d8e0e9118d72a3331a0cacf9a4"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899857.cutadapt.json",
+      "sha256": "8cf4774bfbaec782cf05d20259fa4084ae9b6670e2d85ffd31a4ed8650ff5774"
+    },
+    {
+      "bytes": 2999,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899858.cutadapt.json",
+      "sha256": "74feac1eae7d3b73d3e142b311513eedecd34e5b7b8b53644f031ac393eba7b5"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899859.cutadapt.json",
+      "sha256": "63f75dbf474f2f4739e56c4297229c1327647640d2bfbdcc45c6b56c229f7c17"
+    },
+    {
+      "bytes": 3003,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899860.cutadapt.json",
+      "sha256": "99e07625f0ebaba9868be54cf75dc7e4e1cc8ebc79f1f31c9f5f87e2dbcc0e51"
+    },
+    {
+      "bytes": 3118,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899884.cutadapt.json",
+      "sha256": "be6d1b9f589aaa416686fdd15b0bf94d4c1fc1a3e6b676db6e03b20eb884ffee"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899910.cutadapt.json",
+      "sha256": "9bcb7246b5b08070b2c11f26327c19ef2bacfa10ec833b677a125a06596c09a9"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899911.cutadapt.json",
+      "sha256": "3942ebcf50cb84e4db00b9ce3359d6fc6fcb3260f5bad505efdfa93087083dfb"
+    },
+    {
+      "bytes": 3000,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899912.cutadapt.json",
+      "sha256": "6b3fdf2283f23baafbd061afb29dcbe00d9691f1ef6831a599e9f7298758a79a"
+    },
+    {
+      "bytes": 3001,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899913.cutadapt.json",
+      "sha256": "7989ef24b265b07fff7b2e1172c70b0b93e27e8061cf8311bd1f7c93cb5cafe7"
+    },
+    {
+      "bytes": 2936,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899914.cutadapt.json",
+      "sha256": "b8ae5dfb660ea7de287b333f57b6ed5e0a317fe773b75d21f4e7f847b55c5f74"
+    },
+    {
+      "bytes": 3001,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899915.cutadapt.json",
+      "sha256": "8e8484c391edbf87dbf0e8b7e176384ab273d950bb053568602bb414d84ce3c0"
+    },
+    {
+      "bytes": 3000,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899916.cutadapt.json",
+      "sha256": "3507972adf7d4272f10f8dd838103bc38ffc74cfc3fcc449813c91bf90da3787"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899917.cutadapt.json",
+      "sha256": "411f8ae7ad0ef519d2732ceadafa9eb3c0e78eec878f46d5b60f7ef45320223f"
+    },
+    {
+      "bytes": 2934,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899920.cutadapt.json",
+      "sha256": "d70d23378ff68586afff74eff1789337e870b7fc877e01be163f094885307a2e"
+    },
+    {
+      "bytes": 3060,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt/SRR7899921.cutadapt.json",
+      "sha256": "77c1a2186fd4eb457ed07f0d1bbe06af01d0b2a1ed8138c3ebd35607b3b8b1ca"
+    },
+    {
+      "bytes": 59985,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt_summary.tsv",
+      "sha256": "8b28e361be7d6257a57cf9b6b2a7710658766b2acc21608fccd07431a372ce2e"
+    },
+    {
+      "bytes": 78166,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/download_validation.tsv",
+      "sha256": "e0d4495dbb956041ef8b0cae301be5fc001f010fdfa8b6b2fda3676d6622817f"
+    },
+    {
+      "bytes": 54055,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/fastq_validation.tsv",
+      "sha256": "f6ec5a4f611b814479b8d8b255f085070462c94663a99f3c1c508279dc42b583"
+    },
+    {
+      "bytes": 385299,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/primer_detection_raw.tsv",
+      "sha256": "3f83b109498c329cb13116f38ec952dbe0edfde6c78cfbacc6155b422c739903"
+    },
+    {
+      "bytes": 385299,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/primer_detection_trimmed.tsv",
+      "sha256": "9f49419e49e53647a4e6d288d13796aa0470c2e817719e68e8e770b471ff84ac"
+    },
+    {
+      "bytes": 38687,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/raw_read_quality.tsv",
+      "sha256": "e179914bb46a650566007e4480aa551f08500f1bcf1bc584a6920a423c0d418e"
+    },
+    {
+      "bytes": 24919,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/read_quality_comparison.tsv",
+      "sha256": "5eee6f52de438cf023ae5116c94103cf63ffb4bf1b45fa09f4d9266c482ae5e6"
+    },
+    {
+      "bytes": 50406,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/trimmed_read_quality.tsv",
+      "sha256": "d7b80b842ab64408fe44f436bbf75f74f073a55478e0e17ccc5ff94b25928d5d"
+    },
+    {
+      "bytes": 9337,
+      "path": "scripts/qc/detect_primers.py",
+      "sha256": "3cdde687a6a47457b9148a418e4ca17077c62224dd2db459b66617cb9236ab82"
+    },
+    {
+      "bytes": 2361,
+      "path": "scripts/qc/summarize_fastqc.py",
+      "sha256": "2dbfc093872333b3696841d63e95c4a82d8444d4f38e683efcbe04f115cde4fa"
+    },
+    {
+      "bytes": 2607,
+      "path": "scripts/qc/summarize_trimmed_fastqc.py",
+      "sha256": "63463ad59ae68b40ca98cedd59489cf9d2f20eade61d5c6e17ce15e6f1773a9b"
+    },
+    {
+      "bytes": 7581,
+      "path": "scripts/study/qc_stage.py",
+      "sha256": "0d4c6324c90b922aa46eb7efe0140890a86305d5ea86474900fd04fde9af2ec6"
+    },
+    {
+      "bytes": 16753,
+      "path": "workflow/study.Snakefile",
+      "sha256": "6559a58fa7bd8a576186231cd28d8d7f1aaea554d504525bbe819a54682a76dc"
+    },
+    {
+      "bytes": 1207,
+      "path": "config/full_study.yaml",
+      "sha256": "9e5f66a3fa9be79b34e704a6354a7fc554473ef17d98caaf917ac0b2ce00c6ff"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 1207,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/config_snapshot.yaml",
+      "sha256": "9e5f66a3fa9be79b34e704a6354a7fc554473ef17d98caaf917ac0b2ce00c6ff"
+    },
+    {
+      "bytes": 59985,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/cutadapt_summary.tsv",
+      "sha256": "8b28e361be7d6257a57cf9b6b2a7710658766b2acc21608fccd07431a372ce2e"
+    },
+    {
+      "bytes": 78166,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/download_validation.tsv",
+      "sha256": "e0d4495dbb956041ef8b0cae301be5fc001f010fdfa8b6b2fda3676d6622817f"
+    },
+    {
+      "bytes": 54055,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/fastq_validation.tsv",
+      "sha256": "f6ec5a4f611b814479b8d8b255f085070462c94663a99f3c1c508279dc42b583"
+    },
+    {
+      "bytes": 103199,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/input_checksums.json",
+      "sha256": "21b3815d45eb21d845170c365fdeaa01db1809f588c6c5d11950f7ac8ae62dc9"
+    },
+    {
+      "bytes": 385299,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/primer_detection_raw.tsv",
+      "sha256": "3f83b109498c329cb13116f38ec952dbe0edfde6c78cfbacc6155b422c739903"
+    },
+    {
+      "bytes": 385299,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/primer_detection_trimmed.tsv",
+      "sha256": "9f49419e49e53647a4e6d288d13796aa0470c2e817719e68e8e770b471ff84ac"
+    },
+    {
+      "bytes": 38687,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/raw_read_quality.tsv",
+      "sha256": "e179914bb46a650566007e4480aa551f08500f1bcf1bc584a6920a423c0d418e"
+    },
+    {
+      "bytes": 24919,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/read_quality_comparison.tsv",
+      "sha256": "5eee6f52de438cf023ae5116c94103cf63ffb4bf1b45fa09f4d9266c482ae5e6"
+    },
+    {
+      "bytes": 286,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/summary.json",
+      "sha256": "0e2803337e5c0b33c749b0e9cd334757418ab8b5e26cb921f8b8099eb05fcd27"
+    },
+    {
+      "bytes": 50406,
+      "path": "results/qc/pacheco_montealegre_2020_colombia/full/trimmed_read_quality.tsv",
+      "sha256": "d7b80b842ab64408fe44f436bbf75f74f073a55478e0e17ccc5ff94b25928d5d"
+    }
+  ],
+  "parameters": {
+    "bioproject": "PRJNA492720",
+    "dada2_dir": "results/dada2/pacheco_montealegre_2020_colombia/full",
+    "dada2_intermediate_dir": "results/intermediate/dada2/pacheco_montealegre_2020_colombia/full",
+    "datasets_config": "config/datasets.yaml",
+    "diversity_config": "config/full_study_diversity.yaml",
+    "expected_batches": 4,
+    "expected_paired_runs": 93,
+    "expected_runs": 94,
+    "interim_dir": "data/interim/pacheco_montealegre_2020_colombia/full",
+    "inventory_dir": "metadata",
+    "manifest": "metadata/manifests/pacheco_montealegre_2020_colombia.tsv",
+    "plan_dir": "results/planning/pacheco_montealegre_2020_colombia",
+    "project_config": "config/config.yaml",
+    "qc_dir": "results/qc/pacheco_montealegre_2020_colombia/full",
+    "resources": {
+      "analysis_memory_mb": 4000,
+      "cores": 8,
+      "fastqc_memory_mb": 512,
+      "memory_budget_mb": 4500,
+      "minimum_free_space_factor": 6.0
+    },
+    "schema_version": "1.0.0",
+    "scope": "all_included_runs",
+    "study_id": "pacheco_montealegre_2020_colombia",
+    "taxonomy_config": "config/taxonomy.yaml",
+    "taxonomy_dir": "results/taxonomy/pacheco_montealegre_2020_colombia/full",
+    "unpaired_fastq_policy": "record_and_exclude_from_paired_processing"
+  },
+  "software_versions": {
+    "Python": "3.12.13",
+    "cutadapt": "5.0",
+    "fastqc": "FastQC v0.12.1",
+    "multiqc": "multiqc, version 1.25.1"
+  },
+  "started_at_utc": "2026-11-01T00:47:05.747877+00:00",
+  "status": "success",
+  "upstream_validation": {}
+}

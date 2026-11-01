@@ -26,13 +26,15 @@ El bloqueo de disponibilidad quedó resuelto el 2026-10-31: ENA vuelve a entrega
 `SRR7899804_2.fastq.gz`, con los mismos 1.458.078 bytes y MD5 declarados en el
 manifest original. Se descargaron y validaron 186/186 FASTQ: 394.515.770 bytes,
 con MD5, gzip/CRC y estructura correctos. No se modificaron inclusiones,
-parámetros ni archivos crudos válidos. Se reanuda QC/DADA2/taxonomía/diversidad;
-todavía no hay resultados científicos del estudio completo.
+parámetros científicos ni archivos crudos válidos. QC completo cerrado y validado:
+93 runs, 2.728.920 pares conservados tras Cutadapt, 505 entradas/11 artefactos
+comprobados y cero muestras excluidas. En curso: DADA2 del estudio completo;
+taxonomía y diversidad completas siguen pendientes.
 El primer cierre QC detectó que el validador compartido de Cutadapt esperaba
 siempre la ruta piloto. La corrección admite el directorio registrado del estudio
 sin relajar comprobaciones; el resumen real de los 93 runs ya pasa esa validación.
 La corrección está registrada en `67c3820` y pasa 154 pruebas completas.
-La reanudación está renovando los outputs afectados por el cambio de código.
+La reanudación renovó los outputs afectados y cerró QC sobre `1250c72`.
 Implementado: productor/validador de resúmenes por familia/género con política
 registrada en `config/taxonomic_reporting.yaml`, conservando linajes, desconocidos
 y tiempos. La generación del perfil completo espera el cierre de su separación.
@@ -124,6 +126,10 @@ mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
   incluidos casos de rutas completas, escapes de directorio y una integración real
   con FASTQ sintéticos. Las notas del manuscrito documentan la evidencia preliminar
   y las hipótesis pendientes sin presentar el análisis completo como terminado.
+- QC completo de 93 runs: 2.728.920 pares, retención Cutadapt 100 %, tres R1 y
+  109 R2 recortados, 3.812 bases retiradas; 505 entradas/11 artefactos validados.
+  Calidad por base: 184/186 pasan antes y después del recorte; se conservan los
+  avisos de una muestra y las alertas de adaptadores de dos muestras, sin exclusiones.
 
 ## Datasets incluidos
 
@@ -163,8 +169,8 @@ validación estructural y procedencia científica; no se modifican los crudos
 para reconstruir ese historial auxiliar.
 La descarga completa está validada desde el 2026-10-31. El archivo HTML de
 797 bytes del intento anterior se conserva en `results/tmp/`, fuera de Git;
-no se utilizó para reanudar bytes de un FASTQ. El análisis completo puede avanzar
-con los 93 runs registrados; todavía no produjo tablas científicas completas.
+no se utilizó para reanudar bytes de un FASTQ. El QC de los 93 runs está validado;
+DADA2 está en ejecución y todavía no produjo tablas científicas completas.
 
 ## Bloqueos y limitaciones
 
@@ -192,7 +198,7 @@ con los 93 runs registrados; todavía no produjo tablas científicas completas.
 
 ## Próximas tareas
 
-1. Ejecutar y validar QC/DADA2/taxonomía/diversidad de los 93 runs,
+1. Completar y validar DADA2/taxonomía/diversidad de los 93 runs,
    conservando el inventario de 94 y los parámetros científicos registrados.
 2. Conservar parámetros por estudio y
    revisar por separado los pipelines V3-V4 y PacBio antes de integrar taxonomía.

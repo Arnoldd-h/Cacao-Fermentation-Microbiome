@@ -110,3 +110,23 @@ La reanudación renueva las etapas cuyo código de entrada cambió y conserva
 los crudos protegidos.
 La corrección se registra en `67c3820`; la suite completa pasa 154 pruebas
 en 101,560 segundos antes de reanudar. No se alteran los parámetros científicos.
+
+## Cierre QC del estudio completo
+
+El QC renovado cierra sobre `1250c72`: 505 entradas y 11 artefactos pasan
+la validación independiente. Los 93 runs conservan los 2.728.920 pares después
+de Cutadapt (100 %), sin exclusiones. Se recortaron tres R1 y 109 R2, retirando
+97 y 3.715 bases respectivamente. Son recortes de primers bajo la política
+registrada; no se añadió recorte general de adaptadores o calidad.
+
+Los 186 controles posteriores están completos: 184 pasan calidad por base y
+los dos mates de SRR7899641 conservan `warn`. Adaptadores mantiene 183 `pass`,
+dos `fail` (SRR7899641) y un `warn` (SRR7899691 R2). Estos avisos se mantienen
+para revisar retención y secuencias DADA2; la validación de integridad y balances
+no equivale a afirmar que todos los módulos FastQC pasan.
+
+Los resúmenes, configuración y procedencia están en
+`results/qc/pacheco_montealegre_2020_colombia/full/`; los informes completos y
+FASTQ permanecen fuera de Git. El workflow inicia DADA2 con los mismos
+parámetros científicos registrados. Las marcas de tiempo de los outputs se
+conservan en UTC; este reporte utiliza la fecha local de Colombia.

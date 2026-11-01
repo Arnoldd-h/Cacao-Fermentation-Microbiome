@@ -4,6 +4,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- QC del primer estudio completo cerrado: 93 runs y 2.728.920 pares, con
+  retención Cutadapt del 100 %, 112 lecturas recortadas y 3.812 bases retiradas.
+  Validación de 505 entradas/11 artefactos; cero exclusiones y avisos de calidad
+  y adaptadores conservados explícitamente. DADA2 completo iniciado.
 - Corrección del validador compartido de Cutadapt: la ruta de salida se contrasta
   con el directorio de procesamiento registrado, conservando el valor piloto
   por defecto y la comprobación estricta de estudio, run, mate, entradas y parámetros.
