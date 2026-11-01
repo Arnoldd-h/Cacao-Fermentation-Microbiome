@@ -277,14 +277,14 @@ La continuación `codex/taxonomy-seeded-ties` registra el método en `e008f2b`
 y los resultados en `a5af049`. El hito `v0.5.2-taxonomy-reproducibility` se
 entrega mediante [PR #7](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/7),
 limitado a reproducción taxonómica del primer estudio y su piloto. No se
-declara todavía un hito multistudio. Ambos workflows quedan sin trabajos
-pendientes; la siguiente fase es registrar y contrastar el modelo longitudinal.
+declara todavía un hito multistudio. En ese hito, ambos workflows quedaron sin trabajos
+pendientes; la siguiente fase fue registrar y contrastar el modelo longitudinal.
 
 El hito `v0.5.3-longitudinal` entrega ese primer modelo exploratorio mediante
 [PR #8](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/8):
 plan `c97345c`, implementación `7b6d5a6`, renovación operativa `6415bfd` y
-resultados `0132f7d`. Sus tres workflows quedan sin pendientes. La siguiente
-fase es procesar los otros estudios, sin combinar directamente sus ASVs.
+resultados `0132f7d`. Al cerrar ese hito, sus tres workflows quedaron sin pendientes; comenzó después
+el procesamiento independiente de los otros estudios.
 
 
 La continuación `codex/prjna627078-qc` registra el perfil en `d3f6149`,
@@ -296,3 +296,9 @@ no declara una segunda ejecución DADA2 ni el hito multistudio. La renovación
 de fuentes conserva el manifest (31 entradas/seis artefactos validados),
 y el workflow mexicano queda sin trabajos pendientes. Los hashes de los
 inputs pequeños/outputs QC y de los dos diagnósticos se comprueban al cerrar.
+
+Entrega del cierre de datos `376bb9e` mediante
+[PR #9](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/9).
+El hito conserva el QC basal y el diagnóstico de posiciones; la siguiente
+unidad de desarrollo debe registrar y validar la limpieza 3' y revisar la
+calidad por posición antes de habilitar DADA2.
