@@ -4,6 +4,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- Separación/diversidad del estudio completo validadas: 764 ASVs, 2.096.980
+  lecturas y las 93 muestras; riqueza 1–75 y Shannon efectivo 1–30,363.
+  Tablas y figuras pequeñas versionadas; CLR largo de 16,3 MB regenerable fuera de Git.
 - Taxonomía del estudio completo validada con SILVA 138.2: 475/782 ASVs y
   1.855.013 lecturas con género a bootstrap 80; 21 entradas/15 artefactos.
   Las 18 ASVs con etiquetas de orgánulos permanecen en las tablas originales.

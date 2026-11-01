@@ -4,54 +4,45 @@
 
 ## Fase actual
 
-Inventario, QC y piloto DADA2 consolidados e integrados en `main` mediante PR #1
-(`9f0a478`). Clasificación taxonómica del piloto ejecutada y validada con
-SILVA 138.2, checksum de origen y umbrales fijados antes de observar las
-asignaciones. Se conservan 93 ASVs y 156.561 lecturas de seis muestras.
-Taxonomía integrada en `main` mediante PR #2 (`6da8f86`) y tag `v0.4.0-taxonomy`.
-Separación auditable y diversidad descriptiva del piloto ejecutadas y validadas:
-88 ASVs y 123.693 lecturas derivadas, con las seis muestras conservadas.
-Los criterios, métricas y sustitución de ceros quedaron registrados antes de
-calcular diversidad. El hito `v0.5.0-diversity` se limita a esta descripción;
-la inferencia temporal y la integración entre estudios siguen pendientes.
-La diversidad está integrada en `main` mediante PR #3 (`868afa8`). En progreso:
-ampliación al estudio completo de 94 runs, con auditoría de fuentes, recursos
-limitados y conservación de los parámetros científicos del piloto.
-NCBI/ENA confirman los 94 runs incluidos. La auditoría de FASTQ identifica
-93 runs con archivos pareados y uno sin pares completos (SRR7899803); su exclusión de la
-ruta paired-end se registra aparte y no cambia la inclusión del inventario.
-Workflow completo implementado y 144 pruebas Python aprobadas. El manifest
-paired-end, las auditorías y el plan de recursos tienen procedencia verificada.
-El bloqueo de disponibilidad quedó resuelto el 2026-10-31: ENA vuelve a entregar
-`SRR7899804_2.fastq.gz`, con los mismos 1.458.078 bytes y MD5 declarados en el
-manifest original. Se descargaron y validaron 186/186 FASTQ: 394.515.770 bytes,
-con MD5, gzip/CRC y estructura correctos. No se modificaron inclusiones,
-parámetros científicos ni archivos crudos válidos. QC completo cerrado y validado:
-93 runs, 2.728.920 pares conservados tras Cutadapt, 505 entradas/11 artefactos
-comprobados y cero muestras excluidas. DADA2 completo cerrado y validado:
-93 muestras, 782 ASVs y 2.254.530 pares sin quimeras (82,62 % de la entrada),
-con 192 entradas/18 artefactos comprobados. Ambos modelos de error convergen
-en seis rondas. En curso: taxonomía; separación y diversidad completas pendientes.
-El primer cierre QC detectó que el validador compartido de Cutadapt esperaba
-siempre la ruta piloto. La corrección admite el directorio registrado del estudio
-sin relajar comprobaciones; el resumen real de los 93 runs ya pasa esa validación.
-La corrección está registrada en `67c3820` y pasa 154 pruebas completas.
-La reanudación renovó los outputs afectados y cerró QC sobre `1250c72`.
-Implementado: productor/validador de resúmenes por familia/género con política
-registrada en `config/taxonomic_reporting.yaml`, conservando linajes, desconocidos
-y tiempos. La generación del perfil completo espera el cierre de su separación.
-Implementado: figuras temporales descriptivas por lote/estrato; política en
-`config/temporal_reporting.yaml`, sin modelos ni agregación de submuestras.
-La generación y revisión visual del perfil completo espera la diversidad validada.
-Perfil temporal piloto generado sobre `afb7705`: seis muestras, cuatro lotes,
-16 entradas y ocho artefactos válidos; PNG revisado visualmente tras corregir
-los márgenes. Las seis series parciales se muestran sin líneas.
-La suite completa actual pasa 161 pruebas en Linux (135,991 s). El primer
-recorrido completo cerró 481 trabajos. Se renueva la taxonomía y sus derivados
-tras corregir un título fijo de piloto en la figura de cobertura; el dry-run
-limita la renovación a siete trabajos sin repetir QC ni DADA2.
-Workflow, manifest, auditorías y registro del bloqueo integrados en `main`
-mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
+Primer estudio completo procesado y validado de forma descriptiva: PRJNA492720,
+93 muestras pareadas de cuatro lotes y 47 observaciones lote-tiempo. El
+inventario conserva 94 runs; SRR7899803 no ofrece pares completos y se excluye
+solo de esta ruta, con decisión auditable. El bloqueo de ENA quedó resuelto:
+186/186 FASTQ, 394.515.770 bytes, con bytes, MD5, gzip/CRC y estructura válidos.
+
+QC conserva 2.728.920 pares tras Cutadapt y pasa 505 entradas/11 artefactos.
+DADA2 conserva 782 ASVs y 2.254.530 pares sin quimeras (82,62 %), con
+192 entradas/18 artefactos comprobados. Ambos modelos convergen en seis rondas.
+SILVA 138.2 clasifica género en 475 ASVs a bootstrap 80; se validan 21
+entradas/15 artefactos. La separación de 18 ASVs etiquetadas como orgánulos
+conserva 764 ASVs, 2.096.980 lecturas y todas las muestras. Separación y
+diversidad pasan 21 entradas/nueve artefactos y 20 entradas/17 artefactos.
+
+Los resúmenes por familia/género contienen 1.477 filas, sin imputar etiquetas
+ni renormalizar solo taxones clasificados (15 entradas/cinco artefactos).
+Las figuras temporales representan 93 muestras y ocho series de lote/estrato,
+con horas originales y sin conectar huecos; exportación PDF/SVG/PNG a 300 dpi,
+16 entradas/ocho artefactos y revisión visual. Las fuentes exactas quedan en
+la procedencia de cada etapa y en el registro de ejecución del 2026-10-31.
+
+El primer recorrido cerró 481 trabajos; la renovación de la figura taxonómica
+cerró siete trabajos adicionales sin repetir QC ni DADA2 completos. La suite
+completa pasa 161 pruebas Python en Linux (135,991 s). El piloto de seis muestras
+se está renovando con el código compartido actual; sus tablas se contrastarán
+con la referencia anterior. Es un subconjunto del estudio completo, no un
+segundo estudio ni seis muestras independientes adicionales.
+
+La repetición mantiene idénticas la taxonomía primaria, separación y diversidad,
+pero cambia soportes bootstrap y sensibilidad a 50 (neto: una ASV/cinco lecturas).
+El RNG nativo de desempates de DADA2 no está completamente controlado por la
+semilla R; la limitación permanece abierta y documentada. No se declara
+reproducción exacta de todos los soportes taxonómicos.
+
+La inferencia longitudinal, el core temporal y la integración/meta-análisis
+siguen pendientes. Los otros tres estudios incluidos todavía no están procesados.
+La ampliación se entrega mediante PR #6; PR #5 integró recuperación de datos,
+recursos y resúmenes de composición en `main` (`7cd3986`). Los FASTQ, RDS,
+base SILVA e informes pesados permanecen fuera de Git.
 
 ## Completado
 
@@ -157,9 +148,9 @@ PacBio requiere un procesamiento específico y no entra en el piloto Illumina.
 Las fuentes y decisiones por estudio están en `config/datasets.yaml` y
 `reports/inventory_review_2026-10-04.md`.
 
-## Estado operativo
+## Estado operativo y antecedentes
 
-El inventario pasó el validador independiente; las unidades analíticas cubren
+En el hito piloto anterior, el inventario pasó el validador independiente; las unidades analíticas cubren
 182 runs, 95 observaciones lote-tiempo y 12 lotes. QC terminó 45 trabajos y
 los 24 FASTQ raw/interim coinciden byte a byte con los archivos previos.
 La corrección de los consumidores del checkpoint elimina la repetición de
@@ -181,8 +172,9 @@ validación estructural y procedencia científica; no se modifican los crudos
 para reconstruir ese historial auxiliar.
 La descarga completa está validada desde el 2026-10-31. El archivo HTML de
 797 bytes del intento anterior se conserva en `results/tmp/`, fuera de Git;
-no se utilizó para reanudar bytes de un FASTQ. QC y DADA2 de los 93 runs están
-validados; taxonomía está en ejecución y faltan separación/diversidad completas.
+no se utilizó para reanudar bytes de un FASTQ. QC, DADA2, taxonomía, separación,
+diversidad, composición y figuras temporales de los 93 runs están validados.
+El piloto se está renovando tras cambios compartidos de QC y del título taxonómico.
 
 ## Bloqueos y limitaciones
 
@@ -193,19 +185,19 @@ validados; taxonomía está en ejecución y faltan separación/diversidad comple
   del RNG queda pendiente antes de inferir con asignaciones próximas a umbrales.
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
-- Hay taxonomía y diversidad descriptiva de seis runs del piloto. La ampliación
-  tiene su workflow, manifest de 93 runs y 186 FASTQ válidos; el bloqueo de ENA
-  está resuelto. La ejecución completa y la inferencia biológica siguen pendientes.
-  Seis runs de cuatro lotes y distintos
-  estratos no reconstruyen sus trayectorias ni equivalen a seis lotes independientes.
-- El 20,99 % de las lecturas pertenece a ASVs con etiquetas de orgánulos.
-  La cobertura taxonómica actual incluye esas lecturas en su denominador.
+- Hay taxonomía y diversidad descriptiva del primer estudio completo; faltan
+  los otros tres estudios y la inferencia biológica. Sus 93 muestras representan
+  cuatro lotes, no 93 fermentaciones independientes. El piloto solapa seis de ellas.
+- En el piloto, el 20,99 % de las lecturas pertenece a ASVs etiquetadas como
+  orgánulos; en el estudio completo son 157.550 lecturas (6,99 %), en 18 ASVs.
+  La cobertura de las tablas originales incluye esas lecturas en su denominador.
   Su separación está configurada y registrada en la tabla derivada; las
   etiquetas no identifican especie huésped ni demuestran contaminación.
 - Profundidad desigual y dependencia del pseudoconteo respecto a la escala de
   conteos limitan las comparaciones descriptivas. La riqueza no está rarefactada;
   no se calcula significación ni se elige la sensibilidad por separación visual.
-- Las ASVs de 237–243 nt no se filtran por una longitud canónica; el depósito
+- Las ASVs del piloto de 237–243 nt y las completas de 236–247 nt no se filtran
+  por una longitud canónica; el depósito
   tiene evidencia de recorte previo y su procesamiento exacto es incompleto.
 - Los residuos raros en orientación inversa y la ausencia de controles negativos
   requieren interpretación posterior; no demuestran contaminación ni su ausencia.
@@ -215,12 +207,13 @@ validados; taxonomía está en ejecución y faltan separación/diversidad comple
 
 ## Próximas tareas
 
-1. Completar y validar DADA2/taxonomía/diversidad de los 93 runs,
-   conservando el inventario de 94 y los parámetros científicos registrados.
-2. Conservar parámetros por estudio y
-   revisar por separado los pipelines V3-V4 y PacBio antes de integrar taxonomía.
-3. Definir tratamiento de ceros, agregación de submuestras y modelos longitudinales
-   antes de estimar efectos, con sensibilidad temporal absoluta y relativa.
+1. Evaluar en aislamiento una solución reproducible al desempate taxonómico
+   nativo, con tablas bootstrap de referencia y un cambio metodológico explícito.
+2. Registrar agregación de submuestras, tratamiento de ceros y modelos
+   longitudinales antes de estimar efectos; conservar lote y sensibilidades
+   temporal absoluta/relativa, sin utilizar el piloto para inferencia.
+3. Procesar los otros estudios por separado, revisando primers, V3-V4 y PacBio
+   antes de armonizar taxonomía e integrar efectos y heterogeneidad.
 
 ## Control de versiones
 
@@ -251,4 +244,5 @@ o recién generados que todavía no tenían commit al iniciar. Ese estado Git
 se conserva íntegro, junto a los hashes de todas las entradas y salidas.
 Para el checkout exacto usar `git log -1 --oneline` y `git status`.
 La ampliación usa `codex/full-study-processing`, creada desde `868afa8`. No se
-declara el hito multistudio ni una ejecución científica completa mientras falta R2.
+declara el hito multistudio: solo el primer estudio tiene ejecución descriptiva
+completa. El bloqueo R2 se resolvió; la continuación usa `codex/full-study-resume`.

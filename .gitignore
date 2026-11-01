@@ -26,6 +26,8 @@ references/databases/
 results/intermediate/
 results/tmp/
 results/cache/
+# Coordenadas CLR completas voluminosas; se regeneran con el workflow
+results/diversity/*/full/clr_coordinates.tsv
 results/qc/pilot/fastqc_raw/
 results/qc/pilot/multiqc_raw/
 results/qc/pilot/cutadapt/

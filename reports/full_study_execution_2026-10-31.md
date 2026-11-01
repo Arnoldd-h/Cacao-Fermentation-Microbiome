@@ -188,3 +188,23 @@ La validación independiente comprueba 21 entradas y 15 artefactos, sin
 warnings R en esta clasificación. El PNG de cobertura se revisó con su título
 corregido y ambas sensibilidades; se conservan también PDF y SVG. Ausencia
 de warnings R no elimina la limitación del RNG nativo documentada aparte.
+
+## Separación y diversidad completas
+
+La política primaria separa 18 ASVs etiquetadas como orgánulos y 157.550
+lecturas, conservando 764 ASVs, 2.096.980 lecturas y todas las 93 muestras.
+La separación pasa 21 entradas/nueve artefactos. No se añadieron exclusiones
+de muestras, filtros de abundancia o umbrales de profundidad.
+
+La diversidad descriptiva pasa 20 entradas/17 artefactos: riqueza de 1–75 ASVs,
+Shannon efectivo de 1–30,363 y profundidad de 986–69.751 lecturas. Se conservan
+CLR/Aitchison con pseudoconteos 1 y 0,5, Bray-Curtis y PCA; no hay rarefacción
+ni pruebas inferenciales. Las primeras dos componentes primarias representan
+el 12,68 % de la variación CLR. No hay warnings R de diversidad.
+
+Las figuras alfa y PCA se revisaron visualmente: alcance completo, leyendas,
+ejes, sensibilidad y ausencia de 93 etiquetas superpuestas. Alfa usa índice
+de muestra, no horas; las figuras temporales posteriores usan las horas reales.
+Los once TSV bacterianos/de diversidad son idénticos antes y después de
+renovar el título taxonómico. El CLR largo de 16,3 MB queda ignorado y se
+regenera mediante el workflow; su hash y validación se conservan.

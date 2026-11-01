@@ -25,6 +25,14 @@ una separación visual no establece significación ni cuantifica el efecto del t
 Los lotes son las unidades independientes; tiempos y estratos son medidas
 repetidas o submuestras, no réplicas independientes adicionales.
 
+La ampliación a 93 muestras permite describir los cuatro lotes completos del
+primer estudio, en lugar de extrapolar trayectorias desde el piloto técnico.
+Las 986–69.751 lecturas retenidas por muestra y la amplia variación de riqueza
+requieren examinar profundidad y lote antes de interpretar un patrón temporal.
+Las primeras dos componentes de la PCA primaria representan solo el 12,68 %
+de la variación CLR; sus dos ejes no resumen toda la estructura observada.
+Las hipótesis de conservación entre estudios y core siguen sin contrastarse.
+
 Los avisos de calidad/adaptadores del estudio completo requieren revisar su
 persistencia y la retención DADA2 antes de interpretar los resultados. La ausencia
 de controles negativos verificados impide establecer ausencia de contaminación.

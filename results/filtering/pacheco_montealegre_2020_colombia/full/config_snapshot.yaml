@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "paths": {
+    "dada2_dir": "results/dada2/pacheco_montealegre_2020_colombia/full",
+    "taxonomy_dir": "results/taxonomy/pacheco_montealegre_2020_colombia/full",
+    "bacterial_dir": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial",
+    "filtering_dir": "results/filtering/pacheco_montealegre_2020_colombia/full",
+    "diversity_dir": "results/diversity/pacheco_montealegre_2020_colombia/full"
+  },
+  "filtering": {
+    "taxonomy_call": "primary",
+    "minimum_bootstrap": 80,
+    "tax_levels": [
+      "Kingdom",
+      "Phylum",
+      "Class",
+      "Order",
+      "Family",
+      "Genus"
+    ],
+    "bacterial_kingdom": "Bacteria",
+    "organelle_labels": [
+      "Chloroplast",
+      "Mitochondria"
+    ],
+    "exclude_known_non_bacterial": true,
+    "unclassified_kingdom_policy": "retain_and_flag",
+    "low_abundance_filter": false,
+    "empty_sample_policy": "fail"
+  },
+  "analysis": {
+    "feature_level": "within_study_asv",
+    "sample_aggregation": "none",
+    "inference": false,
+    "rarefaction": false,
+    "alpha_metrics": [
+      "observed_asvs",
+      "shannon",
+      "gini_simpson",
+      "inverse_simpson",
+      "shannon_effective"
+    ],
+    "log_base": "natural",
+    "primary_beta": "euclidean_clr",
+    "zero_policy": "add_pseudocount_to_all_counts",
+    "primary_pseudocount": 1.0,
+    "sensitivity_pseudocounts": [
+      0.5
+    ],
+    "secondary_beta": "bray_curtis_relative_abundance",
+    "pca_center": true,
+    "pca_scale": false,
+    "random_seed": 20260819,
+    "validation_tolerance": 1E-08
+  },
+  "figures": {
+    "scope_label": "PRJNA492720 - complete paired-study scope",
+    "show_sample_labels": false,
+    "width_inches": 24,
+    "height_inches": 12,
+    "png_dpi": 300,
+    "stage_colors": {
+      "early": "#27647B",
+      "mid": "#BC7D38",
+      "late": "#536E3B"
+    }
+  }
+}

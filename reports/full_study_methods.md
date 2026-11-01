@@ -78,6 +78,9 @@ entradas y salidas y estado Git. `git_dirty=true` puede reflejar los nuevos
 resultados aún sin commit; ese estado se registra sin ocultarlo. Los crudos,
 la base SILVA, los informes completos de herramientas y RDS quedan fuera de
 Git. Los resúmenes, tablas derivadas y figuras pequeñas se versionan.
+La tabla CLR larga completa (16,3 MB en PRJNA492720) se conserva localmente
+y se regenera con el workflow; no se versiona. Su hash permanece en la
+procedencia y la validación exige su presencia al ejecutar o verificar la etapa.
 
 ## Disponibilidad y condición de avance
 

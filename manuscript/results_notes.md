@@ -46,6 +46,11 @@ Fuente: [diversidad alfa](../results/diversity/pilot/alpha_diversity.tsv).
 
 ## Ampliación del primer estudio
 
+El perfil completo contiene las seis muestras del piloto. Ambos perfiles son
+ejecuciones solapadas del mismo estudio: no se suman como 99 muestras ni se
+tratan como estudios distintos. Los identificadores ASV pertenecen a cada
+ejecución; no se equiparan únicamente por su nombre.
+
 El inventario conserva 94 runs; 93 tienen streams paired-end completos,
 correspondientes a cuatro lotes y 47 observaciones lote-tiempo. El run sin pares
 completos se excluye de esta ruta por formato, antes del análisis, conservando
@@ -59,8 +64,32 @@ de SRR7899691 como `warn`. Estos indicadores no prueban contaminación biológic
 ni justifican por sí solos una exclusión.
 Fuente: [registro de ejecución](../reports/full_study_execution_2026-10-31.md).
 
-El procesamiento completo sigue en curso tras corregir una validación de rutas.
-Todavía no se incorporan aquí conteos ASV, taxonomía o diversidad de los 93 runs.
+El recorrido completo conserva 2.540.412 pares filtrados, 2.395.174 ensamblados
+y 2.254.530 sin quimeras (82,62 % de la entrada), con 782 ASVs. Las 93 muestras
+se conservan. Ambos modelos de error convergen en seis rondas. La validación
+DADA2 comprueba 192 entradas y 18 artefactos.
+Fuente: [resumen completo DADA2](../results/dada2/pacheco_montealegre_2020_colombia/full/summary.tsv).
+
+La clasificación primaria asigna género a 475/782 ASVs, vinculadas a 1.855.013
+lecturas antes de la separación. La sensibilidad a bootstrap 50 asigna género
+a 648/782 ASVs y 2.051.009 lecturas en la última corrida; no sustituye la
+clasificación primaria. La repetición anterior daba 649 ASVs/2.051.014 lecturas.
+La tabla primaria y la diversidad resultan idénticas en ambas corridas, pero
+los soportes bootstrap no son plenamente reproducibles con la semilla R.
+Véase la [auditoría de repetición](../reports/taxonomy_reproducibility_2026-10-31.md).
+Se separan 18 ASVs etiquetadas como orgánulos, con 157.550 lecturas.
+La tabla derivada conserva 764 ASVs, 2.096.980 lecturas y las 93 muestras.
+Fuentes: [cobertura taxonómica](../results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.tsv)
+y [balance de separación](../results/filtering/pacheco_montealegre_2020_colombia/full/summary.json).
+
+La riqueza observada va de 1 a 75 ASVs, la diversidad efectiva de Shannon de
+1 a 30,363 y la profundidad retenida de 986 a 69.751 lecturas. Las primeras dos
+componentes principales con pseudoconteo 1 representan el 12,68 % de la
+variación CLR. Estos resúmenes no incluyen pruebas temporales ni corrección
+por profundidad o diseño repetido; una separación visual no demuestra un
+efecto del tiempo.
+Fuentes: [diversidad alfa](../results/diversity/pacheco_montealegre_2020_colombia/full/alpha_diversity.tsv)
+y [varianza PCA](../results/diversity/pacheco_montealegre_2020_colombia/full/pca_variance.tsv).
 
 ## Preguntas aún sin contrastar
 
