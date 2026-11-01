@@ -31,7 +31,8 @@ todavía no hay resultados científicos del estudio completo.
 El primer cierre QC detectó que el validador compartido de Cutadapt esperaba
 siempre la ruta piloto. La corrección admite el directorio registrado del estudio
 sin relajar comprobaciones; el resumen real de los 93 runs ya pasa esa validación.
-La reanudación debe renovar los outputs afectados por el cambio de código.
+La corrección está registrada en `67c3820` y pasa 154 pruebas completas.
+La reanudación está renovando los outputs afectados por el cambio de código.
 Implementado: productor/validador de resúmenes por familia/género con política
 registrada en `config/taxonomic_reporting.yaml`, conservando linajes, desconocidos
 y tiempos. La generación del perfil completo espera el cierre de su separación.
@@ -119,6 +120,10 @@ mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
   sin renormalizar sólo taxones clasificados. Siete pruebas nuevas aprobadas.
 - Suite completa posterior a la implementación de composición: 151 pruebas
   Python aprobadas en Linux, incluidas las integraciones R y Snakemake existentes.
+- Corrección de rutas Cutadapt en `67c3820`: 154 pruebas completas aprobadas,
+  incluidos casos de rutas completas, escapes de directorio y una integración real
+  con FASTQ sintéticos. Las notas del manuscrito documentan la evidencia preliminar
+  y las hipótesis pendientes sin presentar el análisis completo como terminado.
 
 ## Datasets incluidos
 

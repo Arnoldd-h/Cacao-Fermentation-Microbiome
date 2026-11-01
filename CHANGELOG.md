@@ -8,6 +8,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   con el directorio de procesamiento registrado, conservando el valor piloto
   por defecto y la comprobación estricta de estudio, run, mate, entradas y parámetros.
   Se añade una integración con Cutadapt real sobre FASTQ sintéticos para la ruta completa.
+  La corrección pasa la suite completa de 154 pruebas en Linux.
+- Notas de resultados/discusión actualizadas con observaciones del piloto,
+  fuentes tabulares y límites de interpretación, separando la ampliación en curso
+  de la sucesión, el core y el meta-análisis todavía sin contrastar.
 - Política registrada para tablas descriptivas por familia/género: conservación
   del linaje, desconocidos y metadata temporal; denominador de todas las lecturas
   retenidas, sin agregar submuestras ni realizar inferencia.

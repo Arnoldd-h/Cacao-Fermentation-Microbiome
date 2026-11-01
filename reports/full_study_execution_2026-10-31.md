@@ -108,3 +108,5 @@ Cutadapt 5.0 con FASTQ sintéticos en la ruta completa, sin sustituir el parser
 por un mock. El resumen de los 93 informes reales ya valida correctamente.
 La reanudación renueva las etapas cuyo código de entrada cambió y conserva
 los crudos protegidos.
+La corrección se registra en `67c3820`; la suite completa pasa 154 pruebas
+en 101,560 segundos antes de reanudar. No se alteran los parámetros científicos.
