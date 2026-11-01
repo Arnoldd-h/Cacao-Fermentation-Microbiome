@@ -15,8 +15,11 @@ Suite completa: 188 pruebas aprobadas (179,502 s). Tras ampliar el contraste
 activo a títulos/descripciones e instrumento, las 26 pruebas de estudio pasan
 (27,230 s tras verificar el contrato de campos ENA), incluida una regresión
 nueva: 189 pruebas distintas verificadas. La auditoría ampliada confirma los
-60 runs, sin cambios del diseño. Descarga/QC en ejecución; pendiente renovar
-el checkpoint con esta versión de la verificación.
+60 runs, sin cambios del diseño. Los 120 FASTQ están descargados y pasan
+bytes/MD5; la revisión estructural y QC están en ejecución. Dos conexiones
+detenidas se recuperaron al reintentar. El descargador adopta el timeout HTTP
+ya configurado, con prueba real de transferencia local detenida/reanudada;
+pendiente renovar el checkpoint de fuentes con esta versión de verificación.
 
 
 Primer modelo longitudinal exploratorio ejecutado y validado dentro del

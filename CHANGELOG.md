@@ -11,6 +11,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   rechaza cambios del diseño temporal aunque accessions y FASTQ coincidan.
   Mapeo explícito de instrument_platform/model de ENA a los nombres del
   inventario, comprobado con fixtures que conservan los nombres reales de API.
+- El descargador aplica el timeout HTTP configurado a conexión/lecturas detenidas.
+  Una prueba con servidor HTTP local verifica fallo acotado, conservación de
+  bytes parciales y reanudación Range con checksum antes de promover el archivo.
 - Límite de etapa configurado: QC antes de aprobar parámetros DADA2 V3–V4.
 
 ## v0.5.3-longitudinal - 2026-10-31

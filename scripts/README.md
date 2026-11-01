@@ -164,7 +164,7 @@ El mismo workflow selecciona un perfil independiente; los outputs se resuelven
 por estudio. La configuración inicial limita la ejecución a descarga y QC:
 
 ```bash
-python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/study.Snakefile --cores 8 --resources mem_mb=4500 --config scope_config=config/prjna627078_study.yaml
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/study.Snakefile --cores 8 --resources mem_mb=4500 --retries 2 --keep-going --config scope_config=config/prjna627078_study.yaml
 ```
 
 La verificación activa de NCBI/ENA precede a la descarga. El manifest conserva
@@ -175,3 +175,8 @@ Los constructos completos desconocidos no se criban ni se informan como ausentes
 Elevarlo exige revisión de QC, decisión/configuración y commit específicos.
 Los resultados previos conservan el código y la procedencia de su ejecución;
 la ampliación del workflow no los convierte automáticamente en una corrida nueva.
+
+El descargador usa `inventory.http_timeout_seconds` como límite de inactividad
+de conexión/lectura. Los reintentos del scheduler reanudan `.part` mediante Range
+cuando el servidor lo admite y verifican tamaño/MD5 antes de promover a raw.
+El límite no es una duración máxima total para un archivo que sigue transfiriendo.
