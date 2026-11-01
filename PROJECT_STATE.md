@@ -269,5 +269,8 @@ figuras temporales, con la limitación del RNG taxonómico documentada. La entre
 está en [PR #6](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/6).
 
 La continuación `codex/taxonomy-seeded-ties` registra el método en `e008f2b`
-y prepara `v0.5.2-taxonomy-reproducibility`, limitado a reproducción taxonómica
-del primer estudio y su piloto. No se declara todavía un hito multistudio.
+y los resultados en `a5af049`. El hito `v0.5.2-taxonomy-reproducibility` se
+entrega mediante [PR #7](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/7),
+limitado a reproducción taxonómica del primer estudio y su piloto. No se
+declara todavía un hito multistudio. Ambos workflows quedan sin trabajos
+pendientes; la siguiente fase es registrar y contrastar el modelo longitudinal.

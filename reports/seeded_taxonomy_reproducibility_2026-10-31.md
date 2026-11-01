@@ -91,3 +91,8 @@ instalado, tres procesos y uno/dos hilos. La referencia fue revalidada sin
 descarga: 452.055 secuencias, mismos bytes/MD5. La nueva figura de cobertura
 se revisó visualmente; los PNG de diversidad/tiempo conservan los hashes
 previamente revisados. Los dos workflows quedan sin trabajos pendientes.
+El resumen verificable está en
+`results/reproducibility/pacheco_montealegre_2020_colombia/taxonomy_seeded_validation_summary.json`.
+La entrega del método y resultados corresponde a
+[PR #7](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/7)
+y al hito `v0.5.2-taxonomy-reproducibility`.
