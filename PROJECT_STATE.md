@@ -46,6 +46,10 @@ La generación y revisión visual del perfil completo espera la diversidad valid
 Perfil temporal piloto generado sobre `afb7705`: seis muestras, cuatro lotes,
 16 entradas y ocho artefactos válidos; PNG revisado visualmente tras corregir
 los márgenes. Las seis series parciales se muestran sin líneas.
+La suite completa actual pasa 161 pruebas en Linux (135,991 s). El primer
+recorrido completo cerró 481 trabajos. Se renueva la taxonomía y sus derivados
+tras corregir un título fijo de piloto en la figura de cobertura; el dry-run
+limita la renovación a siete trabajos sin repetir QC ni DADA2.
 Workflow, manifest, auditorías y registro del bloqueo integrados en `main`
 mediante PR #4 (`e28049c`); los archivos FASTQ permanecen fuera de Git.
 

@@ -4,6 +4,11 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- Suite final completa: 161 pruebas Python aprobadas en Linux (135,991 s),
+  incluidas integraciones con R, Cutadapt y Snakemake.
+- Corrección del título de cobertura taxonómica compartido: elimina la etiqueta
+  fija de piloto para describir correctamente cualquier alcance. No cambia
+  clasificación, umbrales ni conteos; requiere regenerar las salidas afectadas.
 - DADA2 completo de PRJNA492720 validado: 93 muestras, 782 ASVs y 2.254.530
   pares sin quimeras (82,62 %); 192 entradas/18 artefactos comprobados.
   Convergencia forward/reverse en seis rondas y nueve avisos gráficos preservados.

@@ -157,3 +157,13 @@ SRR7899641 conserva 9.178 pares sin quimeras de 22.820 (40,22 %); SRR7899691
 conserva 28.413 de 33.607 (84,54 %). Los avisos FastQC permanecen documentados,
 sin excluir estas muestras ni modificar parámetros. Se inicia la clasificación
 SILVA con el mismo umbral primario y sensibilidad registrados para el piloto.
+
+## Revisión de figuras y renovación de procedencia
+
+El primer recorrido completo cerró sus 481 trabajos y validó taxonomía,
+separación y diversidad. La revisión visual de cobertura detectó un título
+fijo `Pilot coverage` en el productor compartido. Se sustituye por
+`Taxonomic coverage`, válido para ambos alcances, sin modificar parámetros
+ni cálculos. Se guardan hashes de las tablas anteriores para contrastar
+que la renovación conserve sus valores. Las figuras se regeneran por código;
+no se retocan manualmente.
