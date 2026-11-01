@@ -20,7 +20,7 @@ longitudinal_code = [str(path) for path in Path("scripts/longitudinal").glob("*"
 shared_code = ["python/cacao_inventory/" + name + ".py" for name in ("analysis_artifacts", "bacterial_filter", "config", "io", "provenance", "taxonomy_reference", "taxonomy_validation")]
 products = ["observations.tsv", "sample_membership.tsv", "batch_models.tsv", "slopes.tsv", "intercepts.tsv", "global_tests.tsv", "direction_cosines.tsv",
             "leave_one_batch_out.tsv", "sign_statistics.tsv", "trajectory_plot_data.tsv", "summary.json", "independent_validation.tsv", "software_versions.tsv",
-            "session_info.txt", "community_trajectories.pdf", "community_trajectories.svg", "community_trajectories.png", "config_snapshot.yaml", "input_checksums.json", "provenance.json", "SUCCESS"]
+            "session_info.txt", "community_trajectories.pdf", "community_trajectories.svg", "community_trajectories.png", "config_snapshot.yaml", "input_checksums.json", "provenance.json", "SUCCESS", "validation.json"]
 
 
 rule all:
@@ -38,9 +38,3 @@ rule run_longitudinal:
     params: config_sha256=hashlib.sha256(Path("config/longitudinal.yaml").read_bytes()).hexdigest()
     resources: mem_mb=1000
     shell: "python scripts/longitudinal/run_longitudinal.py --config {input.config:q}"
-
-
-rule validate_longitudinal:
-    input: products=rules.run_longitudinal.output, code=[*longitudinal_code, *shared_code]
-    output: output_dir + "/validation.json"
-    shell: "python scripts/longitudinal/validate_longitudinal.py"
