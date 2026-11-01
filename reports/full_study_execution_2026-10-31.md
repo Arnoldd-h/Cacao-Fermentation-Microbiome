@@ -130,3 +130,30 @@ Los resúmenes, configuración y procedencia están en
 FASTQ permanecen fuera de Git. El workflow inicia DADA2 con los mismos
 parámetros científicos registrados. Las marcas de tiempo de los outputs se
 conservan en UTC; este reporte utiliza la fecha local de Colombia.
+
+## Cierre DADA2 del estudio completo
+
+La ejecución sobre `1250c72` conserva las 93 muestras: 2.540.412 pares filtrados,
+2.395.174 ensamblados y 2.254.530 sin quimeras (82,6162 % de 2.728.920 de
+entrada). De 1.606 secuencias ensambladas se conservan 782 ASVs después de
+identificar 824 quimeras por consenso. Todavía no son una tabla bacteriana
+separada por taxonomía. Las longitudes retenidas van de 236 a 247 nt;
+no se aplica un filtro de longitud no registrado.
+
+Los modelos F/R convergen en seis rondas, antes del límite de diez. Los
+diagnósticos registran 101.383.928 y 101.237.542 observaciones de transición.
+Se revisaron ambos PNG: curvas y puntos legibles; se conservan nueve warnings
+de representación logarítmica de frecuencias cero, sin ocultarlos. La
+convergencia no equivale a ausencia de errores o contaminación.
+
+El validador independiente comprueba 192 entradas y 18 artefactos, conteos,
+secuencias, longitudes y modelos. Los hashes de entrada se verificaron también
+al cerrar R. La procedencia conserva `git_dirty=true` por resultados QC y
+planificación aún sin commit al iniciar, cuyos contenidos se registran por hash.
+Los cambios posteriores de documentación y productores descriptivos no alteraron
+las entradas científicas durante DADA2.
+
+SRR7899641 conserva 9.178 pares sin quimeras de 22.820 (40,22 %); SRR7899691
+conserva 28.413 de 33.607 (84,54 %). Los avisos FastQC permanecen documentados,
+sin excluir estas muestras ni modificar parámetros. Se inicia la clasificación
+SILVA con el mismo umbral primario y sensibilidad registrados para el piloto.

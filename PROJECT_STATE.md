@@ -28,8 +28,10 @@ manifest original. Se descargaron y validaron 186/186 FASTQ: 394.515.770 bytes,
 con MD5, gzip/CRC y estructura correctos. No se modificaron inclusiones,
 parámetros científicos ni archivos crudos válidos. QC completo cerrado y validado:
 93 runs, 2.728.920 pares conservados tras Cutadapt, 505 entradas/11 artefactos
-comprobados y cero muestras excluidas. En curso: DADA2 del estudio completo;
-taxonomía y diversidad completas siguen pendientes.
+comprobados y cero muestras excluidas. DADA2 completo cerrado y validado:
+93 muestras, 782 ASVs y 2.254.530 pares sin quimeras (82,62 % de la entrada),
+con 192 entradas/18 artefactos comprobados. Ambos modelos de error convergen
+en seis rondas. En curso: taxonomía; separación y diversidad completas pendientes.
 El primer cierre QC detectó que el validador compartido de Cutadapt esperaba
 siempre la ruta piloto. La corrección admite el directorio registrado del estudio
 sin relajar comprobaciones; el resumen real de los 93 runs ya pasa esa validación.
@@ -175,8 +177,8 @@ validación estructural y procedencia científica; no se modifican los crudos
 para reconstruir ese historial auxiliar.
 La descarga completa está validada desde el 2026-10-31. El archivo HTML de
 797 bytes del intento anterior se conserva en `results/tmp/`, fuera de Git;
-no se utilizó para reanudar bytes de un FASTQ. El QC de los 93 runs está validado;
-DADA2 está en ejecución y todavía no produjo tablas científicas completas.
+no se utilizó para reanudar bytes de un FASTQ. QC y DADA2 de los 93 runs están
+validados; taxonomía está en ejecución y faltan separación/diversidad completas.
 
 ## Bloqueos y limitaciones
 

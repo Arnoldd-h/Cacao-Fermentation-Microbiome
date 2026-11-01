@@ -4,6 +4,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 
 ## En desarrollo - 2026-10-31
 
+- DADA2 completo de PRJNA492720 validado: 93 muestras, 782 ASVs y 2.254.530
+  pares sin quimeras (82,62 %); 192 entradas/18 artefactos comprobados.
+  Convergencia forward/reverse en seis rondas y nueve avisos gráficos preservados.
 - Primera exportación temporal piloto validada: seis muestras, cuatro lotes,
   16 entradas/ocho artefactos, con revisión visual y corrección de márgenes.
 - Política registrada para figuras temporales de riqueza, diversidad efectiva y
