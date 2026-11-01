@@ -206,7 +206,9 @@ rule run_taxonomy:
     input:
         validated=dada + "/validation.json", config=scope["taxonomy_config"], reference=reference["path"], reference_provenance=reference["provenance_path"], manifest=manifest_input,
         data=[dada + "/" + n for n in ("SUCCESS", "asv_sequences.tsv", "asv_counts.tsv", "sample_metadata.tsv")],
-        code=["scripts/taxonomy/run_taxonomy.py", "scripts/taxonomy/assign_taxonomy.R", "scripts/taxonomy/helpers.R", "scripts/dada2/helpers.R", "scripts/dada2/validate_outputs.py", "environment/conda-linux-64.lock", *analysis_code],
+        code=["scripts/taxonomy/run_taxonomy.py", "scripts/taxonomy/assign_taxonomy.R", "scripts/taxonomy/helpers.R",
+              "scripts/taxonomy/seeded_classifier.R", "scripts/taxonomy/seeded_policy.py", "scripts/taxonomy/native/taxonomy_upstream.cpp", "scripts/taxonomy/native/taxonomy_seeded.cpp",
+              "scripts/dada2/helpers.R", "scripts/dada2/validate_outputs.py", "environment/conda-linux-64.lock", *analysis_code],
     output:
         [tax + "/" + n for n in ("SUCCESS", "provenance.json", "input_checksums.json", "taxonomy.tsv", "taxonomy_unfiltered.tsv", "taxonomy_bootstraps.tsv", "taxonomy_sensitivity.tsv", "taxonomy_screening.tsv", "assignment_coverage.tsv", "sample_coverage.tsv", "software_versions.tsv", "session_info.txt", "warnings.txt", "config_snapshot.yaml", "assignment_coverage.pdf", "assignment_coverage.svg", "assignment_coverage.png")],
     params: input_dir=dada, output_dir=tax, config_sha256=sha256_file(scope["taxonomy_config"])
@@ -215,7 +217,7 @@ rule run_taxonomy:
     shell: "python scripts/taxonomy/run_taxonomy.py --config {input.config:q} --input-dir {params.input_dir:q} --output-dir {params.output_dir:q} --threads {threads}"
 
 rule validate_taxonomy:
-    input: products=rules.run_taxonomy.output, manifest=manifest_input, code=["scripts/taxonomy/validate_taxonomy.py", "python/cacao_inventory/taxonomy_validation.py"]
+    input: products=rules.run_taxonomy.output, manifest=manifest_input, code=["scripts/taxonomy/validate_taxonomy.py", "scripts/taxonomy/seeded_policy.py", "python/cacao_inventory/taxonomy_validation.py"]
     output: tax + "/validation.json"
     params: input_dir=dada, output_dir=tax
     shell: "python scripts/taxonomy/validate_taxonomy.py --input-dir {params.input_dir:q} --run-dir {params.output_dir:q} --output {output:q}"

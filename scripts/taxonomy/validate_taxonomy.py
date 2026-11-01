@@ -19,6 +19,7 @@ from cacao_inventory.config import load_json_yaml
 from cacao_inventory.provenance import file_records
 from cacao_inventory.taxonomy_reference import repository_path, validate_taxonomy_config
 from cacao_inventory.taxonomy_validation import validate_taxonomy_tables
+from seeded_policy import validate_native_rng
 
 REQUIRED = {"taxonomy.tsv", "taxonomy_unfiltered.tsv", "taxonomy_bootstraps.tsv", "taxonomy_sensitivity.tsv",
             "taxonomy_screening.tsv", "assignment_coverage.tsv", "sample_coverage.tsv", "config_snapshot.yaml",
@@ -53,6 +54,7 @@ def validate(directory: Path, input_directory: Path, root: Path) -> dict:
         raise ValueError("Input checksum table disagrees with provenance")
     config = load_json_yaml(directory / "config_snapshot.yaml")
     validate_taxonomy_config(config, root)
+    validate_native_rng(config)
     if provenance["classification"] != config["classification"] or provenance["reference"] != config["reference"]:
         raise ValueError("Executed taxonomy parameters disagree with configuration")
     summary = validate_taxonomy_tables(directory, input_directory, config)

@@ -275,3 +275,33 @@ registrar cualquier solución como cambio metodológico específico. Antes de
 otra reclasificación se deben conservar las tablas bootstrap completas de
 referencia, además de hashes. Evidencia y fuentes en
 `reports/taxonomy_reproducibility_2026-10-31.md`.
+
+### Desempate nativo controlado, 2026-10-31
+
+Antes de aplicar otra clasificación real se registra el adaptador explícito
+`r_seeded_query_mt19937_v1` en `config/taxonomy.yaml`. Parte del código nativo
+sin modificar de DADA2 1.34.0, commit upstream
+`5d453a416608f75f0bf50bcc74bbf0c1851e7f9f`, SHA-256
+`1641cf17a322af65c31f6ad58fcf75e787ded90e9017960e5f9d3d2daa69a6a6`.
+El paquete instalado no se modifica. Un entorno R local sustituye únicamente
+la entrada nativa de `assignTaxonomy`; se versionan fuente original, modificada
+y licencia LGPL-2. El entorno ya contiene Rcpp, RcppParallel y compilador.
+
+El hilo principal genera una uniforme por consulta desde el RNG R configurado,
+después de las uniformes bootstrap originales. `floor(u * 2^32)` inicializa un
+`std::mt19937` privado de cada consulta para sus desempates. Se conserva la
+selección uniforme por reservorio entre empates, el clasificador de ocho bases,
+100 réplicas, orientación, referencia SILVA y umbrales 80/50. No se sustituyen
+empates por la primera etiqueta ni se favorece un taxón concreto.
+
+Se exige repetición exacta de tablas entre procesos independientes y uno/dos
+hilos con iguales datos/orden, semilla y entorno. No se promete invariancia al
+reordenar entradas ni entre plataformas. Primero se prueban referencias
+sintéticas ambiguas y la concordancia sin empates; después se ejecutan piloto
+y estudio completo, con réplicas cronológicas y comparación de todas las celdas.
+Las tablas nativas históricas completas ya se copiaron a un archivo local
+inmutable por convención (`results/tmp/taxonomy_native_baseline`); sus hashes y
+commit recuperable están en `results/reproducibility/`. No se seleccionará una
+réplica por cobertura o significación. Toda diferencia real se reportará antes
+de renovar los derivados. Esta decisión no autoriza inferencia nueva ni cambia
+hipótesis, exclusiones, taxonomía de referencia o umbrales.

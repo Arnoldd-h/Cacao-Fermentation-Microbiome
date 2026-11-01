@@ -2,6 +2,13 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-31
+
+- Adaptador nativo explícito de desempate con semilla R por consulta para
+  DADA2 1.34.0, sin modificar el paquete instalado, referencia ni umbrales.
+  Fuentes original/modificada y licencia LGPL-2 versionadas; tablas anteriores
+  archivadas completas y pruebas de repetición entre procesos/hilos.
+
 ## v0.5.1-full-study - 2026-10-31
 
 - Composición completa y figuras temporales consolidadas: 1.477 filas para

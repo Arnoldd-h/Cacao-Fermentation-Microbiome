@@ -4,6 +4,11 @@
 
 ## Fase actual
 
+En progreso: control explícito del desempate nativo taxonómico antes de la
+inferencia. Tablas históricas completas archivadas; método registrado en
+configuración y decisiones. Adaptador aislado pendiente de pruebas sintéticas
+y repetición sobre datos reales; no se declara resuelto hasta validarlo.
+
 Primer estudio completo procesado y validado de forma descriptiva: PRJNA492720,
 93 muestras pareadas de cuatro lotes y 47 observaciones lote-tiempo. El
 inventario conserva 94 runs; SRR7899803 no ofrece pares completos y se excluye

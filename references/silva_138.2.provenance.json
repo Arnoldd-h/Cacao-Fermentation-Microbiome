@@ -7,13 +7,13 @@
   ],
   "config": [
     {
-      "bytes": 1295,
+      "bytes": 1566,
       "path": "config/taxonomy.yaml",
-      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+      "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
     }
   ],
-  "created_at_utc": "2026-10-09T20:00:51.982787+00:00",
-  "git_commit": "df3a41e318e22f3f681b4f7fde04892de041d10e",
+  "created_at_utc": "2026-11-01T02:33:09.591601+00:00",
+  "git_commit": "cb9eca06bfa37c25d4285dc6185133ad0726ad28",
   "git_dirty": true,
   "inputs": [
     {

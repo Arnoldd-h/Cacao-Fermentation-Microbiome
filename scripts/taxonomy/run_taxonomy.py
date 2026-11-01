@@ -10,6 +10,7 @@ On every invocation the prior SUCCESS and validation marker are invalidated firs
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import shutil
@@ -26,6 +27,7 @@ from cacao_inventory.config import load_json_yaml
 from cacao_inventory.download import validate_file
 from cacao_inventory.provenance import file_records
 from cacao_inventory.taxonomy_reference import repository_path, validate_taxonomy_config
+from seeded_policy import validate_native_rng
 
 PRODUCTS = ["taxonomy.tsv", "taxonomy_unfiltered.tsv", "taxonomy_bootstraps.tsv",
             "taxonomy_sensitivity.tsv", "taxonomy_screening.tsv", "assignment_coverage.tsv", "sample_coverage.tsv",
@@ -58,6 +60,7 @@ def main() -> int:
         (output / name).unlink(missing_ok=True)
     config = load_json_yaml(args.config)
     validate_taxonomy_config(config, ROOT)
+    validate_native_rng(config)
     project = load_json_yaml(ROOT / "config/config.yaml")
     if config["classification"]["random_seed"] != project["project"]["default_random_seed"]:
         raise ValueError("Taxonomy and project seeds disagree")
@@ -78,7 +81,15 @@ def main() -> int:
               ROOT / "scripts/dada2/helpers.R", ROOT / "scripts/dada2/validate_outputs.py",
               ROOT / "python/cacao_inventory/taxonomy_reference.py", ROOT / "python/cacao_inventory/provenance.py",
               ROOT / "python/cacao_inventory/download.py", ROOT / "python/cacao_inventory/config.py",
-              ROOT / "environment/conda-linux-64.lock", ROOT / "workflow/Snakefile", ROOT / "workflow/rules/pilot_taxonomy.smk"]
+              ROOT / "environment/conda-linux-64.lock", ROOT / "workflow/Snakefile", ROOT / "workflow/rules/pilot_taxonomy.smk",
+              ROOT / "scripts/taxonomy/seeded_classifier.R", ROOT / "scripts/taxonomy/seeded_policy.py",
+              ROOT / "workflow/study.Snakefile"]
+    if config["classification"].get("native_rng"):
+        native = ROOT / "scripts/taxonomy/native"
+        upstream_hash = hashlib.sha256((native / "taxonomy_upstream.cpp").read_bytes()).hexdigest()
+        if upstream_hash != config["classification"]["native_rng"]["upstream_sha256"]:
+            raise ValueError("Pinned native taxonomy source checksum mismatch")
+        inputs += [native / "taxonomy_upstream.cpp", native / "taxonomy_seeded.cpp"]
     before = file_records(inputs, ROOT)
     command = ["Rscript", "scripts/taxonomy/assign_taxonomy.R", "--config", str(args.config.resolve()),
                "--input-dir", str(args.input_dir.resolve()), "--output-dir", str(output), "--threads", str(threads)]

@@ -127,3 +127,10 @@ La renovación del piloto del 2026-10-31 sobre `302b7f7` vuelve a comprobar las
 son idénticos a la referencia anterior; cambia el título de cobertura y la
 procedencia. Esta coincidencia observada no elimina el límite nativo del RNG
 detectado en la ampliación.
+
+El control explícito del desempate se registra posteriormente mediante
+`r_seeded_query_mt19937_v1`, sin modificar el paquete DADA2 instalado. Sus
+fuentes, contrato de reproducción, pruebas y comparación con tablas históricas
+se documentan en [la evaluación del adaptador](seeded_taxonomy_reproducibility_2026-10-31.md).
+Los umbrales 80/50 y la referencia no cambian; las afirmaciones anteriores
+describen sus ejecuciones históricas, no una garantía del RNG nativo original.
