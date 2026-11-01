@@ -21,8 +21,8 @@ render_temporal <- function(data, config, profile, destination, extension) {
   strata <- sort(unique(data$sampling_stratum))
   colors <- stats::setNames(unlist(figures$stratum_colors)[seq_along(strata)], strata)
   metrics <- vapply(config$metrics, `[[`, character(1), "field")
-  graphics::par(mfrow = c(length(batches), length(metrics)), mar = c(3.4, 4, 3, 1), oma = c(4, 1, 5, 1))
-  graphics::par(cex = 1, ps = 10)
+  graphics::par(mfrow = c(length(batches), length(metrics)), mar = c(3, 4, 3, 1), oma = c(5, 1, 5, 1))
+  graphics::par(cex = 1, ps = 10, mgp = c(2, 0.6, 0))
   study_prefix <- paste0(unique(data$study_id), "::")
   for (batch in batches) {
     subset <- data[data$fermentation_batch == batch, , drop = FALSE]
@@ -33,7 +33,7 @@ render_temporal <- function(data, config, profile, destination, extension) {
       limits <- range(c(0, data[[metric]]))
       single_time <- length(batch_times) == 1L
       time_limits <- if (single_time) c(max(0, batch_times - 1), batch_times + 1) else range(batch_times)
-      graphics::plot(NA, xlim = time_limits, ylim = limits, xlab = "Horas de fermentación", ylab = "",
+      graphics::plot(NA, xlim = time_limits, ylim = limits, xlab = "", ylab = "",
                      main = paste(title, config$metrics[[metric_index]]$label, sep = "\n"), cex.main = 0.85,
                      cex.lab = 0.8, cex.axis = 0.75, xaxt = if (single_time) "n" else "s")
       if (single_time) graphics::axis(1, at = batch_times, cex.axis = 0.75)
@@ -55,7 +55,8 @@ render_temporal <- function(data, config, profile, destination, extension) {
   graphics::mtext(profile$scope_label, outer = TRUE, side = 3, line = 1.6, cex = 0.85)
   note <- if (isTRUE(profile$connect_points)) "Líneas entre observaciones consecutivas del mismo estrato; huecos sin imputar. Sin pruebas estadísticas." else "Puntos aislados: el piloto no reconstruye trayectorias. Sin pruebas estadísticas."
   graphics::mtext(note, outer = TRUE, side = 3, line = 0.4, cex = 0.7)
-  graphics::par(fig = c(0, 1, 0, 0.06), new = TRUE, mar = c(0, 0, 0, 0))
+  graphics::mtext("Horas de fermentación", outer = TRUE, side = 1, line = 1, cex = 0.85)
+  graphics::par(fig = c(0, 1, 0, 0.035), new = TRUE, mar = c(0, 0, 0, 0))
   graphics::plot.new()
   graphics::legend("center", legend = paste("Estrato", strata), col = colors, pch = 16,
                    lty = if (isTRUE(profile$connect_points)) 1 else 0, horiz = TRUE, bty = "n", cex = 0.9)
