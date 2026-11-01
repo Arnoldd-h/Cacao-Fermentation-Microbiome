@@ -4,6 +4,16 @@
 
 ## Fase actual
 
+El segundo estudio cerró el QC basal de primers 5': 552/552 pasos,
+5.689.175 pares conservados, cero exclusiones, 340 entradas y 11 artefactos
+validados. El QC posterior registra 61 fail/1 warn/58 pass por calidad de base
+(frente a 8/11/101 originales), incluidos los 60 R2 con fail, y persisten
+coincidencias con el primer opuesto. DADA2 continúa limitado por configuración.
+Se investiga su posición y la cobertura de las colas antes de aprobar el
+preprocesamiento; no se interpretan estos flags como pérdida automática de
+calidad global ni se asigna identidad biológica a esos fragmentos.
+
+
 Ampliación al segundo estudio: PRJNA627078 (México), 60 bibliotecas bacterianas
 tradicionales, cuatro cajas y cinco tiempos. Configuración independiente y
 límite inicial en QC; estratos desconocidos conservados vacíos y primers

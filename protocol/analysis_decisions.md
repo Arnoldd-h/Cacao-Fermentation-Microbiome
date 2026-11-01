@@ -389,3 +389,18 @@ El contraste de plataforma/instrumento usa el mapeo explícito
 `sequencing_instrument <- instrument_model`, igual que el inventario.
 Las pruebas verifican que los nombres de fuente existan en el contrato ENA;
 no simulan una respuesta remota con columnas renombradas por el pipeline.
+
+
+### Diagnóstico de residuos después del QC 5', 2026-10-31
+
+El QC basal de PRJNA627078 encuentra un aumento de flags por calidad de base
+tras mover el origen de las lecturas y residuos de secuencias compatibles con
+primers opuestos. Se añade un diagnóstico ilustrativo después de observar el
+problema: seleccionar por mate el mayor número de coincidencias del primer
+opuesto en complemento inverso, desempatar por accession y repetir exactamente
+el cribado con Cutadapt `--action=none`, igual tolerancia y overlap completos.
+Se registran coordenadas 0-based y coincidencias que terminan al final de la
+lectura, validando los recuentos contra el cribado inicial. No se filtran reads,
+se excluyen muestras, se cambian parámetros DADA2 ni se generaliza la fracción
+terminal del caso seleccionado a todo el estudio. DADA2 permanece pendiente.
+Formato: https://cutadapt.readthedocs.io/en/v5.0/reference.html#info-file-format.

@@ -17,6 +17,9 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - El descargador aplica el timeout HTTP configurado a conexión/lecturas detenidas.
   Una prueba con servidor HTTP local verifica fallo acotado, conservación de
   bytes parciales y reanudación Range con checksum antes de promover el archivo.
+- Diagnóstico reproducible de posiciones de coincidencia de primers residuales:
+  selecciona el mayor recuento por mate, reproduce el cribado sin modificar
+  lecturas y distingue coincidencias terminales/internas con procedencia.
 - Límite de etapa configurado: QC antes de aprobar parámetros DADA2 V3–V4.
 
 ## v0.5.3-longitudinal - 2026-10-31
