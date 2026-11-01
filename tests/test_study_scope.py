@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "python"))
 from cacao_inventory.config import load_json_yaml
+from cacao_inventory.io import read_inventory
 from cacao_inventory.study_scope import build_study_manifest, build_stream_log, compare_live_runs, validate_scope
 
 
@@ -40,6 +41,15 @@ class StudyScopeTests(unittest.TestCase):
         for samples in (self.samples[:1], [self.samples[0], self.samples[0]], [{**row, "analysis_include": "pending"} for row in self.samples]):
             with self.subTest(samples=samples), self.assertRaises(ValueError):
                 build_study_manifest(self.config, self.runs, samples)
+
+    def test_explicit_unknown_strata_policy_preserves_replicates_and_empty_fields(self):
+        samples = [{**row, "sampling_stratum": "", "replicate": str(i)} for i, row in enumerate(self.samples, 1)]
+        with self.assertRaises(ValueError):
+            build_study_manifest(self.config, self.runs, samples)
+        config = {**self.config, "sampling_stratum_policy": "preserve_unknown"}
+        rows = build_study_manifest(config, self.runs, samples)
+        self.assertEqual([row["sampling_stratum"] for row in rows], ["", ""])
+        self.assertEqual([row["replicate"] for row in rows], ["1", "2"])
 
     def test_malformed_downloads_and_incompatible_technology_fail(self):
         for field, value in (("fastq_md5", "not-a-checksum"), ("fastq_bytes", "10"), ("fastq_ftp", ""), ("library_layout", "SINGLE"), ("sequencing_platform", "PACBIO_SMRT")):
@@ -83,11 +93,22 @@ class StudyScopeTests(unittest.TestCase):
     def test_registered_paths_and_resource_budget_reject_unsafe_outputs(self):
         config = load_json_yaml(ROOT / "config/full_study.yaml")
         validate_scope(config, ROOT)
-        for field, value in (("interim_dir", "data/raw/full"), ("dada2_dir", "results/dada2/pilot"), ("manifest", "../outside.tsv"), ("scope", "select_significant_runs")):
+        for field, value in (("interim_dir", "data/raw/full"), ("dada2_dir", "results/dada2/pilot"), ("manifest", "../outside.tsv"), ("scope", "select_significant_runs"), ("sampling_stratum_policy", "invent_from_replicate")):
             changed = copy.deepcopy(config)
             changed[field] = value
             with self.subTest(field=field), self.assertRaises(ValueError):
                 validate_scope(changed, ROOT)
+
+    def test_registered_mexican_scope_keeps_all_runs_and_unknown_strata(self):
+        config = load_json_yaml(ROOT / "config/prjna627078_study.yaml")
+        validate_scope(config, ROOT)
+        inventory = read_inventory(ROOT / "metadata")
+        rows = build_study_manifest(config, inventory["runs"], inventory["samples"])
+        self.assertEqual(len(rows), 60)
+        self.assertEqual(len({row["fermentation_batch"] for row in rows}), 4)
+        self.assertEqual({row["fermentation_hours"] for row in rows}, {"0", "24", "48", "72", "120"})
+        self.assertEqual({row["replicate"] for row in rows}, {"1", "2", "3"})
+        self.assertEqual({row["sampling_stratum"] for row in rows}, {""})
 
 
 if __name__ == "__main__":

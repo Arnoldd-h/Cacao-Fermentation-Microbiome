@@ -4,6 +4,15 @@
 
 ## Fase actual
 
+Ampliación al segundo estudio: PRJNA627078 (México), 60 bibliotecas bacterianas
+tradicionales, cuatro cajas y cinco tiempos. Configuración independiente y
+límite inicial en QC; estratos desconocidos conservados vacíos y primers
+V3–V4 verificados sin inventar constructos. NCBI/ENA verificados: los 60 runs siguen elegibles de 132 registros;
+120 streams pareados suman 1.379.724.114 bytes, con reserva estimada de 8,28 GB.
+Un stream huérfano se registra sin eliminar su run. Descarga y QC pendientes. DADA2 se mantiene bloqueado por configuración
+hasta revisar longitudes/calidad; los parámetros candidatos no son resultados.
+
+
 Primer modelo longitudinal exploratorio ejecutado y validado dentro del
 estudio completo: 764 ASVs, cuatro lotes independientes, 46 tiempos con pares
 completos y 92 muestras; el punto incompleto permanece en sensibilidad.

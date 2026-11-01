@@ -2,6 +2,13 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-10-31
+
+- Perfil independiente para PRJNA627078 y selección configurable del estudio
+  en el workflow. Conservación explícita de estratos desconocidos y cribado
+  sólo de primers establecidos; no se imputan constructos no documentados.
+- Límite de etapa configurado: QC antes de aprobar parámetros DADA2 V3–V4.
+
 ## v0.5.3-longitudinal - 2026-10-31
 
 - Plan longitudinal exploratorio fijado antes del ajuste: CLR por ASV,
