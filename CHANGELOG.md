@@ -7,6 +7,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Política registrada para figuras temporales de riqueza, diversidad efectiva y
   lecturas retenidas por lote/estrato, con horas originales y saltos explícitos
   cuando falta una observación; sin agregación ni inferencia.
+- Productor/validador de figuras temporales PDF/SVG/PNG de 300 dpi con puntos
+  exactos auditables, perfiles piloto/completo y siete pruebas de integridad y agrupación.
 - QC del primer estudio completo cerrado: 93 runs y 2.728.920 pares, con
   retención Cutadapt del 100 %, 112 lecturas recortadas y 3.812 bases retiradas.
   Validación de 505 entradas/11 artefactos; cero exclusiones y avisos de calidad

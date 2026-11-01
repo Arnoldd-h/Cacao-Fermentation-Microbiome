@@ -254,6 +254,6 @@ ajustan modelos y no se unen lotes o estratos distintos. El piloto se muestra
 sin líneas porque sus seis muestras no reconstruyen series completas.
 Duplicados lote/hora/estrato provocan fallo, en lugar de una agregación implícita.
 
-Las figuras se exportan en PDF/SVG/PNG de 300 dpi, con linajes de muestras y
+Las figuras se exportan en PDF/SVG/PNG de 300 dpi, con identificadores de muestras y
 procedencia de las tablas fuente. Son una representación descriptiva dentro de
 estudio, no pruebas de sucesión conservada, core o significación temporal.

@@ -154,6 +154,17 @@ python3 scripts/environment/run_in_environment.py python scripts/reporting/summa
 [métodos de composición](reports/composition_methods.md) describen el denominador,
 las etiquetas desconocidas y la validación; estas tablas no contrastan sucesión.
 
+Para visualizar la diversidad y profundidad frente a las horas originales,
+conservando lote y estrato, después de validar la diversidad:
+
+```bash
+python3 scripts/environment/run_in_environment.py python scripts/reporting/plot_temporal_diversity.py --analysis full_study
+python3 scripts/environment/run_in_environment.py python scripts/reporting/plot_temporal_diversity.py --analysis full_study --validate-only
+```
+
+Los [métodos temporales descriptivos](reports/temporal_reporting_methods.md)
+explican las líneas y los huecos; el perfil `pilot` muestra puntos aislados.
+
 `--check-inputs-root .` comprueba también los hashes de las entradas originales;
 un cambio posterior de esas entradas obliga a reconstruir y validar la etapa
 afectada. Los comandos individuales de metadata y QC están descritos en
