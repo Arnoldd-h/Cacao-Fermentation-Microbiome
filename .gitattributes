@@ -14,6 +14,7 @@ data/processed/**/taxonomy.tsv whitespace=-blank-at-eol
 results/filtering/**/asv_filter_log.tsv whitespace=-blank-at-eol
 results/diversity/**/session_info.txt whitespace=-blank-at-eol
 results/temporal/**/session_info.txt whitespace=-blank-at-eol
+results/longitudinal/**/session_info.txt whitespace=-blank-at-eol
 results/dada2/**/config_snapshot.yaml whitespace=-blank-at-eof
 *.png binary
 *.pdf binary

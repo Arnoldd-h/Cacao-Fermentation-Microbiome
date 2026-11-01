@@ -96,3 +96,11 @@ versiones Rcpp, RcppParallel y compilador en `software_versions.tsv`.
 La fuente LGPL-2 original/modificada está en `scripts/taxonomy/native/`.
 La reproducción exacta está acotada al entorno registrado y al mismo orden
 de entradas, como se especifica en `protocol/analysis_decisions.md`.
+
+## Modelo longitudinal por lote
+
+Los cálculos CLR/OLS, signos exhaustivos y FDR BY utilizan la biblioteca
+estándar de Python. La comprobación independiente usa `stats::lm.fit`,
+`stats::p.adjust` y YAML en el R ya fijado; las figuras utilizan dispositivos
+base PDF/SVG/PNG. No se instala ni modifica ninguna dependencia. Cada
+ejecución conserva las versiones de R, stats y yaml junto al lock del entorno.

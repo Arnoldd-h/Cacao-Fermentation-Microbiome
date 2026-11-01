@@ -10,6 +10,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   signos exhaustivos y FDR BY, con resolución mínima p=0,125 documentada.
   El principal exige pares completos (46 tiempos/92 muestras), conservando
   el punto incompleto en sensibilidad sin editar los datos originales.
+- Productor/validador longitudinal y workflow separado de las etapas previas:
+  coeficientes completos, auditoría por muestra, signos exhaustivos, FDR BY,
+  heterogeneidad y leave-one-batch-out; comprobación independiente R/QR y
+  figuras de distancia Aitchison exportadas en PDF/SVG/PNG de 300 dpi.
 
 ## v0.5.2-taxonomy-reproducibility - 2026-10-31
 

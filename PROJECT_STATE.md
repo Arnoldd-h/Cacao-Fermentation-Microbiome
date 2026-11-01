@@ -8,8 +8,10 @@ En desarrollo: modelo longitudinal exploratorio por lote del primer estudio.
 `config/longitudinal.yaml` y `reports/longitudinal_methods.md` registran el
 diseño antes de estimar efectos: cuatro unidades independientes, 46 tiempos
 con pares completos y sensibilidades para el punto incompleto, tiempo y ceros.
-No se han calculado todavía los contrastes de esta fase. Con cuatro lotes,
-el contraste exhaustivo de signos propuesto tiene p mínimo 0,125.
+La implementación ya pasa 14 pruebas analíticas/de política, incluida una
+comprobación independiente en R que rechaza un coeficiente alterado. Sigue
+pendiente el primer ajuste real. Con cuatro lotes, el contraste exhaustivo
+de signos propuesto tiene p mínimo 0,125.
 
 Control explícito del desempate taxonómico validado en el entorno registrado:
 adaptador `r_seeded_query_mt19937_v1`, sin modificar el paquete DADA2 instalado.
