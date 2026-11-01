@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT / "python"))
 from cacao_inventory.config import load_json_yaml
 from cacao_inventory.io import read_inventory
 from cacao_inventory.study_scope import build_study_manifest, build_stream_log, compare_live_runs, validate_scope
+from cacao_inventory.sources import ENA_FIELDS
 
 
 class StudyScopeTests(unittest.TestCase):
@@ -29,6 +30,13 @@ class StudyScopeTests(unittest.TestCase):
                 "relative_time": str(index - 1), "fermentation_stage": "early" if index == 1 else "late", "sampling_stratum": "1",
                 "marker": "16S rRNA", "country": "", "time_source": "synthetic fixture"})
         self.candidate = {"candidate_rules": [{"field": "sample_alias", "pattern": "^Bact"}, {"field": "library_strategy", "pattern": "^AMPLICON$"}]}
+
+    def live_rows(self):
+        rows = copy.deepcopy(self.runs)
+        for row in rows:
+            row["instrument_platform"] = row.pop("sequencing_platform")
+            row["instrument_model"] = row.pop("sequencing_instrument")
+        return rows
 
     def test_all_included_runs_preserve_known_and_unknown_metadata(self):
         rows = build_study_manifest(self.config, self.runs, self.samples)
@@ -67,16 +75,19 @@ class StudyScopeTests(unittest.TestCase):
                 build_study_manifest(self.config, self.runs, changed)
 
     def test_live_sources_match_or_fail_on_new_missing_or_changed_runs(self):
-        self.assertEqual(compare_live_runs(self.config, self.candidate, self.runs, self.runs)["eligible_runs"], 2)
-        changed = copy.deepcopy(self.runs)
+        live = self.live_rows()
+        audit = compare_live_runs(self.config, self.candidate, self.runs, live)
+        self.assertEqual(audit["eligible_runs"], 2)
+        self.assertTrue(all(audit["source_field_mapping"].get(field, field) in ENA_FIELDS for field in audit["verified_fields"]))
+        changed = copy.deepcopy(live)
         changed[0]["fastq_md5"] = "c" * 32 + ";" + "b" * 32
-        for live in (self.runs[:1], self.runs + [{**self.runs[0], "run_accession": "SRR3"}], changed, self.runs + self.runs):
+        for live in (live[:1], live + [{**live[0], "run_accession": "SRR3"}], changed, live + live):
             with self.subTest(live=live), self.assertRaises(ValueError):
                 compare_live_runs(self.config, self.candidate, self.runs, live)
 
     def test_changed_temporal_design_or_instrument_fails_with_same_accessions(self):
-        for field in ("sample_title", "sample_description", "sequencing_platform", "sequencing_instrument"):
-            live = copy.deepcopy(self.runs)
+        for field in ("sample_title", "sample_description", "instrument_platform", "instrument_model"):
+            live = self.live_rows()
             live[0][field] += " altered"
             with self.subTest(field=field), self.assertRaises(ValueError):
                 compare_live_runs(self.config, self.candidate, self.runs, live)

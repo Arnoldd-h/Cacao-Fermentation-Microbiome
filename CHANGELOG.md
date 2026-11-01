@@ -9,6 +9,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   sólo de primers establecidos; no se imputan constructos no documentados.
 - Auditoría activa ampliada a título/descripción de muestra y plataforma/instrumento;
   rechaza cambios del diseño temporal aunque accessions y FASTQ coincidan.
+  Mapeo explícito de instrument_platform/model de ENA a los nombres del
+  inventario, comprobado con fixtures que conservan los nombres reales de API.
 - Límite de etapa configurado: QC antes de aprobar parámetros DADA2 V3–V4.
 
 ## v0.5.3-longitudinal - 2026-10-31

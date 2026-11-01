@@ -11,6 +11,7 @@ from .taxonomy_reference import repository_path
 MANIFEST_COLUMNS = PILOT_MANIFEST_COLUMNS + [name for name in SAMPLE_COLUMNS if name not in PILOT_MANIFEST_COLUMNS] + ["source_fastq_ftp", "source_fastq_md5", "source_fastq_bytes"]
 LIVE_FIELDS = ("sample_alias", "sample_title", "sample_description", "library_strategy", "library_layout",
                "sequencing_platform", "sequencing_instrument", "fastq_ftp", "fastq_bytes", "fastq_md5", "read_count", "base_count")
+LIVE_SOURCE_FIELDS = {"sequencing_platform": "instrument_platform", "sequencing_instrument": "instrument_model"}
 
 
 def validate_scope(config: dict, root: Path) -> None:
@@ -110,7 +111,8 @@ def compare_live_runs(config: dict, candidate: dict, current: list[dict], live: 
     if eligible != set(selected):
         raise ValueError("ENA eligible run membership changed; review inventory before downloading")
     for accession, original in selected.items():
-        if any(original[field] != live_by_id[accession][field] for field in LIVE_FIELDS):
+        if any(original[field] != live_by_id[accession][LIVE_SOURCE_FIELDS.get(field, field)] for field in LIVE_FIELDS):
             raise ValueError("ENA download/design metadata changed for " + accession)
     return {"status": "valid", "ena_runs_returned": len(live), "eligible_runs": len(eligible),
-            "verified_fields": list(LIVE_FIELDS), "verified_run_accessions": sorted(eligible)}
+            "verified_fields": list(LIVE_FIELDS), "source_field_mapping": LIVE_SOURCE_FIELDS,
+            "verified_run_accessions": sorted(eligible)}

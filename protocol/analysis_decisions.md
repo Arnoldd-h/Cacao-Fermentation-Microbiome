@@ -383,3 +383,9 @@ cambios de tiempo, caja o réplica en la fuente. Se corrige esa omisión antes d
 cerrar QC y se repite el checkpoint de fuentes. No cambian inclusiones ni
 parámetros de procesamiento. La fuente inicial de descargas se conserva en el
 log; las lecturas se reutilizan sólo si sus checksums siguen concordando.
+
+El contraste de plataforma/instrumento usa el mapeo explícito
+`sequencing_platform <- instrument_platform` y
+`sequencing_instrument <- instrument_model`, igual que el inventario.
+Las pruebas verifican que los nombres de fuente existan en el contrato ENA;
+no simulan una respuesta remota con columnas renombradas por el pipeline.

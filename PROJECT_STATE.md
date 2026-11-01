@@ -13,8 +13,10 @@ Un stream huérfano se registra sin eliminar su run. Descarga y QC pendientes. D
 hasta revisar longitudes/calidad; los parámetros candidatos no son resultados.
 Suite completa: 188 pruebas aprobadas (179,502 s). Tras ampliar el contraste
 activo a títulos/descripciones e instrumento, las 26 pruebas de estudio pasan
-(25,073 s), incluida una regresión nueva: 189 pruebas distintas verificadas.
-Descarga/QC en ejecución; pendiente renovar la auditoría con esos campos.
+(27,230 s tras verificar el contrato de campos ENA), incluida una regresión
+nueva: 189 pruebas distintas verificadas. La auditoría ampliada confirma los
+60 runs, sin cambios del diseño. Descarga/QC en ejecución; pendiente renovar
+el checkpoint con esta versión de la verificación.
 
 
 Primer modelo longitudinal exploratorio ejecutado y validado dentro del
