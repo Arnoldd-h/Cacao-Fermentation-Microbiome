@@ -86,3 +86,13 @@ artefactos pequeños de `environment/`.
 de WSL. Evita que las diferencias locales de `core.autocrlf` aparezcan como
 cambios científicos en el registro de procedencia. Los hashes de ejecución
 siguen calculándose sobre los bytes reales de cada archivo de entrada.
+
+## Compilación del adaptador taxonómico
+
+El adaptador explícito `r_seeded_query_mt19937_v1` usa Rcpp/RcppParallel,
+`make` y el compilador C++17 ya presentes en `conda-linux-64.lock`; no requiere
+instalar paquetes nuevos. Se compila en `results/cache/` (ignorado) y registra
+versiones Rcpp, RcppParallel y compilador en `software_versions.tsv`.
+La fuente LGPL-2 original/modificada está en `scripts/taxonomy/native/`.
+La reproducción exacta está acotada al entorno registrado y al mismo orden
+de entradas, como se especifica en `protocol/analysis_decisions.md`.

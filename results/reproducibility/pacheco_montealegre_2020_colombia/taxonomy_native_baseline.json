@@ -1,0 +1,191 @@
+{
+  "archived_at_utc": "2026-11-01T02:27:35.796442+00:00",
+  "source_git_commit": "cb9eca06bfa37c25d4285dc6185133ad0726ad28",
+  "archive": "results/tmp/taxonomy_native_baseline",
+  "files": {
+    "pilot": [
+      {
+        "file": "assignment_coverage.pdf",
+        "bytes": 4953,
+        "sha256": "a2e40f5cf1758557937dedc554d3801c2bd5b39428d0b64b1f5c0395f40b05d7"
+      },
+      {
+        "file": "assignment_coverage.png",
+        "bytes": 122567,
+        "sha256": "e6a28f0a064dfa03ea6e654d94890aea106f63f487e9f51fc1e046478776fcb4"
+      },
+      {
+        "file": "assignment_coverage.svg",
+        "bytes": 75616,
+        "sha256": "15566adf5f91687ea6e9362e23908a1dfb3d4e5c01946ad750e0b814ab7dcef7"
+      },
+      {
+        "file": "assignment_coverage.tsv",
+        "bytes": 838,
+        "sha256": "eb2b05c57294768e267e2bc097126a895001f49da64740ca6f82a8f6296eee2c"
+      },
+      {
+        "file": "config_snapshot.yaml",
+        "bytes": 1295,
+        "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+      },
+      {
+        "file": "input_checksums.json",
+        "bytes": 3318,
+        "sha256": "3350557f4b791b681788ce02a36dba243ef4104b565e795d6b8f4a1b9a080a56"
+      },
+      {
+        "file": "provenance.json",
+        "bytes": 10192,
+        "sha256": "918fe5f9e334337745d6c5c0891d9684150eb72d32aabbbd746fc90183e4bc51"
+      },
+      {
+        "file": "sample_coverage.tsv",
+        "bytes": 5012,
+        "sha256": "ad8c27fe414fcad1ad565e341b70099902826c4bd7a8b5d58e67e1c8b76f8f14"
+      },
+      {
+        "file": "session_info.txt",
+        "bytes": 2677,
+        "sha256": "513a08e1416614a20035ca1dc44a85f2a16bb269ae3767507eb0e3d22cfa7472"
+      },
+      {
+        "file": "software_versions.tsv",
+        "bytes": 87,
+        "sha256": "a66a712952e113959d3856f86f55cb3ef32db7a0485756b33f63ae626d636b6d"
+      },
+      {
+        "file": "SUCCESS",
+        "bytes": 41,
+        "sha256": "4746c2d1d84887c669673060d6b2e4b0035ed7b932055e6dcd1d7f4b2523b55f"
+      },
+      {
+        "file": "taxonomy.tsv",
+        "bytes": 14759,
+        "sha256": "4750c2437a8899a4b9e404ad6587feb46ec21c1700a57eccb13499545c510822"
+      },
+      {
+        "file": "taxonomy_bootstraps.tsv",
+        "bytes": 9551,
+        "sha256": "4cab436c3095d2dbaaaefc1bfe84693a2d76aeed5f0c1a1630557a885616ba32"
+      },
+      {
+        "file": "taxonomy_screening.tsv",
+        "bytes": 9888,
+        "sha256": "07efbffd8f68e95a6d2e42676c446d8540ca4c088e5d73a4b1d266dbcc6127df"
+      },
+      {
+        "file": "taxonomy_sensitivity.tsv",
+        "bytes": 30354,
+        "sha256": "ce5b293c3db6f962daffa2e06776bff536409099530855e5d382b7c79a1e6f19"
+      },
+      {
+        "file": "taxonomy_unfiltered.tsv",
+        "bytes": 15202,
+        "sha256": "ce0902ea8e7f04d32c5c9751dd09f8b405b4da182f7d79dbd2a962aba81fb282"
+      },
+      {
+        "file": "validation.json",
+        "bytes": 483,
+        "sha256": "806df3c13bc47afc6c6f540b8963f649606414d5eeb4be6359fbf83dfd799670"
+      },
+      {
+        "file": "warnings.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "full": [
+      {
+        "file": "assignment_coverage.pdf",
+        "bytes": 4979,
+        "sha256": "d811a9fc8b2917efb00f62b061b7b7a5cbaf4d6d520feeeb408a1574690a9eaf"
+      },
+      {
+        "file": "assignment_coverage.png",
+        "bytes": 104723,
+        "sha256": "d83e911212925c9912f721dd763dcb618561f091149f119301353aefc6c11c3b"
+      },
+      {
+        "file": "assignment_coverage.svg",
+        "bytes": 75618,
+        "sha256": "0ddb03c12da659b1e0f8050c7fbe98fe732d4cc19089fbed45330c970d24dc74"
+      },
+      {
+        "file": "assignment_coverage.tsv",
+        "bytes": 887,
+        "sha256": "e08493fec91c4d9f7605f3480dad1fcbad182518492493a4b9552989aa25251f"
+      },
+      {
+        "file": "config_snapshot.yaml",
+        "bytes": 1295,
+        "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+      },
+      {
+        "file": "input_checksums.json",
+        "bytes": 3487,
+        "sha256": "fc6caf4dba872b341948b5fc0be71b6e123a278925de99545cb546a7804060ad"
+      },
+      {
+        "file": "provenance.json",
+        "bytes": 9361,
+        "sha256": "07f6e7bde8d62140388b071c083a0e1762013e972168547954fc8201f2a6f948"
+      },
+      {
+        "file": "sample_coverage.tsv",
+        "bytes": 77070,
+        "sha256": "bd8a10b8b91c9dde5f832abec0e54b1f05536d1c19bd3557dc882248e29c35bc"
+      },
+      {
+        "file": "session_info.txt",
+        "bytes": 2677,
+        "sha256": "513a08e1416614a20035ca1dc44a85f2a16bb269ae3767507eb0e3d22cfa7472"
+      },
+      {
+        "file": "software_versions.tsv",
+        "bytes": 87,
+        "sha256": "a66a712952e113959d3856f86f55cb3ef32db7a0485756b33f63ae626d636b6d"
+      },
+      {
+        "file": "SUCCESS",
+        "bytes": 41,
+        "sha256": "ebf2f98ec233809db23f87a150b95556621e4d3734800f05bd77551489ae71eb"
+      },
+      {
+        "file": "taxonomy.tsv",
+        "bytes": 121913,
+        "sha256": "998cf45432ab0079b6240de030a9cf69442f7a9bae72836f8499bf82d00015e7"
+      },
+      {
+        "file": "taxonomy_bootstraps.tsv",
+        "bytes": 79724,
+        "sha256": "a885e578fffef580743b57fcca0e4531e8a74a521557f33535fb4a9710840f2c"
+      },
+      {
+        "file": "taxonomy_screening.tsv",
+        "bytes": 82449,
+        "sha256": "bcb91fde1e9d13b85540a3312de115f657f13f323bf137b81524cca9bf725998"
+      },
+      {
+        "file": "taxonomy_sensitivity.tsv",
+        "bytes": 252078,
+        "sha256": "8393e2953fe7dc54d2b2ae5e7a23617ee966f410d0ec62ff7afedaadfdfdb507"
+      },
+      {
+        "file": "taxonomy_unfiltered.tsv",
+        "bytes": 126816,
+        "sha256": "75c540ba96fa3774dc2b38c57cf86b7db809e594c66f5bf166208c84efdffc9d"
+      },
+      {
+        "file": "validation.json",
+        "bytes": 489,
+        "sha256": "f36aeb281127d7e270d2c279af6bf113ede0e841367160737f1b7ec630f755a3"
+      },
+      {
+        "file": "warnings.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ]
+  }
+}

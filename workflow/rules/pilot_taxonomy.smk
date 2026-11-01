@@ -51,7 +51,8 @@ rule run_pilot_taxonomy:
         config="config/taxonomy.yaml",
         project_config=ancient("config/config.yaml"),
         code=python_sources("scripts/taxonomy/run_taxonomy.py", "config", "download", "provenance", "taxonomy_reference") +
-            ["scripts/taxonomy/assign_taxonomy.R", "scripts/taxonomy/helpers.R", "scripts/dada2/helpers.R", "scripts/dada2/validate_outputs.py",
+            ["scripts/taxonomy/assign_taxonomy.R", "scripts/taxonomy/helpers.R", "scripts/taxonomy/seeded_classifier.R", "scripts/taxonomy/seeded_policy.py",
+             "scripts/taxonomy/native/taxonomy_upstream.cpp", "scripts/taxonomy/native/taxonomy_seeded.cpp", "scripts/dada2/helpers.R", "scripts/dada2/validate_outputs.py",
              "workflow/Snakefile", "workflow/rules/pilot_taxonomy.smk"],
         environment="environment/conda-linux-64.lock",
     output:
@@ -73,7 +74,7 @@ rule validate_pilot_taxonomy:
     input:
         manifest=pilot_manifest_input,
         products=rules.run_pilot_taxonomy.output,
-        code=python_sources("scripts/taxonomy/validate_taxonomy.py", "config", "io", "provenance", "taxonomy_reference", "taxonomy_validation"),
+        code=python_sources("scripts/taxonomy/validate_taxonomy.py", "config", "io", "provenance", "taxonomy_reference", "taxonomy_validation") + ["scripts/taxonomy/seeded_policy.py"],
     output:
         "results/taxonomy/pilot/validation.json"
     shell:

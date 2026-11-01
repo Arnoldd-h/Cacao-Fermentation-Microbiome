@@ -4,6 +4,12 @@
 
 ## Fase actual
 
+Control explícito del desempate taxonómico validado en el entorno registrado:
+adaptador `r_seeded_query_mt19937_v1`, sin modificar el paquete DADA2 instalado.
+Piloto y estudio completo repiten exactamente sus siete tablas científicas
+entre procesos independientes con dos y un hilo. Método registrado antes
+de reclasificar en `e008f2b`; tablas históricas completas archivadas.
+
 Primer estudio completo procesado y validado de forma descriptiva: PRJNA492720,
 93 muestras pareadas de cuatro lotes y 47 observaciones lote-tiempo. El
 inventario conserva 94 runs; SRR7899803 no ofrece pares completos y se excluye
@@ -13,7 +19,7 @@ solo de esta ruta, con decisión auditable. El bloqueo de ENA quedó resuelto:
 QC conserva 2.728.920 pares tras Cutadapt y pasa 505 entradas/11 artefactos.
 DADA2 conserva 782 ASVs y 2.254.530 pares sin quimeras (82,62 %), con
 192 entradas/18 artefactos comprobados. Ambos modelos convergen en seis rondas.
-SILVA 138.2 clasifica género en 475 ASVs a bootstrap 80; se validan 21
+SILVA 138.2 clasifica género en 475 ASVs a bootstrap 80; se validan 26
 entradas/15 artefactos. La separación de 18 ASVs etiquetadas como orgánulos
 conserva 764 ASVs, 2.096.980 lecturas y todas las muestras. Separación y
 diversidad pasan 21 entradas/nueve artefactos y 20 entradas/17 artefactos.
@@ -34,11 +40,20 @@ Sus cinco registros QC pasan 257 comprobaciones de bytes/SHA-256. Es un
 subconjunto del estudio completo, no un
 segundo estudio ni seis muestras independientes adicionales.
 
-La repetición mantiene idénticas la taxonomía primaria, separación y diversidad,
-pero cambia soportes bootstrap y sensibilidad a 50 (neto: una ASV/cinco lecturas).
-El RNG nativo de desempates de DADA2 no está completamente controlado por la
-semilla R; la limitación permanece abierta y documentada. No se declara
-reproducción exacta de todos los soportes taxonómicos.
+La comparación del adaptador con el histórico conserva taxonomía primaria,
+44 tablas TSV de DADA2/separación/diversidad y ocho artefactos TSV/PNG de
+composición/tiempo. Sólo ASV000100 (cinco lecturas, BactSaI012z1) cambia su
+soporte de familia/género de 48 a 51: entra en la sensibilidad a 50 como
+Yersiniaceae/Samsonia, pero permanece sin esas etiquetas a 80. Género a 50:
+649 ASVs/2.051.014 lecturas. El piloto conserva sus siete tablas históricas.
+No se cambia un umbral ni se selecciona la corrida por sus resultados.
+El contrato exige los mismos datos/orden y entorno; no garantiza igualdad
+entre plataformas, compiladores o al reordenar entradas.
+
+Validación de esta continuación: 166 pruebas de suite (140,517 s), más una
+regresión adicional de auditoría que rechaza entradas discordantes aunque
+las tablas coincidan. Los siete trabajos de cada alcance y las repeticiones
+independientes pasan sus validadores; la cobertura renovada se revisó visualmente.
 
 La inferencia longitudinal, el core temporal y la integración/meta-análisis
 siguen pendientes. Los otros tres estudios incluidos todavía no están procesados.
@@ -183,11 +198,11 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 
 ## Bloqueos y limitaciones
 
-- La semilla R no controla por completo el desempate nativo de DADA2 en
-  taxonomía. Dos corridas completas mantienen primaria a 80, separación y
-  diversidad idénticas, pero difieren en soportes y sensibilidad a 50
-  (neto: una ASV/cinco lecturas). Véase la auditoría de repetición; la solución
-  del RNG queda pendiente antes de inferir con asignaciones próximas a umbrales.
+- DADA2 original mantiene un desempate no controlado por la semilla R. El
+  workflow actual usa un adaptador explícito que reproduce soportes y tablas
+  entre procesos/hilos en el entorno registrado; no se extrapola esa garantía
+  al paquete original, a otros entornos ni a otro orden de entradas. Las
+  asignaciones cercanas a 50 siguen siendo una sensibilidad, no evidencia primaria.
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - Hay taxonomía y diversidad descriptiva del primer estudio completo; faltan
@@ -212,12 +227,10 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 
 ## Próximas tareas
 
-1. Evaluar en aislamiento una solución reproducible al desempate taxonómico
-   nativo, con tablas bootstrap de referencia y un cambio metodológico explícito.
-2. Registrar agregación de submuestras, tratamiento de ceros y modelos
+1. Registrar agregación de submuestras, tratamiento de ceros y modelos
    longitudinales antes de estimar efectos; conservar lote y sensibilidades
    temporal absoluta/relativa, sin utilizar el piloto para inferencia.
-3. Procesar los otros estudios por separado, revisando primers, V3-V4 y PacBio
+2. Procesar los otros estudios por separado, revisando primers, V3-V4 y PacBio
    antes de armonizar taxonomía e integrar efectos y heterogeneidad.
 
 ## Control de versiones
@@ -254,3 +267,10 @@ completa. El bloqueo R2 se resolvió; la continuación usa `codex/full-study-res
 El hito `v0.5.1-full-study` consolida esta ampliación, tablas de composición y
 figuras temporales, con la limitación del RNG taxonómico documentada. La entrega
 está en [PR #6](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/6).
+
+La continuación `codex/taxonomy-seeded-ties` registra el método en `e008f2b`
+y los resultados en `a5af049`. El hito `v0.5.2-taxonomy-reproducibility` se
+entrega mediante [PR #7](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/7),
+limitado a reproducción taxonómica del primer estudio y su piloto. No se
+declara todavía un hito multistudio. Ambos workflows quedan sin trabajos
+pendientes; la siguiente fase es registrar y contrastar el modelo longitudinal.

@@ -1,0 +1,50 @@
+[
+  {
+    "path": "results/composition/pilot/sample_composition.tsv",
+    "after_sha256": "0a4b3dc5d46147bcd74996083d29e13b68a3b444a68df96747854e09958340fd",
+    "before_sha256": "0a4b3dc5d46147bcd74996083d29e13b68a3b444a68df96747854e09958340fd",
+    "identical": true
+  },
+  {
+    "path": "results/composition/pilot/sample_label_coverage.tsv",
+    "after_sha256": "850f98424bc93d21342d63915aebb1a062f3a8f56354f03e2da8580d750dba0a",
+    "before_sha256": "850f98424bc93d21342d63915aebb1a062f3a8f56354f03e2da8580d750dba0a",
+    "identical": true
+  },
+  {
+    "path": "results/composition/pacheco_montealegre_2020_colombia/full/sample_composition.tsv",
+    "after_sha256": "302b470aed9a054fb1630084d715da05137c6e8c8e047b2eb82dee21a30fd504",
+    "before_sha256": "302b470aed9a054fb1630084d715da05137c6e8c8e047b2eb82dee21a30fd504",
+    "identical": true
+  },
+  {
+    "path": "results/composition/pacheco_montealegre_2020_colombia/full/sample_label_coverage.tsv",
+    "after_sha256": "a99d4288df54442fd7c11f12389a108b7e6b217090cd638343aa855ed15c578a",
+    "before_sha256": "a99d4288df54442fd7c11f12389a108b7e6b217090cd638343aa855ed15c578a",
+    "identical": true
+  },
+  {
+    "path": "results/temporal/pilot/plot_data.tsv",
+    "after_sha256": "bd434200e2a90e2a8a11a4caf034a086c5694edbb28bdbaa13c2a1a156e93989",
+    "before_sha256": "bd434200e2a90e2a8a11a4caf034a086c5694edbb28bdbaa13c2a1a156e93989",
+    "identical": true
+  },
+  {
+    "path": "results/temporal/pilot/temporal_diversity.png",
+    "after_sha256": "17d7b1708b2c9aefedefbb1486d2da8a078249fd082f5b1a5668514ae3ac9136",
+    "before_sha256": "17d7b1708b2c9aefedefbb1486d2da8a078249fd082f5b1a5668514ae3ac9136",
+    "identical": true
+  },
+  {
+    "path": "results/temporal/pacheco_montealegre_2020_colombia/full/plot_data.tsv",
+    "after_sha256": "65e8f6d262d1710a311152e39555adf9926ea36302c0accf8411006916240652",
+    "before_sha256": "65e8f6d262d1710a311152e39555adf9926ea36302c0accf8411006916240652",
+    "identical": true
+  },
+  {
+    "path": "results/temporal/pacheco_montealegre_2020_colombia/full/temporal_diversity.png",
+    "after_sha256": "fdd7f47cd2f786b459ab8e133fdf2776be7cd7f154fa42b6d6e0d2fd3448493d",
+    "before_sha256": "fdd7f47cd2f786b459ab8e133fdf2776be7cd7f154fa42b6d6e0d2fd3448493d",
+    "identical": true
+  }
+]

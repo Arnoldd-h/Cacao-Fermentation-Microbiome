@@ -2,6 +2,23 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## v0.5.2-taxonomy-reproducibility - 2026-10-31
+
+- Adaptador nativo explícito de desempate con semilla R por consulta para
+  DADA2 1.34.0, sin modificar el paquete instalado, referencia ni umbrales.
+  Fuentes original/modificada y licencia LGPL-2 versionadas; tablas anteriores
+  archivadas completas y pruebas de repetición entre procesos/hilos.
+- Repetición real exacta de siete tablas en piloto y estudio completo entre
+  dos/un hilo. Frente al histórico, cambia únicamente el soporte familia/género
+  de ASV000100 (48 a 51, cinco lecturas) y sus productos de sensibilidad a 50;
+  primaria a 80 intacta. Se conservan 44 TSV de DADA2/derivados/diversidad y
+  ocho productos TSV/PNG de composición/tiempo; procedencias renovadas.
+- Auditoría por celda con hashes, hilos y fechas, que rechaza comparaciones
+  de repetición exacta con entradas/configuraciones distintas.
+- Validación final: 166 pruebas de suite en Linux (140,517 s) más la nueva
+  regresión de entradas discordantes, comprobada junto con los otros dos
+  casos de auditoría. Workflows piloto/completo sin trabajos pendientes.
+
 ## v0.5.1-full-study - 2026-10-31
 
 - Composición completa y figuras temporales consolidadas: 1.477 filas para

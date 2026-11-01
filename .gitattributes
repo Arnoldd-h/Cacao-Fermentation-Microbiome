@@ -1,5 +1,8 @@
 # Keep text comparison and future checkouts consistent between Windows and WSL.
 * text=auto eol=lf
+# Preserve the pinned third-party source exactly, including upstream whitespace.
+scripts/taxonomy/native/taxonomy_upstream.cpp whitespace=-blank-at-eol
+scripts/taxonomy/native/taxonomy_seeded.cpp whitespace=-blank-at-eol
 
 # Keep R execution records byte-for-byte, including console alignment spaces
 # and the YAML serializer's final blank line; these are checksum artifacts.

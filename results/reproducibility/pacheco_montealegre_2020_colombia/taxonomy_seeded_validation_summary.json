@@ -1,0 +1,54 @@
+{
+  "created_at_utc": "2026-11-01T03:04:26.432740+00:00",
+  "scientific_source_git_commit": "e008f2b59c17b46915e5dcca6b6a4da0231befb8",
+  "suite": {
+    "tests": 166,
+    "elapsed_seconds": 140.517,
+    "status": "passed"
+  },
+  "audit_guard_tests": {
+    "tests": 3,
+    "additional_to_suite": 1,
+    "status": "passed"
+  },
+  "repetitions": {
+    "full": {
+      "identical_scientific_tables": 7,
+      "threads": [
+        2,
+        1
+      ],
+      "asvs": 782,
+      "status": "passed"
+    },
+    "pilot": {
+      "identical_scientific_tables": 7,
+      "threads": [
+        2,
+        1
+      ],
+      "asvs": 93,
+      "status": "passed"
+    }
+  },
+  "workflows": {
+    "full": {
+      "pending_jobs": 0,
+      "status": "up_to_date"
+    },
+    "pilot": {
+      "pending_jobs": 0,
+      "status": "up_to_date"
+    }
+  },
+  "log_hashes": {
+    "results/tmp/seeded_final_full_dry_run.log": "ded6bccd76f4ed2c3530b9916b7a0bb552533c77e561771463c4bd46168f98e6",
+    "results/tmp/seeded_final_pilot_dry_run.log": "fde25366dbe87d8623d774dd7f60432b241cdf6c583fe86d8717a32f2c8d80f7",
+    "results/tmp/seeded_final_tests.log": "eec818bb802814727ca5ca23a0a26f60f2f5784025ee71e81c2dddff4cdf3b87",
+    "results/tmp/seeded_audit_guard_tests.log": "3dae33eb48cc3bca006c6541c365f5f13b14f12ca37d267e8b82caf6b953d784",
+    "results/tmp/seeded_taxonomy_tests.log": "1d6b71403aa7bf832e248bb81cdeb39b07ba55cf7432b3c333843b61537e8cb1"
+  },
+  "audit_code_sha256": "6fa939b0c734f3bd93ac4cf6ea1ba13f8564894b8f3b9ae047e04b82f4ed0eb8",
+  "unchanged_derived_files": 44,
+  "unchanged_reporting_files": 8
+}

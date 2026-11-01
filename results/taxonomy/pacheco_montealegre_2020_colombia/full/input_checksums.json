@@ -37,7 +37,7 @@
   {
     "bytes": 1866,
     "path": "references/silva_138.2.provenance.json",
-    "sha256": "facb8d55e880093966992381912e3923dc804ff967944d0c6dbc15d62a5cf5f7"
+    "sha256": "7c9dbc96a6a2f32bd8ac94a292560389c3dea36591f98a90598d4b4e2e1d1ecf"
   },
   {
     "bytes": 11916,
@@ -50,9 +50,9 @@
     "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
   },
   {
-    "bytes": 6836,
+    "bytes": 7573,
     "path": "scripts/taxonomy/assign_taxonomy.R",
-    "sha256": "d08f829a0289e8580f00dd3b6b4e8a693441a7e32cff1fa0bc6e34988544dfc9"
+    "sha256": "3b68d5082ca39f987af63d4f9b198a6e05a01f54befb3c33f4e5d35b835c84f6"
   },
   {
     "bytes": 2092,
@@ -60,9 +60,29 @@
     "sha256": "73e31b91ec838dc14689e6ce4beb9adf135ef5735ec5d4336f18338dbf9498d5"
   },
   {
-    "bytes": 6145,
+    "bytes": 11905,
+    "path": "scripts/taxonomy/native/taxonomy_seeded.cpp",
+    "sha256": "eafd355fd039abca79f3030247bbfd2f96b2547a3df7a8bcee9ce8fd1f3d814f"
+  },
+  {
+    "bytes": 11429,
+    "path": "scripts/taxonomy/native/taxonomy_upstream.cpp",
+    "sha256": "1641cf17a322af65c31f6ad58fcf75e787ded90e9017960e5f9d3d2daa69a6a6"
+  },
+  {
+    "bytes": 6845,
     "path": "scripts/taxonomy/run_taxonomy.py",
-    "sha256": "af9842b063e453476c8f1745212406802247820fc0f35d422153a5b92d24637b"
+    "sha256": "8711939598b76520ea0a7505ca89bdbf1388ea45354c93a07b94cc10cad96f3b"
+  },
+  {
+    "bytes": 1027,
+    "path": "scripts/taxonomy/seeded_classifier.R",
+    "sha256": "f6e9aa900cfc694f1a0ef9521d11e64b2449eadb198fff85f41314d5c96dc245"
+  },
+  {
+    "bytes": 558,
+    "path": "scripts/taxonomy/seeded_policy.py",
+    "sha256": "c922080d37aa86e1ba788d2df401185bd787dc193335d43887fdbd2dbb8e0068"
   },
   {
     "bytes": 5520,
@@ -70,14 +90,19 @@
     "sha256": "3feb72cd52c3616cd4e67c72cb8a6770126c8b2ebd2c34c74381524572068281"
   },
   {
-    "bytes": 3620,
+    "bytes": 3846,
     "path": "workflow/rules/pilot_taxonomy.smk",
-    "sha256": "290af66bba01108fbe7f783beb95eb2c325e08fe58ef6d79f7cff87d69f26e9d"
+    "sha256": "866e6ec8c865c0fa440799d46975077863de6e086d211cdb36439d93b64f3c0c"
   },
   {
-    "bytes": 1295,
+    "bytes": 16991,
+    "path": "workflow/study.Snakefile",
+    "sha256": "65d7e397d66dfa6ef8273f39832863294d1830973131c4b558cff6a29488bb85"
+  },
+  {
+    "bytes": 1566,
     "path": "config/taxonomy.yaml",
-    "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
   },
   {
     "bytes": 41,

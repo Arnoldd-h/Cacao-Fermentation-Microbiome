@@ -84,10 +84,14 @@ Las [notas de resultados](manuscript/results_notes.md) describen el aumento de
 la fracción etiquetada como Acetobacter entre el primer y último muestreo de
 las ocho series, sin atribuir significación o crecimiento absoluto.
 
-La [auditoría de repetición taxonómica](reports/taxonomy_reproducibility_2026-10-31.md)
-documenta una limitación: la semilla R no fija todo el desempate nativo de DADA2.
-La primaria y la diversidad se repitieron exactamente, pero cambió la sensibilidad
-a 50 en una ASV/cinco lecturas netas. La inferencia sigue pendiente.
+La [auditoría nativa](reports/taxonomy_reproducibility_2026-10-31.md) detectó
+un desempate no controlado por la semilla R. El
+[adaptador explícito](reports/seeded_taxonomy_reproducibility_2026-10-31.md)
+ya reproduce exactamente las siete tablas científicas entre procesos con
+dos/un hilo, tanto en piloto como en completo. Primaria, diversidad y composición
+se conservan; una ASV/cinco lecturas cambia sólo en sensibilidad a 50 frente
+al histórico. La garantía exige el mismo orden de entradas y entorno registrado.
+La inferencia sigue pendiente.
 
 `PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
 propia y no se procesa con el piloto Illumina paired-end actual.
@@ -223,8 +227,11 @@ las salidas conservan configuración y procedencia. El CLR largo completo es
 regenerable y queda fuera de Git, junto a los datos pesados.
 La integración entre estudios y evaluación de las
 hipótesis siguen pendientes; la descripción de un estudio no demuestra
-sucesión conservada entre estudios ni ausencia de contaminación. El límite
-del RNG taxonómico se registra antes de avanzar a inferencia.
+sucesión conservada entre estudios ni ausencia de contaminación. El desempate
+taxonómico se controla mediante un adaptador versionado y validado por repetición;
+no modifica el paquete DADA2 instalado ni los umbrales 80/50.
 
 La selección de licencia y los metadatos completos de citación están pendientes
 para no atribuir autores ni términos legales sin confirmación.
+El código nativo de terceros en `scripts/taxonomy/native/` conserva su licencia
+LGPL-2, atribución y copia original, independientemente de esa decisión pendiente.

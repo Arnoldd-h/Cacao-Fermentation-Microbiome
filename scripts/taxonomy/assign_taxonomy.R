@@ -46,10 +46,12 @@ if (file.info(reference)$size != config$reference$expected_bytes ||
 
 dir.create(options[["output-dir"]], recursive = TRUE, showWarnings = FALSE)
 warnings <- character()
+source(file.path(root, "scripts/taxonomy/seeded_classifier.R"))
+classifier <- load_seeded_classifier(root, settings)
 do.call(RNGkind, as.list(settings$rng_kind))
 set.seed(settings$random_seed)
 log_step("Classifying ", nrow(sequences), " ASVs against ", config$reference$name, " ", config$reference$version)
-assignment <- withCallingHandlers(dada2::assignTaxonomy(sequences$sequence, reference, minBoot = settings$raw_min_boot,
+assignment <- withCallingHandlers(classifier(sequences$sequence, reference, minBoot = settings$raw_min_boot,
   tryRC = settings$try_reverse_complement, outputBootstraps = settings$output_bootstraps,
   taxLevels = settings$tax_levels, multithread = threads, verbose = TRUE),
   warning = function(w) { warnings <<- c(warnings, conditionMessage(w)) })
@@ -72,9 +74,17 @@ coverage <- do.call(rbind, lapply(seq_along(thresholds), function(i)
 export(coverage, "assignment_coverage.tsv")
 export(do.call(rbind, lapply(seq_along(thresholds), function(i)
   sample_coverage(masked[[i]], counts, sequences$study_id[1], thresholds[i]))), "sample_coverage.tsv")
-packages <- c("dada2", "yaml", "Biostrings", "RcppParallel")
-export(data.frame(software = c("R", packages), version = c(as.character(getRversion()),
-  vapply(packages, function(p) as.character(utils::packageVersion(p)), character(1)))), "software_versions.tsv")
+packages <- c("dada2", "yaml", "Biostrings", "RcppParallel", "Rcpp")
+software <- data.frame(software = c("R", packages), version = c(as.character(getRversion()),
+  vapply(packages, function(p) as.character(utils::packageVersion(p)), character(1))))
+if (!is.null(settings$native_rng)) {
+  cxx <- system2(file.path(R.home("bin"), "R"), c("CMD", "config", "CXX"), stdout = TRUE)
+  compiler_version <- system2(strsplit(cxx, " ", fixed = TRUE)[[1]][1], "--version", stdout = TRUE)[1]
+  software <- rbind(software, data.frame(software = "taxonomy_native_rng", version = settings$native_rng$adapter),
+    data.frame(software = "CXX", version = cxx), data.frame(software = "CXX_version", version = compiler_version),
+    data.frame(software = "CXX17FLAGS", version = system2(file.path(R.home("bin"), "R"), c("CMD", "config", "CXX17FLAGS"), stdout = TRUE)))
+}
+export(software, "software_versions.tsv")
 writeLines(capture.output(utils::sessionInfo()), file.path(output, "session_info.txt"))
 writeLines(warnings, file.path(output, "warnings.txt"))
 

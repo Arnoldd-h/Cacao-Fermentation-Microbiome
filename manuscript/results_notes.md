@@ -72,11 +72,15 @@ Fuente: [resumen completo DADA2](../results/dada2/pacheco_montealegre_2020_colom
 
 La clasificación primaria asigna género a 475/782 ASVs, vinculadas a 1.855.013
 lecturas antes de la separación. La sensibilidad a bootstrap 50 asigna género
-a 648/782 ASVs y 2.051.009 lecturas en la última corrida; no sustituye la
-clasificación primaria. La repetición anterior daba 649 ASVs/2.051.014 lecturas.
-La tabla primaria y la diversidad resultan idénticas en ambas corridas, pero
-los soportes bootstrap no son plenamente reproducibles con la semilla R.
-Véase la [auditoría de repetición](../reports/taxonomy_reproducibility_2026-10-31.md).
+a 649/782 ASVs y 2.051.014 lecturas con el adaptador de desempate controlado;
+no sustituye la clasificación primaria. Dos procesos independientes con dos/un
+hilo reproducen exactamente las siete tablas en el entorno registrado. Frente
+al histórico nativo (648 ASVs/2.051.009 lecturas), sólo ASV000100, cinco lecturas
+en BactSaI012z1, cambia familia/género de soporte 48 a 51. Entra en sensibilidad
+50 como Yersiniaceae/Samsonia, pero sigue sin esas etiquetas en primaria 80.
+Las tablas primarias y los derivados/diversidad se conservan. Véase la
+[evaluación del adaptador](../reports/seeded_taxonomy_reproducibility_2026-10-31.md),
+que mantiene la [auditoría nativa histórica](../reports/taxonomy_reproducibility_2026-10-31.md).
 Se separan 18 ASVs etiquetadas como orgánulos, con 157.550 lecturas.
 La tabla derivada conserva 764 ASVs, 2.096.980 lecturas y las 93 muestras.
 Fuentes: [cobertura taxonómica](../results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.tsv)

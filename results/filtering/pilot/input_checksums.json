@@ -60,14 +60,14 @@
     "sha256": "c243a3b851872fe4d4f54e0985db472e91794574d73a3546c7f66885a9d97b6c"
   },
   {
-    "bytes": 1295,
+    "bytes": 1566,
     "path": "results/taxonomy/pilot/config_snapshot.yaml",
-    "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
   },
   {
-    "bytes": 10192,
+    "bytes": 13368,
     "path": "results/taxonomy/pilot/provenance.json",
-    "sha256": "918fe5f9e334337745d6c5c0891d9684150eb72d32aabbbd746fc90183e4bc51"
+    "sha256": "36f0fc3351e50fcf733bb91551dc1c78f6ff1f264c828a8eeafa494e88d61c54"
   },
   {
     "bytes": 14759,
@@ -77,7 +77,7 @@
   {
     "bytes": 483,
     "path": "results/taxonomy/pilot/validation.json",
-    "sha256": "806df3c13bc47afc6c6f540b8963f649606414d5eeb4be6359fbf83dfd799670"
+    "sha256": "aeea42d773eea1c68a895abef578e1d947b716e1193c952faf28efa9fed8e14f"
   },
   {
     "bytes": 9234,
@@ -90,9 +90,9 @@
     "sha256": "9341c733399a66213595c6097ab0545ad180ee40b00c8abfd29e756d07dbb5f1"
   },
   {
-    "bytes": 4335,
+    "bytes": 4413,
     "path": "scripts/taxonomy/validate_taxonomy.py",
-    "sha256": "b35015cf6bcbd3365269f96afb9eef60fcfd40fc26955fae61fb73694a046427"
+    "sha256": "5959cb0ed371289f9055944811f8d1065c01bdb5c5489c8d8bde95bfbadbf0be"
   },
   {
     "bytes": 4766,

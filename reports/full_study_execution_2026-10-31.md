@@ -255,3 +255,20 @@ desiguales, cuatro lotes independientes y últimos tiempos distintos (108–144 
 No constituyen pruebas longitudinales, crecimiento absoluto, core ni evidencia
 de conservación entre estudios. El hito descriptivo conserva la limitación
 bootstrap y las tareas inferenciales pendientes.
+
+## Continuación: desempate controlado
+
+La ejecución posterior sobre `e008f2b` incorpora un adaptador nativo explícito
+registrado antes de reclasificar. Completo y piloto cierran siete trabajos cada
+uno, sin repetir QC ni DADA2, y sus siete tablas científicas se repiten exactamente
+en procesos independientes con dos/un hilo. La comparación frente al histórico
+identifica ASV000100 (cinco lecturas): soporte familia/género de 48 a 51, cambio
+exclusivo de la sensibilidad a 50. La cobertura actual a ese umbral es 649 ASVs
+y 2.051.014 lecturas a género; primaria, separación y diversidad permanecen iguales.
+
+Se conservan 44 TSV de DADA2/derivados/diversidad y ocho TSV/PNG de composición
+y tiempo. Las procedencias renovadas pasan sus validadores; el informe
+`seeded_taxonomy_reproducibility_2026-10-31.md` conserva comparaciones por celda,
+archivo, fuente y límites de entorno/orden. El adaptador resuelve el problema
+observado dentro de ese contrato; no cambia el paquete instalado ni demuestra
+conservación biológica entre estudios.
