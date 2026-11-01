@@ -2,6 +2,12 @@
   "checksum_algorithm": "SHA-256",
   "classification": {
     "method": "dada2::assignTaxonomy",
+    "native_rng": {
+      "adapter": "r_seeded_query_mt19937_v1",
+      "dada2_version": "1.34.0",
+      "upstream_git_commit": "5d453a416608f75f0bf50bcc74bbf0c1851e7f9f",
+      "upstream_sha256": "1641cf17a322af65c31f6ad58fcf75e787ded90e9017960e5f9d3d2daa69a6a6"
+    },
     "output_bootstraps": true,
     "primary_min_boot": 80,
     "random_seed": 20260819,
@@ -39,26 +45,37 @@
     "2"
   ],
   "effective_threads": 2,
-  "finished_at_utc": "2026-11-01T01:46:30.228323+00:00",
-  "git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
+  "finished_at_utc": "2026-11-01T02:47:54.313204+00:00",
+  "git_commit": "e008f2b59c17b46915e5dcca6b6a4da0231befb8",
   "git_dirty": true,
   "git_status_at_start": [
-    " M README.md",
-    " M config/full_study_diversity.yaml",
-    " M manuscript/discussion_notes.md",
-    " M manuscript/results_notes.md",
-    " M reports/full_study_execution_2026-10-31.md",
-    " M results/dada2/pilot/SUCCESS",
-    " M results/dada2/pilot/error_model_F.pdf",
-    " M results/dada2/pilot/error_model_R.pdf",
-    " M results/dada2/pilot/output_checksums.tsv",
-    " M results/dada2/pilot/run_provenance.yaml",
-    " M results/dada2/pilot/validation.json",
-    " M results/qc/pilot/cutadapt_summary.provenance.json",
-    " M results/qc/pilot/primer_detection.provenance.json",
-    " M results/qc/pilot/primer_detection_trimmed.provenance.json",
-    " M results/qc/pilot/raw_read_quality.provenance.json",
-    " M results/qc/pilot/trimmed_read_quality.provenance.json",
+    " M results/composition/pacheco_montealegre_2020_colombia/full/SUCCESS",
+    " M results/composition/pacheco_montealegre_2020_colombia/full/input_checksums.json",
+    " M results/composition/pacheco_montealegre_2020_colombia/full/provenance.json",
+    " M results/composition/pacheco_montealegre_2020_colombia/full/validation.json",
+    " M results/diversity/pacheco_montealegre_2020_colombia/full/SUCCESS",
+    " M results/diversity/pacheco_montealegre_2020_colombia/full/aitchison_pca.pdf",
+    " M results/diversity/pacheco_montealegre_2020_colombia/full/alpha_diversity.pdf",
+    " M results/diversity/pacheco_montealegre_2020_colombia/full/input_checksums.json",
+    " M results/diversity/pacheco_montealegre_2020_colombia/full/provenance.json",
+    " M results/diversity/pacheco_montealegre_2020_colombia/full/validation.json",
+    " M results/filtering/pacheco_montealegre_2020_colombia/full/SUCCESS",
+    " M results/filtering/pacheco_montealegre_2020_colombia/full/input_checksums.json",
+    " M results/filtering/pacheco_montealegre_2020_colombia/full/provenance.json",
+    " M results/filtering/pacheco_montealegre_2020_colombia/full/validation.json",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/SUCCESS",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.pdf",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.png",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.svg",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/config_snapshot.yaml",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/input_checksums.json",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/provenance.json",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/sample_coverage.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/software_versions.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_bootstraps.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_sensitivity.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/validation.json",
     " D results/taxonomy/pilot/SUCCESS",
     " D results/taxonomy/pilot/assignment_coverage.pdf",
     " D results/taxonomy/pilot/assignment_coverage.png",
@@ -76,8 +93,14 @@
     " D results/taxonomy/pilot/taxonomy_sensitivity.tsv",
     " D results/taxonomy/pilot/taxonomy_unfiltered.tsv",
     " D results/taxonomy/pilot/warnings.txt",
-    "?? results/composition/pacheco_montealegre_2020_colombia/",
-    "?? results/temporal/pacheco_montealegre_2020_colombia/"
+    " M results/temporal/pacheco_montealegre_2020_colombia/full/SUCCESS",
+    " M results/temporal/pacheco_montealegre_2020_colombia/full/input_checksums.json",
+    " M results/temporal/pacheco_montealegre_2020_colombia/full/provenance.json",
+    " M results/temporal/pacheco_montealegre_2020_colombia/full/temporal_diversity.pdf",
+    " M results/temporal/pacheco_montealegre_2020_colombia/full/validation.json",
+    " M scripts/taxonomy/audit_repetition.py",
+    "?? results/reproducibility/pacheco_montealegre_2020_colombia/taxonomy_seeded_full_historical.json",
+    "?? results/reproducibility/pacheco_montealegre_2020_colombia/taxonomy_seeded_full_repeat.json"
   ],
   "inputs": [
     {
@@ -118,7 +141,7 @@
     {
       "bytes": 1866,
       "path": "references/silva_138.2.provenance.json",
-      "sha256": "facb8d55e880093966992381912e3923dc804ff967944d0c6dbc15d62a5cf5f7"
+      "sha256": "7c9dbc96a6a2f32bd8ac94a292560389c3dea36591f98a90598d4b4e2e1d1ecf"
     },
     {
       "bytes": 41,
@@ -156,9 +179,9 @@
       "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
     },
     {
-      "bytes": 6836,
+      "bytes": 7573,
       "path": "scripts/taxonomy/assign_taxonomy.R",
-      "sha256": "d08f829a0289e8580f00dd3b6b4e8a693441a7e32cff1fa0bc6e34988544dfc9"
+      "sha256": "3b68d5082ca39f987af63d4f9b198a6e05a01f54befb3c33f4e5d35b835c84f6"
     },
     {
       "bytes": 2092,
@@ -166,9 +189,29 @@
       "sha256": "73e31b91ec838dc14689e6ce4beb9adf135ef5735ec5d4336f18338dbf9498d5"
     },
     {
-      "bytes": 6145,
+      "bytes": 11905,
+      "path": "scripts/taxonomy/native/taxonomy_seeded.cpp",
+      "sha256": "eafd355fd039abca79f3030247bbfd2f96b2547a3df7a8bcee9ce8fd1f3d814f"
+    },
+    {
+      "bytes": 11429,
+      "path": "scripts/taxonomy/native/taxonomy_upstream.cpp",
+      "sha256": "1641cf17a322af65c31f6ad58fcf75e787ded90e9017960e5f9d3d2daa69a6a6"
+    },
+    {
+      "bytes": 6845,
       "path": "scripts/taxonomy/run_taxonomy.py",
-      "sha256": "af9842b063e453476c8f1745212406802247820fc0f35d422153a5b92d24637b"
+      "sha256": "8711939598b76520ea0a7505ca89bdbf1388ea45354c93a07b94cc10cad96f3b"
+    },
+    {
+      "bytes": 1027,
+      "path": "scripts/taxonomy/seeded_classifier.R",
+      "sha256": "f6e9aa900cfc694f1a0ef9521d11e64b2449eadb198fff85f41314d5c96dc245"
+    },
+    {
+      "bytes": 558,
+      "path": "scripts/taxonomy/seeded_policy.py",
+      "sha256": "c922080d37aa86e1ba788d2df401185bd787dc193335d43887fdbd2dbb8e0068"
     },
     {
       "bytes": 5520,
@@ -176,21 +219,26 @@
       "sha256": "3feb72cd52c3616cd4e67c72cb8a6770126c8b2ebd2c34c74381524572068281"
     },
     {
-      "bytes": 3620,
+      "bytes": 3846,
       "path": "workflow/rules/pilot_taxonomy.smk",
-      "sha256": "290af66bba01108fbe7f783beb95eb2c325e08fe58ef6d79f7cff87d69f26e9d"
+      "sha256": "866e6ec8c865c0fa440799d46975077863de6e086d211cdb36439d93b64f3c0c"
     },
     {
-      "bytes": 1295,
+      "bytes": 16991,
+      "path": "workflow/study.Snakefile",
+      "sha256": "65d7e397d66dfa6ef8273f39832863294d1830973131c4b558cff6a29488bb85"
+    },
+    {
+      "bytes": 1566,
       "path": "config/taxonomy.yaml",
-      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+      "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
     }
   ],
   "outputs": [
     {
       "bytes": 4953,
       "path": "results/taxonomy/pilot/assignment_coverage.pdf",
-      "sha256": "a2e40f5cf1758557937dedc554d3801c2bd5b39428d0b64b1f5c0395f40b05d7"
+      "sha256": "952fb90bb601ca95eb29664c0dbf1d7532c0f09ed92f968f26676a9799b48277"
     },
     {
       "bytes": 122567,
@@ -208,14 +256,14 @@
       "sha256": "eb2b05c57294768e267e2bc097126a895001f49da64740ca6f82a8f6296eee2c"
     },
     {
-      "bytes": 1295,
+      "bytes": 1566,
       "path": "results/taxonomy/pilot/config_snapshot.yaml",
-      "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+      "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
     },
     {
-      "bytes": 3318,
+      "bytes": 4126,
       "path": "results/taxonomy/pilot/input_checksums.json",
-      "sha256": "3350557f4b791b681788ce02a36dba243ef4104b565e795d6b8f4a1b9a080a56"
+      "sha256": "8a71b6c9f362ac2e645fd03766ff92862b7b9951a9ae3e86635dc911c494ca7f"
     },
     {
       "bytes": 5012,
@@ -228,9 +276,9 @@
       "sha256": "513a08e1416614a20035ca1dc44a85f2a16bb269ae3767507eb0e3d22cfa7472"
     },
     {
-      "bytes": 87,
+      "bytes": 768,
       "path": "results/taxonomy/pilot/software_versions.tsv",
-      "sha256": "a66a712952e113959d3856f86f55cb3ef32db7a0485756b33f63ae626d636b6d"
+      "sha256": "816815847b245fef263b1e3aa821bac78dcc20086905711c4a4b27d8a2c552e0"
     },
     {
       "bytes": 14759,
@@ -278,7 +326,7 @@
     "Inversion",
     "Rejection"
   ],
-  "started_at_utc": "2026-11-01T01:42:18.148451+00:00",
+  "started_at_utc": "2026-11-01T02:45:24.442161+00:00",
   "status": "success",
   "upstream_validation": {
     "artifacts_checked": 18,

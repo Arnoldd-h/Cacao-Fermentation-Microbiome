@@ -305,3 +305,14 @@ commit recuperable están en `results/reproducibility/`. No se seleccionará una
 réplica por cobertura o significación. Toda diferencia real se reportará antes
 de renovar los derivados. Esta decisión no autoriza inferencia nueva ni cambia
 hipótesis, exclusiones, taxonomía de referencia o umbrales.
+
+Resultado de la evaluación: siete tablas idénticas entre procesos con dos/un
+hilo tanto en piloto como en completo. Frente al histórico completo, sólo
+ASV000100 (cinco lecturas) cambia familia/género de soporte 48 a 51 y entra
+en sensibilidad 50; primaria 80 y derivados permanecen intactos. El workflow
+renueva automáticamente separación/diversidad antes de la auditoría final,
+sin interpretar ni publicar esos derivados antes de contrastar las tablas;
+esta precisión operativa no altera criterios ni escoge corridas. El informe
+`reports/seeded_taxonomy_reproducibility_2026-10-31.md` y los registros por
+celda conservan la secuencia y sus límites. Se adopta la primera ejecución
+controlada de cada alcance, verificada por la siguiente.

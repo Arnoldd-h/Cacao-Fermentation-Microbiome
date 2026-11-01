@@ -5,70 +5,36 @@
     "--analysis",
     "full_study"
   ],
-  "finished_at_utc": "2026-11-01T01:51:59.328692+00:00",
-  "git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
+  "finished_at_utc": "2026-11-01T02:44:48.767566+00:00",
+  "git_commit": "e008f2b59c17b46915e5dcca6b6a4da0231befb8",
   "git_dirty": true,
   "git_status_at_start": [
-    " M .gitattributes",
-    " M README.md",
-    " M config/full_study_diversity.yaml",
-    " M manuscript/discussion_notes.md",
-    " M manuscript/results_notes.md",
-    " M reports/composition_methods.md",
-    " M reports/full_study_execution_2026-10-31.md",
-    " M reports/taxonomy_methods.md",
-    " M reports/temporal_reporting_methods.md",
-    " M results/composition/pilot/SUCCESS",
-    " M results/composition/pilot/input_checksums.json",
-    " M results/composition/pilot/provenance.json",
-    " M results/composition/pilot/validation.json",
-    " M results/dada2/pilot/SUCCESS",
-    " M results/dada2/pilot/error_model_F.pdf",
-    " M results/dada2/pilot/error_model_R.pdf",
-    " M results/dada2/pilot/output_checksums.tsv",
-    " M results/dada2/pilot/run_provenance.yaml",
-    " M results/dada2/pilot/validation.json",
     " M results/diversity/pacheco_montealegre_2020_colombia/full/SUCCESS",
     " M results/diversity/pacheco_montealegre_2020_colombia/full/aitchison_pca.pdf",
     " M results/diversity/pacheco_montealegre_2020_colombia/full/alpha_diversity.pdf",
-    " M results/diversity/pacheco_montealegre_2020_colombia/full/config_snapshot.yaml",
     " M results/diversity/pacheco_montealegre_2020_colombia/full/input_checksums.json",
     " M results/diversity/pacheco_montealegre_2020_colombia/full/provenance.json",
     " M results/diversity/pacheco_montealegre_2020_colombia/full/validation.json",
-    " M results/diversity/pilot/SUCCESS",
-    " M results/diversity/pilot/aitchison_pca.pdf",
-    " M results/diversity/pilot/alpha_diversity.pdf",
-    " M results/diversity/pilot/input_checksums.json",
-    " M results/diversity/pilot/provenance.json",
-    " M results/diversity/pilot/validation.json",
     " M results/filtering/pacheco_montealegre_2020_colombia/full/SUCCESS",
-    " M results/filtering/pacheco_montealegre_2020_colombia/full/config_snapshot.yaml",
     " M results/filtering/pacheco_montealegre_2020_colombia/full/input_checksums.json",
     " M results/filtering/pacheco_montealegre_2020_colombia/full/provenance.json",
     " M results/filtering/pacheco_montealegre_2020_colombia/full/validation.json",
-    " M results/filtering/pilot/SUCCESS",
-    " M results/filtering/pilot/input_checksums.json",
-    " M results/filtering/pilot/provenance.json",
-    " M results/filtering/pilot/validation.json",
-    " M results/qc/pilot/cutadapt_summary.provenance.json",
-    " M results/qc/pilot/primer_detection.provenance.json",
-    " M results/qc/pilot/primer_detection_trimmed.provenance.json",
-    " M results/qc/pilot/raw_read_quality.provenance.json",
-    " M results/qc/pilot/trimmed_read_quality.provenance.json",
-    " M results/taxonomy/pilot/SUCCESS",
-    " M results/taxonomy/pilot/assignment_coverage.pdf",
-    " M results/taxonomy/pilot/assignment_coverage.png",
-    " M results/taxonomy/pilot/assignment_coverage.svg",
-    " M results/taxonomy/pilot/input_checksums.json",
-    " M results/taxonomy/pilot/provenance.json",
-    " M results/taxonomy/pilot/validation.json",
-    " M results/temporal/pilot/SUCCESS",
-    " M results/temporal/pilot/input_checksums.json",
-    " M results/temporal/pilot/provenance.json",
-    " M results/temporal/pilot/temporal_diversity.pdf",
-    " M results/temporal/pilot/validation.json",
-    "?? results/composition/pacheco_montealegre_2020_colombia/",
-    "?? results/temporal/pacheco_montealegre_2020_colombia/"
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/SUCCESS",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.pdf",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.png",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.svg",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/assignment_coverage.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/config_snapshot.yaml",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/input_checksums.json",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/provenance.json",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/sample_coverage.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/software_versions.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_bootstraps.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/taxonomy_sensitivity.tsv",
+    " M results/taxonomy/pacheco_montealegre_2020_colombia/full/validation.json",
+    " M scripts/taxonomy/audit_repetition.py",
+    "?? results/reproducibility/pacheco_montealegre_2020_colombia/taxonomy_seeded_full_historical.json",
+    "?? results/reproducibility/pacheco_montealegre_2020_colombia/taxonomy_seeded_full_repeat.json"
   ],
   "inputs": [
     {
@@ -127,14 +93,14 @@
       "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
     },
     {
-      "bytes": 12633,
+      "bytes": 11423,
       "path": "results/filtering/pacheco_montealegre_2020_colombia/full/provenance.json",
-      "sha256": "ced8415ccef303c2b91be60faa2c5857a1ba2e523b691caed9a9c4f3ed37844b"
+      "sha256": "a11a406e33d7a4fe24134a002ec81b5f64f8f3cc6d5c8c511f8bbc88e71f763e"
     },
     {
       "bytes": 429,
       "path": "results/filtering/pacheco_montealegre_2020_colombia/full/validation.json",
-      "sha256": "5ca232b1cd7b1d2c771a647ec4dbc1fce2a867576ea0a4f81398e024994199de"
+      "sha256": "7c4def7b15714dd4a4851c2b7ddb5cc0b90b09dd10e34684461588eb993a9891"
     },
     {
       "bytes": 6366,
@@ -156,7 +122,7 @@
     {
       "bytes": 2640,
       "path": "results/composition/pacheco_montealegre_2020_colombia/full/input_checksums.json",
-      "sha256": "c9686045bd9a707679b1d36e2094252025f235ac06ee85221065b8d1f4734a65"
+      "sha256": "52707545499512220da218850f5ff8c10664eeb48d9f3c1c26a770201c5200b3"
     },
     {
       "bytes": 341602,
@@ -202,7 +168,7 @@
   "software_versions": {
     "Python": "3.12.13"
   },
-  "started_at_utc": "2026-11-01T01:51:57.844732+00:00",
+  "started_at_utc": "2026-11-01T02:44:47.931251+00:00",
   "status": "success",
   "upstream_validation": {
     "artifacts_checked": 9,
@@ -215,7 +181,7 @@
     "retained_reads": 2096980,
     "sample_exclusions": 0,
     "samples": 93,
-    "source_git_commit": "302b7f769c06e6567fff65c5055848b719e5acdf",
+    "source_git_commit": "e008f2b59c17b46915e5dcca6b6a4da0231befb8",
     "status": "valid",
     "study_id": "pacheco_montealegre_2020_colombia",
     "unclassified_kingdom_retained_asvs": 0

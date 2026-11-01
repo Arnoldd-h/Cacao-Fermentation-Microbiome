@@ -60,14 +60,14 @@
     "sha256": "f9c0ec87500d08de66079e5efd47710f5aad6ce9b078632eb0b8f3bec097455a"
   },
   {
-    "bytes": 1295,
+    "bytes": 1566,
     "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/config_snapshot.yaml",
-    "sha256": "0611955dbef482f765f52bb03f051807043602ea5f20d9f60ecceab64b796b5e"
+    "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
   },
   {
-    "bytes": 9361,
+    "bytes": 11708,
     "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/provenance.json",
-    "sha256": "07f6e7bde8d62140388b071c083a0e1762013e972168547954fc8201f2a6f948"
+    "sha256": "1c202f99072f8536dab2f295318707f28739fe14adaefe44cbf9fe5b64501771"
   },
   {
     "bytes": 121913,
@@ -77,7 +77,7 @@
   {
     "bytes": 489,
     "path": "results/taxonomy/pacheco_montealegre_2020_colombia/full/validation.json",
-    "sha256": "f36aeb281127d7e270d2c279af6bf113ede0e841367160737f1b7ec630f755a3"
+    "sha256": "883548d6791e62c961320491b06e03c1ba2b394b242947b685a043390f41e264"
   },
   {
     "bytes": 9234,
@@ -90,9 +90,9 @@
     "sha256": "9341c733399a66213595c6097ab0545ad180ee40b00c8abfd29e756d07dbb5f1"
   },
   {
-    "bytes": 4335,
+    "bytes": 4413,
     "path": "scripts/taxonomy/validate_taxonomy.py",
-    "sha256": "b35015cf6bcbd3365269f96afb9eef60fcfd40fc26955fae61fb73694a046427"
+    "sha256": "5959cb0ed371289f9055944811f8d1065c01bdb5c5489c8d8bde95bfbadbf0be"
   },
   {
     "bytes": 4766,

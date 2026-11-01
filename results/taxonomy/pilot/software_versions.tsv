@@ -4,3 +4,8 @@ dada2	1.34.0
 yaml	2.3.10
 Biostrings	2.74.0
 RcppParallel	5.1.9
+Rcpp	1.1.2
+taxonomy_native_rng	r_seeded_query_mt19937_v1
+CXX	x86_64-conda-linux-gnu-c++ -std=gnu++17
+CXX_version	x86_64-conda-linux-gnu-c++ (conda-forge gcc 16.1.0-2) 16.1.0
+CXX17FLAGS	-fvisibility-inlines-hidden -fmessage-length=0 -march=nocona -mtune=haswell -ftree-vectorize -fPIC -fstack-protector-strong -fno-plt -O2 -ffunction-sections -pipe -fno-merge-constants -isystem /home/core_i7/.local/share/micromamba/envs/cacao-microbiome/include -fdebug-prefix-map=/home/conda/feedstock_root/build_artifacts/r-base-split_1781504815701/work=/usr/local/src/conda/r-base-4.4.3 -fdebug-prefix-map=/home/core_i7/.local/share/micromamba/envs/cacao-microbiome=/usr/local/src/conda-prefix

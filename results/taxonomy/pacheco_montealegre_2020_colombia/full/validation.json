@@ -3,7 +3,7 @@
   "asvs": 782,
   "excluded_asvs": 0,
   "genus_assigned_asvs": 475,
-  "inputs_checked": 21,
+  "inputs_checked": 26,
   "named_genus_asvs": 475,
   "non_bacterial_asvs": 0,
   "organelle_flagged_asvs": 18,
@@ -12,7 +12,7 @@
   "sensitivity_min_boot": [
     50
   ],
-  "source_git_commit": "da43eebdd430bed8c31d1b45701ccb68e079ad78",
+  "source_git_commit": "e008f2b59c17b46915e5dcca6b6a4da0231befb8",
   "status": "valid",
   "study_id": "pacheco_montealegre_2020_colombia",
   "total_reads": 2254530,

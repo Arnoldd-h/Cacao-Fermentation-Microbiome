@@ -71,9 +71,20 @@ def main():
               "all_identical": all(row["identical"] for row in tables.values()),
               "executions": {}}
     for label, directory in (("baseline", args.baseline), ("repeat", args.repeat)):
+        provenance_path = directory / "provenance.json"
+        provenance = json.loads(provenance_path.read_text())
         record["executions"][label] = {"directory": str(directory),
             "git_commit": (directory / "SUCCESS").read_text().strip(),
+            "effective_threads": provenance.get("effective_threads"),
+            "started_at_utc": provenance.get("started_at_utc"),
+            "finished_at_utc": provenance.get("finished_at_utc"),
+            "provenance_sha256": hashlib.sha256(provenance_path.read_bytes()).hexdigest(),
             "config": json.loads((directory / "config_snapshot.yaml").read_text())}
+    if args.require_identical:
+        inputs = [sorted(json.loads((directory / "input_checksums.json").read_text()), key=lambda row: row["path"])
+                  for directory in (args.baseline, args.repeat)]
+        if inputs[0] != inputs[1] or record["executions"]["baseline"]["config"] != record["executions"]["repeat"]["config"]:
+            raise ValueError("Repetition inputs/configuration differ")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(record, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps({"all_identical": record["all_identical"], "tables": {

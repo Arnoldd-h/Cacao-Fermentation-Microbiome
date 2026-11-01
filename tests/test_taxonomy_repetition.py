@@ -1,5 +1,7 @@
 """Cell comparison audits synthetic data; never rewrites classification tables."""
 
+import json
+import subprocess
 import sys
 import tempfile
 import unittest
@@ -35,3 +37,19 @@ class TaxonomyRepetitionTests(unittest.TestCase):
             (after / "taxonomy.tsv").write_text("study_id\tasv_id\tGenus\nfixture\tasv1\tG1\n")
             with self.assertRaisesRegex(ValueError, "row keys"):
                 compare_tables(before, after)
+
+    def test_equal_tables_with_different_inputs_cannot_pass_exact_repetition(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            before, after = self.fixture(root)
+            for index, directory in enumerate((before, after)):
+                (directory / "SUCCESS").write_text("a" * 40 + "\n")
+                (directory / "config_snapshot.yaml").write_text("{}\n")
+                (directory / "provenance.json").write_text(json.dumps({"effective_threads": index + 1}))
+                (directory / "input_checksums.json").write_text(json.dumps([
+                    {"path": "synthetic_input.tsv", "sha256": str(index) * 64}]))
+            completed = subprocess.run([sys.executable, str(ROOT / "scripts/taxonomy/audit_repetition.py"),
+                "--baseline", str(before), "--repeat", str(after), "--output", str(root / "audit.json"),
+                "--require-identical"], capture_output=True, text=True)
+            self.assertNotEqual(completed.returncode, 0)
+            self.assertIn("inputs/configuration differ", completed.stderr)

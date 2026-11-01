@@ -60,14 +60,14 @@
     "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
   },
   {
-    "bytes": 12633,
+    "bytes": 11423,
     "path": "results/filtering/pacheco_montealegre_2020_colombia/full/provenance.json",
-    "sha256": "ced8415ccef303c2b91be60faa2c5857a1ba2e523b691caed9a9c4f3ed37844b"
+    "sha256": "a11a406e33d7a4fe24134a002ec81b5f64f8f3cc6d5c8c511f8bbc88e71f763e"
   },
   {
     "bytes": 429,
     "path": "results/filtering/pacheco_montealegre_2020_colombia/full/validation.json",
-    "sha256": "5ca232b1cd7b1d2c771a647ec4dbc1fce2a867576ea0a4f81398e024994199de"
+    "sha256": "7c4def7b15714dd4a4851c2b7ddb5cc0b90b09dd10e34684461588eb993a9891"
   },
   {
     "bytes": 11916,

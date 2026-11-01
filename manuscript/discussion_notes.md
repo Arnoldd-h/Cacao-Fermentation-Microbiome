@@ -52,3 +52,10 @@ mediante taxonomía defendible. País, estudio, tecnología y región 16S pueden
 estar asociados; su contribución no se separará sin respaldo del diseño. Las
 conclusiones deberán distinguir el resultado del primer estudio de la evidencia
 de conservación entre estudios y reportar heterogeneidad e incertidumbre.
+
+El control explícito del desempate permite repetir los soportes en el entorno
+registrado; no aumenta por sí mismo la certeza de una etiqueta próxima al
+umbral. El cambio de cinco lecturas en sensibilidad 50 no afecta la primaria
+80 ni los patrones descriptivos publicados y no se interpreta como un hallazgo
+microbiológico nuevo. La repetición técnica y la generalización biológica
+requieren evidencias distintas.
