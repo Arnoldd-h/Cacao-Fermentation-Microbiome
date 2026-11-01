@@ -295,3 +295,9 @@ entrega mediante [PR #7](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbi
 limitado a reproducción taxonómica del primer estudio y su piloto. No se
 declara todavía un hito multistudio. Ambos workflows quedan sin trabajos
 pendientes; la siguiente fase es registrar y contrastar el modelo longitudinal.
+
+El hito `v0.5.3-longitudinal` entrega ese primer modelo exploratorio mediante
+[PR #8](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/8):
+plan `c97345c`, implementación `7b6d5a6`, renovación operativa `6415bfd` y
+resultados `0132f7d`. Sus tres workflows quedan sin pendientes. La siguiente
+fase es procesar los otros estudios, sin combinar directamente sus ASVs.

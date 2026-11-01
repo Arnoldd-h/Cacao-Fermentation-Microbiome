@@ -115,3 +115,7 @@ verifican aislamiento de etapas previas e invalidación por contenido de
 configuración incluso cuando su timestamp es anterior a las salidas.
 La comparación de renovación está en
 `results/reproducibility/pacheco_montealegre_2020_colombia/longitudinal_workflow_renewal.json`.
+El resumen verificable de pruebas/validadores/workflows está en
+`results/reproducibility/pacheco_montealegre_2020_colombia/longitudinal_validation_summary.json`.
+La entrega corresponde a [PR #8](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/8)
+y al tag `v0.5.3-longitudinal`.
