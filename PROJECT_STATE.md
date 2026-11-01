@@ -11,6 +11,10 @@ V3–V4 verificados sin inventar constructos. NCBI/ENA verificados: los 60 runs 
 120 streams pareados suman 1.379.724.114 bytes, con reserva estimada de 8,28 GB.
 Un stream huérfano se registra sin eliminar su run. Descarga y QC pendientes. DADA2 se mantiene bloqueado por configuración
 hasta revisar longitudes/calidad; los parámetros candidatos no son resultados.
+Suite completa: 188 pruebas aprobadas (179,502 s). Tras ampliar el contraste
+activo a títulos/descripciones e instrumento, las 26 pruebas de estudio pasan
+(25,073 s), incluida una regresión nueva: 189 pruebas distintas verificadas.
+Descarga/QC en ejecución; pendiente renovar la auditoría con esos campos.
 
 
 Primer modelo longitudinal exploratorio ejecutado y validado dentro del

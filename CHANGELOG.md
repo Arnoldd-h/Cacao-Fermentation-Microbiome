@@ -7,6 +7,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
 - Perfil independiente para PRJNA627078 y selección configurable del estudio
   en el workflow. Conservación explícita de estratos desconocidos y cribado
   sólo de primers establecidos; no se imputan constructos no documentados.
+- Auditoría activa ampliada a título/descripción de muestra y plataforma/instrumento;
+  rechaza cambios del diseño temporal aunque accessions y FASTQ coincidan.
 - Límite de etapa configurado: QC antes de aprobar parámetros DADA2 V3–V4.
 
 ## v0.5.3-longitudinal - 2026-10-31

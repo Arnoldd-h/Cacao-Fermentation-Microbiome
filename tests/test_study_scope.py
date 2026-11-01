@@ -20,8 +20,9 @@ class StudyScopeTests(unittest.TestCase):
         self.samples = []
         for index in (1, 2):
             run = "SRR" + str(index)
-            common = {"study_id": "synthetic_study", "bioproject": "PRJNA1", "run_accession": run, "analysis_include": "true", "sample_alias": "Bact" + str(index)}
-            self.runs.append({**common, "library_layout": "PAIRED", "library_strategy": "AMPLICON", "sequencing_platform": "ILLUMINA",
+            common = {"study_id": "synthetic_study", "bioproject": "PRJNA1", "run_accession": run, "analysis_include": "true", "sample_alias": "Bact" + str(index),
+                      "sample_title": "Synthetic time " + str(index), "sample_description": "Synthetic design fixture"}
+            self.runs.append({**common, "library_layout": "PAIRED", "library_strategy": "AMPLICON", "sequencing_platform": "ILLUMINA", "sequencing_instrument": "synthetic instrument",
                 "fastq_ftp": ";".join("example.invalid/" + run + "_" + d + ".fastq.gz" for d in ("1", "2")),
                 "fastq_md5": "a" * 32 + ";" + "b" * 32, "fastq_bytes": "10;20", "read_count": "2", "base_count": "100"})
             self.samples.append({**common, "sample_id": "sample" + str(index), "fermentation_batch": "batch1", "fermentation_hours": str((index - 1) * 12),
@@ -71,6 +72,13 @@ class StudyScopeTests(unittest.TestCase):
         changed[0]["fastq_md5"] = "c" * 32 + ";" + "b" * 32
         for live in (self.runs[:1], self.runs + [{**self.runs[0], "run_accession": "SRR3"}], changed, self.runs + self.runs):
             with self.subTest(live=live), self.assertRaises(ValueError):
+                compare_live_runs(self.config, self.candidate, self.runs, live)
+
+    def test_changed_temporal_design_or_instrument_fails_with_same_accessions(self):
+        for field in ("sample_title", "sample_description", "sequencing_platform", "sequencing_instrument"):
+            live = copy.deepcopy(self.runs)
+            live[0][field] += " altered"
+            with self.subTest(field=field), self.assertRaises(ValueError):
                 compare_live_runs(self.config, self.candidate, self.runs, live)
 
     def test_orphan_streams_are_logged_and_missing_mate_is_explicit(self):

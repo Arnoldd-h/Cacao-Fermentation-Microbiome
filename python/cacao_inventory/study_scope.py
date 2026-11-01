@@ -9,7 +9,8 @@ from .schema import PILOT_MANIFEST_COLUMNS, SAMPLE_COLUMNS
 from .taxonomy_reference import repository_path
 
 MANIFEST_COLUMNS = PILOT_MANIFEST_COLUMNS + [name for name in SAMPLE_COLUMNS if name not in PILOT_MANIFEST_COLUMNS] + ["source_fastq_ftp", "source_fastq_md5", "source_fastq_bytes"]
-LIVE_FIELDS = ("sample_alias", "library_strategy", "library_layout", "fastq_ftp", "fastq_bytes", "fastq_md5", "read_count", "base_count")
+LIVE_FIELDS = ("sample_alias", "sample_title", "sample_description", "library_strategy", "library_layout",
+               "sequencing_platform", "sequencing_instrument", "fastq_ftp", "fastq_bytes", "fastq_md5", "read_count", "base_count")
 
 
 def validate_scope(config: dict, root: Path) -> None:

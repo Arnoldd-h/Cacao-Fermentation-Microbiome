@@ -375,3 +375,11 @@ El workflow admite `--config scope_config=config/prjna627078_study.yaml`.
 Los resultados previos conservan su versión productora y hashes originales;
 esta ampliación de código compartido requiere una renovación explícita si se
 reprocesa el primer estudio, sin editar sus resultados históricos a mano.
+
+
+La auditoría activa contrasta también `sample_title`, `sample_description`,
+plataforma e instrumento: un accession/MD5 estable no basta para descartar
+cambios de tiempo, caja o réplica en la fuente. Se corrige esa omisión antes de
+cerrar QC y se repite el checkpoint de fuentes. No cambian inclusiones ni
+parámetros de procesamiento. La fuente inicial de descargas se conserva en el
+log; las lecturas se reutilizan sólo si sus checksums siguen concordando.
