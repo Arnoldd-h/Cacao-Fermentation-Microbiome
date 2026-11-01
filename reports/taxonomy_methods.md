@@ -90,6 +90,13 @@ URL, bytes y MD5 fijados. La base se protege y se separa de la regeneración
 del registro de validación: cambiar parámetros o código no reemplaza la base.
 El ejecutor verifica previamente los resultados
 DADA2 y compara hashes de todas sus entradas antes y después de clasificar.
+La semilla registrada no garantiza el control del desempate nativo del
+clasificador. La ampliación a 93 muestras detectó variación de soportes y
+sensibilidad entre dos corridas, con primaria y diversidad idénticas en esa
+comparación. La [auditoría de repetición](taxonomy_reproducibility_2026-10-31.md)
+documenta el mecanismo y la limitación pendiente; no se extrapola la igualdad
+observada del piloto a toda reclasificación.
+
 El registro conserva commit, estado inicial de Git, semilla, parámetros,
 versiones de R/paquetes y SHA-256 de entradas y artefactos. `SUCCESS` se crea
 solo al terminar; una nueva ejecución invalida el marcador anterior.
@@ -114,3 +121,9 @@ su procedencia. La ejecución del 2026-10-09 sobre `5221b0f` vuelve a validar
 SHA-256 a las del hito taxonómico. Las tablas originales siguen conservando
 las cinco ASVs de orgánulos; su separación sólo afecta a la tabla derivada
 descrita en [`diversity_methods.md`](diversity_methods.md).
+
+La renovación del piloto del 2026-10-31 sobre `302b7f7` vuelve a comprobar las
+21 entradas y 15 artefactos. Sus ocho TSV, incluidas versiones de software,
+son idénticos a la referencia anterior; cambia el título de cobertura y la
+procedencia. Esta coincidencia observada no elimina el límite nativo del RNG
+detectado en la ampliación.

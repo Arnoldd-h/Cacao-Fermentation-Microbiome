@@ -251,3 +251,6 @@ Para el checkout exacto usar `git log -1 --oneline` y `git status`.
 La ampliación usa `codex/full-study-processing`, creada desde `868afa8`. No se
 declara el hito multistudio: solo el primer estudio tiene ejecución descriptiva
 completa. El bloqueo R2 se resolvió; la continuación usa `codex/full-study-resume`.
+El hito `v0.5.1-full-study` consolida esta ampliación, tablas de composición y
+figuras temporales, con la limitación del RNG taxonómico documentada. La entrega
+está en [PR #6](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/6).

@@ -46,5 +46,11 @@ Primera ejecución piloto: seis muestras, cuatro lotes y seis series parciales,
 sobre `afb7705`. Se validaron 16 entradas y ocho artefactos; los valores de
 `plot_data.tsv` coinciden exactamente con la diversidad fuente. La revisión
 visual del PNG comprobó títulos, ejes, leyenda, colores y puntos sin conexiones.
-Se corrigieron los márgenes antes de aceptar esta exportación. El perfil
-completo todavía espera el cierre de su diversidad.
+Se corrigieron los márgenes antes de aceptar esta exportación.
+
+El perfil completo contiene 93 muestras, cuatro lotes y ocho series de
+lote/estrato. Se validan 16 entradas y ocho artefactos. La revisión visual
+del PNG comprueba títulos, ejes, leyenda, separación de lotes y correspondencia
+de las trayectorias con sus horas observadas. Se mantienen huecos sin imputar
+y la profundidad junto a la riqueza. La fuente exacta queda en la procedencia
+de la ejecución vigente; las figuras son descriptivas.

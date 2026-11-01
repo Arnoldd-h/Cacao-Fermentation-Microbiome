@@ -2,8 +2,12 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## En desarrollo - 2026-10-31
+## v0.5.1-full-study - 2026-10-31
 
+- Composición completa y figuras temporales consolidadas: 1.477 filas para
+  93 muestras y ocho series de lote/estrato, con comprobación independiente
+  y revisión visual. Las notas registran el aumento descriptivo de la fracción
+  etiquetada como Acetobacter entre primer y último muestreo, sin inferencia.
 - Renovación del piloto cerrada en 33 trabajos: tablas DADA2/taxonomía y
   derivadas/diversidad conservadas, cinco registros QC y 257 comprobaciones.
   Normalización local de configuración completa a los bytes LF ya registrados

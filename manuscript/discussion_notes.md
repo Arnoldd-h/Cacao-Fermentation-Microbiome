@@ -33,6 +33,15 @@ Las primeras dos componentes de la PCA primaria representan solo el 12,68 %
 de la variación CLR; sus dos ejes no resumen toda la estructura observada.
 Las hipótesis de conservación entre estudios y core siguen sin contrastarse.
 
+El aumento de la fracción etiquetada como Acetobacter entre 0 horas y el último
+muestreo en las ocho series aporta una observación temporal dentro del primer
+estudio, más informativa que las muestras aisladas del piloto. No establece
+un crecimiento absoluto ni una trayectoria monótona, y la cobertura inicial
+incompleta limita su interpretación. Su relación con el objetivo original es
+preparar un contraste longitudinal por lote y comprobar después si el patrón
+se repite en otros estudios procesados independientemente. No demuestra
+sucesión conservada ni define por sí mismo un core temporal.
+
 Los avisos de calidad/adaptadores del estudio completo requieren revisar su
 persistencia y la retención DADA2 antes de interpretar los resultados. La ausencia
 de controles negativos verificados impide establecer ausencia de contaminación.

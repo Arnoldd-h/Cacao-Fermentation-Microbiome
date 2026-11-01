@@ -234,3 +234,24 @@ terminan con `Nothing to be done`. Snakemake conserva avisos sobre metadata
 auxiliar histórica ausente en 12 descargas piloto y 20 trabajos completos
 de descarga/FastQC. No son trabajos pendientes: sus archivos y procedencia
 científica siguen comprobados, sin reemplazar crudos para reconstruir esa caché.
+
+## Composición, figuras temporales y alcance del hito
+
+El perfil completo contiene 1.477 filas de composición por familia/género,
+93 muestras, 764 ASVs y todas las 2.096.980 lecturas retenidas. Pasa 15
+entradas/cinco artefactos al generar y con `--validate-only`. Se conservan
+linajes, etiquetas vacías y denominadores completos por muestra.
+
+Las figuras temporales describen ocho series de lote/estrato de los cuatro
+lotes, con horas originales, riqueza, Shannon efectivo y profundidad. Pasan
+16 entradas/ocho artefactos al generar y con `--validate-only`; PNG revisado
+visualmente y exportaciones PDF/SVG/PNG de 300 dpi. No se imputan huecos ni
+se conectan lotes o estratos distintos.
+
+Las notas de resultados registran la fracción etiquetada como Acetobacter a
+0 horas (0,14–14,42 %) y en el último tiempo observado (58,27–99,58 %), para
+las ocho series. Son observaciones composicionales, con cobertura y profundidad
+desiguales, cuatro lotes independientes y últimos tiempos distintos (108–144 h).
+No constituyen pruebas longitudinales, crecimiento absoluto, core ni evidencia
+de conservación entre estudios. El hito descriptivo conserva la limitación
+bootstrap y las tareas inferenciales pendientes.

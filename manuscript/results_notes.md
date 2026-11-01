@@ -91,6 +91,30 @@ efecto del tiempo.
 Fuentes: [diversidad alfa](../results/diversity/pacheco_montealegre_2020_colombia/full/alpha_diversity.tsv)
 y [varianza PCA](../results/diversity/pacheco_montealegre_2020_colombia/full/pca_variance.tsv).
 
+Las ocho series de lote/estrato presentan una mayor fracción de lecturas
+etiquetadas como Acetobacter en el último muestreo observado que a 0 horas.
+Se conserva el mismo linaje Acetobacteraceae/Acetobacter en las tablas primarias.
+Los porcentajes usan todas las lecturas retenidas, incluidas las no asignadas;
+no son abundancias celulares ni efectos temporales estimados.
+
+| Lote | Estrato | Acetobacter a 0 h | Último tiempo (h) | Acetobacter en último tiempo |
+|---|---:|---:|---:|---:|
+| An::I | 1 | 20/9.251 (0,22 %) | 132 | 22.605/24.261 (93,17 %) |
+| An::I | 2 | 140/25.779 (0,54 %) | 132 | 21.212/22.196 (95,57 %) |
+| An::II | 1 | 98/986 (9,94 %) | 144 | 22.760/22.857 (99,58 %) |
+| An::II | 2 | 28/13.805 (0,20 %) | 144 | 18.584/20.420 (91,01 %) |
+| Sa::I | 1 | 40/2.189 (1,83 %) | 108 | 45.227/49.079 (92,15 %) |
+| Sa::I | 2 | 34/24.165 (0,14 %) | 108 | 9.898/16.986 (58,27 %) |
+| Sa::II | 1 | 747/26.709 (2,80 %) | 132 | 14.420/15.844 (91,01 %) |
+| Sa::II | 2 | 2.823/19.576 (14,42 %) | 132 | 9.827/12.926 (76,03 %) |
+
+Los últimos tiempos difieren entre lotes y no se suponen estados finales
+biológicos equivalentes. La cobertura inicial de género y la profundidad son
+desiguales. Estos ocho pares descriptivos pertenecen a cuatro lotes; no son
+ocho fermentaciones independientes ni un contraste de hipótesis.
+Fuentes: [composición completa](../results/composition/pacheco_montealegre_2020_colombia/full/sample_composition.tsv)
+y [cobertura por muestra](../results/composition/pacheco_montealegre_2020_colombia/full/sample_label_coverage.tsv).
+
 ## Preguntas aún sin contrastar
 
 - Repetición de trayectorias bacterianas dentro de los lotes y entre estudios.

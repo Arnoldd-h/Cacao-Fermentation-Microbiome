@@ -72,10 +72,22 @@ El [registro de descarga](results/planning/pacheco_montealegre_2020_colombia/dow
 documenta la disponibilidad y la validación de los archivos locales.
 Se conservan 186/186 FASTQ verificados por bytes, MD5, gzip y estructura.
 QC y DADA2 del estudio completo están validados: 93 muestras, 782 ASVs y
-2.254.530 pares sin quimeras (82,62 % de la entrada). Taxonomía está en curso;
-separación y diversidad completas siguen pendientes. El
+2.254.530 pares sin quimeras (82,62 % de la entrada). Taxonomía, separación y
+diversidad también están validadas: 764 ASVs y 2.096.980 lecturas retenidas,
+con todas las muestras. El piloto solapa seis de esas 93 muestras. El
 [registro de ejecución](reports/full_study_execution_2026-10-31.md) conserva
 las validaciones y los avisos de calidad sin ocultarlos.
+
+Se exportan [composición por familia/género](results/composition/pacheco_montealegre_2020_colombia/full/sample_composition.tsv)
+y [figuras temporales por lote/estrato](results/temporal/pacheco_montealegre_2020_colombia/full/temporal_diversity.png).
+Las [notas de resultados](manuscript/results_notes.md) describen el aumento de
+la fracción etiquetada como Acetobacter entre el primer y último muestreo de
+las ocho series, sin atribuir significación o crecimiento absoluto.
+
+La [auditoría de repetición taxonómica](reports/taxonomy_reproducibility_2026-10-31.md)
+documenta una limitación: la semilla R no fija todo el desempate nativo de DADA2.
+La primaria y la diversidad se repitieron exactamente, pero cambió la sensibilidad
+a 50 en una ASV/cinco lecturas netas. La inferencia sigue pendiente.
 
 `PRJEB57747` aporta lecturas PacBio full-length `SINGLE`; requiere una ruta
 propia y no se procesa con el piloto Illumina paired-end actual.
@@ -205,12 +217,14 @@ environment/  dependencias reproducibles
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
 `CHANGELOG.md`. El 2026-10-31 quedó resuelto el bloqueo de ENA: los 186 FASTQ
-del manifest de 93 runs están descargados y validados, y su análisis completo
-está en curso. Los resúmenes por familia/género del piloto ya están validados
-en `results/composition/pilot/`.
+del manifest de 93 runs están descargados y validados. Su procesamiento,
+diversidad descriptiva, composición y figuras temporales están completos;
+las salidas conservan configuración y procedencia. El CLR largo completo es
+regenerable y queda fuera de Git, junto a los datos pesados.
 La integración entre estudios y evaluación de las
-hipótesis siguen pendientes; el resultado técnico del piloto no demuestra
-sucesión conservada ni ausencia de contaminación.
+hipótesis siguen pendientes; la descripción de un estudio no demuestra
+sucesión conservada entre estudios ni ausencia de contaminación. El límite
+del RNG taxonómico se registra antes de avanzar a inferencia.
 
 La selección de licencia y los metadatos completos de citación están pendientes
 para no atribuir autores ni términos legales sin confirmación.

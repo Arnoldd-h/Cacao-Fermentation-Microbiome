@@ -1,0 +1,77 @@
+[
+  {
+    "bytes": 1873,
+    "path": "config/full_study_diversity.yaml",
+    "sha256": "499cef4e31399a2d9c66554becb8021aed6d2d756d7dd152dc236aeac6b5dc30"
+  },
+  {
+    "bytes": 685,
+    "path": "config/taxonomic_reporting.yaml",
+    "sha256": "906f4f2c2505ef4b28b655bd497cae964da9658a138ea8c27a7dd8fd2ce7562d"
+  },
+  {
+    "bytes": 183737,
+    "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/asv_counts.tsv",
+    "sha256": "b39d79ef1f39a9a14bd77de2d1f840898ac680904f420e2431a9b4f9bcb09d22"
+  },
+  {
+    "bytes": 87048,
+    "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/sample_metadata.tsv",
+    "sha256": "55876544d81292653080be9bf746da3cc1ed2fc3de682554913c34f2597b7373"
+  },
+  {
+    "bytes": 119339,
+    "path": "data/processed/pacheco_montealegre_2020_colombia/full/bacterial/taxonomy.tsv",
+    "sha256": "5a013d834224c4219c14fb68020ddb9ea635573b4fc99e1e3f717c8f8ad1eed0"
+  },
+  {
+    "bytes": 9376,
+    "path": "python/cacao_inventory/analysis_artifacts.py",
+    "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+  },
+  {
+    "bytes": 4203,
+    "path": "python/cacao_inventory/bacterial_filter.py",
+    "sha256": "0ea034d8cb35a41672b55d77f3654c232fe61cef69e447b5103c4d5db806ef61"
+  },
+  {
+    "bytes": 4793,
+    "path": "python/cacao_inventory/config.py",
+    "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+  },
+  {
+    "bytes": 2405,
+    "path": "python/cacao_inventory/io.py",
+    "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+  },
+  {
+    "bytes": 4488,
+    "path": "python/cacao_inventory/provenance.py",
+    "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+  },
+  {
+    "bytes": 4319,
+    "path": "python/cacao_inventory/taxonomy_reference.py",
+    "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+  },
+  {
+    "bytes": 12633,
+    "path": "results/filtering/pacheco_montealegre_2020_colombia/full/provenance.json",
+    "sha256": "ced8415ccef303c2b91be60faa2c5857a1ba2e523b691caed9a9c4f3ed37844b"
+  },
+  {
+    "bytes": 429,
+    "path": "results/filtering/pacheco_montealegre_2020_colombia/full/validation.json",
+    "sha256": "5ca232b1cd7b1d2c771a647ec4dbc1fce2a867576ea0a4f81398e024994199de"
+  },
+  {
+    "bytes": 6366,
+    "path": "scripts/filtering/validate_bacterial_table.py",
+    "sha256": "6d652de4458c2ec00fc711aceada071b7bf5e16a44448188d92be055060c06b7"
+  },
+  {
+    "bytes": 12523,
+    "path": "scripts/reporting/summarize_composition.py",
+    "sha256": "f1ca5281e3da66701258f52b80a983d2c868cfc3d26d471964bef9ad9e0037f2"
+  }
+]

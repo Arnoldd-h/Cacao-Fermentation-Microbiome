@@ -1,0 +1,13 @@
+{
+  "asvs": 764,
+  "composition_rows": 1477,
+  "inference": false,
+  "retained_reads": 2096980,
+  "sample_aggregation": "none",
+  "samples": 93,
+  "study_id": "pacheco_montealegre_2020_colombia",
+  "taxonomic_ranks": [
+    "Family",
+    "Genus"
+  ]
+}
