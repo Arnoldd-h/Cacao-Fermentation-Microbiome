@@ -2,8 +2,14 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## En desarrollo - 2026-10-31
+## v0.5.4-second-study-qc - 2026-10-31
 
+- QC basal 5' completo: 552 pasos, 340 entradas/11 artefactos validados,
+  100 % de pares retenidos. Los flags de calidad por base suben de ocho a 61
+  fail y persisten coincidencias de primers opuestos. DADA2 sigue pendiente.
+- Diagnóstico ilustrativo de mayor recuento residual: en SRR11579065 son
+  terminales 12.400/13.892 coincidencias R1 y 10.342/12.295 R2. No se generaliza
+  esa fracción a la cohorte ni se asigna identidad a los fragmentos cortos.
 - Adquisición comprobada de 120 FASTQ pareados de PRJNA627078:
   1.379.724.114 bytes, 5.689.175 pares, bytes/MD5 y gzip/CRC/estructura válidos;
   concordancia del manifest y recuentos R1/R2, sin excluir bibliotecas.

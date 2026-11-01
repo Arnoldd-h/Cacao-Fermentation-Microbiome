@@ -1,0 +1,27 @@
+{
+  "batch_time_observations": 20,
+  "compressed_bytes": 1379724114,
+  "excluded_runs_without_paired_files": 0,
+  "excluded_streams": 1,
+  "existing_valid_files": 120,
+  "fastq_files": 120,
+  "fermentation_batches": 4,
+  "free_disk_bytes_at_planning": 28377997312,
+  "inventory_runs": 60,
+  "remaining_download_bytes": 0,
+  "reserve_is_estimate": true,
+  "reserved_processing_bytes": 8278344684,
+  "resources": {
+    "analysis_memory_mb": 4000,
+    "cores": 8,
+    "fastqc_memory_mb": 512,
+    "memory_budget_mb": 4500,
+    "minimum_free_space_factor": 6.0
+  },
+  "runs": 60,
+  "sampling_strata": [
+    ""
+  ],
+  "study_id": "mota_gutierrez_2021_mexico",
+  "temporal_inference": false
+}

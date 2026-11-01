@@ -1,0 +1,11 @@
+{
+  "fastq_files": 120,
+  "input_pairs": 5689175,
+  "paired_retention_fraction": 1.0,
+  "raw_base_quality_pass_files": 101,
+  "runs": 60,
+  "sample_exclusions": 0,
+  "study_id": "mota_gutierrez_2021_mexico",
+  "trimmed_base_quality_pass_files": 58,
+  "trimmed_pairs": 5689175
+}

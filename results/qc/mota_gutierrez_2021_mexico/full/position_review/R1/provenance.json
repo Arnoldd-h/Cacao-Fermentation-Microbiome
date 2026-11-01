@@ -1,0 +1,123 @@
+{
+  "command": [
+    "scripts/study/review_primer_positions.py",
+    "--config",
+    "config/prjna627078_study.yaml",
+    "--direction",
+    "R1"
+  ],
+  "config": [
+    {
+      "bytes": 3566,
+      "path": "config/prjna627078_processing.yaml",
+      "sha256": "74d201d618cf44dbc34c0be3c0805a79e33ed769bdf1baf749cd2342e11603f2"
+    },
+    {
+      "bytes": 1247,
+      "path": "config/prjna627078_study.yaml",
+      "sha256": "90374770be68b8feeb7807e0081b3e8309c5828b5f26109d2ac882c1291845f1"
+    }
+  ],
+  "created_at_utc": "2026-11-01T04:32:05.112036+00:00",
+  "git_commit": "75407e9e92ab042dd8e0ee67b03cc4801767d7cd",
+  "git_dirty": true,
+  "inputs": [
+    {
+      "bytes": 30213267,
+      "path": "data/interim/mota_gutierrez_2021_mexico/full/SRR11579065/SRR11579065_1.fastq.gz",
+      "sha256": "6341a39b3bcca12ef440c31c8c3c57715bb4fb18296226073b6542cb77ae8e27"
+    },
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 73195,
+      "path": "metadata/manifests/mota_gutierrez_2021_mexico.tsv",
+      "sha256": "09c190f379884f9ebe8c1a6e5561a9ffe0fbf39a7262bc205c50d39e483b98b2"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 3245,
+      "path": "python/cacao_inventory/pilot_workflow.py",
+      "sha256": "e07a0f12cd78538d76893e4e3e0e7ac47457c3e16a36841ea5a6a2feb0d2b329"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 25449,
+      "path": "python/cacao_inventory/qc.py",
+      "sha256": "843acf8627f60b8aece692a28c9dce8c87c5228638e2e23d9722b2ce058de082"
+    },
+    {
+      "bytes": 6188,
+      "path": "python/cacao_inventory/study_qc.py",
+      "sha256": "8694ec3b93758ec7bfb6cc45375a5b630d53a401f1227e769d1fc38db13a02b9"
+    },
+    {
+      "bytes": 8976,
+      "path": "python/cacao_inventory/study_scope.py",
+      "sha256": "1bda54e5fcb02e87747e7bfd7aa57f45051d11d3b097f574b2471ee69293deff"
+    },
+    {
+      "bytes": 110891,
+      "path": "results/qc/mota_gutierrez_2021_mexico/full/primer_detection_trimmed.tsv",
+      "sha256": "b1413decb1eb54be450ddd2bd1fb1e50f857ed0cd91f4d77203c4cc526c6bcc6"
+    },
+    {
+      "bytes": 75848,
+      "path": "results/qc/mota_gutierrez_2021_mexico/full/provenance.json",
+      "sha256": "d5bff00d34aa7d3eaaad1fbf8b5a8bc23ff95f5883b5cb0b8725fab341b983e5"
+    },
+    {
+      "bytes": 418,
+      "path": "results/qc/mota_gutierrez_2021_mexico/full/validation.json",
+      "sha256": "fc0634e343a1c8425d33382c893feeca4116fb6c25a3b12280cad7623299f8ee"
+    },
+    {
+      "bytes": 7103,
+      "path": "scripts/study/review_primer_positions.py",
+      "sha256": "a897fb255ed9d11827ea1e0125b4c27ea14f9a95a09ce37bfb932654c773e25d"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 4677,
+      "path": "results/qc/mota_gutierrez_2021_mexico/full/position_review/R1/cutadapt.json",
+      "sha256": "3e050e7d56fa53d6a56711524b5e116252e84719a9396143454a42308a478c39"
+    },
+    {
+      "bytes": 1250,
+      "path": "results/qc/mota_gutierrez_2021_mexico/full/position_review/R1/positions.tsv",
+      "sha256": "4873ead4680769c4caa6c00996f8a2774850090568a31df6f9aa9d05c6cba095"
+    },
+    {
+      "bytes": 1099,
+      "path": "results/qc/mota_gutierrez_2021_mexico/full/position_review/R1/summary.json",
+      "sha256": "53b7384038bfcd0226c6e11cc9150c107d78472c0c875946a0e8df8785b87a2e"
+    }
+  ],
+  "parameters": {},
+  "schema_version": "1.0.0",
+  "software_versions": {
+    "Cutadapt": "5.0"
+  }
+}

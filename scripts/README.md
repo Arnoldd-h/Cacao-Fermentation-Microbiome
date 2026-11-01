@@ -180,3 +180,12 @@ El descargador usa `inventory.http_timeout_seconds` como límite de inactividad
 de conexión/lectura. Los reintentos del scheduler reanudan `.part` mediante Range
 cuando el servidor lo admite y verifican tamaño/MD5 antes de promover a raw.
 El límite no es una duración máxima total para un archivo que sigue transfiriendo.
+
+
+`study/review_primer_positions.py --config config/prjna627078_study.yaml
+--direction R1` (o R2) reproduce, sin recortar, el caso con mayor número de
+coincidencias del primer opuesto RC en cada mate; requiere QC terminado.
+Escribe posiciones agregadas, resumen, JSON Cutadapt y procedencia; los datos
+por read quedan en `results/intermediate`. La selección es ilustrativa y no
+estima la fracción terminal de todo el estudio. Recuentos deben coincidir con
+el cribado anterior. El método y resultados están en el informe PRJNA627078.

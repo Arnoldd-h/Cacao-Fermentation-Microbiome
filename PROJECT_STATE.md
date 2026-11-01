@@ -4,110 +4,61 @@
 
 ## Fase actual
 
-El segundo estudio cerró el QC basal de primers 5': 552/552 pasos,
-5.689.175 pares conservados, cero exclusiones, 340 entradas y 11 artefactos
-validados. El QC posterior registra 61 fail/1 warn/58 pass por calidad de base
-(frente a 8/11/101 originales), incluidos los 60 R2 con fail, y persisten
-coincidencias con el primer opuesto. DADA2 continúa limitado por configuración.
-Se investiga su posición y la cobertura de las colas antes de aprobar el
-preprocesamiento; no se interpretan estos flags como pérdida automática de
-calidad global ni se asigna identidad biológica a esos fragmentos.
+Segundo estudio (PRJNA627078, México) adquirido y con QC basal de primers 5'
+completo: 60 bibliotecas, cuatro cajas, cinco tiempos y 20 combinaciones
+caja/tiempo. Los 120 FASTQ suman 1.379.724.114 bytes y pasan bytes/MD5,
+gzip/CRC/estructura. Se conservan 5.689.175 pares y todas las bibliotecas;
+552 pasos completados, 340 entradas/11 artefactos validados desde `9f0fd83`.
 
+El QC detecta una limitación que debe resolverse antes de DADA2: calidad por
+base pasa de 101 pass/11 warn/8 fail a 58/1/61, incluidos los 60 R2 con fail;
+los 120 archivos mantienen pass por adaptadores. Persisten coincidencias con
+el primer opuesto: 101.479 R1 y 83.624 R2. No se excluyen muestras ni se asigna
+identidad taxonómica a esos fragmentos.
 
-Ampliación al segundo estudio: PRJNA627078 (México), 60 bibliotecas bacterianas
-tradicionales, cuatro cajas y cinco tiempos. Configuración independiente y
-límite inicial en QC; estratos desconocidos conservados vacíos y primers
-V3–V4 verificados sin inventar constructos. NCBI/ENA verificados: los 60 runs siguen elegibles de 132 registros;
-120 streams pareados suman 1.379.724.114 bytes, con reserva estimada de 8,28 GB.
-Un stream huérfano se registra sin eliminar su run. Descarga y QC pendientes. DADA2 se mantiene bloqueado por configuración
-hasta revisar longitudes/calidad; los parámetros candidatos no son resultados.
-Suite completa: 188 pruebas aprobadas (179,502 s). Tras ampliar el contraste
-activo a títulos/descripciones e instrumento, las 26 pruebas de estudio pasan
-(27,230 s tras verificar el contrato de campos ENA), incluida una regresión
-nueva: 189 pruebas distintas verificadas. La auditoría ampliada confirma los
-60 runs, sin cambios del diseño. Los 120 FASTQ están descargados y pasan
-bytes/MD5 y gzip/CRC/estructura FASTQ: 5.689.175 pares, 877–192.977 por
-biblioteca, longitudes de 35–251 bases. Los informes concuerdan con el manifest
-y los recuentos de mates. QC posterior sigue en ejecución. Dos conexiones
-detenidas se recuperaron al reintentar. El descargador adopta el timeout HTTP
-ya configurado, con prueba real de transferencia local detenida/reanudada;
-pendiente renovar el checkpoint de fuentes con esta versión de verificación.
+El diagnóstico `75407e9`, sin modificar lecturas, selecciona por mate el mayor
+recuento residual. En SRR11579065, 12.400/13.892 coincidencias R1 y
+10.342/12.295 R2 son terminales (89,26/84,12 %); no son estimaciones de toda
+la cohorte. Las longitudes variables cambian los subconjuntos que contribuyen
+a las posiciones finales de FastQC y deben revisarse junto con la calidad.
+DADA2 permanece candidato bajo `processing_ceiling=qc`: primero se registrará
+y validará el tratamiento 3' y de fragmentos cortos. Informe:
+`reports/prjna627078_qc_2026-10-31.md`.
 
+La menor profundidad es SRR11579032/16S_cocoa_B59M: 877 pares, Criollo, caja 2,
+120 h, réplica 2. Se conserva. Las etiquetas de réplica no se convierten en
+estratos espaciales: `sampling_stratum` sigue vacío y la caja es la unidad
+independiente. NCBI/ENA verifican también título/descripción y equipo, además
+de identificadores, diseño de lectura y archivos. El inventario no cambia.
 
-Primer modelo longitudinal exploratorio ejecutado y validado dentro del
-estudio completo: 764 ASVs, cuatro lotes independientes, 46 tiempos con pares
-completos y 92 muestras; el punto incompleto permanece en sensibilidad.
-Plan previo `c97345c`, primer ajuste `7b6d5a6` y renovación operativa `6415bfd`
-(dos trabajos, diez tablas científicas idénticas). Se validan 27 entradas/19
-artefactos. R contrasta independientemente 36.672 coeficientes,
-pertenencia, residuos, signos y FDR BY. Desarrollo: 181 pruebas de suite más
-dos del nuevo workflow, 183 pruebas distintas aprobadas.
+El primer estudio (PRJNA492720) conserva su ejecución completa de 93 muestras:
+782 ASVs/2.254.530 pares sin quimeras; tras separar orgánulos, 764 ASVs y
+2.096.980 lecturas. Su modelo longitudinal exploratorio tiene cuatro lotes,
+46 tiempos/92 muestras principales y sensibilidad 47/93: cosenos de pendientes
+0,249–0,584, R² 0,118–0,164 y p=0,125/q BY=0,30625 en seis escenarios.
+La resolución del contraste impide rechazar a 0,05; no demuestra ausencia de
+sucesión ni conservación entre estudios. Método/resultados en los informes
+longitudinales y `v0.5.3-longitudinal`.
 
-Las seis parejas de pendientes tienen cosenos 0,249–0,584; el ajuste lineal
-recoge 11,82–16,44 % de la variación por lote. Los seis escenarios dan p=0,125
-y q BY=0,30625, sin rechazo a 0,05. Ese p es el mínimo posible con cuatro lotes
-y el contraste fijado; no demuestra ausencia de sucesión ni conservación entre
-estudios. Informe: `reports/longitudinal_results_2026-10-31.md`.
+El adaptador taxonómico con semilla conserva su validación por repetición
+entre procesos/hilos. Los resultados históricos mantienen sus versiones y
+hashes productores; la ampliación de código compartido requiere renovar las
+etapas afectadas si se reprocesan con este checkout. Sus tablas científicas
+no se han editado ni se combinan ASVs entre regiones 16S.
 
-Control explícito del desempate taxonómico validado en el entorno registrado:
-adaptador `r_seeded_query_mt19937_v1`, sin modificar el paquete DADA2 instalado.
-Piloto y estudio completo repiten exactamente sus siete tablas científicas
-entre procesos independientes con dos y un hilo. Método registrado antes
-de reclasificar en `e008f2b`; tablas históricas completas archivadas.
-
-Primer estudio completo procesado y validado de forma descriptiva: PRJNA492720,
-93 muestras pareadas de cuatro lotes y 47 observaciones lote-tiempo. El
-inventario conserva 94 runs; SRR7899803 no ofrece pares completos y se excluye
-solo de esta ruta, con decisión auditable. El bloqueo de ENA quedó resuelto:
-186/186 FASTQ, 394.515.770 bytes, con bytes, MD5, gzip/CRC y estructura válidos.
-
-QC conserva 2.728.920 pares tras Cutadapt y pasa 505 entradas/11 artefactos.
-DADA2 conserva 782 ASVs y 2.254.530 pares sin quimeras (82,62 %), con
-192 entradas/18 artefactos comprobados. Ambos modelos convergen en seis rondas.
-SILVA 138.2 clasifica género en 475 ASVs a bootstrap 80; se validan 26
-entradas/15 artefactos. La separación de 18 ASVs etiquetadas como orgánulos
-conserva 764 ASVs, 2.096.980 lecturas y todas las muestras. Separación y
-diversidad pasan 21 entradas/nueve artefactos y 20 entradas/17 artefactos.
-
-Los resúmenes por familia/género contienen 1.477 filas, sin imputar etiquetas
-ni renormalizar solo taxones clasificados (15 entradas/cinco artefactos).
-Las figuras temporales representan 93 muestras y ocho series de lote/estrato,
-con horas originales y sin conectar huecos; exportación PDF/SVG/PNG a 300 dpi,
-16 entradas/ocho artefactos y revisión visual. Las fuentes exactas quedan en
-la procedencia de cada etapa y en el registro de ejecución del 2026-10-31.
-
-El primer recorrido cerró 481 trabajos; la renovación de la figura taxonómica
-cerró siete trabajos adicionales sin repetir QC ni DADA2 completos. La suite
-completa pasa 161 pruebas Python en Linux (135,991 s). El piloto de seis muestras
-cerró 33 trabajos con el código compartido actual: ocho tablas DADA2, ocho
-taxonómicas y once derivadas/de diversidad coinciden con la referencia anterior.
-Sus cinco registros QC pasan 257 comprobaciones de bytes/SHA-256. Es un
-subconjunto del estudio completo, no un
-segundo estudio ni seis muestras independientes adicionales.
-
-La comparación del adaptador con el histórico conserva taxonomía primaria,
-44 tablas TSV de DADA2/separación/diversidad y ocho artefactos TSV/PNG de
-composición/tiempo. Sólo ASV000100 (cinco lecturas, BactSaI012z1) cambia su
-soporte de familia/género de 48 a 51: entra en la sensibilidad a 50 como
-Yersiniaceae/Samsonia, pero permanece sin esas etiquetas a 80. Género a 50:
-649 ASVs/2.051.014 lecturas. El piloto conserva sus siete tablas históricas.
-No se cambia un umbral ni se selecciona la corrida por sus resultados.
-El contrato exige los mismos datos/orden y entorno; no garantiza igualdad
-entre plataformas, compiladores o al reordenar entradas.
-
-Validación de esta continuación: 166 pruebas de suite (140,517 s), más una
-regresión adicional de auditoría que rechaza entradas discordantes aunque
-las tablas coincidan. Los siete trabajos de cada alcance y las repeticiones
-independientes pasan sus validadores; la cobertura renovada se revisó visualmente.
-
-El primer contraste longitudinal lineal está completado dentro de estudio.
-Los modelos por taxón/etapa, el core y la integración/meta-análisis siguen
-pendientes. Los otros tres estudios incluidos todavía no están procesados.
-La ampliación se entrega mediante PR #6; PR #5 integró recuperación de datos,
-recursos y resúmenes de composición en `main` (`7cd3986`). Los FASTQ, RDS,
-base SILVA e informes pesados permanecen fuera de Git.
+Desarrollo: suite de 188 pruebas aprobada (179,502 s), más las regresiones
+nuevas de diseño ENA, conexiones detenidas y coordenadas; 193 pruebas distintas
+verificadas mediante suite y pruebas específicas. FASTQ, intermedios y reportes
+pesados quedan fuera de Git. Los otros dos estudios todavía no tienen
+procesamiento de lecturas; la integración/core/meta-análisis siguen pendientes.
 
 ## Completado
+
+- Segundo estudio: manifest de 60 runs, 120 FASTQ íntegros, QC basal completo y
+  diagnóstico reproducible de residuos terminales/internos, sin exclusiones.
+- Descargador con timeout HTTP configurado y prueba de transferencia local
+  detenida/reanudada mediante Range, conservando los archivos crudos válidos.
+
 
 - Configuración, protocolo, registro de decisiones, inventario y validadores.
 - Revisión de los 34 BioProjects descubiertos: cuatro incluidos, siete pendientes
@@ -252,7 +203,8 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - Hay taxonomía, diversidad descriptiva y un modelo longitudinal exploratorio
-  del primer estudio; faltan los otros tres y la inferencia cross-study. Sus
+  del primer estudio; el segundo sólo tiene QC basal y requiere corregir el
+  preprocesamiento antes de ASVs. Faltan los otros dos y la inferencia cross-study. Sus
   93 muestras representan cuatro lotes, no 93 fermentaciones independientes.
   El contraste fijado no puede bajar de p=0,125 y supone simetría central;
   el piloto solapa seis muestras y no se usa como evidencia independiente.
@@ -276,8 +228,10 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 
 ## Próximas tareas
 
-1. Procesar los otros estudios por separado, revisando primers, V3-V4 y PacBio
-   antes de armonizar taxonomía e integrar efectos y heterogeneidad.
+1. Registrar y validar el tratamiento de primers 3'/fragmentos cortos y revisar
+   calidad por posición en PRJNA627078 antes de DADA2, taxonomía y diversidad.
+   Procesar después los dos estudios restantes con métodos apropiados a su
+   región/plataforma, incluido PacBio.
 2. Registrar armonización género/familia, modelos por taxón/etapa y core antes
    de la inferencia cross-study. Las pendientes ASV actuales no son combinables
    directamente con ASVs de otros estudios.
@@ -331,3 +285,14 @@ El hito `v0.5.3-longitudinal` entrega ese primer modelo exploratorio mediante
 plan `c97345c`, implementación `7b6d5a6`, renovación operativa `6415bfd` y
 resultados `0132f7d`. Sus tres workflows quedan sin pendientes. La siguiente
 fase es procesar los otros estudios, sin combinar directamente sus ASVs.
+
+
+La continuación `codex/prjna627078-qc` registra el perfil en `d3f6149`,
+la verificación de diseño/equipo en `3faac65`/`9f319c1`, el timeout en
+`49c4161` y la adquisición íntegra en `9f0fd83`. El QC basal procede de
+`9f0fd83` y el diagnóstico de `75407e9`. El hito
+`v0.5.4-second-study-qc` conserva este control basal con sus limitaciones;
+no declara una segunda ejecución DADA2 ni el hito multistudio. La renovación
+de fuentes conserva el manifest (31 entradas/seis artefactos validados),
+y el workflow mexicano queda sin trabajos pendientes. Los hashes de los
+inputs pequeños/outputs QC y de los dos diagnósticos se comprueban al cerrar.

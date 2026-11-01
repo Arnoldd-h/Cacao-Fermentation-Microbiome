@@ -1,0 +1,15 @@
+{
+  "artifacts_checked": 11,
+  "fastq_files": 120,
+  "input_pairs": 5689175,
+  "inputs_checked": 340,
+  "paired_retention_fraction": 1.0,
+  "raw_base_quality_pass_files": 101,
+  "runs": 60,
+  "sample_exclusions": 0,
+  "source_git_commit": "9f0fd8324a9aca1a6ea5ced5b78c5c407cf684e2",
+  "status": "valid",
+  "study_id": "mota_gutierrez_2021_mexico",
+  "trimmed_base_quality_pass_files": 58,
+  "trimmed_pairs": 5689175
+}
