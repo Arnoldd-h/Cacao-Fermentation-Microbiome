@@ -224,11 +224,13 @@ environment/  dependencias reproducibles
 
 ## Estado
 
-PRJNA627078 tiene 60 bibliotecas adquiridas y QC basal 5' validado:
-5.689.175 pares, sin exclusiones. El QC detecta residuos terminales de primers
-y cambios importantes de flags por base que deben resolverse antes de DADA2;
-no se declara todavía una segunda tabla de ASVs ni un core compartido.
-Informe: [`QC de PRJNA627078`](reports/prjna627078_qc_2026-10-31.md).
+PRJNA627078 tiene QC basal 5' y segunda pasada terminal 3' completos:
+60 bibliotecas y 5.689.175 pares conservados. El cribado posterior no detecta
+el primer opuesto completo en el extremo 3'; persisten coincidencias no terminales
+y 61 flags de calidad por base, ahora acompañados de cobertura por posición.
+89.810 pares cruzan el mínimo candidato de 150 nt, sin aplicar aún ese filtro.
+Falta ejecutar DADA2; no se declara una segunda tabla ASV ni un core compartido.
+Informe: [`QC terminal de PRJNA627078`](reports/prjna627078_terminal_qc_2026-11-02.md).
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
 `CHANGELOG.md`. El 2026-10-31 quedó resuelto el bloqueo de ENA: los 186 FASTQ

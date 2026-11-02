@@ -2,6 +2,23 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## v0.5.5-terminal-qc - 2026-11-02
+
+- Método registrado para retirar únicamente primers opuestos completos en el
+  extremo 3' de PRJNA627078, preservando baseline, pares y calidades restantes.
+- Auditoría independiente de cada lectura, longitudes y cruces del mínimo
+  candidato DADA2, cribado residual y cobertura de intervalos de FastQC.
+- Workflow separado que consume QC basal validado sin reconstruirlo.
+- Segunda pasada completa sobre 60 bibliotecas/5.689.175 pares, sin pérdidas:
+  92.518 R1 y 76.111 R2 recortados; cero coincidencias terminales posteriores
+  del primer opuesto, conservando 8.961/7.513 coincidencias completas no terminales.
+- 89.810 pares cruzan el mínimo candidato de 150 nt; 5.593.277 conservan ambos
+  mates de al menos 150 nt. Diagnóstico sin filtro ni exclusión de bibliotecas.
+- FastQC mantiene 61 flags fail por base; la cobertura de las posiciones
+  250–251 tiene mediana de 3,05 % entre R2. Se conservan percentiles NaN.
+- 217 pruebas completas aprobadas y conciliación independiente de los 60 runs.
+  DADA2 del segundo estudio todavía no se ejecuta.
+
 ## v0.5.4-second-study-qc - 2026-10-31
 
 - QC basal 5' completo: 552 pasos, 340 entradas/11 artefactos validados,

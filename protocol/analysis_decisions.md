@@ -404,3 +404,42 @@ lectura, validando los recuentos contra el cribado inicial. No se filtran reads,
 se excluyen muestras, se cambian parámetros DADA2 ni se generaliza la fracción
 terminal del caso seleccionado a todo el estudio. DADA2 permanece pendiente.
 Formato: https://cutadapt.readthedocs.io/en/v5.0/reference.html#info-file-format.
+
+### Segunda pasada terminal 3' de PRJNA627078, 2026-11-02
+
+Se registra antes de ejecutar la nueva limpieza, tras el diagnóstico basal:
+`config/prjna627078_terminal_qc.yaml` aplica una sola pasada de Cutadapt 5.0
+sobre las lecturas ya recortadas en 5'. Busca el complemento inverso del primer
+opuesto completo como sufijo: 21 nt en R1 y 17 nt en R2, anclaje `$`, error 0,1
+y sin indels. El anclaje exige longitud completa; no se pasa `min_overlap`,
+incompatible con adaptadores anclados en esta versión. No se recortan
+coincidencias internas o parciales, ni se aplica calidad o descarte de reads.
+Las secuencias de primers se derivan del perfil original, sin duplicarlas.
+Referencia: https://cutadapt.readthedocs.io/en/v5.0/guide.html#anchored-3-adapters.
+
+Los FASTQ basales y sus resultados permanecen en `full`; los nuevos se escriben
+en `terminal_3prime`. Se comprueban los hashes del baseline antes de procesar,
+identificadores/orden/conservación exacta de pares, prefijos de secuencia y
+calidad idénticos, y eliminación únicamente de 0 o 21/17 bases. Cutadapt y la
+auditoría independiente deben concordar en reads y bases. El cribado posterior
+cuantifica por separado residuos terminales y coincidencias completas en
+cualquier posición; este método no garantiza ausencia de todos los primers.
+
+Se registran longitudes exactas y pares que cruzan el mínimo candidato de
+DADA2 (150 nt), incluyendo fragmentos que pasan a 148 nt. El umbral no se
+modifica y aquí no se aplica ningún filtro de longitud. FastQC se repite en
+los 120 archivos; cada intervalo de calidad se acompaña del número de reads
+que alcanzan su inicio/final y de las observaciones de bases, calculados desde
+las longitudes exactas. Así se documenta qué subconjunto sostiene las colas.
+Los flags no excluyen bibliotecas, y las coincidencias no asignan identidad
+taxonómica. DADA2 sigue pendiente hasta revisar esta etapa; sus parámetros
+candidatos y las cuatro cajas como unidades independientes permanecen iguales.
+
+Resultado de la ejecución registrada: se conservan 5.689.175 pares y las
+60 bibliotecas; el cribado terminal del primer opuesto pasa a cero en ambos
+mates. Persisten 8.961/7.513 coincidencias completas no terminales y 61 flags
+fail por base. 89.810 pares cruzan el mínimo candidato de 150 nt, sin aplicarlo
+como filtro ni modificarlo. La cobertura de las posiciones finales y los
+percentiles NaN se conservan para interpretar los flags. El paso siguiente
+será registrar una ejecución DADA2 separada que consuma la validación terminal,
+sin reconstruir el baseline ni asumir retención a partir de longitud solamente.

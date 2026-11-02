@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "source_scope": "config/prjna627078_study.yaml",
+  "method": "opposite_primer_rc_full_terminal_single_pass",
+  "error_rate": 0.1,
+  "allow_indels": false,
+  "quality_trimming": false,
+  "discard_reads": false,
+  "partial_matches": false,
+  "internal_matches": false,
+  "passes": 1,
+  "cutadapt_version": "5.0",
+  "interim_dir": "data/interim/mota_gutierrez_2021_mexico/terminal_3prime",
+  "intermediate_dir": "results/intermediate/qc/mota_gutierrez_2021_mexico/terminal_3prime",
+  "output_dir": "results/qc/mota_gutierrez_2021_mexico/terminal_3prime",
+  "length_diagnostic": "source_dada2_min_len_without_filtering",
+  "processing_ceiling": "qc",
+  "fastqc_threads": 2,
+  "fastqc_memory_mb": 1024,
+  "minimum_free_space_factor": 2.0,
+  "method_reference": "https://cutadapt.readthedocs.io/en/v5.0/guide.html#anchored-3-adapters"
+}
