@@ -2,6 +2,14 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-11-02
+
+- Ejecución DADA2 independiente registrada para PRJNA627078 desde QC terminal,
+  con los parámetros originales, validación de cohorte completa y procedencia
+  de entradas/salidas. No reconstruye el baseline ni cambia su techo de QC.
+- Auditoría de historial de errores y separación entre integridad técnica y
+  promoción analítica; un aprendizaje no convergente requiere revisión.
+
 ## v0.5.5-terminal-qc - 2026-11-02
 
 - Método registrado para retirar únicamente primers opuestos completos en el

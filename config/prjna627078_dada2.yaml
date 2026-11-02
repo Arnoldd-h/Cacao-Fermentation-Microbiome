@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "source_terminal_policy": "config/prjna627078_terminal_qc.yaml",
+  "method": "independent_study_registered_dada2",
+  "output_dir": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime",
+  "audit_dir": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit",
+  "intermediate_dir": "results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime",
+  "expected_runs": 60,
+  "expected_batches": 4,
+  "expected_batch_times": 20,
+  "expected_r_version": "4.4.3",
+  "expected_dada2_version": "1.34.0",
+  "threads": 2,
+  "memory_mb": 4000,
+  "minimum_free_space_factor": 3.0,
+  "require_convergence_before_limit": true,
+  "require_last_error_matrix_match": true,
+  "sample_exclusions": false,
+  "parameter_overrides": false,
+  "processing_ceiling": "dada2",
+  "residual_primer_policy": "diagnose_separately_without_posthoc_exclusions"
+}

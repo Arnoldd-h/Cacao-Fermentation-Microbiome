@@ -4,6 +4,11 @@
 
 ## Fase actual
 
+En preparación: ejecución independiente DADA2 para las 60 bibliotecas de
+PRJNA627078 desde `terminal_3prime`, registrada en
+`config/prjna627078_dada2.yaml`. Conserva el perfil original y valida cohorte,
+metadata, conteos y convergencia; no hay todavía resultados de esta corrida.
+
 Segunda pasada terminal 3' de PRJNA627078 completa desde `c77233d`:
 60 bibliotecas y 5.689.175 pares conservados, 861 entradas/seis artefactos
 validados. Se recortan 92.518 R1 y 76.111 R2; el cribado posterior encuentra
