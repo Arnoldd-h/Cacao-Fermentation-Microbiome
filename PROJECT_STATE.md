@@ -4,11 +4,19 @@
 
 ## Fase actual
 
-En desarrollo: segunda pasada terminal 3' conservadora de PRJNA627078,
-registrada en `config/prjna627078_terminal_qc.yaml` antes de la ejecución.
-Conservará el QC basal y cuantificará longitudes, residuos y cobertura de las
-colas de calidad. El mínimo candidato DADA2 de 150 nt no cambia; todavía no
-se han generado resultados de esta segunda pasada ni ASVs del estudio mexicano.
+Segunda pasada terminal 3' de PRJNA627078 completa desde `c77233d`:
+60 bibliotecas y 5.689.175 pares conservados, 861 entradas/seis artefactos
+validados. Se recortan 92.518 R1 y 76.111 R2; el cribado posterior encuentra
+cero coincidencias terminales del primer opuesto y 8.961/7.513 coincidencias
+completas no terminales. Baseline y archivos nuevos permanecen separados.
+
+89.810 pares cruzan el mínimo candidato de 150 nt; no se filtran aquí.
+5.593.277 pares tienen ambos mates de al menos 150 nt (98,3144 %), sin estimar
+la retención futura por calidad/ensamblaje/quimeras. Todas las bibliotecas
+conservan pares que cumplen ese criterio. Los 61 flags fail por base persisten;
+las posiciones 250–251 tienen cobertura mediana entre R2 de 3,05 %. Se conservan
+NaN nativos y las calidades originales de todas las bases restantes.
+Informe: `reports/prjna627078_terminal_qc_2026-11-02.md`.
 
 Segundo estudio (PRJNA627078, México) adquirido y con QC basal de primers 5'
 completo: 60 bibliotecas, cuatro cajas, cinco tiempos y 20 combinaciones
@@ -16,7 +24,7 @@ caja/tiempo. Los 120 FASTQ suman 1.379.724.114 bytes y pasan bytes/MD5,
 gzip/CRC/estructura. Se conservan 5.689.175 pares y todas las bibliotecas;
 552 pasos completados, 340 entradas/11 artefactos validados desde `9f0fd83`.
 
-El QC detecta una limitación que debe resolverse antes de DADA2: calidad por
+El QC basal había detectado una limitación antes de DADA2: calidad por
 base pasa de 101 pass/11 warn/8 fail a 58/1/61, incluidos los 60 R2 con fail;
 los 120 archivos mantienen pass por adaptadores. Persisten coincidencias con
 el primer opuesto: 101.479 R1 y 83.624 R2. No se excluyen muestras ni se asigna
@@ -27,8 +35,9 @@ recuento residual. En SRR11579065, 12.400/13.892 coincidencias R1 y
 10.342/12.295 R2 son terminales (89,26/84,12 %); no son estimaciones de toda
 la cohorte. Las longitudes variables cambian los subconjuntos que contribuyen
 a las posiciones finales de FastQC y deben revisarse junto con la calidad.
-DADA2 permanece candidato bajo `processing_ceiling=qc`: primero se registrará
-y validará el tratamiento 3' y de fragmentos cortos. Informe:
+DADA2 permanece candidato bajo `processing_ceiling=qc`; el tratamiento terminal
+ya está validado. Falta registrar la ejecución independiente sobre los nuevos
+inputs y revisar filtrado, coincidencias no terminales y convergencia. Informe basal:
 `reports/prjna627078_qc_2026-10-31.md`.
 
 La menor profundidad es SRR11579032/16S_cocoa_B59M: 877 pares, Criollo, caja 2,
@@ -52,13 +61,18 @@ hashes productores; la ampliación de código compartido requiere renovar las
 etapas afectadas si se reprocesan con este checkout. Sus tablas científicas
 no se han editado ni se combinan ASVs entre regiones 16S.
 
-Desarrollo: suite de 188 pruebas aprobada (179,502 s), más las regresiones
-nuevas de diseño ENA, conexiones detenidas y coordenadas; 193 pruebas distintas
-verificadas mediante suite y pruebas específicas. FASTQ, intermedios y reportes
+Desarrollo: suite completa de 217 pruebas aprobada (462,010 s), incluidas
+24 nuevas del método terminal; conciliación independiente de los 60 runs y
+300 informes de ejecución. FASTQ, intermedios y reportes
 pesados quedan fuera de Git. Los otros dos estudios todavía no tienen
 procesamiento de lecturas; la integración/core/meta-análisis siguen pendientes.
 
 ## Completado
+
+- Segunda pasada terminal: 100 % de pares conservados, auditoría de cada read,
+  longitudes exactas y 13.920 intervalos FastQC con cobertura, sin exclusiones.
+- Método/configuración registrados antes de ejecutar, procedencia por run,
+  hashes del baseline y separación de las salidas originales.
 
 - Segundo estudio: manifest de 60 runs, 120 FASTQ íntegros, QC basal completo y
   diagnóstico reproducible de residuos terminales/internos, sin exclusiones.
@@ -209,8 +223,9 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - Hay taxonomía, diversidad descriptiva y un modelo longitudinal exploratorio
-  del primer estudio; el segundo sólo tiene QC basal y requiere corregir el
-  preprocesamiento antes de ASVs. Faltan los otros dos y la inferencia cross-study. Sus
+  del primer estudio; el segundo tiene QC basal y terminal, con coincidencias
+  no terminales y calidad pendientes de evaluación en DADA2. Faltan sus ASVs,
+  los otros dos estudios y la inferencia cross-study. Las
   93 muestras representan cuatro lotes, no 93 fermentaciones independientes.
   El contraste fijado no puede bajar de p=0,125 y supone simetría central;
   el piloto solapa seis muestras y no se usa como evidencia independiente.
@@ -234,8 +249,10 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 
 ## Próximas tareas
 
-1. Registrar y validar el tratamiento de primers 3'/fragmentos cortos y revisar
-   calidad por posición en PRJNA627078 antes de DADA2, taxonomía y diversidad.
+1. Registrar la ejecución DADA2 independiente desde `terminal_3prime`, adaptando
+   las tablas QC al runner existente sin modificar el scope basal. Conservar
+   parámetros candidatos, revisar residuos no terminales y filtros, comprobar las
+   60 bibliotecas y la convergencia antes de taxonomía/diversidad.
    Procesar después los dos estudios restantes con métodos apropiados a su
    región/plataforma, incluido PacBio.
 2. Registrar armonización género/familia, modelos por taxón/etapa y core antes
@@ -305,6 +322,10 @@ inputs pequeños/outputs QC y de los dos diagnósticos se comprueban al cerrar.
 
 Entrega del cierre de datos `376bb9e` mediante
 [PR #9](https://github.com/Arnoldd-h/Cacao-Fermentation-Microbiome/pull/9).
-El hito conserva el QC basal y el diagnóstico de posiciones; la siguiente
-unidad de desarrollo debe registrar y validar la limpieza 3' y revisar la
-calidad por posición antes de habilitar DADA2.
+El hito conserva el QC basal y el diagnóstico de posiciones, antecedentes de
+la segunda pasada terminal.
+
+El hito `v0.5.5-terminal-qc` registra y ejecuta el método `c77233d`, conserva
+todos los pares y cuantifica fragmentos cortos, residuos y cobertura de calidad.
+Su procedencia inicia con checkout limpio; 861 entradas/seis artefactos válidos.
+No declara una segunda tabla ASV ni modifica umbrales para recuperar lecturas.

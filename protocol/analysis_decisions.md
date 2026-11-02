@@ -434,3 +434,12 @@ las longitudes exactas. Así se documenta qué subconjunto sostiene las colas.
 Los flags no excluyen bibliotecas, y las coincidencias no asignan identidad
 taxonómica. DADA2 sigue pendiente hasta revisar esta etapa; sus parámetros
 candidatos y las cuatro cajas como unidades independientes permanecen iguales.
+
+Resultado de la ejecución registrada: se conservan 5.689.175 pares y las
+60 bibliotecas; el cribado terminal del primer opuesto pasa a cero en ambos
+mates. Persisten 8.961/7.513 coincidencias completas no terminales y 61 flags
+fail por base. 89.810 pares cruzan el mínimo candidato de 150 nt, sin aplicarlo
+como filtro ni modificarlo. La cobertura de las posiciones finales y los
+percentiles NaN se conservan para interpretar los flags. El paso siguiente
+será registrar una ejecución DADA2 separada que consuma la validación terminal,
+sin reconstruir el baseline ni asumir retención a partir de longitud solamente.
