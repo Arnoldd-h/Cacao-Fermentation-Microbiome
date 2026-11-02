@@ -1,8 +1,14 @@
 # Estado del proyecto
 
-Última actualización: 2026-10-31.
+Última actualización: 2026-11-02.
 
 ## Fase actual
+
+En desarrollo: segunda pasada terminal 3' conservadora de PRJNA627078,
+registrada en `config/prjna627078_terminal_qc.yaml` antes de la ejecución.
+Conservará el QC basal y cuantificará longitudes, residuos y cobertura de las
+colas de calidad. El mínimo candidato DADA2 de 150 nt no cambia; todavía no
+se han generado resultados de esta segunda pasada ni ASVs del estudio mexicano.
 
 Segundo estudio (PRJNA627078, México) adquirido y con QC basal de primers 5'
 completo: 60 bibliotecas, cuatro cajas, cinco tiempos y 20 combinaciones

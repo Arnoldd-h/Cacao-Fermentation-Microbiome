@@ -2,6 +2,14 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-11-02
+
+- Método registrado para retirar únicamente primers opuestos completos en el
+  extremo 3' de PRJNA627078, preservando baseline, pares y calidades restantes.
+- Auditoría independiente de cada lectura, longitudes y cruces del mínimo
+  candidato DADA2, cribado residual y cobertura de intervalos de FastQC.
+- Workflow separado que consume QC basal validado sin reconstruirlo.
+
 ## v0.5.4-second-study-qc - 2026-10-31
 
 - QC basal 5' completo: 552 pasos, 340 entradas/11 artefactos validados,

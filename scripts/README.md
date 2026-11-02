@@ -189,3 +189,15 @@ Escribe posiciones agregadas, resumen, JSON Cutadapt y procedencia; los datos
 por read quedan en `results/intermediate`. La selección es ilustrativa y no
 estima la fracción terminal de todo el estudio. Recuentos deben coincidir con
 el cribado anterior. El método y resultados están en el informe PRJNA627078.
+
+La segunda pasada terminal consume ese baseline sin reconstruirlo:
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/terminal_qc.Snakefile --cores 8 --resources mem_mb=4500
+python3 scripts/environment/run_in_environment.py python scripts/terminal_qc/run.py validate --config config/prjna627078_terminal_qc.yaml
+```
+
+El método registrado retira sólo el primer opuesto completo anclado al extremo
+3', conserva todos los pares y escribe en `terminal_3prime`. Audita cada read,
+calidad conservada, longitudes y residuos; repite FastQC con cobertura por
+intervalo. El mínimo candidato de DADA2 se informa como diagnóstico, sin filtro.
