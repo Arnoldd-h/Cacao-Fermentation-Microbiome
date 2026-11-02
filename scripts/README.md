@@ -216,3 +216,15 @@ diagnósticos registran el aprendizaje; los intermedios pesados quedan ignorados
 Una corrida parcial se conserva para revisión y una completa se valida sin
 sobrescribirla. `needs_review` impide promover convergencia insuficiente como
 resultado analítico aceptado, aunque los archivos sean técnicamente válidos.
+
+Después de validar DADA2, el diagnóstico de motivos de primers se ejecuta
+sin cambiar las secuencias ni reabrir FASTQ:
+
+```bash
+python3 scripts/environment/run_in_environment.py python scripts/dada2_primer_review/scan.py execute --config config/prjna627078_dada2_primers.yaml
+python3 scripts/environment/run_in_environment.py python scripts/dada2_primer_review/scan.py validate --config config/prjna627078_dada2_primers.yaml
+```
+
+Las coordenadas son 0-based/end-exclusive; los resúmenes por muestra usan la
+unión de ASVs con coincidencias y no suman motivos superpuestos. No se interpreta
+una coincidencia como contaminación ni se excluye ninguna ASV o biblioteca.

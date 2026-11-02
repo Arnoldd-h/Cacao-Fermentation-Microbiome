@@ -478,3 +478,31 @@ bibliotecas a posteriori. Se revisarán mediante diagnóstico separado, junto
 con longitud y taxonomía, antes de interpretar ecología. La inferencia ASV
 permanece exclusiva de este estudio; no se concatena con ASVs V4 de Colombia
 ni convierte las tres etiquetas de réplica en unidades independientes.
+
+### Diagnóstico de motivos compatibles con primers en ASVs, 2026-11-02
+
+Mientras DADA2 filtra las lecturas, antes de disponer de sus ASVs, se registra
+`config/prjna627078_dada2_primers.yaml`. Sobre las secuencias no quiméricas
+validadas se buscarán los dos primers gene-specific y sus complementos
+inversos: cuatro patrones completos, todos los inicios posibles, sin indels
+ni coincidencias parciales. El scanner usa IUPAC y distancia Hamming;
+hereda error_rate=0,1 del perfil original. Como Cutadapt, excluye las N del
+adaptador del denominador de errores: se permiten uno/dos errores para los
+primers forward/reverse. No se consideran wildcards en reads (ASVs ACGT).
+La implementación se contrasta con Cutadapt en fixtures sintéticos, incluidos
+degenerados, límites de error, N y coordenadas.
+
+Se registran posiciones 0-based/end-exclusive, patrón, orientación, errores
+y abundancia de cada ASV. Se conservan todas las coincidencias superpuestas;
+al resumir se usa la unión de ASVs y sus conteos por muestra, de modo que una
+ASV con varios motivos no duplica su abundancia. Los subtotales por patrón
+pueden superponerse y no deben sumarse. Las coincidencias son compatibilidad
+de secuencia, no prueba de contaminación ni identidad taxonómica; su ausencia
+tampoco descarta residuos parciales u otros constructos desconocidos.
+
+El diagnóstico no modifica secuencias, conteos, filtros ni exclusiones.
+Comprueba las salidas y cadena de configuración mediante hashes del resultado
+DADA2; no relee FASTQ ni vuelve a estimar ASVs. Puede describir una corrida
+técnicamente válida que aún requiera revisar convergencia, preservando esa
+limitación. La interpretación ecológica espera taxonomía y revisión de estas
+banderas; cualquier corrección posterior requerirá un método separado.

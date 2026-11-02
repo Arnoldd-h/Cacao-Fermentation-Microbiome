@@ -9,6 +9,8 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   de entradas/salidas. No reconstruye el baseline ni cambia su techo de QC.
 - Auditoría de historial de errores y separación entre integridad técnica y
   promoción analítica; un aprendizaje no convergente requiere revisión.
+- Diagnóstico registrado de cuatro patrones de primers en ASVs, con todas
+  las coordenadas, conteos sin duplicación y sin editar/excluir secuencias.
 
 ## v0.5.5-terminal-qc - 2026-11-02
 
