@@ -11,6 +11,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   promoción analítica; un aprendizaje no convergente requiere revisión.
 - Diagnóstico registrado de cuatro patrones de primers en ASVs, con todas
   las coordenadas, conteos sin duplicación y sin editar/excluir secuencias.
+- DADA2 México completo: 60 bibliotecas/968 ASVs y 2.676.375 pares no
+  quiméricos (47,0433 %), sin cambiar filtros ni excluir bibliotecas.
+- Convergencia F/R en seis/cinco rondas; 153 entradas/29 artefactos auditados.
+  Profundidad mínima de 24 pares explícita para revisión previa a ecología.
 
 ## v0.5.5-terminal-qc - 2026-11-02
 

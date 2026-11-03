@@ -1,0 +1,3 @@
+read_direction	self_consistency_rounds	repeated_any	last_input_equals_output	repeated_iteration_indices	transition_base_observations	training_samples	training_reads	training_bases	training_metadata_source	maximum_rounds	reached_iteration_limit	converged_before_limit
+F	6	TRUE	TRUE	6	105424857				not_stored_by_learnErrors	10	FALSE	TRUE
+R	5	TRUE	TRUE	5	103747871				not_stored_by_learnErrors	10	FALSE	TRUE

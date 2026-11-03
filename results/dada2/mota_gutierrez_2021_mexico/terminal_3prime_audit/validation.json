@@ -1,0 +1,53 @@
+{
+  "artifacts_checked": 29,
+  "batch_times": 20,
+  "batches": 4,
+  "ecological_interpretation": "pending_taxonomy_and_residual_primer_review",
+  "error_learning": {
+    "F": {
+      "converged_before_limit": true,
+      "maximum_rounds": 10,
+      "reached_iteration_limit": false,
+      "repeated_error_matrix": true,
+      "self_consistency_rounds": 6
+    },
+    "R": {
+      "converged_before_limit": true,
+      "maximum_rounds": 10,
+      "reached_iteration_limit": false,
+      "repeated_error_matrix": true,
+      "self_consistency_rounds": 5
+    }
+  },
+  "filtered_pairs": 3164195,
+  "input_pairs": 5689175,
+  "inputs_checked": 153,
+  "merged_pairs": 2972344,
+  "minimum_nonchim_pairs_per_sample": 24,
+  "native_validation": {
+    "artifacts_checked": 18,
+    "asvs": 968,
+    "error_models_converged_before_limit": true,
+    "inputs_checked": 126,
+    "nonchim_pairs": 2676375,
+    "samples": 60,
+    "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+    "status": "valid",
+    "study_id": "mota_gutierrez_2021_mexico"
+  },
+  "nonchim_pairs": 2676375,
+  "pairs_at_least_min_len": 5593277,
+  "promotion_reason": "Complete cohort and both error models converged before their limits",
+  "promotion_status": "ready_for_taxonomy",
+  "retention": {
+    "filtered_fraction_of_input": 0.556178180491899,
+    "merged_fraction_of_filtered": 0.9393681489288744,
+    "nonchim_fraction_of_input": 0.47043288350244106,
+    "nonchim_fraction_of_merged": 0.9004257246133018
+  },
+  "samples": 60,
+  "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+  "status": "valid",
+  "study_id": "mota_gutierrez_2021_mexico",
+  "unknown_sampling_stratum_samples": 60
+}

@@ -1,0 +1,517 @@
+2026-11-02T23:06:44Z Filtering 60 paired samples
+2026-11-02T23:18:36Z Learning error rates for direction 1
+105638027 total bases in 451244 reads from 8 samples will be used for learning the error rates.
+Initializing error rates to maximum possible estimate.
+selfConsist step 1 ........
+   selfConsist step 2
+   selfConsist step 3
+   selfConsist step 4
+   selfConsist step 5
+   selfConsist step 6
+Convergence after  6  rounds.
+Warning in scale_y_log10() :
+  log-10 transformation introduced infinite values.
+Warning in scale_y_log10() :
+  log-10 transformation introduced infinite values.
+Warning in scale_y_log10() :
+  log-10 transformation introduced infinite values.
+2026-11-02T23:24:07Z Learning error rates for direction 2
+103916568 total bases in 451244 reads from 8 samples will be used for learning the error rates.
+Initializing error rates to maximum possible estimate.
+selfConsist step 1 ........
+   selfConsist step 2
+   selfConsist step 3
+   selfConsist step 4
+   selfConsist step 5
+Convergence after  5  rounds.
+Warning in scale_y_log10() :
+  log-10 transformation introduced infinite values.
+Warning in scale_y_log10() :
+  log-10 transformation introduced infinite values.
+Warning in scale_y_log10() :
+  log-10 transformation introduced infinite values.
+2026-11-02T23:28:47Z Inferring samples independently
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579019_F.fastq.gz
+Encountered 12600 unique sequences from 65938 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579020_F.fastq.gz
+Encountered 11823 unique sequences from 54533 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579021_F.fastq.gz
+Encountered 11568 unique sequences from 56549 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11578992_F.fastq.gz
+Encountered 14847 unique sequences from 64392 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579089_F.fastq.gz
+Encountered 9467 unique sequences from 40383 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579100_F.fastq.gz
+Encountered 13120 unique sequences from 56670 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579063_F.fastq.gz
+Encountered 9360 unique sequences from 38163 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579064_F.fastq.gz
+Encountered 16589 unique sequences from 74616 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579065_F.fastq.gz
+Encountered 15638 unique sequences from 79024 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579049_F.fastq.gz
+Encountered 12101 unique sequences from 69130 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579050_F.fastq.gz
+Encountered 9880 unique sequences from 51724 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579051_F.fastq.gz
+Encountered 8844 unique sequences from 47523 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579034_F.fastq.gz
+Encountered 12363 unique sequences from 54831 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579035_F.fastq.gz
+Encountered 12493 unique sequences from 48717 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579037_F.fastq.gz
+Encountered 4248 unique sequences from 13824 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579069_F.fastq.gz
+Encountered 7709 unique sequences from 36357 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579112_F.fastq.gz
+Encountered 12206 unique sequences from 55676 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579113_F.fastq.gz
+Encountered 10541 unique sequences from 49239 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579074_F.fastq.gz
+Encountered 22717 unique sequences from 93449 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579075_F.fastq.gz
+Encountered 10676 unique sequences from 44322 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579078_F.fastq.gz
+Encountered 13572 unique sequences from 59122 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579060_F.fastq.gz
+Encountered 8371 unique sequences from 36663 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579061_F.fastq.gz
+Encountered 16086 unique sequences from 82200 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579062_F.fastq.gz
+Encountered 12626 unique sequences from 61003 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579045_F.fastq.gz
+Encountered 9638 unique sequences from 46392 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579046_F.fastq.gz
+Encountered 12359 unique sequences from 68263 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579048_F.fastq.gz
+Encountered 11590 unique sequences from 64653 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579030_F.fastq.gz
+Encountered 8972 unique sequences from 39838 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579032_F.fastq.gz
+Encountered 113 unique sequences from 129 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579033_F.fastq.gz
+Encountered 10000 unique sequences from 46530 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579036_F.fastq.gz
+Encountered 13109 unique sequences from 66088 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579047_F.fastq.gz
+Encountered 15737 unique sequences from 74438 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579058_F.fastq.gz
+Encountered 12151 unique sequences from 60380 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579071_F.fastq.gz
+Encountered 1912 unique sequences from 5047 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579072_F.fastq.gz
+Encountered 5572 unique sequences from 23592 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579073_F.fastq.gz
+Encountered 5355 unique sequences from 23075 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579056_F.fastq.gz
+Encountered 12975 unique sequences from 74181 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579057_F.fastq.gz
+Encountered 12564 unique sequences from 66275 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579059_F.fastq.gz
+Encountered 11787 unique sequences from 63685 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579041_F.fastq.gz
+Encountered 10879 unique sequences from 50328 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579042_F.fastq.gz
+Encountered 12449 unique sequences from 61284 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579044_F.fastq.gz
+Encountered 10235 unique sequences from 45762 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579027_F.fastq.gz
+Encountered 8588 unique sequences from 51094 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579028_F.fastq.gz
+Encountered 9433 unique sequences from 55534 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579029_F.fastq.gz
+Encountered 8813 unique sequences from 51991 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579003_F.fastq.gz
+Encountered 13044 unique sequences from 54141 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579014_F.fastq.gz
+Encountered 14740 unique sequences from 79082 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579025_F.fastq.gz
+Encountered 12204 unique sequences from 52939 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579066_F.fastq.gz
+Encountered 8375 unique sequences from 45861 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579068_F.fastq.gz
+Encountered 8205 unique sequences from 40746 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579070_F.fastq.gz
+Encountered 13224 unique sequences from 76855 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579052_F.fastq.gz
+Encountered 15559 unique sequences from 94655 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579053_F.fastq.gz
+Encountered 9391 unique sequences from 51137 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579054_F.fastq.gz
+Encountered 16273 unique sequences from 85278 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579038_F.fastq.gz
+Encountered 1581 unique sequences from 5689 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579039_F.fastq.gz
+Encountered 9772 unique sequences from 48137 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579040_F.fastq.gz
+Encountered 7602 unique sequences from 35101 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579023_F.fastq.gz
+Encountered 7690 unique sequences from 36645 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579024_F.fastq.gz
+Encountered 7316 unique sequences from 34366 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579026_F.fastq.gz
+Encountered 10984 unique sequences from 50956 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579019_R.fastq.gz
+Encountered 17062 unique sequences from 65938 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579020_R.fastq.gz
+Encountered 12345 unique sequences from 54533 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579021_R.fastq.gz
+Encountered 14095 unique sequences from 56549 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11578992_R.fastq.gz
+Encountered 16411 unique sequences from 64392 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579089_R.fastq.gz
+Encountered 11604 unique sequences from 40383 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579100_R.fastq.gz
+Encountered 17856 unique sequences from 56670 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579063_R.fastq.gz
+Encountered 12551 unique sequences from 38163 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579064_R.fastq.gz
+Encountered 25291 unique sequences from 74616 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579065_R.fastq.gz
+Encountered 25349 unique sequences from 79024 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579049_R.fastq.gz
+Encountered 19219 unique sequences from 69130 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579050_R.fastq.gz
+Encountered 17095 unique sequences from 51724 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579051_R.fastq.gz
+Encountered 12677 unique sequences from 47523 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579034_R.fastq.gz
+Encountered 16260 unique sequences from 54831 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579035_R.fastq.gz
+Encountered 13169 unique sequences from 48717 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579037_R.fastq.gz
+Encountered 7596 unique sequences from 13824 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579069_R.fastq.gz
+Encountered 11857 unique sequences from 36357 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579112_R.fastq.gz
+Encountered 16474 unique sequences from 55676 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579113_R.fastq.gz
+Encountered 12848 unique sequences from 49239 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579074_R.fastq.gz
+Encountered 21546 unique sequences from 93449 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579075_R.fastq.gz
+Encountered 12746 unique sequences from 44322 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579078_R.fastq.gz
+Encountered 16711 unique sequences from 59122 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579060_R.fastq.gz
+Encountered 12046 unique sequences from 36663 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579061_R.fastq.gz
+Encountered 19064 unique sequences from 82200 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579062_R.fastq.gz
+Encountered 15204 unique sequences from 61003 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579045_R.fastq.gz
+Encountered 12787 unique sequences from 46392 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579046_R.fastq.gz
+Encountered 18475 unique sequences from 68263 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579048_R.fastq.gz
+Encountered 17990 unique sequences from 64653 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579030_R.fastq.gz
+Encountered 12480 unique sequences from 39838 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579032_R.fastq.gz
+Encountered 120 unique sequences from 129 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579033_R.fastq.gz
+Encountered 12064 unique sequences from 46530 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579036_R.fastq.gz
+Encountered 17552 unique sequences from 66088 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579047_R.fastq.gz
+Encountered 20248 unique sequences from 74438 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579058_R.fastq.gz
+Encountered 16033 unique sequences from 60380 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579071_R.fastq.gz
+Encountered 2020 unique sequences from 5047 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579072_R.fastq.gz
+Encountered 7864 unique sequences from 23592 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579073_R.fastq.gz
+Encountered 6936 unique sequences from 23075 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579056_R.fastq.gz
+Encountered 18933 unique sequences from 74181 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579057_R.fastq.gz
+Encountered 17092 unique sequences from 66275 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579059_R.fastq.gz
+Encountered 17065 unique sequences from 63685 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579041_R.fastq.gz
+Encountered 12378 unique sequences from 50328 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579042_R.fastq.gz
+Encountered 15101 unique sequences from 61284 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579044_R.fastq.gz
+Encountered 13151 unique sequences from 45762 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579027_R.fastq.gz
+Encountered 14737 unique sequences from 51094 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579028_R.fastq.gz
+Encountered 13031 unique sequences from 55534 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579029_R.fastq.gz
+Encountered 13849 unique sequences from 51991 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579003_R.fastq.gz
+Encountered 13471 unique sequences from 54141 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579014_R.fastq.gz
+Encountered 17230 unique sequences from 79082 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579025_R.fastq.gz
+Encountered 12748 unique sequences from 52939 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579066_R.fastq.gz
+Encountered 13355 unique sequences from 45861 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579068_R.fastq.gz
+Encountered 11532 unique sequences from 40746 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579070_R.fastq.gz
+Encountered 19683 unique sequences from 76855 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579052_R.fastq.gz
+Encountered 21764 unique sequences from 94655 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579053_R.fastq.gz
+Encountered 14304 unique sequences from 51137 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579054_R.fastq.gz
+Encountered 17611 unique sequences from 85278 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579038_R.fastq.gz
+Encountered 2020 unique sequences from 5689 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579039_R.fastq.gz
+Encountered 17003 unique sequences from 48137 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579040_R.fastq.gz
+Encountered 10432 unique sequences from 35101 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579023_R.fastq.gz
+Encountered 9465 unique sequences from 36645 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579024_R.fastq.gz
+Encountered 9946 unique sequences from 34366 total sequences read.
+Dereplicating sequence entries in Fastq file: /mnt/d/Trabajos/Bioinf/Cacao Fermentation Microbiome Dataset Inventory/results/intermediate/dada2/mota_gutierrez_2021_mexico/terminal_3prime/filtered/SRR11579026_R.fastq.gz
+Encountered 12531 unique sequences from 50956 total sequences read.
+Sample 1 - 65938 reads in 12600 unique sequences.
+Sample 2 - 54533 reads in 11823 unique sequences.
+Sample 3 - 56549 reads in 11568 unique sequences.
+Sample 4 - 64392 reads in 14847 unique sequences.
+Sample 5 - 40383 reads in 9467 unique sequences.
+Sample 6 - 56670 reads in 13120 unique sequences.
+Sample 7 - 38163 reads in 9360 unique sequences.
+Sample 8 - 74616 reads in 16589 unique sequences.
+Sample 9 - 79024 reads in 15638 unique sequences.
+Sample 10 - 69130 reads in 12101 unique sequences.
+Sample 11 - 51724 reads in 9880 unique sequences.
+Sample 12 - 47523 reads in 8844 unique sequences.
+Sample 13 - 54831 reads in 12363 unique sequences.
+Sample 14 - 48717 reads in 12493 unique sequences.
+Sample 15 - 13824 reads in 4248 unique sequences.
+Sample 16 - 36357 reads in 7709 unique sequences.
+Sample 17 - 55676 reads in 12206 unique sequences.
+Sample 18 - 49239 reads in 10541 unique sequences.
+Sample 19 - 93449 reads in 22717 unique sequences.
+Sample 20 - 44322 reads in 10676 unique sequences.
+Sample 21 - 59122 reads in 13572 unique sequences.
+Sample 22 - 36663 reads in 8371 unique sequences.
+Sample 23 - 82200 reads in 16086 unique sequences.
+Sample 24 - 61003 reads in 12626 unique sequences.
+Sample 25 - 46392 reads in 9638 unique sequences.
+Sample 26 - 68263 reads in 12359 unique sequences.
+Sample 27 - 64653 reads in 11590 unique sequences.
+Sample 28 - 39838 reads in 8972 unique sequences.
+Sample 29 - 129 reads in 113 unique sequences.
+Sample 30 - 46530 reads in 10000 unique sequences.
+Sample 31 - 66088 reads in 13109 unique sequences.
+Sample 32 - 74438 reads in 15737 unique sequences.
+Sample 33 - 60380 reads in 12151 unique sequences.
+Sample 34 - 5047 reads in 1912 unique sequences.
+Sample 35 - 23592 reads in 5572 unique sequences.
+Sample 36 - 23075 reads in 5355 unique sequences.
+Sample 37 - 74181 reads in 12975 unique sequences.
+Sample 38 - 66275 reads in 12564 unique sequences.
+Sample 39 - 63685 reads in 11787 unique sequences.
+Sample 40 - 50328 reads in 10879 unique sequences.
+Sample 41 - 61284 reads in 12449 unique sequences.
+Sample 42 - 45762 reads in 10235 unique sequences.
+Sample 43 - 51094 reads in 8588 unique sequences.
+Sample 44 - 55534 reads in 9433 unique sequences.
+Sample 45 - 51991 reads in 8813 unique sequences.
+Sample 46 - 54141 reads in 13044 unique sequences.
+Sample 47 - 79082 reads in 14740 unique sequences.
+Sample 48 - 52939 reads in 12204 unique sequences.
+Sample 49 - 45861 reads in 8375 unique sequences.
+Sample 50 - 40746 reads in 8205 unique sequences.
+Sample 51 - 76855 reads in 13224 unique sequences.
+Sample 52 - 94655 reads in 15559 unique sequences.
+Sample 53 - 51137 reads in 9391 unique sequences.
+Sample 54 - 85278 reads in 16273 unique sequences.
+Sample 55 - 5689 reads in 1581 unique sequences.
+Sample 56 - 48137 reads in 9772 unique sequences.
+Sample 57 - 35101 reads in 7602 unique sequences.
+Sample 58 - 36645 reads in 7690 unique sequences.
+Sample 59 - 34366 reads in 7316 unique sequences.
+Sample 60 - 50956 reads in 10984 unique sequences.
+Sample 1 - 65938 reads in 17062 unique sequences.
+Sample 2 - 54533 reads in 12345 unique sequences.
+Sample 3 - 56549 reads in 14095 unique sequences.
+Sample 4 - 64392 reads in 16411 unique sequences.
+Sample 5 - 40383 reads in 11604 unique sequences.
+Sample 6 - 56670 reads in 17856 unique sequences.
+Sample 7 - 38163 reads in 12551 unique sequences.
+Sample 8 - 74616 reads in 25291 unique sequences.
+Sample 9 - 79024 reads in 25349 unique sequences.
+Sample 10 - 69130 reads in 19219 unique sequences.
+Sample 11 - 51724 reads in 17095 unique sequences.
+Sample 12 - 47523 reads in 12677 unique sequences.
+Sample 13 - 54831 reads in 16260 unique sequences.
+Sample 14 - 48717 reads in 13169 unique sequences.
+Sample 15 - 13824 reads in 7596 unique sequences.
+Sample 16 - 36357 reads in 11857 unique sequences.
+Sample 17 - 55676 reads in 16474 unique sequences.
+Sample 18 - 49239 reads in 12848 unique sequences.
+Sample 19 - 93449 reads in 21546 unique sequences.
+Sample 20 - 44322 reads in 12746 unique sequences.
+Sample 21 - 59122 reads in 16711 unique sequences.
+Sample 22 - 36663 reads in 12046 unique sequences.
+Sample 23 - 82200 reads in 19064 unique sequences.
+Sample 24 - 61003 reads in 15204 unique sequences.
+Sample 25 - 46392 reads in 12787 unique sequences.
+Sample 26 - 68263 reads in 18475 unique sequences.
+Sample 27 - 64653 reads in 17990 unique sequences.
+Sample 28 - 39838 reads in 12480 unique sequences.
+Sample 29 - 129 reads in 120 unique sequences.
+Sample 30 - 46530 reads in 12064 unique sequences.
+Sample 31 - 66088 reads in 17552 unique sequences.
+Sample 32 - 74438 reads in 20248 unique sequences.
+Sample 33 - 60380 reads in 16033 unique sequences.
+Sample 34 - 5047 reads in 2020 unique sequences.
+Sample 35 - 23592 reads in 7864 unique sequences.
+Sample 36 - 23075 reads in 6936 unique sequences.
+Sample 37 - 74181 reads in 18933 unique sequences.
+Sample 38 - 66275 reads in 17092 unique sequences.
+Sample 39 - 63685 reads in 17065 unique sequences.
+Sample 40 - 50328 reads in 12378 unique sequences.
+Sample 41 - 61284 reads in 15101 unique sequences.
+Sample 42 - 45762 reads in 13151 unique sequences.
+Sample 43 - 51094 reads in 14737 unique sequences.
+Sample 44 - 55534 reads in 13031 unique sequences.
+Sample 45 - 51991 reads in 13849 unique sequences.
+Sample 46 - 54141 reads in 13471 unique sequences.
+Sample 47 - 79082 reads in 17230 unique sequences.
+Sample 48 - 52939 reads in 12748 unique sequences.
+Sample 49 - 45861 reads in 13355 unique sequences.
+Sample 50 - 40746 reads in 11532 unique sequences.
+Sample 51 - 76855 reads in 19683 unique sequences.
+Sample 52 - 94655 reads in 21764 unique sequences.
+Sample 53 - 51137 reads in 14304 unique sequences.
+Sample 54 - 85278 reads in 17611 unique sequences.
+Sample 55 - 5689 reads in 2020 unique sequences.
+Sample 56 - 48137 reads in 17003 unique sequences.
+Sample 57 - 35101 reads in 10432 unique sequences.
+Sample 58 - 36645 reads in 9465 unique sequences.
+Sample 59 - 34366 reads in 9946 unique sequences.
+Sample 60 - 50956 reads in 12531 unique sequences.
+2026-11-02T23:45:44Z Merging denoised read pairs
+62894 paired-reads (in 539 unique pairings) successfully merged out of 65028 (in 1236 pairings) input.
+Duplicate sequences in merged output.
+52119 paired-reads (in 413 unique pairings) successfully merged out of 53827 (in 991 pairings) input.
+Duplicate sequences in merged output.
+53848 paired-reads (in 580 unique pairings) successfully merged out of 55848 (in 1336 pairings) input.
+Duplicate sequences in merged output.
+59976 paired-reads (in 1080 unique pairings) successfully merged out of 63562 (in 2147 pairings) input.
+Duplicate sequences in merged output.
+37323 paired-reads (in 572 unique pairings) successfully merged out of 39584 (in 1235 pairings) input.
+Duplicate sequences in merged output.
+52669 paired-reads (in 851 unique pairings) successfully merged out of 55817 (in 1732 pairings) input.
+Duplicate sequences in merged output.
+35115 paired-reads (in 879 unique pairings) successfully merged out of 37447 (in 1735 pairings) input.
+Duplicate sequences in merged output.
+68258 paired-reads (in 742 unique pairings) successfully merged out of 73826 (in 1556 pairings) input.
+Duplicate sequences in merged output.
+70547 paired-reads (in 376 unique pairings) successfully merged out of 77659 (in 959 pairings) input.
+Duplicate sequences in merged output.
+63574 paired-reads (in 888 unique pairings) successfully merged out of 67171 (in 1916 pairings) input.
+Duplicate sequences in merged output.
+49308 paired-reads (in 372 unique pairings) successfully merged out of 51237 (in 898 pairings) input.
+Duplicate sequences in merged output.
+44587 paired-reads (in 337 unique pairings) successfully merged out of 45971 (in 810 pairings) input.
+Duplicate sequences in merged output.
+47817 paired-reads (in 1138 unique pairings) successfully merged out of 54149 (in 3039 pairings) input.
+Duplicate sequences in merged output.
+42973 paired-reads (in 788 unique pairings) successfully merged out of 47909 (in 2288 pairings) input.
+Duplicate sequences in merged output.
+12300 paired-reads (in 178 unique pairings) successfully merged out of 13566 (in 652 pairings) input.
+Duplicate sequences in merged output.
+34217 paired-reads (in 304 unique pairings) successfully merged out of 35330 (in 723 pairings) input.
+Duplicate sequences in merged output.
+51812 paired-reads (in 509 unique pairings) successfully merged out of 54444 (in 1272 pairings) input.
+Duplicate sequences in merged output.
+46911 paired-reads (in 422 unique pairings) successfully merged out of 48225 (in 965 pairings) input.
+Duplicate sequences in merged output.
+89151 paired-reads (in 1348 unique pairings) successfully merged out of 92401 (in 2506 pairings) input.
+Duplicate sequences in merged output.
+41750 paired-reads (in 701 unique pairings) successfully merged out of 43500 (in 1432 pairings) input.
+Duplicate sequences in merged output.
+55775 paired-reads (in 1059 unique pairings) successfully merged out of 58300 (in 2075 pairings) input.
+Duplicate sequences in merged output.
+34587 paired-reads (in 597 unique pairings) successfully merged out of 36148 (in 1168 pairings) input.
+Duplicate sequences in merged output.
+79108 paired-reads (in 1040 unique pairings) successfully merged out of 81499 (in 1897 pairings) input.
+Duplicate sequences in merged output.
+58229 paired-reads (in 755 unique pairings) successfully merged out of 60135 (in 1493 pairings) input.
+Duplicate sequences in merged output.
+44514 paired-reads (in 482 unique pairings) successfully merged out of 45793 (in 973 pairings) input.
+Duplicate sequences in merged output.
+65177 paired-reads (in 955 unique pairings) successfully merged out of 67421 (in 1834 pairings) input.
+Duplicate sequences in merged output.
+60247 paired-reads (in 725 unique pairings) successfully merged out of 63897 (in 1502 pairings) input.
+Duplicate sequences in merged output.
+36498 paired-reads (in 475 unique pairings) successfully merged out of 38436 (in 1406 pairings) input.
+Duplicate sequences in merged output.
+24 paired-reads (in 2 unique pairings) successfully merged out of 56 (in 4 pairings) input.
+Duplicate sequences in merged output.
+42018 paired-reads (in 619 unique pairings) successfully merged out of 45974 (in 1740 pairings) input.
+Duplicate sequences in merged output.
+62533 paired-reads (in 535 unique pairings) successfully merged out of 64993 (in 1299 pairings) input.
+Duplicate sequences in merged output.
+70739 paired-reads (in 902 unique pairings) successfully merged out of 73336 (in 1997 pairings) input.
+Duplicate sequences in merged output.
+56438 paired-reads (in 583 unique pairings) successfully merged out of 59072 (in 1398 pairings) input.
+Duplicate sequences in merged output.
+4748 paired-reads (in 61 unique pairings) successfully merged out of 4911 (in 143 pairings) input.
+Duplicate sequences in merged output.
+21418 paired-reads (in 315 unique pairings) successfully merged out of 23064 (in 740 pairings) input.
+Duplicate sequences in merged output.
+21635 paired-reads (in 214 unique pairings) successfully merged out of 22714 (in 476 pairings) input.
+Duplicate sequences in merged output.
+72120 paired-reads (in 711 unique pairings) successfully merged out of 73557 (in 1323 pairings) input.
+Duplicate sequences in merged output.
+62650 paired-reads (in 890 unique pairings) successfully merged out of 65672 (in 1570 pairings) input.
+Duplicate sequences in merged output.
+61521 paired-reads (in 776 unique pairings) successfully merged out of 63048 (in 1463 pairings) input.
+Duplicate sequences in merged output.
+46226 paired-reads (in 1012 unique pairings) successfully merged out of 49630 (in 1783 pairings) input.
+Duplicate sequences in merged output.
+56697 paired-reads (in 1281 unique pairings) successfully merged out of 60607 (in 2201 pairings) input.
+Duplicate sequences in merged output.
+43471 paired-reads (in 1115 unique pairings) successfully merged out of 45136 (in 1898 pairings) input.
+Duplicate sequences in merged output.
+48386 paired-reads (in 524 unique pairings) successfully merged out of 50535 (in 1305 pairings) input.
+Duplicate sequences in merged output.
+50749 paired-reads (in 417 unique pairings) successfully merged out of 55034 (in 1075 pairings) input.
+Duplicate sequences in merged output.
+49940 paired-reads (in 401 unique pairings) successfully merged out of 51522 (in 1055 pairings) input.
+Duplicate sequences in merged output.
+49604 paired-reads (in 729 unique pairings) successfully merged out of 53279 (in 1771 pairings) input.
+Duplicate sequences in merged output.
+75389 paired-reads (in 642 unique pairings) successfully merged out of 78076 (in 1494 pairings) input.
+Duplicate sequences in merged output.
+49492 paired-reads (in 619 unique pairings) successfully merged out of 51934 (in 1462 pairings) input.
+Duplicate sequences in merged output.
+42966 paired-reads (in 468 unique pairings) successfully merged out of 45126 (in 993 pairings) input.
+Duplicate sequences in merged output.
+37880 paired-reads (in 481 unique pairings) successfully merged out of 40151 (in 1007 pairings) input.
+Duplicate sequences in merged output.
+73069 paired-reads (in 729 unique pairings) successfully merged out of 76118 (in 1436 pairings) input.
+Duplicate sequences in merged output.
+92274 paired-reads (in 642 unique pairings) successfully merged out of 94094 (in 1329 pairings) input.
+Duplicate sequences in merged output.
+49414 paired-reads (in 455 unique pairings) successfully merged out of 50677 (in 963 pairings) input.
+Duplicate sequences in merged output.
+83215 paired-reads (in 541 unique pairings) successfully merged out of 84752 (in 1093 pairings) input.
+Duplicate sequences in merged output.
+5333 paired-reads (in 112 unique pairings) successfully merged out of 5527 (in 210 pairings) input.
+Duplicate sequences in merged output.
+46154 paired-reads (in 640 unique pairings) successfully merged out of 47627 (in 1249 pairings) input.
+Duplicate sequences in merged output.
+33855 paired-reads (in 448 unique pairings) successfully merged out of 34743 (in 830 pairings) input.
+Duplicate sequences in merged output.
+33126 paired-reads (in 360 unique pairings) successfully merged out of 36135 (in 932 pairings) input.
+Duplicate sequences in merged output.
+31997 paired-reads (in 442 unique pairings) successfully merged out of 34030 (in 1052 pairings) input.
+Duplicate sequences in merged output.
+45979 paired-reads (in 819 unique pairings) successfully merged out of 50209 (in 1768 pairings) input.
+Duplicate sequences in merged output.
+2026-11-02T23:47:00Z Removing chimeras by within-study consensus
+Identified 11261 bimeras out of 12229 input sequences.
+2026-11-02T23:53:31Z Complete: 2676375 non-chimeric pairs; 968 ASVs

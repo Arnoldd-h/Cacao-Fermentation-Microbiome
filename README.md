@@ -60,7 +60,7 @@ marcadas como orgánulos, con 32.868 lecturas, en las tablas originales.
 Su separación auditable produce 88 ASVs y 123.693 lecturas para diversidad
 descriptiva, conservando las seis muestras. Se exportan índices alfa,
 CLR/Aitchison con sensibilidad, Bray–Curtis y PCA, con validación independiente
-de fórmulas y geometría. La validación más reciente aprueba 181 pruebas de suite
+de fórmulas y geometría. La validación del hito piloto aprobó 181 pruebas de suite
 y dos del nuevo workflow longitudinal, 183 pruebas distintas. El piloto
 permanece fuera de la inferencia temporal y de la integración entre estudios.
 
@@ -224,13 +224,12 @@ environment/  dependencias reproducibles
 
 ## Estado
 
-PRJNA627078 tiene QC basal 5' y segunda pasada terminal 3' completos:
-60 bibliotecas y 5.689.175 pares conservados. El cribado posterior no detecta
-el primer opuesto completo en el extremo 3'; persisten coincidencias no terminales
-y 61 flags de calidad por base, ahora acompañados de cobertura por posición.
-89.810 pares cruzan el mínimo candidato de 150 nt, sin aplicar aún ese filtro.
-Falta ejecutar DADA2; no se declara una segunda tabla ASV ni un core compartido.
-Informe: [`QC terminal de PRJNA627078`](reports/prjna627078_terminal_qc_2026-11-02.md).
+PRJNA627078 tiene QC basal/terminal y DADA2 independiente completos:
+60 bibliotecas, 968 ASVs y 2.676.375 pares no quiméricos (47,0433 % de entrada).
+R1/R2 convergen en seis/cinco rondas; se conservan las cuatro cajas y toda la
+metadata. La profundidad mínima de 24 pares requiere revisión antes de ecología.
+Faltan diagnóstico ASV de primers, taxonomía y armonización; no hay aún un
+core compartido. Informe: [`DADA2 de PRJNA627078`](reports/prjna627078_dada2_2026-11-02.md).
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
 `CHANGELOG.md`. El 2026-10-31 quedó resuelto el bloqueo de ENA: los 186 FASTQ
