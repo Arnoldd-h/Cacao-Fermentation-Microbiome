@@ -15,8 +15,10 @@ Informe: `reports/prjna627078_dada2_2026-11-02.md`.
 La biblioteca SRR11579032 conserva sólo 24 pares/dos ASVs; se mantiene y
 requiere un plan de sensibilidad antes de inferencia ecológica. Profundidad
 final 24–84.841, mediana 45.347,5. Longitudes 159–441 nt sin filtro posterior.
-El diagnóstico de motivos de primers se registró en `80e517e` antes de observar
-las ASVs y queda pendiente de ejecución; taxonomía y ecología siguen pendientes.
+El diagnóstico de motivos de primers, registrado en `80e517e`, está completo
+desde `b3a1e2c`: una ASV de 440 nt con dos coincidencias exactas y siete pares
+(0,000262 %), sin duplicarlos ni excluirlos. Valida 46 entradas/cinco artefactos.
+Taxonomía y ecología siguen pendientes.
 
 Segunda pasada terminal 3' de PRJNA627078 completa desde `c77233d`:
 60 bibliotecas y 5.689.175 pares conservados, 861 entradas/seis artefactos
@@ -85,6 +87,8 @@ procesamiento de lecturas; la integración/core/meta-análisis siguen pendientes
 
 - DADA2 México: 60 bibliotecas/968 ASVs, perfiles de errores convergentes,
   validación de cohorte/metadatos/conteos/FASTA y procedencia desde QC terminal.
+- Diagnóstico de cuatro patrones de primers en ASVs, coordenadas y unión de
+  abundancias por biblioteca, sin editar secuencias ni establecer exclusiones.
 
 - Segunda pasada terminal: 100 % de pares conservados, auditoría de cada read,
   longitudes exactas y 13.920 intervalos FastQC con cobertura, sin exclusiones.
@@ -241,7 +245,7 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - Hay taxonomía, diversidad descriptiva y un modelo longitudinal exploratorio
   del primer estudio; el segundo tiene QC y DADA2 completos, pero faltan
-  taxonomía, revisión de motivos de primers y tratamiento analítico registrado
+  taxonomía, interpretación de los motivos de primers y tratamiento analítico registrado
   de su profundidad desigual (mínimo 24 pares). Faltan también
   los otros dos estudios y la inferencia cross-study. Las
   93 muestras representan cuatro lotes, no 93 fermentaciones independientes.
@@ -267,8 +271,8 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 
 ## Próximas tareas
 
-1. Ejecutar el diagnóstico de primers ya registrado sobre las ASVs de México;
-   después, taxonomía reproducible, revisión de orgánulos y resolución, y
+1. Registrar y ejecutar taxonomía reproducible de México sobre `terminal_3prime`,
+   revisar orgánulos, resolución y la ASV con motivos de primers, y establecer
    decisiones explícitas sobre profundidad/réplicas antes de diversidad/modelos.
    Procesar después los dos estudios restantes con métodos apropiados a su
    región/plataforma, incluido PacBio.

@@ -2,7 +2,7 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## En desarrollo - 2026-11-02
+## v0.5.6-second-study-dada2 - 2026-11-02
 
 - Ejecución DADA2 independiente registrada para PRJNA627078 desde QC terminal,
   con los parámetros originales, validación de cohorte completa y procedencia
@@ -15,6 +15,10 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   quiméricos (47,0433 %), sin cambiar filtros ni excluir bibliotecas.
 - Convergencia F/R en seis/cinco rondas; 153 entradas/29 artefactos auditados.
   Profundidad mínima de 24 pares explícita para revisión previa a ecología.
+- Diagnóstico ASV de primers completo: una ASV/7 pares (0,000262 %) y dos
+  coincidencias exactas, sin duplicar abundancias ni excluir secuencias;
+  46 entradas/cinco artefactos verificados. Suite final de 249 pruebas más
+  27 comprobaciones R aprobada.
 
 ## v0.5.5-terminal-qc - 2026-11-02
 

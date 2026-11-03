@@ -228,8 +228,9 @@ PRJNA627078 tiene QC basal/terminal y DADA2 independiente completos:
 60 bibliotecas, 968 ASVs y 2.676.375 pares no quiméricos (47,0433 % de entrada).
 R1/R2 convergen en seis/cinco rondas; se conservan las cuatro cajas y toda la
 metadata. La profundidad mínima de 24 pares requiere revisión antes de ecología.
-Faltan diagnóstico ASV de primers, taxonomía y armonización; no hay aún un
-core compartido. Informe: [`DADA2 de PRJNA627078`](reports/prjna627078_dada2_2026-11-02.md).
+El diagnóstico ASV de primers marca una ASV que suma siete pares, sin excluirla.
+Faltan taxonomía y armonización; no hay aún un core compartido.
+Informe: [`DADA2 de PRJNA627078`](reports/prjna627078_dada2_2026-11-02.md).
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
 `CHANGELOG.md`. El 2026-10-31 quedó resuelto el bloqueo de ENA: los 186 FASTQ

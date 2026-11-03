@@ -1,0 +1,56 @@
+{
+  "artifacts_checked": 5,
+  "asv_exclusions": 0,
+  "asvs": 968,
+  "coordinate_matches": 2,
+  "inputs_checked": 46,
+  "interpretation": "Full primer-compatible motifs only; no taxonomic or contamination identity inferred",
+  "matched_asvs": 1,
+  "matched_fraction": 2.615478025314091e-06,
+  "matched_reads": 7,
+  "patterns": [
+    {
+      "matched_asvs": 0,
+      "matched_reads": 0,
+      "maximum_errors": 1,
+      "orientation": "as_synthesized",
+      "pattern": "CCTACGGGNGGCWGCAG",
+      "primer_name": "V3V4Forward",
+      "primer_role": "forward"
+    },
+    {
+      "matched_asvs": 1,
+      "matched_reads": 7,
+      "maximum_errors": 1,
+      "orientation": "reverse_complement",
+      "pattern": "CTGCWGCCNCCCGTAGG",
+      "primer_name": "V3V4Forward",
+      "primer_role": "forward"
+    },
+    {
+      "matched_asvs": 1,
+      "matched_reads": 7,
+      "maximum_errors": 2,
+      "orientation": "as_synthesized",
+      "pattern": "GACTACHVGGGTATCTAATCC",
+      "primer_name": "V3V4Reverse",
+      "primer_role": "reverse"
+    },
+    {
+      "matched_asvs": 0,
+      "matched_reads": 0,
+      "maximum_errors": 2,
+      "orientation": "reverse_complement",
+      "pattern": "GGATTAGATACCCBDGTAGTC",
+      "primer_name": "V3V4Reverse",
+      "primer_role": "reverse"
+    }
+  ],
+  "sample_exclusions": 0,
+  "samples": 60,
+  "sequence_edits": 0,
+  "source_git_commit": "b3a1e2ccfbcd0fabe1331b8525620513360f5e26",
+  "status": "valid",
+  "study_id": "mota_gutierrez_2021_mexico",
+  "total_reads": 2676375
+}

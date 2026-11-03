@@ -1,0 +1,308 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "command": [
+    "scripts/dada2_primer_review/scan.py",
+    "execute",
+    "--config",
+    "config/prjna627078_dada2_primers.yaml"
+  ],
+  "finished_at_utc": "2026-11-03T02:09:13.478457+00:00",
+  "git_commit": "b3a1e2ccfbcd0fabe1331b8525620513360f5e26",
+  "git_dirty": false,
+  "git_status_at_start": [],
+  "inputs": [
+    {
+      "bytes": 883,
+      "path": "config/prjna627078_dada2.yaml",
+      "sha256": "8127cae9c83a68d491ca4aecbdfa752e48aee7e2d43c725440ac3268ffe3e1d0"
+    },
+    {
+      "bytes": 493,
+      "path": "config/prjna627078_dada2_primers.yaml",
+      "sha256": "3cc74a421cfd75aa3cb83504556d134e9ba3fad8cd0b87e93bf7813038fa00ab"
+    },
+    {
+      "bytes": 3566,
+      "path": "config/prjna627078_processing.yaml",
+      "sha256": "74d201d618cf44dbc34c0be3c0805a79e33ed769bdf1baf749cd2342e11603f2"
+    },
+    {
+      "bytes": 1247,
+      "path": "config/prjna627078_study.yaml",
+      "sha256": "90374770be68b8feeb7807e0081b3e8309c5828b5f26109d2ac882c1291845f1"
+    },
+    {
+      "bytes": 864,
+      "path": "config/prjna627078_terminal_qc.yaml",
+      "sha256": "6d1f63c1d2a0bb7c66debb62c471ea4b7d5fabc4497213731842c8458f066808"
+    },
+    {
+      "bytes": 73195,
+      "path": "metadata/manifests/mota_gutierrez_2021_mexico.tsv",
+      "sha256": "09c190f379884f9ebe8c1a6e5561a9ffe0fbf39a7262bc205c50d39e483b98b2"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 6504,
+      "path": "python/cacao_inventory/schema.py",
+      "sha256": "8a63c6afcaf9088640e7ad9d29d850e98316bd0d58e42d6579a469ba632ef9e1"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 41,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/SUCCESS",
+      "sha256": "c0b9088246a4144324ac4c7980004ad237cf95be3c3cdab16cc43918e28fc693"
+    },
+    {
+      "bytes": 162838,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/asv_counts.tsv",
+      "sha256": "b325a5075df0d79c8943a147ff7714f76f6c575176b8eee4b764618ff000833e"
+    },
+    {
+      "bytes": 439209,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/asv_sequences.fasta",
+      "sha256": "f18c441f8857de1006f8b10f6574025544293b91a594d1e25c043d3b0cc1e581"
+    },
+    {
+      "bytes": 471341,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/asv_sequences.tsv",
+      "sha256": "5353238fca76c8f588a7eb467d3fae9096ca634fb674d79f76ff97b9f604f49e"
+    },
+    {
+      "bytes": 2797,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/config_snapshot.yaml",
+      "sha256": "8ea57612f76e4006d55002e543ebc21d8ac9c41b7b9028aa0f639d6932191ded"
+    },
+    {
+      "bytes": 218,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_learning.tsv",
+      "sha256": "74177aa10177e6f5a427429d9e179ba4b8b0ce65b9ba1b27ae6a70a6c3df8eae"
+    },
+    {
+      "bytes": 42686,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_F.pdf",
+      "sha256": "2d247f3d58dfb33375e1044b7affc5a58387c5385d344bcf4b3642dfd049a102"
+    },
+    {
+      "bytes": 575867,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_F.png",
+      "sha256": "69ad700afe0d8edea3b261314e9a58123d2ee8168ad688c9dcdfa075c2e67635"
+    },
+    {
+      "bytes": 431256,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_F.svg",
+      "sha256": "356bf534f9a786558d503c67123d8920a94fdbcbe55db3cee8e49249652e1460"
+    },
+    {
+      "bytes": 42611,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_R.pdf",
+      "sha256": "9fcfb8cf53aca614d910878f764dbaf02e0f9091d6bd8032490349e419a69068"
+    },
+    {
+      "bytes": 558390,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_R.png",
+      "sha256": "f1ec1e89f905d94eedac35e80f0ed2ab0193cc5ef2d1966302b658c68a6dd94d"
+    },
+    {
+      "bytes": 431018,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_R.svg",
+      "sha256": "22231cc99f418cd07950cb73009de783a9e758f71efcf1cd1145781db05cd7d5"
+    },
+    {
+      "bytes": 15382,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/input_checksums.tsv",
+      "sha256": "6912f6989bc1b79ee3260e120204f3789d10abba4983da5d7056f5496612cde3"
+    },
+    {
+      "bytes": 3209,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/merge_diagnostics.tsv",
+      "sha256": "b155053e5ce7133993feb4f412f8119fa584c285293bd71b64f10da95559ea85"
+    },
+    {
+      "bytes": 951,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/output_checksums.tsv",
+      "sha256": "03ad2af6fb9ef1439233ef04cbd803d006855e531b6a8513f86cc783b4034147"
+    },
+    {
+      "bytes": 14332,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/read_tracking.tsv",
+      "sha256": "a1dc36554b9ae4efe3198b80d8940d37264b840f89cc386db488f5e161decb8c"
+    },
+    {
+      "bytes": 2237,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/run_provenance.yaml",
+      "sha256": "57ddad415c8ee09116394868e658a14ac4cf08c488d150ab9a1e4073a19aa9dc"
+    },
+    {
+      "bytes": 73195,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/sample_metadata.tsv",
+      "sha256": "09c190f379884f9ebe8c1a6e5561a9ffe0fbf39a7262bc205c50d39e483b98b2"
+    },
+    {
+      "bytes": 5070,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/sequence_length_distribution.tsv",
+      "sha256": "257dcd4ba46597cd4a0030bb45bf4f041acc153e2a71870901cf4b9575e0aa68"
+    },
+    {
+      "bytes": 2738,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/session_info.txt",
+      "sha256": "e832c67983e263627832aa281c7875aa2e9c8aa9e89fdaad93a083c2e3e2f15d"
+    },
+    {
+      "bytes": 118,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/software_versions.tsv",
+      "sha256": "f4c287a76bd9c6b21feb9abc521d29d6236d381f7770ee8aec04a4861c30ee76"
+    },
+    {
+      "bytes": 235,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/summary.tsv",
+      "sha256": "f5233829146c82a144601de5f5b6b9518ae0f34b3b625d89eaf89377e553a126"
+    },
+    {
+      "bytes": 294,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/validation.json",
+      "sha256": "d055789b89ce0b1b1485116118841c2b5b468de6209dbc2ddeec38ff67a4492c"
+    },
+    {
+      "bytes": 300,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/warnings.txt",
+      "sha256": "2e0cb78b3fab66f32b28f7464b4fe93c3933d5261fb713f350208faae2fc87ed"
+    },
+    {
+      "bytes": 41,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/SUCCESS",
+      "sha256": "c0b9088246a4144324ac4c7980004ad237cf95be3c3cdab16cc43918e28fc693"
+    },
+    {
+      "bytes": 1223,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/cohort_validation.json",
+      "sha256": "9104f9dcfef2a163b2009f2539724e9da6c0d28bf2495ef0d96924b9b39843a8"
+    },
+    {
+      "bytes": 883,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/config_snapshot.yaml",
+      "sha256": "8127cae9c83a68d491ca4aecbdfa752e48aee7e2d43c725440ac3268ffe3e1d0"
+    },
+    {
+      "bytes": 405,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/error_diagnostics.tsv",
+      "sha256": "48089deb78474574350cef2b039df634f45d656cca4e3d7144b883df13e35f47"
+    },
+    {
+      "bytes": 50451,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/execution_log.txt",
+      "sha256": "e0c03c9fa990d565af1ddfe66ffee4ac4b2b6e2d5cacde0fca61bc04cee7435d"
+    },
+    {
+      "bytes": 31953,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/input_checksums.json",
+      "sha256": "0fb1427aa6c59751e3b0b1e920fa30c07d2e2f996db49650be3d3462ce5132d0"
+    },
+    {
+      "bytes": 41876,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/provenance.json",
+      "sha256": "c507ce0d8bc668cf50cc1252c3c6d003b87b48df72ba7203c82611b1bb215b77"
+    },
+    {
+      "bytes": 1680,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/validation.json",
+      "sha256": "b73085ad282a3f29252d5a21dcd33c2d0fff46de3a60b99ad3de991d624c8009"
+    },
+    {
+      "bytes": 9234,
+      "path": "scripts/dada2/validate_outputs.py",
+      "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
+    },
+    {
+      "bytes": 16111,
+      "path": "scripts/dada2_primer_review/scan.py",
+      "sha256": "56c5bae6c95250990e6ad0e0e5222930d5e5a5a9de30201b15545b759066c2f5"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 493,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/config_snapshot.yaml",
+      "sha256": "3cc74a421cfd75aa3cb83504556d134e9ba3fad8cd0b87e93bf7813038fa00ab"
+    },
+    {
+      "bytes": 401,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/coordinate.tsv",
+      "sha256": "9ca4b84fd9f7ee7e531a528200dac7dc841f49e11d0d8e6b31a6b2973ff88e97"
+    },
+    {
+      "bytes": 8687,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/input_checksums.json",
+      "sha256": "4350ddce26845c928b2a759cdea92bbbda4e34680305dd37ca1546c8fa130792"
+    },
+    {
+      "bytes": 3438,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/per_sample.tsv",
+      "sha256": "701dd33350d991fee859cfc3e344f79fe46f47a12656222e65fc92bc393fe640"
+    },
+    {
+      "bytes": 1375,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/summary.json",
+      "sha256": "21b13916159289f19a707df487b989113b86d1adac5738da25bc184faee406cc"
+    }
+  ],
+  "parameters": {
+    "adapter_n_error_denominator": "exclude",
+    "allow_indels": false,
+    "error_rate_source": "profile.primer_detection.error_rate",
+    "exclude_asvs": false,
+    "method": "full_length_iupac_hamming_all_positions",
+    "output_dir": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers",
+    "partial_matches": false,
+    "read_wildcards": false,
+    "sample_exclusions": false,
+    "schema_version": "1.0.0",
+    "source_dada2_policy": "config/prjna627078_dada2.yaml",
+    "trim_sequences": false
+  },
+  "software_versions": {
+    "Python": "3.12.13"
+  },
+  "started_at_utc": "2026-11-03T02:09:07.170367+00:00",
+  "status": "success",
+  "upstream_validation": {
+    "fastq_rehashed": false,
+    "native_validation": {
+      "artifacts_checked": 18,
+      "asvs": 968,
+      "error_models_converged_before_limit": true,
+      "inputs_checked": 0,
+      "nonchim_pairs": 2676375,
+      "samples": 60,
+      "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+      "status": "valid",
+      "study_id": "mota_gutierrez_2021_mexico"
+    },
+    "promotion_status": "ready_for_taxonomy",
+    "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+    "status": "valid"
+  }
+}
