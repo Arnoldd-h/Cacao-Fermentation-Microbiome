@@ -1,0 +1,3 @@
+study_id	asv_id	primer_name	primer_role	orientation	pattern	start	end	errors	maximum_errors	sequence_length	asv_total_reads
+mota_gutierrez_2021_mexico	mota_gutierrez_2021_mexico__ASV000026	V3V4Forward	forward	reverse_complement	CTGCWGCCNCCCGTAGG	423	440	0	1	440	7
+mota_gutierrez_2021_mexico	mota_gutierrez_2021_mexico__ASV000026	V3V4Reverse	reverse	as_synthesized	GACTACHVGGGTATCTAATCC	0	21	0	2	440	7

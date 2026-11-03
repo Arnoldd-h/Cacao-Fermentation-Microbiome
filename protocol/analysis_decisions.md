@@ -443,3 +443,66 @@ como filtro ni modificarlo. La cobertura de las posiciones finales y los
 percentiles NaN se conservan para interpretar los flags. El paso siguiente
 será registrar una ejecución DADA2 separada que consuma la validación terminal,
 sin reconstruir el baseline ni asumir retención a partir de longitud solamente.
+
+### DADA2 independiente de PRJNA627078, 2026-11-02
+
+Antes de ejecutar se registra `config/prjna627078_dada2.yaml`: consume los
+FASTQ `terminal_3prime` y exige verificar todos los hashes del QC terminal.
+El alcance basal mantiene `processing_ceiling=qc`; este workflow independiente
+autoriza únicamente DADA2. El perfil original sigue intacto: minLen 150,
+maxEE 2/2, truncQ 2, sin truncLen fijo ni filtro de longitud de ASVs, aprendizaje
+con 100 millones de bases, MAX_CONSIST 10, pool=false, overlap mínimo 12 y
+cero mismatches, quimeras por consenso. R 4.4.3/DADA2 1.34.0, dos hilos y
+semilla 20260819; no se ajustan parámetros para mejorar la retención.
+
+Se exigen las 60 bibliotecas, cuatro cajas y 20 combinaciones caja/tiempo,
+con `sampling_stratum` desconocido preservado. La metadata debe coincidir con
+el manifest original. Cada entrada debe concordar con QC; los pares filtrados
+no pueden superar los elegibles por longitud y los conteos deben conservarse
+entre etapas. Cero pares filtrados, ensamblados o no quiméricos en cualquier
+biblioteca detiene la corrida, sin exclusión automática. Se comprueban tabla
+ASV, FASTA, longitudes, diagnósticos de ensamblaje y checksums del ejecutor.
+
+La validez técnica se separa de la promoción analítica. Se exige convergencia
+F/R antes del límite y coincidencia exacta de la matriz final con la última
+entrada del aprendizaje; un ciclo anterior o agotamiento queda `needs_review`,
+sin cambiar MAX_CONSIST automáticamente. Se conserva el historial diagnóstico,
+los gráficos y el log, que registra bases/reads/muestras usadas para aprender.
+Con randomize=false, nbases selecciona un prefijo ordenado: no se afirmará que
+el aprendizaje usó toda la cohorte. El criterio nativo admite repetir cualquier
+matriz previa; referencia fijada:
+https://raw.githubusercontent.com/benjjneb/dada2/5d453a416608f75f0bf50bcc74bbf0c1851e7f9f/R/dada.R.
+
+Las coincidencias no terminales de primers no justifican eliminar ASVs o
+bibliotecas a posteriori. Se revisarán mediante diagnóstico separado, junto
+con longitud y taxonomía, antes de interpretar ecología. La inferencia ASV
+permanece exclusiva de este estudio; no se concatena con ASVs V4 de Colombia
+ni convierte las tres etiquetas de réplica en unidades independientes.
+
+### Diagnóstico de motivos compatibles con primers en ASVs, 2026-11-02
+
+Mientras DADA2 filtra las lecturas, antes de disponer de sus ASVs, se registra
+`config/prjna627078_dada2_primers.yaml`. Sobre las secuencias no quiméricas
+validadas se buscarán los dos primers gene-specific y sus complementos
+inversos: cuatro patrones completos, todos los inicios posibles, sin indels
+ni coincidencias parciales. El scanner usa IUPAC y distancia Hamming;
+hereda error_rate=0,1 del perfil original. Como Cutadapt, excluye las N del
+adaptador del denominador de errores: se permiten uno/dos errores para los
+primers forward/reverse. No se consideran wildcards en reads (ASVs ACGT).
+La implementación se contrasta con Cutadapt en fixtures sintéticos, incluidos
+degenerados, límites de error, N y coordenadas.
+
+Se registran posiciones 0-based/end-exclusive, patrón, orientación, errores
+y abundancia de cada ASV. Se conservan todas las coincidencias superpuestas;
+al resumir se usa la unión de ASVs y sus conteos por muestra, de modo que una
+ASV con varios motivos no duplica su abundancia. Los subtotales por patrón
+pueden superponerse y no deben sumarse. Las coincidencias son compatibilidad
+de secuencia, no prueba de contaminación ni identidad taxonómica; su ausencia
+tampoco descarta residuos parciales u otros constructos desconocidos.
+
+El diagnóstico no modifica secuencias, conteos, filtros ni exclusiones.
+Comprueba las salidas y cadena de configuración mediante hashes del resultado
+DADA2; no relee FASTQ ni vuelve a estimar ASVs. Puede describir una corrida
+técnicamente válida que aún requiera revisar convergencia, preservando esa
+limitación. La interpretación ecológica espera taxonomía y revisión de estas
+banderas; cualquier corrección posterior requerirá un método separado.

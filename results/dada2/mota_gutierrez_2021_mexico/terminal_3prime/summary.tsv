@@ -1,0 +1,2 @@
+study_id	bioproject	samples	input_pairs	filtered_pairs	merged_pairs	nonchim_pairs	merged_asvs	nonchim_asvs	nonchim_fraction_of_input
+mota_gutierrez_2021_mexico	PRJNA627078	60	5689175	3164195	2972344	2676375	12229	968	0.470432883502441

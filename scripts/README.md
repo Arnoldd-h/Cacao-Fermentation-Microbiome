@@ -201,3 +201,30 @@ El método registrado retira sólo el primer opuesto completo anclado al extremo
 3', conserva todos los pares y escribe en `terminal_3prime`. Audita cada read,
 calidad conservada, longitudes y residuos; repite FastQC con cobertura por
 intervalo. El mínimo candidato de DADA2 se informa como diagnóstico, sin filtro.
+
+DADA2 consume el QC terminal validado mediante un workflow independiente:
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/study_dada2.Snakefile --cores 2 --resources mem_mb=4000 --keep-incomplete
+python3 scripts/environment/run_in_environment.py python scripts/study_dada2/execute.py validate --config config/prjna627078_dada2.yaml
+```
+
+`study_dada2/execute.py` comprueba los hashes terminales, adapta sus recuentos
+al formato del ejecutor R existente y conserva sus parámetros. Las salidas
+DADA2 y su auditoría SHA-256 quedan separadas del baseline. El log y los
+diagnósticos registran el aprendizaje; los intermedios pesados quedan ignorados.
+Una corrida parcial se conserva para revisión y una completa se valida sin
+sobrescribirla. `needs_review` impide promover convergencia insuficiente como
+resultado analítico aceptado, aunque los archivos sean técnicamente válidos.
+
+Después de validar DADA2, el diagnóstico de motivos de primers se ejecuta
+sin cambiar las secuencias ni reabrir FASTQ:
+
+```bash
+python3 scripts/environment/run_in_environment.py python scripts/dada2_primer_review/scan.py execute --config config/prjna627078_dada2_primers.yaml
+python3 scripts/environment/run_in_environment.py python scripts/dada2_primer_review/scan.py validate --config config/prjna627078_dada2_primers.yaml
+```
+
+Las coordenadas son 0-based/end-exclusive; los resúmenes por muestra usan la
+unión de ASVs con coincidencias y no suman motivos superpuestos. No se interpreta
+una coincidencia como contaminación ni se excluye ninguna ASV o biblioteca.

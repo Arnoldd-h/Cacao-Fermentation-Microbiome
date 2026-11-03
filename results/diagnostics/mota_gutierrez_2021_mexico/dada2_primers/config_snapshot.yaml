@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "source_dada2_policy": "config/prjna627078_dada2.yaml",
+  "method": "full_length_iupac_hamming_all_positions",
+  "error_rate_source": "profile.primer_detection.error_rate",
+  "adapter_n_error_denominator": "exclude",
+  "read_wildcards": false,
+  "allow_indels": false,
+  "partial_matches": false,
+  "trim_sequences": false,
+  "exclude_asvs": false,
+  "sample_exclusions": false,
+  "output_dir": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers"
+}

@@ -1,0 +1,11 @@
+{
+  "artifacts_checked": 18,
+  "asvs": 968,
+  "error_models_converged_before_limit": true,
+  "inputs_checked": 126,
+  "nonchim_pairs": 2676375,
+  "samples": 60,
+  "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+  "status": "valid",
+  "study_id": "mota_gutierrez_2021_mexico"
+}

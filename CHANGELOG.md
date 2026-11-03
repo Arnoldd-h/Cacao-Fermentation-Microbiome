@@ -2,6 +2,24 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## v0.5.6-second-study-dada2 - 2026-11-02
+
+- Ejecución DADA2 independiente registrada para PRJNA627078 desde QC terminal,
+  con los parámetros originales, validación de cohorte completa y procedencia
+  de entradas/salidas. No reconstruye el baseline ni cambia su techo de QC.
+- Auditoría de historial de errores y separación entre integridad técnica y
+  promoción analítica; un aprendizaje no convergente requiere revisión.
+- Diagnóstico registrado de cuatro patrones de primers en ASVs, con todas
+  las coordenadas, conteos sin duplicación y sin editar/excluir secuencias.
+- DADA2 México completo: 60 bibliotecas/968 ASVs y 2.676.375 pares no
+  quiméricos (47,0433 %), sin cambiar filtros ni excluir bibliotecas.
+- Convergencia F/R en seis/cinco rondas; 153 entradas/29 artefactos auditados.
+  Profundidad mínima de 24 pares explícita para revisión previa a ecología.
+- Diagnóstico ASV de primers completo: una ASV/7 pares (0,000262 %) y dos
+  coincidencias exactas, sin duplicar abundancias ni excluir secuencias;
+  46 entradas/cinco artefactos verificados. Suite final de 249 pruebas más
+  27 comprobaciones R aprobada.
+
 ## v0.5.5-terminal-qc - 2026-11-02
 
 - Método registrado para retirar únicamente primers opuestos completos en el

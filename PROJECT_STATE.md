@@ -4,6 +4,22 @@
 
 ## Fase actual
 
+DADA2 independiente de PRJNA627078 completo desde `de23962`: 60 bibliotecas,
+968 ASVs y 2.676.375 pares no quiméricos (47,0433 % de la entrada). Mantiene
+el perfil original, cuatro cajas y 20 combinaciones caja/tiempo, sin exclusiones.
+Filtrado: 3.164.195 pares; ensamblaje: 2.972.344. R1/R2 convergen en seis/cinco
+rondas con matriz final igual a la última entrada; auditoría válida de
+153 entradas/29 artefactos, además de la validación nativa de 126/18.
+Informe: `reports/prjna627078_dada2_2026-11-02.md`.
+
+La biblioteca SRR11579032 conserva sólo 24 pares/dos ASVs; se mantiene y
+requiere un plan de sensibilidad antes de inferencia ecológica. Profundidad
+final 24–84.841, mediana 45.347,5. Longitudes 159–441 nt sin filtro posterior.
+El diagnóstico de motivos de primers, registrado en `80e517e`, está completo
+desde `b3a1e2c`: una ASV de 440 nt con dos coincidencias exactas y siete pares
+(0,000262 %), sin duplicarlos ni excluirlos. Valida 46 entradas/cinco artefactos.
+Taxonomía y ecología siguen pendientes.
+
 Segunda pasada terminal 3' de PRJNA627078 completa desde `c77233d`:
 60 bibliotecas y 5.689.175 pares conservados, 861 entradas/seis artefactos
 validados. Se recortan 92.518 R1 y 76.111 R2; el cribado posterior encuentra
@@ -35,9 +51,9 @@ recuento residual. En SRR11579065, 12.400/13.892 coincidencias R1 y
 10.342/12.295 R2 son terminales (89,26/84,12 %); no son estimaciones de toda
 la cohorte. Las longitudes variables cambian los subconjuntos que contribuyen
 a las posiciones finales de FastQC y deben revisarse junto con la calidad.
-DADA2 permanece candidato bajo `processing_ceiling=qc`; el tratamiento terminal
-ya está validado. Falta registrar la ejecución independiente sobre los nuevos
-inputs y revisar filtrado, coincidencias no terminales y convergencia. Informe basal:
+El scope basal mantiene `processing_ceiling=qc`; DADA2 ya se ejecutó mediante
+un workflow separado sobre los inputs terminales validados. El baseline y
+sus decisiones permanecen intactos. Informe basal:
 `reports/prjna627078_qc_2026-10-31.md`.
 
 La menor profundidad es SRR11579032/16S_cocoa_B59M: 877 pares, Criollo, caja 2,
@@ -61,13 +77,18 @@ hashes productores; la ampliación de código compartido requiere renovar las
 etapas afectadas si se reprocesan con este checkout. Sus tablas científicas
 no se han editado ni se combinan ASVs entre regiones 16S.
 
-Desarrollo: suite completa de 217 pruebas aprobada (462,010 s), incluidas
-24 nuevas del método terminal; conciliación independiente de los 60 runs y
-300 informes de ejecución. FASTQ, intermedios y reportes
+Desarrollo: suite completa de 249 pruebas aprobada (241,224 s) y
+27 comprobaciones R adicionales; conciliación independiente de los resultados
+DADA2 de las 60 bibliotecas. FASTQ, intermedios y reportes
 pesados quedan fuera de Git. Los otros dos estudios todavía no tienen
 procesamiento de lecturas; la integración/core/meta-análisis siguen pendientes.
 
 ## Completado
+
+- DADA2 México: 60 bibliotecas/968 ASVs, perfiles de errores convergentes,
+  validación de cohorte/metadatos/conteos/FASTA y procedencia desde QC terminal.
+- Diagnóstico de cuatro patrones de primers en ASVs, coordenadas y unión de
+  abundancias por biblioteca, sin editar secuencias ni establecer exclusiones.
 
 - Segunda pasada terminal: 100 % de pares conservados, auditoría de cada read,
   longitudes exactas y 13.920 intervalos FastQC con cobertura, sin exclusiones.
@@ -223,8 +244,9 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - Hay taxonomía, diversidad descriptiva y un modelo longitudinal exploratorio
-  del primer estudio; el segundo tiene QC basal y terminal, con coincidencias
-  no terminales y calidad pendientes de evaluación en DADA2. Faltan sus ASVs,
+  del primer estudio; el segundo tiene QC y DADA2 completos, pero faltan
+  taxonomía, interpretación de los motivos de primers y tratamiento analítico registrado
+  de su profundidad desigual (mínimo 24 pares). Faltan también
   los otros dos estudios y la inferencia cross-study. Las
   93 muestras representan cuatro lotes, no 93 fermentaciones independientes.
   El contraste fijado no puede bajar de p=0,125 y supone simetría central;
@@ -249,10 +271,9 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 
 ## Próximas tareas
 
-1. Registrar la ejecución DADA2 independiente desde `terminal_3prime`, adaptando
-   las tablas QC al runner existente sin modificar el scope basal. Conservar
-   parámetros candidatos, revisar residuos no terminales y filtros, comprobar las
-   60 bibliotecas y la convergencia antes de taxonomía/diversidad.
+1. Registrar y ejecutar taxonomía reproducible de México sobre `terminal_3prime`,
+   revisar orgánulos, resolución y la ASV con motivos de primers, y establecer
+   decisiones explícitas sobre profundidad/réplicas antes de diversidad/modelos.
    Procesar después los dos estudios restantes con métodos apropiados a su
    región/plataforma, incluido PacBio.
 2. Registrar armonización género/familia, modelos por taxón/etapa y core antes
