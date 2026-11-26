@@ -1,0 +1,207 @@
+{
+  "all_identical": true,
+  "compared_at_utc": "2026-11-26T04:29:01.123837+00:00",
+  "executions": {
+    "baseline": {
+      "config": {
+        "classification": {
+          "method": "dada2::assignTaxonomy",
+          "native_rng": {
+            "adapter": "r_seeded_query_mt19937_v1",
+            "dada2_version": "1.34.0",
+            "upstream_git_commit": "5d453a416608f75f0bf50bcc74bbf0c1851e7f9f",
+            "upstream_sha256": "1641cf17a322af65c31f6ad58fcf75e787ded90e9017960e5f9d3d2daa69a6a6"
+          },
+          "output_bootstraps": true,
+          "primary_min_boot": 80,
+          "random_seed": 20260819,
+          "raw_min_boot": 0,
+          "rng_kind": [
+            "Mersenne-Twister",
+            "Inversion",
+            "Rejection"
+          ],
+          "sensitivity_min_boot": [
+            50
+          ],
+          "species_assignment": false,
+          "tax_levels": [
+            "Kingdom",
+            "Phylum",
+            "Class",
+            "Order",
+            "Family",
+            "Genus"
+          ],
+          "threads": 2,
+          "try_reverse_complement": true
+        },
+        "download": {
+          "chunk_size_bytes": 1048576,
+          "minimum_free_space_factor": 3.0,
+          "retries": 3,
+          "timeout_seconds": 120
+        },
+        "reference": {
+          "doi": "10.5281/zenodo.14169026",
+          "expected_bytes": 139996892,
+          "expected_md5": "1764e2a36b4500ccb1c7d5261948a414",
+          "name": "SILVA",
+          "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+          "provenance_path": "references/silva_138.2.provenance.json",
+          "url": "https://zenodo.org/records/14169026/files/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+          "version": "138.2"
+        },
+        "schema_version": "1.0.0",
+        "screening": {
+          "bacterial_kingdom": "Bacteria",
+          "exclude_flagged_asvs": false,
+          "organelle_labels": [
+            "Chloroplast",
+            "Mitochondria"
+          ],
+          "unresolved_genus_pattern": "^(uncultured|unclassified|unknown|unidentified|metagenome)([ _-].*)?$"
+        }
+      },
+      "directory": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime",
+      "effective_threads": 2,
+      "finished_at_utc": "2026-11-26T04:21:15.655015+00:00",
+      "git_commit": "aeec8cab785d21cc36bf64bd0dfb2362fada76a8",
+      "provenance_sha256": "2c0c32a202deeb57f4187001bfe75497c6e01fab65eaca3cd277a6343f617b7f",
+      "started_at_utc": "2026-11-26T04:13:39.460498+00:00"
+    },
+    "repeat": {
+      "config": {
+        "classification": {
+          "method": "dada2::assignTaxonomy",
+          "native_rng": {
+            "adapter": "r_seeded_query_mt19937_v1",
+            "dada2_version": "1.34.0",
+            "upstream_git_commit": "5d453a416608f75f0bf50bcc74bbf0c1851e7f9f",
+            "upstream_sha256": "1641cf17a322af65c31f6ad58fcf75e787ded90e9017960e5f9d3d2daa69a6a6"
+          },
+          "output_bootstraps": true,
+          "primary_min_boot": 80,
+          "random_seed": 20260819,
+          "raw_min_boot": 0,
+          "rng_kind": [
+            "Mersenne-Twister",
+            "Inversion",
+            "Rejection"
+          ],
+          "sensitivity_min_boot": [
+            50
+          ],
+          "species_assignment": false,
+          "tax_levels": [
+            "Kingdom",
+            "Phylum",
+            "Class",
+            "Order",
+            "Family",
+            "Genus"
+          ],
+          "threads": 2,
+          "try_reverse_complement": true
+        },
+        "download": {
+          "chunk_size_bytes": 1048576,
+          "minimum_free_space_factor": 3.0,
+          "retries": 3,
+          "timeout_seconds": 120
+        },
+        "reference": {
+          "doi": "10.5281/zenodo.14169026",
+          "expected_bytes": 139996892,
+          "expected_md5": "1764e2a36b4500ccb1c7d5261948a414",
+          "name": "SILVA",
+          "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+          "provenance_path": "references/silva_138.2.provenance.json",
+          "url": "https://zenodo.org/records/14169026/files/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+          "version": "138.2"
+        },
+        "schema_version": "1.0.0",
+        "screening": {
+          "bacterial_kingdom": "Bacteria",
+          "exclude_flagged_asvs": false,
+          "organelle_labels": [
+            "Chloroplast",
+            "Mitochondria"
+          ],
+          "unresolved_genus_pattern": "^(uncultured|unclassified|unknown|unidentified|metagenome)([ _-].*)?$"
+        }
+      },
+      "directory": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat",
+      "effective_threads": 1,
+      "finished_at_utc": "2026-11-26T04:28:53.628467+00:00",
+      "git_commit": "aeec8cab785d21cc36bf64bd0dfb2362fada76a8",
+      "provenance_sha256": "20e0e4fdafc31f98ecb96cb58870c435a4f3e7e1ffd75add529ce0630a84d88c",
+      "started_at_utc": "2026-11-26T04:21:33.302131+00:00"
+    }
+  },
+  "tables": {
+    "assignment_coverage.tsv": {
+      "baseline_sha256": "53aae191827b96a4f78e27a850bacbbba11ce33c736dcfc201ac4e59069b4a7d",
+      "changed_cells": 0,
+      "changed_rows": 0,
+      "differences": [],
+      "identical": true,
+      "repeat_sha256": "53aae191827b96a4f78e27a850bacbbba11ce33c736dcfc201ac4e59069b4a7d",
+      "rows": 12
+    },
+    "sample_coverage.tsv": {
+      "baseline_sha256": "bf217091c8bb04ebd65f3c0889b39d78c5f5651c2a06a04bbb3dcf155ca139cd",
+      "changed_cells": 0,
+      "changed_rows": 0,
+      "differences": [],
+      "identical": true,
+      "repeat_sha256": "bf217091c8bb04ebd65f3c0889b39d78c5f5651c2a06a04bbb3dcf155ca139cd",
+      "rows": 720
+    },
+    "taxonomy.tsv": {
+      "baseline_sha256": "19624addce230910d5cd73b3eb9b5958cfaf3956ecbd929ee3b3523d1221f66a",
+      "changed_cells": 0,
+      "changed_rows": 0,
+      "differences": [],
+      "identical": true,
+      "repeat_sha256": "19624addce230910d5cd73b3eb9b5958cfaf3956ecbd929ee3b3523d1221f66a",
+      "rows": 968
+    },
+    "taxonomy_bootstraps.tsv": {
+      "baseline_sha256": "7abd8d4320a261d8d8bf884dff6c5665637d07fedb9cd85ce5536b6d9ecc4444",
+      "changed_cells": 0,
+      "changed_rows": 0,
+      "differences": [],
+      "identical": true,
+      "repeat_sha256": "7abd8d4320a261d8d8bf884dff6c5665637d07fedb9cd85ce5536b6d9ecc4444",
+      "rows": 968
+    },
+    "taxonomy_screening.tsv": {
+      "baseline_sha256": "42819924c50f4c8a1c00af547302fd2e56acb26e33ac045401d0fb8ba2883af0",
+      "changed_cells": 0,
+      "changed_rows": 0,
+      "differences": [],
+      "identical": true,
+      "repeat_sha256": "42819924c50f4c8a1c00af547302fd2e56acb26e33ac045401d0fb8ba2883af0",
+      "rows": 968
+    },
+    "taxonomy_sensitivity.tsv": {
+      "baseline_sha256": "54238dc79a3ffa5afcaa0a89be6099d9e0990edd6079f30759785aae867b945e",
+      "changed_cells": 0,
+      "changed_rows": 0,
+      "differences": [],
+      "identical": true,
+      "repeat_sha256": "54238dc79a3ffa5afcaa0a89be6099d9e0990edd6079f30759785aae867b945e",
+      "rows": 1936
+    },
+    "taxonomy_unfiltered.tsv": {
+      "baseline_sha256": "128b9f8544da67aea54d2c96b6952e4b3314f8c04fdd64f5cba951f1c26fe769",
+      "changed_cells": 0,
+      "changed_rows": 0,
+      "differences": [],
+      "identical": true,
+      "repeat_sha256": "128b9f8544da67aea54d2c96b6952e4b3314f8c04fdd64f5cba951f1c26fe769",
+      "rows": 968
+    }
+  }
+}

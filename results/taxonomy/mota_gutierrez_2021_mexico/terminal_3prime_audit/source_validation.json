@@ -1,0 +1,114 @@
+{
+  "cohort": {
+    "batch_times": 20,
+    "batches": 4,
+    "error_learning": {
+      "F": {
+        "converged_before_limit": true,
+        "maximum_rounds": 10,
+        "reached_iteration_limit": false,
+        "repeated_error_matrix": true,
+        "self_consistency_rounds": 6
+      },
+      "R": {
+        "converged_before_limit": true,
+        "maximum_rounds": 10,
+        "reached_iteration_limit": false,
+        "repeated_error_matrix": true,
+        "self_consistency_rounds": 5
+      }
+    },
+    "filtered_pairs": 3164195,
+    "input_pairs": 5689175,
+    "merged_pairs": 2972344,
+    "minimum_nonchim_pairs_per_sample": 24,
+    "nonchim_pairs": 2676375,
+    "pairs_at_least_min_len": 5593277,
+    "promotion_reason": "Complete cohort and both error models converged before their limits",
+    "promotion_status": "ready_for_taxonomy",
+    "retention": {
+      "filtered_fraction_of_input": 0.556178180491899,
+      "merged_fraction_of_filtered": 0.9393681489288744,
+      "nonchim_fraction_of_input": 0.47043288350244106,
+      "nonchim_fraction_of_merged": 0.9004257246133018
+    },
+    "samples": 60,
+    "status": "valid",
+    "study_id": "mota_gutierrez_2021_mexico",
+    "unknown_sampling_stratum_samples": 60
+  },
+  "dada2": {
+    "fastq_rehashed": false,
+    "native_validation": {
+      "artifacts_checked": 18,
+      "asvs": 968,
+      "error_models_converged_before_limit": true,
+      "inputs_checked": 0,
+      "nonchim_pairs": 2676375,
+      "samples": 60,
+      "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+      "status": "valid",
+      "study_id": "mota_gutierrez_2021_mexico"
+    },
+    "promotion_status": "ready_for_taxonomy",
+    "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+    "status": "valid"
+  },
+  "primer_review": {
+    "artifacts_checked": 5,
+    "asv_exclusions": 0,
+    "asvs": 968,
+    "coordinate_matches": 2,
+    "inputs_checked": 46,
+    "interpretation": "Full primer-compatible motifs only; no taxonomic or contamination identity inferred",
+    "matched_asvs": 1,
+    "matched_fraction": 2.615478025314091e-06,
+    "matched_reads": 7,
+    "patterns": [
+      {
+        "matched_asvs": 0,
+        "matched_reads": 0,
+        "maximum_errors": 1,
+        "orientation": "as_synthesized",
+        "pattern": "CCTACGGGNGGCWGCAG",
+        "primer_name": "V3V4Forward",
+        "primer_role": "forward"
+      },
+      {
+        "matched_asvs": 1,
+        "matched_reads": 7,
+        "maximum_errors": 1,
+        "orientation": "reverse_complement",
+        "pattern": "CTGCWGCCNCCCGTAGG",
+        "primer_name": "V3V4Forward",
+        "primer_role": "forward"
+      },
+      {
+        "matched_asvs": 1,
+        "matched_reads": 7,
+        "maximum_errors": 2,
+        "orientation": "as_synthesized",
+        "pattern": "GACTACHVGGGTATCTAATCC",
+        "primer_name": "V3V4Reverse",
+        "primer_role": "reverse"
+      },
+      {
+        "matched_asvs": 0,
+        "matched_reads": 0,
+        "maximum_errors": 2,
+        "orientation": "reverse_complement",
+        "pattern": "GGATTAGATACCCBDGTAGTC",
+        "primer_name": "V3V4Reverse",
+        "primer_role": "reverse"
+      }
+    ],
+    "sample_exclusions": 0,
+    "samples": 60,
+    "sequence_edits": 0,
+    "source_git_commit": "b3a1e2ccfbcd0fabe1331b8525620513360f5e26",
+    "status": "valid",
+    "study_id": "mota_gutierrez_2021_mexico",
+    "total_reads": 2676375
+  },
+  "status": "valid"
+}

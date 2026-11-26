@@ -228,3 +228,23 @@ python3 scripts/environment/run_in_environment.py python scripts/dada2_primer_re
 Las coordenadas son 0-based/end-exclusive; los resúmenes por muestra usan la
 unión de ASVs con coincidencias y no suman motivos superpuestos. No se interpreta
 una coincidencia como contaminación ni se excluye ninguna ASV o biblioteca.
+
+La taxonomía independiente consume DADA2 y ese diagnóstico validados:
+
+```bash
+python3 scripts/environment/run_in_environment.py snakemake --snakefile workflow/study_taxonomy.Snakefile --cores 2 --resources mem_mb=4500 --keep-incomplete
+python3 scripts/environment/run_in_environment.py python scripts/study_taxonomy/execute.py validate --config config/prjna627078_taxonomy.yaml
+```
+
+El wrapper reutiliza el clasificador SILVA y el validador taxonómico existentes.
+El perfil se fija por SHA-256; no admite ajustes analíticos desde esta política.
+Las salidas y la auditoría se guardan bajo el estudio en `terminal_3prime` y
+`terminal_3prime_audit`. Una salida parcial se conserva para diagnóstico y
+una completa se valida sin sobrescribirla. Se necesita la referencia local
+verificada; el workflow no reconstruye QC, DADA2 ni la descarga de SILVA.
+Ejecuta secuencialmente dos procesos con dos/un hilo y exige identidad de las
+siete tablas científicas. La primera corrida es la primaria; la repetición
+queda en intermedios ignorados y su comparación se conserva en la auditoría.
+La ejecución termina en taxonomía, manteniendo las 60 bibliotecas, la ASV con
+motivos de primers y todos los orgánulos marcados. Separación bacteriana y
+análisis ecológico requieren una etapa posterior registrada.

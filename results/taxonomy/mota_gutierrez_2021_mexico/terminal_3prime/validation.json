@@ -1,0 +1,20 @@
+{
+  "artifacts_checked": 15,
+  "asvs": 968,
+  "excluded_asvs": 0,
+  "genus_assigned_asvs": 689,
+  "inputs_checked": 26,
+  "named_genus_asvs": 689,
+  "non_bacterial_asvs": 4,
+  "organelle_flagged_asvs": 14,
+  "primary_min_boot": 80,
+  "samples": 60,
+  "sensitivity_min_boot": [
+    50
+  ],
+  "source_git_commit": "aeec8cab785d21cc36bf64bd0dfb2362fada76a8",
+  "status": "valid",
+  "study_id": "mota_gutierrez_2021_mexico",
+  "total_reads": 2676375,
+  "unclassified_kingdom_asvs": 4
+}

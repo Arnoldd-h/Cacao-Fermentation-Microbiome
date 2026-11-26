@@ -224,13 +224,14 @@ environment/  dependencias reproducibles
 
 ## Estado
 
-PRJNA627078 tiene QC basal/terminal y DADA2 independiente completos:
-60 bibliotecas, 968 ASVs y 2.676.375 pares no quiméricos (47,0433 % de entrada).
-R1/R2 convergen en seis/cinco rondas; se conservan las cuatro cajas y toda la
-metadata. La profundidad mínima de 24 pares requiere revisión antes de ecología.
-El diagnóstico ASV de primers marca una ASV que suma siete pares, sin excluirla.
-Faltan taxonomía y armonización; no hay aún un core compartido.
-Informe: [`DADA2 de PRJNA627078`](reports/prjna627078_dada2_2026-11-02.md).
+PRJNA627078 (México) tiene QC, DADA2 y taxonomía con SILVA 138.2 completos.
+Se conservan 60 bibliotecas, 968 ASVs y 2.676.375 pares no quiméricos. Con
+soporte mínimo 80, el 79,25 % de los pares llega a familia y el 70,99 % a
+género. Las 14 ASVs marcadas como orgánulos reúnen el 23,99 %. Las siete
+tablas científicas coinciden entre dos corridas independientes. Quedan
+pendientes la separación bacteriana, el tratamiento de la biblioteca de
+24 pares y la armonización de la taxonomía entre estudios.
+[Informe de taxonomía de México](reports/prjna627078_taxonomy_2026-11-25.md).
 
 El estado actual está en `PROJECT_STATE.md`; los cambios importantes en
 `CHANGELOG.md`. El 2026-10-31 quedó resuelto el bloqueo de ENA: los 186 FASTQ

@@ -1,0 +1,3 @@
+2026-11-26T04:22:57Z Classifying 968 ASVs against SILVA 138.2
+Finished processing reference fasta.2026-11-26T04:28:46Z Taxonomy tables and coverage exported; no ASVs excluded
+INFO: Taxonomy completed for 968 ASVs; no exclusions

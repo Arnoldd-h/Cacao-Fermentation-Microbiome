@@ -1,8 +1,16 @@
 # Estado del proyecto
 
-Última actualización: 2026-11-02.
+Última actualización: 2026-11-25.
 
 ## Fase actual
+
+Taxonomía de México completa desde `aeec8ca`, con SILVA 138.2 y todas las
+968 ASVs, 60 bibliotecas y 2.676.375 pares. A 80, 689 ASVs llegan a género
+(70,99 % de los pares) y 870 a familia (79,25 %). A 50, la cobertura llega
+a 74,48 % en género y 79,52 % en familia. Se conservan 14 ASVs marcadas como
+orgánulos (641.970 pares, 23,99 %). Las siete tablas coinciden byte por byte
+entre dos y un hilo. La auditoría comprobó 81 entradas y 42 artefactos.
+Informe: `reports/prjna627078_taxonomy_2026-11-25.md`.
 
 DADA2 independiente de PRJNA627078 completo desde `de23962`: 60 bibliotecas,
 968 ASVs y 2.676.375 pares no quiméricos (47,0433 % de la entrada). Mantiene
@@ -18,7 +26,8 @@ final 24–84.841, mediana 45.347,5. Longitudes 159–441 nt sin filtro posterio
 El diagnóstico de motivos de primers, registrado en `80e517e`, está completo
 desde `b3a1e2c`: una ASV de 440 nt con dos coincidencias exactas y siete pares
 (0,000262 %), sin duplicarlos ni excluirlos. Valida 46 entradas/cinco artefactos.
-Taxonomía y ecología siguen pendientes.
+SILVA asigna esa ASV a Enterovirga con soporte 96. La ecología de México espera
+la separación bacteriana y un plan de profundidad y réplicas.
 
 Segunda pasada terminal 3' de PRJNA627078 completa desde `c77233d`:
 60 bibliotecas y 5.689.175 pares conservados, 861 entradas/seis artefactos
@@ -85,6 +94,9 @@ procesamiento de lecturas; la integración/core/meta-análisis siguen pendientes
 
 ## Completado
 
+- Taxonomía de México con cobertura 80/50, cribado de orgánulos, conservación
+  de toda la cohorte y repetición exacta en procesos separados. Pasaron 34
+  pruebas Python de taxonomía y seis comprobaciones R auxiliares.
 - DADA2 México: 60 bibliotecas/968 ASVs, perfiles de errores convergentes,
   validación de cohorte/metadatos/conteos/FASTA y procedencia desde QC terminal.
 - Diagnóstico de cuatro patrones de primers en ASVs, coordenadas y unión de
@@ -244,11 +256,10 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 - Siete estudios permanecen pendientes por falta o inconsistencia de evidencia
   pública; no se inventan primers, tiempos, tratamientos ni asignaciones de run.
 - Hay taxonomía, diversidad descriptiva y un modelo longitudinal exploratorio
-  del primer estudio; el segundo tiene QC y DADA2 completos, pero faltan
-  taxonomía, interpretación de los motivos de primers y tratamiento analítico registrado
-  de su profundidad desigual (mínimo 24 pares). Faltan también
-  los otros dos estudios y la inferencia cross-study. Las
-  93 muestras representan cuatro lotes, no 93 fermentaciones independientes.
+  del primer estudio. México tiene taxonomía validada y aún requiere una tabla
+  bacteriana derivada y un plan analítico para la profundidad desigual (mínimo
+  24 pares) y las etiquetas de réplica. Faltan también los otros dos estudios y
+  la inferencia entre estudios. Las 93 muestras de Colombia representan cuatro lotes.
   El contraste fijado no puede bajar de p=0,125 y supone simetría central;
   el piloto solapa seis muestras y no se usa como evidencia independiente.
 - En el piloto, el 20,99 % de las lecturas pertenece a ASVs etiquetadas como
@@ -271,9 +282,9 @@ coincide en bytes con el blob Git. Ambos dry-runs terminan sin trabajos pendient
 
 ## Próximas tareas
 
-1. Registrar y ejecutar taxonomía reproducible de México sobre `terminal_3prime`,
-   revisar orgánulos, resolución y la ASV con motivos de primers, y establecer
-   decisiones explícitas sobre profundidad/réplicas antes de diversidad/modelos.
+1. Registrar y ejecutar la separación bacteriana de México, con un balance
+   por biblioteca, y fijar el tratamiento de profundidad y réplicas antes de
+   estimar diversidad o modelos temporales.
    Procesar después los dos estudios restantes con métodos apropiados a su
    región/plataforma, incluido PacBio.
 2. Registrar armonización género/familia, modelos por taxón/etapa y core antes
