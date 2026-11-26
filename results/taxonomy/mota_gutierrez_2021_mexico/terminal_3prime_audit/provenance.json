@@ -1,0 +1,793 @@
+{
+  "checksum_algorithm": "SHA-256",
+  "command": [
+    "/home/core_i7/.local/share/micromamba/envs/cacao-microbiome/bin/python",
+    "scripts/taxonomy/run_taxonomy.py",
+    "--config",
+    "config/taxonomy.yaml",
+    "--input-dir",
+    "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime",
+    "--output-dir",
+    "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime",
+    "--threads",
+    "2",
+    "THEN",
+    "/home/core_i7/.local/share/micromamba/envs/cacao-microbiome/bin/python",
+    "scripts/taxonomy/run_taxonomy.py",
+    "--config",
+    "config/taxonomy.yaml",
+    "--input-dir",
+    "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime",
+    "--output-dir",
+    "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat",
+    "--threads",
+    "1"
+  ],
+  "finished_at_utc": "2026-11-26T04:29:05.813476+00:00",
+  "git_commit": "aeec8cab785d21cc36bf64bd0dfb2362fada76a8",
+  "git_dirty": false,
+  "git_status_at_start": [],
+  "inputs": [
+    {
+      "bytes": 4901,
+      "path": "config/config.yaml",
+      "sha256": "187545e11857ff7deb1cd50819fe0a4ec90c3dccd6295ff7705b9e4f6b996555"
+    },
+    {
+      "bytes": 883,
+      "path": "config/prjna627078_dada2.yaml",
+      "sha256": "8127cae9c83a68d491ca4aecbdfa752e48aee7e2d43c725440ac3268ffe3e1d0"
+    },
+    {
+      "bytes": 493,
+      "path": "config/prjna627078_dada2_primers.yaml",
+      "sha256": "3cc74a421cfd75aa3cb83504556d134e9ba3fad8cd0b87e93bf7813038fa00ab"
+    },
+    {
+      "bytes": 3566,
+      "path": "config/prjna627078_processing.yaml",
+      "sha256": "74d201d618cf44dbc34c0be3c0805a79e33ed769bdf1baf749cd2342e11603f2"
+    },
+    {
+      "bytes": 1247,
+      "path": "config/prjna627078_study.yaml",
+      "sha256": "90374770be68b8feeb7807e0081b3e8309c5828b5f26109d2ac882c1291845f1"
+    },
+    {
+      "bytes": 1042,
+      "path": "config/prjna627078_taxonomy.yaml",
+      "sha256": "8a3f52f5735021690593bb09d5b43254e378dab9c7b655386367ddd9802e061a"
+    },
+    {
+      "bytes": 864,
+      "path": "config/prjna627078_terminal_qc.yaml",
+      "sha256": "6d1f63c1d2a0bb7c66debb62c471ea4b7d5fabc4497213731842c8458f066808"
+    },
+    {
+      "bytes": 1566,
+      "path": "config/taxonomy.yaml",
+      "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
+    },
+    {
+      "bytes": 54093,
+      "path": "environment/conda-linux-64.lock",
+      "sha256": "f61d404ca96b8ec4c00e09c22cd13157e12850ed9f971e289e9f3385402bf4cb"
+    },
+    {
+      "bytes": 73195,
+      "path": "metadata/manifests/mota_gutierrez_2021_mexico.tsv",
+      "sha256": "09c190f379884f9ebe8c1a6e5561a9ffe0fbf39a7262bc205c50d39e483b98b2"
+    },
+    {
+      "bytes": 9376,
+      "path": "python/cacao_inventory/analysis_artifacts.py",
+      "sha256": "c032ba30897e3469d29eaa23048fce470d45d67c4b1d7d5be58b0e98e5b4a75d"
+    },
+    {
+      "bytes": 4793,
+      "path": "python/cacao_inventory/config.py",
+      "sha256": "d4cc8f0870fc28f3027be4daebd705443ee136055bc9fe20725c3a130b389499"
+    },
+    {
+      "bytes": 4827,
+      "path": "python/cacao_inventory/download.py",
+      "sha256": "d2ee24f3cd6c96b7b9996eff6990443e635db281be94b5230bff350f2bb71862"
+    },
+    {
+      "bytes": 2405,
+      "path": "python/cacao_inventory/io.py",
+      "sha256": "0a48a88e2e0779626a8d14e05a414b3c21d35d98ccb2001dee081cd40979dd0d"
+    },
+    {
+      "bytes": 4488,
+      "path": "python/cacao_inventory/provenance.py",
+      "sha256": "96d98b74a2585beb4fc9450d2075f2d4b432ac89dbb08fc657797838963a93ae"
+    },
+    {
+      "bytes": 6504,
+      "path": "python/cacao_inventory/schema.py",
+      "sha256": "8a63c6afcaf9088640e7ad9d29d850e98316bd0d58e42d6579a469ba632ef9e1"
+    },
+    {
+      "bytes": 4319,
+      "path": "python/cacao_inventory/taxonomy_reference.py",
+      "sha256": "b3c5b9437ef909181db15418c3e55522b7760072c6e69ed598551a63dd45864f"
+    },
+    {
+      "bytes": 8046,
+      "path": "python/cacao_inventory/taxonomy_validation.py",
+      "sha256": "3ed1dc8a9906b285e2e30a76aacaf8e4d1af8f63f81d70e0764c8aa294c30521"
+    },
+    {
+      "bytes": 139996892,
+      "path": "references/databases/silva_nr99_v138.2_toGenus_trainset.fa.gz",
+      "sha256": "e0af8246b900a922ea3ea68e7cb1a5e70ceed4db84246b6ea9865eb132452093"
+    },
+    {
+      "bytes": 1866,
+      "path": "references/silva_138.2.provenance.json",
+      "sha256": "7c9dbc96a6a2f32bd8ac94a292560389c3dea36591f98a90598d4b4e2e1d1ecf"
+    },
+    {
+      "bytes": 41,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/SUCCESS",
+      "sha256": "c0b9088246a4144324ac4c7980004ad237cf95be3c3cdab16cc43918e28fc693"
+    },
+    {
+      "bytes": 162838,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/asv_counts.tsv",
+      "sha256": "b325a5075df0d79c8943a147ff7714f76f6c575176b8eee4b764618ff000833e"
+    },
+    {
+      "bytes": 439209,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/asv_sequences.fasta",
+      "sha256": "f18c441f8857de1006f8b10f6574025544293b91a594d1e25c043d3b0cc1e581"
+    },
+    {
+      "bytes": 471341,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/asv_sequences.tsv",
+      "sha256": "5353238fca76c8f588a7eb467d3fae9096ca634fb674d79f76ff97b9f604f49e"
+    },
+    {
+      "bytes": 2797,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/config_snapshot.yaml",
+      "sha256": "8ea57612f76e4006d55002e543ebc21d8ac9c41b7b9028aa0f639d6932191ded"
+    },
+    {
+      "bytes": 218,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_learning.tsv",
+      "sha256": "74177aa10177e6f5a427429d9e179ba4b8b0ce65b9ba1b27ae6a70a6c3df8eae"
+    },
+    {
+      "bytes": 42686,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_F.pdf",
+      "sha256": "2d247f3d58dfb33375e1044b7affc5a58387c5385d344bcf4b3642dfd049a102"
+    },
+    {
+      "bytes": 575867,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_F.png",
+      "sha256": "69ad700afe0d8edea3b261314e9a58123d2ee8168ad688c9dcdfa075c2e67635"
+    },
+    {
+      "bytes": 431256,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_F.svg",
+      "sha256": "356bf534f9a786558d503c67123d8920a94fdbcbe55db3cee8e49249652e1460"
+    },
+    {
+      "bytes": 42611,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_R.pdf",
+      "sha256": "9fcfb8cf53aca614d910878f764dbaf02e0f9091d6bd8032490349e419a69068"
+    },
+    {
+      "bytes": 558390,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_R.png",
+      "sha256": "f1ec1e89f905d94eedac35e80f0ed2ab0193cc5ef2d1966302b658c68a6dd94d"
+    },
+    {
+      "bytes": 431018,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/error_model_R.svg",
+      "sha256": "22231cc99f418cd07950cb73009de783a9e758f71efcf1cd1145781db05cd7d5"
+    },
+    {
+      "bytes": 15382,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/input_checksums.tsv",
+      "sha256": "6912f6989bc1b79ee3260e120204f3789d10abba4983da5d7056f5496612cde3"
+    },
+    {
+      "bytes": 3209,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/merge_diagnostics.tsv",
+      "sha256": "b155053e5ce7133993feb4f412f8119fa584c285293bd71b64f10da95559ea85"
+    },
+    {
+      "bytes": 951,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/output_checksums.tsv",
+      "sha256": "03ad2af6fb9ef1439233ef04cbd803d006855e531b6a8513f86cc783b4034147"
+    },
+    {
+      "bytes": 14332,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/read_tracking.tsv",
+      "sha256": "a1dc36554b9ae4efe3198b80d8940d37264b840f89cc386db488f5e161decb8c"
+    },
+    {
+      "bytes": 2237,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/run_provenance.yaml",
+      "sha256": "57ddad415c8ee09116394868e658a14ac4cf08c488d150ab9a1e4073a19aa9dc"
+    },
+    {
+      "bytes": 73195,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/sample_metadata.tsv",
+      "sha256": "09c190f379884f9ebe8c1a6e5561a9ffe0fbf39a7262bc205c50d39e483b98b2"
+    },
+    {
+      "bytes": 5070,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/sequence_length_distribution.tsv",
+      "sha256": "257dcd4ba46597cd4a0030bb45bf4f041acc153e2a71870901cf4b9575e0aa68"
+    },
+    {
+      "bytes": 2738,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/session_info.txt",
+      "sha256": "e832c67983e263627832aa281c7875aa2e9c8aa9e89fdaad93a083c2e3e2f15d"
+    },
+    {
+      "bytes": 118,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/software_versions.tsv",
+      "sha256": "f4c287a76bd9c6b21feb9abc521d29d6236d381f7770ee8aec04a4861c30ee76"
+    },
+    {
+      "bytes": 235,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/summary.tsv",
+      "sha256": "f5233829146c82a144601de5f5b6b9518ae0f34b3b625d89eaf89377e553a126"
+    },
+    {
+      "bytes": 294,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/validation.json",
+      "sha256": "d055789b89ce0b1b1485116118841c2b5b468de6209dbc2ddeec38ff67a4492c"
+    },
+    {
+      "bytes": 300,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime/warnings.txt",
+      "sha256": "2e0cb78b3fab66f32b28f7464b4fe93c3933d5261fb713f350208faae2fc87ed"
+    },
+    {
+      "bytes": 41,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/SUCCESS",
+      "sha256": "c0b9088246a4144324ac4c7980004ad237cf95be3c3cdab16cc43918e28fc693"
+    },
+    {
+      "bytes": 1223,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/cohort_validation.json",
+      "sha256": "9104f9dcfef2a163b2009f2539724e9da6c0d28bf2495ef0d96924b9b39843a8"
+    },
+    {
+      "bytes": 883,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/config_snapshot.yaml",
+      "sha256": "8127cae9c83a68d491ca4aecbdfa752e48aee7e2d43c725440ac3268ffe3e1d0"
+    },
+    {
+      "bytes": 405,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/error_diagnostics.tsv",
+      "sha256": "48089deb78474574350cef2b039df634f45d656cca4e3d7144b883df13e35f47"
+    },
+    {
+      "bytes": 50451,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/execution_log.txt",
+      "sha256": "e0c03c9fa990d565af1ddfe66ffee4ac4b2b6e2d5cacde0fca61bc04cee7435d"
+    },
+    {
+      "bytes": 31953,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/input_checksums.json",
+      "sha256": "0fb1427aa6c59751e3b0b1e920fa30c07d2e2f996db49650be3d3462ce5132d0"
+    },
+    {
+      "bytes": 41876,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/provenance.json",
+      "sha256": "c507ce0d8bc668cf50cc1252c3c6d003b87b48df72ba7203c82611b1bb215b77"
+    },
+    {
+      "bytes": 1680,
+      "path": "results/dada2/mota_gutierrez_2021_mexico/terminal_3prime_audit/validation.json",
+      "sha256": "b73085ad282a3f29252d5a21dcd33c2d0fff46de3a60b99ad3de991d624c8009"
+    },
+    {
+      "bytes": 41,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/SUCCESS",
+      "sha256": "7e60d9923aa71adbea9317df023345cfb74b74017e101b79424ec43cbafc37e9"
+    },
+    {
+      "bytes": 493,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/config_snapshot.yaml",
+      "sha256": "3cc74a421cfd75aa3cb83504556d134e9ba3fad8cd0b87e93bf7813038fa00ab"
+    },
+    {
+      "bytes": 401,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/coordinate.tsv",
+      "sha256": "9ca4b84fd9f7ee7e531a528200dac7dc841f49e11d0d8e6b31a6b2973ff88e97"
+    },
+    {
+      "bytes": 8687,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/input_checksums.json",
+      "sha256": "4350ddce26845c928b2a759cdea92bbbda4e34680305dd37ca1546c8fa130792"
+    },
+    {
+      "bytes": 3438,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/per_sample.tsv",
+      "sha256": "701dd33350d991fee859cfc3e344f79fe46f47a12656222e65fc92bc393fe640"
+    },
+    {
+      "bytes": 11808,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/provenance.json",
+      "sha256": "4488f620238283b6d8b78119d576b31867a9763da2f32b0fa50ee7054a21aba7"
+    },
+    {
+      "bytes": 1375,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/summary.json",
+      "sha256": "21b13916159289f19a707df487b989113b86d1adac5738da25bc184faee406cc"
+    },
+    {
+      "bytes": 1513,
+      "path": "results/diagnostics/mota_gutierrez_2021_mexico/dada2_primers/validation.json",
+      "sha256": "d4953d8e105b8fae965cfd63dee2a051ce509b353907948c77c1e29ea711e490"
+    },
+    {
+      "bytes": 13932,
+      "path": "results/qc/mota_gutierrez_2021_mexico/terminal_3prime/run_summary.tsv",
+      "sha256": "caa3cd4346aae602c69f5780f4df4538621d7009612f827562ff4f27fbab141c"
+    },
+    {
+      "bytes": 1061,
+      "path": "results/qc/mota_gutierrez_2021_mexico/terminal_3prime/summary.json",
+      "sha256": "e1f1e09e09b6b545a28abb1af24010705738ada1db8ce5b0b1a26a1dfe67333a"
+    },
+    {
+      "bytes": 11916,
+      "path": "scripts/dada2/helpers.R",
+      "sha256": "d22d205dd0af7678a38eaa6ee72231012748343c9856d1f410e29d111ff9fce7"
+    },
+    {
+      "bytes": 9234,
+      "path": "scripts/dada2/validate_outputs.py",
+      "sha256": "45605a48ee1ff009943c17fd9042f9992157fc6fe0f75b0f9c824cc5d6c03d21"
+    },
+    {
+      "bytes": 16111,
+      "path": "scripts/dada2_primer_review/scan.py",
+      "sha256": "56c5bae6c95250990e6ad0e0e5222930d5e5a5a9de30201b15545b759066c2f5"
+    },
+    {
+      "bytes": 14278,
+      "path": "scripts/study_dada2/cohort.py",
+      "sha256": "807f13dda93433cf5c506e226e0cb2d6c48ffc880552ec9cc4e2c18a69c81592"
+    },
+    {
+      "bytes": 22846,
+      "path": "scripts/study_taxonomy/execute.py",
+      "sha256": "450ef253bc0ee6d0b2768e74cfc0c1e5889c66de3a855852cb637e6f1973a562"
+    },
+    {
+      "bytes": 7573,
+      "path": "scripts/taxonomy/assign_taxonomy.R",
+      "sha256": "3b68d5082ca39f987af63d4f9b198a6e05a01f54befb3c33f4e5d35b835c84f6"
+    },
+    {
+      "bytes": 5093,
+      "path": "scripts/taxonomy/audit_repetition.py",
+      "sha256": "6fa939b0c734f3bd93ac4cf6ea1ba13f8564894b8f3b9ae047e04b82f4ed0eb8"
+    },
+    {
+      "bytes": 3635,
+      "path": "scripts/taxonomy/download_reference.py",
+      "sha256": "162ffc413a162b51dc18b41745218d8e9d35cbc547b71da2e4901d2d8c84f90c"
+    },
+    {
+      "bytes": 2092,
+      "path": "scripts/taxonomy/helpers.R",
+      "sha256": "73e31b91ec838dc14689e6ce4beb9adf135ef5735ec5d4336f18338dbf9498d5"
+    },
+    {
+      "bytes": 11905,
+      "path": "scripts/taxonomy/native/taxonomy_seeded.cpp",
+      "sha256": "eafd355fd039abca79f3030247bbfd2f96b2547a3df7a8bcee9ce8fd1f3d814f"
+    },
+    {
+      "bytes": 11429,
+      "path": "scripts/taxonomy/native/taxonomy_upstream.cpp",
+      "sha256": "1641cf17a322af65c31f6ad58fcf75e787ded90e9017960e5f9d3d2daa69a6a6"
+    },
+    {
+      "bytes": 6845,
+      "path": "scripts/taxonomy/run_taxonomy.py",
+      "sha256": "8711939598b76520ea0a7505ca89bdbf1388ea45354c93a07b94cc10cad96f3b"
+    },
+    {
+      "bytes": 1027,
+      "path": "scripts/taxonomy/seeded_classifier.R",
+      "sha256": "f6e9aa900cfc694f1a0ef9521d11e64b2449eadb198fff85f41314d5c96dc245"
+    },
+    {
+      "bytes": 558,
+      "path": "scripts/taxonomy/seeded_policy.py",
+      "sha256": "c922080d37aa86e1ba788d2df401185bd787dc193335d43887fdbd2dbb8e0068"
+    },
+    {
+      "bytes": 4413,
+      "path": "scripts/taxonomy/validate_taxonomy.py",
+      "sha256": "5959cb0ed371289f9055944811f8d1065c01bdb5c5489c8d8bde95bfbadbf0be"
+    },
+    {
+      "bytes": 5520,
+      "path": "workflow/Snakefile",
+      "sha256": "3feb72cd52c3616cd4e67c72cb8a6770126c8b2ebd2c34c74381524572068281"
+    },
+    {
+      "bytes": 3846,
+      "path": "workflow/rules/pilot_taxonomy.smk",
+      "sha256": "866e6ec8c865c0fa440799d46975077863de6e086d211cdb36439d93b64f3c0c"
+    },
+    {
+      "bytes": 17532,
+      "path": "workflow/study.Snakefile",
+      "sha256": "faad21ab20642f3bf0b9089b69dee12e3ca4f12af134851987a8531e4e8bdd55"
+    },
+    {
+      "bytes": 898,
+      "path": "workflow/study_taxonomy.Snakefile",
+      "sha256": "0d829373bb0cf8328fccd06cae58463241def506976ad354989aeee2625031b8"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 41,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/SUCCESS",
+      "sha256": "2012bf6b016933da678806ec4e35e3f2a153ad222ee4b52aefb069d9a1d8670e"
+    },
+    {
+      "bytes": 4996,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/assignment_coverage.pdf",
+      "sha256": "5cc895a3336385909885829984c872fad90a4fd23398d28e50ac485a272fde03"
+    },
+    {
+      "bytes": 123155,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/assignment_coverage.png",
+      "sha256": "6fa510589b468041ebabf88f3e8fabe6b47846e101bc6d0ab2468fe621b4ee87"
+    },
+    {
+      "bytes": 75620,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/assignment_coverage.svg",
+      "sha256": "4a8cc8859b84b58145e0fddbe6ffb48a35ddc20670b214de769efeed4e50eed6"
+    },
+    {
+      "bytes": 803,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/assignment_coverage.tsv",
+      "sha256": "53aae191827b96a4f78e27a850bacbbba11ce33c736dcfc201ac4e59069b4a7d"
+    },
+    {
+      "bytes": 1566,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/config_snapshot.yaml",
+      "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
+    },
+    {
+      "bytes": 4315,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/input_checksums.json",
+      "sha256": "96028de43f5bd5a56de6bdccf9a40663afbd282d56c97ebd4624530f675c8c79"
+    },
+    {
+      "bytes": 10699,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/provenance.json",
+      "sha256": "20e0e4fdafc31f98ecb96cb58870c435a4f3e7e1ffd75add529ce0630a84d88c"
+    },
+    {
+      "bytes": 45659,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/sample_coverage.tsv",
+      "sha256": "bf217091c8bb04ebd65f3c0889b39d78c5f5651c2a06a04bbb3dcf155ca139cd"
+    },
+    {
+      "bytes": 2677,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/session_info.txt",
+      "sha256": "513a08e1416614a20035ca1dc44a85f2a16bb269ae3767507eb0e3d22cfa7472"
+    },
+    {
+      "bytes": 768,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/software_versions.tsv",
+      "sha256": "816815847b245fef263b1e3aa821bac78dcc20086905711c4a4b27d8a2c552e0"
+    },
+    {
+      "bytes": 137677,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/taxonomy.tsv",
+      "sha256": "19624addce230910d5cd73b3eb9b5958cfaf3956ecbd929ee3b3523d1221f66a"
+    },
+    {
+      "bytes": 85352,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/taxonomy_bootstraps.tsv",
+      "sha256": "7abd8d4320a261d8d8bf884dff6c5665637d07fedb9cd85ce5536b6d9ecc4444"
+    },
+    {
+      "bytes": 87811,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/taxonomy_screening.tsv",
+      "sha256": "42819924c50f4c8a1c00af547302fd2e56acb26e33ac045401d0fb8ba2883af0"
+    },
+    {
+      "bytes": 283466,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/taxonomy_sensitivity.tsv",
+      "sha256": "54238dc79a3ffa5afcaa0a89be6099d9e0990edd6079f30759785aae867b945e"
+    },
+    {
+      "bytes": 141645,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/taxonomy_unfiltered.tsv",
+      "sha256": "128b9f8544da67aea54d2c96b6952e4b3314f8c04fdd64f5cba951f1c26fe769"
+    },
+    {
+      "bytes": 482,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/validation.json",
+      "sha256": "c1640b9fa5ba36fe03cefc38589b6e5ce509a42f4e724fe5b34435763106bcd3"
+    },
+    {
+      "bytes": 0,
+      "path": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat/warnings.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 41,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/SUCCESS",
+      "sha256": "2012bf6b016933da678806ec4e35e3f2a153ad222ee4b52aefb069d9a1d8670e"
+    },
+    {
+      "bytes": 4996,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/assignment_coverage.pdf",
+      "sha256": "7ac7e730eba95bb8a11d5e9e071e2e5660b865dbc74395472649fc3b1a50491e"
+    },
+    {
+      "bytes": 123155,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/assignment_coverage.png",
+      "sha256": "6fa510589b468041ebabf88f3e8fabe6b47846e101bc6d0ab2468fe621b4ee87"
+    },
+    {
+      "bytes": 75620,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/assignment_coverage.svg",
+      "sha256": "4a8cc8859b84b58145e0fddbe6ffb48a35ddc20670b214de769efeed4e50eed6"
+    },
+    {
+      "bytes": 803,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/assignment_coverage.tsv",
+      "sha256": "53aae191827b96a4f78e27a850bacbbba11ce33c736dcfc201ac4e59069b4a7d"
+    },
+    {
+      "bytes": 1566,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/config_snapshot.yaml",
+      "sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546"
+    },
+    {
+      "bytes": 4315,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/input_checksums.json",
+      "sha256": "96028de43f5bd5a56de6bdccf9a40663afbd282d56c97ebd4624530f675c8c79"
+    },
+    {
+      "bytes": 10379,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/provenance.json",
+      "sha256": "2c0c32a202deeb57f4187001bfe75497c6e01fab65eaca3cd277a6343f617b7f"
+    },
+    {
+      "bytes": 45659,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/sample_coverage.tsv",
+      "sha256": "bf217091c8bb04ebd65f3c0889b39d78c5f5651c2a06a04bbb3dcf155ca139cd"
+    },
+    {
+      "bytes": 2677,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/session_info.txt",
+      "sha256": "513a08e1416614a20035ca1dc44a85f2a16bb269ae3767507eb0e3d22cfa7472"
+    },
+    {
+      "bytes": 768,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/software_versions.tsv",
+      "sha256": "816815847b245fef263b1e3aa821bac78dcc20086905711c4a4b27d8a2c552e0"
+    },
+    {
+      "bytes": 137677,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/taxonomy.tsv",
+      "sha256": "19624addce230910d5cd73b3eb9b5958cfaf3956ecbd929ee3b3523d1221f66a"
+    },
+    {
+      "bytes": 85352,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/taxonomy_bootstraps.tsv",
+      "sha256": "7abd8d4320a261d8d8bf884dff6c5665637d07fedb9cd85ce5536b6d9ecc4444"
+    },
+    {
+      "bytes": 87811,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/taxonomy_screening.tsv",
+      "sha256": "42819924c50f4c8a1c00af547302fd2e56acb26e33ac045401d0fb8ba2883af0"
+    },
+    {
+      "bytes": 283466,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/taxonomy_sensitivity.tsv",
+      "sha256": "54238dc79a3ffa5afcaa0a89be6099d9e0990edd6079f30759785aae867b945e"
+    },
+    {
+      "bytes": 141645,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/taxonomy_unfiltered.tsv",
+      "sha256": "128b9f8544da67aea54d2c96b6952e4b3314f8c04fdd64f5cba951f1c26fe769"
+    },
+    {
+      "bytes": 482,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/validation.json",
+      "sha256": "c1640b9fa5ba36fe03cefc38589b6e5ce509a42f4e724fe5b34435763106bcd3"
+    },
+    {
+      "bytes": 0,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime/warnings.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 1042,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_audit/config_snapshot.yaml",
+      "sha256": "8a3f52f5735021690593bb09d5b43254e378dab9c7b655386367ddd9802e061a"
+    },
+    {
+      "bytes": 228,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_audit/execution_log.txt",
+      "sha256": "a1484b1d5fcc8c924f2df0daac17b3e0263e07fad2ce303d09f7c57302d9fe61"
+    },
+    {
+      "bytes": 14642,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_audit/input_checksums.json",
+      "sha256": "3c487cd9f7d3c66a1cd78ffb11fbf552bfb1c1b86f4d86ac54c22fa0a2e9cea6"
+    },
+    {
+      "bytes": 228,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_audit/repeat_execution_log.txt",
+      "sha256": "1cde30c66d329760bf8e88c5474a15480e9ab9807b196e4d7e40cd1cb7f2499f"
+    },
+    {
+      "bytes": 7427,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_audit/repetition.json",
+      "sha256": "edb6df0d1dcab7dcb9b7c1d0512d447de6f028fc86a4fe449acf28217a416c54"
+    },
+    {
+      "bytes": 3441,
+      "path": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_audit/source_validation.json",
+      "sha256": "09b9e899953e6330a4d134b102ed5516939e447536e56c0ab1944d2441a6ae11"
+    }
+  ],
+  "parameters": {
+    "asv_exclusions": false,
+    "audit_dir": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_audit",
+    "expected_asvs": 968,
+    "expected_nonchim_pairs": 2676375,
+    "expected_samples": 60,
+    "memory_mb": 4500,
+    "method": "independent_study_registered_taxonomy",
+    "output_dir": "results/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime",
+    "parameter_overrides": false,
+    "processing_ceiling": "taxonomy",
+    "repeat_dir": "results/intermediate/taxonomy/mota_gutierrez_2021_mexico/terminal_3prime_repeat",
+    "repeat_threads": 1,
+    "require_dada2_promotion": "ready_for_taxonomy",
+    "require_identical_repetition": true,
+    "residual_primer_policy": "retain_all_diagnosed_asvs",
+    "sample_exclusions": false,
+    "schema_version": "1.0.0",
+    "source_dada2_policy": "config/prjna627078_dada2.yaml",
+    "source_primer_review_policy": "config/prjna627078_dada2_primers.yaml",
+    "taxonomy_profile": "config/taxonomy.yaml",
+    "taxonomy_profile_sha256": "67fa960783be9937a6eacdca919562df7991c87030b67d94fb71f550dbc61546",
+    "threads": 2
+  },
+  "software_versions": {
+    "Python": "3.12.13",
+    "Rscript": "Rscript (R) version 4.4.3 (2025-02-28)"
+  },
+  "started_at_utc": "2026-11-26T04:13:29.815941+00:00",
+  "status": "success",
+  "upstream_validation": {
+    "cohort": {
+      "batch_times": 20,
+      "batches": 4,
+      "error_learning": {
+        "F": {
+          "converged_before_limit": true,
+          "maximum_rounds": 10,
+          "reached_iteration_limit": false,
+          "repeated_error_matrix": true,
+          "self_consistency_rounds": 6
+        },
+        "R": {
+          "converged_before_limit": true,
+          "maximum_rounds": 10,
+          "reached_iteration_limit": false,
+          "repeated_error_matrix": true,
+          "self_consistency_rounds": 5
+        }
+      },
+      "filtered_pairs": 3164195,
+      "input_pairs": 5689175,
+      "merged_pairs": 2972344,
+      "minimum_nonchim_pairs_per_sample": 24,
+      "nonchim_pairs": 2676375,
+      "pairs_at_least_min_len": 5593277,
+      "promotion_reason": "Complete cohort and both error models converged before their limits",
+      "promotion_status": "ready_for_taxonomy",
+      "retention": {
+        "filtered_fraction_of_input": 0.556178180491899,
+        "merged_fraction_of_filtered": 0.9393681489288744,
+        "nonchim_fraction_of_input": 0.47043288350244106,
+        "nonchim_fraction_of_merged": 0.9004257246133018
+      },
+      "samples": 60,
+      "status": "valid",
+      "study_id": "mota_gutierrez_2021_mexico",
+      "unknown_sampling_stratum_samples": 60
+    },
+    "dada2": {
+      "fastq_rehashed": false,
+      "native_validation": {
+        "artifacts_checked": 18,
+        "asvs": 968,
+        "error_models_converged_before_limit": true,
+        "inputs_checked": 0,
+        "nonchim_pairs": 2676375,
+        "samples": 60,
+        "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+        "status": "valid",
+        "study_id": "mota_gutierrez_2021_mexico"
+      },
+      "promotion_status": "ready_for_taxonomy",
+      "source_git_commit": "de23962990c10ee9d5bb7498cc048e510dcae7cc",
+      "status": "valid"
+    },
+    "primer_review": {
+      "artifacts_checked": 5,
+      "asv_exclusions": 0,
+      "asvs": 968,
+      "coordinate_matches": 2,
+      "inputs_checked": 46,
+      "interpretation": "Full primer-compatible motifs only; no taxonomic or contamination identity inferred",
+      "matched_asvs": 1,
+      "matched_fraction": 2.615478025314091e-06,
+      "matched_reads": 7,
+      "patterns": [
+        {
+          "matched_asvs": 0,
+          "matched_reads": 0,
+          "maximum_errors": 1,
+          "orientation": "as_synthesized",
+          "pattern": "CCTACGGGNGGCWGCAG",
+          "primer_name": "V3V4Forward",
+          "primer_role": "forward"
+        },
+        {
+          "matched_asvs": 1,
+          "matched_reads": 7,
+          "maximum_errors": 1,
+          "orientation": "reverse_complement",
+          "pattern": "CTGCWGCCNCCCGTAGG",
+          "primer_name": "V3V4Forward",
+          "primer_role": "forward"
+        },
+        {
+          "matched_asvs": 1,
+          "matched_reads": 7,
+          "maximum_errors": 2,
+          "orientation": "as_synthesized",
+          "pattern": "GACTACHVGGGTATCTAATCC",
+          "primer_name": "V3V4Reverse",
+          "primer_role": "reverse"
+        },
+        {
+          "matched_asvs": 0,
+          "matched_reads": 0,
+          "maximum_errors": 2,
+          "orientation": "reverse_complement",
+          "pattern": "GGATTAGATACCCBDGTAGTC",
+          "primer_name": "V3V4Reverse",
+          "primer_role": "reverse"
+        }
+      ],
+      "sample_exclusions": 0,
+      "samples": 60,
+      "sequence_edits": 0,
+      "source_git_commit": "b3a1e2ccfbcd0fabe1331b8525620513360f5e26",
+      "status": "valid",
+      "study_id": "mota_gutierrez_2021_mexico",
+      "total_reads": 2676375
+    },
+    "status": "valid"
+  }
+}

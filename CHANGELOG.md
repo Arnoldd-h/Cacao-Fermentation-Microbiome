@@ -2,7 +2,7 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
-## En desarrollo - 2026-11-25
+## v0.5.7-second-study-taxonomy - 2026-11-25
 
 - Taxonomía independiente de PRJNA627078 registrada sobre DADA2 terminal y
   diagnóstico de primers validados. Reutiliza SILVA 138.2, adaptador con semilla
@@ -11,6 +11,11 @@ Los cambios importantes de este proyecto se documentarán en este archivo.
   el alcance basal sigue en QC y el nuevo workflow termina en taxonomía.
 - Repetición secuencial con dos/un hilo y gate de identidad byte a byte de
   las siete tablas científicas; la primera ejecución permanece como primaria.
+- México completa taxonomía sobre 60 bibliotecas y 968 ASVs. A 80, la cobertura
+  de pares es 79,25 % a familia y 70,99 % a género. Las 14 ASVs de orgánulos
+  reúnen 23,99 % de los pares y conservan sus conteos.
+- Las siete tablas coinciden entre corridas. Se validaron 81 entradas y
+  42 artefactos en la auditoría, con 34 pruebas Python y seis comprobaciones R.
 
 ## v0.5.6-second-study-dada2 - 2026-11-02
 
