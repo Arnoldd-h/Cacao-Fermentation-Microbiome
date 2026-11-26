@@ -506,3 +506,48 @@ DADA2; no relee FASTQ ni vuelve a estimar ASVs. Puede describir una corrida
 técnicamente válida que aún requiera revisar convergencia, preservando esa
 limitación. La interpretación ecológica espera taxonomía y revisión de estas
 banderas; cualquier corrección posterior requerirá un método separado.
+
+### Taxonomía independiente de PRJNA627078, 2026-11-25
+
+Antes de observar sus asignaciones se registra
+`config/prjna627078_taxonomy.yaml`: consume las 968 ASVs, 60 bibliotecas y
+2.676.375 pares no quiméricos de `terminal_3prime`. Exige la promoción DADA2
+`ready_for_taxonomy` y el diagnóstico de primers validado, sin modificar
+el alcance basal ni volver a estimar ASVs. Se conserva la metadata original,
+incluido `sampling_stratum` desconocido y las cuatro cajas independientes.
+
+Se reutiliza íntegramente `config/taxonomy.yaml`, fijado además por SHA-256:
+SILVA NR99 138.2 hasta género, DADA2 1.34.0 con el adaptador explícito
+`r_seeded_query_mt19937_v1`, semilla 20260819 y dos hilos. R permanece en
+4.4.3. Se exportan llamadas sin máscara y soportes; primaria 80 y sensibilidad
+50 con máscara jerárquica, sin elegir umbral según los géneros observados.
+La base conserva sus checksums y su procedencia. El adaptador mantiene la
+implementación ya contrastada entre procesos/hilos; no se modifica el paquete
+instalado. No se asignan especies ni funciones metabólicas.
+
+Se aplica también a este alcance el requisito de repetición registrado:
+primera corrida con dos hilos y segunda cronológica con uno, en procesos
+independientes y directorios separados, con iguales entradas y orden. Se
+exige identidad byte a byte de las siete tablas científicas, incluidos los
+soportes. Siempre se adopta la primera; la segunda sólo verifica. Su archivo
+completo queda en intermedios ignorados y la auditoría pequeña conserva
+hashes y diferencias. Una discrepancia impide cerrar el hito y se informa
+sin seleccionar la corrida con mayor cobertura.
+
+La cobertura usa todas las ASVs/lecturas como denominador, por rango y por
+biblioteca. Se conservan etiquetas SILVA originales; `named_genus` distingue
+etiquetas no resueltas, sin certificar nomenclatura formal. Se revisarán
+orgánulos, Kingdom no bacteriano/desconocido, longitud y soporte de las ASVs
+con motivos de primers. La biblioteca de 24 pares y la ASV de siete pares
+con dos motivos permanecen incluidas; ni las banderas ni la falta de
+clasificación justifican aquí una exclusión o una identidad de contaminación.
+Los flags de orgánulos se basan en la llamada primaria, no son una búsqueda
+completa de eucariotas. No se renormaliza sobre las lecturas clasificadas.
+
+La etapa termina en taxonomía. Separación bacteriana, tratamiento de baja
+profundidad, combinación de las tres etiquetas de réplica por caja/tiempo y
+modelos ecológicos requieren decisiones posteriores explícitas. Las regiones
+V3-V4 de México y V4 de Colombia conservan matrices ASV independientes;
+compartir referencia no demuestra sucesión conservada ni constituye todavía
+armonización o meta-análisis. Se verifican conservación exacta de conteos,
+identidad de cohorte, máscaras, soportes y hashes antes de cerrar la corrida.

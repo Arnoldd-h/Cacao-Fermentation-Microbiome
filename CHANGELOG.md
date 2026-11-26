@@ -2,6 +2,16 @@
 
 Los cambios importantes de este proyecto se documentarán en este archivo.
 
+## En desarrollo - 2026-11-25
+
+- Taxonomía independiente de PRJNA627078 registrada sobre DADA2 terminal y
+  diagnóstico de primers validados. Reutiliza SILVA 138.2, adaptador con semilla
+  y umbrales 80/50; conserva todas las ASVs, bibliotecas y metadata.
+- Auditoría separada de identidad, parámetros, procedencia y conservación;
+  el alcance basal sigue en QC y el nuevo workflow termina en taxonomía.
+- Repetición secuencial con dos/un hilo y gate de identidad byte a byte de
+  las siete tablas científicas; la primera ejecución permanece como primaria.
+
 ## v0.5.6-second-study-dada2 - 2026-11-02
 
 - Ejecución DADA2 independiente registrada para PRJNA627078 desde QC terminal,

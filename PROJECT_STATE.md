@@ -1,8 +1,14 @@
 # Estado del proyecto
 
-Última actualización: 2026-11-02.
+Última actualización: 2026-11-25.
 
 ## Fase actual
+
+Taxonomía independiente de México registrada para ejecución mediante
+`config/prjna627078_taxonomy.yaml`: reutiliza el perfil SILVA 138.2 y el
+adaptador con semilla, umbrales 80/50 y dos hilos. Consume DADA2 y diagnóstico
+de primers validados, conserva las 968 ASVs/60 bibliotecas y no excluye
+orgánulos ni la biblioteca de baja profundidad. Ejecución y revisión pendientes.
 
 DADA2 independiente de PRJNA627078 completo desde `de23962`: 60 bibliotecas,
 968 ASVs y 2.676.375 pares no quiméricos (47,0433 % de la entrada). Mantiene
